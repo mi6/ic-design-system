@@ -70,7 +70,7 @@
 
 .logo-wrapper svg {
   height: var(--ic-space-xxl);
-  max-width: fit-content;
+  width: auto;
 }
 
 .logo-wrapper > ic-footer-link {
@@ -94,5 +94,40 @@
 
   .logo-wrapper {
     gap: var(--ic-space-lg);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .logo-wrapper {
+    gap: var(--ic-space-lg);
+  }
+
+  .logo-wrapper svg {
+    height: 64px;
+  }
+
+  .logo-wrapper > ic-footer-link {
+    overflow: hidden;
+    height: 64px;
+  }
+
+  .logo-wrapper > ic-footer-link:nth-child(1) svg {
+    transform: translate(0, var(--ic-space-xxxs));
+  }
+
+  .logo-wrapper > ic-footer-link:nth-child(1) {
+    width: 70px;
+  }
+
+  .logo-wrapper > ic-footer-link:nth-child(2) {
+    width: 52px;
+  }
+
+  .logo-wrapper > ic-footer-link:nth-child(2) svg {
+    transform: translate(0, 1px);
+  }
+
+  .logo-wrapper > ic-footer-link:nth-child(3) {
+    width: 46px;
   }
 }
