@@ -1,0 +1,19 @@
+.typography-container {
+  border: 1px solid var(--ic-architectural-400);
+  padding: var(--ic-space-lg) var(--ic-space-lg) 0;
+  border-radius: var(--ic-border-radius);
+}
+
+.additional-padding {
+  margin-bottom: var(--ic-space-xs);
+}
+
+.caption {
+  opacity: 1;
+  margin-bottom: 6px;
+}
+
+.internal-caption {
+  display: block;
+  margin-bottom: var(--ic-space-xl);
+}

@@ -1,0 +1,52 @@
+---
+path: "/components/cards/accessibility"
+
+date: "2022-11-15"
+
+title: "Card"
+
+status: "BETA"
+
+subTitle: "Cards are containers used to display structured information or interactive content."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/cards.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/cards" },
+    { title: "Code", path: "/components/cards/code" },
+    { title: "Accessibility", path: "/components/cards/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+Interactive and static cards inherit the accessibility features of the components within the card. Clickable cards act as links, and therefore inherit the accessibility features of links.
+
+## For Assistive Technology
+
+Screen readers should always read the heading first, even when an image is placed at the top of the card. To achieve this, we've re-ordered content using CSS Flexbox layout so that visually the image appears first but is placed after the heading section in HTML.
+
+The container of interactive and static cards is not clickable, and therefore is not focusable. When navigating within the page, the focus switches between the different interactive components of the card.
+
+In the case of clickable cards, since the whole area is interactive, then the whole container is focusable.
+
+Clickable cards inherit the accessibility features of the link style, using an `<a href="">` to wrap the whole component.
+
+Provide as much detail as possible to the purpose of any link or button present within interactive cards, or to the action of a clickable card. If you can't show this within the component, use the `class=”visuallyhidden”` to add descriptive text about the purpose of the call to action(s).
+
+When cards are arranged in group, these should be placed within an unordered list `<ul>`, with each card marked as a list item `<li>` to provide navigational cues for screen readers.
+
+## Based on
+
+The cards component has been based on the following resources:
+
+- [How to build accessible cards-block links](https://www.nomensa.com/blog/how-build-accessible-cards-block-links), Joel Strohmeier, accessed May 2022.
+- [Block Links, Cards, Clickable Regions, Rows, Etc.](https://adrianroselli.com/2020/02/block-links-cards-clickable-regions-etc.html), Adrian Roselli, accessed May 2022.
+- [Cards](https://inclusive-components.design/cards), Inclusive components, accessed May 2022.
+- [Cards](https://a11y-style-guide.com/style-guide/section-cards.html), A11y style guide, accessed May 2022.
+- [Cards](https://bbc.github.io/gel/components/cards/), BBC, accessed May 2022.
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

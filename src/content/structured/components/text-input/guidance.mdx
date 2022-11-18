@@ -1,0 +1,172 @@
+---
+path: "/components/text-input"
+
+navPriority: 23
+
+date: "2022-11-15"
+
+title: "Text field"
+
+status: "BETA"
+
+subTitle: "Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/text-input.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/text-input" },
+    { title: "Code", path: "/components/text-input/code" },
+    { title: "Accessibility", path: "/components/text-input/accessibility" },
+  ]
+---
+
+import { IcTextField } from "@ukic/react";
+import textInputFig1 from "./images/fig-1-a-textfield-with-helper-text.png";
+import textInputFig2 from "./images/fig-2-a-textfield-with-an-example-of-placeholder-text-and-user-inputted-text.png";
+import textInputFig3 from "./images/fig-3-use-understandable-visual-icons-to-add-clarity-to-the-field-and-draw-attention.png";
+import textInputFig4 from "./images/fig-4-dont-use-unrelated-icons.png";
+import textInputFig5 from "./images/fig-5-examples-of-a-textarea-with-a-character-count.png";
+import textInputFig6 from "./images/fig-6-three-text-fields-correctly-sized-to-the-expected-length-of-input.png";
+import textInputFig7 from "./images/fig-7-three-text-fields-not-correctly-sized-to-expected-content.png";
+import textInputFig8 from "./images/fig-8-textfields-showing-the-three-different-validation-states.png";
+import textInputFig9 from "./images/fig-9-use-inline-validation-for-successes-that-dont-require-success-labels.png";
+
+## Component variants
+
+There are two types of text fields:
+
+- Single line text fields
+- Multi-line text fields (also known as text areas)
+
+### Text fields
+
+Use text fields for entering and editing single lines of text.
+
+<ComponentPreview>
+  <IcTextField
+    label="What is your favourite coffee?"
+    placeholder="Placeholder"
+    helperText="Such as Arabica, Robusta or Liberica"
+  />
+</ComponentPreview>
+
+### Text areas
+
+Use text areas for entering and editing large amounts of text that require more than a single line.
+
+<ComponentPreview>
+  <IcTextField
+    rows="6"
+    label="What is your favourite coffee?"
+    placeholder="Placeholder"
+    helperText="Such as Arabica, Robusta or Liberica"
+  />
+</ComponentPreview>
+
+## When to use
+
+Use text fields as part of a form or other data collection page for capturing text input.
+
+## Content
+
+### Labels
+
+Use clear labels to indicate what information should be entered into the field.
+
+### Helper text
+
+Use helper text in addition to the field label when additional information helps users understand what information is required.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={textInputFig1}
+    imageAlt="A text field component with a label and helper text."
+    state="good"
+    caption="A text field with helper text."
+  />
+</DoubleDoDontCaution>
+
+### Placeholder text
+
+Use placeholder text to optionally provide an example of what to type into the field.
+
+Only use placeholder text if it makes it easier to fill in the text field.
+
+Don't use placeholder text to convey additional meaning other than an example of the expected input.
+
+<DoDontCaution
+  imageSrc={textInputFig2}
+  imageAlt="An image showing two text fields, both with a label which states 'Email'. One shows a placeholder email in the input box, while the other shows a filled in input box with an actual email address."
+  state="good"
+  caption="A text field with an example of placeholder text and user-inputted text."
+/>
+
+### Icons
+
+When including an icon in a text input make sure that the icon is understandable and relevant to the type of input required by the field. Always provide alternative descriptions for icons. Don't use icons if they aren't necessary.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={textInputFig3}
+    imageAlt="An image showing two text fields. The top one titled 'Username' features an icon of a person, and the field titled 'Password' features an icon of a lock."
+    state="good"
+    caption="Use understandable visual icons to add clarity to the field and draw attention."
+  />
+  <DoDontCaution
+    imageSrc={textInputFig4}
+    imageAlt="An image showing two text fields. The top one titled 'Username' features an icon of a telephone, and the field titled 'Password' features an icon of a dog paw."
+    state="bad"
+    caption="Incorrect use of icons can cause confusion."
+  />
+</DoubleDoDontCaution>
+
+## Character count
+
+Include a character limit and counter to show how close the current input is to the maximum input length.
+
+<DoDontCaution
+  imageSrc={textInputFig5}
+  imageAlt="An example of two text areas with a character count. The first is below the character count, and the second is over the character count and is showing an error."
+  state="good"
+  caption="Use a character count to clearly inform users of the character limit."
+/>
+
+## Layout and placement
+
+### Field width
+
+Make the width of the field reflect the length of content you expect the user to enter.
+
+<DoDontCaution
+  imageSrc={textInputFig6}
+  imageAlt="An image showing three text fields. The top two, titled 'First name' and 'Second name' take up half the horizontal size of the third one, titled 'Address'."
+  state="good"
+  caption="Three text fields correctly sized to the expected length of input."
+/>
+
+<DoDontCaution
+  imageSrc={textInputFig7}
+  imageAlt="An image showing three text fields. The top two, titled 'First name' and 'Second name' are the same horizontal size of the third one, titled 'Address'."
+  state="bad"
+  caption="Three text fields not correctly sized to expected content."
+/>
+
+## Validation (error handling)
+
+Real-time validation helps the user streamline their process and efficiently complete a form. All error validation should be accompanied by an error label. Use inline validation for successes that don't require success labels.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={textInputFig8}
+    imageAlt="An image showing three different text fields with different validation states. The first one shows an success validation message. The second one shows a warning validation message. The third one shows an error validation message."
+    state="good"
+    caption="Text fields showing the three different validation states."
+  />
+  <DoDontCaution
+    imageSrc={textInputFig9}
+    imageAlt="A text field labelled 'Favourite hot drink', with a green tick icon within the input field to show the successful validation state."
+    state="good"
+    caption="Use inline validation for successes that don't require success labels."
+  />
+</DoubleDoDontCaution>

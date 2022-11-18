@@ -1,0 +1,158 @@
+---
+path: "/components/select"
+
+navPriority: 16
+
+date: "2022-11-15"
+
+title: "Select"
+
+status: "BETA"
+
+subTitle: "Selects allow users to select one or more values from a list of options."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/select.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/select" },
+    { title: "Code", path: "/components/select/code" },
+    { title: "Accessibility", path: "/components/select/accessibility" },
+  ]
+---
+
+import { IcSelect, IcAlert } from "@ukic/react";
+import selectFig1 from "./images/fig-1-use-radio-or-checkbox-groups-when-less-than-four-options-are-available.png";
+import selectFig2 from "./images/fig-2-dont-use-dropdowns-when-displaying-a-limited-number-of-options.png";
+import selectFig3 from "./images/fig-3-use-labels-to-indicate-the-title-of-the-field.png";
+import selectFig4 from "./images/fig-4-dont-replace-labels-with-placeholder-text.png";
+
+## Component variants
+
+There are two types of select components:
+
+- Single-select
+- Multi-select
+
+### Single-select
+
+export const SelectExample = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        { label: "Espresso", value: "espresso" },
+        { label: "Double Espresso", value: "doubleespresso" },
+        { label: "Flat White", value: "flatwhite" },
+        { label: "Cappuccino", value: "cappucino" },
+        { label: "Americano", value: "americano" },
+        { label: "Mocha", value: "mocha" },
+      ]}
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview>
+  <SelectExample />
+</ComponentPreview>
+
+### Multi-select
+
+<IcAlert
+  heading="Coming soon"
+  message="The multi-select functionality is in development."
+  variant="info"
+/>
+
+## When to use
+
+Use the select component to allow the user to choose one or more options from four or more items. For less than four, use a [radio group](/components/radio) or a [checkbox group](/components/checkboxes).
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={selectFig2}
+    imageAlt="A graphic of a select component labelled 'Single or double shot?' with two options 'Single' and 'Double' in the dropdown list."
+    state="bad"
+    caption="Don’t use select when displaying a limited number of options."
+  />
+  <DoDontCaution
+    imageSrc={selectFig1}
+    imageAlt="A graphic of a radio group labelled 'Single or double shot?' with two radio buttons labelled 'Single' and 'Double'."
+    state="good"
+    caption="Use radio or checkbox groups when less than four options are available."
+  />
+</DoubleDoDontCaution>
+
+## Validation
+
+Real-time validation helps the user streamline their process and efficiently complete a form. All error validation should be accompanied by an error label.
+
+## Content
+
+### Option list
+
+The options in the option list display a label by default and can also include a description.
+
+Use a default option list to display all options without any grouping or recommendations.
+
+#### Recommended
+
+Use an option list with recommendations to display specific options at the top of the list for quick access.
+
+#### Groups
+
+Use an option list with groups to combine the options into groups with descriptive headings.
+
+### Labels
+
+Clear labels help users understand what information they should provide.
+
+Labels should always be visible regardless of the state of the field and should be announced by a screen reader on focus.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={selectFig3}
+    imageAlt="A graphic of a select component with the label 'Coffee type' and placeholder text 'Select one'."
+    state="good"
+    caption="Use labels to indicate the title of the field."
+  />
+  <DoDontCaution
+    imageSrc={selectFig4}
+    imageAlt="A graphic of a select component with no label and the placeholder text 'Coffee type'."
+    state="bad"
+    caption="Don't replace labels with placeholder text."
+  />
+</DoubleDoDontCaution>
+
+### Helper text
+
+Helper text should be included when additional information can help the user to either provide the right information or understand why or how the information will be used.
+
+Make sure any helper text that appears under an input is read when an assistive technology user stops at an input using ARIA.
+
+### Dismissible inputs
+
+Always allow the user to clear their selection by including a clear button inside the input field.
+
+## Searchable (single-select)
+
+<IcAlert
+  heading="Coming soon"
+  message="Searchable variant is currently in development."
+  variant="info"
+/>
+
+The single-select component can be set to be searchable to filter options in the option list. A user can open the option list to view the available options, but can also type into the input field to filter the option list to more easily find the desired option.
+
+Use the searchable variant when including several options in the option list, so that the user can quickly filter their desired selection.
+
+### Content
+
+Configure the component to show values that either match the search term, or show values that contain the search term. For example, United Kingdom matches the search term ‘Un’, and Tunisia contains the search term ‘Un’.
+
+## Related components
+
+- [Search bar](/components/search-bar)

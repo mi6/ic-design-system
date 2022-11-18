@@ -1,0 +1,117 @@
+body {
+  color: var(--ic-color-primary-text);
+}
+
+.heading-link {
+  transition: var(--ic-easing-transition-fast);
+}
+
+.heading-link:focus {
+  box-shadow: var(--ic-border-focus);
+  border-radius: var(--ic-border-radius);
+  outline: none;
+}
+
+.heading-link.after {
+  margin-left: var(--ic-space-xs);
+  padding: 0 var(--ic-space-xxxs);
+}
+
+.heading-link.after > svg {
+  vertical-align: middle;
+}
+
+.gatsby-highlight {
+  display: grid;
+}
+
+ic-alert {
+  margin-bottom: var(--ic-space-lg);
+}
+
+.force > p:first-of-type {
+  font-weight: 600;
+  font-size: 19;
+  line-height: 38px;
+  margin-bottom: var(--ic-space-lg);
+  margin-top: 36px;
+  letter-spacing: -0.1;
+}
+
+.force > p:first-of-type .gatsby-resp-image-wrapper {
+  float: right;
+  width: 50%;
+  margin: 0 0 var(--ic-space-xl) var(--ic-space-xl);
+}
+
+.force video {
+  margin-bottom: var(--ic-space-lg);
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.storybook {
+  font-size: 14px;
+}
+
+.page-container {
+  flex: 1;
+  margin-bottom: calc(var(--ic-space-xxl) + var(--ic-space-lg));
+}
+
+.page {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: fit-content(100%) 1fr;
+  grid-template-areas:
+    "sidenav"
+    "content";
+}
+
+.content-container {
+  grid-area: content;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 768px) {
+  .page-container {
+    margin-bottom: var(--ic-space-xxl);
+  }
+
+  .content-container {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .page-container {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .content-container {
+    width: calc(100% - var(--ic-space-xl));
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .page {
+    grid-template-areas: "content content sidenav" "content content sidenav";
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1384px) {
+  .content-container {
+    width: calc(100% - var(--ic-space-xxl));
+  }
+}
+
+@media screen and (min-width: 1385px) {
+  .content-container {
+    width: 800px;
+  }
+}

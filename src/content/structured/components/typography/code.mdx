@@ -1,0 +1,72 @@
+---
+path: "/components/typography/code"
+
+date: "2022-11-17"
+
+title: "Typography"
+
+status: "BETA"
+
+subTitle: "Use the typography component for consistent styling across typographical elements."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/typography/code.mdx"
+
+hidden: false
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/typography" },
+    { title: "Code", path: "/components/typography/code" },
+    { title: "Accessibility", path: "/components/typography/accessibility" },
+  ]
+---
+
+import { IcTypography } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-typography variant="h2">
+  <h5>H5 with H2 styling</h5>
+</ic-typography>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTypography variant="h2">
+  <h5>H5 with H2 styling</h5>
+</IcTypography>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcTypography variant="h2">
+    <h5>H5 with H2 styling</h5>
+  </IcTypography>
+</ComponentPreview>
+
+export const spacingSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-typography variant="h2" apply-vertical-margins="true">
+  <h5>H5 with H2 styling and margins applied</h5>
+</ic-typography>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTypography variant="h2" applyVerticalMargins="true">
+  <h5>H5 with H2 styling and margins applied</h5>
+</IcTypography>`,
+  },
+];
+
+<ComponentDetails component="ic-typography" />
+
+### With top and bottom margins applied
+
+<ComponentPreview snippets={spacingSnippets}>
+  <IcTypography variant="h2" applyVerticalMargins="true">
+    <h5>H5 with H2 styling and margins applied</h5>
+  </IcTypography>
+</ComponentPreview>

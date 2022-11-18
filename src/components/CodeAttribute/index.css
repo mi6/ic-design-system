@@ -1,0 +1,6 @@
+.type-container {
+  background-color: var(--ic-architectural-40);
+  margin-top: var(--ic-space-xxs);
+  padding: var(--ic-space-xxs) var(--ic-space-xs);
+  width: fit-content;
+}

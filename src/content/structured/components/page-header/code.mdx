@@ -1,0 +1,275 @@
+---
+path: "/components/page-header/code"
+
+date: "2022-11-15"
+
+title: "Page header"
+
+status: "BETA"
+
+subTitle: "A page header defines the top of the page content and is a consistent way to show page context, key actions and secondary navigation."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/page-header.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/page-header" },
+    { title: "Code", path: "/components/page-header/code" },
+    { title: "Accessibility", path: "/components/page-header/accessibility" },
+  ]
+---
+
+import {
+  IcPageHeader,
+  IcButton,
+  IcStatusTag,
+  IcStepper,
+  IcStep,
+  IcTextField,
+  IcNavigationItem,
+} from "@ukic/react";
+
+import { NavLink, MemoryRouter } from "react-router-dom";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-page-header heading="App title" sub-heading="App information"></ic-page-header>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPageHeader heading="App title" subHeading="App information" />`,
+  },
+];
+
+<ComponentPreview snippets={snippets} style={{ flexDirection: "column" }}>
+  <IcPageHeader heading="App title" subHeading="App information" />
+</ComponentPreview>
+
+<ComponentDetails component="ic-page-header" />
+
+## Variants
+
+### With actions, input and stepper
+
+export const withActionsInputStepper = [
+  {
+    language: "Web component",
+    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has an input area, actions &amp; stepper." reverse-order="true">
+  <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
+  <ic-button slot="actions" variant="primary">Create coffee</ic-button>
+  <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
+  <ic-stepper slot="stepper">
+    <ic-step step-title="Warm kettle" step-type="completed"></ic-step>
+    <ic-step step-title="Warm milk" step-subtitle="Optional" step-type="completed"></ic-step>
+    <ic-step step-title="Pour milk" step-type="current"></ic-step>
+  </ic-stepper>
+  <ic-text-field slot="input" placeholder="Enter your input" hide-label="true"></ic-text-field>
+</ic-page-header>
+    `,
+  },
+  {
+    language: "React",
+    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has an input area, actions and stepper." reverseOrder>
+  <IcStatusTag slot="heading-adornment" label="Beta" />
+  <IcButton slot="actions" variant="primary">
+    Create coffee
+  </IcButton>
+  <IcButton slot="actions" variant="tertiary">
+    Filter coffee
+  </IcButton>
+  <IcStepper slot="stepper">
+    <IcStep stepTitle="Warm kettle" stepType="completed" />
+    <IcStep stepTitle="Warm milk" stepSubtitle="Optional" stepType="completed" />
+      <IcStep stepTitle="Pour milk" stepType="current" />
+  </IcStepper>
+  <IcTextField slot="input" placeholder="Enter your input" hideLabel />
+</IcPageHeader>
+    `,
+  },
+];
+
+<ComponentPreview
+  snippets={withActionsInputStepper}
+  style={{ flexDirection: "column" }}
+>
+  <IcPageHeader
+    heading="Coffee recipes"
+    subHeading="This is a page header component that has an input area, actions and stepper."
+    reverseOrder
+  >
+    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcButton slot="actions" variant="primary">
+      Create coffee
+    </IcButton>
+    <IcButton slot="actions" variant="tertiary">
+      Filter coffee
+    </IcButton>
+    <IcStepper slot="stepper">
+      <IcStep stepTitle="Warm kettle" stepType="completed" />
+      <IcStep
+        stepTitle="Warm milk"
+        stepSubtitle="Optional"
+        stepType="completed"
+      />
+      <IcStep stepTitle="Pour milk" stepType="current" />
+    </IcStepper>
+    <IcTextField slot="input" placeholder="Enter your input" hideLabel />
+  </IcPageHeader>
+</ComponentPreview>
+
+### With actions, input and tabs
+
+export const withActionsInputTabs = [
+  {
+    language: "Web component",
+    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has an input area, actions &amp; tabs." reverse-order="true">
+  <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
+  <ic-button slot="actions" variant="primary">Create coffee</ic-button>
+  <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
+  <ic-text-field slot="input" placeholder="Enter your input" hide-label="true"></ic-text-field>
+  <ic-navigation-item slot="tabs" label="All recipes" href="#" selected="true"></ic-navigation-item>
+  <ic-navigation-item slot="tabs" label="Favourites" href="#"></ic-navigation-item>
+</ic-page-header>
+    `,
+  },
+  {
+    language: "React",
+    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has an input area, actions and tabs." reverseOrder>
+  <IcStatusTag slot="heading-adornment" label="Beta" />
+  <IcButton slot="actions" variant="primary">
+    Create coffee
+  </IcButton>
+  <IcButton slot="actions" variant="tertiary">
+    Filter coffee
+  </IcButton>
+  <IcTextField slot="input" placeholder="Enter your input" hideLabel />
+  <IcNavigationItem slot="tabs" label="All recipes" href="#" selected />
+  <IcNavigationItem slot="tabs" label="Favourites" href="#" />
+</IcPageHeader>
+    `,
+  },
+];
+
+<ComponentPreview
+  snippets={withActionsInputTabs}
+  style={{ flexDirection: "column" }}
+>
+  <IcPageHeader
+    heading="Coffee recipes"
+    subHeading="This is a page header component that has an input area, actions and tabs."
+    reverseOrder
+  >
+    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcButton slot="actions" variant="primary">
+      Create coffee
+    </IcButton>
+    <IcButton slot="actions" variant="tertiary">
+      Filter coffee
+    </IcButton>
+    <IcTextField slot="input" placeholder="Enter your input" hideLabel />
+    <IcNavigationItem slot="tabs" label="All recipes" href="#" selected />
+    <IcNavigationItem slot="tabs" label="Favourites" href="#" />
+  </IcPageHeader>
+</ComponentPreview>
+
+### With React Router
+
+export const withReactRouter = [
+  {
+    language: "React",
+    snippet: `<MemoryRouter initialEntries={["/"]}>
+  <IcPageHeader
+    heading="Coffee recipes"
+    sub-heading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
+    reverseOrder
+  >
+    <IcStatusTag slot="heading-adornment" label="Beta"></IcStatusTag>
+    <IcButton slot="actions" variant="primary"
+      >Create coffee
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcButton>
+    <IcButton slot="actions" variant="tertiary">Filter coffee</IcButton>
+    <IcNavigationItem slot="tabs" selected>
+      <NavLink slot="navigation-item" to="/">All recipes</NavLink>
+    </IcNavigationItem>        
+    <IcNavigationItem slot="tabs">
+      <NavLink slot="navigation-item" to="/favourites">Favourites</NavLink>
+    </IcNavigationItem>
+    <IcTextField slot="input" placeholder="Enter your input" hide-label style={{'@media (maxWidth: 576px)':{width: "304px"}}} />
+  </IcPageHeader>
+  <IcSectionContainer>
+      <Routes>
+        <Route path="/" element={() => <IcTypography>This page is about coffee recipes</IcTypography>}/>
+        <Route path="/favourites" element={() => <IcTypography>All your favourite coffee recipes in one place</IcTypography>}/>
+      </Routes>
+  </IcSectionContainer>
+</MemoryRouter>
+    `,
+  },
+];
+
+<ComponentPreview
+  snippets={withReactRouter}
+  style={{ flexDirection: "column" }}
+>
+  <MemoryRouter initialEntries={["/"]}>
+    <IcPageHeader
+      heading="Coffee recipes"
+      sub-heading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
+      reverseOrder
+    >
+      <IcStatusTag slot="heading-adornment" label="Beta" />
+      <IcButton slot="actions" variant="primary">
+        Create coffee
+        <svg
+          slot="icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcButton>
+      <IcButton slot="actions" variant="tertiary">
+        Filter coffee
+      </IcButton>
+      <IcNavigationItem slot="tabs" selected>
+        <NavLink slot="navigation-item" to="/">
+          All recipes
+        </NavLink>
+      </IcNavigationItem>
+      <IcNavigationItem slot="tabs">
+        <NavLink slot="navigation-item" to="/favourites">
+          Favourites
+        </NavLink>
+      </IcNavigationItem>
+      <IcTextField
+        slot="input"
+        placeholder="Enter your input"
+        hide-label
+        style={{ "@media (maxWidth: 576px)": { width: "304px" } }}
+      />
+    </IcPageHeader>
+    <IcSectionContainer />
+  </MemoryRouter>
+</ComponentPreview>

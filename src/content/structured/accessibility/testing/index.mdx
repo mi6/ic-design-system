@@ -1,0 +1,48 @@
+---
+path: "/accessibility/testing"
+
+navPriority: 5
+
+date: "2022-11-15"
+
+title: "Testing for accessibility"
+
+subTitle: "This section introduces you to different types of accessibility testing."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/index.mdx"
+---
+
+## Introduction
+
+Testing your code regularly during development can help to identify accessibility issues in both the design and implementation before you test it with users. Approach accessibility testing as you would standard functional testing.
+
+There are well known [limitations of automated accessibility testing](/accessibility/testing/automated-testing-limitation). Automated testing alone only finds between 30-50% of accessibility problems, so you have to do manual testing too.
+
+## What you need to do
+
+Your accessibility testing must include:
+
+- Using [automated browser testing](/accessibility/testing/automated-testing#browser-testing) regularly during development.
+- Conducting your own [keyboard-only testing](/accessibility/testing/manual-testing#keyboard-only-testing) for all parts of the app.
+- Conducting additional [manual testing](/accessibility/testing/manual-testing#full-manual-accessibility-testing) to account for limitations of automated accessibility testing.
+- Producing your own [documentation](/accessibility/documenting) of full, partial and non-conformances to the relevant accessibility standard.
+
+## Test as you develop
+
+Test as frequent as you can (ideally on every ticket and pull request). To help reduce the amount of accessibility problems you find in testing, you should update your development workflows to:
+
+- Use [linting](/accessibility/testing/automated-testing#linters) in any code to catch common problems introduced during development.
+- Consider using [integration testing](/accessibility/testing/automated-testing#integration-and-unit-testing) and [end-to-end testing](/accessibility/testing/automated-testing#end-to-end-testing).
+- [Test regularly with assistive technologies](/accessibility/testing/assistive-tech-testing), particularly the [NVDA screen reader](/accessibility/testing/assistive-tech-testing#testing-with-nvda).
+
+## Testing with real people
+
+You should aim to [design and test with real people](https://accessibility.blog.gov.uk/2018/03/20/why-accessibility-testing-with-real-users-is-so-important/) where possible. Reach out to your user community to get a diverse group of users involved in your usability testing.
+
+This may relate to disability and impairments but also skills, experience, ways of working and technology literacy.
+
+In general, [don't rely on any specific communities](/accessibility/introduction/discussing) for usability testing.
+
+### Always do your own testing first
+
+Complete all the accessibility testing you can before testing with users who have accessibility needs. This will let them focus on real usability issues instead of common accessibility issues.

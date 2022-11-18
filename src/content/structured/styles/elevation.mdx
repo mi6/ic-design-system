@@ -1,0 +1,51 @@
+---
+path: "/styles/elevation"
+
+navPriority: 6
+
+date: "2022-11-15"
+
+title: "Elevation"
+
+status: "BETA"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/elevation.mdx"
+---
+
+import elevationFig1 from "./images/fig-1-an-example-of-an-application-showing-the-different-layers-of-interaction.png";
+
+## Interaction layers
+
+Adding elevation with shadow helps to provide hierarchy to components.
+
+An app can be considered to be a set of different interaction layers that hold different types of components that exhibit similar behaviour. Components on each of these layers cast differing levels of shadow to provide the appearance of different heights from the page.
+
+There are three layers:
+
+1. The base layer contains most of the page content and scrolls within the viewport. Its contents are on the bottom layer of an app so cast little or no shadow.
+2. The overlay layer contains components that overlay the base layer. These overlaid components may stick to the viewport when scrolled and cast a small shadow.
+3. The modal layer sits above all other content and contains components that are important to display to the user and interrupt their current task. Components on this layer cast a large shadow.
+
+<DoDontCaution
+  imageSrc={elevationFig1}
+  imageAlt="A graphic of an application showing the different layers of interaction on the lef-hand side and a depth chart on the right. The chart is used to show the hierarchy of the interactions. Explained in the previous text."
+  state="none"
+  caption="An example of an application showing the different layers of interaction. This includes the base layer with some raised content, the overlay layer and the modal layer."
+/>
+
+## Shadows
+
+Each interaction layer has a defined shadow to provide the sense of depth.
+
+| <span style={{width: '5vw', display: 'inline-block'}}>**Token**</span> | **Description**                                                                  | **Perceived depth** |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------- |
+| none                                                                   | Components on the base layer cast no shadow.                                     | 0px                 |
+| --ic-elevation-raised                                                  | Raised components sit on the base layer and cast a slight shadow.                | 1px                 |
+| --ic-elevation-overlay                                                 | Components that sit in the overlay layer cast a small shadow.                    | 4px                 |
+| --ic-elevation-modal                                                   | The modal layer contains components that appear highest and cast a large shadow. | 8px                 |
+
+## Accessibility considerations
+
+The shadows are purely decorative and don't provide any additional meaning that can't otherwise be understood from the page contents or code.
+
+Shadows aren't used to distinguish a component from adjacent components or background layers. The components themselves provide enough contrast to ensure they stand out.

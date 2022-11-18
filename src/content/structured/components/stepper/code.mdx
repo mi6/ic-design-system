@@ -1,0 +1,55 @@
+---
+path: "/components/stepper/code"
+
+date: "2022-11-15"
+
+title: "Stepper"
+
+status: "BETA"
+
+subTitle: "A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/stepper.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/stepper" },
+    { title: "Code", path: "/components/stepper/code" },
+    { title: "Accessibility", path: "/components/stepper/accessibility" },
+  ]
+---
+
+import { IcStepper, IcStep } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-stepper>
+    <ic-step step-title="Order coffee" step-type="completed" />
+    <ic-step step-title="Pay for order" step-type="current" />
+    <ic-step step-title="Collect" step-type="disabled" />
+</ic-stepper>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcStepper>
+    <IcStep stepTitle="Order coffee" stepType="completed" />
+    <IcStep stepTitle="Pay for order" stepType="current" />
+    <IcStep stepTitle="Collect" stepType="disabled" />
+</IcStepper>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcStepper>
+    <IcStep stepTitle="Order coffee" stepType="completed" />
+    <IcStep stepTitle="Pay for order" stepType="current" />
+    <IcStep stepTitle="Collect" stepType="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+## Step details
+
+<ComponentDetails component="ic-step" />

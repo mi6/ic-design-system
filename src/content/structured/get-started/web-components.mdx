@@ -1,0 +1,136 @@
+---
+path: "/get-started/install-components/web-components"
+
+navPriority: 4
+
+date: "2022-11-15"
+
+title: "Web components"
+
+subTitle: "To use the components follow the relevant framework instructions."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/web-components.mdx"
+---
+
+## Introduction
+
+## Step one
+
+In the root of your project:
+
+```shell
+// using npm
+npm install @ukic/web-components @ukic/fonts
+
+// using yarn
+rm package-lock.json
+yarn add @ukic/web-components @ukic/fonts
+```
+
+## Step two
+
+Import `defineCustomElements` in your file. Where you do this will depend on your framework or build tool, but the format is as follows:
+
+```jsx
+import { defineCustomElements } from "@ukic/web-components/loader";
+```
+
+## Step three
+
+Call `defineCustomElements` in your file. Again, the file you edit will depend on your framework or build tool, but the format is as follows:
+
+```jsx
+//other code
+...
+defineCustomElements();
+```
+
+## Step four
+
+In your HTML, you can now declare a component as follows:
+
+```jsx
+<ic-status-tag label="Neutral"></ic-status-tag>
+```
+
+## Step five
+
+To get the correct styling with the ICDS components, import the core CSS file. Depending on your framework or build tool, this can be included in either a CSS file or Javascript\Typescript file.
+
+Add the following into the top level CSS file for your project.
+
+```css
+@import "@ukic/fonts/dist/fonts.css";
+@import "@ukic/web-components/dist/core/core.css";
+```
+
+## Webpack example
+
+Webpack is a tool for bundling web applications. This example assumes the following config in `webpack.config.js`. For more detailed information on Webpack configuration, please refer to the Webpack documentation.
+
+```jsx
+const path = require("path");
+
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  devServer: {
+    static: "./dist",
+  },
+  mode: "development",
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+};
+```
+
+### Step one
+
+```shell
+// using npm
+npm install @ukic/web-components @ukic/fonts
+
+// using yarn
+rm package-lock.json
+yarn add @ukic/web-components @ukic/fonts
+
+```
+
+### Step two
+
+In the file defined as the `entry` in the `webpack.config.js`, add the following:
+
+```jsx
+//src/index.js
+import "@ukic/fonts/dist/fonts.css";
+import "@ukic/web-components/dist/core/core.css";
+
+import { defineCustomElements } from "@ukic/web-components/loader";
+defineCustomElements();
+```
+
+### Step three
+
+You can now use any of the ICDS components so long as your HTML page includes the output file defined in your `webpack.config.js`. For example, including an [ic-status-tag](../../components/status-tags/code) below:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Started with ICDS</title>
+  </head>
+  <body>
+    <script src="dist/main.js"></script>
+    <ic-status-tag label="Neutral"></ic-status-tag>
+  </body>
+</html>
+```

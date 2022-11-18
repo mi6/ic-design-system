@@ -1,0 +1,331 @@
+---
+path: "/components/side-nav"
+
+navPriority: 17
+
+date: "2022-11-15"
+
+title: "Side navigation"
+
+status: "BETA"
+
+subTitle: "Side navigation provides an app's main navigation and is fixed on the left-hand side of the app. It includes the app's name, main navigation and optional secondary links."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/side-nav.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/side-nav" },
+    { title: "Code", path: "/components/side-nav/code" },
+    { title: "Accessibility", path: "/components/side-nav/accessibility" },
+  ]
+---
+
+import {
+  IcSideNavigation,
+  IcNavigationItem,
+  IcNavigationGroup,
+  IcDivider,
+  IcAlert,
+} from "@ukic/react";
+
+import sideNavigationFig1 from "./images/fig-1-dont-use-both-side-and-top-navigation.png";
+import sideNavigationFig2 from "./images/fig-2-avoid-side-navigation-for-complex-app-structures.png";
+import sideNavigationFig3 from "./images/fig-3-set-side-navigation-default-display.png";
+import sideNavigationFig4 from "./images/fig-4-static-side-navigation.png";
+import sideNavigationFig5 from "./images/fig-5-side-navigation-sub-menu.png";
+import sideNavigationFig6 from "./images/fig-6-personality-colourisation.png";
+import sideNavigationFig7 from "./images/fig-7-dont-position-side-nav-above-footer.png";
+import sideNavigationFig8 from "./images/fig-8-keep-menu-option-labels-concise-to-avoid-truncation.png";
+import sideNavigationFig9 from "./images/fig-9-tooltips-show-labels-on-hover-or-focus.png";
+import sideNavigationFig10 from "./images/fig-10-set-menu-options-to-display-labels.png";
+import sideNavigationFig11 from "./images/fig-11-use-menu-groups-and-drilldowns.png";
+
+## Introduction
+
+An example of the side navigation component.
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    height: "100%",
+    overflow: "hidden",
+    position: "relative",
+    justifyContent: "flex-start",
+    padding: "0px",
+  }}
+>
+  <IcSideNavigation
+    appTitle="Application Name"
+    version="v0.0.0"
+    status="BETA"
+    disableAutoParentStyling
+    inline
+  >
+    <svg
+      slot="app-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </svg>
+    <IcNavigationItem slot="primary-navigation" href="#" label="Home">
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcNavigationItem>
+    <IcDivider slot="primary-navigation" />
+    <IcNavigationItem slot="primary-navigation" href="#" label="Trends">
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcNavigationItem>
+    <IcNavigationGroup
+      slot="primary-navigation"
+      label="Second navigation group"
+      expandable="true"
+    >
+      <IcNavigationItem label="Different navigation" href="#">
+        <svg
+          slot="icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M23 8C23 9.1 22.1 10 21 10C20.82 10 20.65 9.98 20.49 9.93L16.93 13.48C16.98 13.64 17 13.82 17 14C17 15.1 16.1 16 15 16C13.9 16 13 15.1 13 14C13 13.82 13.02 13.64 13.07 13.48L10.52 10.93C10.36 10.98 10.18 11 10 11C9.82 11 9.64 10.98 9.48 10.93L4.93 15.49C4.98 15.65 5 15.82 5 16C5 17.1 4.1 18 3 18C1.9 18 1 17.1 1 16C1 14.9 1.9 14 3 14C3.18 14 3.35 14.02 3.51 14.07L8.07 9.52C8.02 9.36 8 9.18 8 9C8 7.9 8.9 7 10 7C11.1 7 12 7.9 12 9C12 9.18 11.98 9.36 11.93 9.52L14.48 12.07C14.64 12.02 14.82 12 15 12C15.18 12 15.36 12.02 15.52 12.07L19.07 8.51C19.02 8.35 19 8.18 19 8C19 6.9 19.9 6 21 6C22.1 6 23 6.9 23 8Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcNavigationItem>
+      <IcNavigationItem label="Navigation" href="#">
+        <svg
+          slot="icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M23 8C23 9.1 22.1 10 21 10C20.82 10 20.65 9.98 20.49 9.93L16.93 13.48C16.98 13.64 17 13.82 17 14C17 15.1 16.1 16 15 16C13.9 16 13 15.1 13 14C13 13.82 13.02 13.64 13.07 13.48L10.52 10.93C10.36 10.98 10.18 11 10 11C9.82 11 9.64 10.98 9.48 10.93L4.93 15.49C4.98 15.65 5 15.82 5 16C5 17.1 4.1 18 3 18C1.9 18 1 17.1 1 16C1 14.9 1.9 14 3 14C3.18 14 3.35 14.02 3.51 14.07L8.07 9.52C8.02 9.36 8 9.18 8 9C8 7.9 8.9 7 10 7C11.1 7 12 7.9 12 9C12 9.18 11.98 9.36 11.93 9.52L14.48 12.07C14.64 12.02 14.82 12 15 12C15.18 12 15.36 12.02 15.52 12.07L19.07 8.51C19.02 8.35 19 8.18 19 8C19 6.9 19.9 6 21 6C22.1 6 23 6.9 23 8Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcNavigationItem>
+    </IcNavigationGroup>
+    <IcNavigationItem
+      slot="primary-navigation"
+      href="#"
+      label="This is a very very very long label for the navigation item"
+    >
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcNavigationItem>
+    <IcNavigationItem slot="secondary-navigation" href="#" label="Settings">
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcNavigationItem>
+  </IcSideNavigation>
+</ComponentPreview>
+
+## When to use
+
+Use side navigation to help provide more screen space for main content. Side navigation is well-suited to apps that have mutually exclusive features which need to be switched between easily on any page.
+
+Use side navigation alongside additional components like [page headers](/components/page-header) to create a variety of different [layouts](/styles/layout-spacing) and navigation styles.
+
+## When not to use
+
+For intranet-style and content heavy apps, use [top navigation](/components/top-nav) as it's better suited for providing links to a large number of pages.
+
+Use either side navigation or top navigation. Don't use both at the same time.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig1}
+  imageAlt="An example app that shows a top navigation and side navigation used on the same page."
+  state="bad"
+  caption="Don't use both side navigation and top navigation at the same time."
+/>
+
+Avoid using side navigation if the app has many destinations grouped into a multi-level hierarchy. Instead use a [top navigation](/components/top-nav) with grouped links.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig2}
+  imageAlt="An example app using side navigation to display multiple groups of links."
+  state="caution"
+  caption="Avoid using side navigation for apps with complex page hierarchies. Instead use top navigation with grouped links."
+/>
+
+## Interaction behaviour
+
+Side navigation is expandable and displays the navigation labels and app info when expanded. Choose whether to display the side navigation as expanded or collapsed by default when the page loads.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig3}
+  imageAlt="An example of an application with the side navigation expanded or collapsed by default as the page loads."
+  state="good"
+  caption="Choose to display the side navigation as collapsed or expanded when the page loads."
+/>
+
+Set the side navigation to static if you want it to be either permanently expanded or permanently collapsed. This removes the expansion toggle button from the bottom of the side navigation.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig4}
+  imageAlt="Two examples of side navigation that are set to static collapsed and static expanded. No expansion toggle button is displayed in the bottom section of the side navigation."
+  state="good"
+  caption="Static side navigation examples."
+/>
+
+Use a drill-down menu option to provide access to child links in a sub-menu. The sub-menu can be closed by using the back button in the sub-menu's top section.
+
+Sub-menus can be nested, but avoid creating overly deep page hierarchies and consider using top navigation with grouped links instead.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig5}
+  imageAlt="An example side navigation component showing a menu option with a sub-menu of child links."
+  state="good"
+  caption="A side navigation component with a sub-menu."
+/>
+
+## Colour
+
+The side navigation uses the app's [theme colour](/styles/colour/#theme) as the background and automatically sets the foreground colour to ensure accessible contrast ratios. Change the app's theme colour to change the background colour of the side navigation and help distinguish your app from others your users may use.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig6}
+  imageAlt="Two examples of side navigation components using different theme colours."
+  state="good"
+  caption="Examples of side navigation using different theme colours."
+/>
+
+## Layout and placement
+
+Always position the side navigation on the left hand of the screen and make sure that it vertically fills the browser window.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig7}
+  imageAlt="An example app with a side navigation component that sits above the footer."
+  state="bad"
+  caption="Don't position the side navigation so that it does not vertically fill the browser window."
+/>
+
+## Content
+
+### App information
+
+Use your app's name, icon, status and version information in the side navigation's app info fields.
+
+### Labels and icons
+
+Follow the [content style guidelines](/styles/content-style) for all menu option labels as well as each option group labels.
+
+Follow the [icon style guidelines](/styles/icons) when selecting icons for menu options.
+
+Keep labels concise as they will truncate if they are too long to display in the side navigation.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig8}
+  imageAlt="An example side navigation showing menu items with long labels that are truncated."
+  state="caution"
+  caption="Keep labels concise to avoid truncation."
+/>
+
+### Menu items
+
+Set the side navigation menu items to reflect your app's main navigation links.
+
+By default, menu items will only display their icon when the side navigation is collapsed. The item label will be displayed via a tooltip when hovering or focusing on the menu item.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig9}
+  imageAlt="An example side navigation component showing the menu option labels in a tooltip when hovering or focusing on the menu option."
+  state="good"
+  caption="Side navigation shows menu item labels using tooltips when collapsed."
+/>
+
+Set the menu items to display their labels in the collapsed state by default if this will aid the recognition of the feature. However, take care when doing this as long menu item labels will be truncated.
+
+<DoDontCaution
+  imageSrc={sideNavigationFig10}
+  imageAlt="An example side navigation in collapsed state showing labels below the icons for each menu option."
+  state="good"
+  caption="Set menu items to display their labels even in the collapsed state if this aids recognition of the feature."
+/>
+
+Group related menu items into expandable menu item groups.
+
+Use a drill-down menu item if the menu item has a large number of child links to display. This will display the child links in the side navigation's sub-menu.
+
+<IcAlert
+  heading="Coming soon"
+  message="Drill-down menu functionality is in development."
+  variant="info"
+/>
+
+<DoDontCaution
+  imageSrc={sideNavigationFig11}
+  imageAlt="An example of side navigation showing grouped menu items and drill-down menu items."
+  state="good"
+  caption="Side navigation showing grouped menu items and drill-down menu items."
+/>
+
+### Bottom menu items
+
+Use the sticky bottom menu section to provide quick links to global app features or external links.
+
+## Accessibility considerations
+
+Make sure to include alt-text when specifying icons for menu items.
+
+## Related Components
+
+- [Top navigation](/components/top-nav)

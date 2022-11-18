@@ -1,0 +1,116 @@
+---
+path: "/get-started/install-components/vue"
+
+navPriority: 3
+
+date: "2022-11-15"
+
+title: "Vue"
+
+subTitle: "To use the components follow the relevant framework instructions."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/vue.mdx"
+---
+
+These instructions were used with Vue version 3.2.31.
+
+## Step one
+
+In the root of your project:
+
+```shell
+// using npm
+npm install @ukic/web-components @ukic/fonts
+
+// using yarn
+rm package-lock.json
+yarn add @ukic/web-components @ukic/fonts
+```
+
+## Step two
+
+Add options into your relevant config.
+
+### In-Browser config
+
+```jsx
+// Only works if using in-browser compilation.
+app.config.compilerOptions.isCustomElement = (tag) => tag.includes("-");
+```
+
+### Vite config
+
+```jsx
+// vite.config.js
+import vue from "@vitejs/plugin-vue";
+
+export default {
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          // treat all tags with a dash as custom elements
+          isCustomElement: (tag) => tag.includes("-"),
+        },
+      },
+    }),
+  ],
+};
+```
+
+### Vue CLI config
+
+```jsx
+// vue.config.js
+module.exports = {
+  chainWebpack: (config) => {
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .tap((options) => ({
+        ...options,
+        compilerOptions: {
+          // treat any tag that starts with ic- as custom elements
+          isCustomElement: (tag) => tag.startsWith("ic-"),
+        },
+      }));
+  },
+};
+```
+
+## Step three
+
+Import defineCustomElements in your `main.js` file.
+
+```jsx
+import { defineCustomElements } from "@ukic/web-components/loader";
+```
+
+## Step four
+
+Call defineCustomElements at the bottom of `main.js`.
+
+```jsx
+//other configuration
+...
+defineCustomElements();
+```
+
+## Step five
+
+Declare and use components in your file.
+
+```html
+<ic-status-tag label="Neutral"></ic-status-tag>
+```
+
+## Step six
+
+To get the correct styling with the ICDS components, import the core CSS file.
+
+Add the following into the top level CSS file for your project.
+
+```css
+@import "@ukic/fonts/dist/fonts.css";
+@import "@ukic/web-components/dist/core/core.css";
+```

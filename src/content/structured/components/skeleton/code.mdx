@@ -1,0 +1,41 @@
+---
+path: "/components/skeleton/code"
+
+date: "2022-11-15"
+
+title: "Skeleton"
+
+status: "BETA"
+
+subTitle: "Skeleton loading states are representations of the shape of content that help inform users that a specific type of component is loading."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/skeleton.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/skeleton" },
+    { title: "Code", path: "/components/skeleton/code" },
+    { title: "Accessibility", path: "/components/skeleton/accessibility" },
+  ]
+---
+
+import { IcSkeleton } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-skeleton/></ic-skeleton>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSkeleton />`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcSkeleton />
+</ComponentPreview>
+
+<ComponentDetails component="ic-skeleton" />

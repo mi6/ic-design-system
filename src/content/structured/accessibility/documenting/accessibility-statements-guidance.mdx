@@ -1,0 +1,199 @@
+---
+path: "/accessibility/documenting/accessibility-statements-guidance"
+
+navPriority: 1
+
+date: "2022-11-15"
+
+title: "Accessibility Statement guidance"
+
+subTitle: "How to fill out and maintain an Accessibility Statement."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/accessbility-statements/guidance.mdx"
+---
+
+import { IcAlert } from "@ukic/react";
+
+## Introduction
+
+This page tells you how to fill in an [Accessibility Statement](/accessibility/documenting/accessibility-statements) if you work for MI6, MI5, GCHQ, or one of our partners. [Templates are available](/accessibility/documenting/accessibility-statements#the-template).
+
+The numbered headings correspond to the sections you will find within the Accessibility Statement.
+
+It's based on the [sample accessibility statement](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website) published by the Government Digital Service (GDS).
+
+Most of it's legally required and needs to be published to comply with the organisation's accessibility requirements. Don't change the order of sections or wording unless this guidance tells you to.
+
+Don't use the statement to justify why an app is inaccessible, other than in the "Disproportionate Burden" section.
+
+You can also [download this guidance (DOCX)](/accessibility-statement-guidance.docx).
+
+### Where to publish
+
+The [when to create and update](/accessibility/documenting/when-to-create-and-update) page explains where to publish the completed Accessibility Statement.
+
+### How to use the template
+
+You may need to make minor changes such as changing between singular and plural or 'app to service' but don't re-order, change titles or remove anything unless this guidance tells you to.
+
+Keep the language simple. This statement needs to be understandable for everyone in the department, it shouldn't be technical.
+
+Update everything in square brackets (between '['and ']') - remove the square brackets.
+
+It has examples and sample wording and guidance. Remove anything marked as 'EXAMPLE'.
+
+## 1. Overview
+
+This section is used to highlight how accessible the app is. The sample bullet points aren't a checklist but will be true when the app is compliant to EN 301 549 or the Web Content Accessibility Guidelines (WCAG) Level A and AA criteria.
+
+If the app doesn't have user guides, remove that statement.
+
+Keep this section up to date if part or most of the app doesn't comply and the statements in the bullet points aren't true.
+
+If the app is fully or partly made up of third-party software, note this here. Reference the conformance level that the vendor provides. If the vendor doesn't provide accessibility documentation, request it from them.
+
+## 2. How accessible this app is
+
+<IcAlert
+  message="Delete the examples in the template before publishing"
+  variant="info"
+/>
+
+This section is used to summarise any accessibility problems in the app. Document workarounds to inaccessible content or features.
+Consider that a user of the app and think about what issues they would want to know about.
+
+Provide full detail of the accessibility problem later under 'non-accessible content'.
+
+If the app is compliant and there's no accessibility problems, include the sentence:
+_“We're confident that this app is accessible.”_
+
+## 3. What to do if you can't access parts of this app
+
+This section is used to explain alternatives and workarounds for accessibility problems that you are aware of.
+
+It's not possible to predict all possible needs someone might have when using your app. The app must have a process to deal with these requests even if the app is compliant to the relevant standard.
+
+**Don't** use this section to justify why something is not accessible.
+
+If the app is corporately supported, it's likely that accessibility adjustments would be requested through a Service Desk. If the app is not corporately supported, the development team must be able to deal with these requests.
+
+## 4. Reporting accessibility problems with this app
+
+Don't remove this section. You always need to provide a way for users to report a problem with your app, even if it's public facing.
+
+If this is a commercial app or part of it relies on a third-party vendor, be clear how this might impact the time it takes to fix accessibility problems.
+
+## 5. Enforcement procedure
+
+This section is used to make clear how the accessibility of the app can be challenged.
+
+Remove the second paragraph if the statement will be published publicly online.
+
+## 6. Contacting us
+
+This section is used to explain how people can contact the team that looks after the app. Change this section depending on your app and team.
+
+Only reference the Service Desk if you've agreed that support route.
+
+Where possible, the contact details you provide should point to a team or a group. This avoids a single point of failure if your point of contact were to leave their role.
+
+## 7. Technical information about this app's accessibility
+
+This section is used to make a formal statement about how accessible the app is.
+
+The form of words here are legally required, so **don't change it** except for adding in the name of Department.
+
+### 7(a). Compliance Status
+
+There's a legally required way of expressing the compliance status of your app, so don't change any words. Delete the statements that don't apply.
+
+- If the app meets **all** Level A and Level AA success criteria of WCAG Level 2.1 then it's 'fully compliant'.
+- If the app meets **more than half** of the Level A and Level AA success criteria of WCAG Level 2.1 then it's 'partially compliant'.
+- If the app meets **less than half** of the Level A and Level AA success criteria of WCAG Level 2.1 then it's 'not compliant'.
+
+If your app, service, or product needs to meet the EN 301 549 standard, then use the above thresholds and insert the following sentence:
+_“This [product/website/app/service] is [fully/partially/not] compliant to the EN 301 549 standards.”_
+
+It's likely that the WCAG standards also apply to EN 301 549 products, so retain the appropriate WCAG statement.
+
+## 8. Non-accessible content
+
+This section is used to fully explain accessibility problems in the app.
+
+If no section applies, you can delete this section. This section must be added later if accessibility problems are found because overall compliance will have changed.
+
+**Don't change or remove** the headings in this section. You can add subheadings to better format the lists of problems if needed.
+
+### 8(a). Non-compliance with the accessibility regulations
+
+<IcAlert
+  message="Delete the example in the template before publishing"
+  variant="info"
+/>
+
+This section is used to list accessibility problems in your apps that need to be fixed.
+
+For each accessibility problem, list:
+
+- A description of the accessibility problem.
+- The EN 301 549 or WCAG 2.1 success criteria that are partially or not supported because of the accessibility problem.
+- When the problem will be fixed. You must fix accessibility problems **within a defined timeframe.**
+
+Don't mention problems covered by a Disproportionate Burden or Regulation exemption.
+
+If there are no accessibility problems, include the following sentence, amending as appropriate:
+_“There are no non-compliances with the accessibility regulations other than those in “Disproportionate burden"/"Content that's not within the scope of the accessibility regulations""_
+
+### 8(b). Disproportionate burden
+
+<IcAlert
+  message="Delete the example in the template before publishing"
+  variant="info"
+/>
+
+This section is used if the app has an approved disproportionate burden assessment. Disproportionate burden assessments must always be approved by local accessibility owners.
+
+A disproportionate burden is a claim made when the Department can't reasonably fix or make the app accessible.
+
+If the app does not need a disproportionate burden assessment, include the sentence:
+_“We're not claiming a disproportionate burden to making any part of [app name] compliant to the accessibility regulations.”_
+
+### 8(c). Content that's not within the scope of the accessibility regulations
+
+<IcAlert
+  message="Delete the example in the template before publishing"
+  variant="info"
+/>
+
+This section is used to list which parts of the app will not be made accessible because they're explicitly excluded in the Regulations. Refer to the Department's accessibility requirements for what is explicitly excluded.
+
+If the app does not have content that's not within the scope of the accessibility regulations, include the sentence:
+_“There is no content in the app that is outside the scope of the accessibility regulations.”_
+
+## 9. How we tested this app
+
+This section is used to explain how the app was tested against the relevant standard (WCAG or EN 301 549).
+This includes which version(s) of the app were tested, where they are hosted and how pages were chosen for testing.
+
+If relevant, include information from third-party auditors and reports that they have provided.
+
+There is no requirement to test an app with a specific approach, but a combination of [manual and automatic techniques](/accessibility/testing) is recommended.
+
+## 10. What we're doing to improve accessibility
+
+This section is used to explain how you will make sure that the app remains accessible through its lifecycle. Linking to a product or accessibility roadmap is optional, but it will help users understand what improvements will be made in future.
+
+Where the app has existing accessibility problems, explain the timeframe in which the problems will be fixed.
+
+## 11. Preparation of this Accessibility Statement
+
+This section is used to say when the latest accessibility testing was done, when this statement was updated and to link to relevant reports.
+
+The wording in the first sentence about when the statement was prepared is legally required. **Don't change it.**
+
+Include multiple Accessibility Conformance Reports if appropriate. The reports must match the latest app and this Accessibility Statement.
+
+Instances where multiple Accessibility Conformance Reports should be referenced:
+
+- The app consists of multiple interacting user interfaces.
+- The app is based on third party software that has been configured. Provide the vendor's Accessibility Conformance Report (VPAT/ACR) and then a supplementary report that covers any user interface changes caused by your configuration or customisation of the app.

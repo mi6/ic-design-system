@@ -1,0 +1,5 @@
+@media screen and (max-width: 1200px) {
+  .heading-extra-large {
+    margin-top: var(--ic-space-xs);
+  }
+}

@@ -1,0 +1,104 @@
+---
+path: "/components/status-tags/code"
+
+date: "2022-11-15"
+
+title: "Status tag"
+
+status: "BETA"
+
+subTitle: "Status tags are short, clear and digestible ways to display the status of something on the page."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/status-tags.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/status-tags" },
+    { title: "Code", path: "/components/status-tags/code" },
+    { title: "Accessibility", path: "/components/status-tags/accessibility" },
+  ]
+---
+
+import { IcStatusTag } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-status-tag label="Neutral" status="neutral"></ic-status-tag>
+<ic-status-tag label="Success" status="success"></ic-status-tag>
+<ic-status-tag label="Warning" status="warning"></ic-status-tag>
+<ic-status-tag label="Danger" status="danger"></ic-status-tag>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcStatusTag label="Neutral" status="neutral"/>
+<IcStatusTag label="Success" status="success"/>
+<IcStatusTag label="Warning" status="warning"/>
+<IcStatusTag label="Danger" status="danger"/>`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsDefault}>
+  <IcStatusTag label="Neutral" status="neutral" />
+  <IcStatusTag label="Success" status="success" />
+  <IcStatusTag label="Warning" status="warning" />
+  <IcStatusTag label="Danger" status="danger" />
+</ComponentPreview>
+
+<ComponentDetails component="ic-status-tag" />
+
+## Variants
+
+### Emphasis
+
+export const snippetsEmphasis = [
+  {
+    language: "Web component",
+    snippet: `<ic-status-tag label="Neutral" status="neutral" variant="secondary"></ic-status-tag>
+<ic-status-tag label="Success" status="success" variant="secondary"></ic-status-tag>
+<ic-status-tag label="Warning" status="warning" variant="secondary"></ic-status-tag>
+<ic-status-tag label="Danger" status="danger" variant="secondary"></ic-status-tag>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcStatusTag label="Neutral" status="neutral" variant="secondary" />
+<IcStatusTag label="Success" status="success" variant="secondary" />
+<IcStatusTag label="Warning" status="warning" variant="secondary" />
+<IcStatusTag label="Danger" status="danger" variant="secondary" />`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsEmphasis}>
+  <IcStatusTag label="Neutral" status="neutral" variant="secondary" />
+  <IcStatusTag label="Success" status="success" variant="secondary" />
+  <IcStatusTag label="Warning" status="warning" variant="secondary" />
+  <IcStatusTag label="Danger" status="danger" variant="secondary" />
+</ComponentPreview>
+
+### Dense
+
+export const snippetsDense = [
+  {
+    language: "Web component",
+    snippet: `<ic-status-tag label="Neutral" status="neutral" dense="true"></ic-status-tag>
+<ic-status-tag label="Success" status="success" dense="true"></ic-status-tag>
+<ic-status-tag label="Warning" status="warning" dense="true"></ic-status-tag>
+<ic-status-tag label="Danger" status="danger" dense="true"></ic-status-tag>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcStatusTag label="Neutral" status="neutral" dense />
+<IcStatusTag label="Success" status="success" dense />
+<IcStatusTag label="Warning" status="warning" dense />
+<IcStatusTag label="Danger" status="danger" dense />`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsDense}>
+  <IcStatusTag label="Neutral" status="neutral" dense />
+  <IcStatusTag label="Success" status="success" dense />
+  <IcStatusTag label="Warning" status="warning" dense />
+  <IcStatusTag label="Danger" status="danger" dense />
+</ComponentPreview>

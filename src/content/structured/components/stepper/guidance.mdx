@@ -1,0 +1,171 @@
+---
+path: "/components/stepper"
+
+navPriority: 20
+
+date: "2022-11-15"
+
+title: "Stepper"
+
+status: "BETA"
+
+subTitle: "A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/stepper.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/stepper" },
+    { title: "Code", path: "/components/stepper/code" },
+    { title: "Accessibility", path: "/components/stepper/accessibility" },
+  ]
+---
+
+import { IcStepper, IcStep, IcAlert } from "@ukic/react";
+import stepperFig1 from "./images/fig-1-stepper-component-being-used-to-describe-the-steps-of-a-multistep-form.png";
+import stepperFig2 from "./images/fig-2-use-concise-labels-within-a-stepper.png";
+import stepperFig3 from "./images/fig-3-dont-use-long-labels-within-a-stepper.png";
+import stepperFig4 from "./images/fig-4-a-stepper-accompanied-by-a-page-title-showing-how-the-stepper-should-be-implemented.png";
+import stepperFig5 from "./images/fig-5-dont-use-a-compact-stepper-if-the-page-content-does-not-include-the-step-name-in-a-heading.png";
+import stepperFig6 from "./images/fig-6-a-stepper-that-is-leftaligned-at-the-top-of-the-page-showing-how-the-stepper-should-be-implemented.png";
+import stepperFig7 from "./images/fig-7-a-stepper-that-is-centrealigned-at-the-top-of-the-page-showing-how-the-stepper-should-not-be-implemented.png";
+import stepperFig8 from "./images/fig-8-use-compact-stepper-when-there-is-not-much-room.png";
+
+## Introduction
+
+An example of the stepper component.
+
+<ComponentPreview>
+  <IcStepper>
+    <IcStep stepTitle="Order coffee" stepType="completed" />
+    <IcStep stepTitle="Pay for order" stepType="current" />
+    <IcStep stepTitle="Collect" stepType="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+## Component variants
+
+### Default
+
+Use the default stepper when you have the available space.
+
+### Compact
+
+<IcAlert
+  heading="Coming soon"
+  message="Compact stepper functionality is currently in development."
+  variant="info"
+/>
+
+Use the compact variant for compact layouts and processes with many steps.
+
+## When to use
+
+Use steppers when a multi-step linear process is required. Steps are displayed from left to right and show the direction of movement through the process.
+
+<DoDontCaution
+  imageSrc={stepperFig1}
+  imageAlt="An image showing a form titled 'Make a coffee' featuring a stepper with four steps, titled 'Take order', 'Make drink', 'Take payment', and 'Finish'. The first step is selected, and the page below shows three input fields and a button labelled 'Confirm order'."
+  state="good"
+  caption="Stepper component being used to describe the steps of a multi-step form."
+/>
+
+Always indicate which step the user is currently on. This gives a sense of control and describes their position in the process in relation to where they have been, as well as how much they have left to do.
+
+## When not to use
+
+Don't use the stepper to indicate a non-linear process where steps can be completed in any order. Linear processes require each step to be completed in order.
+
+## Interaction behaviour
+
+### Steps
+
+Steps are single elements which together form the stepper. Steps have 4 different states:
+
+- Active: Indicates that the step is available but not yet completed by the user.
+
+- Current: Shows the step the user is currently on.
+
+- Completed: Shows a previous step which has been completed by the user.
+
+- Disabled: Shows a step that is unavailable. This could be because it's conditional on another step. If a step is always unavailable, then it should not be included in the stepper when it's loaded.
+
+<ComponentPreview>
+  <IcStepper>
+    <IcStep stepTitle="Add details" stepType="completed" />
+    <IcStep stepTitle="Customer" stepType="current" />
+    <IcStep stepTitle="Upload" />
+    <IcStep stepTitle="Submit" stepType="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+## Layout and placement
+
+Always align steppers to the left and place them above the main body content of the page.
+
+<DoDontCaution
+  imageSrc={stepperFig6}
+  imageAlt="An image showing a stepper with four steps, titled 'Warm kettle', 'Add milk', 'Pour water', and 'Drink coffee'. The first step is selected, and the stepper is accurately placed at the top-left of a page."
+  state="good"
+  caption="A stepper that is left-aligned at the top of the page, showing how the stepper should be implemented."
+/>
+
+<DoDontCaution
+  imageSrc={stepperFig7}
+  imageAlt="An image showing a stepper with four steps, titled 'Warm kettle', 'Add milk’, 'Pour water’, and 'Drink coffee'. The first step is selected, and the stepper is incorrectly placed in the centre of a page."
+  state="bad"
+  caption="A stepper that is centre-aligned at the top of the page, showing how the stepper should not be implemented."
+/>
+
+When a stepper is too large to fit comfortably within its container, switch to using the compact stepper. This shows the current step along with its status, as well as the next step in the process.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={stepperFig8}
+    imageAlt="A compact stepper showing the current step labelled 'warm kettle' and the next step label 'add milk'."
+    state="good"
+    caption="The compact stepper shows the current step as well as the next step in the process."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+### Labels
+
+Use the step labels to describe each step concisely in one or two words. Avoid using lengthy step labels.
+
+<DoDontCaution
+  imageSrc={stepperFig2}
+  imageAlt="An image showing a stepper with four steps, labelled 'Take order', 'make drink', 'Take payment', and 'Finish’. The first step is selected."
+  state="good"
+  caption="Use concise labels within a stepper."
+/>
+
+<DoDontCaution
+  imageSrc={stepperFig3}
+  imageAlt="An image showing a stepper with four steps, each with very long labels. The first step is selected."
+  state="caution"
+  caption="Avoid using long labels within a stepper."
+/>
+
+When a stepper is used, always use page titles and section headings on the page content itself.
+
+<DoDontCaution
+  imageSrc={stepperFig4}
+  imageAlt="An image showing a form titled 'Make a coffee' featuring a stepper with four steps, labelled 'Take order', 'Make drink', 'Take payment', and 'Finish’. The first step, 'Take order', is selected, and the page below shows three input fields and a button labelled 'Confirm order'."
+  state="good"
+  caption="A stepper accompanied by a page title, showing how the stepper should be implemented."
+/>
+
+Use a stepper without step labels if the step content is clearly labelled itself. Do not omit step labels if no headings are provided in the step content.
+
+<DoDontCaution
+  imageSrc={stepperFig5}
+  imageAlt="An image showing a form without a heading featuring a stepper with 4 steps, each without a label. The first unlabelled step is selected, and the page below shows three input fields and a button labelled ‘Confirm order’."
+  state="bad"
+  caption="Don’t use a stepper without step labels if the page content does not include the step name in a heading."
+/>
+
+### Validation
+
+Validate each step as the user moves through the process. Use the standard error handling approach to display inline [alerts](/components/alerts) and error messages if the user attempts to proceed to the next step without first completing the current step correctly.

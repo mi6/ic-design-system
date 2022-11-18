@@ -1,0 +1,81 @@
+---
+path: "/accessibility/testing/assistive-tech-testing"
+
+navPriority: 5
+
+date: "2022-11-15"
+
+title: "Testing with assistive technologies"
+
+subTitle: "Don't rely on users of assistive technology to do the testing for you."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/assistive-tech-testing.mdx"
+---
+
+## Introduction
+
+Testing with assistive technologies can help to spot accessibility problems that weren't picked up in [automated](/accessibility/testing/automated-testing) and [manual](/accessibility/testing/manual-testing) testing. It's not always required to comply with the Policy but it’s a way to make a huge difference to people who use your apps and services.
+
+A wide range assistive technologies are used by people. These often include screen readers, screen magnifiers, colour overlays and alternative input hardware.
+
+GOV.UK provides more [examples and a definition of an assistive technology](https://www.gov.uk/government/publications/assistive-technology-definition-and-safe-use/assistive-technology-definition-and-safe-use).
+
+As with any software release, users always find bugs, and some of those may be accessibility problems. However, by performing automated and manual accessibility testing, the severity of accessibility problems should reduce.
+
+## Screen readers and magnifiers
+
+People with [visual impairments](/accessibility/needs/visual) rely on different types of assistive technologies. Some people without visual impairments might also use these tools because they prefer them.
+
+Those that are blind, with little to no sight, depend on a screen reader to render a web page 'in text'. Once as text this can be changed into other formats such as speech and braille.
+
+The majority of visually impaired users have some sight or low vision and may rely on magnifiers which enlarge the screen content.
+
+Tools used by visually impaired users include:
+
+- [JAWS](https://www.freedomscientific.com/products/software/jaws/) is a licensed screen reader for Windows.
+- [ZoomText](https://www.zoomtext.com/) is a licensed magnifier for Windows.
+- [Fusion](https://www.freedomscientific.com/products/software/fusion/) where Jaws and ZoomText are packaged together.
+- [NVDA](https://www.nvaccess.org/) is a free and open-source screen reader for Windows.
+- [SuperNova](https://yourdolphin.com/en-gb/products/individuals/supernova-magnifier-screen-reader) is licensed and both a screen reader and magnifier for Windows.
+- [VoiceOver](https://help.apple.com/voiceover/mac/) is a screen reader built in into all Apple products.
+- Windows includes [Windows Magnifier](https://support.microsoft.com/en-gb/help/11542/windows-use-magnifier-to-make-things-easier-to-see), a screen magnifier.
+- MacOS includes [Apple Zoom](https://support.apple.com/en-gb/guide/mac-help/mh35715/mac), a screen magnifier.
+
+The Design System recommends using NVDA and VoiceOver, depending on your platform, for screen reader testing.
+
+When testing with a screen reader, check that you can interact with all features and understand the content without looking at the screen.
+
+When testing with a magnifier, check that you can see and interact with all features easily without the need for excessive scrolling.
+
+## Voice control
+
+Voice control or speech recognition lets you navigate and control your computer with your voice alone.
+
+Users include those with [dyslexia](/accessibility/needs/neurodiversity) who may have difficulty with spelling or is better at communicating verbally. Others may have [motor impairments](/accessibility/needs/motor) and may be unable to use a keyboard or mouse.
+
+[Dragon](https://www.nuance.com/en-gb/dragon.html) is a licensed speech recognition software predominantly for Windows, as support for Mac has discontinued.
+
+Alternatives include [Windows Speech Recognition](https://support.microsoft.com/en-us/help/4042244/windows-10-use-dictation) and [Apple Dictation](https://support.apple.com/en-in/guide/mac-help/mh40584/mac).
+
+When testing with a voice control software, check that you can interact with all features.
+
+## High contrast modes
+
+High contrast modes allow users with low vision to customise the colours (and sometimes the font).
+
+Both Windows and Mac provide high contrast modes in [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-10-use-high-contrast-mode) and [Apple Display Preferences](https://support.apple.com/en-in/guide/mac-help/unac089/mac).
+
+There are also browser plugins to customise users experiences and override styles in your apps and services.
+
+Test your app with various colour and font combinations to ensure your app can still be used. This will ensure that your CSS is written in a way that can be overridden by the user.
+
+## Available assistive technologies
+
+Many of the assistive technologies used are licensed. The table below summarises some of the assistive technologies available at no extra cost for testing.
+
+| Assistive Technology | Windows                                                                                                                                                              | Mac                                                                                                                  |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Screen Reader        | [NVDA](https://www.nvaccess.org/), otherwise [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1) | [NVDA](https://www.nvaccess.org/) on a Virtual Machine, otherwise [Voiceover](https://help.apple.com/voiceover/mac/) |
+| Magnifier            | [Windows Magnifier](https://support.microsoft.com/en-gb/help/11542/windows-use-magnifier-to-make-things-easier-to-see)                                               | [Apple Zoom](https://support.apple.com/en-gb/guide/mac-help/mh35715/mac)                                             |
+| Voice Control        | [Windows Speech Recognition](https://support.microsoft.com/en-us/windows/use-voice-recognition-in-windows-10-83ff75bd-63eb-0b6c-18d4-6fae94050571)                   | [Apple Dictation](https://support.apple.com/en-in/guide/mac-help/mh40584/mac)                                        |
+| Contrast Mode        | [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-10-use-high-contrast-mode)                                                       | [Apple Display Preferences](https://support.apple.com/en-in/guide/mac-help/unac089/mac)                              |

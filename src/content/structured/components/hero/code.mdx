@@ -1,0 +1,69 @@
+---
+path: "/components/hero/code"
+
+date: "2022-11-15"
+
+title: "Hero"
+
+status: "BETA"
+
+subTitle: "A large banner found at the top of page used to introduce page content, provide key actions and add personality."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/hero.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/hero" },
+    { title: "Code", path: "/components/hero/code" },
+    { title: "Accessibility", path: "/components/hero/accessibility" },
+  ]
+---
+
+import { IcHero, IcButton } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-hero
+    heading="New coffee launches 14 September 2022"
+    subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary.">
+  <ic-button variant="primary" button-style="light" slot="interaction">
+  Order now
+  </ic-button>
+  <ic-button variant="secondary" button-style="light" slot="interaction">
+  Submit new flavour
+  </ic-button>
+</ic-hero>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcHero
+  heading="New coffee launches 14 September 2022"
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary.">
+  <IcButton variant="primary" buttonStyle="light" slot="interaction">
+    Order now
+  </IcButton>
+  <IcButton variant="secondary" buttonStyle="light" slot="interaction">
+  Submit new flavour
+  </IcButton>
+</IcHero>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcHero
+    heading="New coffee launches 14 September 2022"
+    subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+  >
+    <IcButton variant="primary" buttonStyle="light" slot="interaction">
+      Order now
+    </IcButton>
+    <IcButton variant="secondary" buttonStyle="light" slot="interaction">
+      Submit new flavour
+    </IcButton>
+  </IcHero>
+</ComponentPreview>
+
+<ComponentDetails component="ic-hero" />

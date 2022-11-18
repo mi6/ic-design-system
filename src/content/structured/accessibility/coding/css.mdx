@@ -1,0 +1,35 @@
+---
+path: "/accessibility/coding/css"
+
+navPriority: 9
+
+date: "2022-11-15"
+
+title: "CSS and inline styles"
+
+subTitle: "Follow our accessibility tips for CSS."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/css.mdx"
+---
+
+## Introduction
+
+Write CSS in a way that can be overridden by the user via their browser.
+
+Don't use inline styles; keep CSS separate to the HTML. This can be a separate CSS stylesheet or via other techniques like CSS-in-JS.
+
+Decoupling the styling will create more flexibility as the visual styling can be updated without touching the HTML.
+
+Don't use `!important` on a style declaration as this overrides any other declarations. You can read more information from Mozilla on [importance exception](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#The_!important_exception).
+
+## When it goes wrong
+
+Both inline styles and `!important` will override user-defined styles that can be set using browsers and assistive technologies.
+
+Assistive technologies and users may change browser default styles to improve accessibility. For example users with visual impairments or dyslexia may increase the font size or override colours.
+
+## Best practice and WCAG
+
+Inline styles is mentioned in half of the HMTL best practice articles and will help meet [guideline 4.1 – compatible](https://www.w3.org/WAI/WCAG21/quickref/#compatible).
+
+Whilst CSS is mentioned in a number of advisory techniques for a few success criteria, there are currently none relating specifically to ensuring CSS can be overridden by the user.

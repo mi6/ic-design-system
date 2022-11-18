@@ -1,0 +1,191 @@
+---
+path: "/components/links"
+
+navPriority: 10
+
+date: "2022-11-15"
+
+title: "Link"
+
+status: "BETA"
+
+subTitle: "Links can be used either as standalone components or inline with text."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/links.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/links" },
+    { title: "Code", path: "/components/links/code" },
+    { title: "Accessibility", path: "/components/links/accessibility" },
+  ]
+---
+
+import { IcLink, IcTypography } from "@ukic/react";
+import linksFig1 from "./images/always-include-a-launch-icon-when-directing-users-to-an-external-address.png";
+import linksFig2 from "./images/dont-use-a-default-link-for-links-which-open-a-new-tab-or-website.png";
+import linksFig3 from "./images/use-a-button-when-displaying-a-clickable-action.png";
+import linksFig4 from "./images/dont-use-a-link-to-initiate-an-action.png";
+import linksFig5 from "./images/when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text.png";
+import linksFig6 from "./images/avoid-using-the-same-colour-style-as-the-adjacent-text.png";
+import linksFig7 from "./images/use-the-monochromatic-variant-when-listing-standalone-links.png";
+import linksFig8 from "./images/do-not-use-bad-link-text.png";
+
+## Component variants
+
+### Standalone
+
+Standalone links are positioned separately from other text content.
+
+A standalone link can include a launch icon to the right of the link for clarity.
+
+<ComponentPreview>
+  <IcTypography>
+    <IcLink href="/components/links" showIcon>
+      Links homepage
+    </IcLink>
+  </IcTypography>
+</ComponentPreview>
+
+### Inline
+
+Inline links are contained within other text elements.
+
+<ComponentPreview>
+  <IcTypography>
+    Return to the <IcLink href="/components/links">links homepage</IcLink>
+  </IcTypography>
+</ComponentPreview>
+
+## When to use
+
+Use links to navigate to a new page.
+
+Links can be applied to any text element but will use the link styling.
+
+Always show a launch icon when a link is set up to open a page in a new tab or window, or when directing to an external app.
+
+<DoDontCaution
+  imageSrc={linksFig1}
+  imageAlt="An example of a link labelled ‘Fairtrade Foundation” featuring a ‘launch’ icon to denote it will open a new tab or page."
+  caption="Always include an external link icon formed by a square and an arrow when directing users to an external address."
+  state="good"
+/>
+
+<DoDontCaution
+  imageSrc={linksFig2}
+  imageAlt="An example of a link labelled ‘Fairtrade Foundation” not featuring an external link icon."
+  caption="Don’t use a default link for links which open a new tab or website."
+  state="bad"
+/>
+
+## When not to use
+
+Don’t use a link to display an action on a page, use a [button](/components/buttons) instead.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={linksFig3}
+    imageAlt="An image of an example form featuring a group of radio buttons, with a submit button at the end."
+    caption="Use a button when displaying a clickable action."
+    state="good"
+  />
+  <DoDontCaution
+    imageSrc={linksFig4}
+    imageAlt="An image of an example form featuring a group of radio buttons, and a link labelled ‘Submit’ at the end."
+    caption="Don’t use a link to initiate an action."
+    state="bad"
+  />
+</DoubleDoDontCaution>
+
+## Colour
+
+Once a link has been visited, the browser will remember this and the link will change to use the visited styling.
+
+Your browser is set to remember what links have been visited. Visited links feature a different colour style.
+
+All other states will use specific [hyperlink styling](/styles/colour#links).
+
+Use default appearance links when used inline with other text. If the text appears on a different coloured background, use the light or dark appearance links to achieve good colour contrast.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={linksFig5}
+    imageAlt="An example paragraph with black text, featuring an inline link with blue colour styling."
+    caption="When using inline links, always use a different colour to the adjacent text."
+    state="good"
+  />
+  <DoDontCaution
+    imageSrc={linksFig6}
+    imageAlt="An example paragraph with black text, featuring an inline link the same colour styling."
+    caption="Avoid using the same link appearance as the adjacent text. Only use the same appearance if the text is used on a dark background."
+    state="bad"
+  />
+</DoubleDoDontCaution>
+
+Use the light or dark appearance links when listing a series of standalone links on different coloured backgrounds.
+
+<DoDontCaution
+  imageSrc={linksFig7}
+  imageAlt="An image of a footer with two navigation groups titled ‘Services’ and ‘Policy’ which house a list of several standalone links. Every text element in the footer is white, including the hyperlinks."
+  caption="Use light appearance links when displaying standalone links on a dark background."
+  state="good"
+/>
+
+## Content
+
+### Link text
+
+Always use a concise string of text in a link rather than displaying the full URL. Make sure the link text is descriptive enough to be relevant to the page the link points to.
+
+Don’t omit important descriptive information from the link text. Avoid using unnecessarily lengthy descriptions, but strike a balance between relevance and conciseness.
+
+<ComponentPreview state="good" caption="test">
+  <IcLink href="#">About our coffees</IcLink>
+</ComponentPreview>
+
+<IcTypography
+  variant="label"
+  style={{ marginTop: "-16px", marginBottom: "24px" }}
+>
+  Use concise but relevant links.
+</IcTypography>
+
+<DoDontCaution
+  imageSrc={linksFig8}
+  imageAlt="An example of three links. One reads ‘www.coffeeshop.com/about-our-coffees', the second reads ‘Let us tell you all about our speciality coffees’, and the third reads ‘Coffees’."
+  caption="Don’t use URLs in the link text, don’t use unnecessarily long link text, and don’t omit important descriptive information."
+  state="bad"
+/>
+
+### Email addresses
+
+When linking to email addresses use the full email address in the link text. Don’t describe the contact without showing them email address.
+
+<ComponentPreview state="good">
+  <IcLink href="mailto:info@icds.co.uk">info@icds.co.uk</IcLink>
+</ComponentPreview>
+
+<IcTypography
+  variant="label"
+  style={{ marginTop: "-16px", marginBottom: "24px" }}
+>
+  Show the full email address.
+</IcTypography>
+
+<ComponentPreview state="bad">
+  <IcLink href="mailto:info@icds.co.uk">ICDS team</IcLink>
+</ComponentPreview>
+
+<IcTypography
+  variant="label"
+  style={{ marginTop: "-16px", marginBottom: "24px" }}
+>
+  Don’t embed labels when linking email addresses
+</IcTypography>
+
+## Accessibility considerations
+
+When reading a page, screen reader users might navigate to links independently of the adjacent content. Make sure links are descriptive enough that they make sense out of context.
+
+Consider that some screen readers allow users to view a full list of all links present on a page. This may be ordered either alphabetically, or in order of appearance. Make sure to label links with relevant information at the beginning of the string of text. For example, don’t embed “How to contact us”, but rather “Contact us”.

@@ -1,0 +1,46 @@
+---
+path: "/components/side-nav/accessibility"
+
+date: "2022-11-15"
+
+title: "Side navigation"
+
+status: "BETA"
+
+subTitle: "Side navigation provides an app's main navigation and is fixed on the left-hand side of the app. It includes the app's name, main navigation and optional secondary links."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/side-nav.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/side-nav" },
+    { title: "Code", path: "/components/side-nav/code" },
+    { title: "Accessibility", path: "/components/side-nav/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+The side navigation component forms an app's main navigation. Therefore, it always appears at the start of a page's tab index. It also uses a `navigation` landmark to allow quick navigation from anywhere within a page's content.
+
+The side navigation is essentially a group of links ordered vertically in the component. Tabbing through the side navigation content follows the logical order by moving from the top most item to the bottom most item, with the expansion toggle button being the last focusable element in the component before focus is moved to page content.
+
+In a collapsed side navigation, menu option labels are always available in a tooltip by hovering or focusing on the icon button. Any truncated text can also be accessed through use of tooltips in this way.
+
+## For Assistive Technology
+
+Icon-only menu options have accessible labels that are announced by a screen reader when focused.
+
+Collapsible option groups use `aria-expanded` to indicate whether the group is open or closed. If closed, focus skips over the group's content to the next elements. If open, each menu item in the group is included in the tab order. Collapsible option groups can be opened or closed using the **enter** or **space** key.
+
+## Based on
+
+The side navigation component has been based on the following resources:
+
+- [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page), W3, accessed June 2022.
+- [Accessible Accordion](https://www.aditus.io/patterns/accordion/), Aditus.io, accessed June 2022.
+- [Accordion Example](https://www.w3.org/WAI/ARIA/apg/example-index/accordion/accordion.html), W3, accessed June 2022.
+
+## Testing
+
+We’ve tested this component against WCAG 2.1 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

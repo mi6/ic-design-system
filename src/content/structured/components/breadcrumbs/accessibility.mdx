@@ -1,0 +1,41 @@
+---
+path: "/components/breadcrumbs/accessibility"
+
+date: "2022-11-15"
+
+title: "Breadcrumb"
+
+status: "BETA"
+
+subTitle: "Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/breadcrumbs.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/breadcrumbs" },
+    { title: "Code", path: "/components/breadcrumbs/code" },
+    { title: "Accessibility", path: "/components/breadcrumbs/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+Breadcrumbs are formed out of a set of links. Each of these links is individually focusable. The breadcrumbs form a navigation landmark with an accessible name of ‘breadcrumbs’ so that they can be easily accessed.
+
+## For Assistive Technology
+
+The separators between links are added programmatically so that they aren't read out by screen readers. The separators are purely decorative so don't need to be announced to the user.
+
+## Based on
+
+The breadcrumbs component has been based on the following resources:
+
+- [Navigation landmarks](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/navigation.html#:~:text=Navigation%20landmarks%20provide%20a%20way,website%20or%20page%20content%20navigation), WCS, accessed May 2022.
+- [A11y breadcrumbs](https://scottaohara.github.io/a11y_breadcrumbs/), Scott O’Hara, accessed May 2022.
+- [Breadcrumbs](https://www.nngroup.com/articles/breadcrumbs/), Nielsen Norman Group, accessed May 2022.
+- [Breadcrumbs authoring practices](https://w3c.github.io/aria-practices/examples/breadcrumb/index.html), WCS, accessed May 2022.
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

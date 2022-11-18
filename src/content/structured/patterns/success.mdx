@@ -1,0 +1,97 @@
+---
+path: "/patterns/success"
+
+navPriority: 4
+
+date: "2022-11-15"
+
+title: "Success messages"
+
+subTitle: "Success messages inform the user of a successful outcome."
+
+status: "IN DEVELOPMENT"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/success.mdx"
+---
+
+import { IcAlert, IcButton, IcTextField } from "@ukic/react";
+
+export const SnackbarBasic = () => {
+  const title = "Your coffee order is being processed.";
+  const [open, setOpen] = React.useState(false);
+  const toggle = () => setOpen(!open);
+  return (
+    <div>
+      <IcButton variant="primary" onClick={toggle}>
+        Submit coffee order
+      </IcButton>{" "}
+      {open && (
+        <Snackbar
+          anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+          message={title}
+          open={open}
+        />
+      )}
+    </div>
+  );
+};
+
+## When to use
+
+Use a success message when you want to inform the user that a task has been successful.
+
+For example, show a [success alert](/components/alerts) on a subsequent page after submitting a form.
+
+## When not to use
+
+Don't overuse success messages. Don't add success validation to every text field.
+
+Don't use full-page success messages. If a form is submitted successfully, consider a success alert component on the subsequent screen.
+
+## Usage
+
+### Toasts
+
+Use a [toasts](/components/toasts) to deliver a passive success message. Use a snackbar when you don't need to guarantee a user will notice the message.
+
+### Alerts
+
+Use alerts to give feedback after a significant task. Alerts are more likely to be noticed by users.
+
+For example, use a success alert on a subsequent page after submitting a request to give the user a reference number.
+
+<ComponentPreview icds>
+  <IcAlert
+    heading="Application submitted"
+    message="Your application for 'additional coffee allowance' was submitted successfully."
+    variant="success"
+  />
+</ComponentPreview>
+
+### Summary and 'review' pages
+
+Only use a summary page after submitting a form if you need the user to export the information.
+
+Don't use a full page for a success message; use a snackbar or alert on a list or homepage instead.
+
+### Text fields
+
+Use success messages on [text inputs](/components/text-input) if you need to validate information before submitting the form.
+
+Use them in situations where you need immediate feedback, such as choosing a username.
+
+<ComponentPreview icds>
+  <IcTextField
+    label="Username"
+    value="coffeeninja005"
+    validationStatus="success"
+    validationText="This username is available."
+  />
+</ComponentPreview>
+
+## Accessibility considerations
+
+When building or using this pattern:
+
+- Make sure components such as alerts are announced to screen readers and other assistive technology.
+- Don't use colour on its own to convey that a problem has occurred; always include text.

@@ -1,0 +1,15 @@
+.page-header {
+  margin-bottom: var(--ic-space-lg);
+}
+
+@media screen and (max-width: 576px) {
+  .page-header {
+    margin: var(--ic-space-xs) calc(-1 * var(--ic-space-xs)) var(--ic-space-lg);
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .page-header {
+    margin: var(--ic-space-xs) calc(-1 * var(--ic-space-md)) var(--ic-space-lg);
+  }
+}

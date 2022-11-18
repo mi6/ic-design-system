@@ -1,0 +1,105 @@
+.link-zone {
+  border-top: 1px solid var(--ic-architectural-300);
+  border-bottom: 1px solid var(--ic-architectural-300);
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.comp-preview {
+  position: relative;
+  border: 1px solid var(--ic-architectural-300);
+  border-radius: var(--ic-border-radius);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--ic-space-lg);
+  z-index: 1;
+}
+
+.comp-preview ic-side-navigation {
+  height: 700px;
+  z-index: 0;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.comp-zone {
+  display: flex;
+  padding: var(--ic-space-xl) var(--ic-space-md);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.comp-zone.centered {
+  justify-content: center;
+}
+
+.comp-zone.no-padding {
+  padding: 0;
+}
+
+.comp-zone.no-padding > * {
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.comp-zone ic-alert {
+  margin-bottom: 0;
+}
+
+.left {
+  justify-content: flex-start !important;
+}
+
+.snippet {
+  border-radius: 0;
+  margin: 0!important;
+  border-radius: 0!important;
+  padding-bottom: var(--ic-space-sm);
+}
+
+.snippet-container {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--ic-architectural-40) !important;
+}
+
+.copy-button {
+  margin-top: var(--ic-space-xxs);
+  margin-right: var(--ic-space-xs);
+  margin-bottom: var(--ic-space-xs);
+}
+
+.tab-panel {
+  min-width: 0;
+}
+
+.tab-context {
+  display: grid;
+}
+
+.comp-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.comp-dont-icon {
+  color: #d4351c;
+  background: #eaeaea;
+}
+
+.comp-do-icon {
+  color: #00703c;
+  background: #eaeaea;
+}
+
+@media screen and (min-width: 577px) {
+  .comp-preview ic-side-navigation {
+    position: relative;
+  }
+}

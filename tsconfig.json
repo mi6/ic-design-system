@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": ["dom", "es2015", "es2017"],
+    //Switch to true once we have migrated to new component versions with types
+    "strict": false,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
+  },
+  "include": ["./src/**/*", "custom.d.ts"]
+}

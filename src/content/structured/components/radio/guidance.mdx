@@ -1,0 +1,183 @@
+---
+path: "/components/radio"
+
+navPriority: 13
+
+date: "2022-11-15"
+
+title: "Radio button"
+
+status: "BETA"
+
+subTitle: "Radio buttons let people select a single option from a list."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/radio.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/radio" },
+    { title: "Code", path: "/components/radio/code" },
+    { title: "Accessibility", path: "/components/radio/accessibility" },
+  ]
+---
+
+import { IcRadioGroup, IcRadioOption } from "@ukic/react";
+import radioFig1 from "./images/fig-1-do-not-use-a-radio-button-group-to-allow-multiple-selected-options-from-a-list.png";
+import radioFig2 from "./images/fig-2-use-a-checkbox-group-to-allow-multiple-sections-from-a-list.png";
+import radioFig3 from "./images/fig-3-do-not-use-radio-buttons-to-turn-something-on-or-off.png";
+import radioFig4 from "./images/fig-4-use-a-switch-to-toggle-something-on-or-off.png";
+import radioFig5 from "./images/fig-5-always-display-radio-buttons-as-a-stack-when-there-are-more-than-two-options.png";
+import radioFig6 from "./images/fig-6-do-not-display-radio-groups-with-more-than-two-options-in-a-row.png";
+import radioFig7 from "./images/fig-7-display-radio-buttons-as-a-stack-or-in-a-row-when-radio-groups-have-two-options.png";
+import radioFig8 from "./images/fig-8-when-there-is-an-issue-show-an-error-message-next-to-the-entire-radio-group.png";
+import radioFig9 from "./images/fig-9-error-validation-shown-correctly-on-the-field-causing-the-error.png";
+import radioFig10 from "./images/fig-10-only-display-the-error-on-the-field-causing-it.png";
+
+## Introduction
+
+An example of the radio button component.
+
+<ComponentPreview style={{ marginTop: "24px" }}>
+  <IcRadioGroup label="Add a free purchase with any hot drink.">
+    <IcRadioOption value="crisps" label="Crisps" />
+    <IcRadioOption
+      value="cookie"
+      label="Deluxe chocolate chip cookie (sold out)"
+      disabled
+      inactive
+    />
+    <IcRadioOption value="fruit" label="Banana" />
+    <IcRadioOption value="No item" label="No thanks, just my coffee" />
+  </IcRadioGroup>
+</ComponentPreview>
+
+## When to use
+
+Use radio buttons in a radio button group to present a set of selectable options.
+
+Use radio buttons when only one option can be selected from a list.
+
+Use a radio button with a conditional field to display a related additional element when that radio button is selected. The conditional field can be set to static so that it is always visible and becomes enabled once the radio button is selected. If the conditional field is set to dynamic the field is only displayed when the radio button is selected.
+
+## When not to use
+
+Don’t use radio buttons on their own, they should always appear as part of a radio button group.
+
+Don’t use radio buttons when the user can select multiple options from the list. Use [checkboxes](/components/checkboxes) instead.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={radioFig1}
+    imageAlt="A radio button group titled ‘What are your favourite coffees?’ with two out of six radio buttons showing as selected."
+    state="bad"
+    caption="Don’t use a radio button group to allow multiple selected options from a list."
+  />
+  <DoDontCaution
+    imageSrc={radioFig2}
+    imageAlt="A checkbox group titled ‘What are your favourite coffees?’ with two out of six checkboxes selected."
+    state="good"
+    caption="Use a checkbox group to allow multiple sections from a list."
+  />
+</DoubleDoDontCaution>
+
+Don’t use radio buttons to turn something on or off. Use a [switch](/components/switch) instead.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={radioFig3}
+    imageAlt="A two option radio button group with the label ‘Turn on the coffee machine?’ with options for ‘On’ and ‘Off’."
+    state="bad"
+    caption="Don’t use radio buttons to turn something on or off."
+  />
+  <DoDontCaution
+    imageSrc={radioFig4}
+    imageAlt="Two switches under the heading 'equipment'. One switch is toggled on whilst the other is off."
+    state="good"
+    caption="Use a switch to toggle something on or off."
+  />
+</DoubleDoDontCaution>
+
+## Interaction behaviour
+
+In most circumstances set a default selected option from a radio button group to help people understand that something must be selected, and to expedite the completion of the input using the commonly preferred option.
+
+Alternatively, use a radio button group without a default selected option to force people to select an option before moving on. This eliminates bias towards a single option and avoids people skipping over the question by leaving the default selection.
+
+### Sizing
+
+Use small sized radio button groups to achieve compact layouts. Always use small sized components with other small sized components.
+
+### Layout and placement
+
+Stack radio buttons when there are more than two options.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={radioFig5}
+    imageAlt="A radio button group titled ‘What milk would you like?’ with three radio buttons for ‘dairy’, ‘soya’ and ‘nut’ stacked vertically."
+    state="good"
+    caption="Always display radio buttons as a stack when there are more than two options."
+  />
+</DoubleDoDontCaution>
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={radioFig6}
+    imageAlt="A radio button group asking ‘What milk would you like?’ and showing three options for ‘Dairy’, ‘Soya’  and ‘Nut’ displayed in a row."
+    state="bad"
+    caption="Don’t display radio button groups with more than two options in a row."
+  />
+</DoubleDoDontCaution>
+
+If there are only two options, you can display them either stacked or in a row.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={radioFig7}
+    imageAlt="A radio button group asking ‘Would you like a coffee?’ with radio buttons for ‘Yes’ and ‘No’ displayed in a row. A second radio button group asking ‘What milk would you like?’ with radio buttons for ‘Dairy’ and ‘Soya’ displayed stacked."
+    state="good"
+    caption="Display radio buttons as a stack or in a row when radio button groups have two options."
+  />
+</DoubleDoDontCaution>
+
+### Validation
+
+There are two types of errors that can occur on a radio button: a radio button input error or an error on a radio button's conditional field.
+
+A radio button input error is when the radio button group itself is responsible for the error. This is shown using the radio button error state.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={radioFig8}
+    imageAlt="A radio button group displayed with no radio button selected with an error message reading ‘Please select an option’."
+    state="good"
+    caption="When there’s an issue show an error message next to the entire radio button group."
+  />
+</DoubleDoDontCaution>
+
+For errors on a radio button’s conditional field, the error is shown only on the conditional field itself and not on the parent radio button group component.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={radioFig9}
+    imageAlt="A graphic showing a radio button group with four options and an error reading ‘Answer required’ displayed with an empty input field that is a conditional field of one of the radio buttons."
+    state="good"
+    caption="Error validation shown correctly on the field causing the error."
+  />
+  <DoDontCaution
+    imageSrc={radioFig10}
+    imageAlt="A graphic showing two error labels incorrectly applied to a radio button group. One error reading ‘Answer required’ is displayed with an empty input field that is the conditional field of a radio button. The other error, also reading ‘Answer required’ is displayed with the whole radio button group."
+    state="bad"
+    caption="Only display the error on the field causing it. Don’t display an error on the field as well as the radio group."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+### Labels
+
+Follow the [content style guidelines](/styles/content-style) for radio button group labels as well as each individual radio button label. Use the radio button group label to ask the question, and use the radio button labels to provide possible answers.
+
+## Related components
+
+- [Checkbox](/components/checkboxes)

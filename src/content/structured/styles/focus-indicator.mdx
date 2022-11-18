@@ -1,0 +1,68 @@
+---
+path: "/styles/focus-indicator"
+
+navPriority: 7
+
+date: "2022-11-15"
+
+title: "Focus indicator"
+
+status: "BETA"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/focus-indicator.mdx"
+---
+
+import focusIndicatorFig1 from "./images/fig-1-focus-indicators-inherit-the-border-radius-of-the-components-they-enclose.png";
+import focusIndicatorFig2 from "./images/fig-2-focus-on-links-is-indicated-by-an-underline.png";
+
+## Enclosing components
+
+The focus indicator shows users where they are on a page. It encloses most components and inherits their shapes. They are especially useful for keyboard-only and power users.
+
+When applied to squared components for example [buttons](/components/buttons), [text field](/components/text-input) and [checkboxes](/components/checkboxes), the focus indicator will fully enclose the component and therefore appear squared.
+
+Similarly, when applied to rounded components for example [radio](/components/radio), [switch](/components/switch) and [back to top](/components/back-to-top), the focus indicator will appear rounded.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={focusIndicatorFig1}
+    imageAlt="An image of a button and back to top component, both with focus applied to them."
+    state="none"
+    caption="Focus indicators inherit the border radius of the components they enclose."
+  />
+</DoubleDoDontCaution>
+
+## Links
+
+When links are focused, the indicator will appear as the hover state.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={focusIndicatorFig2}
+    imageAlt="An image of a blue link labelled 'Coffee blog' with a thick underline of the same colour."
+    state="none"
+    caption="Focus on links is indicated by a thick underline."
+  />
+</DoubleDoDontCaution>
+
+## Positioning and layout
+
+### Adjacent to components
+
+For most components, the focus indicator will enclose the full component, appearing directly adjacent to its borders.
+
+### Internal to components
+
+Focus indicators are required to be fully visible. For components which are adjacent to other components, or the viewport edge, the focus indicator appears internal to the component to remain visible.
+
+Enough padding is provided within these components so that no content is obscured. Make sure to always confirm that no part of the focus indicator or the component's content is clipped or obscured.
+
+## Navigation
+
+Keyboard navigation controls vary between components. For specific information, refer to the 'Accessibility' tab in a component's page.
+
+## Accessibility considerations
+
+We've designed this style token to meet the emerging [Web Content Accessibility Guidelines (WCAG) 2.2 Candidate Recommendation](https://www.w3.org/TR/WCAG22/) criteria for Level AA (and in some cases AAA) requirements.
+
+Given the requirements are still a draft and may be subject to change, we will track these criteria to make sure this style token remains conformant.

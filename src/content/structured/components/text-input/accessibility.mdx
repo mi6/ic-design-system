@@ -1,0 +1,45 @@
+---
+path: "/components/text-input/accessibility"
+
+date: "2022-11-15"
+
+title: "Text field"
+
+status: "BETA"
+
+subTitle: "Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/text-input.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/text-input" },
+    { title: "Code", path: "/components/text-input/code" },
+    { title: "Accessibility", path: "/components/text-input/accessibility" },
+  ]
+---
+
+# Accessibility
+
+## Easy to use for everyone
+
+Text inputs can have `aria-labelledby` or `aria-label` tags that provide additional content to the visible label.
+
+## For Assistive Technology
+
+Text inputs use `aria-invalid="true"` and `aria-live="assertive"` for validation. Use `aria-invalid="false"` for successes or warnings and `aria-live="polite"` to announce the character count.
+
+We have included a hidden label through `aria-describedby`, contained in a hidden span to inform the users of the maximum character count when the component is focused.
+
+## Based on
+
+The text input component has been based on the following resources:
+
+- [Labeling controls](https://www.w3.org/WAI/tutorials/forms/labels/), W3, accessed July 2022.
+- [Validation Input](https://www.w3.org/WAI/tutorials/forms/validation/), W3, accessed July 2022.
+- [Inputs](https://a11y-101.com/development/inputs), A11Y 101, accessed July 2022.
+- [Creating accessible forms](https://webaim.org/techniques/forms/controls), WebAIM, accessed July 2022.
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

@@ -1,0 +1,35 @@
+---
+path: "/accessibility/coding/doctype"
+
+navPriority: 1
+
+date: "2022-11-15"
+
+title: "Doctypes"
+
+subTitle: "Follow our accessibility tips for doctypes."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/index.mdx"
+---
+
+## Introduction
+
+All HTML documents must start with a `<!DOCTYPE>` declaration above the `<html>` tag.
+
+This tells the browser how to render the HTML, as in this example:
+
+```html
+<!DOCTYPE html>
+```
+
+This is the HTML5 doctype but W3C provides information on [choosing the right doctype](https://www.w3.org/wiki/Doctypes_and_markup_styles).
+
+## When it goes wrong
+
+If no valid `<!DOCTYPE>` is declared, the browser switches to [quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode). This means it emulates non-standard behaviour of deprecated browsers.
+
+In this case, elements from the HTML5 specification may not parse or render properly. This can cause issues for people who use assistive technologies.
+
+## Best practice and WCAG
+
+Declaring a doctype is mentioned in most HMTL best practice articles and will help meet WCAG success criteria [4.1.1 parsing](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&showtechniques=411#parsing) in the sufficient technique [G134: validating web pages](https://www.w3.org/WAI/WCAG21/Techniques/general/G134.html).

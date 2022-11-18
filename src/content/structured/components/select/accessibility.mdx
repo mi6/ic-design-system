@@ -1,0 +1,45 @@
+---
+path: "/components/select/accessibility"
+
+date: "2022-11-15"
+
+title: "Select"
+
+status: "BETA"
+
+subTitle: "Select allows users to select one or more values from a list of options."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/select.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/select" },
+    { title: "Code", path: "/components/select/code" },
+    { title: "Accessibility", path: "/components/select/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+We've made sure that you can use the select component with a keyboard, including **home** and **end**, as well as the **esc** key. Options in the dropdown list can be accessed with the **up** and **down** arrow keys.
+
+For the searchable variant, we have included options which allow you to decide the minimum number of characters required before results are returned. This can help show relevant options only. When the query length is less than the required the `aria status` region provides helpful text informing the user they should type in more.
+
+## For Assistive Technology
+
+When focus is received on the component, the screen-reader will announce a hint explaining how you can navigate up and down in the dropdown list (with the **up** and **down** arrow keys).
+
+When the search (asynchronous or otherwise) is complete, there is an `aria-live` announcement to announce the number of results in the list.
+
+## Based on
+
+The select component has been based on the following resources:
+
+- [Select your poison](https://www.24a11y.com/2019/select-your-poison/), 24 Accessibility, accessed July 2022.
+- [ARIA: listbox role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/listbox_role), Mozilla, accessed July 2022.
+- [Menus & Menu Buttons](https://inclusive-components.design/menus-menu-buttons/), Inclusive Components, accessed July 2022.
+- [aria-autocomplete](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-autocomplete), Mozilla, accessed July 2022.
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

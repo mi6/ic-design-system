@@ -1,0 +1,55 @@
+---
+path: "/styles/typography"
+
+navPriority: 6
+
+date: "2022-11-15"
+
+title: "Typography"
+
+status: "BETA"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/typography.mdx"
+---
+
+import TypographicScale from "./components/TypographicScale";
+
+## Introduction
+
+Well defined typography creates obvious hierarchy and helps to organise information.
+
+The Design System uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans) font for most text and [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans) for large headings. These are flexible and readable fonts that works well across digital and print.
+
+## Headings
+
+Write all headings in sentence case.
+
+Use the logical order of `h#` tags in code. For example, a `h3` heading needs to come after a `h2` heading but can be styled as any variant. It's important that [heading tags are used properly](/accessibility/coding/headings).
+
+<TypographicScale variants="h1, h2, h3, h4" />
+
+## Subtitles
+
+Write all subtitles in sentence case.
+
+Use subtitles for sub-section headings and table headings.
+
+<TypographicScale variants="subtitle-large, subtitle-small" />
+
+## Text
+
+Write all body text in sentence case.
+
+Use a minimum of 16pt for body text. 18pt should be used for apps with a lot of text (like intranets or reports).
+
+<TypographicScale variants="body, caption, caption-uppercase" />
+
+## Labels
+
+<TypographicScale variants="label, label-uppercase" />
+
+## Links
+
+If your link is at the end of a sentence or paragraph, make sure that the linked text does not include the full stop.
+
+<TypographicScale variants="link" />

@@ -1,0 +1,98 @@
+---
+path: "/accessibility/coding/tables"
+
+navPriority: 8
+
+date: "2022-11-15"
+
+title: "Tables"
+
+subTitle: "Follow our accessibility tips for tables."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/tables.mdx"
+---
+
+## Introduction
+
+Use HTML table elements only for tabular data.
+
+For ambiguous data or when there are multiple columns, the `scope` attribute can be included in the `<th>` and set to `row` or `col` to denote that a header applies to the entire row or column, respectively.
+
+Use a `<caption>` element to describe, in text, what the table shows. Some apps and services may auto-generate a summary description of data. You can hide this using CSS if you don't want it visible to sighted users.
+
+The HTML example for a table with header cells in the top row and first column:
+
+```html
+<table>
+  <caption>
+    Example table with four columns and three rows
+  </caption>
+  <tr>
+    <th>Table</th>
+    <th scope="col">Column Header A</th>
+    <th scope="col">Column Header B</th>
+    <th scope="col">Column Header C</th>
+  </tr>
+  <tr>
+    <th scope="row">Row Header 1</th>
+    <td>data cell A1</td>
+    <td>data cell A2</td>
+    <td>data cell A3</td>
+  </tr>
+  <tr>
+    <th scope="row">Row Header 2</th>
+    <td>data cell B1</td>
+    <td>data cell B2</td>
+    <td>data cell B3</td>
+  </tr>
+</table>
+```
+
+### Example
+
+<table>
+  <caption>Example table with four columns and three rows</caption>
+  <tr>
+    <th>Table</th>
+    <th scope="col">Column Header A</th>
+    <th scope="col">Column Header B</th>
+    <th scope="col">Column Header C</th>
+  </tr>
+  <tr>
+    <th scope="row">Row Header 1</th>
+    <td>data cell A1</td>
+    <td>data cell A2</td>
+    <td>data cell A3</td>
+  </tr>
+  <tr>
+    <th scope="row">Row Header 2</th>
+    <td>data cell B1</td>
+    <td>data cell B2</td>
+    <td>data cell B3</td>
+  </tr>
+</table>
+
+## When it goes wrong
+
+If no table HTML elements were used, then there would be no structure or definition of the table available to assistive technologies.
+
+Even missing table headers in a `<table>` means assistive technologies can't associate data cells with the headers. Visual cues aren't enough to make a table inclusive.
+
+Historically tables were incorrectly used for layouts which would give assistive technology users a confusing experience. Don't use tables for any layout needs.
+
+Many screen readers will summarise the size of the table when it arrives at one, so our table example would say “Table with 4 columns and 3 rows”.
+
+## Best practice and WCAG
+
+Follow these WCAG criteria for tables:
+
+- [F46: failure of success criterion 1.3.1 due to using `th` elements, layout tables](https://www.w3.org/WAI/WCAG21/Techniques/failures/F46.html).
+
+Tables are mentioned in a couple of the HMTL best practice articles:
+
+- [1.3.1 info and relationships](https://www.w3.org/WAI/WCAG21/quickref/#info-and-relationships).
+- [H51: using table markup to present tabular information](https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html).
+- [H73: using the summary attribute of the table element to give an overview of data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html).
+- [F90: failure of success criterion 1.3.1 for incorrectly associating table headers and content via the headers and id attributes](https://www.w3.org/WAI/WCAG21/Techniques/failures/F90.html).
+- [F91: failure of success criterion 1.3.1 for not correctly marking up table headers](https://www.w3.org/WAI/WCAG21/Techniques/failures/F91.html).
+- [F49: failure of success criterion 1.3.2 due to using an HTML layout table that does not make sense when linearised](https://www.w3.org/WAI/WCAG21/Techniques/failures/F49.html) - which covers using tables for layouts.

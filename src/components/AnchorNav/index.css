@@ -1,0 +1,119 @@
+.side-nav {
+  grid-area: sidenav;
+  width: 256px;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+}
+
+.contents-header {
+  color: var(--ic-color-secondary-text);
+}
+
+.nav-link {
+  padding: var(--ic-space-xs) var(--ic-space-md);
+  margin: 0;
+  color: var(--ic-color-primary-text) !important;
+  transition: var(--ic-easing-transition-fast);
+  text-decoration: none !important;
+  outline: none;
+}
+
+.nav-link:hover:not(:focus) {
+  background-color: var(--ic-architectural-60);
+}
+
+.nav-link:active:not(:focus) {
+  background-color: var(--ic-architectural-100);
+}
+
+.nav-link:focus {
+  box-shadow: var(--ic-border-focus-inset);
+  border-radius: var(--ic-border-radius-inset);
+}
+
+.active-nav-link {
+  padding: var(--ic-space-xs) var(--ic-space-md) var(--ic-space-xs)
+    var(--ic-space-xs);
+  margin: 0 0 0 var(--ic-space-xs);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+}
+
+.nav-list-item {
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.active-nav-list-item {
+  position: relative;
+}
+
+.active-nav-list-item::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: " ";
+  display: block;
+  width: var(--ic-space-xs);
+  background: var(--ic-action-default);
+}
+
+.nav-list-items-container {
+  border-left: 1px solid var(--ic-architectural-300);
+}
+
+@media screen and (max-width: 576px) {
+  .contents-header {
+    padding-bottom: var(--ic-space-xs);
+  }
+
+  .side-nav {
+    margin-bottom: var(--ic-space-md);
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .side-nav {
+    margin-bottom: var(--ic-space-lg);
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 1200px) {
+  .contents-header {
+    padding-bottom: var(--ic-space-md);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .side-nav {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .side-nav {
+    margin: auto auto var(--ic-space-lg) 0;
+    max-width: 800px;
+    width: calc(100% - var(--ic-space-xl));
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .contents-header {
+    padding: var(--ic-space-md) var(--ic-space-md) var(--ic-space-xs);
+  }
+
+  .nav-list-items-container {
+    border-left: none;
+    padding-bottom: var(--ic-space-lg);
+  }
+}

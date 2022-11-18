@@ -1,0 +1,116 @@
+---
+path: "/components/alerts"
+
+navPriority: 1
+
+date: "2022-11-15"
+
+title: "Alert"
+
+status: "BETA"
+
+subTitle: "Alerts display a short important message in a way that attracts attention without interrupting the current task."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/alerts.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/alerts" },
+    { title: "Code", path: "/components/alerts/code" },
+    { title: "Accessibility", path: "/components/alerts/accessibility" },
+  ]
+---
+
+import { IcAlert } from "@ukic/react";
+import alertFig1 from "./images/fig-1-do-use-alerts-inline-with-other-associated-page-content.png";
+import alertFig2 from "./images/fig-2-do-use-alerts-with-an-optional-action-and-dismiss-button.png";
+import alertFig3 from "./images/fig-3-dont-use-alerts-overlaid-on-page-content.png";
+import alertFig5 from "./images/fig-5-avoid-using-lengthy-messages-within-an-alert.png";
+
+## Introduction
+
+Alerts are displayed inline with other page content and show status depending on the severity of the message.
+
+<ComponentPreview>
+  <IcAlert
+    heading="Hot drink"
+    message="Please be careful, your drink will be hot."
+    variant="warning"
+  />
+</ComponentPreview>
+
+Alerts have five status variants:
+
+- Neutral
+- Success
+- Warning
+- Error
+- Info
+
+## When to use
+
+Use an alert to notify a user without blocking or interrupting them.
+
+Position alerts in line with page content so that they are closely associated with the related content that follows them.
+
+<DoDontCaution
+  imageSrc={alertFig1}
+  imageAlt="An article titled ‘The perfect blend’ displaying a warning alert which reads ‘Take care. This article has yet to be reviewed and so may contain errors’. "
+  state="good"
+  caption="Use alerts in line with other associated page content. "
+/>
+
+Use alerts to:
+
+- Summarise [form validation](/patterns/form-validation) errors.
+- Inform of failures in a particular part of an app.
+- Inform of a success when returning to a homepage, confirmation page or starting location.
+- Make important information stand out from surrounding content.
+
+Include a button or link within an alert to provide related interactions.
+
+Include a dismiss button within an alert to allow the alert to be dismissed.
+
+<DoDontCaution
+  imageSrc={alertFig2}
+  imageAlt="An article titled ‘The perfect blend’ showing an information alert with an action button that says ‘Post comment’ and a dismiss button. The alert message says ‘This is a brand new post. Show your appreciation by leaving a comment below."
+  state="good"
+  caption="Include a button or link to provide actions on an alert. Use a dismiss button to allow the alert to be dismissed."
+/>
+
+## When not to use
+
+Don’t use alerts for passive feedback on a process, for example 'draft discarded' or 'email sent', Use [toasts](/components/toasts) instead.
+
+Don’t overlay alerts on page content. Alerts are placed inline with the rest of the page content.
+
+<DoDontCaution
+  imageSrc={alertFig3}
+  imageAlt="An article titled ‘The perfect blend’ with an information alert overlaid on top of the page content."
+  state="bad"
+  caption="Don’t use alerts positioned above/on top of page content."
+/>
+
+Use the [form validation pattern](/patterns/form-validation) for errors on a text field or in a form.
+
+## Content
+
+Avoid using lengthy message content in an alert. Use dialogs or a [full page error message](/patterns/form-validation) to display longer messages.
+
+Use a title on an alert to provide a short description of the alert content.
+
+<DoDontCaution
+  imageSrc={alertFig5}
+  imageAlt="An image of an article titled ‘The perfect blend’ showing an info alert with a lengthy message that takes a lot of room to display among other page content."
+  state="caution"
+  caption="Avoid using lengthy messages within an alert."
+/>
+
+Use the default icons with success, warning, error and info alerts.
+
+When using neutral alerts, specify an icon to be used from the [iconography guidance](/styles/icons). Always specify alt text when using any custom icon.
+
+## Related components
+
+- [Toasts](/components/toasts)
+- [Error validation](/patterns/form-validation)

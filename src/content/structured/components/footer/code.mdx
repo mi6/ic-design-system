@@ -1,0 +1,247 @@
+---
+path: "/components/footer/code"
+
+date: "2022-11-15"
+
+title: "Footer"
+
+status: "BETA"
+
+subTitle: "Footers are placed at the bottom of the page and can be used for additional links not found in the main navigation."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/footer.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/footer" },
+    { title: "Code", path: "/components/footer/code" },
+    { title: "Accessibility", path: "/components/footer/accessibility" },
+  ]
+---
+
+import { IcFooter, IcFooterLink, IcFooterLinkGroup } from "@ukic/react";
+
+import { NavLink, MemoryRouter } from "react-router-dom";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-footer
+    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
+    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
+    <ic-footer-link slot="link" href="/">
+      Accessibility
+    </ic-footer-link>
+    <ic-footer-link slot="link" href="/">
+      Styles
+    </ic-footer-link>
+    <ic-footer-link slot="link" href="/">
+      Components
+    </ic-footer-link>
+    <ic-footer-link slot="link" href="/">
+      Patterns
+    </ic-footer-link>
+</ic-footer>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcFooter
+    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
+    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
+    <IcFooterLink slot="link" href="/">
+      Accessibility
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Styles
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Components
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Patterns
+    </IcFooterLink>
+</IcFooter>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcFooter
+    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
+    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence."
+  >
+    <IcFooterLink slot="link" href="/">
+      Accessibility
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Styles
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Components
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Patterns
+    </IcFooterLink>
+  </IcFooter>
+</ComponentPreview>
+
+<ComponentDetails component="ic-footer" />
+
+## Footer link details
+
+<ComponentDetails component="ic-footer-link" />
+
+## Variants
+
+### Grouped links
+
+export const snippetsGroupedLinks = [
+  {
+    language: "Web component",
+    snippet: `<ic-footer
+    group-links=""
+    description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
+          please get in touch.">
+    <ic-footer-link-group slot="link" group-title="Grouped heading">
+      <ic-footer-link href="/">Accessibility</ic-footer-link>
+      <ic-footer-link href="/">Styles</ic-footer-link>
+      <ic-footer-link href="/">Components</ic-footer-link>
+      <ic-footer-link href="/">Patterns</ic-footer-link>
+    </ic-footer-link-group>
+    <ic-footer-link-group slot="link" group-title="Grouped heading">
+      <ic-footer-link href="/">Accessibility</ic-footer-link>
+      <ic-footer-link href="/">Styles</ic-footer-link>
+      <ic-footer-link href="/">Components</ic-footer-link>
+      <ic-footer-link href="/">Patterns</ic-footer-link>
+    </ic-footer-link-group>
+    <ic-footer-link-group slot="link" group-title="Grouped heading">
+      <ic-footer-link href="/">Accessibility</ic-footer-link>
+      <ic-footer-link href="/">Styles</ic-footer-link>
+      <ic-footer-link href="/">Components</ic-footer-link>
+      <ic-footer-link href="/">Patterns</ic-footer-link>
+    </ic-footer-link-group>
+  </ic-footer>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcFooter
+    groupLinks=""
+    description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
+          please get in touch.">
+    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+      <IcFooterLink href="/">Accessibility</IcFooterLink>
+      <IcFooterLink href="/">Styles</IcFooterLink>
+      <IcFooterLink href="/">Components</IcFooterLink>
+      <IcFooterLink href="/">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+      <IcFooterLink href="/">Accessibility</IcFooterLink>
+      <IcFooterLink href="/">Styles</IcFooterLink>
+      <IcFooterLink href="/">Components</IcFooterLink>
+      <IcFooterLink href="/">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+      <IcFooterLink href="/">Accessibility</IcFooterLink>
+      <IcFooterLink href="/">Styles</IcFooterLink>
+      <IcFooterLink href="/">Components</IcFooterLink>
+      <IcFooterLink href="/">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+  </IcFooter>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsGroupedLinks}>
+  <IcFooter
+    groupLinks=""
+    description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
+          please get in touch."
+  >
+    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+      <IcFooterLink href="/">Accessibility</IcFooterLink>
+      <IcFooterLink href="/">Styles</IcFooterLink>
+      <IcFooterLink href="/">Components</IcFooterLink>
+      <IcFooterLink href="/">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+      <IcFooterLink href="/">Accessibility</IcFooterLink>
+      <IcFooterLink href="/">Styles</IcFooterLink>
+      <IcFooterLink href="/">Components</IcFooterLink>
+      <IcFooterLink href="/">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+      <IcFooterLink href="/">Accessibility</IcFooterLink>
+      <IcFooterLink href="/">Styles</IcFooterLink>
+      <IcFooterLink href="/">Components</IcFooterLink>
+      <IcFooterLink href="/">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+  </IcFooter>
+</ComponentPreview>
+
+### With React Router
+
+export const withReactRouter = [
+  {
+    language: "React",
+    snippet: `<MemoryRouter initialEntries={["/"]}>
+  <Routes>
+      <Route path="/" element={() => <IcTypography>This is the home page</IcTypography>} />
+      <Route path="/daily-tippers" element={() => <IcTypography>This page is about daily tippers</IcTypography>} />
+  </Routes>
+  <IcFooter description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch." caption="This information is exempt under the Freedom of Information Act 2000 (FOIA) and may be exempt under other UK information legislation." 
+  > 
+    <IcFooterLink slot="link">
+      <NavLink to="/">Home</NavLink>
+    </IcFooterLink>
+    <IcFooterLink slot="link">
+      <NavLink to="/daily-tippers">Daily Tippers</NavLink>
+    </IcFooterLink>
+    <div slot="logo" style={{
+    width: "100px",
+    height: "100px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "var(--ic-theme-primary)",
+    color: "var(--ic-theme-text)"
+  }}>
+      Logo
+    </div>
+  </IcFooter>
+</MemoryRouter>
+    `,
+  },
+];
+
+<ComponentPreview
+  snippets={withReactRouter}
+  style={{ flexDirection: "column" }}
+>
+  <MemoryRouter initialEntries={["/"]}>
+    <IcFooter
+      description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch."
+      caption="This information is exempt under the Freedom of Information Act 2000 (FOIA) and may be exempt under other UK information legislation."
+    >
+      <IcFooterLink slot="link">
+        <NavLink to="/">Home</NavLink>
+      </IcFooterLink>
+      <IcFooterLink slot="link">
+        <NavLink to="/daily-tippers">Daily Tippers</NavLink>
+      </IcFooterLink>
+      <div
+        slot="logo"
+        style={{
+          width: "100px",
+          height: "100px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "var(--ic-theme-primary)",
+          color: "var(--ic-theme-text)",
+        }}
+      >
+        Logo
+      </div>
+    </IcFooter>
+  </MemoryRouter>
+</ComponentPreview>

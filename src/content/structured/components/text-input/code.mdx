@@ -1,0 +1,48 @@
+---
+path: "/components/text-input/code"
+
+date: "2022-11-15"
+
+title: "Text field"
+
+status: "BETA"
+
+subTitle: "Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/text-input.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/text-input" },
+    { title: "Code", path: "/components/text-input/code" },
+    { title: "Accessibility", path: "/components/text-input/accessibility" },
+  ]
+---
+
+import { IcTextField } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field label="What is your favourite coffee?" placeholder="Placeholder" helper-text="Such as Arabica, Robusta or Liberica">
+</ic-text-field>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField label="What is your favourite coffee?" placeholder="Placeholder" helperText="Such as Arabica, Robusta or Liberica" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <ComponentPreview>
+    <IcTextField
+      label="What is your favourite coffee?"
+      placeholder="Placeholder"
+      helperText="Such as Arabica, Robusta or Liberica"
+    />
+  </ComponentPreview>
+</ComponentPreview>
+
+<ComponentDetails component="ic-text-field" />

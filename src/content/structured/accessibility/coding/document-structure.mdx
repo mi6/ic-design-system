@@ -1,0 +1,50 @@
+---
+path: "/accessibility/coding/document-structure"
+
+navPriority: 5
+
+date: "2022-11-15"
+
+title: "Document structure"
+
+subTitle: "Follow our accessibility tips for document structure."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/document-structure.mdx"
+---
+
+## Introduction
+
+Use semantic HTML Elements for document structure. Three semantic elements are used to give overall document structure:
+
+- `<html>` is the root of an HTML document and contains all elements except the `<!DOCTYPE>` declaration.
+- `<head>` is the container for metadata such as document title, styles and scripts. The `<head>` element is the first element in the `<html>` element before the `<body>`.
+- `<body>` defines the body or content of the HTML document. There can only be one `<body>` in the document.
+
+These elements ensure consistency for how a page is displayed on every browser.
+
+The following example shows the semantic elements for document structure:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example accurate and meaningful title</title>
+  </head>
+  <body>
+    <h1>Example content heading</h1>
+    <p>Example content paragraph</p>
+  </body>
+</html>
+```
+
+## When it goes wrong
+
+Not using the document structure elements accordingly may mean the page is not correctly rendered in every browser.
+
+Omitting the `<html>`, `<head>` and `<body>` is allowed under certain conditions in the [HTML spec](https://www.w3.org/TR/2011/WD-html5-20110525/syntax.html#optional-tags).
+
+## Best practice and WCAG
+
+Document structure is explicitly mentioned in a some of HTML best practice articles and whilst it does not specifically help meet individual WCAG success criteria it's crucial to [4.1.1 parsing](https://www.w3.org/WAI/WCAG21/quickref/#parsing).
+
+All relevant HTML code examples in the WCAG Techniques use the proper document structure.

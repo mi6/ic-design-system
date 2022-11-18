@@ -1,0 +1,28 @@
+.attribute-table {
+  border: 1px solid var(--ic-architectural-300);
+  border-radius: var(--ic-border-radius);
+}
+
+.header {
+  background-color: var(--ic-architectural-40);
+}
+
+.cell {
+  padding: var(--ic-space-md) var(--ic-space-lg);
+}
+
+.cell:last-child {
+  padding-right: var(--ic-space-lg);
+}
+
+.cell:first-child {
+  padding-left: var(--ic-space-lg);
+}
+
+.row {
+  display: table-row;
+}
+
+.row:last-child > td {
+  border-bottom: none;
+}

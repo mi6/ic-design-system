@@ -1,0 +1,82 @@
+---
+path: "/components/tooltips/code"
+
+date: "2022-11-15"
+
+title: "Tooltip"
+
+status: "BETA"
+
+subTitle: "Tooltips provide helpful information when the cursor hovers over an element or when focus is applied."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/tooltips.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/tooltips" },
+    { title: "Code", path: "/components/tooltips/code" },
+    { title: "Accessibility", path: "/components/tooltips/accessibility" },
+  ]
+---
+
+import { IcTooltip, IcButton } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-tooltip element-id="text-button" label="This is a description of the button" placement="left"></ic-tooltip>
+<ic-tooltip element-id="text-button" label="This is a description of the button" placement="top"></ic-tooltip>
+<ic-tooltip element-id="text-button" label="This is a description of the button" placement="bottom"></ic-tooltip>
+<ic-tooltip element-id="text-button" label="This is a description of the button" placement="right"></ic-tooltip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTooltip elementId="text-button" label="This is a description of the button" placement="left" />
+<IcTooltip elementId="text-button" label="This is a description of the button" placement="top" />
+<IcTooltip elementId="text-button" label="This is a description of the button" placement="bottom" />
+<IcTooltip elementId="text-button" label="This is a description of the button" placement="right" />`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippets}>
+  <IcTooltip
+    label="This is a description of the button"
+    element-id="test-button"
+    placement="left"
+  >
+    <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+      Left
+    </IcButton>
+  </IcTooltip>
+  <IcTooltip
+    label="This is a description of the button"
+    element-id="test-button"
+    placement="top"
+  >
+    <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+      Top
+    </IcButton>
+  </IcTooltip>
+  <IcTooltip
+    label="This is a description of the button"
+    element-id="test-button"
+    placement="bottom"
+  >
+    <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+      Bottom
+    </IcButton>
+  </IcTooltip>
+  <IcTooltip
+    label="This is a description of the button"
+    element-id="test-button"
+    placement="right"
+  >
+    <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+      Right
+    </IcButton>
+  </IcTooltip>
+</ComponentPreview>
+
+<ComponentDetails component="ic-tooltip" />

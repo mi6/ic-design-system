@@ -1,0 +1,61 @@
+---
+path: "/accessibility/testing/manual-testing"
+
+navPriority: 4
+
+date: "2022-11-15"
+
+title: "Manual accessibility testing"
+
+subTitle: "Manual accessibility testing can include keyboard, screen reader and documentation checks."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/manual-testing.mdx"
+---
+
+import { IcAlert } from "@ukic/react";
+
+## Introduction
+
+Manual accessibility testing is needed to address the [limitations of automated accessibility testing](/accessibility/testing/automated-testing-limitation).
+
+Deque's [Accessibility Developers' Guide](https://dequeuniversity.com/checklists/web/guide) shows what type of testing is needed to meet [WCAG 2.1 Level AA](/accessibility/requirement/wcag).
+
+## Keyboard-only testing
+
+Keyboard accessibility is one of the most important aspects of accessibility testing and should be carried out frequently during development.
+
+Retrofitting keyboard accessibility can be expensive. This is a problem if libraries and frameworks you use are not accessible, where the options are to fix the component library or swap to a different one.
+
+Some reasons people might rely on a keyboard include:
+
+- People who are [blind](/accessibility/needs/visual) might use a screen reader and are generally unable see the cursor on the screen.
+- Users with [motor disabilities](/accessibility/needs/motor) may not have the fine motor movements required for using a mouse.
+- People with [chronic conditions](/accessibility/needs/motor) such as Repetitive Strain Injury (RSI) may need to avoid using a mouse.
+- There are also power users who prefer to use the keyboard commands and shortcuts for speed and efficiency.
+
+WebAIM describes [how to test for keyboard accessibility](https://webaim.org/techniques/keyboard/).
+
+The [Accessibility Insights](https://accessibilityinsights.io/docs/en/web/overview) browser plugin, in FastPass mode, runs the automated checks and has a manual check called "Tab Stops".
+
+You can read more specific instructions for [MacOS keyboard-only testing](https://dequeuniversity.com/mac/keyboard-access-mac).
+
+## Full manual accessibility testing
+
+To fully check for accessibility compliance, you need to work through the WCAG 2.1 Level A and AA criteria.
+
+The WCAG requirements form the basis of the [Accessibility Conformance Report (ACR)](/accessibility/documenting/conformance-report). The ACR is required when your app is released, but the more manual accessibility testing done during development the easier it will be to make your app meet the WCAG standards.
+
+The Web Accessibility Initative (WAI) has good documentation on [How to Meet WCAG](https://www.w3.org/WAI/WCAG21/quickref/) for each criterion.
+
+Full manual testing is required on all the main pages of your app. Many apps use templates and common components so these only need to be tested the once with relevant variants to get full coverage.
+
+The Design System recommends the [Accessibility Insights](https://accessibilityinsights.io/docs/en/web/overview) browser plugin in Assessment mode. It runs the automated tests but also guides you through manual testing to meet [WCAG AA](/accessibility/requirement/wcag#level-aa).
+
+<IcAlert
+  variant="info"
+  message="Once the application is released, it's recommended to do full manual testing for any big features or updates."
+/>
+
+### Testing with assistive technologies
+
+[Testing with assistive technologies](/accessibility/testing/assistive-tech-testing) can help to spot accessibility problems that weren't picked up in previous testing.

@@ -1,0 +1,45 @@
+---
+path: "/components/cards/code"
+
+date: "2022-11-15"
+
+title: "Card"
+
+status: "BETA"
+
+subTitle: "Cards are containers used to display structured information or interactive content."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/cards.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/cards" },
+    { title: "Code", path: "/components/cards/code" },
+    { title: "Accessibility", path: "/components/cards/accessibility" },
+  ]
+---
+
+import { IcCard } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-card heading="Card title" message="This is an example of a clickable card" clickable="true"></ic-card>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCard heading="Card title" message="This is an example of a clickable card" clickable />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcCard
+    heading="Card title"
+    message="This is an example of a clickable card"
+    clickable
+  />
+</ComponentPreview>
+
+<ComponentDetails component="ic-card" />

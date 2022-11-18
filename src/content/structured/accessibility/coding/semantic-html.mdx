@@ -1,0 +1,44 @@
+---
+path: "/accessibility/coding/semantic-html"
+
+navPriority: 4
+
+date: "2022-11-15"
+
+title: "Semantic HTML"
+
+subTitle: "Follow our accessibility tips for semantic HTML."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/semantic-html.mdx"
+---
+
+## Introduction
+
+Use semantic HTML elements.
+
+Most elements are semantic such as `<form>` and `<table>` which clearly define its content. However, non-semantic elements such as `<div>` and `<span>` are often overused. These don't tell us about the meaning of the content.
+
+Using correct semantic HTML elements to make web content more accessible.
+
+Learn more about [HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), particularly `<nav>`, `<section>` and `role`. They're mentioned in [Document structure](/accessibility/coding/document-structure) and [Semantic layout](/accessibility/coding/semantic-layout)
+
+## When it goes wrong
+
+When semantic elements aren't used, the page has no structure or definition available to assistive technologies.
+
+Without structure or definition, to assistive technologies it's like viewing all the words on a page together in a single paragraph with the same styling, creating a wall of text.
+
+With semantic elements assistive technologies can navigate over a page using these semantic elements, for example screen readers can jump through headings to find the section they want to read.
+
+## Best practice and WCAG
+
+Semantic elements are mentioned in some form in most of HTML best practice articles and will help meet many WCAG success criteria.
+
+For [1.3.1 info and relationships](https://www.w3.org/WAI/WCAG21/quickref/#info-and-relationships), semantic elements and markup are referenced in many of the sufficient techniques including:
+
+- [G115: using semantic elements to mark up structure](https://www.w3.org/WAI/WCAG21/Techniques/general/G115.html).
+- [H49: using semantic markup to mark emphasized or special text](https://www.w3.org/WAI/WCAG21/Techniques/html/H49.html).
+
+In most of the WCAG success criteria for [guideline 2.4 – navigable](https://www.w3.org/WAI/WCAG21/quickref/#navigable) semantic elements such as heading, button, link, label elements are referenced specifically or used in examples in sufficient techniques.
+
+The sufficient technique [88: using HTML according to spec](https://www.w3.org/WAI/WCAG21/Techniques/html/H88) is referenced in [4.1.1 parsing](https://www.w3.org/WAI/WCAG21/quickref/#parsing) and [4.1.2 name, role, value](https://www.w3.org/WAI/WCAG21/quickref/#name-role-value).

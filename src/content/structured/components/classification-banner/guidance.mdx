@@ -1,0 +1,63 @@
+---
+path: "/components/classification-banner"
+
+navPriority: 8
+
+date: "2022-11-15"
+
+title: "Classification banner"
+
+status: "BETA"
+
+subTitle: "Classification banners are used to show the data classification (also known as protective marking) of an app."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/classification-banner.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/classification-banner" },
+    { title: "Code", path: "/components/classification-banner/code" },
+    {
+      title: "Accessibility",
+      path: "/components/classification-banner/accessibility",
+    },
+  ]
+---
+
+import { IcClassificationBanner } from "@ukic/react";
+
+## Introduction
+
+Protective markings indicate the level of sensitivity of classified or controlled information.
+
+<ComponentPreview style={{ gap: "8px" }}>
+  <IcClassificationBanner inline />
+  <IcClassificationBanner classification="official" inline />
+  <IcClassificationBanner classification="official-sensitive" inline />
+  <IcClassificationBanner classification="secret" inline />
+  <IcClassificationBanner classification="top-secret" inline />
+</ComponentPreview>
+
+<IcClassificationBanner classification="top-secret" />
+
+## When to use
+
+All apps, except public ones, require a classification banner. When multiple pieces of information require different markings, use classifications banners on each component.
+
+## Layout and placement
+
+Place a single banner at the bottom of the viewport. The banner is always fixed and should not scroll with the page.
+
+When printing or exporting a page, the protective marking must appear at the top and bottom of each page in the printed or exported document.
+
+## Content
+
+If there is information on a single page that has multiple different classifications, display the maximum classification with the text prefix of `UP TO`.
+
+## Colour
+
+Don’t alter or customise the [classification banner colours](/styles/colour#classification) as they've been designed to meet accessibility requirements.
+
+## Accessibility consideration
+
+Make sure the classification banner is the first item that is read out to people who use screen readers. Put the component at the top of the DOM/HTML.

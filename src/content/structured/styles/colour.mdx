@@ -1,0 +1,109 @@
+---
+path: "/styles/colour"
+
+navPriority: 1
+
+date: "2022-11-15"
+
+title: "Colour"
+
+status: "BETA"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/colour.mdx"
+---
+
+import ColourTable from "./components/ColourTable";
+import {
+  ColoursText,
+  ColoursAction,
+  ColoursActionBackgrounds,
+  ColoursLinks,
+  ColoursStatus,
+  ColoursClassification,
+  ColoursArchitecturalAll,
+  ColoursTheme,
+} from "./components/ColourTable/colours.config";
+
+## Introduction
+
+People can complete tasks faster with recognisable, accessible and consistent colours.
+
+Always use the Design System colour styles. These colours meet or exceed all [accessibility requirements](/accessibility/requirement).
+
+The colour styles are built into the [UI Kit](/get-started). You should use these to help maintain consistency for when you are building custom experiences.
+
+## Text
+
+Primary text is an off-black colour that satisfies minimum and maximum contrast needs. Use this colour for the majority of text and elements.
+
+Use the secondary text colour for supporting content such as helper text or less important information in lists and tables.
+
+Use the tertiary text colour for even less important information. Use the tertiary text colour sparingly and always try to use the primary or secondary colours first.
+
+Don't use different colours for text, unless specified as part of a component.
+
+<ColourTable config={ColoursText} />
+
+## Action
+
+Use the action colour for interactive elements like buttons, form controls and important actions. This makes it easy for people to recognise elements and switch between contexts.
+
+The single action colour creates consistency across a range of apps. Use the dark or light action colour variant if a background colour is used.
+
+Use the destructive action colour styles for actions that can't be reversed.
+
+<ColourTable config={ColoursAction} />
+
+### Action backgrounds
+
+Interactive elements sometimes require transparent backgrounds for their hover and pressed states. The action background colour styles use the action colour styles with transparency.
+
+<ColourTable config={ColoursActionBackgrounds} />
+
+## Links
+
+Use these colours for all links. These specific colours help to identify links from non-interactive text.
+
+Use the contrast colour variants to achieve good contrast for links that appear on dark backgrounds.
+
+<ColourTable config={ColoursLinks} />
+
+## Status
+
+Use these colours only for status updates, errors and warnings. Always include text describing the status even if you use an icon.
+
+Use the contrast colour variants to achieve good contrast when displaying status on dark backgrounds.
+
+Use the 'warning dark' colour for any 'warning' text.
+
+<ColourTable config={ColoursStatus} />
+
+## Classification
+
+Use these colour styles for components that indicate content's classification.
+
+<ColourTable config={ColoursClassification} />
+
+## Architectural
+
+Use these colours in lines, borders and backgrounds to logically separate distinct pieces of content.
+
+<ColourTable config={ColoursArchitecturalAll} />
+
+## Theme
+
+You may choose a theme colour to give your app a distinct theme or 'brand'. Make sure it meets contrast requirements with either black or white foreground text.
+
+If you use the [IC UI Kit](/components), the foreground colour will be automatically determined based on your theme colour.
+
+The theme colour is used on the [top navigation](/components/top-nav), [side navigation](/components/side-nav), [hero](/components/hero) and [footer](/components/footer) components.
+
+Don't use theme colours on any other components.
+
+<ColourTable config={ColoursTheme} />
+
+## Accessibility considerations
+
+These colours have been considered against a variety of accessibility and usability practices. This includes colour contrast, recognition, consistency and with various colour deficiencies.
+
+If using a 'light' theme colour, any text in those components will need to be black instead of white. This is automatic if you're using the IC UI Kit. It's not possible to use 'inaccessible' colours in the IC UI Kit as they'll revert to the default theme colour. See the component documentation for more details.

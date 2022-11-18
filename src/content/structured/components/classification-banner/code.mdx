@@ -1,0 +1,58 @@
+---
+path: "/components/classification-banner/code"
+
+date: "2022-11-15"
+
+title: "Classification banner"
+
+status: "BETA"
+
+subTitle: "Classification banners are used to show the data classification (also known as protective marking) of an app."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/classification-banner.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/classification-banner" },
+    { title: "Code", path: "/components/classification-banner/code" },
+    {
+      title: "Accessibility",
+      path: "/components/classification-banner/accessibility",
+    },
+  ]
+---
+
+import { IcClassificationBanner } from "@ukic/react";
+
+<IcClassificationBanner classification="secret" />
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-classification-banner/>
+<ic-classification-banner classification="official"></ic-classification-banner>
+<ic-classification-banner classification="official-sensitive"></ic-classification-banner>
+<ic-classification-banner classification="secret"></ic-classification-banner>
+<ic-classification-banner classification="top-secret"></ic-classification-banner>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcClassificationBanner inline />
+<IcClassificationBanner classification="official"/>
+<IcClassificationBanner classification="official-sensitive"/>
+<IcClassificationBanner classification="secret"/>
+<IcClassificationBanner classification="top-secret"/>`,
+  },
+];
+
+## Component demo
+
+<ComponentPreview snippets={snippets} style={{ gap: "8px" }}>
+  <IcClassificationBanner inline />
+  <IcClassificationBanner classification="official" inline />
+  <IcClassificationBanner classification="official-sensitive" inline />
+  <IcClassificationBanner classification="secret" inline />
+  <IcClassificationBanner classification="top-secret" inline />
+</ComponentPreview>
+
+<ComponentDetails component="ic-classification-banner" />

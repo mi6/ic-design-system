@@ -1,0 +1,64 @@
+---
+path: "/patterns/form-validation"
+
+navPriority: 3
+
+date: "2022-11-15"
+
+title: "Form validation"
+
+subTitle: "Form validation checks that the information provided is correct and helps the user to fix any problems."
+
+status: "IN DEVELOPMENT"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/form-validation.mdx"
+---
+
+import { IcTextField } from "@ukic/react";
+import ErrorSummaryEx from "./components/ErrorSummaryEx";
+
+## When to use
+
+Use form validation for all forms where information is required or is required in a particular format.
+
+Always show an error summary at the top of the form along with a message under invalid fields.
+
+## Usage
+
+In some cases, you can present success validation on text fields. For example, if choosing a username.
+
+Don't display text field errors as the user is typing. Wait until typing is finished or the form is submitted.
+
+### Error summary
+
+Use a multiline error alert to display a summary list of the validation issues.
+
+<ComponentPreview noPadding>
+  <ErrorSummaryEx />
+</ComponentPreview>
+
+Put the alert at the top of the form. Set focus on the error summary when form validation has failed.
+
+Each issue in the list should link to the related input field. Set focus to the field when the summary list item is clicked.
+
+### Text fields
+
+Display an error message under each invalid text field. Don't hide any 'helper text' when showing an error message.
+
+<ComponentPreview icds>
+  <IcTextField
+    label="What's your favourite type of coffee?"
+    required
+    helperText="Such as Arabica, Robusta or Liberica."
+    validationStatus="error"
+    validationText="Please provide your subscription number."
+  />
+</ComponentPreview>
+
+## Accessibility considerations
+
+When building or using this pattern:
+
+- Set the focus of the keyboard and scroll to the error summary when it appears. Make sure the error summary is announced by a screen reader.
+- Consider that errors can increase anxiety for people. An error shouldn't blame the user.
+- Add ‘Error: ’ to the beginning of the page `<title>` to inform assistive technology users as soon as possible.

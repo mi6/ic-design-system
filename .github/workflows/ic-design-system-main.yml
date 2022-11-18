@@ -1,0 +1,46 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ic-design-system-static-analysis-tests:
+    name: "Static Analysis Tests"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: |
+          npm ci --legacy-peer-deps --also=dev
+      - name: Lint site
+        run: |
+          npm run lint
+
+  ic-design-system-deploy:
+    needs: [ic-design-system-static-analysis-tests]
+    concurrency: ci-${{ github.ref }}
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Build
+        run: |
+          npm ci --legacy-peer-deps
+          npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./public
+          target-folder: ./docs

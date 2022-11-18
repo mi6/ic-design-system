@@ -1,0 +1,24 @@
+name: Add new issues to project
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+        with:
+          app_id: ${{ secrets.ADD_TO_PROJECTS_APP_ID }}
+          private_key: ${{ secrets.ADD_TO_PROJECTS_APP_PEM }}
+
+      - name: Add to project
+        uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/mi6/projects/2
+          github-token: ${{ steps.generate_token.outputs.token }}
