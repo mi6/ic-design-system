@@ -1,0 +1,120 @@
+---
+path: "/components/skeleton"
+
+navPriority: 18
+
+date: "2022-11-15"
+
+title: "Skeleton"
+
+status: "BETA"
+
+subTitle: "Skeleton loading states are representations of the shape of content that help inform users that a specific type of component is loading."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/skeleton.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/skeleton" },
+    { title: "Code", path: "/components/skeleton/code" },
+    { title: "Accessibility", path: "/components/skeleton/accessibility" },
+  ]
+---
+
+import skeletonFig1 from "./images/fig-1-use-the-variant-which-outlines-the-whole-components.png";
+import skeletonFig2 from "./images/fig-2-do-not-use-skeletons-within-skeletons.png";
+import skeletonFig3 from "./images/fig-3-use-the-correct-text-style-to-match-the-size-of-the-text.png";
+import skeletonFig4 from "./images/fig-4-do-not-use-the-same-text-variant-for-different-text-sizes.png";
+import skeletonFig5 from "./images/fig-5-use-a-separate-text-skeleton-component-for-each-line.png";
+import skeletonFig6 from "./images/fig-6-do-not-scale-the-text-skeleton-to-the-full-height-of-a-body-of-text.png";
+
+## Introduction
+
+Skeleton has three variants:
+
+- Circle
+- Text
+- Rectangle
+
+<ComponentPreview>
+  <ic-skeleton />
+</ComponentPreview>
+
+### Circle
+
+Use the circle variant as a placeholder for any circular components, like avatars and circular logos.
+
+### Text
+
+Use the text variant as a placeholder for any text or labels which sit outside of any component. This applies to helper text for input labels, headings, and body text.
+
+### Rectangle
+
+Use the rectangle variant as a placeholder for any other components. This includes buttons, chips and tags, input fields and cards.
+
+## When to use
+
+Use skeleton variants as a placeholder for when a full page, or individual components are loading. Don't nest skeletons. If a label or text lives inside a component, for example in cards, only use the skeleton variant of the component which houses the other components.
+
+<DoDontCaution
+  imageSrc={skeletonFig1}
+  imageAlt="An image which shows the card component and the rectangle skeleton variant used to replace the full card width and height while it’s loading."
+  state="good"
+  caption="Use skeletons to outline the whole component."
+/>
+
+<DoDontCaution
+  imageSrc={skeletonFig2}
+  imageAlt="An image showing a card component’s skeleton state including text skeleton variants used within another rectangle skeleton variant."
+  state="bad"
+  caption="Don't use skeletons within skeletons."
+/>
+
+### Sizing
+
+Set the height and width of the skeleton to match the size of the component that will replace it once loaded.
+
+When using the text variant, set the skeleton’s height to match the text style of the text that will replace it once loaded.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={skeletonFig3}
+    imageAlt="A graphic of a list of text styles side by side with the correct text variant height."
+    state="good"
+    caption="Use the correct text style to match the size of the text."
+  />
+  <DoDontCaution
+    imageSrc={skeletonFig4}
+    imageAlt="A graphic of a list of different text styles side by side with a list of skeleton components of the same height."
+    state="bad"
+    caption="Don't use the same skeleton size for different text sizes."
+  />
+</DoubleDoDontCaution>
+
+Don't replace large bodies of texts with one single large text skeleton. Replace each line with a separate text skeleton.
+
+<DoDontCaution
+  imageSrc={skeletonFig5}
+  imageAlt="An image showing multiple lines of text being replaced by multiple text skeleton components for each line of text."
+  state="good"
+  caption="Use a separate text skeleton component for each line."
+/>
+
+<DoDontCaution
+  imageSrc={skeletonFig6}
+  imageAlt="An image showing multiple lines of text being incorrectly replaced by one large custom text skeleton."
+  state="bad"
+  caption="Don't scale the text skeleton to the full height of a body of text."
+/>
+
+## When not to use
+
+Avoid displaying skeleton placeholders when something will load in 300ms or under to avoid flashing on the page. If needed, manually specify a 300ms delay, after which the skeleton component is displayed.
+
+Don’t use skeleton loading states when the loading progress can be calculated. Instead, use [determinate loading indicators](/components/loading-indicators).
+
+Don’t use skeleton components when the general structure of the page that will replace skeleton variants is not known. Instead, use [indeterminate loading indicators](/components/loading-indicators).
+
+## Related components
+
+- [Loading indicators](/components/loading-indicators)

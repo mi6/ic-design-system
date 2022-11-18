@@ -1,0 +1,105 @@
+---
+path: "/patterns/app-errors"
+
+navPriority: 1
+
+date: "2022-11-15"
+
+title: "App errors"
+
+subTitle: "App errors are shown when a problem occurs that the user has no control over."
+
+status: "IN DEVELOPMENT"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/app-errors.mdx"
+---
+
+import { IcAlert, IcTypography, IcLink } from "@ukic/react";
+
+## When to use
+
+Display an app error when:
+
+- When you need to make users aware that something’s not working as expected.
+- When a system is partially functioning.
+- When data sources are unavailable.
+- Where an incoming data source SLA has been breached.
+- When an app is unavailable for scheduled system maintenance.
+
+## When not to use
+
+- Don't use app errors for [form validation feedback](/patterns/form-validation).
+- Don't use a [toast](/components/toasts) for errors because a user might not notice the error message.
+
+## Usage
+
+App errors should bring sufficient context to allow the user to understand whether they can still use the app and contain resolution information.
+
+If possible, manage users expectations on how long something will take to fix and offer workarounds (if available).
+
+Use words that describe the cause of the error and, where possible, give the user a way to resolve it.
+
+### Alerts
+
+Use an alert if only part of an app (such as an asynchronous component) has a problem.
+
+<ComponentPreview icds>
+  <IcAlert
+    heading="Something went wrong"
+    message="The app couldn't connect to the server to download the latest information. Please check your connection or contact your local IT Service Desk."
+    variant="error"
+  />
+</ComponentPreview>
+
+### Dialogs and modals
+
+Use dialogs for critical problems where you need to preserve information on the page.
+
+For example, for a network problem when trying to save information and to prevent interaction with the rest of the app.
+
+### Full page
+
+Use full-page errors for the most critical problems, especially those that can't be resolved.
+
+For example, use a full-page error message when content is missing or when the app fails to load.
+
+<ComponentPreview noPadding left>
+  <div style={{ padding: "36px" }}>
+    <IcTypography variant="h1" component="h3" spacing>
+      LATTE STREET is unavailable
+    </IcTypography>
+    <IcTypography variant="body" spacing>
+      This app is currently unavailable whilst we carry out an update.
+    </IcTypography>
+    <IcTypography variant="caption">
+      Please check the <IcLink href="#">downtime calendar</IcLink> and try again
+      later.
+    </IcTypography>
+  </div>
+</ComponentPreview>
+
+### Persistent banner
+
+Use a persistent banner at the top of an app experiencing a system or data problem. If multiple problems exist, group them into one banner.
+
+Link to available support pages and provide resolution information (if available) to provide assurance and transparency to your users.
+
+Be careful to keep persistent banners visually distinct when used alongside classification banners.
+
+### Email
+
+Use an email to notify users of a system being down, including for scheduled maintenance.
+
+### Tone of voice
+
+Write your error message with short, jargon-free language to inform your users and consider that errors can increase anxiety for people. An error shouldn't blame the user.
+
+Use words that describe the cause of the error and, where possible, give the user a way to resolve it.
+
+## Accessibility considerations
+
+When building or using this pattern:
+
+- Make sure components for app errors are announced to screen readers and other assistive technology.
+- Don't use colour on its own to convey the app error. Always include text or iconography.
+- Consider that errors can increase anxiety for people. An error shouldn't blame the user.

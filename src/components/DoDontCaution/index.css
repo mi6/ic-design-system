@@ -1,0 +1,73 @@
+.none {
+  position: relative;
+  margin-bottom: var(--ic-space-lg);
+  display: inline-block;
+}
+
+.caution {
+  border-top: var(--ic-space-xs) solid var(--ic-status-warning-mid);
+  position: relative;
+  margin-bottom: var(--ic-space-lg);
+  display: inline-block;
+}
+
+.dont {
+  border-top: var(--ic-space-xs) solid var(--ic-status-error);
+  position: relative;
+  margin-bottom: var(--ic-space-xxl);
+  display: inline-block;
+}
+
+.do {
+  border-top: var(--ic-space-xs) solid var(--ic-status-success);
+  position: relative;
+  margin-bottom: var(--ic-space-xxl);
+  display: inline-block;
+}
+
+.do-dont-caution-containers {
+  position: absolute;
+  top: var(--ic-space-xs);
+  left: var(--ic-space-xs);
+  height: var(--ic-space-xl);
+  width: var(--ic-space-xl);
+  color: var(--ic-architectural-white);
+  border: var(--ic-space-xxxs) solid var(--ic-architectural-white);
+  border-radius: 50%;
+  box-shadow: var(--ic-elevation-overlay);
+  text-align: center;
+}
+
+.do-dont-caution-containers > svg {
+  height: var(--ic-space-lg);
+  width: var(--ic-space-lg);
+}
+
+.caution-icon {
+  background: var(--ic-status-warning-mid);
+}
+
+.caution-icon > svg {
+  margin-top: 3px;
+}
+
+.dont-icon {
+  background: var(--ic-status-error);
+}
+
+.dont-icon > svg {
+  margin-top: var(--ic-space-xxs);
+}
+
+.do-icon {
+  background: var(--ic-status-success);
+}
+
+.do-icon > svg {
+  margin-top: var(--ic-space-xxs);
+}
+
+.image-wide {
+  max-width: 100%;
+  margin: 0 0 5px 0;
+}

@@ -1,0 +1,71 @@
+---
+path: "/components/top-nav/accessibility"
+
+date: "2022-11-15"
+
+title: "Top navigation"
+
+status: "BETA"
+
+subTitle: "Top navigation sits across the top of the page. It includes the app name, search bar, main navigation and secondary links.  "
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/top-nav.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/top-nav" },
+    { title: "Code", path: "/components/top-nav/code" },
+    { title: "Accessibility", path: "/components/top-nav/accessibility" },
+  ]
+---
+
+import topNavFig11 from "./images/fig-11-tab-order.png";
+
+## Easy to use for everyone
+
+On top navigation layouts which contain a search button (rather than an expanded search bar), when the search button is activated the search bar will appear below, extending the height of the top navigation and shifting other content down.
+
+Focus will move to the search bar automatically, allowing users to begin typing their query. When focus is moved from the search bar, the search bar will be hidden and focus is returned to the search button unless it was moved elsewhere. When the search bar is next opened, any input previously entered should persist.
+
+All individual components used within the top navigation use their own accessibility guidance.
+
+The top navigation forms an app's main navigation. Therefore, it always appears at the start of a page's tab index. It also uses a `navigation` landmark to allow quick navigation from anywhere within a page's content.
+
+The top navigation content uses logical tabbing order to move between the focusable elements.
+
+The order that the top navigation's internal elements follow is:
+
+1. App title (homepage)
+2. Search bar
+3. First icon button
+4. Second icon button
+5. Third icon button
+6. First tab
+7. Second tab
+8. Third tab
+9. Fourth tab
+
+<DoDontCaution
+  imageSrc={topNavFig11}
+  imageAlt="An example top navigation that displays the tab order of its internal elements."
+  state="none"
+  caption="Tab ordering of the top navigation's internal elements."
+/>
+
+## For Assistive Technology
+
+The secondary links and icon buttons have accessible labels that are announced by a screen reader when focused.
+
+On smaller screens, the drawer menu acts modally and captures focus within its elements until the menu is closed.
+
+Collapsible groups in the drawer menu use `aria-expanded` to indicate whether the group is open or closed.
+
+## Based on
+
+The top navigation component has been based on the following resources:
+
+- [Navigation Landmark](https://www.w3.org/WAI/ARIA/apg/example-index/landmarks/navigation.html), W3, accessed July 2022.
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

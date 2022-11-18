@@ -1,0 +1,94 @@
+---
+path: "/components/links/code"
+
+date: "2022-11-15"
+
+title: "Link"
+
+status: "BETA"
+
+subTitle: "Links can be used either as standalone components or inline with text."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/links.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/links" },
+    { title: "Code", path: "/components/links/code" },
+    { title: "Accessibility", path: "/components/links/accessibility" },
+  ]
+---
+
+import { IcLink } from "@ukic/react";
+
+import { MemoryRouter, NavLink } from "react-router-dom";
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-link href="/components/links/code">Links code page</ic-link>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLink href="/components/links/code">Links code page</IcLink>`,
+  },
+];
+
+## Component demo
+
+<ComponentPreview snippets={snippets}>
+  <IcLink href="/components/links/code">Links code page</IcLink>
+</ComponentPreview>
+
+<ComponentDetails component="ic-link" />
+
+### With React Router
+
+export const withReactRouter = [
+  {
+    language: "React",
+    snippet: `<MemoryRouter initialEntries={["/"]}>
+  <div style={{display: "flex", flexDirection: "row", gap: "8px"}}>
+    <IcLink>
+      <NavLink to="/" slot="router-item">Home</NavLink>
+    </IcLink>
+    <IcLink>
+      <NavLink to="/daily-tippers" slot="router-item">Daily Tippers</NavLink>
+    </IcLink>
+  </div>
+  <IcSectionContainer>
+    <Routes>
+      <Route path="/" element={() => <IcTypography>This is the home page</IcTypography>} />
+      <Route path="/daily-tippers" element={() => <IcTypography>This page is about daily tippers</IcTypography>} />
+    </Routes>
+  </IcSectionContainer>
+</MemoryRouter>
+    `,
+  },
+];
+
+<ComponentPreview
+  snippets={withReactRouter}
+  style={{ flexDirection: "column" }}
+>
+  <MemoryRouter initialEntries={["/"]}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        gap: "8px",
+      }}
+    >
+      <IcLink>
+        <NavLink to="/" slot="router-item">
+          Home
+        </NavLink>
+      </IcLink>
+      <IcLink>
+        <NavLink to="/daily-tippers" slot="router-item">
+          Daily Tippers
+        </NavLink>
+      </IcLink>
+    </div>
+  </MemoryRouter>
+</ComponentPreview>

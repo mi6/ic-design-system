@@ -1,0 +1,65 @@
+---
+path: "/components/search-bar/accessibility"
+
+date: "2022-11-15"
+
+title: "Search bar"
+
+status: "BETA"
+
+subTitle: "The search bar allows users to search for information using keywords or phrases."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/search-bar.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/search-bar" },
+    { title: "Code", path: "/components/search-bar/code" },
+    { title: "Accessibility", path: "/components/search-bar/accessibility" },
+  ]
+---
+
+import searchBarFig7 from "./images/fig-7-correct-tab-order.png";
+
+## Easy to use for everyone
+
+Placing a close button within the search field when input has been added enhances the accessibility of the component, allowing users to easily remove input and correct their search query without performing multiple actions. Including a visible search button as well as having an associated event with the input field provides multiple ways to search using the keyboard as well as the mouse.
+
+The search variant that shows suggested options provides additional help from an accessibility perspective as it allows users to perform searches quickly without needing to fully enter their input. This is a form of autocomplete and has been made accessible using the keyboard, including **Home** and **End**, as well as the **Esc** key. This is also configured so when there isn’t enough space in the viewport for the dropdown list to fully display beneath the dropdown bar, it's displayed above the input bar.
+
+The focus order through the search field internal elements is as follows:
+
+1. The search field and its option list.
+2. The clear button (if visible).
+3. The search button (if enabled).
+
+Keyboard users can move focus through options in the drop list using the arrow keys, whilst they can still type into the field to change their search term.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={searchBarFig7}
+    imageAlt="A graphic highlighting the tab order between elements in a search field. The search input is annotated with a '1', the close buttons with a '2', and the search button with a '3'."
+    state="none"
+    caption="Focus is applied first to the input field and its option list, then moves to the close button if visible and search button."
+  />
+</DoubleDoDontCaution>
+
+The first item in the drop list is focused by default so that if a user clicked the search button or the enter button, the associated action with that option would be triggered. This might be a link to a page, or filling the search field with the selected suggestion.
+
+## For Assistive Technology
+
+When focus is received on the component, the screen-reader will announce a hint explaining how you can move up and down in the dropdown list using the **up**/**down** arrow keys.
+
+When the search is complete, an `aria-live` announcement is used to announce the number of results in the list.
+
+## Based on
+
+The search bar component has been based on the following resources:
+
+- [Best practices for the accessibility of an autocompletion component](https://a11y-guidelines.orange.com/en/articles/autocomplete-component/), Orange, accessed July 2022.
+- [Accessible Search Form](https://www.a11ymatters.com/pattern/accessible-search/), a11ymatters, accessed July 2022.
+- [ARIA: search role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/search_role), MDN web docs, accessed July 2022.
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

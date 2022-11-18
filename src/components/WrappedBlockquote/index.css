@@ -1,0 +1,6 @@
+.blockquote {
+  background: var(--ic-architectural-200);
+  margin: var(--ic-space-lg) 0;
+  padding: var(--ic-space-lg);
+  border-radius: var(--ic-border-radius);
+}

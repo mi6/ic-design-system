@@ -1,0 +1,168 @@
+---
+path: "/components/chips"
+
+navPriority: 7
+
+date: "2022-11-15"
+
+title: "Chip"
+
+status: "IN DEVELOPMENT"
+
+subTitle: "Chips are used to filter and present data."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/chips.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/chips" },
+    { title: "Code", path: "/components/chips/code" },
+    { title: "Accessibility", path: "/components/chips/accessibility" },
+  ]
+---
+
+import { IcAlert } from "@ukic/react";
+import chipsFig1 from "./images/fig-1-use-dismissible-chips-for-filtering-multiple-item.png";
+import chipsFig2 from "./images/fig-2-do-use-static-chip-to-display-descriptive-non-interactive-information.png";
+import chipsFig3 from "./images/fig-3-do-not-replace-status-tags-for-static-chips.png";
+import chipsFig4 from "./images/fig-4-do-use-status-tags-to-display-status.png";
+import chipsVid1 from "./images/anim-1-do-allow-users-to-re-select-the-item-after-it-has-been-dismissed.mp4";
+import chipsVid2 from "./images/anim-2-do-not-use-dismissible-chips-when-the-user-will-not-be-able-to-re-select-the-dismissed-item.mp4";
+
+<IcAlert
+  heading="Coming soon"
+  message="The chip component is currently in development."
+  variant="info"
+/>
+
+## Component variants
+
+There are two types of chips: dismissible chips and static chips. Dismissible chips have both filled and outline variants and are interactive, whereas static chips simply present information and aren't actionable.
+
+### Dismissible chips
+
+Use a dismissible chip to show selected data from a user action that can be cleared by dismissing the chip. This is often used in the context of filtering and selection.
+
+#### Filled
+
+Use filled dismissible chips to provide high emphasis on the displayed information
+
+#### Outlined
+
+Use outlined dismissible chips to provide low emphasis on the displayed information
+
+#### Static chips
+
+Use static chips to display information that does not need clearing. They aren't interactive so don't present any action and they can't be dismissed.
+
+## When to use
+
+### Dismissible chips
+
+Use dismissible chips when you need to choose multiple items from a list but need to show items after they've been chosen.
+
+Common use cases include:
+
+- A list showing which filters have been selected for a search.
+- Choosing multiple recipients of a message.
+
+<DoDontCaution
+  imageSrc={chipsFig1}
+  imageAlt="A correct example of a series of dismissible chips being used in a multi-select dropdown to display a list of selected items."
+  state="good"
+  caption="Use dismissible chips for filtering multiple items."
+/>
+
+### Static chips
+
+Use static chips when you need to simply display a piece of information with no interaction, such as a label.
+
+Common use cases include:
+
+- Labelling or drawing attention to a particular card or row because of its state.
+
+- Displaying the current location of an item.
+
+<DoDontCaution
+  imageSrc={chipsFig2}
+  imageAlt="A correct example of three static chips labelled 'Published 18 May 2021', '#UI', and '#Components' right below the header of a page titled 'Guidance'."
+  state="good"
+  caption="Use static chips to display descriptive, non-interactive information."
+/>
+
+## When not to use
+
+### Dismissible chips
+
+Don't use dismissible chips where the user can't re-select the item presented in the chip.
+
+For example, if used to show a selected filter, after dismissing the chip and clearing the filter, it can be applied again later.
+
+<video
+  width="100%"
+  muted
+  controls
+  loop
+  title="An animation showing the user dismissing a chip labelled 'Roasted' and the option not re-appearing in the filter section."
+>
+  <source src={chipsVid1} type="video/mp4" />
+</video>
+
+Don't use dismissible chips when the user will not be able to re-select the dismissed item.
+
+<video
+  width="100%"
+  muted
+  controls
+  loop
+  title="An animation showing the behaviour of a dismissible chip as it re-appears in the filter section when the user dismisses it."
+>
+  <source src={chipsVid2} type="video/mp4" />
+</video>
+
+Allow users to re-select the item after it has been dismissed.
+
+### Static chips
+
+Don't use static chips to show status. Use [status tags](/components/status-tags) instead.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={chipsFig4}
+    imageAlt="Three chips, of which a neutral tag labelled 'Idle, a warning tag labelled 'Offline', and success tag labelled 'Online' displaying the status of three coffee machines."
+    state="good"
+    caption="Use status tags to display status."
+  />
+  <DoDontCaution
+    imageSrc={chipsFig3}
+    imageAlt="Three static chips labelled 'Idle', 'Offline', and 'Online' displaying the status of three coffee machines."
+    state="bad"
+    caption="Don't use static chips to denote status."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+### Chip grouping
+
+When using chips in a group, make sure they are left aligned and are positioned next to each other in a row.
+
+Only position chips on multiple rows if there isn't enough horizontal space to show them on one, or if they are segmented into labelled groups.
+
+## Content
+
+### Labels
+
+Use concise labels as longer labels will be truncated if it forces the chip to exceed the maximum width.
+
+### Icons
+
+Use an icon on the left of a dismissible or static chip to provide additional meaning.
+
+When including an icon in a chip make sure that the icon is understandable and relevant to the information presented.
+
+Always provide alternative descriptions for icons. Don't use icons if they aren't necessary.
+
+## Related components
+
+- [Status tags](/components/status-tags)

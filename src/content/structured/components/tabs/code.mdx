@@ -1,0 +1,82 @@
+---
+path: "/components/tabs/code"
+
+date: "2022-11-15"
+
+title: "Tabs"
+
+status: "BETA"
+
+subTitle: "Tabs let users navigate between content within the same context. Tabs organise complex layouts by moving content into multiple sections."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/tabs.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/tabs" },
+    { title: "Code", path: "/components/tabs/code" },
+    { title: "Accessibility", path: "/components/tabs/accessibility" },
+  ]
+---
+
+import { IcTab, IcTabContext, IcTabList, IcTabPanel } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-tab-context>
+  <ic-tab-list label="Example tab list">
+    <ic-tab>One</ic-tab>
+    <ic-tab>Two</ic-tab>
+    <ic-tab>Three</ic-tab>
+  </ic-tab-list>
+  <ic-tab-panel>Tab One</ic-tab-panel>
+  <ic-tab-panel>Tab Two</ic-tab-panel>
+  <ic-tab-panel>Tab Three</ic-tab-panel>
+</ic-tab-context>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTabContext>
+  <IcTabList label="Example tab list">
+    <IcTab>One</IcTab>
+    <IcTab>Two</IcTab>
+    <IcTab>Three</IcTab>
+  </IcTabList>
+  <IcTabPanel>Tab One</IcTabPanel>
+  <IcTabPanel>Tab Two</IcTabPanel>
+  <IcTabPanel>Tab Three</IcTabPanel>
+</IcTabContext>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcTabContext>
+    <IcTabList label="Example tab list">
+      <IcTab>One</IcTab>
+      <IcTab>Two</IcTab>
+      <IcTab>Three</IcTab>
+    </IcTabList>
+    <IcTabPanel>Tab One</IcTabPanel>
+    <IcTabPanel>Tab Two</IcTabPanel>
+    <IcTabPanel>Tab Three</IcTabPanel>
+  </IcTabContext>
+</ComponentPreview>
+
+## Tab details
+
+<ComponentDetails component="ic-tab" />
+
+## Tab context details
+
+<ComponentDetails component="ic-tab-context" />
+
+## Tab list details
+
+<ComponentDetails component="ic-tab-list" />
+
+## Tab panel details
+
+<ComponentDetails component="ic-tab-panel" />

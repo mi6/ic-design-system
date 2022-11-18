@@ -1,0 +1,22 @@
+.container-double {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-double > div {
+  max-width: calc(50% - var(--ic-space-sm));
+}
+
+.container-double img {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .container-double {
+    flex-direction: column;
+  }
+
+  .container-double > div {
+    max-width: none;
+  }
+}

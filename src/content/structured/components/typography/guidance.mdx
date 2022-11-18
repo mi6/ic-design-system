@@ -1,0 +1,52 @@
+---
+path: "/components/typography"
+
+navPriority: 27
+
+date: "2022-11-17"
+
+title: "Typography"
+
+status: "BETA"
+
+subTitle: "Use the typography component for consistent styling across typographical elements."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/typography/guidance.mdx"
+
+hidden: false
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/typography" },
+    { title: "Code", path: "/components/typography/code" },
+    { title: "Accessibility", path: "/components/typography/accessibility" },
+  ]
+---
+
+import { IcTypography } from "@ukic/react";
+
+## Introduction
+
+The typography component is used to style text elements like `p`, `h1` and `label`. The element to be styled should be wrapped with the typography component.
+
+The typography variants are defined on the [typography styles](/styles/typography) page.
+
+Use one of the typography component's variants to style an element. For example, the following uses a `h2` variant to wrap a `h5` element and apply the 'heading large' styling.
+
+<ComponentPreview>
+  <IcTypography variant="h2">
+    <h5>&lt;h5&gt; with 'heading large' styling</h5>
+  </IcTypography>
+</ComponentPreview>
+
+## When to use
+
+Use typography to provide consistent styling across an app's text content.
+
+Use the logical order of `h#` tags in code for headings. For example, a `h3` heading needs to come after a `h2` heading but can be styled as any variant.
+
+## Vertical margins
+
+When using a typography component within page content, apply the vertical margins to evenly space out text elements on the page.
+
+If using the typography component within other components or compact layouts, don't apply vertical margins. You can then position the typography component with precision.

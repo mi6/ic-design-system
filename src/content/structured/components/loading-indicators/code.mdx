@@ -1,0 +1,44 @@
+---
+path: "/components/loading-indicators/code"
+
+date: "2022-11-15"
+
+title: "Loading indicator"
+
+status: "BETA"
+
+subTitle: "Loading indicators help inform users that a request is being processed. Circular and linear indicators provide flexibility in design."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/loading-indicators.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/loading-indicators" },
+    { title: "Code", path: "/components/loading-indicators/code" },
+    {
+      title: "Accessibility",
+      path: "/components/loading-indicators/accessibility",
+    },
+  ]
+---
+
+import { IcLoadingIndicator } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-loading-indicator type="circular" label="Loading..." />`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLoadingIndicator type="circular" label="Loading..." />`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcLoadingIndicator type="circular" label="Loading..." />
+</ComponentPreview>
+
+<ComponentDetails component="ic-loading-indicator" />

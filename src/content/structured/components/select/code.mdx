@@ -1,0 +1,88 @@
+---
+path: "/components/select/code"
+
+date: "2022-11-15"
+
+title: "Select"
+
+status: "BETA"
+
+subTitle: "Select allows users to select one or more values from a list of options."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/select.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/select" },
+    { title: "Code", path: "/components/select/code" },
+    { title: "Accessibility", path: "/components/select/accessibility" },
+  ]
+---
+
+import { IcSelect } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExample = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        { label: "Espresso", value: "espresso" },
+        { label: "Double Espresso", value: "doubleespresso" },
+        { label: "Flat White", value: "flatwhite" },
+        { label: "Cappuccino", value: "cappucino" },
+        { label: "Americano", value: "americano" },
+        { label: "Mocha", value: "mocha" },
+      ]}
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview snippets={snippets}>
+  <SelectExample />
+</ComponentPreview>
+
+<ComponentDetails component="ic-select" />

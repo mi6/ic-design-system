@@ -1,0 +1,10 @@
+.code {
+  font-family: "Courier New", sans-serif;
+  display: inline-table;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 0 7px;
+  color: black;
+  font-weight: 500;
+}

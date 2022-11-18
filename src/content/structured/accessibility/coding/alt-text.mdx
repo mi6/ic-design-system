@@ -1,0 +1,55 @@
+---
+path: "/accessibility/coding/alt-text"
+
+navPriority: 3
+
+date: "2022-11-15"
+
+title: "Alt text"
+
+subTitle: "Follow our accessibility tips for alt text."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/alt-text.mdx"
+---
+
+## Introduction
+
+Use alt text on images. The `alt` attribute provides alternative text to users who can't see the image.
+
+Alt text should concisely convey the meaning of the image within the context of the page.
+
+If the image is only decorative or not needed because it will be repeated in adjacent text, include an empty `alt` attribute, `alt=""`.
+
+```html
+<img src="logo.jpg" alt="Design System logo" />
+```
+
+Using alt text benefits:
+
+- Those who rely on screen readers as it will read the alt text.
+- Those who have a slow connection; the alt text will be displayed in place of an image when it can't be loaded.
+
+The `alt` attribute can be used on `area`, `img`, and `input` elements.
+
+## When it goes wrong
+
+A screen reader will announce the presence of the image along with any `alt` text.
+
+If there is no `alt` attribute, the screen reader only announces the presence of the image, although some screen readers may try to add context by reading the file name.
+
+A screen reader will not announce images with an empty `alt` attribute.
+
+## Alternative images
+
+Alternatives to the `<img>` element are Scalable Vector Graphics (SVG) markup and the `<canvas>` element. They are often used for interactive images.
+
+Favour SVG over `<canvas>` because the `<canvas>` element is not accessible to assistive technologies. It's not rendered in the DOM and doesn't have internal accessibility semantics like SVG.
+
+SVG is also scalable for those who need magnification.
+
+## Best practice and WCAG
+
+Alt text is mentioned in most HTML best practice articles and will help meet WCAG success criteria [1.1.1 non-text content](https://www.w3.org/WAI/WCAG21/quickref/#non-text-content) in the sufficient techniques:
+
+- [H37: using alt attributes on img elements](https://www.w3.org/WAI/WCAG21/Techniques/html/H37.html).
+- [G196: using a text alternative on one item within a group of images that describes all items in the group](https://www.w3.org/WAI/WCAG21/Techniques/general/G196.html).

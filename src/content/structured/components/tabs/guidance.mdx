@@ -1,0 +1,176 @@
+---
+path: "/components/tabs"
+
+navPriority: 22
+
+date: "2022-11-15"
+
+title: "Tabs"
+
+status: "BETA"
+
+subTitle: "Tabs let users navigate between content within the same context. Tabs organise complex layouts by moving content into multiple sections."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/tabs.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/tabs" },
+    { title: "Code", path: "/components/tabs/code" },
+    { title: "Accessibility", path: "/components/tabs/accessibility" },
+  ]
+---
+
+import { IcTab, IcTabContext, IcTabList, IcTabPanel } from "@ukic/react";
+import tabsFig1 from "./images/fig-1-light-tab-bar-example.png";
+import tabsFig2 from "./images/fig-2-dark-tab-bar-example.png";
+import tabsFig3 from "./images/fig-3-dont-separate-the-tab-container-from-the-tab-bar.png";
+import tabsFig4 from "./images/fig-4-compact-tab-presentation.png";
+import tabsFig5 from "./images/fig-5-keep-labels-concise.png";
+import tabsFig6 from "./images/fig-6-dont-use-long-labels.png";
+import tabsFig7 from "./images/fig-7-avoid-using-too-many-tabs.png";
+import tabsFig8 from "./images/fig-8-use-clear-icons-for-tabs.png";
+import tabsFig9 from "./images/fig-9-dont-use-ambiguous-icons.png";
+import tabsFig10 from "./images/fig-10-dont-mix-icon-tabs-with-normal-tabs.png";
+
+## Introduction
+
+An example of the tab component.
+
+<ComponentPreview>
+  <IcTabContext>
+    <IcTabList label="Example tab list">
+      <IcTab>One</IcTab>
+      <IcTab>Two</IcTab>
+      <IcTab>Three</IcTab>
+    </IcTabList>
+    <IcTabPanel>Tab One</IcTabPanel>
+    <IcTabPanel>Tab Two</IcTabPanel>
+    <IcTabPanel>Tab Three</IcTabPanel>
+  </IcTabContext>
+</ComponentPreview>
+
+## When to use
+
+Use tabs to organise large amounts of related content into different sections and allow people to quickly switch between them. Tabs display one section at a time.
+
+Always consider the amount of content presented in one page and decide if it can be reduced or split across multiple pages to make it more digestible instead of placing into tabs.
+
+## When not to use
+
+Don’t use tabs if the order of the content is important, such as in a checkout process. Instead use a [stepper](/components/stepper) to order the sections into a linear process.
+
+Don’t use tabs if the content on different tabs needs to be compared.
+
+## Colour
+
+Use a dark tab bar on light backgrounds and use a dark tab bar on darker backgrounds.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={tabsFig1}
+    imageAlt="A recipe site showing a recipe titled ‘Hazelnut macchiato recipe’. The recipe sits on a white background and has a dark tab bar with two tabs for ‘Ingredients’ and ‘Method’."
+    state="good"
+    caption="Use a dark tab bar on light backgrounds."
+  />
+  <DoDontCaution
+    imageSrc={tabsFig2}
+    imageAlt="A recipe site showing a recipe titled ‘Hazelnut macchiato recipe’. The recipe sits on a dark blue background and has a light tab bar with two tabs for ‘Ingredients’ and ‘Method’."
+    state="good"
+    caption="Use a light tab bar on dark backgrounds."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+Always place tabs directly above the content container that they control.
+
+Don’t position tabs so that they are unconnected from the content that belongs to them.
+
+<DoDontCaution
+  imageSrc={tabsFig3}
+  imageAlt="A recipe site showing a page titled ‘Hazelnut macchiato recipe’. The page title has a tab bar showing two tabs ‘Ingredients’ and ‘Method’. Between the tab bar and the tab container is a link to ‘our menu’."
+  state="bad"
+  caption="Don’t separate the tab container from the tab bar."
+/>
+
+On smaller screen sizes, tab bars with a large number of tabs will collapse into a compact tab selector instead.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={tabsFig4}
+    imageAlt="A recipe site showing a page titled ‘Hazelnut macchiato recipe’. The page title has a tab bar showing a series of tabs. Three tabs are viewable on the screen and scroll buttons are displayed in the tab bar indicating that more tabs can be scrolled into view."
+    state="good"
+    caption="A tab bar showing multiple tabs in a compact layout. Scroll controls are added to navigate through the tab bar."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+### Labels
+
+Keep labels short and informative so that the tab’s content is clear. Tab labels always display on one line, so keeping them short means that more tabs can be displayed if required.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={tabsFig5}
+    imageAlt="A recipe page showing a tab bar with two tabs labelled ‘Ingredients’ and ‘Method’."
+    state="good"
+    caption="Use concise labels on tabs."
+  />
+  <DoDontCaution
+    imageSrc={tabsFig6}
+    imageAlt="A recipe page showing a tab bar with two tabs labelled ‘This is what goes in it’ and 'How it's made’."
+    state="bad"
+    caption="Don’t use long labels."
+  />
+</DoubleDoDontCaution>
+
+### Order of tabs
+
+Arrange the tabs in an order that makes the most sense in context. Always show the first tab by default when the page loads. Place the most important content in the first tab.
+
+Avoid using six or more tabs as this may add too much complexity to the page. Consider if content can be reduced or split across multiple pages instead.
+
+<DoDontCaution
+  imageSrc={tabsFig7}
+  imageAlt="A recipe page with a tab bar with six tabs."
+  state="caution"
+  caption="Avoid using too many tabs as it can complicate the page."
+/>
+
+### Icons
+
+Add icons to tab labels to provide an extra visual cue to the tab’s content. Ensure that icons are relevant to the tab content.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={tabsFig8}
+    imageAlt="A tab bar with two icon tabs labelled ‘Ingredients’ and ‘Method’. The ingredients tab has a fridge icon and the method tab has a checklist icon."
+    state="good"
+    caption="Use clear icons on tab labels."
+  />
+  <DoDontCaution
+    imageSrc={tabsFig9}
+    imageAlt="A tab bar with two icon tabs labelled ‘Ingredients’ and ‘Method’. Both icons are difficult to understand as they don't clearly match the label."
+    state="bad"
+    caption="Don’t use ambiguous icons."
+  />
+</DoubleDoDontCaution>
+
+Don’t use icons for some tabs and not others. Always apply icons to all tabs if using them.
+
+<DoDontCaution
+  imageSrc={tabsFig10}
+  imageAlt=" A recipe page that shows a tab bar with three tabs. Only one tab out of the three uses an icon."
+  state="bad"
+  caption="Don’t mix normal tabs with icon tabs. Use either all normal tabs or all icon tabs."
+/>
+
+## Accessibility considerations
+
+When deciding to use tabs, consider whether this component gives users the most understandable and usable way of navigating between the content.
+
+Consider laying out your content into a single page with anchor links to move between sections.
+
+Also consider using other containers such as accordions that are more suited to responsive behaviour as they use a single column.

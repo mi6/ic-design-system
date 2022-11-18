@@ -1,0 +1,266 @@
+import React, { useState } from "react";
+import clsx from "clsx";
+import { Link as GatsbyLink } from "gatsby";
+import { arrayToTree, TreeItem } from "performant-array-to-tree";
+
+import Icon from "@mdi/react";
+import { mdiChevronDown } from "@mdi/js";
+
+import { IcTypography, IcButton, IcLink } from "@ukic/react";
+
+import "./index.css";
+import { NavigationObject } from "../../sharedTypes";
+
+interface WrappedListItemProps {
+  text: string;
+  url?: string;
+  open?: boolean;
+  label?: string;
+  controls?: string;
+  onClick?: Function;
+  tabs?: boolean | undefined;
+}
+
+interface ListItemProps {
+  item: TreeItem;
+  onClick: Function;
+  open: boolean | undefined;
+}
+
+interface ListChildenProps {
+  item: TreeItem | undefined;
+}
+
+interface SubsectionNavProps {
+  allStructuredNav: NavigationObject[];
+  section: string;
+  currentPage: string;
+}
+
+const getNavTree = (
+  navFromGraphQl: NavigationObject[],
+  section: string,
+  currentPage: string
+): TreeItem | undefined => {
+  navFromGraphQl.sort(
+    (a, b) =>
+      +(a.frontmatter.navPriority === null) -
+        +(b.frontmatter.navPriority === null) ||
+      +(a.frontmatter.navPriority! > b.frontmatter.navPriority!) ||
+      -(a.frontmatter.navPriority! < b.frontmatter.navPriority!)
+  );
+
+  const tree = arrayToTree(navFromGraphQl, {
+    id: "fields.slug",
+    parentId: "fields.navParent",
+    rootParentIds: { NONE: true },
+  });
+
+  const select = (
+    array: TreeItem[],
+    value: string,
+    object: { selected: boolean }
+  ): boolean => {
+    let found = false;
+    array.forEach((result) => {
+      if (
+        result.data.fields.slug === value ||
+        select(result.children || [], value, object)
+      ) {
+        found = true;
+        Object.assign(result, object);
+      }
+    });
+    return found;
+  };
+
+  select(tree, currentPage, { selected: true });
+
+  return tree.find((el) => el.data.fields.navSection === section);
+};
+
+const WrappedListItem: React.FC<WrappedListItemProps> = ({
+  text,
+  url = "",
+  onClick,
+  open = false,
+  label = "",
+  controls,
+  tabs = false,
+}) => {
+  if (onClick) {
+    return (
+      <a
+        href="/"
+        role="button"
+        className="list-title"
+        aria-controls={controls}
+        aria-expanded={open ? "true" : "false"}
+        aria-label={label}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick();
+        }}
+      >
+        <IcTypography className="list-typography" variant="body">
+          {text}
+        </IcTypography>
+        <Icon
+          path={mdiChevronDown}
+          size={1.25}
+          className={clsx("chevron", open && "chevron-flip")}
+        />
+      </a>
+    );
+  }
+  return (
+    <GatsbyLink
+      activeClassName="active"
+      to={url}
+      title={label}
+      partiallyActive={tabs && true}
+    >
+      <IcTypography className="list-typography" variant="body">
+        {text}
+      </IcTypography>
+    </GatsbyLink>
+  );
+};
+
+const ListItem: React.FC<ListItemProps> = ({ item, onClick, open }) => {
+  if (item.children.length > 0 && !item.data.frontmatter.tabs) {
+    return (
+      <WrappedListItem
+        key={item.data.id}
+        text={item.data.frontmatter.title}
+        onClick={onClick}
+        open={open}
+        controls={item.data.id}
+      />
+    );
+  }
+  return (
+    <WrappedListItem
+      key={item.data.id}
+      text={item.data.frontmatter.title}
+      url={item.data.fields.slug}
+      open={open}
+      tabs={item.data.frontmatter.tabs}
+    />
+  );
+};
+
+const ListChildren: React.FC<ListChildenProps> = ({ item }) => {
+  if (!item) {
+    return null;
+  }
+
+  const isRoot = item.data.fields.navParent === "NONE";
+  const [open, setOpen] = useState(item.selected);
+  const toggleOpen = () => setOpen(!open);
+
+  if (isRoot) {
+    return (
+      <>
+        <li key={item.data.id} className="list-item">
+          <WrappedListItem
+            key={item.data.id}
+            text={item.data.frontmatter.title}
+            url={item.data.fields.slug}
+            open={open}
+          />
+        </li>
+        {item.children.map((child: TreeItem) => (
+          <ListChildren item={child} />
+        ))}
+      </>
+    );
+  }
+  if (item.children?.length > 0 && !item.data.frontmatter.tabs) {
+    return (
+      <li key={item.data.id} className={clsx("list-item", "icds-gatsby-lp")}>
+        <ListItem
+          item={item}
+          onClick={toggleOpen}
+          open={isRoot ? true : open}
+        />
+        <ul
+          id={item.data.id}
+          className={clsx("list", !(isRoot || open) && "list-closed")}
+        >
+          <li className="list-item">
+            <WrappedListItem
+              key={item.data.id}
+              text="Overview"
+              label={`Overview of ${item.data.frontmatter.title}`}
+              url={item.data.fields.slug}
+              open={false}
+            />
+          </li>
+          {item.children.map((child: TreeItem) => (
+            <ListChildren item={child} />
+          ))}
+        </ul>
+      </li>
+    );
+  }
+  return (
+    <li key={item.data.id} className="list-item">
+      <ListItem item={item} onClick={toggleOpen} open={isRoot ? true : open} />
+    </li>
+  );
+};
+
+const SubsectionNav: React.FC<SubsectionNavProps> = ({
+  allStructuredNav,
+  section,
+  currentPage,
+}) => {
+  const currentNavSection = getNavTree(allStructuredNav, section, currentPage);
+
+  const [responsiveNavOpen, setResponsiveNavOpen] = useState(false);
+  const toggleResponsiveNavOpen = () =>
+    setResponsiveNavOpen(!responsiveNavOpen);
+
+  return (
+    <>
+      <IcButton
+        variant="secondary"
+        className={clsx("small-only", responsiveNavOpen && "small-only-open")}
+        onClick={toggleResponsiveNavOpen}
+        aria-controls="icds-section-nav"
+        aria-expanded={responsiveNavOpen ? "true" : "false"}
+        fullWidth
+      >
+        {responsiveNavOpen ? "Hide" : "Show"} navigation section
+        <div slot="icon">
+          <Icon
+            path={mdiChevronDown}
+            className={clsx(
+              "menu-chevron",
+              responsiveNavOpen && "menu-chevron-flipped"
+            )}
+          />
+        </div>
+      </IcButton>
+      <IcLink className={clsx("skip-link", "offscreen")} href="#page-contents">
+        Skip to page content
+      </IcLink>
+      <nav
+        id="icds-section-nav"
+        aria-label={`${section} section`}
+        className={clsx(
+          "scroll",
+          "large-only",
+          responsiveNavOpen && "force-open"
+        )}
+      >
+        <ul className={clsx("list-root", "list")}>
+          <ListChildren item={currentNavSection} />
+        </ul>
+      </nav>
+    </>
+  );
+};
+
+export default SubsectionNav;

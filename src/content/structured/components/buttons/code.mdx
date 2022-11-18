@@ -1,0 +1,217 @@
+---
+path: "/components/buttons/code"
+
+date: "2022-11-15"
+
+title: "Button"
+
+status: "BETA"
+
+subTitle: "Buttons are used to allow or encourage people to take an action."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/buttons.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/buttons" },
+    { title: "Code", path: "/components/buttons/code" },
+    { title: "Accessibility", path: "/components/buttons/accessibility" },
+  ]
+---
+
+import { IcButton } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="primary">Primary button</ic-button>
+<ic-button variant="secondary">Secondary button</ic-button>
+<ic-button variant="tertiary">Tertiary button</ic-button>
+<ic-button variant="destructive">Destructive button</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="primary">Primary button</IcButton>
+<IcButton variant="secondary">Secondary button</IcButton>
+<IcButton variant="tertiary">Tertiary button</IcButton>
+<IcButton variant="destructive">Destructive button</IcButton>`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsDefault}>
+  <IcButton variant="primary">Primary button</IcButton>
+  <IcButton variant="secondary">Secondary button</IcButton>
+  <IcButton variant="tertiary">Tertiary button</IcButton>
+  <IcButton variant="destructive">Destructive button</IcButton>
+</ComponentPreview>
+
+<ComponentDetails component="ic-button" />
+
+## Variants
+
+### Other states
+
+export const snippetsOtherStates = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="primary" disabled="true">Disabled button</ic-button>
+<ic-button variant="secondary" loading="true">Loading button</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="primary" disabled>Disabled button</IcButton>
+<IcButton variant="secondary" loading>Loading button</IcButton>`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsOtherStates}>
+  <IcButton variant="primary" disabled>
+    Disabled button
+  </IcButton>
+  <IcButton variant="secondary" loading>
+    Loading button
+  </IcButton>
+</ComponentPreview>
+
+### With icon
+
+export const snippetsWithIcon = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="primary">
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+    >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>Icon button
+</ic-button>
+<ic-button variant="icon" aria-label="refresh">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+    >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="primary">
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+    >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>Icon button
+</IcButton>
+<IcButton variant="icon" aria-label="refresh">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+    >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</IcButton>`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsWithIcon}>
+  <IcButton variant="primary">
+    Icon button
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+  </IcButton>
+  <IcButton variant="icon" aria-label="refresh">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+  </IcButton>
+</ComponentPreview>
+
+### Sizing
+
+export const snippetsSizing = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="primary" size="dense">Dense button</ic-button>
+<ic-button variant="primary">Default button</ic-button>
+<ic-button variant="primary" size="emphasis">Emphasis button</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="primary" size="dense">Dense button</IcButton>
+<IcButton variant="primary">Default button</IcButton>
+<IcButton variant="primary" size="emphasis">Emphasis button</IcButton>`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsSizing}>
+  <IcButton variant="primary" size="dense">
+    Dense button
+  </IcButton>
+  <IcButton variant="primary">Default button</IcButton>
+  <IcButton variant="primary" size="emphasis">
+    Emphasis button
+  </IcButton>
+</ComponentPreview>
+
+### Colour variants
+
+export const snippetsColour = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="primary" button-style="dark">Dark button</ic-button>
+<ic-button variant="primary" button-style="light">Light button</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="primary" buttonStyle="dark">Dark button</IcButton>
+<IcButton variant="primary" buttonStyle="light">Light button</IcButton>`,
+  },
+];
+
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsColour}>
+  <IcButton variant="primary" buttonStyle="dark">
+    Dark button
+  </IcButton>
+  <IcButton variant="primary" buttonStyle="light">
+    Light button
+  </IcButton>
+</ComponentPreview>

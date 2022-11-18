@@ -1,0 +1,157 @@
+---
+path: "/styles/motion"
+
+navPriority: 5
+
+date: "2022-11-15"
+
+title: "Motion"
+
+status: "BETA"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/motion.mdx"
+---
+
+import motionVid1 from "./images/slide-animation-between-steps.mp4";
+import motionVid2 from "./images/expand-animation-on-cards.mp4";
+import motionVid3 from "./images/entry-and-exit.mp4";
+import motionVid4 from "./images/button-state-transitions.mp4";
+
+## Introduction
+
+Motion is achieved by applying animations or transitions to interface elements.
+
+Motion can make your app feel more responsive. It can be especially useful for providing subtle feedback and affordance about functionality, as well as when loading data.
+
+However, use animation subtly and sparingly. Many people can experience side effects from excessive animation, such as headaches, eye strain and anxiety.
+
+## When to use
+
+Use motion to highlight relationships between interface elements to reinforce the flow of an app.
+
+Small animations are valuable for providing feedback, such as showing that an action has been registered.
+
+Transitions between component states or animating how components enter or exit the page help an application to feel more fluid.
+
+However, most apps won't need animation or transitions other than the default ones from a component library.
+
+If using custom motion in your app always provide a way to turn off animations.
+
+## When not to use
+
+Don't use motion or animation to add decorative or fun elements as these can be distracting and can cause people more severe side effects.
+
+Don't use motion as the only way to provide feedback, only use it to enhance information that can be understood without the motion.
+
+Don't create new animations where a standard one exists, such as a progress bar.
+
+## Motion behaviour
+
+### Transitions
+
+When navigating between pages, or in multi-step processes and other complex layouts, animating the transition can make it more obvious what has changed.
+
+<video
+  width="100%"
+  muted
+  controls
+  loop
+  title="A slide and fade animation used to highlight navigation through a multi-stepped process."
+>
+  <source src={motionVid1} type="video/mp4" />
+</video>
+
+It can also help to hint towards where you've come from and where you might go based on your next navigation action.
+
+<video
+  width="50%"
+  muted
+  controls
+  loop
+  title="An expand animation helps to link the overlay to the component that it's related to. It also provides an indication to where the close button would take the user."
+>
+  <source src={motionVid2} type="video/mp4" />
+</video>
+
+#### Establish relationships
+
+When elements are displayed, they enter and exit the screen. Animating entry and exit behaviours can help to establish relationships between elements.
+
+Defining the order in which elements appear can help to afford hierarchy or importance. Grouping similar elements so that they animate in the same way can differentiate them from unrelated elements that animate differently.
+
+Starting entrance animations from specific positions can create parent/child relationships between elements.
+
+<video
+  width="50%"
+  muted
+  controls
+  loop
+  title="Entry and exit transitions can establish relationships between content before a user even reads the content."
+>
+  <source src={motionVid3} type="video/mp4" />
+</video>
+
+### Feedback
+
+Micro-interactions provide subtle feedback about a user interaction. Motion can be used as micro-interactions that immediately indicate that an action was recognised.
+
+This type of motion should be quick so not to distract or delay the completion of a task, but instead aid the understanding of it.
+
+When elements change state, animation can help to emphasize the transformation by grabbing the user's attention.
+
+<video
+  width="50%"
+  muted
+  controls
+  loop
+  title="Animating the transitions between component states emphasise the transition."
+>
+  <source src={motionVid4} type="video/mp4" />
+</video>
+
+### Loading placeholders
+
+Motion can be used to indicate that something is loading. Loading indicators use motion to provide a sense of progress. Animated placeholders such as the skeleton loading pattern prevent layouts from moving as elements are loaded and creates a smoother experience.
+
+## Animation tokens
+
+The UI Kit uses a set of animation tokens to consistently apply motion across its components. These tokens use a consistent set of values to achieve continuity across the site.
+
+### Duration
+
+These tokens define how quickly an animation takes place. The 'fast' duration is often used for animations between component states. The ‘slow' duration is most often used for content changes.
+
+- Fast (100ms)
+- Slow (300ms)
+
+### Easing
+
+Easing helps to make motion feel natural. Using the easing token consistently helps to achieve continuity throughout an app. Use the easing tokens `--ic-easing-transition-fast` or `--ic-easing-transition-slow`.
+
+## Animation styles
+
+These are the common animation styles that are used on component UI Kit.
+
+### Fade in and out
+
+Fade animations change the opacity of an element and are used for quick transition between states as well as in entry and exit transitions.
+
+### Slide up, down, left and right
+
+Slide animations change the position of an element and are often used for entry and exit transitions or navigation.
+
+### Zoom in and out
+
+Zoom animations change the size of an element and are often used for entry and exit transitions or micro-interactions.
+
+### Expand and shrink
+
+Expand and shrink animations change the shape of a component and are often used for entry and exit transitions.
+
+## Accessibility considerations
+
+Never use a full-page or parallax animation. Where possible, avoid decorative animation altogether.
+
+Don't animate the scrolling of a page other than the default browser behaviour.
+
+Some people indicate they prefer reduced motion through the prefers-reduced-motion browser setting. Your app must respect this setting.

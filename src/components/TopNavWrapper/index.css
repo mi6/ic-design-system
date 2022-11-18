@@ -1,0 +1,11 @@
+.icds-logo {
+  height: var(--ic-space-xl);
+  width: var(--ic-space-xl);
+}
+
+@media screen and (max-width: 576px) {
+  .icds-logo {
+    height: var(--ic-space-lg);
+    width: var(--ic-space-lg);
+  }
+}

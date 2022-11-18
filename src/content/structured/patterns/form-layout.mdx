@@ -1,0 +1,76 @@
+---
+path: "/patterns/form-layout"
+
+navPriority: 2
+
+date: "2022-11-15"
+
+title: "Form layout"
+
+subTitle: "A simple layout for a form helps to make it easier to complete and allows users to focus on the content of the questions."
+
+status: "IN DEVELOPMENT"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/form-layout.mdx"
+---
+
+import basicFormGood from "./images/basic-form-good.png";
+import basicFormBad from "./images/basic-form-bad.png";
+import basicFormBad2 from "./images/basic-form-bad-2.png";
+import stepper1 from "./images/stepper1.png";
+import stepper2 from "./images/stepper2.png";
+
+## Basic form
+
+This form layout involves displaying multiple form fields on one page.
+
+Try to limit the number of fields on a page to about five or six.
+
+Always keep the layout of the form simple by preferring a single column of fields.
+
+Form fields should match the size of the answer you expect to each question - such as a short, single-line text field for a first name, or a long, multi-line text field for a paragraph.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={basicFormGood}
+    imageAlt="A good example of a form with fields that match the size of the expected input and are displayed in a single column."
+    state="good"
+    caption="Use fields that reflect the size of the expected input to make it easier to understand what each question is asking for. The whole width of the page does not need to be filled."
+  />
+  <DoDontCaution
+    imageSrc={basicFormBad}
+    imageAlt="A bad example of a form with fields that take up the whole width of the screen instead of matching the size of the expected input. The form fields are also displayed in multiple columns."
+    state="bad"
+    caption="Don't use multiple columns as this can affect readability and make it more likely that users will miss something."
+  />
+</DoubleDoDontCaution>
+
+Align form fields to the left for a clean and consistent layout for your application.
+
+<DoDontCaution
+  imageSrc={basicFormBad2}
+  imageAlt="A bad example of a form that is centre-aligned, with a left-aligned page header."
+  state="bad"
+  caption="Don't align your form to the centre of the page."
+/>
+
+## Multi-page form
+
+Use a stepper (which is built into the [page header](/components/page-header) component) to separate a long form out into multiple pages.
+
+Use multiple pages if your form is much longer than about five or six fields.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={stepper1}
+    imageAlt="A form, with four fields, and a stepper indicating the current step."
+    state="none"
+    caption="A stepper can split up complex forms to let you add inline guidance and design simpler layouts."
+  />
+  <DoDontCaution
+    imageSrc={stepper2}
+    imageAlt="A form, with two fields, and a stepper indicating the current, completed, and invalid steps."
+    state="none"
+    caption="A stepper can help you manage complex validation and intermediate (as-you-go) saving of forms."
+  />
+</DoubleDoDontCaution>

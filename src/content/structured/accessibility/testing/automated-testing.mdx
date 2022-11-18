@@ -1,0 +1,94 @@
+---
+path: "/accessibility/testing/automated-testing"
+
+navPriority: 2
+
+date: "2022-11-15"
+
+title: "Automated accessibility testing"
+
+subTitle: "Use a variety of automated testing tools to capture as many accessibility issues as possible."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/automated-testing.mdx"
+---
+
+## Introduction
+
+Automated accessibility testing is a fast and repeatable way to spot some accessibility issues.
+These tools can be integrated into development and deployment workflows.
+
+Automated accessibility testing is essential but only finds between 30-50% of accessibility problems.
+The [limitations of automated accessibility testing](/accessibility/testing/automated-testing-limitation) page explains why [manual testing](/accessibility/testing/manual-testing) is always required.
+
+Use a variety of automated testing tools to capture as many accessibility issues as possible.
+
+## Browser testing
+
+Test web apps using tools and extensions for that browser and test in multiple browsers where possible.
+
+You need to use at least two accessibility testing extensions because each one will highlight slightly different accessibility problems.
+
+The UK Government Digital Service (GDS) published an [accessibility tool audit](https://alphagov.github.io/accessibility-tool-audit/). The Design System recommends:
+
+- [axe DevTools](https://www.deque.com/axe/axe-for-web/).
+- [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview).
+- [WAVE](https://wave.webaim.org/extension/).
+
+Most of these tools will highlight the WCAG or best practice accessibility problems on the page and tell you how to fix the issue.
+
+Some of the tools will walk you through extra manual testing (like Accessibility Insights for Web) while others will conduct only a full automated test.
+
+Browser tools can only check what is rendered on a web page when you run the test. To check multiple pages, dialogs or other temporary elements, trigger them before re-running the test.
+
+## Linters
+
+Tools called 'linters' analyse source code for a range of potential bugs. Some linters check for accessibility problems or have additional rulesets you can use.
+
+Linters detect issues very early and can prevent certain accessibility problems from ever being implemented.
+
+The [UI Kit](/components) uses the ESLint accessibility plugin [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y). Equivalent ESLint plugins are available for Vue and Angular.
+
+## Integration and unit testing
+
+Integration testing is where parts of software are combined and tested together.
+
+This is often done as part of a Continuous Integration and Continuous Delivery (CI/CD) workflow.
+
+## End-to-end testing
+
+End-to-end testing is where the entire app is tested from a user's perspective.
+
+[Selenium](https://www.selenium.dev/) and [Cypress](https://www.cypress.io/) are common tools for end-to-end testing. Both tools have axe-core wrappers: [axe-selenium](https://github.com/dequelabs/axe-selenium-java) and [cypress-axe](https://github.com/avanslaars/cypress-axe), respectively.
+
+Well configured end-to-end tests should also test multiple pages, dialogs and other temporary elements.
+
+### axe-core
+
+[axe-core](https://github.com/dequelabs/axe-core) can test pages on your app in the same way other unit or integration tests would.
+
+Axe-core is used by the browser-based extensions [axe DevTools](https://www.deque.com/axe/axe-for-web/) and [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview).
+
+### Pa11y
+
+[Pa11y](https://pa11y.org/) runs accessibility tests via the command line or Node.js for automating testing.
+
+It uses axe-core as well as [HTML CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/) to look for potential accessibility issues.
+
+[Pa11y CI](https://github.com/pa11y/pa11y-ci) is a CI-centric accessibility test runner, built using Pa11y.
+
+### SonarQube
+
+Tools such as [SonarQube](https://www.sonarqube.org/), which provide code-quality assurance of your source code, also have a number of [accessibility rules](https://rules.sonarsource.com/html/tag/accessibility) in SonarHTML.
+
+SonarQube recommends using this alongside other [linting](#linters) such as ESLint<sup id="ref-1"><a href="#fn-1">1</a></sup>.
+
+## References
+
+1. <a
+     href="https://community.sonarsource.com/t/how-to-scan-accessibility-issues-using-sonarqube/17307"
+     id="fn-1"
+   >
+     How to scan accessibility issues using SonarQube?
+   </a>
+   . Discussion.<i> SonarSource Community</i>. December 2019. Accessed 5 November
+   2022. <a href="#ref-1">Back to content</a>

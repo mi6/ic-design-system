@@ -1,0 +1,214 @@
+---
+path: "/components/hero"
+
+navPriority: 9
+
+date: "2022-11-15"
+
+title: "Hero"
+
+status: "BETA"
+
+subTitle: "A large banner found at the top of page used to introduce page content, provide key actions and add personality."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/hero.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/hero" },
+    { title: "Code", path: "/components/hero/code" },
+    { title: "Accessibility", path: "/components/hero/accessibility" },
+  ]
+---
+
+import { IcHero, IcButton } from "@ukic/react";
+import heroFig1 from "./images/fig-1-dont-place-hero-banners-in-middle-of-page.png";
+import heroFig2 from "./images/fig-2-hero-banners-automatically-use-personality-colour.png";
+import heroFig3 from "./images/fig-3-use-grey-background-when-colour-is-not-appropriate.png";
+import heroFig4 from "./images/fig-4-dont-place-hero-banners-not-full-width.png";
+import heroFig5 from "./images/fig-5-hero-alignment-options.png";
+import heroFig6 from "./images/fig-6-use-buttons-in-the-interaction-area.png";
+import heroFig7 from "./images/fig-7-use-links-in-the-interaction-area.png";
+import heroFig8 from "./images/fig-8-use-simple-inputs-in-the-interaction-area.png";
+import heroFig9 from "./images/fig-9-don't-use-complex-forms-in-the-interaction-area.png";
+import heroFig10 from "./images/fig-10-use-clickable-cards-for-latest-announcements.png";
+import heroFig11 from "./images/fig-11-use-secondary-headings-for-more-info.png";
+import heroFig12 from "./images/fig-12-use-empty-space-on-right-hand-side-to-emphasise-title.png";
+import heroFig13 from "./images/fig-13-use-embedded-images.png";
+import heroFig14 from "./images/fig-14-use-full-height-images.png";
+import heroFig15 from "./images/fig-15-use-background imagery.png";
+import heroFig16 from "./images/fig-16-use-safe-areas-when-using-background-imagery.png";
+
+## Introduction
+
+An example of the hero component.
+
+<ComponentPreview>
+  <IcHero
+    heading="New coffee launches 14 September 2022"
+    subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+  >
+    <IcButton variant="primary" button-style="light" slot="interaction">
+      Order now
+    </IcButton>
+    <IcButton variant="secondary" button-style="light" slot="interaction">
+      Submit new flavour
+    </IcButton>
+  </IcHero>
+</ComponentPreview>
+
+## When to use
+
+Use the hero on a homepage to introduce your app or service and provide navigation to its main functions. Use the hero to catch a user's attention as it's often the first thing that they see.
+
+## When not to use
+
+Don't use hero banners part way through page content to introduce sections. They should always appear at the top of the page to act as an introduction to the full page.
+
+<DoDontCaution
+  imageSrc={heroFig1}
+  imageAlt="An example application with some content at the top of the page, then a hero banner introducing a section, and then more content."
+  state="bad"
+  caption="Don't position hero banners part way through a page. Always position them at the top of page content."
+/>
+
+## Colour
+
+Hero banners use an automatic secondary variant of an app's chosen theme colour.
+
+<DoDontCaution
+  imageSrc={heroFig2}
+  imageAlt="A hero banner with background colours based of the selected green theme colour."
+  state="none"
+  caption="Hero banners automatically set their colour based on the selected theme colour."
+/>
+
+<DoDontCaution
+  imageSrc={heroFig3}
+  imageAlt="A hero banner with a grey background colour and black text."
+  state="none"
+  caption="Set the hero background colour to grey when colour is not appropriate."
+/>
+
+## Sizing
+
+Use default sized hero for most applications. Use small sized hero banners for apps with compact layouts.
+
+## Layout and placement
+
+Always position the hero banner at the top of the page and make it span the width of the container.
+
+<DoDontCaution
+  imageSrc={heroFig4}
+  imageAlt="A hero that is embedded within a container and doesn't span its full width."
+  state="bad"
+  caption="Don't place the hero so that it does not span its container's full width."
+/>
+
+Use the alignment options to align the hero content to either full-width, left or centre of its container.
+
+<DoDontCaution
+  imageSrc={heroFig5}
+  imageAlt="Three examples of a hero with content aligned to the full-width of the container, the left of the container, and to the centre of the container."
+  state="none"
+  caption="Use full-width, left or centre alignment to position the hero's content."
+/>
+
+## Content
+
+### Interaction area
+
+Use the hero's interaction slot to add interactive elements such as buttons, links or search bars.
+
+Don't add too much to the slot as it may become too busy. A hero should introduce the page, but not contain all of the page's content.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={heroFig6}
+    imageAlt="A hero that says 'Everything I brew, I brew it for you' with a button that says 'Explore'."
+    state="none"
+    caption="Use buttons to provide actions in the interaction area."
+  />
+  <DoDontCaution
+    imageSrc={heroFig7}
+    imageAlt="A hero that says 'Everything I brew, I brew it for you' with a link that says 'Explore'."
+    state="none"
+    caption="Use links to provide navigation from the interaction area."
+  />
+</DoubleDoDontCaution>
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={heroFig8}
+    imageAlt=" A hero that says 'Everything I brew, I brew it for you' with a search bar in the interaction area."
+    state="none"
+    caption="Use simple inputs to provide page level functions in the interaction area."
+  />
+  <DoDontCaution
+    imageSrc={heroFig9}
+    imageAlt="A hero that says 'Everything I brew, I brew it for you' with a text field, a text area and a button in the interaction area."
+    state="bad"
+    caption="Don't use complex forms in the interaction area."
+  />
+</DoubleDoDontCaution>
+
+### Secondary area
+
+Use the hero's secondary area to add additional information or navigation options. For example, use a [clickable card](/components/cards) to provide a link to recent posts, use a secondary heading to give more info about the app, or keep it empty to help the main heading stand out
+
+<DoDontCaution
+  imageSrc={heroFig10}
+  imageAlt="A hero with a clickable card in the secondary area that says ‘Latest Announcement’."
+  state="none"
+  caption="Use clickable cards to provide links to other pages."
+/>
+
+<DoDontCaution
+  imageSrc={heroFig11}
+  imageAlt="A hero with a secondary heading in the secondary area that says 'Grab a cuppa and make yourself at home'."
+  state="none"
+  caption="Use a secondary heading in the secondary area to provide more information."
+/>
+
+<DoDontCaution
+  imageSrc={heroFig12}
+  imageAlt="A hero with a title that reads 'Everything I brew, I brew it for you' with no content in the secondary area."
+  state="none"
+  caption="Keep the secondary area empty to provide more emphasis to the main hero heading."
+/>
+
+### Imagery
+
+Use imagery on a hero to add personality to your app. Either embed the image in the secondary area, specify a full-size image to fill the secondary area, or add an image to the hero background itself.
+
+<DoDontCaution
+  imageSrc={heroFig13}
+  imageAlt="A hero with an image of a coffee cup in the secondary area."
+  state="none"
+  caption="Use embedded images in the secondary area."
+/>
+
+<DoDontCaution
+  imageSrc={heroFig14}
+  imageAlt="A hero with a full height image of a hand holding a coffee cup in the secondary area."
+  state="none"
+  caption="Use full-height images in the secondary area for greater emphasis on the imagery."
+/>
+
+<DoDontCaution
+  imageSrc={heroFig15}
+  imageAlt="A hero with an image of a hexagon patterns as the background."
+  state="none"
+  caption="Use an image as the hero's background to add personality."
+/>
+
+When using an image background, ensure that you include 'safe areas' in your image to avoid the image's content interfering with the hero's text content.
+
+Always specify alt-text with any image that you use so that its content can be understood equally by everyone.
+
+<DoDontCaution
+  imageSrc={heroFig16}
+  imageAlt="A diagram showing safe areas for background imagery. The safe area appears on the left-hand side under where the hero's text content lives. The image content appears outside of the safe areas."
+  state="none"
+  caption="Use safe areas with hero background images to avoid content interfering."
+/>

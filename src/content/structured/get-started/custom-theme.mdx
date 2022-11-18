@@ -1,0 +1,45 @@
+---
+path: "/get-started/install-components/custom-theme"
+
+navPriority: 5
+
+date: "2022-11-15"
+
+title: "Custom theme"
+
+subTitle: "How to change the theme colour of some components."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/custom-theme.mdx"
+---
+
+## Introduction
+
+Some components can have their theme colour changed by using either of the methods below. When the theme colour is changed, components will automatically update.
+
+Other styles on affected components will also adapt accordingly, such as text colour and focus border indicators.
+
+## CSS variables
+
+```css
+:root {
+  --ic-theme-primary-r: 92;
+  --ic-theme-primary-g: 9;
+  --ic-theme-primary-b: 72;
+}
+```
+
+## Theme component
+
+Alternatively, you can include the `ic-theme` component and set the `color` property:
+
+```jsx
+<ic-theme color="rgb(92, 9, 72)"></ic-theme>
+<ic-theme color="#5c0949"></ic-theme>
+```
+
+### Components that use the theme colour
+
+- [Footer](/components/footer)
+- [Hero](/components/hero)
+- [Side navigation](/components/side-nav)
+- [Top navigation](/components/top-nav)

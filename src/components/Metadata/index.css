@@ -1,0 +1,19 @@
+.spacing-left {
+  margin-left: 5px;
+}
+
+.bottom-line {
+  margin: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .bottom-line {
+    margin: 0 calc(-1 * var(--ic-space-xs));
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .bottom-line {
+    margin: 0 calc(-1 * var(--ic-space-md));
+  }
+}

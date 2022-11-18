@@ -1,0 +1,217 @@
+---
+path: "/components/cards"
+
+navPriority: 5
+
+date: "2022-11-15"
+
+title: "Card"
+
+status: "IN DEVELOPMENT"
+
+subTitle: "Cards are containers used to display structured information or interactive content."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/cards.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/cards" },
+    { title: "Code", path: "/components/cards/code" },
+    { title: "Accessibility", path: "/components/cards/accessibility" },
+  ]
+---
+
+import { IcAlert, IcCard } from "@ukic/react";
+import cardsFig1 from "./images/fig-1-card-anatomy.png";
+import cardsFig2 from "./images/fig-2-heading-area-anatomy.png";
+import cardsFig3 from "./images/fig-3-place-images-either-at-the-top-or-in-the-middle-of-cards-if-content-is-present.png";
+import cardsFig4 from "./images/fig-4-dont-place-images-below-content.png";
+import cardsFig5 from "./images/fig-5-interaction-area-anatomy.png";
+import cardsFig6 from "./images/fig-6-dont-mix-card-variants-when-arranged-in-a-group.png";
+import cardsFig7 from "./images/fig-7-dont-vertically-align-cards-with-different-widths.png";
+import cardsFig10 from "./images/fig-10-use-the-show-less-show-more-pattern-when-adding-long-portions-of-text-to-the-content-area.png";
+import cardsFig11 from "./images/fig-11-avoid-displaying-lengthy-descriptions-in-the-content-area.png";
+
+<IcAlert
+  heading="Coming soon"
+  message="An extended version of the cards components is currently in development. The guidance below describes future functionality."
+  variant="info"
+/>
+
+## Component variants
+
+There are three variants of cards:
+
+- Interactive cards
+- Static cards
+- Clickable cards
+
+<ComponentPreview>
+  <IcCard
+    heading="Card title"
+    message="This is an example of a clickable card"
+    clickable="true"
+  />
+</ComponentPreview>
+
+### Interactive cards
+
+Interactive cards contain different types of content and actions. The container itself is not interactive but can have interactive components.
+
+### Clickable cards
+
+Clickable cards provide a single action that is triggered by clicking anywhere on the card.
+
+### Static cards
+
+Static cards are non-interactive and contain static content only.
+
+## Anatomy
+
+The following section describes the different areas of content on a card.
+
+<DoDontCaution
+  imageSrc={cardsFig1}
+  imageAlt="A diagram showing the positioning of the different areas within a card. The areas are a heading area, an image area, a content area, an interaction area, and an expandable area."
+  state="none"
+  caption="A card includes a heading area, an image area, a content area, an interaction area, and an expandable area."
+/>
+
+### 1. Heading area
+
+<DoDontCaution
+  imageSrc={cardsFig2}
+  imageAlt="A diagram showing the positioning of the different sections within the heading area. The area is split up into three different rows. The first row houses section 'A' on the left, section 'B' in the middle, and section 'E' on the right. The second row houses section 'C', and the third row houses section 'D'."
+  state="none"
+  caption="A card's heading area includes five elements."
+/>
+
+The heading area can contain:
+
+- A: Icon/Avatar
+- B: Heading
+- C: Subtitle
+- D: Adornment, for example [status tags](/components/status-tags)
+- E: More options icon button (only for interactive cards)
+
+### 2. Image
+
+Include an image either at the top or in the middle of the card. Don't place images below content if this is included in the card.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={cardsFig3}
+    imageAlt="Two example cards vertically aligned, where the top card displays an image above the heading area and content area, and the bottom card displays an image below the heading area and above the content area."
+    state="good"
+    caption="Place images either at the top or in the middle of cards if content is present."
+  />
+  <DoDontCaution
+    imageSrc={cardsFig4}
+    imageAlt="An example card where an image is displayed below the heading and content area."
+    state="bad"
+    caption="Don't place images below content."
+  />
+</DoubleDoDontCaution>
+
+### 3. Content area
+
+Add a descriptive message within the card content section. Interactive and static cards can include a “See more” link to expand hidden content.
+
+Since clickable cards can only contain one interaction, text can't be hidden.
+
+### 4. Interaction area (interactive cards only)
+
+<DoDontCaution
+  imageSrc={cardsFig5}
+  imageAlt="A diagram showing the positioning of the different sections within the interaction area. The area features one row with two different sections, 'A' on the left and 'E' on the far right."
+  state="none"
+  caption="A card's interaction area includes two elements."
+/>
+
+Add interactive components to the interaction area at the bottom of the card (A). Avoid using too many interactions. The interaction area is only found in interactive cards.
+
+Use any type of button in the interaction area to provide actions.
+
+Include an expand button (E) if you include content in the [expandable area](anchor link to expandable area section on page).
+
+### 5. Expandable area (interactive cards only)
+
+Use an expandable area to hold content which either doesn't fit in the collapsed card or doesn't align to the above areas.
+
+This area can be expanded by clicking the “expand” button found on the interaction bar.
+
+## Layout and placement
+
+### Grouping
+
+When arranging multiple cards together, try to use the same card variant for each.
+
+<DoDontCaution
+  imageSrc={cardsFig6}
+  imageAlt="An image showing a three static cards, one interactive card, and one clickable card arranged in a group."
+  state="caution"
+  caption="Avoid mixing card variants when arranged in a group."
+/>
+
+### Sizing
+
+When cards are shown in columns make sure cards are vertically aligned and maintain the same width for all cards.
+
+When arranging cards in rows, try to match the vertical height of the cards by including similar amounts of content so that they automatically align horizontally.
+
+<DoDontCaution
+  imageSrc={cardsFig7}
+  imageAlt="An image showing six cards arranged into three rows and two columns, and the width of the cards changes for each row."
+  state="bad"
+  caption="Don't vertically align cards with different widths."
+/>
+
+## Content
+
+Keep headings, subheadings and adornments clear and concise.
+
+### Image
+
+Use the pre-defined aspect ratios for images in cards. These are:
+
+- 16:9
+- 1:1
+- 9:16
+- 4:1
+- 4:3
+- 3:4
+
+Set an image to fit within the image container to show the whole image, but this may introduce empty areas in the image container if the image does not match the container aspect ratio. Alternatively, set the image to fill the image container, but be aware this may crop some of the image’s content.
+
+Use a custom image aspect ratio if your image doesn't fit into one of the pre-defined options.
+
+Images should always feature an `alt` attribute. Set the `alt` equal to a descriptive alternative when an image is informational.
+
+### Content area
+
+If placing several lines of text in the content area, use a “see more” link to make the content expandable.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={cardsFig10}
+    imageAlt="An example card titled ‘Your order' with two rows of content in the content area. The second line displays truncated content and a 'See more' clickable text button."
+    state="good"
+    caption="Use a ‘see more’ link when adding long text to the content area."
+  />
+  <DoDontCaution
+    imageSrc={cardsFig11}
+    imageAlt="An example card titled 'Your order' with nine rows of content in the content area."
+    state="caution"
+    caption="Avoid displaying lengthy descriptions in the content area."
+  />
+</DoubleDoDontCaution>
+
+## Custom cards
+
+Cards can also be used as custom containers if the pre-defined options don't meet your needs. When designing a custom card, make sure to respect the general anatomy and structure of cards as defined in this document.
+
+Any interactive components must be placed either within the interaction bar, or the expandable area. Make sure the interactive area is always placed at the bottom of a collapsed card.
+
+Cards support one single image. If you need to place two or more images, place the additional images in the expandable area.
+
+Don't include any interactive components within a clickable card as these will interfere with the clickable card’s own action.

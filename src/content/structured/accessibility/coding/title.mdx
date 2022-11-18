@@ -1,0 +1,45 @@
+---
+path: "/accessibility/coding/title"
+
+navPriority: 2
+
+date: "2022-11-15"
+
+title: "Titles"
+
+subTitle: "Follow our accessibility tips for titles."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/title.mdx"
+---
+
+import { IcAlert } from "@ukic/react";
+
+## Introduction
+
+Each page in a website should have a unique title. Make the `<title>` element as accurate and meaningful as possible.
+
+The title appears in the browser toolbar, search-engine results and default bookmark/favourites name.
+
+This example shows two different titles from different Design System pages:
+
+```html
+<!-- https://design.sis.gov.uk/accessibility/coding -->
+<title>Coding for accessibility - Intelligence Community Design System</title>
+
+<!-- https://design.sis.gov.uk/accessibility/coding/title -->
+<title>Titles - Intelligence Community Design System</title>
+```
+
+<IcAlert
+  heading="Single Page Apps (SPAs)"
+  variant="warning"
+  message="In single-page apps, make sure you dynamically update the page title."
+/>
+
+## When it goes wrong
+
+If titles aren't unique and descriptive users must read the content to understand where they are. This makes your app less usable for those using assistive technologies like screen readers.
+
+## Best practice and WCAG
+
+Unique titles is mentioned in many HMTL best practice articles and will help meet WCAG success criteria [2.4.2 page titled](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=242#page-titled) in the sufficient technique [G88: providing descriptive titles for web pages](https://www.w3.org/WAI/WCAG21/Techniques/general/G88.html).

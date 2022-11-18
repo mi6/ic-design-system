@@ -1,0 +1,11 @@
+ic-typography h1,
+ic-typography h2,
+ic-typography h3,
+ic-typography h4,
+ic-typography h5,
+ic-typography h6,
+ic-typography p,
+ic-typography label {
+  font: inherit;
+  letter-spacing: inherit;
+}

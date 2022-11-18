@@ -1,0 +1,207 @@
+---
+path: "/components/page-header"
+
+navPriority: 12
+
+date: "2022-11-15"
+
+title: "Page header"
+
+status: "BETA"
+
+subTitle: "A page header defines the top of the page content and is a consistent way to show page context, key actions and secondary navigation."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/page-header.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/page-header" },
+    { title: "Code", path: "/components/page-header/code" },
+    { title: "Accessibility", path: "/components/page-header/accessibility" },
+  ]
+---
+
+import {
+  IcPageHeader,
+  IcStatusTag,
+  IcButton,
+  IcStepper,
+  IcStep,
+  IcTextField,
+} from "@ukic/react";
+import pageHeaderFig1 from "./images/fig-1-page-header-anatomy.png";
+import pageHeaderFig2 from "./images/fig-2-dont-use-global-actions-in-a-page-header.png";
+import pageHeaderFig3 from "./images/fig-3-use-default-and-dense-sizing.png";
+import pageHeaderFig4 from "./images/fig-4-set-width-of-page-header-to-match-width-of-main-content.png";
+import pageHeaderFig5 from "./images/fig-5-dont-set-width-of-page-header-to-align-to-content.png";
+import pageHeaderFig6 from "./images/fig-6-page-header-displayed-whilst-scroll-position-is-at-top-of-page.png";
+import pageHeaderFig7 from "./images/fig-7-sticky-page-header-displayed-whilst-scrolled.png";
+import pageHeaderFig8 from "./images/fig-8-centre-alignment.png";
+import pageHeaderFig9 from "./images/fig-9-left-alignment.png";
+import pageHeaderFig10 from "./images/fig-10-full-width.png";
+import pageHeaderFig11 from "./images/fig-11-dont-mix-alignment.png";
+
+## Introduction
+
+An example of the page header component.
+
+<ComponentPreview>
+  <IcPageHeader
+    heading="Coffee recipes"
+    sub-heading="This is a page header component that has an input area, actions and stepper."
+    reverse-order=""
+  >
+    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcButton slot="actions" variant="primary">
+      Create coffee
+    </IcButton>
+    <IcButton slot="actions" variant="tertiary">
+      Filter coffee
+    </IcButton>
+    <IcStepper slot="stepper">
+      <IcStep stepTitle="Warm kettle" stepType="completed" />
+      <IcStep
+        stepTitle="Warm milk"
+        stepSubtitle="Optional"
+        stepType="completed"
+      />
+      <IcStep stepTitle="Pay for order" stepType="current" />
+    </IcStepper>
+    <IcTextField slot="input" placeholder="Enter your input" hide-label="" />
+  </IcPageHeader>
+</ComponentPreview>
+
+## When to use
+
+Use a page header to display an introduction to the content of the page. Add additional elements to provide actions, navigation or inputs at the page level.
+
+<DoDontCaution
+  imageSrc={pageHeaderFig1}
+  imageAlt="A diagram showing the positioning of the content areas within a page header. The content areas are a breadcrumb area, a title area, an action area, an input area, and a navigation area. "
+  state="none"
+  caption="The anatomy of a page header that includes areas for breadcrumbs, titling, actions, inputs and additional navigation.  "
+/>
+
+### With action
+
+Use [buttons](/components/buttons) when you need to provide actions that affect all content on the page. For example, to filter or to add a new record. Only use one primary button per page header. Use any type of button within the page header’s interaction area.
+
+### With input
+
+Include an [input field](/components/search-bar) to search or filter data displayed on the page. Don’t overload the input area with components, consider placing them in the page content instead.
+
+### With breadcrumb navigation
+
+Use a [breadcrumb](/components/breadcrumbs) to show the current page’s position in the app’s hierarchy or show a link to the parent page.
+
+### With tab navigation
+
+Use [tabs](/components/tabs) if the content grouped by the header can be split into distinct categories.
+
+### With stepper
+
+Use a [stepper](/components/stepper) to show progress through a multi-step process.
+
+## When not to use
+
+Don’t use the page header to include global actions or global navigation, instead use the [top navigation](/components/top-nav) or [side navigation](/components/side-nav).
+
+<DoDontCaution
+  imageSrc={pageHeaderFig2}
+  imageAlt="An example app called ‘Better latte than never’ that displays a page titled ‘Top 5 reasons why coffee is a way better choice than tea’. The page’s page header contains an action button titled ‘Main menu’."
+  state="bad"
+  caption="Don‘t use global actions within a page header."
+/>
+
+## Sizing
+
+<DoDontCaution
+  imageSrc={pageHeaderFig3}
+  imageAlt="A default sized page header with a large title that says ‘Grande Frappé’ and small sized page header with the same title displayed much smaller."
+  state="none"
+  caption="An example of default and small sized page headers"
+/>
+
+Set the width of the page header to match the width of the page’s main content.
+
+<DoDontCaution
+  imageSrc={pageHeaderFig4}
+  imageAlt="An example app titled ‘Better latte than never’ showing a page called ‘Top 5 reasons why coffee is better than tea’ with a page header that spans the full width of the content area."
+  state="good"
+  caption="Set the width of the page header to fill the page’s main content area.  "
+/>
+
+<DoDontCaution
+  imageSrc={pageHeaderFig5}
+  imageAlt="An example app titled ‘Better latte than never’ showing a page called ‘Top 5 reasons why coffee is better than tea’ with a page header that is indented from the page margins to align with the page’s example content."
+  state="bad"
+  caption="Don’t set the width of the page header to align with content. The page header content will align to your content container automatically."
+/>
+
+## Layout and placement
+
+### Sticky scroll
+
+Set the page header to stick to the top of the screen if you need it to be visible when scrolling. Otherwise, set it to scroll with content to maximise available space for content.
+
+<DoDontCaution
+  imageSrc={pageHeaderFig6}
+  imageAlt="An example app title ‘better latte than never’ that shows the top navigation component at the top of the screen, a page header below it, and some example content below that."
+  state="none"
+  caption="The page header sits at the top of the page when scrolled to the top."
+/>
+
+<DoDontCaution
+  imageSrc={pageHeaderFig7}
+  imageAlt="An example app that is scrolled partway down the page. A page header is displayed stuck to the top of the screen and overlaying other example content."
+  state="none"
+  caption="A sticky page header stays at the top of the screen when scrolling down the page."
+/>
+
+### Alignment
+
+Align the page header either to the left, centre or full-width to match the rest of the content on the page.
+
+<DoDontCaution
+  imageSrc={pageHeaderFig9}
+  imageAlt="An example app that shows a page header and some example content. The page header’s title, description and action button are aligned to the left hand side of the screen, and the example page content below is also aligned to the left of the screen."
+  state="good"
+  caption="Use left alignment to position page header content to the left of the page container."
+/>
+
+<DoDontCaution
+  imageSrc={pageHeaderFig8}
+  imageAlt="An example app that shows a page header and some example content. The page header’s title, description and action button are aligned to the centre of the screen, and the example page content below is also aligned to the centre of the screen."
+  state="good"
+  caption="Use centred alignment to position page header content to the middle of the page container."
+/>
+
+<DoDontCaution
+  imageSrc={pageHeaderFig10}
+  imageAlt="An example app that shows a page header and some example content. The page header’s content spans the full screen width with its title and description aligned to the left margin and its action button aligned to the right margin. The example page content below is aligned to the centre of the screen."
+  state="good"
+  caption="Use full-width to align page header content to the left and right margins of the page container."
+/>
+
+Don’t align a page header’s content differently to how the rest of the page content is aligned.
+
+<DoDontCaution
+  imageSrc={pageHeaderFig11}
+  imageAlt="An example app that shows a page header and some example content. The page header’s content is aligned to the left of the screen. The example page content below is aligned to the centre of the screen."
+  state="bad"
+  caption="Don’t mix alignments in an app. Here the page header’s content has left alignment, whereas the rest of the page content is centre aligned."
+/>
+
+## Content
+
+Use short titles that clearly describe the page's content.
+
+Keep page subtitles concise within the page header. If more content is required, consider placing it within the page itself.
+
+Include a title adornment to convey information such as a status or versioning.
+
+## Related components
+
+- [Hero](/components/hero)
+- [Top navigation](/components/top-nav)
+- [Side navigation](/components/side-nav)

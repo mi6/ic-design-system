@@ -1,0 +1,7 @@
+.alert {
+  margin: 0 0 var(--ic-space-lg) 0;
+}
+
+.alert * {
+  line-height: 1.8em;
+}

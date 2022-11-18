@@ -1,0 +1,116 @@
+.cards-container {
+  margin: 0;
+  display: grid;
+  grid-gap: var(--ic-space-lg);
+  list-style: none;
+}
+
+.explore-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.resources-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  height: 100%;
+}
+
+.divider {
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: 1;
+  background-color: var(--ic-architectural-300);
+}
+
+.card-icon {
+  color: var(--ic-action-default);
+}
+
+.text-content {
+  max-width: 864px;
+}
+
+.hero-card {
+  color: var(--ic-theme-text);
+  width: 300px;
+}
+
+.hero .ic-typography-h4 .MuiSvgIcon-root {
+  height: var(--ic-space-lg);
+  width: var(--ic-space-lg);
+  vertical-align: top;
+}
+
+.get-started-link {
+  --ic-hyperlink-contrast-visited: var(--ic-architectural-white);
+}
+
+.get-started-arrow {
+  margin-left: var(--ic-space-xxs);
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 576px) {
+  .explore-cards {
+    grid-template-columns: auto;
+  }
+
+  .resources-cards {
+    grid-template-columns: auto;
+  }
+
+  .homepage {
+    padding-bottom: var(--ic-space-xl);
+  }
+
+  .section {
+    margin: var(--ic-space-md) 0;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .homepage {
+    padding-bottom: var(--ic-space-lg);
+  }
+
+  .section {
+    margin: var(--ic-space-lg) 0;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  .explore-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .homepage {
+    padding-bottom: calc(var(--ic-space-lg) + var(--ic-space-xxs));
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .section {
+    margin: var(--ic-space-xl) 0;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  .homepage {
+    padding-bottom: calc(var(--ic-space-xl) + var(--ic-space-xs));
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .homepage {
+    padding-bottom: var(--ic-space-xl);
+  }
+
+  .section {
+    margin: calc(var(--ic-space-xl) + var(--ic-space-xs)) 0;
+  }
+}

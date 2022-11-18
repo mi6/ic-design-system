@@ -1,0 +1,41 @@
+---
+path: "/components/switch/code"
+
+date: "2022-11-15"
+
+title: "Switch"
+
+status: "BETA"
+
+subTitle: "Switches are used to quickly toggle an option on or off."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/switch.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/switch" },
+    { title: "Code", path: "/components/switch/code" },
+    { title: "Accessibility", path: "/components/switch/accessibility" },
+  ]
+---
+
+import { IcSwitch } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-switch label="Unlimited coffee"></ic-switch>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSwitch label="Unlimited coffee" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcSwitch label="Unlimited coffee" />
+</ComponentPreview>
+
+<ComponentDetails component="ic-switch" />

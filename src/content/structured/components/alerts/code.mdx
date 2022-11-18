@@ -1,0 +1,201 @@
+---
+path: "/components/alerts/code"
+
+date: "2022-11-15"
+
+title: "Alert"
+
+status: "BETA"
+
+subTitle: "Alerts display a short important message in a way that attracts attention without interrupting the current task."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/alerts.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/alerts" },
+    { title: "Code", path: "/components/alerts/code" },
+    { title: "Accessibility", path: "/components/alerts/accessibility" },
+  ]
+---
+
+## Component demo
+
+import { IcAlert, IcButton, IcLink } from "@ukic/react";
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-alert heading="Neutral" message="This alert is for displaying miscellaneous messages."></ic-alert>
+<ic-alert variant="info" heading="Info" message="This alert is for displaying information."></ic-alert>
+<ic-alert variant="error" heading="Error" message="This alert is for displaying errors."></ic-alert>
+<ic-alert variant="warning" heading="Warning" message="This alert is for displaying warnings."></ic-alert>
+<ic-alert variant="success" heading="Success" message="This alert is for displaying success messages."></ic-alert>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAlert heading="Neutral" message="This alert is for displaying miscellaneous messages."/>
+<IcAlert variant="info" heading="Info" message="This alert is for displaying information." />
+<IcAlert variant="error" heading="Error" message="This alert is for displaying errors." />
+<IcAlert variant="warning" heading="Warning" message="This alert is for displaying warnings." />
+<IcAlert variant="success" heading="Success" message="This alert is for displaying success messages." />`,
+  },
+];
+
+<ComponentPreview style={{ display: "block" }} snippets={snippetsDefault}>
+  <IcAlert
+    style={{ marginBottom: "16px" }}
+    heading="Neutral"
+    message="This alert is for displaying miscellaneous messages."
+  />
+  <IcAlert
+    style={{ marginBottom: "16px" }}
+    variant="info"
+    heading="Info"
+    message="This alert is for displaying information."
+  />
+  <IcAlert
+    style={{ marginBottom: "16px" }}
+    variant="error"
+    heading="Error"
+    message="This alert is for displaying errors."
+  />
+  <IcAlert
+    style={{ marginBottom: "16px" }}
+    variant="warning"
+    heading="Warning"
+    message="This alert is for displaying warnings."
+  />
+  <IcAlert
+    style={{ marginBottom: "16px" }}
+    variant="success"
+    heading="Success"
+    message="This alert is for displaying success messages."
+  />
+</ComponentPreview>
+
+<ComponentDetails component="ic-alert" />
+
+## Variants
+
+### Dismissible
+
+export const snippetsDismissible = [
+  {
+    language: "Web component",
+    snippet: `<ic-alert heading="Dismissible" message="This alert is dismissible." dismissible="true"></ic-alert>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAlert heading="Dismissible" message="This alert is dismissible." dismissible />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDismissible}>
+  <IcAlert
+    heading="Dismissible"
+    message="This alert is dismissible."
+    dismissible
+  />
+</ComponentPreview>
+
+### With action
+
+export const snippetsWithAction = [
+  {
+    language: "Web component",
+    snippet: `<ic-alert heading="With action" message="This alert has an action.">
+      <ic-button slot="action" variant="secondary" button-style="dark">Button</ic-button>
+</ic-alert>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAlert heading="With action" message="This alert has an action.">
+    <IcButton slot="action" variant="secondary" buttonStyle="dark">Button</IcButton>
+</IcAlert>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsWithAction}>
+  <IcAlert heading="With action" message="This alert has an action.">
+    <IcButton slot="action" variant="secondary" buttonStyle="dark">
+      Button
+    </IcButton>
+  </IcAlert>
+</ComponentPreview>
+
+### Title above
+
+export const snippetsTitleAbove = [
+  {
+    language: "Web component",
+    snippet: `<ic-alert heading="Title above" message="This alert has the title at the top of the alert." title-above="true"></ic-alert>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAlert heading="Title above" message="This alert has the title at the top of the alert." titleAbove />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsTitleAbove}>
+  <IcAlert
+    heading="Title above"
+    message="This alert has the title at the top of the alert."
+    titleAbove
+  />
+</ComponentPreview>
+
+### Responsive title
+
+export const snippetsResponsiveTitle = [
+  {
+    language: "Web component",
+    snippet: `<ic-alert heading="This title is very long so should force the alert to add 'title-above'" message="This alert does not have 'title-above' added as a prop but it's forced to add it due to the length of the title."></ic-alert>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAlert heading="This title is very long so should force the alert to add 'title-above'" message="This alert does not have 'title-above' added as a prop but it's forced to add it due to the length of the title." />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsResponsiveTitle}>
+  <IcAlert
+    heading="This title is very long so should force the alert to add 'title-above'"
+    message="This alert does not have 'title-above' added as a prop but it's forced to add it due to the length of the title."
+  />
+</ComponentPreview>
+
+### Custom message
+
+export const snippetsCustomMessage = [
+  {
+    language: "Web component",
+    snippet: `<ic-alert heading="This alert uses a custom message slot">
+  <span slot="message">This is some text and <ic-link href="/" inline="">this is an inline link</ic-link> within the text.</span>
+</ic-alert>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAlert heading="This alert uses a custom message slot">
+  <span slot="message">This is some text and <IcLink href="/" inline>this is an inline link</IcLink> within the text.</span>
+</IcAlert>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsCustomMessage}>
+  <IcAlert heading="This alert uses a custom message slot">
+    <span
+      slot="message"
+      style={{
+        font: "var(--ic-font-body)",
+        letterSpacing: "var(--ic-font-letter-spacing-0pt005)",
+      }}
+    >
+      This is some text and{" "}
+      <IcLink href="/" inline="">
+        this is an inline link
+      </IcLink>{" "}
+      within the text.
+    </span>
+  </IcAlert>
+</ComponentPreview>

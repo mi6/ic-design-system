@@ -1,0 +1,168 @@
+---
+path: "/components/checkboxes/code"
+
+date: "2022-11-15"
+
+title: "Checkbox"
+
+status: "BETA"
+
+subTitle: "Use checkboxes as part of a form, in dialogs and in control areas such as filters or settings."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/checkboxes.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/checkboxes" },
+    { title: "Code", path: "/components/checkboxes/code" },
+    { title: "Accessibility", path: "/components/checkboxes/accessibility" },
+  ]
+---
+
+import { IcCheckboxGroup, IcCheckbox, IcTextField } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="Make changes to your order." name="default">
+  <ic-checkbox value="extra" label="Extra shot (50p)"></ic-checkbox>
+  <ic-checkbox value="Soya milk" label="Soya milk" checked></ic-checkbox>
+  <ic-checkbox value="keep cup" label="Takeaway cup (Reusable keep cups only)" disabled="true"></ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="Make changes to your order." name="default">
+  <IcCheckbox value="extra" label="Extra shot (50p)" />
+  <IcCheckbox value="Soya milk" label="Soya milk" checked />
+  <IcCheckbox value="keep cup" label="Takeaway cup (Reusable keep cups only)" disabled />
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault} style={{ marginTop: "24px" }}>
+  <IcCheckboxGroup label="Make changes to your order." name="default">
+    <IcCheckbox value="extra" label="Extra shot (50p)" />
+    <IcCheckbox value="Soya milk" label="Soya milk" checked />
+    <IcCheckbox
+      value="keep cup"
+      label="Takeaway cup (Reusable keep cups only)"
+      disabled
+    />
+  </IcCheckboxGroup>
+</ComponentPreview>
+
+## Checkbox details
+
+<ComponentDetails component="ic-checkbox" />
+
+## Checkbox group details
+
+<ComponentDetails component="ic-checkbox-group" />
+
+## Variants
+
+### Conditional
+
+export const snippetsConditional = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="Which coffee do you like best?" name="conditional">
+  <ic-checkbox value="americano" label="Americano"></ic-checkbox>
+  <ic-checkbox value="espresso" label="Espresso"></ic-checkbox>
+  <ic-checkbox value="flatwhite" label="Flat white"></ic-checkbox>
+  <ic-checkbox value="latte" label="Latte"></ic-checkbox>
+  <ic-checkbox value="cappuccino" label="Cappuccino"></ic-checkbox>
+  <ic-checkbox value="other" label="Other">
+    <ic-text-field
+      slot="additional-field"
+      label="Please let us know..."
+    ></ic-text-field>
+  </ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="Which coffee do you like best?" name="conditional">
+  <IcCheckbox value="americano" label="Americano" />
+  <IcCheckbox value="espresso" label="Espresso" />
+  <IcCheckbox value="flatwhite" label="Flat white" />
+  <IcCheckbox value="latte" label="Latte" />
+  <IcCheckbox value="cappuccino" label="Cappuccino" />
+  <IcCheckbox value="other" label="Other">
+    <IcTextField
+      slot="additional-field"
+      label="Please let us know..."
+    />
+  </IcCheckbox>
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsConditional} style={{ marginTop: "24px" }}>
+  <IcCheckboxGroup label="Which coffee do you like best?" name="conditional">
+    <IcCheckbox value="americano" label="Americano" />
+    <IcCheckbox value="espresso" label="Espresso" />
+    <IcCheckbox value="flatwhite" label="Flat white" />
+    <IcCheckbox value="latte" label="Latte" />
+    <IcCheckbox value="cappuccino" label="Cappuccino" />
+    <IcCheckbox value="other" label="Other">
+      <IcTextField slot="additional-field" label="Please let us know..." />
+    </IcCheckbox>
+  </IcCheckboxGroup>
+</ComponentPreview>
+
+### Conditional dynamic
+
+export const snippetsConditionalDynamic = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="Which coffee do you like best?" name="dynamic">
+  <ic-checkbox value="americano" label="Americano"></ic-checkbox>
+  <ic-checkbox value="espresso" label="Espresso"></ic-checkbox>
+  <ic-checkbox value="flatwhite" label="Flat white"></ic-checkbox>
+  <ic-checkbox value="latte" label="Latte"></ic-checkbox>
+  <ic-checkbox value="cappuccino" label="Cappuccino"></ic-checkbox>
+  <ic-checkbox additional-field-display="dynamic" value="other" label="Other">
+    <ic-text-field
+      slot="additional-field"
+      label="Please let us know..."
+    ></ic-text-field>
+  </ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="Which coffee do you like best?" name="dynamic">
+  <IcCheckbox value="americano" label="Americano" />
+  <IcCheckbox value="espresso" label="Espresso" />
+  <IcCheckbox value="flatwhite" label="Flat white" />
+  <IcCheckbox value="latte" label="Latte" />
+  <IcCheckbox value="cappuccino" label="Cappuccino" />
+  <IcCheckbox additionalFieldDisplay="dynamic" value="other" label="Other">
+    <IcTextField
+      slot="additional-field"
+      label="Please let us know..."
+    />
+  </IcCheckbox>
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsConditionalDynamic}
+  style={{ marginTop: "24px" }}
+>
+  <IcCheckboxGroup label="Which coffee do you like best?" name="dynamic">
+    <IcCheckbox value="americano" label="Americano" />
+    <IcCheckbox value="espresso" label="Espresso" />
+    <IcCheckbox value="flatwhite" label="Flat white" />
+    <IcCheckbox value="latte" label="Latte" />
+    <IcCheckbox value="cappuccino" label="Cappuccino" />
+    <IcCheckbox additionalFieldDisplay="dynamic" value="other" label="Other">
+      <IcTextField slot="additional-field" label="Please let us know..." />
+    </IcCheckbox>
+  </IcCheckboxGroup>
+</ComponentPreview>

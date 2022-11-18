@@ -1,0 +1,58 @@
+---
+path: "/accessibility/coding/aria"
+
+navPriority: 10
+
+date: "2022-11-15"
+
+title: "ARIA"
+
+subTitle: "Follow our accessibility tips for ARIA."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/aria.mdx"
+---
+
+## Introduction
+
+Favour native HTML over ARIA.
+
+The Web Accessibility Initiative's [accessible rich internet applications specification](https://www.w3.org/TR/wai-aria/) (WAI-ARIA, or just ARIA) is good for bridging areas with accessibility issues that can't be managed with native HTML.
+
+ARIA does not affect how a page is visually presented. It only changes the information used by assistive technologies.
+
+### The first rule or ARIA
+
+The first rule of [using ARIA](https://www.w3.org/TR/using-aria/) is to favour using native HTML instead of re-purposing an element by adding an ARIA role, state or property to make it accessible.
+
+By using the semantic HTML you not only get an implicit ARIA role, so the browser knows how to interpret the element, but also other standard functionality such as focus, keyboard and mouse support.
+
+### Time to use ARIA
+
+The main situation where ARIA can improve the usability even when semantic HTML has been used is with [live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions).
+
+Live regions mean that any dynamic changes within it will be read out to assistive technologies useful to identify errors or of a status change, for example.
+
+To make an element a live region, use the `aria-live` attribute or a specialised live region `role` such as `role=”alert”`.
+
+If you have to do add ARIA to unsemantic HTML remember it’s not just about applying the right `role`, you also need to ensure all the other standard functionality is also applied including focus, keyboard and mouse support.
+
+### Learn more about ARIA
+
+To learn more about ARIA:
+
+- Deque has an easily digestible 3 part blog post for the [ARIA spec for the uninitiated](https://www.deque.com/?s=ARIA%20Spec%20for%20the%20Uninitiated&post_type=post).
+- Mozilla also covers [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) extensively with tutorials and a range of documentation.
+- Google's Web Fundamentals gives a thorough [introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria).
+- W3’s [using ARIA](https://www.w3.org/TR/using-aria/) gives more guidance on how to use ARIA properly including the all five rules of ARIA.
+
+## When it goes wrong
+
+Understanding when and how to use ARIA is key to improving the experience to assistive technology users. Even using ARIA where it’s not needed on semantic HTML can cause undesired effects on assistive technology.
+
+Deque’s [WAI-ARIA: Top 6 Mistakes to avoid](https://www.deque.com/blog/wai-aria-top-6-mistakes-to-avoid/) states that “misuse of ARIA creates a more inaccessible experience than one without ARIA”.
+
+## Best practice and WCAG
+
+It's very common to see ARIA used extensively in libraries and frameworks. Don’t assume this is best practice or that they’ve been implemented correctly just because they use ARIA.
+
+There are a number of [ARIA techniques](https://www.w3.org/WAI/WCAG21/Techniques/#aria) that could be used to help meet a range of different WCAG success criteria including [1.1.1 non-text content](https://www.w3.org/WAI/WCAG21/quickref/#non-text-content), [4.1.2 name, role, value](https://www.w3.org/WAI/WCAG21/quickref/#name-role-value) and [4.1.3 status messages](https://www.w3.org/WAI/WCAG21/quickref/#status-messages).

@@ -1,0 +1,59 @@
+import React, { useMemo } from "react";
+
+import { IcTypography } from "@ukic/react";
+import AttributeTable from "../../AttributeTable";
+import PropDescription from "./PropDescription";
+
+interface StencilProp {
+  name: string;
+  docs: string;
+  type: string;
+  default?: string;
+}
+
+interface PropTableProps {
+  propData: StencilProp[];
+}
+
+const PropTable: React.FC<PropTableProps> = ({ propData }) => {
+  const columns = useMemo(
+    () => [
+      {
+        Header: "Name",
+        accessor: "name",
+      },
+      {
+        Header: "Description",
+        accessor: "description",
+      },
+      {
+        Header: "Default",
+        accessor: "default",
+      },
+    ],
+    []
+  );
+
+  const data = useMemo(
+    () =>
+      propData.map((prop) => ({
+        name: prop.name,
+        description: (
+          <PropDescription description={prop.docs} type={prop.type} />
+        ),
+        default: prop.default,
+      })),
+    []
+  );
+
+  return (
+    <>
+      <IcTypography variant="h3" spacing>
+        <h3>Props</h3>
+      </IcTypography>
+      <AttributeTable columns={columns} data={data} />
+    </>
+  );
+};
+
+export default PropTable;

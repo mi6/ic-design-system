@@ -1,0 +1,53 @@
+---
+path: "/components/breadcrumbs/code"
+
+date: "2022-11-16"
+
+title: "Breadcrumb"
+
+status: "BETA"
+
+subTitle: "Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/breadcrumbs.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/breadcrumbs" },
+    { title: "Code", path: "/components/breadcrumbs/code" },
+    { title: "Accessibility", path: "/components/breadcrumbs/accessibility" },
+  ]
+---
+
+import { IcBreadcrumbs, IcBreadcrumb } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-breadcrumbs>
+    <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+    <ic-breadcrumb page-title="Beverages" href="# "></ic-breadcrumb>
+    <ic-breadcrumb current="true" page-title="Coffee" href="#"></ic-breadcrumb>
+</ic-breadcrumbs>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcBreadcrumbs>
+    <IcBreadcrumb pageTitle="Home" href="#"></IcBreadcrumb>
+    <IcBreadcrumb pageTitle="Beverages" href="# "></IcBreadcrumb>
+    <IcBreadcrumb current="true" pageTitle="Coffee" href="#"></IcBreadcrumb>
+</IcBreadcrumbs>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcBreadcrumbs>
+    <IcBreadcrumb pageTitle="Home" href="#" />
+    <IcBreadcrumb pageTitle="Beverages" href="# " />
+    <IcBreadcrumb current="true" pageTitle="Coffee" href="#" />
+  </IcBreadcrumbs>
+</ComponentPreview>
+
+<ComponentDetails component="ic-breadcrumbs" />

@@ -1,0 +1,46 @@
+---
+path: "/components/loading-indicators/accessibility"
+
+date: "2022-11-15"
+
+title: "Loading indicator"
+
+status: "BETA"
+
+subTitle: "Loading indicators help inform users that a request is being processed. Circular and linear indicators provide flexibility in design."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/loading-indicators.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/loading-indicators" },
+    { title: "Code", path: "/components/loading-indicators/code" },
+    {
+      title: "Accessibility",
+      path: "/components/loading-indicators/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+Clear labels help convey that a process/component is loading.
+
+We have ensured the loading indicators meet accessibility guidance around colour, speed and movement. Loading spinners should not flash which can be problematic for users with particular accessibility needs.
+
+## For Assistive Technology
+
+Loading indicators use the `aria-live` attribute to tell screen reader users that there is dynamic content on the page. `aria-busy` tells assistive tech that the container is getting new content. `aria-busy` will be false when the container isn't refreshing and will be equal to true when the content is reloading.
+
+`aria-live` takes three attributes: `off`, `polite`, and `assertive`. While polite doesn’t interrupt the screen reader if other content is being read, assertive will immediately read out the element’s content. Loading indicators use assertive to ensure screen reader users are provided with the same information as other users.
+
+## Based on
+
+The loading indicator component has been based on the following resources:
+
+- [Accessible Loading Indicators—with No Extra Elements!](https://dockyard.com/blog/2020/03/02/accessible-loading-indicatorswith-no-extra-elements), James Steinbach, accessed March 2022.
+- [Loading: Accessibility](https://carbondesignsystem.com/components/loading/accessibility/), IBM, accessed March 2022.
+
+## Testing
+
+We’ve tested this component against WCAG 2.1 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

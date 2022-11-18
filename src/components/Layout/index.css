@@ -1,0 +1,98 @@
+.skip-content-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-content-link:hover {
+  text-decoration: none;
+}
+
+.skip-content-link:focus {
+  background: var(--ic-architectural-white);
+  position: absolute;
+  z-index: 100;
+  top: var(--ic-space-sm);
+  left: var(--ic-space-sm);
+  padding: var(--ic-space-sm);
+}
+
+.index {
+  padding: 0 0 0 0 !important;
+  max-width: none !important;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: var(--ic-space-lg);
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.main-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--ic-space-lg));
+}
+
+.footer {
+  justify-self: flex-end;
+}
+
+.footer svg * {
+  fill: var(--ic-architectural-white) !important;
+}
+
+.route-announcer {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.link-text {
+  position: absolute;
+  left: -9999px;
+}
+
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ic-space-xl);
+}
+
+.logo-wrapper svg {
+  height: var(--ic-space-xxl);
+  max-width: fit-content;
+}
+
+.logo-wrapper > ic-footer-link {
+  margin-right: 0;
+}
+
+.homepage-wrapper {
+  flex: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: var(--ic-space-md);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .logo-wrapper svg {
+    height: 40px;
+  }
+
+  .logo-wrapper {
+    gap: var(--ic-space-lg);
+  }
+}

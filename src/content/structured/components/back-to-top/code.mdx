@@ -1,0 +1,48 @@
+---
+path: "/components/back-to-top/code"
+
+date: "2022-11-15"
+
+title: "Back to top"
+
+status: "BETA"
+
+subTitle: "The back to top component helps people quickly return to the top of a long page."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/back-to-top.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/back-to-top" },
+    { title: "Code", path: "/components/back-to-top/code" },
+    { title: "Accessibility", path: "/components/back-to-top/accessibility" },
+  ]
+---
+
+import { IcButton } from "@ukic/react";
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-back-to-top target-id="main" />`,
+  },
+  {
+    language: "React",
+    snippet: `<IcBackToTop targetId="main" />`,
+  },
+];
+
+## Component demo
+
+<ComponentPreview snippets={snippets}>
+  <IcButton
+    variant="secondary"
+    onClick={() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    }}
+  >
+    Show Back to top
+  </IcButton>
+</ComponentPreview>
+
+<ComponentDetails component="ic-back-to-top" />

@@ -1,0 +1,16 @@
+.form {
+  padding: 20px;
+}
+
+.text-field {
+  padding-top: var(--ic-space-md) !important;
+}
+
+.button-row ic-button {
+  margin: var(--ic-space-sm) 0 var(--ic-space-sm) var(--ic-space-sm);
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,175 @@
+---
+path: "/components/status-tags"
+
+navPriority: 19
+
+date: "2022-11-15"
+
+title: "Status tag"
+
+status: "BETA"
+
+subTitle: "Status tags are short, clear and digestible ways to display the status of something on the page."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/status-tags.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/status-tags" },
+    { title: "Code", path: "/components/status-tags/code" },
+    { title: "Accessibility", path: "/components/status-tags/accessibility" },
+  ]
+---
+
+import { IcStatusTag } from "@ukic/react";
+import statusTagFig1 from "./images/fig-1-do-use-status-tags-exclusively-to-denote-status.png";
+import statusTagFig2 from "./images/fig-2-do-not-use-status-tags-for-anything-other-than-denoting-status.png";
+import statusTagFig3 from "./images/fig-3-do-not-use-a-mix-of-primary-and-secondary-status-tags-to-show-the same-statuses-message-within-a-group-of-items.png";
+import statusTagFig4 from "./images/fig-4-do-use-the-correct-status-tag-size-to-match-other-ui-component-sizes.png";
+import statusTagFig5 from "./images/fig-5-do-not-mix-sizes-when-using-multiple-ui-components.png";
+import statusTagFig6 from "./images/fig-6-do-use-adjectives-to-describe-status.png";
+import statusTagFig7 from "./images/fig-7-do-not-use-verbs-in-status-tags.png";
+import statusTagFig8 from "./images/fig-8-do-use-relevant-wording-that-supports-the-status-tag-colour.png";
+import statusTagFig9 from "./images/fig-9-do-not-use-wording-which-directly-contrasts-and-or does-not-support-the-status-of-the-tag.png";
+import statusTagFig10 from "./images/fig-10-avoid-using-long-labels-as-it-will-force-the-text-to-truncate.png";
+
+## Introduction
+
+The status tag has four types:
+
+- Neutral
+- Success
+- Warning
+- Danger
+
+Each status tag has a filled and outlined appearance option and is available in two sizes.
+
+<ComponentPreview style={{ gap: "8px" }}>
+  <IcStatusTag label="Neutral" status="neutral" />
+  <IcStatusTag label="Success" status="success" />
+  <IcStatusTag label="Warning" status="warning" />
+  <IcStatusTag label="Danger" status="danger" />
+</ComponentPreview>
+
+## When to use
+
+Display a status tag to show the status of an item in an application. For example, status tags could be used to show if a system is online or offline, if a document has been actioned or approved, or if a displayed train network is currently active or not.
+
+### Filled
+
+Filled status tags use the status colours to denote the type of status tag.
+
+Use filled status tags to convey emphasis and importance.
+
+### Outlined
+
+Outlined status tags use a lighter colour variation of the relevant status colour.
+
+Use outlined status tags to provide emphasis to less important items.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={statusTagFig1}
+    imageAlt="A good example of a success status tag labelled ‘approved’ used to show the status of a page titled ‘Guidance’."
+    state="good"
+    caption="Use status tags to convey the current status of something."
+  />
+</DoubleDoDontCaution>
+
+## When not to use
+
+Don't use status tags to display anything other than status, use [static chips](/components/chips/#static-chips).
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={statusTagFig2}
+    imageAlt="An example of a status tag being used to display the author of a page."
+    state="bad"
+    caption="Don't use status tags for anything other than denoting status."
+  />
+</DoubleDoDontCaution>
+
+Don't use a mix of filled and outlined status tags when using them together.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={statusTagFig3}
+    imageAlt="An incorrect example of filled and outlined status tags being used in the same page section."
+    state="bad"
+    caption="Don't use a mix of filled and outlined status tags to show the same status messages within a group of items."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+When components are used together the size of the components should match. For example, a default sized status tag should be used with a default sized input component.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={statusTagFig4}
+    imageAlt="A good example of default sized status tags being used in the same section as other default sized components, and a small status tag being used in the same section as another small component."
+    state="good"
+    caption="Use the correct status tag size to match other UI component sizes."
+  />
+  <DoDontCaution
+    imageSrc={statusTagFig5}
+    imageAlt="An incorrect example of small sized status tags used in the same section as other default sized components, and a default status tag being used in the same section as a small component."
+    state="bad"
+    caption="Don't mix sizes when using multiple UI components."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+### Labels
+
+Use adjectives in the status tag label over verbs. Verbs may indicate to a user that by clicking on them the tag will be interactive.
+
+Text in tags should be all capitals to increase readability.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={statusTagFig6}
+    imageAlt="A correct example of a status tag which has the label 'submitted'."
+    state="good"
+    caption="Use adjectives to describe status. "
+  />
+  <DoDontCaution
+    imageSrc={statusTagFig7}
+    imageAlt="An incorrect example of a status tag which has the label 'submit'."
+    state="bad"
+    caption="Don't use verbs in status tags."
+  />
+</DoubleDoDontCaution>
+
+Use the right status tag type that is relevant to the label. Don't use labels which convey different information to what the status colour conveys.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={statusTagFig8}
+    imageAlt="A correct example of status tag labelling. The default variant has the label 'incomplete', the success variant has the label 'accepted’, the warning variant has the label 'in review', the danger variant has the label 'rejected'."
+    state="good"
+    caption="Use relevant wording that supports the status tag colour."
+  />
+  <DoDontCaution
+    imageSrc={statusTagFig9}
+    imageAlt="An incorrect example of status tag labelling. The default variant has the label 'urgent', the success variant has the label 'error’, the warning variant has the label 'success', the danger variant has the label 'approved'."
+    state="bad"
+    caption="Don't use wording which directly contradicts or doesn’t support the status of the tag."
+  />
+</DoubleDoDontCaution>
+
+Use concise labels for better readability. Longer labels will force the text to truncate.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={statusTagFig10}
+    imageAlt="An example of a long label being truncated."
+    state="caution"
+    caption="Avoid using long labels as it will force the text to truncate."
+  />
+</DoubleDoDontCaution>
+
+## Related components
+
+- [Chips](/components/chips)

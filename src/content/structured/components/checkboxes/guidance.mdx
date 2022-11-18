@@ -1,0 +1,173 @@
+---
+path: "/components/checkboxes"
+
+navPriority: 6
+
+date: "2022-11-15"
+
+title: "Checkbox"
+
+status: "BETA"
+
+subTitle: "Use checkboxes as part of a form, in dialogs or in control areas such as filters or settings."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/checkboxes.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/checkboxes" },
+    { title: "Code", path: "/components/checkboxes/code" },
+    { title: "Accessibility", path: "/components/checkboxes/accessibility" },
+  ]
+---
+
+import { IcCheckboxGroup, IcCheckbox } from "@ukic/react";
+import checkboxFig1 from "./images/fig-1-use-the-checklist-to-provide-a-number-of-options.png";
+import checkboxFig2 from "./images/fig-2-use-single-checkboxes-to-allow-a-person-to-agree-to-a-statement.png";
+import checkboxFig3 from "./images/fig-3-a-nested-checklist-that-shows-indeterminate-states-of-a-parent-checkbox-when-only-some-of-its-children-are-selected.png";
+import checkboxFig4 from "./images/fig-4-use-dense-sizing-options-for-compact-layouts.png";
+import checkboxFig5 from "./images/fig-5-checklist-error-state-shown-correctly.png";
+import checkboxFig6 from "./images/fig-6-single-checkbox-error-state-shown-correctly.png";
+import checkboxFig7 from "./images/fig-7-checkbox-child-input-error-shown-correctly.png";
+import checkboxFig8 from "./images/fig-8-checkbox-child-input-error-shown-incorrectly.png";
+import checkboxFig9 from "./images/fig-9-use-clear-and-concise-wording-in-checkbox-labels.png";
+import checkboxFig10 from "./images/fig-10-do-not-use-ambiguous-wording.png";
+
+## Introduction
+
+An example of the checkbox component.
+
+<ComponentPreview>
+  <IcCheckboxGroup label="Make changes to your order." name="1">
+    <IcCheckbox value="extra" label="Extra shot (50p)" />
+    <IcCheckbox value="Soya milk" label="Soya milk" checked />
+    <IcCheckbox
+      value="keep cup"
+      label="Takeaway cup (Reusable keep cups only)"
+      disabled
+    />
+  </IcCheckboxGroup>
+</ComponentPreview>
+
+## When to use
+
+Use checkboxes to allow a user to select any number of options from a list. Checkboxes are grouped into a checkbox group to provide multiple options. Any number of options can be selected and any type of checkbox can be included within the checkbox group.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={checkboxFig1}
+    imageAlt="A checklist asking the question ‘What are your favourite types of coffee?’ with six options where two are checked."
+    state="good"
+    caption="Use the checkbox group to provide a number of options that can be selected."
+  />
+</DoubleDoDontCaution>
+
+Use a single checkbox on its own to allow a user to agree with a statement. For example, use a single checkbox to allow a user to mark whether they agree to a terms and conditions statement.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={checkboxFig2}
+    imageAlt="A single unchecked checkbox with a label that reads “I agree to the terms and conditions, and privacy statement”."
+    state="good"
+    caption="Use single checkboxes to allow a person to agree to a statement."
+  />
+</DoubleDoDontCaution>
+
+Use a checkbox with a conditional field to display a related additional element when that checkbox is selected. The conditional field can be set to static so that it is always visible and becomes enabled once the checkbox is selected. If the conditional field is set to dynamic the field is displayed only when the checkbox is selected.
+
+## When not to use
+
+Don’t use checkboxes when only one option from a list can be selected. For single select lists, use [radio buttons](/components/radio).
+
+## Interaction behaviour
+
+Checkboxes have three possible selection states: selected, unselected, and indeterminate.
+
+Display the indeterminate selection state when the selection of child elements is mixed. Use the indeterminate checkbox to quickly select or de-select all child elements with one click.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={checkboxFig3}
+    imageAlt="A checkbox group asking ‘Which hot drinks do you like?’. A checkbox with label ‘coffee’ shows its indeterminate state as only one of its two child checkboxes is selected."
+    state="good"
+    caption="A nested checkbox group that shows an indeterminate state on a parent checkbox when only some of its children are selected."
+  />
+</DoubleDoDontCaution>
+
+Checkboxes are selected or unselected by clicking any part of the checkbox, including the label.
+
+### Sizing
+
+Use small sized checkbox groups for compact layouts. Always use small components with other small input components.
+
+<DoDontCaution
+  imageSrc={checkboxFig4}
+  imageAlt="Two forms containing a checklist and a text input. One uses default sizing resulting in larger spacing between components. The other uses dense sizing that reduces space between components and results in a shorter vertical height for the same form."
+  state="good"
+  caption="Use small sizing for compact layouts."
+/>
+
+### Validation
+
+There are two types of errors that can occur on a checkbox: a checkbox input error or an error on a checkbox’s conditional field.
+
+A checkbox input error is when the checkbox or checkbox group component itself is responsible for the error. This is shown using the checkbox error state.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={checkboxFig5}
+    imageAlt="A checklist asking 'What are your favourite types of coffee?' with helper text stating 'Select at least one'. Six options are shown but all are unchecked. An error message is displayed below the checklist reading 'Please select at least one option'."
+    state="good"
+    caption="Checkbox group error state shown correctly."
+  />
+  <DoDontCaution
+    imageSrc={checkboxFig6}
+    imageAlt="An unchecked checkbox with label 'I agree to the terms and conditions and privacy statement' alongside a submit button. An error state is shown after the checkbox reading 'Please agree before continuing'."
+    state="good"
+    caption="Single checkbox error state shown correctly."
+  />
+</DoubleDoDontCaution>
+
+For errors on a checkbox’s conditional field, the error is shown only on the conditional field itself and not the wider checkbox or checkbox group component
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={checkboxFig7}
+    imageAlt="A checklist asking ‘What are your favourite types of coffee’. Six options are shown and one labelled ‘Flat white’ is selected and shows a conditional field that asks ‘How frothy do you like it?’. An error message is displayed below the conditional field reading ‘Please provide an answer’."
+    state="good"
+    caption="Checkbox conditional field error shown correctly."
+  />
+  <DoDontCaution
+    imageSrc={checkboxFig8}
+    imageAlt="A checklist asking ‘What are your favourite types of coffee?’. Six options are shown and one labelled ‘Flat white’ is selected and shows a child field that asks ‘How frothy do you like it?’. An error message is displayed below the child field reading ‘Please provide an answer’. Another error message is displayed below the checklist repeating the same error message."
+    state="bad"
+    caption="Checkbox conditional field error shown incorrectly. Only the field needs to show the error state and not the parent checkbox or checkbox group."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+### Labels
+
+Follow the [content style guidelines](/styles/content-style) for checkbox group labels as well as each individual checkbox label. Use the checkbox group label to ask the question, and use the checkbox options to provide possible answers.
+
+Make sure to use labels that make it easy to understand what selecting the checkbox represents. Avoid using ambiguous labels that make it unclear whether to select a checkbox or not.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={checkboxFig9}
+    imageAlt="A short form asking the user to agree to the terms and conditions. A single unchecked checkbox with label ‘I agree to the terms and conditions and privacy statement’ is shown alongside a submit button."
+    state="good"
+    caption="Use clear and concise wording in checkbox labels that makes it easy to understand what selecting the box represents."
+  />
+  <DoDontCaution
+    imageSrc={checkboxFig10}
+    imageAlt="A short form asking the user to agree to the terms and conditions. A single unchecked checkbox with label ‘These are our terms and conditions and privacy statement’ is shown alongside a submit button."
+    state="bad"
+    caption="Don’t use ambiguous wording that makes it hard to understand what selecting the box represents."
+  />
+</DoubleDoDontCaution>
+
+## Related components
+
+- [Radio button](/components/radio)

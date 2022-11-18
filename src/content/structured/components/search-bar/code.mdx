@@ -1,0 +1,74 @@
+---
+path: "/components/search-bar/code"
+
+date: "2022-11-15"
+
+title: "Search bar"
+
+status: "BETA"
+
+subTitle: "The search bar allows users to search for information using keywords or phrases."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/search-bar.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/search-bar" },
+    { title: "Code", path: "/components/search-bar/code" },
+    { title: "Accessibility", path: "/components/search-bar/accessibility" },
+  ]
+---
+
+import { IcSearchBar } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `
+<ic-search-bar label="What is your favourite coffee?"></ic-search-bar>
+<script>
+  const searchBar = document.querySelector("ic-search-bar");
+  searchBar.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `
+<IcSearchBar
+  label="What is your favourite coffee?"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappucino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+</ComponentPreview>
+
+<ComponentDetails component="ic-search-bar" />

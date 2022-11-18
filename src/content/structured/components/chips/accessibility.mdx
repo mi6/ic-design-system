@@ -1,0 +1,45 @@
+---
+path: "/components/chips/accessibility"
+
+date: "2022-11-15"
+
+title: "Chip"
+
+status: "BETA"
+
+subTitle: "Chips are used to filter and present data."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/chips.mdx"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/chips" },
+    { title: "Code", path: "/components/chips/code" },
+    { title: "Accessibility", path: "/components/chips/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+Chips can have `aria-labelledby` or `aria-label` tags that provide additional content to the visible label. However, the visible label must be included within the accessible label.
+
+When an interactive chip is disabled, the `aria-disabled` tag is set to `true`.
+
+Make sure that focus is moved to an intuitive element of the page after a chip is dismissed.
+
+## For Assistive Technology
+
+Dismissible chips use the role of button as opposed to link in order to help users of assistive technologies understand that the button is performing an action on the page instead of navigating them to a new location. Users should be aware that activating the button will remove the chip from the list.
+
+## Based on
+
+The chips component has been based on the following resources:
+
+- [ARIA: button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role), MDN web docs, accessed July 2022.
+- [Pills](https://www.lightningdesignsystem.com/components/pills/), Lightning Design System, accessed July 2022.
+- [Accessibility in Angular Chips component](https://ej2.syncfusion.com/angular/documentation/chips/accessibility/), Syncfusion, accessed July 2022.
+- [Accessibility: WAI-ARIA support](https://www.telerik.com/kendo-react-ui/components/buttons/chiplist/accessibility/), KendoReact, accessed July 2022.
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.
