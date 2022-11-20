@@ -1,35 +1,30 @@
 ---
 path: "/icds/cookies-policy"
 
-date: "2022-11-15"
+date: "2022-11-20"
 
 title: "Cookies Policy"
 
 subTitle: "Cookies Policy for the Intelligence Community Design System"
 ---
 
-import { IcAlert } from "@ukic/react";
+import InlineCookiesManager from "./components/InlineCookiesManager";
 
 ## About cookies
 
-A cookie is a file stored on your device that contains an identifier (usually a string of letters and numbers) when you access a website.
-
-When you visit the same website again the cookies stored on your device are accessed by code on the website. This means that website can recognise the device being used, and provide useful features such as remembering your preferences or keeping you logged in.
+A cookie is a file stored on your device that contains an identifier (usually a string of letters and numbers) when you access a website. When you visit the same website again, the cookies stored on your device are accessed by code on the website. This means that the website can recognise the device being used, and provide useful features such as remembering your preferences or keeping you logged in.
 
 Cookies may be either "persistent" cookies or "session" cookies. A persistent cookie will be stored by a web browser and will remain valid until its set expiry date, unless deleted by the user before the expiry date. A session cookie, on the other hand, will expire at the end of the user session, when the web browser is closed.
 
-Cookies that are set by the website owner are called ‘first party cookies’. Cookies that are set by another platform or service are called ‘third party’ cookies, these tend to be used for additional services such as advertising or analytics.
+Cookies that are set by the website owner are called "first party" cookies. Cookies that are set by another platform or service are called "third party" cookies. These tend to be used for additional services such as advertising or analytics.
 
-Cookies don't typically contain any information that personally identifies a user, but personal information that we store about you may be linked to the information stored in and obtained from cookies.
+Cookies do not typically contain any information that personally identifies a user, but personal information that we store about you may be linked to the information stored in and obtained from cookies.
 
 We use cookies on this website to help improve the performance of our digital advertising and to collect basic data about how the website is used so that we can make decisions about how to improve it.
 
 ## Manage your cookie preferences
 
-<IcAlert
-  heading="Missing Component"
-  message="Add an 'inline cookies manager' here (see 'old' branch 'sanity-uplift')"
-/>
+<InlineCookiesManager />
 
 ## Summary of cookies used by this website
 
@@ -39,20 +34,5 @@ For more information, [please read Google's overview of privacy and safeguarding
 
 | Provider           | Purpose                                                                                                                                                                                                                           | Cookies                                              |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| SIS                | This cookie records whether or not the cookie notification pop-up has been acknowledged by the user, including whether or not you permit us to use GA.                                                                            | ICDSPREF                                             |
 | Google Doubleclick | These cookies are used to help us to monitor which digital advertising channels are most effective. By recording which job adverts are generating the most interest, we are able to make better choices about where to advertise. | APISID, SSID, NID, PREF, drt, SID, SAPISID, id, HSID |
-| Google Analytics   | These cookies are used to collect essential performance data so that we can review the website performance, including aspects such as number of visitors and which pages are most popular.                                        | \_ga, \_gat                                          |
-
-### Essential cookies
-
-Essential cookies do things like remember the notifications you’ve seen so we don't show them to you again, and to adhere to your cookie preferences
-
-The only essential cookie is the `ICDSPREF` one in the table above. It always needs to be on.
-
-## Limitations and amendments
-
-This statement only covers the Design System website at design.sis.gov.uk. This statement does not cover third party websites to which we may link. It does not cover the main SIS website.
-
-## Changes to this notice
-
-We may change this privacy notice. When we make changes to this notice, the 'last updated' date at the bottom of this page will also change. Any changes to this privacy notice will apply to you and your data immediately. If these changes affect how your personal data is processed, SIS will take reasonable steps to make sure you know.
+| Google Analytics   | These cookies are used to collect essential performance data so that we can review performance of the website, including aspects such as number of visitors and which pages are most popular.                                     | \_ga, \_gat                                          |

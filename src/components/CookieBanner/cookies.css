@@ -1,0 +1,18 @@
+.banner {
+  background: var(--ic-architectural-60);
+  box-shadow: var(--ic-elevation-modal);
+  z-index: var(--ic-overlay-z-index);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: var(--ic-space-md) 0;
+}
+
+.buttons {
+  display: grid;
+  column-gap: var(--ic-space-md);
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  align-items: center;
+  padding: var(--ic-space-md) 0 var(--ic-space-xs);
+}

@@ -16,6 +16,8 @@ const {
   META_DESCRIPTION,
 } = require("../../config");
 
+import CookieBanner from "../CookieBanner";
+
 interface RouteAnnouncerProps {
   page: string;
 }
@@ -68,6 +70,7 @@ const Layout: React.FC<LayoutProps> = ({
       <meta name="description" content={`${description || META_DESCRIPTION}`} />
     </Helmet>
     <ClientOnly>
+      {title !== "Cookies Policy" && <CookieBanner />}
       <div className="main-page-container">
         <IcLink href="#main" id="skip" className="skip-content-link">
           Skip to main content
