@@ -121,5 +121,14 @@ module.exports = {
         icon: pagesConfig.favIcon,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics-gdpr`,
+      options: {
+        trackingId: "G-L8G7D6EHQB",
+        enableDevelopment: true,
+        anonymizeIP: true,
+        autoStartWithCookiesEnabled: false,
+      },
+    },
   ],
 };

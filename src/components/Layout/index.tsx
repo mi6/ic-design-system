@@ -17,6 +17,8 @@ const {
   GOOGLE_SEARCH_TOKEN,
 } = require("../../config");
 
+import CookieBanner from "../CookieBanner";
+
 interface RouteAnnouncerProps {
   page: string;
 }
@@ -70,6 +72,7 @@ const Layout: React.FC<LayoutProps> = ({
       <meta name="google-site-verification" content={GOOGLE_SEARCH_TOKEN} />
     </Helmet>
     <ClientOnly>
+      {title !== "Cookies Policy" && <CookieBanner />}
       <div className="main-page-container">
         <IcLink href="#main" id="skip" className="skip-content-link">
           Skip to main content
