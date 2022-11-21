@@ -16,13 +16,7 @@ const InlineCookiesManager: React.FC = () => {
   document.addEventListener("icChange", handleChange);
 
   return (
-    <>
-      <IcSwitch
-        checked={approved}
-        label="Optional analytics cookies"
-        showState
-      />
-    </>
+    <IcSwitch checked={approved} label="Optional analytics cookies" showState />
   );
 };
 
