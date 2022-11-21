@@ -9,11 +9,10 @@ export const setCookie = (value: string) => {
 };
 
 export const consentCookieActioned = () =>
-  document.cookie.indexOf("cookie-consent") !== -1;
+  document.cookie.indexOf("ICDSPREF") !== -1;
 
 export const consentCookieApproved = () =>
-  consentCookieActioned() &&
-  document.cookie.indexOf("cookie-consent=true") !== -1;
+  consentCookieActioned() && document.cookie.indexOf("ICDSPREF=true") !== -1;
 
 export const setConsent = (consent: boolean) => {
   // treat no consent as 'revoked' and delete existing cookies
@@ -33,10 +32,10 @@ export const setConsent = (consent: boolean) => {
         )
     );
     /* eslint-enable */
+  } else if (consent) {
+    setCookie(`gatsby_ga-gdpr=${consent}`);
   }
-
-  setCookie(`gatsby-plugin-google-analytics-gdpr_cookies=${consent}`);
-  setCookie(`cookie-consent=${consent}`);
+  setCookie(`ICDSPREF=${consent}`);
 };
 
 export const isBotOrDoNotTrack = () => {
