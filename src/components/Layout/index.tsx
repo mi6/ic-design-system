@@ -7,6 +7,7 @@ import { IcBackToTop, IcFooter, IcFooterLink, IcLink } from "@ukic/react";
 import "./index.css";
 import TopNavWrapper from "../TopNavWrapper";
 import { GCHQLogo, MI5Logo, SISLogo } from "../../assets/svg";
+import CookieBanner from "../CookieBanner";
 
 const {
   STATUS,
@@ -16,8 +17,6 @@ const {
   META_DESCRIPTION,
   GOOGLE_SEARCH_TOKEN,
 } = require("../../config");
-
-import CookieBanner from "../CookieBanner";
 
 interface RouteAnnouncerProps {
   page: string;
