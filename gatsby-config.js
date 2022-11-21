@@ -16,7 +16,7 @@ module.exports = {
       options: {
         googleAnalytics: {
           trackingId: "G-L8G7D6EHQB",
-          cookieName: "gatsby-plugin-google-analytics-gdpr_cookies",
+          cookieName: "gatsby_ga-gdpr",
           anonymize: true,
         },
       },
