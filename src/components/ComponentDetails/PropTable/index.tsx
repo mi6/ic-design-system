@@ -48,7 +48,7 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
 
   return (
     <>
-      <IcTypography variant="h3" spacing>
+      <IcTypography variant="h3" applyVerticalMargins>
         <h3>Props</h3>
       </IcTypography>
       <AttributeTable columns={columns} data={data} />

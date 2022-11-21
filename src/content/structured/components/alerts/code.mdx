@@ -105,20 +105,20 @@ export const snippetsWithAction = [
   {
     language: "Web component",
     snippet: `<ic-alert heading="With action" message="This alert has an action.">
-      <ic-button slot="action" variant="secondary" button-style="dark">Button</ic-button>
+      <ic-button slot="action" variant="secondary" appearance="dark">Button</ic-button>
 </ic-alert>`,
   },
   {
     language: "React",
     snippet: `<IcAlert heading="With action" message="This alert has an action.">
-    <IcButton slot="action" variant="secondary" buttonStyle="dark">Button</IcButton>
+    <IcButton slot="action" variant="secondary" appearance="dark">Button</IcButton>
 </IcAlert>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsWithAction}>
   <IcAlert heading="With action" message="This alert has an action.">
-    <IcButton slot="action" variant="secondary" buttonStyle="dark">
+    <IcButton slot="action" variant="secondary" appearance="dark">
       Button
     </IcButton>
   </IcAlert>

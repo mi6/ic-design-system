@@ -21,7 +21,7 @@ tabs:
   ]
 ---
 
-import { IcBreadcrumbs, IcBreadcrumb } from "@ukic/react";
+import { IcBreadcrumbGroup, IcBreadcrumb } from "@ukic/react";
 import breadcrumbsFig1 from "./images/fig-1-use-breadcrumbs-as-a-secondary-navigation-method.png";
 import breadcrumbsFig2 from "./images/fig-2-dont-use-breadcrumbs-for-shallow-app-structures.png";
 import breadcrumbsFig3 from "./images/fig-3-dont-include-current-page-in-breadcrumbs.png";
@@ -32,11 +32,11 @@ import breadcrumbsFig4 from "./images/fig-4-use-contrast-breadcrumbs-for-differe
 An example of the breadcrumbs component.
 
 <ComponentPreview>
-  <IcBreadcrumbs>
+  <IcBreadcrumbGroup>
     <IcBreadcrumb pageTitle="Home" href="#" />
     <IcBreadcrumb pageTitle="Beverages" href="# " />
     <IcBreadcrumb current="true" pageTitle="Coffee" href="#" />
-  </IcBreadcrumbs>
+  </IcBreadcrumbGroup>
 </ComponentPreview>
 
 ## When to use
@@ -86,7 +86,7 @@ Avoid showing more than 6 levels in a breadcrumb. Consider your app’s informat
 
 ## Colour
 
-o Always use the default appearance of breadcrumbs to ensure that the links are recognisable as links. However, use the light or dark appearance if breadcrumbs are positioned on different coloured backgrounds to ensure good colour contrast.
+Always use the default appearance of breadcrumbs to ensure that the links are recognisable as links. However, use the light or dark appearance if breadcrumbs are positioned on different coloured backgrounds to ensure good colour contrast.
 
 <DoDontCaution
   imageSrc={breadcrumbsFig4}

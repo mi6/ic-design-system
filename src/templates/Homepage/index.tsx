@@ -69,7 +69,11 @@ const Homepage: React.FC = () => {
         aligned="center"
         backgroundImage={icdsHero}
       >
-        <IcLink variant="light" slot="interaction" className="get-started-link">
+        <IcLink
+          appearance="light"
+          slot="interaction"
+          className="get-started-link"
+        >
           <GatsbyLink slot="router-item" to="/get-started">
             <IcTypography variant="h4">
               Get started
@@ -105,11 +109,15 @@ const Homepage: React.FC = () => {
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <IcTypography variant="h2" spacing>
+          <IcTypography variant="h2" applyVerticalMargins>
             {homepage.about.title}
           </IcTypography>
           {homepage.about.content.map((text: string[]) => (
-            <IcTypography variant="body" className="text-content" spacing>
+            <IcTypography
+              variant="body"
+              className="text-content"
+              applyVerticalMargins
+            >
               {text}
             </IcTypography>
           ))}
@@ -121,11 +129,15 @@ const Homepage: React.FC = () => {
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <IcTypography variant="h2" spacing>
+          <IcTypography variant="h2" applyVerticalMargins>
             <h2>{homepage.contribute.title}</h2>
           </IcTypography>
           {homepage.contribute.content.map((text: string[]) => (
-            <IcTypography variant="body" className="text-content" spacing>
+            <IcTypography
+              variant="body"
+              className="text-content"
+              applyVerticalMargins
+            >
               {text}
             </IcTypography>
           ))}
@@ -137,11 +149,15 @@ const Homepage: React.FC = () => {
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <IcTypography variant="h2" spacing>
+          <IcTypography variant="h2" applyVerticalMargins>
             {homepage.resources.title}
           </IcTypography>
           {homepage.resources.content.map((text: string[]) => (
-            <IcTypography variant="body" className="text-content" spacing>
+            <IcTypography
+              variant="body"
+              className="text-content"
+              applyVerticalMargins
+            >
               {text}
             </IcTypography>
           ))}
