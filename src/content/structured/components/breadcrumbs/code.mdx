@@ -19,35 +19,35 @@ tabs:
   ]
 ---
 
-import { IcBreadcrumbs, IcBreadcrumb } from "@ukic/react";
+import { IcBreadcrumbGroup, IcBreadcrumb } from "@ukic/react";
 
 ## Component demo
 
 export const snippetsDefault = [
   {
     language: "Web component",
-    snippet: `<ic-breadcrumbs>
+    snippet: `<ic-breadcrumb-group>
     <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
     <ic-breadcrumb page-title="Beverages" href="# "></ic-breadcrumb>
     <ic-breadcrumb current="true" page-title="Coffee" href="#"></ic-breadcrumb>
-</ic-breadcrumbs>`,
+</ic-breadcrumb-group>`,
   },
   {
     language: "React",
-    snippet: `<IcBreadcrumbs>
+    snippet: `<IcBreadcrumbGroup>
     <IcBreadcrumb pageTitle="Home" href="#"></IcBreadcrumb>
     <IcBreadcrumb pageTitle="Beverages" href="# "></IcBreadcrumb>
     <IcBreadcrumb current="true" pageTitle="Coffee" href="#"></IcBreadcrumb>
-</IcBreadcrumbs>`,
+</IcBreadcrumbGroup>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsDefault}>
-  <IcBreadcrumbs>
+  <IcBreadcrumbGroup>
     <IcBreadcrumb pageTitle="Home" href="#" />
     <IcBreadcrumb pageTitle="Beverages" href="# " />
     <IcBreadcrumb current="true" pageTitle="Coffee" href="#" />
-  </IcBreadcrumbs>
+  </IcBreadcrumbGroup>
 </ComponentPreview>
 
-<ComponentDetails component="ic-breadcrumbs" />
+<ComponentDetails component="ic-breadcrumb-group" />

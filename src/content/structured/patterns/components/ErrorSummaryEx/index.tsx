@@ -9,7 +9,7 @@ const ErrorSummaryEx: React.FC = () => (
     <IcTypography variant="h2">
       <h3>Request Coffee Catalogue</h3>
     </IcTypography>
-    <IcTypography variant="body" spacing>
+    <IcTypography variant="body" applyVerticalMargins>
       Use this form to request or update your choices for the Coffee Catalogue.
     </IcTypography>
     <IcAlert

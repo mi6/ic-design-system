@@ -56,49 +56,49 @@ export const snippetsDefault = [
 export const snippetsEmphasis = [
   {
     language: "Web component",
-    snippet: `<ic-status-tag label="Neutral" status="neutral" variant="secondary"></ic-status-tag>
-<ic-status-tag label="Success" status="success" variant="secondary"></ic-status-tag>
-<ic-status-tag label="Warning" status="warning" variant="secondary"></ic-status-tag>
-<ic-status-tag label="Danger" status="danger" variant="secondary"></ic-status-tag>`,
+    snippet: `<ic-status-tag label="Neutral" status="neutral" appearance="outlined"></ic-status-tag>
+<ic-status-tag label="Success" status="success" appearance="outlined"></ic-status-tag>
+<ic-status-tag label="Warning" status="warning" appearance="outlined"></ic-status-tag>
+<ic-status-tag label="Danger" status="danger" appearance="outlined"></ic-status-tag>`,
   },
   {
     language: "React",
-    snippet: `<IcStatusTag label="Neutral" status="neutral" variant="secondary" />
-<IcStatusTag label="Success" status="success" variant="secondary" />
-<IcStatusTag label="Warning" status="warning" variant="secondary" />
-<IcStatusTag label="Danger" status="danger" variant="secondary" />`,
+    snippet: `<IcStatusTag label="Neutral" status="neutral" appearance="outlined" />
+<IcStatusTag label="Success" status="success" appearance="outlined" />
+<IcStatusTag label="Warning" status="warning" appearance="outlined" />
+<IcStatusTag label="Danger" status="danger" appearance="outlined" />`,
   },
 ];
 
 <ComponentPreview style={{ gap: "8px" }} snippets={snippetsEmphasis}>
-  <IcStatusTag label="Neutral" status="neutral" variant="secondary" />
-  <IcStatusTag label="Success" status="success" variant="secondary" />
-  <IcStatusTag label="Warning" status="warning" variant="secondary" />
-  <IcStatusTag label="Danger" status="danger" variant="secondary" />
+  <IcStatusTag label="Neutral" status="neutral" appearance="outlined" />
+  <IcStatusTag label="Success" status="success" appearance="outlined" />
+  <IcStatusTag label="Warning" status="warning" appearance="outlined" />
+  <IcStatusTag label="Danger" status="danger" appearance="outlined" />
 </ComponentPreview>
 
-### Dense
+### Small
 
-export const snippetsDense = [
+export const snippetsSmall = [
   {
     language: "Web component",
-    snippet: `<ic-status-tag label="Neutral" status="neutral" dense="true"></ic-status-tag>
-<ic-status-tag label="Success" status="success" dense="true"></ic-status-tag>
-<ic-status-tag label="Warning" status="warning" dense="true"></ic-status-tag>
-<ic-status-tag label="Danger" status="danger" dense="true"></ic-status-tag>`,
+    snippet: `<ic-status-tag label="Neutral" status="neutral" small="true"></ic-status-tag>
+<ic-status-tag label="Success" status="success" small="true"></ic-status-tag>
+<ic-status-tag label="Warning" status="warning" small="true"></ic-status-tag>
+<ic-status-tag label="Danger" status="danger" small="true"></ic-status-tag>`,
   },
   {
     language: "React",
-    snippet: `<IcStatusTag label="Neutral" status="neutral" dense />
-<IcStatusTag label="Success" status="success" dense />
-<IcStatusTag label="Warning" status="warning" dense />
-<IcStatusTag label="Danger" status="danger" dense />`,
+    snippet: `<IcStatusTag label="Neutral" status="neutral" small />
+<IcStatusTag label="Success" status="success" small />
+<IcStatusTag label="Warning" status="warning" small />
+<IcStatusTag label="Danger" status="danger" small />`,
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsDense}>
-  <IcStatusTag label="Neutral" status="neutral" dense />
-  <IcStatusTag label="Success" status="success" dense />
-  <IcStatusTag label="Warning" status="warning" dense />
-  <IcStatusTag label="Danger" status="danger" dense />
+<ComponentPreview style={{ gap: "8px" }} snippets={snippetsSmall}>
+  <IcStatusTag label="Neutral" status="neutral" small />
+  <IcStatusTag label="Success" status="success" small />
+  <IcStatusTag label="Warning" status="warning" small />
+  <IcStatusTag label="Danger" status="danger" small />
 </ComponentPreview>

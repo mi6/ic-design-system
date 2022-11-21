@@ -21,7 +21,7 @@ tabs:
   ]
 ---
 
-import { IcTab, IcTabContext, IcTabList, IcTabPanel } from "@ukic/react";
+import { IcTab, IcTabContext, IcTabGroup, IcTabPanel } from "@ukic/react";
 import tabsFig1 from "./images/fig-1-light-tab-bar-example.png";
 import tabsFig2 from "./images/fig-2-dark-tab-bar-example.png";
 import tabsFig3 from "./images/fig-3-dont-separate-the-tab-container-from-the-tab-bar.png";
@@ -39,11 +39,11 @@ An example of the tab component.
 
 <ComponentPreview>
   <IcTabContext>
-    <IcTabList label="Example tab list">
+    <IcTabGroup label="Example tab list">
       <IcTab>One</IcTab>
       <IcTab>Two</IcTab>
       <IcTab>Three</IcTab>
-    </IcTabList>
+    </IcTabGroup>
     <IcTabPanel>Tab One</IcTabPanel>
     <IcTabPanel>Tab Two</IcTabPanel>
     <IcTabPanel>Tab Three</IcTabPanel>
