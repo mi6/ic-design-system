@@ -1,0 +1,35 @@
+---
+path: "/get-started/releases-versions"
+
+date: "2022-11-21"
+
+title: "Releases and versions"
+
+subTitle: "Our approach to releases and versioning."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/releases-versioning.mdx"
+---
+
+This page provides details on how the `@ukic/` packages will be released and versioned when published for open source.
+
+Releases will be triggered once the `develop` branch pull request is merged into the `main` branch. The package versions will follow the [semantic versioning](https://semver.org/) scheme.
+
+```js
+major.minor.patch;
+```
+
+<br />
+
+**Major releases** will contain breaking changes to the component libraries. Breaking changes will be communicated to the community as early as possible to allow teams to plan when to integrate the new packages into their projects. Major releases will be very infrequent with at least a year between them.
+
+**Minor releases** will contain new component features. Minor releases will be backwards-compatible with no requirement for the developer to make updates to their existing implementation. However, to use the new feature, the implementation will require a small update (such as adding a new prop) in order to use the new component API.
+
+**Patch releases** will contain bug fixes.
+
+Minor and/or patch releases will be scheduled after every two weeks. All changes to the component library will be recorded in the [CHANGELOG](https://github.com/mi6/ic-ui-kit/blob/main/CHANGELOG.md).
+
+All packages will be published with identical version numbers.
+
+## Supporting versions
+
+As the component library matures and new versions arrive, the ICDS team will actively maintain and support the previous version for up to 6 months. This is to allow the team to provide as much resource as possible on the current version. Any support for the legacy versions will only include security updates and bug fixes. No new features will be added.
