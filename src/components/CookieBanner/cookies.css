@@ -1,7 +1,7 @@
 .banner {
   background: var(--ic-architectural-60);
   box-shadow: var(--ic-elevation-modal);
-  z-index: var(--ic-overlay-z-index);
+  z-index: var(--ic-z-index-overlay);
   position: sticky;
   top: 0;
   width: 100%;
