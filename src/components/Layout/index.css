@@ -75,6 +75,15 @@
 
 .logo-wrapper > ic-footer-link {
   margin-right: 0;
+  border-radius: var(--ic-border-radius);
+}
+
+.logo-wrapper > ic-footer-link:focus {
+  box-shadow: var(--ic-border-focus);
+}
+
+.logo-wrapper > ic-footer-link:focus-visible {
+  outline: none;
 }
 
 .homepage-wrapper {
@@ -112,11 +121,11 @@
   }
 
   .logo-wrapper > ic-footer-link:nth-child(1) svg {
-    transform: translate(0, var(--ic-space-xxxs));
+    transform: translate(-3.5px, var(--ic-space-xxxs));
   }
 
   .logo-wrapper > ic-footer-link:nth-child(1) {
-    width: 70px;
+    width: 68px;
   }
 
   .logo-wrapper > ic-footer-link:nth-child(2) {
