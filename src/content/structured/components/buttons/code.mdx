@@ -170,25 +170,25 @@ export const snippetsWithIcon = [
 export const snippetsSizing = [
   {
     language: "Web component",
-    snippet: `<ic-button variant="primary" size="dense">Dense button</ic-button>
+    snippet: `<ic-button variant="primary" size="small">Small button</ic-button>
 <ic-button variant="primary">Default button</ic-button>
-<ic-button variant="primary" size="emphasis">Emphasis button</ic-button>`,
+<ic-button variant="primary" size="large">Large button</ic-button>`,
   },
   {
     language: "React",
-    snippet: `<IcButton variant="primary" size="dense">Dense button</IcButton>
+    snippet: `<IcButton variant="primary" size="small">Small button</IcButton>
 <IcButton variant="primary">Default button</IcButton>
-<IcButton variant="primary" size="emphasis">Emphasis button</IcButton>`,
+<IcButton variant="primary" size="large">Large button</IcButton>`,
   },
 ];
 
 <ComponentPreview style={{ gap: "8px" }} snippets={snippetsSizing}>
-  <IcButton variant="primary" size="dense">
-    Dense button
+  <IcButton variant="primary" size="small">
+    Small button
   </IcButton>
   <IcButton variant="primary">Default button</IcButton>
-  <IcButton variant="primary" size="emphasis">
-    Emphasis button
+  <IcButton variant="primary" size="large">
+    Large button
   </IcButton>
 </ComponentPreview>
 
@@ -197,21 +197,21 @@ export const snippetsSizing = [
 export const snippetsColour = [
   {
     language: "Web component",
-    snippet: `<ic-button variant="primary" button-style="dark">Dark button</ic-button>
-<ic-button variant="primary" button-style="light">Light button</ic-button>`,
+    snippet: `<ic-button variant="primary" appearance="dark">Dark button</ic-button>
+<ic-button variant="primary" appearance="light">Light button</ic-button>`,
   },
   {
     language: "React",
-    snippet: `<IcButton variant="primary" buttonStyle="dark">Dark button</IcButton>
-<IcButton variant="primary" buttonStyle="light">Light button</IcButton>`,
+    snippet: `<IcButton variant="primary" appearance="dark">Dark button</IcButton>
+<IcButton variant="primary" appearance="light">Light button</IcButton>`,
   },
 ];
 
 <ComponentPreview style={{ gap: "8px" }} snippets={snippetsColour}>
-  <IcButton variant="primary" buttonStyle="dark">
+  <IcButton variant="primary" appearance="dark">
     Dark button
   </IcButton>
-  <IcButton variant="primary" buttonStyle="light">
+  <IcButton variant="primary" appearance="light">
     Light button
   </IcButton>
 </ComponentPreview>

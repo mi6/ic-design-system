@@ -3,7 +3,7 @@ import {
   IcButton,
   IcTab,
   IcTabContext,
-  IcTabList,
+  IcTabGroup,
   IcTabPanel,
 } from "@ukic/react";
 import React, { CSSProperties, ReactNode } from "react";
@@ -54,7 +54,7 @@ const CodeSnippet: React.FC<{ code: string }> = ({ code }) => (
     <div className="snippet-container">
       <IcButton
         variant="tertiary"
-        buttonStyle="dark"
+        appearance="dark"
         onClick={() => navigator.clipboard.writeText(code)}
         className="copy-button"
       >
@@ -106,11 +106,11 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     {snippets && (
       <IcTabContext className="tab-context">
         <div className="link-zone">
-          <IcTabList inline label="Framework code snippets">
+          <IcTabGroup inline label="Framework code snippets">
             {snippets.map((snippet) => (
               <IcTab>{snippet.language}</IcTab>
             ))}
-          </IcTabList>
+          </IcTabGroup>
         </div>
         {snippets.map((snippet) => (
           <IcTabPanel className="tab-panel">
