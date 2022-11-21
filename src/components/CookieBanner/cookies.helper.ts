@@ -35,7 +35,7 @@ export const setConsent = (consent: boolean) => {
     /* eslint-enable */
   }
 
-  setCookie(`gatsby-plugin-google-analytics-gdpr_cookies-enabled=${consent}`);
+  setCookie(`gatsby-plugin-google-analytics-gdpr_cookies=${consent}`);
   setCookie(`cookie-consent=${consent}`);
 };
 
@@ -43,10 +43,10 @@ export const isBotOrDoNotTrack = () => {
   const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent);
 
   // Check if DoNotTrack is activated
-  const dnt = navigator.doNotTrack; //|| window.doNotTrack;
+  const dnt = navigator.doNotTrack; // || window.doNotTrack;
   const isToTrack =
     dnt !== null && dnt !== undefined
-      ? dnt && dnt !== "yes" && /*dnt !== 1 &&*/ dnt !== "1"
+      ? dnt && dnt !== "yes" && dnt !== "1"
       : true;
 
   return isBot || !isToTrack;

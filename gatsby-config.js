@@ -12,6 +12,17 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: "G-L8G7D6EHQB",
+          cookieName: "gatsby-plugin-google-analytics-gdpr_cookies",
+          anonymize: true,
+        },
+      },
+      environments: ["production"],
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
@@ -119,15 +130,6 @@ module.exports = {
         short_name: `ICDS`,
         start_url: `/`,
         icon: pagesConfig.favIcon,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics-gdpr`,
-      options: {
-        trackingId: "G-L8G7D6EHQB",
-        enableDevelopment: true,
-        anonymizeIP: true,
-        autoStartWithCookiesEnabled: false,
       },
     },
   ],

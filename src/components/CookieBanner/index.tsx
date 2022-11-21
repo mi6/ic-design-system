@@ -47,7 +47,9 @@ const CookieBanner: React.FC = () => {
           <IcTypography role="alert" variant="body">
             You’ve {consentCookieApproved() ? "accepted" : "rejected"} analytics
             cookies. You can{" "}
-            <IcLink href="/cookies-policy">change your cookie settings</IcLink>{" "}
+            <IcLink href="icds/cookies-policy">
+              change your cookie settings
+            </IcLink>{" "}
             at any time.
           </IcTypography>
           <div className="buttons">
@@ -70,7 +72,7 @@ const CookieBanner: React.FC = () => {
             <IcButton variant="secondary" onClick={() => handleConsent(false)}>
               Decline
             </IcButton>
-            <IcLink href="/cookies-policy">Manage cookies</IcLink>
+            <IcLink href="icds/cookies-policy">Manage cookies</IcLink>
           </div>
         </IcSectionContainer>
       )}
