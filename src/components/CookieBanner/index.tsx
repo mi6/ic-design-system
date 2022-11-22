@@ -12,6 +12,7 @@ import {
   consentCookieActioned,
   isBotOrDoNotTrack,
   setConsent,
+  setCookie,
 } from "./cookies.helper";
 
 const CookieBanner: React.FC = () => {
@@ -30,6 +31,10 @@ const CookieBanner: React.FC = () => {
       banner.current.focus();
     }
   }, [submitted]);
+
+  if (visible) {
+    setCookie(`ICDSPREF=false`);
+  }
 
   if (!visible || isBotOrDoNotTrack()) {
     return null;
@@ -63,7 +68,7 @@ const CookieBanner: React.FC = () => {
           <IcTypography variant="h2">Cookies on this site</IcTypography>
           <IcTypography variant="body">
             We’d like to use analytics cookies to understand how you use the
-            Design System so that we can make improvements.
+            Design System, so that we can make improvements.
           </IcTypography>
           <div className="buttons">
             <IcButton variant="primary" onClick={() => handleConsent(true)}>
