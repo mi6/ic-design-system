@@ -13,10 +13,13 @@ const InlineCookiesManager: React.FC = () => {
     setConsent(!approved);
   };
 
-  document.addEventListener("icChange", handleChange);
-
   return (
-    <IcSwitch checked={approved} label="Optional analytics cookies" showState />
+    <IcSwitch
+      checked={approved}
+      label="Optional analytics cookies"
+      onIcChange={() => handleChange()}
+      showState
+    />
   );
 };
 

@@ -33,7 +33,7 @@ export const setConsent = (consent: boolean) => {
     );
     /* eslint-enable */
   } else if (consent) {
-    setCookie(`gatsby_ga-gdpr=${consent}`);
+    setCookie(`gatsby_ga-gdpr=true`);
   }
   setCookie(`ICDSPREF=${consent}`);
 };
