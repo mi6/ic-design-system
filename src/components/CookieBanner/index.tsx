@@ -23,6 +23,9 @@ const CookieBanner: React.FC = () => {
   const handleConsent = (consent: boolean) => {
     setConsent(consent);
     setSubmitted(true);
+    if (visible && consent) {
+      setCookie(`ICDSPREF=true`);
+    }
   };
 
   useEffect(() => {
@@ -32,7 +35,7 @@ const CookieBanner: React.FC = () => {
     }
   }, [submitted]);
 
-  if (visible) {
+  if (!consentCookieActioned()) {
     setCookie(`ICDSPREF=false`);
   }
 
