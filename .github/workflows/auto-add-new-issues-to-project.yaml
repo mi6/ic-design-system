@@ -1,4 +1,4 @@
-name: Add new issues to project
+name: Add new Issues and PRs to project
 
 on:
   issues:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   add-to-project:
-    name: Add issue to project
+    name: Add to project
     runs-on: ubuntu-latest
     steps:
       - name: Generate token
@@ -25,3 +25,5 @@ jobs:
         with:
           project-url: https://github.com/orgs/mi6/projects/2
           github-token: ${{ steps.generate_token.outputs.token }}
+          labeled: dependencies
+          label-operator: NOT
