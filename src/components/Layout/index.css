@@ -98,7 +98,7 @@
 
 @media screen and (max-width: 992px) {
   .logo-wrapper svg {
-    height: 40px;
+    height: 38px;
   }
 
   .logo-wrapper {
@@ -111,13 +111,13 @@
     gap: var(--ic-space-lg);
   }
 
-  .logo-wrapper svg {
+  .logo-wrapper svg,
+  .logo-wrapper > ic-footer-link {
     height: 64px;
   }
 
   .logo-wrapper > ic-footer-link {
     overflow: hidden;
-    height: 64px;
   }
 
   .logo-wrapper > ic-footer-link:nth-child(1) svg {
