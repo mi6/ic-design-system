@@ -25,17 +25,8 @@ const TopNavItem: React.FC<any> = ({ props, text }) => (
   </IcNavigationItem>
 );
 
-const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
-  appTitle,
-  status,
-  version,
-}) => (
-  <IcTopNavigation
-    appTitle={appTitle}
-    status={status}
-    version={version}
-    href={withPrefix("/")}
-  >
+const TopNavWrapper: React.FC<TopNavWrapperProps> = ({ appTitle, version }) => (
+  <IcTopNavigation appTitle={appTitle} version={version} href={withPrefix("/")}>
     <span slot="app-icon">
       <ICDSLogo role="img" aria-labelledby="ICDS Logo" className="icds-logo" />
     </span>

@@ -15,10 +15,7 @@ module.exports = {
   TITLE: "Intelligence Community Design System",
   META_DESCRIPTION:
     "Use the UK Intelligence Community's Design System to create accessible, usable, and consistent capabilities for complex and specialised needs",
-
-  VERSION: "V2.0.7",
-  STATUS: "BETA",
-
+  VERSION: "v2.0.0",
   FOOTER_PROPS: {
     footerLinks: [
       {
