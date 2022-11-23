@@ -13,6 +13,7 @@ import {
   isBotOrDoNotTrack,
   setConsent,
   setCookie,
+  deleteCookie,
 } from "./cookies.helper";
 
 const CookieBanner: React.FC = () => {
@@ -37,6 +38,10 @@ const CookieBanner: React.FC = () => {
 
   if (!consentCookieActioned()) {
     setCookie(`ICDSPREF=false`);
+  }
+
+  if (consentCookieActioned() && !consentCookieApproved()) {
+    deleteCookie("_ga_L8G7D6EHQB");
   }
 
   if (!visible || isBotOrDoNotTrack()) {
