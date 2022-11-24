@@ -86,11 +86,17 @@ export const snippets = [
   </IcFooter>
 </ComponentPreview>
 
+## Footer details
+
 <ComponentDetails component="ic-footer" />
 
 ## Footer link details
 
 <ComponentDetails component="ic-footer-link" />
+
+## Footer link group details
+
+<ComponentDetails component="ic-footer-link-group" />
 
 ## Variants
 
@@ -100,7 +106,7 @@ export const snippetsGroupedLinks = [
   {
     language: "Web component",
     snippet: `<ic-footer
-    group-links=""
+    group-links="true"
     description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
           please get in touch.">
     <ic-footer-link-group slot="link" group-title="Grouped heading">
@@ -126,7 +132,7 @@ export const snippetsGroupedLinks = [
   {
     language: "React",
     snippet: `<IcFooter
-    groupLinks=""
+    groupLinks
     description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
           please get in touch.">
     <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
@@ -153,7 +159,7 @@ export const snippetsGroupedLinks = [
 
 <ComponentPreview snippets={snippetsGroupedLinks}>
   <IcFooter
-    groupLinks=""
+    groupLinks
     description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
           please get in touch."
   >
@@ -175,6 +181,98 @@ export const snippetsGroupedLinks = [
       <IcFooterLink href="/">Components</IcFooterLink>
       <IcFooterLink href="/">Patterns</IcFooterLink>
     </IcFooterLinkGroup>
+  </IcFooter>
+</ComponentPreview>
+
+### Logo links
+
+export const snippetsLogoLinks = [
+  {
+    language: "Web component",
+    snippet: `<ic-footer description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
+  <ic-footer-link slot="link" href="/">Accessibility</ic-footer-link>
+  <ic-footer-link slot="link" href="/">Styles</ic-footer-link>
+  <ic-footer-link slot="link" href="/">Components</ic-footer-link>
+  <ic-footer-link slot="link" href="/">Patterns</ic-footer-link>
+    <div slot="logo">
+      <ic-footer-link href="/">
+        <svg ...></svg>
+      </ic-footer-link>
+      <ic-footer-link href="/">
+        <svg ...></svg>
+      </ic-footer-link>
+    </div>
+</ic-footer>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcFooter description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
+  <IcFooterLink slot="link" href="/">Accessibility</IcFooterLink>
+  <IcFooterLink slot="link" href="/">Styles</IcFooterLink>
+  <IcFooterLink slot="link" href="/">Components</IcFooterLink>
+  <IcFooterLink slot="link" href="/">Patterns</IcFooterLink>
+  <div slot="logo">
+    <IcFooterLink href="/">
+      <svg ...></svg>
+    </IcFooterLink>
+    <IcFooterLink href="/">
+      <svg ...></svg>
+    </IcFooterLink>
+  </div>
+</IcFooter>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsLogoLinks}>
+  <IcFooter description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
+    <IcFooterLink slot="link" href="/">
+      Accessibility
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Styles
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Components
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="/">
+      Patterns
+    </IcFooterLink>
+    <div
+      slot="logo"
+      style={{
+        display: "flex",
+        gap: "var(--ic-space-lg)",
+      }}
+    >
+      <IcFooterLink href="/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48px"
+          viewBox="0 0 24 24"
+          width="48px"
+          fill="#FFFFFF"
+        >
+          <path
+            d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcFooterLink>
+      <IcFooterLink href="/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48px"
+          viewBox="0 0 24 24"
+          width="48px"
+          fill="#FFFFFF"
+        >
+          <path
+            d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcFooterLink>
+    </div>
   </IcFooter>
 </ComponentPreview>
 

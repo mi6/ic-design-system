@@ -28,8 +28,8 @@ export const snippetsDefault = [
     language: "Web component",
     snippet: `<ic-checkbox-group label="Make changes to your order." name="default">
   <ic-checkbox value="extra" label="Extra shot (50p)"></ic-checkbox>
-  <ic-checkbox value="Soya milk" label="Soya milk" checked></ic-checkbox>
-  <ic-checkbox value="keep cup" label="Takeaway cup (Reusable keep cups only)" disabled="true"></ic-checkbox>
+  <ic-checkbox value="Soya milk" label="Soya milk" checked ></ic-checkbox>
+  <ic-checkbox value="keep cup" label="Takeaway cup (Reusable keep cups only)" disabled="true" ></ic-checkbox>
 </ic-checkbox-group>`,
   },
   {
@@ -63,6 +63,58 @@ export const snippetsDefault = [
 <ComponentDetails component="ic-checkbox-group" />
 
 ## Variants
+
+### Hidden label
+
+export const snippetsHiddenLabel = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="This is a label" hide-label="true" name="1">
+  <ic-checkbox value="valueName1" label="Unselected / Default"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Selected / Default" checked="true"></ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="This is a label" hideLabel name="1">
+  <IcCheckbox value="valueName1" label="Unselected / Default" />
+  <IcCheckbox value="valueName2" label="Selected / Default" checked />
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsHiddenLabel} style={{ marginTop: "24px" }}>
+  <IcCheckboxGroup label="This is a label" hideLabel name="1">
+    <IcCheckbox value="valueName1" label="Unselected / Default" />
+    <IcCheckbox value="valueName2" label="Selected / Default" checked />
+  </IcCheckboxGroup>
+</ComponentPreview>
+
+### Helper text
+
+export const snippetsHelperText = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="This is a label" name="1" helper-text="Helper text">
+  <ic-checkbox value="valueName1" label="Unselected / Default"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Selected / Default" checked="true"></ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="This is a label" name="1" helperText="Helper text">
+  <IcCheckbox value="valueName1" label="Unselected / Default" />
+  <IcCheckbox value="valueName2" label="Selected / Default" checked />
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsHelperText} style={{ marginTop: "24px" }}>
+  <IcCheckboxGroup label="This is a label" name="1" helperText="Helper text">
+    <IcCheckbox value="valueName1" label="Unselected / Default" />
+    <IcCheckbox value="valueName2" label="Selected / Default" checked />
+  </IcCheckboxGroup>
+</ComponentPreview>
 
 ### Conditional
 
@@ -163,6 +215,109 @@ export const snippetsConditionalDynamic = [
     <IcCheckbox value="cappuccino" label="Cappuccino" />
     <IcCheckbox additionalFieldDisplay="dynamic" value="other" label="Other">
       <IcTextField slot="additional-field" label="Please let us know..." />
+    </IcCheckbox>
+  </IcCheckboxGroup>
+</ComponentPreview>
+
+### Validation
+
+export const snippetsValidation = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="This is a label" name="1" validation-status="error" validation-text="Error message">
+  <ic-checkbox value="valueName1" label="Unselected / Default"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Selected / Default" checked="true"></ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="This is a label" name="1" validationStatus="error" validationText="Error message">
+  <IcCheckbox value="valueName1" label="Unselected / Default" />
+  <IcCheckbox value="valueName2" label="Selected / Default" checked />
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsValidation} style={{ marginTop: "24px" }}>
+  <IcCheckboxGroup
+    label="This is a label"
+    name="1"
+    validationStatus="error"
+    validationText="Error message"
+  >
+    <IcCheckbox value="valueName1" label="Unselected / Default" />
+    <IcCheckbox value="valueName2" label="Selected / Default" checked />
+  </IcCheckboxGroup>
+</ComponentPreview>
+
+### Indeterminate
+
+export const snippetsIndeterminate = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="Liked things" name="1">
+  <ic-checkbox value="drinks" label="Drinks" checked="true" indeterminate="true">
+    <ic-checkbox-group label="Coffee" hide-label="true" slot="additional-field" name="2">
+      <ic-checkbox value="tea" label="Tea"></ic-checkbox>
+      <ic-checkbox value="coffee" label="Coffee" checked="true" indeterminate="true">
+        <ic-checkbox-group label="Coffees" hide-label="true" slot="additional-field" name="3">
+          <ic-checkbox value="mocha" label="Mocha"></ic-checkbox>
+          <ic-checkbox value="espresso" label="Espresso" checked="true"></ic-checkbox>
+          <ic-checkbox value="cappuccino" label="cappuccino"></ic-checkbox>
+        </ic-checkbox-group>
+      </ic-checkbox>
+      <ic-checkbox value="juice" label="Juice"></ic-checkbox>
+    </ic-checkbox-group>
+  </ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="Liked things" name="1">
+  <IcCheckbox value="drinks" label="Drinks" checked indeterminate>
+    <IcCheckboxGroup name="2" label="Coffee" hideLabel slot="additional-field">
+      <IcCheckbox value="tea" label="Tea" />
+      <IcCheckbox value="coffee" label="Coffee" checked indeterminate>
+        <IcCheckboxGroup label="Coffees" hideLabel slot="additional-field" name="3">
+          <IcCheckbox value="mocha" label="Mocha" />
+          <IcCheckbox value="espresso" label="Espresso" checked />
+          <IcCheckbox value="cappuccino" label="cappuccino" />
+        </IcCheckboxGroup>
+      </IcCheckbox>
+      <IcCheckbox value="juice" label="Juice" />
+    </IcCheckboxGroup>
+  </IcCheckbox>
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsIndeterminate}
+  style={{ marginTop: "24px" }}
+>
+  <IcCheckboxGroup label="Liked things" name="1">
+    <IcCheckbox value="drinks" label="Drinks" checked indeterminate>
+      <IcCheckboxGroup
+        name="2"
+        label="Coffee"
+        hideLabel
+        slot="additional-field"
+      >
+        <IcCheckbox value="tea" label="Tea" />
+        <IcCheckbox value="coffee" label="Coffee" checked indeterminate>
+          <IcCheckboxGroup
+            label="Coffees"
+            hideLabel
+            slot="additional-field"
+            name="3"
+          >
+            <IcCheckbox value="mocha" label="Mocha" />
+            <IcCheckbox value="espresso" label="Espresso" checked />
+            <IcCheckbox value="cappuccino" label="cappuccino" />
+          </IcCheckboxGroup>
+        </IcCheckbox>
+        <IcCheckbox value="juice" label="Juice" />
+      </IcCheckboxGroup>
     </IcCheckbox>
   </IcCheckboxGroup>
 </ComponentPreview>
