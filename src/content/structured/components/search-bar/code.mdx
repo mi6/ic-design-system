@@ -75,7 +75,7 @@ export const snippets = [
 
 ### With options (no filtering)
 
-export const optionsNoFiltering = [
+export const optionsNoFilteringSnippets = [
   {
     language: "Web component",
     snippet: `<ic-search-bar
@@ -116,7 +116,7 @@ export const optionsNoFiltering = [
   },
 ];
 
-<ComponentPreview snippets={optionsNoFiltering}>
+<ComponentPreview snippets={optionsNoFilteringSnippets}>
   <IcSearchBar
     label="What is your favourite coffee?"
     disableFilter
@@ -137,7 +137,7 @@ export const optionsNoFiltering = [
 
 ### With helper text
 
-export const withHelperText = [
+export const snippetsWithHelperText = [
   {
     language: "Web component",
     snippet: `<ic-search-bar
@@ -172,7 +172,7 @@ export const withHelperText = [
   },
 ];
 
-<ComponentPreview snippets={withHelperText}>
+<ComponentPreview snippets={snippetsWithHelperText}>
   <IcSearchBar
     label="What is your favourite coffee?"
     helperText="Some helper text"
@@ -189,7 +189,7 @@ export const withHelperText = [
 
 ### With hidden label
 
-export const withHiddenLabel = [
+export const snippetsWithHiddenLabel = [
   {
     language: "Web component",
     snippet: `<ic-search-bar label="What is your favourite coffee?" hide-label></ic-search-bar>
@@ -222,7 +222,7 @@ export const withHiddenLabel = [
   },
 ];
 
-<ComponentPreview snippets={withHiddenLabel}>
+<ComponentPreview snippets={snippetsWithHiddenLabel}>
   <IcSearchBar
     label="What is your favourite coffee?"
     hideLabel
@@ -239,7 +239,7 @@ export const withHiddenLabel = [
 
 ### Disabled
 
-export const disabled = [
+export const disabledSnippets = [
   {
     language: "Web component",
     snippet: `<ic-search-bar label="What is your favourite coffee?" disabled></ic-search-bar>
@@ -272,7 +272,7 @@ export const disabled = [
   },
 ];
 
-<ComponentPreview snippets={disabled}>
+<ComponentPreview snippets={disabledSnippets}>
   <IcSearchBar
     label="What is your favourite coffee?"
     disabled
