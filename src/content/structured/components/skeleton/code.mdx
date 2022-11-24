@@ -19,23 +19,155 @@ tabs:
   ]
 ---
 
-import { IcSkeleton } from "@ukic/react";
+import { IcSkeleton, IcTypography } from "@ukic/react";
 
 ## Component demo
 
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-skeleton/></ic-skeleton>`,
+    snippet: `<ic-skeleton variant="circle" height="20"></ic-skeleton>
+<ic-typography variant="caption">
+  <ic-skeleton variant="text"></ic-skeleton>
+</ic-typography>
+<ic-skeleton></ic-skeleton>`,
   },
   {
     language: "React",
-    snippet: `<IcSkeleton />`,
+    snippet: `<IcSkeleton variant="circle" height="20" />
+<IcTypography variant="caption">
+  <IcSkeleton variant="text" />
+</IcTypography>
+<IcSkeleton />`,
   },
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcSkeleton />
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <IcSkeleton variant="circle" height="20" />
+    <IcTypography variant="caption">
+      <IcSkeleton variant="text" />
+    </IcTypography>
+    <IcSkeleton />
+  </div>
 </ComponentPreview>
 
 <ComponentDetails component="ic-skeleton" />
+
+## Variants
+
+### Inherited size from child
+
+export const snippetsInherited = [
+  {
+    language: "Web component",
+    snippet: `<ic-skeleton><div style="height:200px;width:450px;">Test text</div></ic-skeleton>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSkeleton>
+  <div style={{
+  height: "200px",
+  width: "450px"
+  }}>Test text</div>
+</IcSkeleton>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsInherited}>
+  <IcSkeleton>
+    <div
+      style={{
+        height: "200px",
+        width: "450px",
+      }}
+    >
+      Test text
+    </div>
+  </IcSkeleton>
+</ComponentPreview>
+
+### Set width and height
+
+export const snippetsSetWidthAndHeight = [
+  {
+    language: "Web component",
+    snippet: `<ic-typography variant="h4">Height and width set with styles</ic-typography>
+<ic-skeleton style="height:200px;width:200px;"></ic-skeleton>
+<ic-typography variant="h4">Height set with styles</ic-typography>
+<ic-skeleton style="height:75px;"></ic-skeleton>
+<ic-typography variant="h4">Width set with styles</ic-typography>
+<ic-skeleton style="width:450px;"></ic-skeleton>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTypography variant="h4">Height and width set with styles</IcTypography>
+<IcSkeleton style={{
+height: "200px",
+width: "200px"
+}} />
+<IcTypography variant="h4">Height set with styles</IcTypography>
+<IcSkeleton style={{
+  height: "75px"
+}} />
+<IcTypography variant="h4">Width set with styles</IcTypography>
+<IcSkeleton style={{
+  width: "450px"
+}} />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSetWidthAndHeight}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <IcTypography variant="h4">Height and width set with styles</IcTypography>
+    <IcSkeleton
+      style={{
+        height: "200px",
+        width: "200px",
+      }}
+    />
+    <IcTypography variant="h4">Height set with styles</IcTypography>
+    <IcSkeleton
+      style={{
+        height: "75px",
+      }}
+    />
+    <IcTypography variant="h4">Width set with styles</IcTypography>
+    <IcSkeleton
+      style={{
+        width: "450px",
+      }}
+    />
+  </div>
+</ComponentPreview>
+
+### Light
+
+export const snippetsLight = [
+  {
+    language: "Web component",
+    snippet: `<ic-skeleton variant="circle" height="20" light="true"></ic-skeleton>
+<ic-typography variant="caption">
+  <ic-skeleton variant="text" light="true"></ic-skeleton>
+</ic-typography>
+<ic-skeleton light="true"></ic-skeleton>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSkeleton variant="circle" height="20" light="true" />
+<IcTypography variant="caption">
+  <IcSkeleton variant="text" light="true" />
+</IcTypography>
+<IcSkeleton light="true" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsLight}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <IcSkeleton variant="circle" height="20" light="true" />
+    <IcTypography variant="caption">
+      <IcSkeleton variant="text" light="true" />
+    </IcTypography>
+    <IcSkeleton light="true" />
+  </div>
+</ComponentPreview>

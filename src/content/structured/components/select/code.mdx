@@ -86,3 +86,507 @@ export const SelectExample = () => {
 </ComponentPreview>
 
 <ComponentDetails component="ic-select" />
+
+## Variants
+
+### With clear button, descriptions, helper text and custom placeholder
+
+export const snippetsWithExtras = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?" placeholder="Placeholder goes here" helper-text="Some helper text" show-clear-button="true" searchable="true"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Cappuccino", value: "cappuccino", description: "Coffee frothed up with pressurised steam" },
+    { label: "Americano", value: "americano", description: "Espresso coffee diluted with hot water" },
+    { label: "Mocha", value: "mocha", description: "Coffee with chocolate" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Cappuccino", value: "cappuccino", description: "Coffee frothed up with pressurised steam" },
+    { label: "Americano", value: "americano", description: "Espresso coffee diluted with hot water" },
+    { label: "Mocha", value: "mocha", description: "Coffee with chocolate" },
+  ]}
+  placeholder="Placeholder goes here"
+  helperText="Some helper text"
+  showClearButton
+  searchable
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExampleWithExtras = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        {
+          label: "Cappuccino",
+          value: "cappuccino",
+          description: "Coffee frothed up with pressurised steam",
+        },
+        {
+          label: "Americano",
+          value: "americano",
+          description: "Espresso coffee diluted with hot water",
+        },
+        {
+          label: "Mocha",
+          value: "mocha",
+          description: "Coffee with chocolate",
+        },
+      ]}
+      placeholder="Placeholder goes here"
+      helperText="Some helper text"
+      showClearButton
+      searchable
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview snippets={snippetsWithExtras}>
+  <SelectExampleWithExtras />
+</ComponentPreview>
+
+### Disabled
+
+export const snippetsDisabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?" disabled="true"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  disabled
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExampleDisabled = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        { label: "Cappuccino", value: "cappuccino" },
+        { label: "Americano", value: "americano" },
+        { label: "Mocha", value: "mocha" },
+      ]}
+      disabled
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview snippets={snippetsDisabled}>
+  <SelectExampleDisabled />
+</ComponentPreview>
+
+### Options disabled
+
+export const snippetsOptionDisabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano", disabled: true },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano", disabled: true },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExampleOptionsDisabled = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        { label: "Cappuccino", value: "cappuccino" },
+        { label: "Americano", value: "americano", disabled: true },
+        { label: "Mocha", value: "mocha" },
+      ]}
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview snippets={snippetsOptionDisabled}>
+  <SelectExampleOptionsDisabled />
+</ComponentPreview>
+
+### Hidden label
+
+export const snippetsHideLabel = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?" hide-label="true"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+  ]}
+  hideLabel
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExampleHideLabel = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        { label: "Espresso", value: "espresso" },
+        { label: "Double Espresso", value: "doubleespresso" },
+        { label: "Flat White", value: "flatwhite" },
+      ]}
+      hideLabel
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview snippets={snippetsHideLabel}>
+  <SelectExampleHideLabel />
+</ComponentPreview>
+
+### Groups
+
+export const snippetsGroups = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+            {
+              label: "Fancy",
+              children: [
+                { label: "Cappuccino", value: "Cap" },
+                { label: "Flat white", value: "Flat" },
+              ],
+            },
+            {
+              label: "Boring",
+              children: [
+                { label: "Filter", value: "Fil" },
+                { label: "Latte", value: "Lat" },
+              ],
+            },
+          ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    {
+      label: "Fancy",
+      children: [
+        { label: "Cappuccino", value: "Cap" },
+        { label: "Flat white", value: "Flat" },
+      ],
+    },
+    {
+      label: "Boring",
+      children: [
+        { label: "Filter", value: "Fil" },
+        { label: "Latte", value: "Lat" },
+      ],
+    },
+  ]}
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExampleGroups = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        {
+          label: "Fancy",
+          children: [
+            { label: "Cappuccino", value: "Cap" },
+            { label: "Flat white", value: "Flat" },
+          ],
+        },
+        {
+          label: "Boring",
+          children: [
+            { label: "Filter", value: "Fil" },
+            { label: "Latte", value: "Lat" },
+          ],
+        },
+      ]}
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview snippets={snippetsGroups}>
+  <SelectExampleGroups />
+</ComponentPreview>
+
+### Recommended
+
+export const snippetsRecommended = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso", recommended: true },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano", recommended: true },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso", recommended: true },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano", recommended: true },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExampleRecommended = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={[
+        { label: "Espresso", value: "espresso" },
+        {
+          label: "Double Espresso",
+          value: "doubleespresso",
+          recommended: true,
+        },
+        { label: "Flat White", value: "flatwhite" },
+        { label: "Cappuccino", value: "cappuccino" },
+        { label: "Americano", value: "americano", recommended: true },
+        { label: "Mocha", value: "mocha" },
+      ]}
+      value={value}
+      onIcChange={(event) => setValue(event.detail.value)}
+    />
+  );
+};
+
+<ComponentPreview snippets={snippetsRecommended}>
+  <SelectExampleRecommended />
+</ComponentPreview>
+
+### Validation
+
+export const snippetsValidation = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?" 
+    validation-status="success" // also shown above are warning and error
+    validation-text="Success message"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    option = event.detail.value;
+    select.value = option;
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const [value, setValue] = useState(null);
+<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  validationStatus="success" // also shown above are warning and error
+  validationText="Success message"
+  value={value}
+  onIcChange={(event) => setValue(event.detail.value)}
+/>`,
+  },
+];
+
+export const SelectExampleValidation = () => {
+  const [value, setValue] = React.useState(null);
+  return (
+    <div>
+      <IcSelect
+        label="What is your favourite coffee?"
+        options={[
+          { label: "Espresso", value: "espresso" },
+          { label: "Double Espresso", value: "doubleespresso" },
+          { label: "Flat White", value: "flatwhite" },
+          { label: "Cappuccino", value: "cappuccino" },
+          { label: "Americano", value: "americano" },
+          { label: "Mocha", value: "mocha" },
+        ]}
+        validationStatus="success"
+        validationText="Success message"
+        value={value}
+        onIcChange={(event) => setValue(event.detail.value)}
+      />
+      <IcSelect
+        label="What is your favourite coffee?"
+        options={[
+          { label: "Espresso", value: "espresso" },
+          { label: "Double Espresso", value: "doubleespresso" },
+          { label: "Flat White", value: "flatwhite" },
+          { label: "Cappuccino", value: "cappuccino" },
+          { label: "Americano", value: "americano" },
+          { label: "Mocha", value: "mocha" },
+        ]}
+        validationStatus="warning"
+        validationText="Warning message"
+        value={value}
+        onIcChange={(event) => setValue(event.detail.value)}
+      />
+      <IcSelect
+        label="What is your favourite coffee?"
+        options={[
+          { label: "Espresso", value: "espresso" },
+          { label: "Double Espresso", value: "doubleespresso" },
+          { label: "Flat White", value: "flatwhite" },
+          { label: "Cappuccino", value: "cappuccino" },
+          { label: "Americano", value: "americano" },
+          { label: "Mocha", value: "mocha" },
+        ]}
+        validationStatus="error"
+        validationText="Error message"
+        value={value}
+        onIcChange={(event) => setValue(event.detail.value)}
+      />
+    </div>
+  );
+};
+
+<ComponentPreview snippets={snippetsValidation}>
+  <SelectExampleValidation />
+</ComponentPreview>
