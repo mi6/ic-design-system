@@ -26,23 +26,284 @@ import { IcTextField } from "@ukic/react";
 export const snippetsDefault = [
   {
     language: "Web component",
-    snippet: `<ic-text-field label="What is your favourite coffee?" placeholder="Placeholder" helper-text="Such as Arabica, Robusta or Liberica">
+    snippet: `<ic-text-field 
+    label="What is your favourite coffee?" 
+    placeholder="Placeholder" 
+    helper-text="Such as Arabica, Robusta or Liberica">
 </ic-text-field>`,
   },
   {
     language: "React",
-    snippet: `<IcTextField label="What is your favourite coffee?" placeholder="Placeholder" helperText="Such as Arabica, Robusta or Liberica" />`,
+    snippet: `<IcTextField 
+    label="What is your favourite coffee?" 
+    placeholder="Placeholder" 
+    helperText="Such as Arabica, Robusta or Liberica" />`,
   },
 ];
 
 <ComponentPreview snippets={snippetsDefault}>
-  <ComponentPreview>
-    <IcTextField
-      label="What is your favourite coffee?"
-      placeholder="Placeholder"
-      helperText="Such as Arabica, Robusta or Liberica"
-    />
-  </ComponentPreview>
+  <IcTextField
+    label="What is your favourite coffee?"
+    placeholder="Placeholder"
+    helperText="Such as Arabica, Robusta or Liberica"
+  />
 </ComponentPreview>
 
 <ComponentDetails component="ic-text-field" />
+
+## Variants
+
+### With icon, value and max length
+
+export const snippetsIconValueMaxLength = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field 
+    max-length="25" 
+    value="Arabica" 
+    label="What is your favourite coffee?" 
+    required="true" 
+    placeholder="Placeholder" 
+    helper-text="Such as Arabica, Robusta or Liberica" >
+  <svg slot="icon" ...></svg>
+</ic-text-field>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField 
+    maxLength="25" 
+    value="Arabica" 
+    label="What is your favourite coffee?" 
+    required 
+    placeholder="Placeholder" 
+    helperText="Such as Arabica, Robusta or Liberica">
+  <svg slot="icon" ...></svg>
+</IcTextField>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsIconValueMaxLength}>
+  <IcTextField
+    maxLength="25"
+    value="Arabica"
+    label="What is your favourite coffee?"
+    required
+    placeholder="Placeholder"
+    helperText="Such as Arabica, Robusta or Liberica"
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+    </svg>
+  </IcTextField>
+</ComponentPreview>
+
+### Disabled
+
+export const snippetsDisabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field 
+    label="What is your favourite coffee?" 
+    required="true" 
+    placeholder="Placeholder" 
+    disabled="true">
+  <svg slot="icon" ...></svg>
+</ic-text-field>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField 
+    label="What is your favourite coffee?" 
+    required 
+    placeholder="Placeholder" 
+    disabled>
+  <svg slot="icon" ...></svg>
+</IcTextField>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabled}>
+  <IcTextField
+    label="What is your favourite coffee?"
+    required
+    placeholder="Placeholder"
+    disabled
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+    </svg>
+  </IcTextField>
+</ComponentPreview>
+
+### Validation
+
+export const snippetsValidation = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field 
+    validation-status="success" 
+    validation-text="Good choice!" 
+    value="Arabica" max-length="25" 
+    label="What is your favourite coffee?" 
+    required="true" placeholder="Placeholder" 
+    helper-text="Such as Arabica, Robusta or Liberica">
+</ic-text-field>
+<ic-text-field 
+  validation-status="success" 
+  validation-text="Good choice!" 
+  validation-inline="true" 
+  value="Arabica" 
+  max-length="25" 
+  label="What is your favourite coffee?" 
+  required="true" placeholder="Placeholder" 
+  helper-text="Such as Arabica, Robusta or Liberica">
+</ic-text-field>
+<ic-text-field 
+  validation-status="warning" 
+  validation-text="A very long warning message to test if wrapping works" 
+  value="Arabica"
+  max-length="25" 
+  label="What is your favourite coffee?" 
+  required="true" 
+  placeholder="Placeholder" 
+  helper-text="Such as Arabica, Robusta or Liberica">
+</ic-text-field>
+<ic-text-field 
+  validation-status="error" 
+  validation-text="now it has really gone to (coffee) pot" 
+  value="Tea" 
+  max-length="25" 
+  label="What is your favourite coffee?" 
+  required="true" 
+  placeholder="Placeholder" 
+  helper-text="Such as Arabica, Robusta or Liberica">
+</ic-text-field>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField 
+    maxLength="25" 
+    value="Arabica" 
+    label="What is your favourite coffee?" 
+    required 
+    helperText="Such as Arabica, Robusta or Liberica" 
+    validationStatus="success" 
+    validationText="Good choice!" />
+<IcTextField 
+  maxLength="25" 
+  value="Arabica" 
+  label="What is your favourite coffee?" 
+  required 
+  helperText="Such as Arabica, Robusta or Liberica" 
+  validationStatus="success" 
+  validationText="Good choice!" 
+  validationInline />
+<IcTextField 
+  maxLength="25" 
+  value="Arabica" 
+  label="What is your favourite coffee?" 
+  required 
+  helperText="Such as Arabica, Robusta or Liberica" 
+  validationStatus="warning" 
+  validationText="A very long warning message to test if wrapping works" />
+<IcTextField 
+  maxLength="25" 
+  value="Tea" 
+  label="What is your favourite coffee?" 
+  required helperText="Such as Arabica, Robusta or Liberica" 
+  validationStatus="error" 
+  validationText="Now it has really gone to (coffee) pot" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsValidation}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <IcTextField
+      maxLength="25"
+      value="Arabica"
+      label="What is your favourite coffee?"
+      required
+      helperText="Such as Arabica, Robusta or Liberica"
+      validationStatus="success"
+      validationText="Good choice!"
+    />
+    <IcTextField
+      maxLength="25"
+      value="Arabica"
+      label="What is your favourite coffee?"
+      required
+      helperText="Such as Arabica, Robusta or Liberica"
+      validationStatus="success"
+      validationText="Good choice!"
+      validationInline
+    />
+    <IcTextField
+      maxLength="25"
+      value="Arabica"
+      label="What is your favourite coffee?"
+      required
+      helperText="Such as Arabica, Robusta or Liberica"
+      validationStatus="warning"
+      validationText="A very long warning message to test if wrapping works"
+    />
+    <IcTextField
+      maxLength="25"
+      value="Tea"
+      label="What is your favourite coffee?"
+      required
+      helperText="Such as Arabica, Robusta or Liberica"
+      validationStatus="error"
+      validationText="Now it has really gone to (coffee) pot"
+    />
+  </div>
+</ComponentPreview>
+
+### Text area with resize
+
+export const snippetsTextArea = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field 
+    rows="6" 
+    resize="true" 
+    label="What is your favourite coffee?" 
+    placeholder="Placeholder" 
+    helper-text="Such as Arabica, Robusta or Liberica">
+</ic-text-field>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField 
+    rows="6" 
+    resize 
+    label="What is your favourite coffee?" 
+    placeholder="Placeholder" 
+    helperText="Such as Arabica, Robusta or Liberica" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsTextArea}>
+  <IcTextField
+    rows="6"
+    resize
+    label="What is your favourite coffee?"
+    placeholder="Placeholder"
+    helperText="Such as Arabica, Robusta or Liberica"
+  />
+</ComponentPreview>
