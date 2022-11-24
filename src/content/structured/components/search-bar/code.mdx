@@ -26,8 +26,7 @@ import { IcSearchBar } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `
-<ic-search-bar label="What is your favourite coffee?"></ic-search-bar>
+    snippet: `<ic-search-bar label="What is your favourite coffee?"/>
 <script>
   const searchBar = document.querySelector("ic-search-bar");
   searchBar.options = [
@@ -42,8 +41,7 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `
-<IcSearchBar
+    snippet: `<IcSearchBar
   label="What is your favourite coffee?"
   options={[
     { label: "Espresso", value: "espresso" },
@@ -72,3 +70,219 @@ export const snippets = [
 </ComponentPreview>
 
 <ComponentDetails component="ic-search-bar" />
+
+## Variants
+
+### With options (no filtering)
+
+export const optionsNoFiltering = [
+  {
+    language: "Web component",
+    snippet: `<ic-search-bar
+  label="What is your favourite coffee?"
+  disable-filter
+/>
+<br />
+<ic-typography>
+  All options will be displayed as you type
+</ic-typography>
+<script>
+  document.querySelector("ic-search-bar").options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSearchBar
+  label="What is your favourite coffee?"
+  disableFilter
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+/>
+<br/>
+<IcTypography>All options will be displayed as you type</IcTypography>`,
+  },
+];
+
+<ComponentPreview snippets={optionsNoFiltering}>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    disableFilter
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappucino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+  <br />
+  <IcTypography variant="p">
+    All options will be displayed as you type
+  </IcTypography>
+</ComponentPreview>
+
+### With helper text
+
+export const withHelperText = [
+  {
+    language: "Web component",
+    snippet: `<ic-search-bar
+  label="What is your favourite coffee?"
+  helper-text="Some helper text"
+></ic-search-bar>
+<script>
+  document.querySelector("ic-search-bar").options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSearchBar
+  label="What is your favourite coffee?"
+  helperText="Some helper text"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={withHelperText}>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    helperText="Some helper text"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappucino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+</ComponentPreview>
+
+### With hidden label
+
+export const withHiddenLabel = [
+  {
+    language: "Web component",
+    snippet: `<ic-search-bar label="What is your favourite coffee?" hide-label></ic-search-bar>
+<script>
+  const searchBar = document.querySelector("ic-search-bar");
+  searchBar.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSearchBar
+  label="What is your favourite coffee?"
+  hideLabel
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={withHiddenLabel}>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    hideLabel
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappucino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+</ComponentPreview>
+
+### Disabled
+
+export const disabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-search-bar label="What is your favourite coffee?" disabled></ic-search-bar>
+<script>
+  const searchBar = document.querySelector("ic-search-bar");
+  searchBar.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSearchBar
+  label="What is your favourite coffee?"
+  disabled
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={disabled}>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    disabled
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappucino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+</ComponentPreview>

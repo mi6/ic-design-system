@@ -1,8 +1,6 @@
 ---
 path: "/components/radio/code"
 
-navPriority: 5
-
 date: "2022-11-15"
 
 title: "Radio button"
@@ -177,6 +175,72 @@ export const snippetsConditionalDynamic = [
         placeholder="i.e Soya milk please"
       />
     </IcRadioOption>
+    <IcRadioOption value="none" label="No, standard please" />
+  </IcRadioGroup>
+</ComponentPreview>
+
+### With helper text
+
+export const withHelperText = [
+  {
+    language: "Web component",
+    snippet: `<ic-radio-group 
+  label="Do you have any special requests?" 
+  helper-text="Let us know if you'd like an alternative to dairy milk"
+>
+  <ic-radio-option value="request" label="Yes, I want to modify my order" />
+  <ic-radio-option value="none" label="No, standard please" />
+</ic-radio-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcRadioGroup 
+    label="Do you have any special requests?" 
+    helperText="Helper text"
+>
+  <IcRadioOption value="request" label="Yes, I want to modify my order" />
+  <IcRadioOption value="none" label="No, standard please" />
+</IcRadioGroup>`,
+  },
+];
+
+<ComponentPreview style={{ marginTop: "24px" }} snippets={withHelperText}>
+  <IcRadioGroup
+    label="Do you have any special requests?"
+    helperText="Let us know if you'd like an alternative to dairy milk"
+  >
+    <IcRadioOption value="request" label="Yes, I want to modify my order" />
+    <IcRadioOption value="none" label="No, standard please" />
+  </IcRadioGroup>
+</ComponentPreview>
+
+### With validation
+
+export const withValidation = [
+  {
+    language: "Web component",
+    snippet: `<ic-radio-group label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required>
+  <ic-radio-option value="request" label="Yes, I want to modify my order" />
+  <ic-radio-option value="none" label="No, standard please" />
+</ic-radio-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcRadioGroup label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required>
+  <IcRadioOption value="request" label="Yes, I want to modify my order" />
+  <IcRadioOption value="none" label="No, standard please" />
+</IcRadioGroup>`,
+  },
+];
+
+<ComponentPreview style={{ marginTop: "24px" }} snippets={withHelperText}>
+  <IcRadioGroup
+    label="Do you have any special requests?"
+    validation-status="error"
+    validation-text="An answer to this question is required"
+    required
+  >
+    <IcRadioOption value="request" label="Yes, I want to modify my order" />
     <IcRadioOption value="none" label="No, standard please" />
   </IcRadioGroup>
 </ComponentPreview>
