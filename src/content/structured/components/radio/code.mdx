@@ -181,7 +181,7 @@ export const snippetsConditionalDynamic = [
 
 ### With helper text
 
-export const withHelperText = [
+export const snippetsWithHelperText = [
   {
     language: "Web component",
     snippet: `<ic-radio-group 
@@ -204,7 +204,10 @@ export const withHelperText = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "24px" }} snippets={withHelperText}>
+<ComponentPreview
+  style={{ marginTop: "24px" }}
+  snippets={snippetsWithHelperText}
+>
   <IcRadioGroup
     label="Do you have any special requests?"
     helperText="Let us know if you'd like an alternative to dairy milk"
@@ -216,7 +219,7 @@ export const withHelperText = [
 
 ### With validation
 
-export const withValidation = [
+export const snippetsWithValidation = [
   {
     language: "Web component",
     snippet: `<ic-radio-group label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required>
@@ -233,7 +236,10 @@ export const withValidation = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "24px" }} snippets={withHelperText}>
+<ComponentPreview
+  style={{ marginTop: "24px" }}
+  snippets={snippetsWithValidation}
+>
   <IcRadioGroup
     label="Do you have any special requests?"
     validation-status="error"
