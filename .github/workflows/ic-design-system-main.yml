@@ -38,6 +38,8 @@ jobs:
         run: |
           npm ci --legacy-peer-deps
           npm run build
+        env:
+          GOOGLE_SEARCH_TOKEN: ${{ secrets.GOOGLE_SEARCH_TOKEN }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
