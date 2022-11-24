@@ -29,16 +29,149 @@ import { IcLoadingIndicator } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-loading-indicator type="circular" label="Loading..." />`,
+    snippet: `<ic-loading-indicator type="circular" label="Loading..." />
+<ic-loading-indicator type="linear" label="Loading..." />`,
   },
   {
     language: "React",
-    snippet: `<IcLoadingIndicator type="circular" label="Loading..." />`,
+    snippet: `<IcLoadingIndicator type="circular" label="Loading..." />
+<IcLoadingIndicator type="linear" label="Loading..." />`,
   },
 ];
 
-<ComponentPreview snippets={snippets}>
+<ComponentPreview
+  snippets={snippets}
+  style={{ flexDirection: "column", gap: "8px" }}
+>
   <IcLoadingIndicator type="circular" label="Loading..." />
+  <IcLoadingIndicator type="linear" label="Loading..." />
 </ComponentPreview>
 
 <ComponentDetails component="ic-loading-indicator" />
+
+## Variants
+
+### Sizes
+
+export const snippetsSizes = [
+  {
+    language: "Web component",
+    snippet: `<ic-loading-indicator type="circular" label="Small" size="small"/>
+<ic-loading-indicator type="circular" label="Large" size="large"/>
+<ic-loading-indicator type="linear" label="Small" size="small"/>
+<ic-loading-indicator type="linear" label="Large" size="large"/>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLoadingIndicator type="circular" label="Small" size="small" />
+<IcLoadingIndicator type="circular" label="Large" size="large" />
+<IcLoadingIndicator type="linear" label="Small" size="small" />
+<IcLoadingIndicator type="linear" label="Large" size="large" />`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsSizes}
+  style={{ flexDirection: "column", gap: "8px" }}
+>
+  <IcLoadingIndicator type="circular" label="Small" size="small" />
+  <IcLoadingIndicator type="circular" label="Large" size="large" />
+  <IcLoadingIndicator type="linear" label="Small" size="small" />
+  <IcLoadingIndicator type="linear" label="Large" size="large" />
+</ComponentPreview>
+
+### Icon
+
+export const snippetsIcon = [
+  {
+    language: "Web component",
+    snippet: `<ic-loading-indicator size="icon"/>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLoadingIndicator size="icon" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsIcon}>
+  <IcLoadingIndicator size="icon" />
+</ComponentPreview>
+
+### Determinate
+
+export const snippetsDeterminate = [
+  {
+    language: "Web component",
+    snippet: `<ic-loading-indicator type="circular" label="Progress" progress="30" min="0" max="100"/>
+<ic-loading-indicator type="linear" label="Progress" progress="30" min="0" max="100"/>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLoadingIndicator type="circular" label="Progress" progress="30" min="0" max="100" />
+<IcLoadingIndicator type="linear" label="Progress" progress="30" min="0" max="100" />`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsDeterminate}
+  style={{ flexDirection: "column", gap: "8px" }}
+>
+  <IcLoadingIndicator
+    type="circular"
+    label="Progress"
+    progress="30"
+    min="0"
+    max="100"
+  />
+  <IcLoadingIndicator
+    type="linear"
+    label="Progress"
+    progress="30"
+    min="0"
+    max="100"
+  />
+</ComponentPreview>
+
+### Light
+
+export const snippetsLight = [
+  {
+    language: "Web component",
+    snippet: `<ic-loading-indicator type="circular" name="Loading" appearance="light"></ic-loading-indicator>
+<ic-loading-indicator type="linear" name="Loading" appearance="light"></ic-loading-indicator>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLoadingIndicator type="circular" name="Loading" appearance="light" />
+<IcLoadingIndicator type="linear" name="Loading" appearance="light"/>`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsLight}
+  style={{ flexDirection: "column", gap: "8px", background: "#333333" }}
+>
+  <IcLoadingIndicator type="circular" name="Loading" appearance="light" />
+  <IcLoadingIndicator type="linear" name="Loading" appearance="light" />
+</ComponentPreview>
+
+### Changing label
+
+export const snippetsChangingLabel = [
+  {
+    language: "Web component",
+    snippet: `<ic-loading-indicator type="circular" label="Loading.../Still loading..." label-duration="4000"></ic-loading-indicator>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLoadingIndicator type="circular" label="Loading.../Still loading..." labelDuration="4000" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsChangingLabel}>
+  <IcLoadingIndicator
+    type="circular"
+    label="Loading.../Still loading..."
+    labelDuration="4000"
+  />
+</ComponentPreview>

@@ -39,3 +39,96 @@ export const snippetsDefault = [
 </ComponentPreview>
 
 <ComponentDetails component="ic-switch" />
+
+## Variants
+
+### State
+
+export const snippetsState = [
+  {
+    language: "Web component",
+    snippet: `<ic-switch label="Unlimited coffee" show-state="true"></ic-switch>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSwitch label="Unlimited coffee" showState/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsState}>
+  <IcSwitch label="Unlimited coffee" showState />
+</ComponentPreview>
+
+### Small
+
+export const snippetsSmall = [
+  {
+    language: "Web component",
+    snippet: `<ic-switch label="Unlimited coffee" show-state="true" small="true"></ic-switch>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSwitch label="Unlimited coffee" showState small/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSmall}>
+  <IcSwitch label="Unlimited coffee" showState small />
+</ComponentPreview>
+
+### Disabled
+
+export const snippetsDisabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-switch label="Unlimited coffee" show-state="true" disabled="true"></ic-switch>
+<ic-switch label="Unlimited coffee" show-state="true" disabled="true" checked="true"></ic-switch>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSwitch label="Unlimited coffee" showState disabled/>
+<IcSwitch label="Unlimited coffee" showState disabled checked/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabled}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <IcSwitch label="Unlimited coffee" showState disabled />
+    <IcSwitch label="Unlimited coffee" showState disabled checked />
+  </div>
+</ComponentPreview>
+
+### Helper text and right adornment
+
+export const snippetsHelperAndAdornment = [
+  {
+    language: "Web component",
+    snippet: `<ic-switch label="Unlimited coffee" helper-text="Helper Text">
+  <svg slot="right-adornment" ...></svg>
+</ic-switch>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSwitch label="Unlimited coffee" helperText="Helper Text">
+  <svg slot="right-adornment" ...></svg>
+</IcSwitch>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsHelperAndAdornment}>
+  <IcSwitch label="Unlimited coffee" helperText="Helper Text">
+    <svg
+      slot="right-adornment"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z"
+        fill="black"
+      />
+    </svg>
+  </IcSwitch>
+</ComponentPreview>
