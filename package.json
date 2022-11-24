@@ -35,7 +35,7 @@
     "gatsby-remark-numbered-footnotes": "^1.0.1",
     "gatsby-remark-prismjs": "^6.2.0",
     "gatsby-source-filesystem": "^4.2.0",
-    "gatsby-transformer-remark": "^6.1.0",
+    "gatsby-transformer-remark": "^5.2.0",
     "gatsby-transformer-sharp": "^4.2.0",
     "github-slugger": "^1.4.0",
     "performant-array-to-tree": "^1.9.1",
