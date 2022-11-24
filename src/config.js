@@ -19,6 +19,8 @@ module.exports = {
   VERSION: "V2.0.7",
   STATUS: "BETA",
 
+  GOOGLE_SEARCH_TOKEN: process.env.GOOGLE_SEARCH_TOKEN,
+
   FOOTER_PROPS: {
     footerLinks: [
       {
@@ -30,7 +32,7 @@ module.exports = {
         link: "/icds/privacy-policy",
         text: "Privacy Policy",
         key: "privacy-policy",
-      }
+      },
     ],
     content:
       "The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and partners.",
