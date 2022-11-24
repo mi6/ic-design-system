@@ -14,6 +14,7 @@ const {
   VERSION,
   FOOTER_PROPS,
   META_DESCRIPTION,
+  GOOGLE_SEARCH_TOKEN,
 } = require("../../config");
 
 interface RouteAnnouncerProps {
@@ -66,6 +67,7 @@ const Layout: React.FC<LayoutProps> = ({
       <html lang="en" />
       <title>{title || TITLE} - Intelligence Community Design System</title>
       <meta name="description" content={`${description || META_DESCRIPTION}`} />
+      <meta name="google-site-verification" content={GOOGLE_SEARCH_TOKEN} />
     </Helmet>
     <ClientOnly>
       <div className="main-page-container">
