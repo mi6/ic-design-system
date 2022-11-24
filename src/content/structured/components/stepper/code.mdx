@@ -62,7 +62,7 @@ export const snippets = [
 
 ### Left-aligned
 
-export const leftAligned = [
+export const leftAlignedSnippets = [
   {
     language: "Web component",
     snippet: `<ic-stepper aligned="left">
@@ -81,7 +81,7 @@ export const leftAligned = [
   },
 ];
 
-<ComponentPreview snippets={leftAligned}>
+<ComponentPreview snippets={leftAlignedSnippets}>
   <IcStepper aligned="left">
     <IcStep stepTitle="Order coffee" stepType="completed" />
     <IcStep stepTitle="Pay for order" stepType="current" />
@@ -91,7 +91,7 @@ export const leftAligned = [
 
 ### Without step titles
 
-export const withoutStepTitles = [
+export const snippetsWithoutStepTitles = [
   {
     language: "Web component",
     snippet: `<ic-stepper>
@@ -111,7 +111,7 @@ export const withoutStepTitles = [
   },
 ];
 
-<ComponentPreview snippets={withoutStepTitles}>
+<ComponentPreview snippets={snippetsWithoutStepTitles}>
   <IcStepper>
     <IcStep stepType="completed" />
     <IcStep stepType="current" />
@@ -121,7 +121,7 @@ export const withoutStepTitles = [
 
 ### With subtitles
 
-export const withSubtitles = [
+export const snippetsWithSubtitles = [
   {
     language: "Web component",
     snippet: `<ic-stepper>
@@ -158,7 +158,7 @@ export const withSubtitles = [
   },
 ];
 
-<ComponentPreview snippets={withSubtitles}>
+<ComponentPreview snippets={snippetsWithSubtitles}>
   <IcStepper>
     <IcStep stepTitle="Order coffee" stepType="completed" />
     <IcStep
@@ -177,7 +177,7 @@ export const withSubtitles = [
 
 ### Custom connector width
 
-export const customConnectorWidth = [
+export const customConnectorWidthSnippets = [
   {
     language: "Web component",
     snippet: `<ic-stepper connector-width="150">
@@ -196,7 +196,7 @@ export const customConnectorWidth = [
   },
 ];
 
-<ComponentPreview snippets={customConnectorWidth}>
+<ComponentPreview snippets={customConnectorWidthSnippets}>
   <IcStepper aligned="left" connectorWidth="150">
     <IcStep stepTitle="Order coffee" stepType="completed" />
     <IcStep stepTitle="Pay for order" stepType="current" />
