@@ -42,6 +42,64 @@ export const snippets = [
 
 <ComponentDetails component="ic-link" />
 
+## Variants
+
+### With icon
+
+export const snippetsIcon = [
+  {
+    language: "Web component",
+    snippet: `<ic-link href="/" show-icon="true">This is a link</ic-link>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLink href="/" showIcon>This is a link</IcLink>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsIcon}>
+  <IcLink href="/" showIcon>
+    This is a link
+  </IcLink>
+</ComponentPreview>
+
+### Light and dark
+
+export const snippetsLightDark = [
+  {
+    language: "Web component",
+    snippet: `<ic-link href="/" appearance="dark" show-icon="true">This is a link</ic-link>
+<ic-link href="/" appearance="light" show-icon="true">This is a link</ic-link>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcLink href="/" appearance="dark" showIcon>This is a link</IcLink>
+<IcLink href="/" appearance="light" showIcon>This is a link</IcLink>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsLightDark}>
+  <div
+    style={{
+      padding: "8px",
+    }}
+  >
+    <IcLink href="/" appearance="dark" showIcon>
+      This is a link
+    </IcLink>
+  </div>
+  <div
+    style={{
+      background: "#333333",
+      padding: "8px",
+    }}
+  >
+    <IcLink href="/" appearance="light" showIcon>
+      This is a link
+    </IcLink>
+  </div>
+</ComponentPreview>
+
 ### With React Router
 
 export const withReactRouter = [
