@@ -26,7 +26,7 @@ import { IcCard, IcStatusTag, IcTypography } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-card heading="Card title" message="This is an example of a clickable card" clickable></ic-card>`,
+    snippet: `<ic-card heading="Card title" message="This is an example of a clickable card" clickable="true"></ic-card>`,
   },
   {
     language: "React",
@@ -48,28 +48,26 @@ export const snippets = [
 
 ### Title only
 
-export const titleOnlySnippets = [
+export const titleOnly = [
   {
     language: "Web component",
-    snippet: `<ic-card heading="Card title" clickable>
-  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-    <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    snippet: `<ic-card heading="Card title" clickable="true">
+  <svg slot="icon">
+    ...
   </svg>
 </ic-card>`,
   },
   {
     language: "React",
     snippet: `<IcCard heading="Card title" clickable>
-  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-    <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+  <svg slot="icon">
+    ...
   </svg>
 </IcCard>`,
   },
 ];
 
-<ComponentPreview snippets={titleOnlySnippets}>
+<ComponentPreview snippets={titleOnly}>
   <IcCard heading="Card title" clickable>
     <svg
       slot="icon"
@@ -87,28 +85,26 @@ export const titleOnlySnippets = [
 
 ### Disabled
 
-export const disabledSnippets = [
+export const disabled = [
   {
     language: "Web component",
     snippet: `<ic-card heading="Card" message="This is an example of a new card component with text included" clickable="true" disabled="true" onclick="alert('clicked')">
-  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-    <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+  <svg slot="icon">
+    ...
   </svg>
 </ic-card>`,
   },
   {
     language: "React",
     snippet: `<IcCard heading="Card" message="This is an example of a new card component with text included" clickable disabled onClick={() => alert('clicked')}>
-  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-    <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+  <svg slot="icon">
+    ...
   </svg>
 </IcCard>`,
   },
 ];
 
-<ComponentPreview snippets={disabledSnippets}>
+<ComponentPreview snippets={disabled}>
   <IcCard
     heading="Card"
     message="This is an example of a new card component with text included"
@@ -132,35 +128,33 @@ export const disabledSnippets = [
 
 ### Using slots
 
-export const snippetsUsingSlots = [
+export const usingSlots = [
   {
     language: "Web component",
     snippet: `<ic-card heading="Card title">
-  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-    <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+  <svg slot="icon">
+    ...
   </svg>
   <div slot="message" style="display:flex; align-items:center;">
     <ic-typography variant="body" style="margin-right:8px;">
-      This card uses the icon slot to display and icon and the message slot to a message with a status tag
+      This card uses the icon slot to display an icon and the message slot to display a message with a status tag
     </ic-typography>
-    <ic-status-tag status="success" label="Active" />
+    <ic-status-tag status="success" label="Active"></ic-status-tag>
   </div>
 </ic-card>`,
   },
   {
     language: "React",
     snippet: `<IcCard heading="Card title">
-  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-    <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+  <svg slot="icon">
+    ...
   </svg>
   <div slot="message" style={{
     display: "flex",
     alignItems: "center"
   }}>
     <IcTypography variant="body" style={{marginRight: "8px"}}>
-      This card uses the icon slot to display and icon and the message slot to a message with a status tag
+      This card uses the icon slot to display an icon and the message slot to display a message with a status tag
     </IcTypography>
     <IcStatusTag status="success" label="Active" />
   </div>
@@ -168,7 +162,7 @@ export const snippetsUsingSlots = [
   },
 ];
 
-<ComponentPreview snippets={snippetsUsingSlots}>
+<ComponentPreview snippets={usingSlots}>
   <IcCard heading="Card title">
     <svg
       slot="icon"
@@ -189,8 +183,8 @@ export const snippetsUsingSlots = [
       }}
     >
       <IcTypography variant="body" style={{ marginRight: "8px" }}>
-        This card uses the icon slot to display and icon and the message slot to
-        a message with a status tag
+        This card uses the icon slot to display an icon and the message slot to
+        display a message with a status tag
       </IcTypography>
       <IcStatusTag label="Active" status="success" />
     </div>

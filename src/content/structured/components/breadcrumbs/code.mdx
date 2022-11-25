@@ -21,33 +21,261 @@ tabs:
 
 import { IcBreadcrumbGroup, IcBreadcrumb } from "@ukic/react";
 
+import { NavLink, MemoryRouter } from "react-router-dom";
+
 ## Component demo
 
-export const snippetsDefault = [
+export const snippets = [
   {
     language: "Web component",
     snippet: `<ic-breadcrumb-group>
-    <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
-    <ic-breadcrumb page-title="Beverages" href="# "></ic-breadcrumb>
-    <ic-breadcrumb current="true" page-title="Coffee" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
 </ic-breadcrumb-group>`,
   },
   {
     language: "React",
     snippet: `<IcBreadcrumbGroup>
-    <IcBreadcrumb pageTitle="Home" href="#"></IcBreadcrumb>
-    <IcBreadcrumb pageTitle="Beverages" href="# "></IcBreadcrumb>
-    <IcBreadcrumb current="true" pageTitle="Coffee" href="#"></IcBreadcrumb>
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="# " />
+  <IcBreadcrumb 
+    current 
+    pageTitle="Coffee"
+    href="#"
+  />
 </IcBreadcrumbGroup>`,
   },
 ];
 
-<ComponentPreview snippets={snippetsDefault}>
+<ComponentPreview snippets={snippets}>
   <IcBreadcrumbGroup>
     <IcBreadcrumb pageTitle="Home" href="#" />
     <IcBreadcrumb pageTitle="Beverages" href="# " />
-    <IcBreadcrumb current="true" pageTitle="Coffee" href="#" />
+    <IcBreadcrumb current pageTitle="Coffee" href="#" />
   </IcBreadcrumbGroup>
 </ComponentPreview>
 
+## Breadcrumb details
+
+<ComponentDetails component="ic-breadcrumb" />
+
+## Breadcrumb group details
+
 <ComponentDetails component="ic-breadcrumb-group" />
+
+## Variants
+
+### Back
+
+export const back = [
+  {
+    language: "Web component",
+    snippet: `<ic-breadcrumb-group back-breadcrumb-only="true">
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcBreadcrumbGroup backBreadcrumbOnly>
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="#" />
+  <IcBreadcrumb 
+    current 
+    pageTitle="Coffee"
+    href="#"
+  />
+</IcBreadcrumbGroup>`,
+  },
+];
+
+<ComponentPreview snippets={back}>
+  <IcBreadcrumbGroup backBreadcrumbOnly>
+    <IcBreadcrumb pageTitle="Home" href="#" />
+    <IcBreadcrumb pageTitle="Beverages" href="#" />
+    <IcBreadcrumb current pageTitle="Coffee" href="#" />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+### With icons
+
+export const withIcons = [
+  {
+    language: "Web component",
+    snippet: `<ic-breadcrumb-group>
+  <ic-breadcrumb page-title="Home" href="#">
+    <svg slot="icon">...</svg>
+  </ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#">
+    <svg slot="icon">...</svg>
+  </ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+    <svg slot="icon">...</svg>
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcBreadcrumbGroup>
+  <IcBreadcrumb pageTitle="Home" href="#">
+    <svg slot="icon">...</svg>
+  </IcBreadcrumb>
+  <IcBreadcrumb pageTitle="Beverages" href="#">
+    <svg slot="icon">...</svg>
+  </IcBreadcrumb>
+  <IcBreadcrumb 
+    pageTitle="Coffee" 
+    current
+    href="#"
+  >
+    <svg slot="icon">...</svg>
+  </IcBreadcrumb>
+</IcBreadcrumbGroup>`,
+  },
+];
+
+<ComponentPreview snippets={withIcons}>
+  <IcBreadcrumbGroup>
+    <IcBreadcrumb pageTitle="Home" href="#">
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcBreadcrumb>
+    <IcBreadcrumb pageTitle="Beverages" href="#">
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcBreadcrumb>
+    <IcBreadcrumb pageTitle="Coffee" current href="#">
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM16 5v3H6V5h10zm2.5 3H18V5h.5c.83 0 1.5.67 1.5 1.5S19.33 8 18.5 8zM4 19h16v2H4v-2z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcBreadcrumb>
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+### Collapsed
+
+export const collapsed = [
+  {
+    language: "Web component",
+    snippet: ` <ic-breadcrumb-group collapsed="true">
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+      current="true" 
+      page-title="Coffee" 
+      href="#"
+    >
+    </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcBreadcrumbGroup collapsed>
+    <IcBreadcrumb pageTitle="Home" href="#" />
+    <IcBreadcrumb pageTitle="Beverages" href="#" />
+    <IcBreadcrumb 
+      pageTitle="Coffee" 
+      current
+      href="#"
+    >
+</IcBreadcrumbGroup>`,
+  },
+];
+
+<ComponentPreview snippets={collapsed}>
+  <IcBreadcrumbGroup collapsed>
+    <IcBreadcrumb pageTitle="Home" href="#" />
+    <IcBreadcrumb pageTitle="Beverages" href="#" />
+    <IcBreadcrumb pageTitle="Coffee" current href="#" />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+### With React Router
+
+export const withReactRouter = [
+  {
+    language: "React",
+    snippet: `<MemoryRouter initialEntries={["/"]}>
+  <IcBreadcrumbGroup>
+    <IcBreadcrumb pageTitle="Home">
+      <NavLink to="/">Home</NavLink>
+    </IcBreadcrumb>
+    <IcBreadcrumb pageTitle="Beverages">
+      <NavLink to="/">Beverages</NavLink>
+    </IcBreadcrumb>
+    <IcBreadcrumb 
+      pageTitle="Coffee" 
+      current
+      href="#"
+    >
+      <NavLink to="/">Coffee</NavLink>
+    </IcBreadcrumb>
+  </IcBreadcrumbGroup>
+</MemoryRouter>
+`,
+  },
+];
+
+<ComponentPreview snippets={withReactRouter}>
+  <MemoryRouter initialEntries={["/"]}>
+    <IcBreadcrumbGroup>
+      <IcBreadcrumb pageTitle="Home">
+        <NavLink to="/">Home</NavLink>
+      </IcBreadcrumb>
+      <IcBreadcrumb pageTitle="Beverages">
+        <NavLink to="/">Beverages</NavLink>
+      </IcBreadcrumb>
+      <IcBreadcrumb pageTitle="Coffee" current href="#">
+        <NavLink to="/">Coffee</NavLink>
+      </IcBreadcrumb>
+    </IcBreadcrumbGroup>
+  </MemoryRouter>
+</ComponentPreview>
