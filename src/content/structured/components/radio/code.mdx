@@ -23,7 +23,7 @@ import { IcRadioGroup, IcRadioOption, IcTextField } from "@ukic/react";
 
 ## Component demo
 
-export const snippetsDefault = [
+export const snippets = [
   {
     language: "Web component",
     snippet: `<ic-radio-group label="Add a free purchase with any hot drink.">
@@ -32,7 +32,8 @@ export const snippetsDefault = [
       value="cookie"
       label="Deluxe chocolate chip cookie (sold out)"
       disabled="true"
-      inactive="true">
+      inactive="true" 
+    >
     </ic-radio-option>
     <ic-radio-option value="fruit" label="Banana"></ic-radio-option>
     <ic-radio-option value="No item" label="No thanks, just my coffee"></ic-radio-option>
@@ -54,7 +55,7 @@ export const snippetsDefault = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "24px" }} snippets={snippetsDefault}>
+<ComponentPreview style={{ marginTop: "24px" }} snippets={snippets}>
   <IcRadioGroup label="Add a free purchase with any hot drink.">
     <IcRadioOption value="crisps" label="Crisps" />
     <IcRadioOption
@@ -80,7 +81,7 @@ export const snippetsDefault = [
 
 ### Conditional
 
-export const snippetsConditional = [
+export const conditional = [
   {
     language: "Web component",
     snippet: `<ic-radio-group label="Do you have any special requests?">
@@ -89,12 +90,10 @@ export const snippetsConditional = [
         slot="additional-field"
         label="Please provide some additional information"
         placeholder="i.e Soya milk please"
-      ></ic-text-field>
+      >
+      </ic-text-field>
     </ic-radio-option>
-    <ic-radio-option
-      value="none"
-      label="No, standard please"
-    ></ic-radio-option>
+    <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
 </ic-radio-group>`,
   },
   {
@@ -112,7 +111,7 @@ export const snippetsConditional = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "24px" }} snippets={snippetsConditional}>
+<ComponentPreview style={{ marginTop: "24px" }} snippets={conditional}>
   <IcRadioGroup label="Do you have any special requests?">
     <IcRadioOption value="request" label="Yes, I want to modify my order">
       <IcTextField
@@ -127,7 +126,7 @@ export const snippetsConditional = [
 
 ### Conditional dynamic
 
-export const snippetsConditionalDynamic = [
+export const conditionalDynamic = [
   {
     language: "Web component",
     snippet: `<ic-radio-group label="Do you have any special requests?">
@@ -136,12 +135,10 @@ export const snippetsConditionalDynamic = [
         slot="additional-field"
         label="Please provide some additional information"
         placeholder="i.e Soya milk please"
-      ></ic-text-field>
+      >
+    </ic-text-field>
     </ic-radio-option>
-    <ic-radio-option
-      value="none"
-      label="No, standard please"
-    ></ic-radio-option>
+    <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
 </ic-radio-group>`,
   },
   {
@@ -159,10 +156,7 @@ export const snippetsConditionalDynamic = [
   },
 ];
 
-<ComponentPreview
-  style={{ marginTop: "24px" }}
-  snippets={snippetsConditionalDynamic}
->
+<ComponentPreview style={{ marginTop: "24px" }} snippets={conditionalDynamic}>
   <IcRadioGroup label="Do you have any special requests?">
     <IcRadioOption
       additionalFieldDisplay="dynamic"
@@ -181,15 +175,15 @@ export const snippetsConditionalDynamic = [
 
 ### With helper text
 
-export const snippetsWithHelperText = [
+export const withHelperText = [
   {
     language: "Web component",
     snippet: `<ic-radio-group 
   label="Do you have any special requests?" 
   helper-text="Let us know if you'd like an alternative to dairy milk"
 >
-  <ic-radio-option value="request" label="Yes, I want to modify my order" />
-  <ic-radio-option value="none" label="No, standard please" />
+  <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
+  <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
 </ic-radio-group>`,
   },
   {
@@ -204,10 +198,7 @@ export const snippetsWithHelperText = [
   },
 ];
 
-<ComponentPreview
-  style={{ marginTop: "24px" }}
-  snippets={snippetsWithHelperText}
->
+<ComponentPreview style={{ marginTop: "24px" }} snippets={withHelperText}>
   <IcRadioGroup
     label="Do you have any special requests?"
     helperText="Let us know if you'd like an alternative to dairy milk"
@@ -219,31 +210,28 @@ export const snippetsWithHelperText = [
 
 ### With validation
 
-export const snippetsWithValidation = [
+export const withValidation = [
   {
     language: "Web component",
-    snippet: `<ic-radio-group label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required>
-  <ic-radio-option value="request" label="Yes, I want to modify my order" />
-  <ic-radio-option value="none" label="No, standard please" />
+    snippet: `<ic-radio-group label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required="true">
+  <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
+  <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
 </ic-radio-group>`,
   },
   {
     language: "React",
-    snippet: `<IcRadioGroup label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required>
+    snippet: `<IcRadioGroup label="Do you have any special requests?" validationStatus="error" validationText="An answer to this question is required" required>
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
   <IcRadioOption value="none" label="No, standard please" />
 </IcRadioGroup>`,
   },
 ];
 
-<ComponentPreview
-  style={{ marginTop: "24px" }}
-  snippets={snippetsWithValidation}
->
+<ComponentPreview style={{ marginTop: "24px" }} snippets={withValidation}>
   <IcRadioGroup
     label="Do you have any special requests?"
-    validation-status="error"
-    validation-text="An answer to this question is required"
+    validationStatus="error"
+    validationText="An answer to this question is required"
     required
   >
     <IcRadioOption value="request" label="Yes, I want to modify my order" />
