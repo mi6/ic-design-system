@@ -39,7 +39,7 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="App title" sub-heading="App information" />`,
+    snippet: `<ic-page-header heading="App title" sub-heading="App information"></ic-page-header>`,
   },
   {
     language: "React",
@@ -60,28 +60,29 @@ export const snippets = [
 export const withBreadcrumbNavigation = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has breadcrumb.">
-  <ic-status-tag slot="heading-adornment" label="Beta" />
+    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has breadcrumb navigation.">
+  <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-breadcrumb-group slot="breadcrumbs">
-    <ic-breadcrumb page-title="Breadcrumb 1" href="#" />
+    <ic-breadcrumb page-title="Breadcrumb 1" href="#"></ic-breadcrumb>
     <ic-breadcrumb 
       current="true" 
       page-title="Breadcrumb 2" 
       href="#"
-    />
+    >
+    </ic-breadcrumb>
   </ic-breadcrumb-group>
 </ic-page-header>
     `,
   },
   {
     language: "React",
-    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has an input area, actions and stepper.">
+    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has breadcrumb navigation.">
   <IcStatusTag slot="heading-adornment" label="Beta" />
-    <IcBreadcrumb page-title="Breadcrumb 1" href="#" />
+    <IcBreadcrumb pageTitle="Breadcrumb 1" href="#" />
     <IcBreadcrumb 
-      current="true" 
-      page-title="Breadcrumb 2" 
-      href="#" 
+      current
+      pageTitle="Breadcrumb 2" 
+      href="#"
     />
   </IcBreadcrumbGroup>
 </IcPageHeader>
@@ -95,12 +96,12 @@ export const withBreadcrumbNavigation = [
 >
   <IcPageHeader
     heading="Coffee recipes"
-    subHeading="This is a page header component that has an input area, actions and stepper."
+    subHeading="This is a page header component that has breadcrumb navigation."
   >
     <IcStatusTag slot="heading-adornment" label="Beta" />
     <IcBreadcrumbGroup slot="breadcrumbs">
-      <IcBreadcrumb page-title="Breadcrumb 1" href="#" />
-      <IcBreadcrumb current="true" page-title="Breadcrumb 2" href="#" />
+      <IcBreadcrumb pageTitle="Breadcrumb 1" href="#" />
+      <IcBreadcrumb current pageTitle="Breadcrumb 2" href="#" />
     </IcBreadcrumbGroup>
   </IcPageHeader>
 </ComponentPreview>
@@ -178,19 +179,37 @@ export const withActionsInputStepper = [
 export const withActionsInputTabs = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has an input area, actions &amp; tabs." reverse-order="true">
+    snippet: `<ic-page-header 
+  heading="Coffee recipes" 
+  sub-heading="This is a page header component that has an input area, actions &amp; tabs." 
+  reverse-order="true"
+>
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
   <ic-text-field slot="input" placeholder="Enter your input" hide-label="true"></ic-text-field>
-  <ic-navigation-item slot="tabs" label="All recipes" href="#" selected="true"></ic-navigation-item>
-  <ic-navigation-item slot="tabs" label="Favourites" href="#"></ic-navigation-item>
+  <ic-navigation-item 
+    slot="tabs" 
+    label="All recipes" 
+    href="#" 
+    selected="true"
+  >
+  </ic-navigation-item>
+  <ic-navigation-item 
+    slot="tabs" 
+    label="Favourites" 
+    href="#"
+  >
+  </ic-navigation-item>
 </ic-page-header>
     `,
   },
   {
     language: "React",
-    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has an input area, actions and tabs." reverseOrder>
+    snippet: `<IcPageHeader 
+  heading="Coffee recipes" 
+  subHeading="This is a page header component that has an input area, actions and tabs." 
+  reverseOrder>
   <IcStatusTag slot="heading-adornment" label="Beta" />
   <IcButton slot="actions" variant="primary">
     Create coffee
@@ -198,9 +217,22 @@ export const withActionsInputTabs = [
   <IcButton slot="actions" variant="tertiary">
     Filter coffee
   </IcButton>
-  <IcTextField slot="input" placeholder="Enter your input" hideLabel />
-  <IcNavigationItem slot="tabs" label="All recipes" href="#" selected />
-  <IcNavigationItem slot="tabs" label="Favourites" href="#" />
+  <IcTextField 
+    slot="input" 
+    placeholder="Enter your input" 
+    hideLabel 
+  />
+  <IcNavigationItem 
+    slot="tabs" 
+    label="All recipes" 
+    href="#" 
+    selected 
+  />
+  <IcNavigationItem 
+    slot="tabs" 
+    label="Favourites" 
+    href="#" 
+  />
 </IcPageHeader>
     `,
   },
@@ -239,22 +271,10 @@ export const withReactRouter = [
     sub-heading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
     reverseOrder
   >
-    <IcStatusTag slot="heading-adornment" label="Beta"></IcStatusTag>
+    <IcStatusTag slot="heading-adornment" label="Beta" />
     <IcButton slot="actions" variant="primary"
       >Create coffee
-      <svg
-        slot="icon"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"
-          fill="currentColor"
-        />
-      </svg>
+      <svg slot="icon">...</svg>
     </IcButton>
     <IcButton slot="actions" variant="tertiary">Filter coffee</IcButton>
     <IcNavigationItem slot="tabs" selected>
@@ -263,7 +283,12 @@ export const withReactRouter = [
     <IcNavigationItem slot="tabs">
       <NavLink slot="navigation-item" to="/favourites">Favourites</NavLink>
     </IcNavigationItem>
-    <IcTextField slot="input" placeholder="Enter your input" hide-label style={{'@media (maxWidth: 576px)':{width: "280px"}}} />
+    <IcTextField 
+      slot="input" 
+      placeholder="Enter your input" 
+      hideLabel 
+      style={{'@media (maxWidth: 576px)':{width: "280px"}}}
+    />
   </IcPageHeader>
   <IcSectionContainer>
       <Routes>
@@ -319,7 +344,7 @@ export const withReactRouter = [
       <IcTextField
         slot="input"
         placeholder="Enter your input"
-        hide-label
+        hideLabel
         style={{ "@media (maxWidth: 576px)": { width: "280px" } }}
       />
     </IcPageHeader>
