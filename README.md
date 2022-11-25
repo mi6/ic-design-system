@@ -16,7 +16,7 @@ This is a joint project led by [MI6](https://www.sis.gov.uk), working with [GCHQ
   <img src="/static/icds-orgs.png" alt="SIS (MI6), GCHQ and MI5 Logos">
 </p>
 
-This repo holds the website at [`design.sis.gov.uk`](https://design.sis.gov.uk), look at the [`ic-ui-kit` repo](/mi6/ic-ui-kit) for the ICDS UI Kit components.
+This repo holds the website at [`design.sis.gov.uk`](https://design.sis.gov.uk), look at the [`ic-ui-kit` repo](https://github.com/mi6/ic-ui-kit) for the ICDS UI Kit components.
 
 ## Why we're doing this
 
@@ -34,7 +34,7 @@ If you think we could improve something, please do [raise an issue](https://gith
 
 ## Installing
 
-The UI Kit components are in the [`ic-ui-kit` repo](/mi6/ic-ui-kit) 👉.
+The UI Kit components are in the [`ic-ui-kit` repo](https://github.com/mi6/ic-ui-kit) 👉.
 
 If you still want to host a local version of the `ic-design-system` website, it's straightforward.
 
