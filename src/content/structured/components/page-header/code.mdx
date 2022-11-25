@@ -27,6 +27,9 @@ import {
   IcStep,
   IcTextField,
   IcNavigationItem,
+  IcBreadcrumb,
+  IcBreadcrumbGroup,
+  IcSectionContainer,
 } from "@ukic/react";
 
 import { NavLink, MemoryRouter } from "react-router-dom";
@@ -36,7 +39,7 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="App title" sub-heading="App information"></ic-page-header>`,
+    snippet: `<ic-page-header heading="App title" sub-heading="App information" />`,
   },
   {
     language: "React",
@@ -51,6 +54,56 @@ export const snippets = [
 <ComponentDetails component="ic-page-header" />
 
 ## Variants
+
+### With breadcrumb navigation
+
+export const withBreadcrumbNavigation = [
+  {
+    language: "Web component",
+    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has breadcrumb.">
+  <ic-status-tag slot="heading-adornment" label="Beta" />
+  <ic-breadcrumb-group slot="breadcrumbs">
+    <ic-breadcrumb page-title="Breadcrumb 1" href="#" />
+    <ic-breadcrumb 
+      current="true" 
+      page-title="Breadcrumb 2" 
+      href="#"
+    />
+  </ic-breadcrumb-group>
+</ic-page-header>
+    `,
+  },
+  {
+    language: "React",
+    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has an input area, actions and stepper.">
+  <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcBreadcrumb page-title="Breadcrumb 1" href="#" />
+    <IcBreadcrumb 
+      current="true" 
+      page-title="Breadcrumb 2" 
+      href="#" 
+    />
+  </IcBreadcrumbGroup>
+</IcPageHeader>
+    `,
+  },
+];
+
+<ComponentPreview
+  snippets={withBreadcrumbNavigation}
+  style={{ flexDirection: "column" }}
+>
+  <IcPageHeader
+    heading="Coffee recipes"
+    subHeading="This is a page header component that has an input area, actions and stepper."
+  >
+    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcBreadcrumbGroup slot="breadcrumbs">
+      <IcBreadcrumb page-title="Breadcrumb 1" href="#" />
+      <IcBreadcrumb current="true" page-title="Breadcrumb 2" href="#" />
+    </IcBreadcrumbGroup>
+  </IcPageHeader>
+</ComponentPreview>
 
 ### With actions, input and stepper
 
@@ -210,7 +263,7 @@ export const withReactRouter = [
     <IcNavigationItem slot="tabs">
       <NavLink slot="navigation-item" to="/favourites">Favourites</NavLink>
     </IcNavigationItem>
-    <IcTextField slot="input" placeholder="Enter your input" hide-label style={{'@media (maxWidth: 576px)':{width: "304px"}}} />
+    <IcTextField slot="input" placeholder="Enter your input" hide-label style={{'@media (maxWidth: 576px)':{width: "280px"}}} />
   </IcPageHeader>
   <IcSectionContainer>
       <Routes>
@@ -267,7 +320,7 @@ export const withReactRouter = [
         slot="input"
         placeholder="Enter your input"
         hide-label
-        style={{ "@media (maxWidth: 576px)": { width: "304px" } }}
+        style={{ "@media (maxWidth: 576px)": { width: "280px" } }}
       />
     </IcPageHeader>
     <IcSectionContainer />
