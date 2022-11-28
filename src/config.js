@@ -19,8 +19,6 @@ module.exports = {
   VERSION: "V2.0.7",
   STATUS: "BETA",
 
-  GOOGLE_SEARCH_TOKEN: process.env.GOOGLE_SEARCH_TOKEN,
-
   FOOTER_PROPS: {
     footerLinks: [
       {
