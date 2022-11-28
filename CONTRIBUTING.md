@@ -122,6 +122,8 @@ For automated versioning, we use [Conventional Commits](https://www.conventional
 
 To make it easy to use we have implemented [Commitizen](https://github.com/commitizen/cz-cli).
 
+Only [signed commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) can be merged into the Design System guidance site repository.
+
 Follow these steps when making a commit:
 
 1. Ensure your commit only contains changes for one of the scopes. If your change affects more than one scope then make multiple commits, i.e. one for each scope.
