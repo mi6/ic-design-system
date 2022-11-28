@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 
 import { IcTypography } from "@ukic/react";
 import AttributeTable from "../../AttributeTable";
+import AttributeCards from "../../AttributeCards";
 import PropDescription from "./PropDescription";
 
 interface StencilProp {
@@ -51,7 +52,11 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
       <IcTypography variant="h3" applyVerticalMargins>
         <h3>Props</h3>
       </IcTypography>
-      <AttributeTable columns={columns} data={data} />
+      {window.screen.width > 576 ? (
+        <AttributeTable columns={columns} data={data} />
+      ) : (
+        <AttributeCards data={data} />
+      )}
     </>
   );
 };

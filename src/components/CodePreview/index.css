@@ -56,8 +56,8 @@
 
 .snippet {
   border-radius: 0;
-  margin: 0!important;
-  border-radius: 0!important;
+  margin: 0 !important;
+  border-radius: 0 !important;
   padding-bottom: var(--ic-space-sm);
 }
 
@@ -101,5 +101,11 @@
 @media screen and (min-width: 577px) {
   .comp-preview ic-side-navigation {
     position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .comp-preview {
+    max-width: 90vw;
   }
 }
