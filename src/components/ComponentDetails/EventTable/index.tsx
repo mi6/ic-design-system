@@ -4,6 +4,7 @@ import { IcTypography } from "@ukic/react";
 import { JsonDocsEvent } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
+import AttributeCards from "../../AttributeCards";
 
 interface EventTableProps {
   eventData: JsonDocsEvent[];
@@ -40,10 +41,14 @@ const EventTable: React.FC<EventTableProps> = ({ eventData }) => {
 
   return (
     <>
-      <IcTypography variant="h3">
+      <IcTypography variant="h3" applyVerticalMargins>
         <h3>Events</h3>
       </IcTypography>
-      <AttributeTable columns={columns} data={data} />
+      {window.screen.width > 576 ? (
+        <AttributeTable columns={columns} data={data} />
+      ) : (
+        <AttributeCards data={data} />
+      )}
     </>
   );
 };

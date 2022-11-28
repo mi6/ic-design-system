@@ -4,6 +4,7 @@ import { IcTypography } from "@ukic/react";
 import { JsonDocsStyle } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
+import AttributeCards from "../../AttributeCards";
 
 interface StyleTableProps {
   styleData: JsonDocsStyle[];
@@ -35,10 +36,14 @@ const StyleTable: React.FC<StyleTableProps> = ({ styleData }) => {
 
   return (
     <>
-      <IcTypography variant="h3">
+      <IcTypography variant="h3" applyVerticalMargins>
         <h3>CSS Custom Properties</h3>
       </IcTypography>
-      <AttributeTable columns={columns} data={data} />
+      {window.screen.width > 576 ? (
+        <AttributeTable columns={columns} data={data} />
+      ) : (
+        <AttributeCards data={data} />
+      )}
     </>
   );
 };

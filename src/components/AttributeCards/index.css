@@ -1,0 +1,32 @@
+.attribute-cards {
+  border: 1px solid var(--ic-architectural-300);
+  border-radius: var(--ic-border-radius);
+  max-width: 90vw;
+}
+
+.attribute-cards-cell {
+  padding: 0;
+}
+
+.attribute-cards-cell:last-child {
+  padding-right: 0;
+}
+
+.attribute-cards-cell:first-child {
+  padding-left: 0;
+}
+
+.attribute-cards-row {
+  display: table-row;
+}
+
+.attribute-cards-row:last-child > td {
+  border-bottom: none;
+}
+
+.cards-cell-name,
+.cards-cell-description,
+.cards-cell-default,
+.cards-cell-signature {
+  padding: var(--ic-space-md);
+}
