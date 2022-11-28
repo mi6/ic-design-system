@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { IcTypography } from "@ukic/react";
 import { JsonDocsSlot } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
+import AttributeCards from "../../AttributeCards";
 
 interface PropTableProps {
   slotData: JsonDocsSlot[];
@@ -34,10 +35,14 @@ const PropTable: React.FC<PropTableProps> = ({ slotData }) => {
 
   return (
     <>
-      <IcTypography variant="h3">
+      <IcTypography variant="h3" applyVerticalMargins>
         <h3>Slots</h3>
       </IcTypography>
-      <AttributeTable columns={columns} data={data} />
+      {window.screen.width > 576 ? (
+        <AttributeTable columns={columns} data={data} />
+      ) : (
+        <AttributeCards data={data} />
+      )}
     </>
   );
 };
