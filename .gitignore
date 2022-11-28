@@ -8,6 +8,8 @@ fly
 .devcontainer
 .eslintcache
 .npmrc
+.env
+.env.*
 
 # Logs
 logs
