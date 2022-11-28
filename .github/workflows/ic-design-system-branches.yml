@@ -19,6 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci --legacy-peer-deps --also=dev
+
       - name: Lint site
         run: |
           npm run lint
@@ -44,6 +45,7 @@ jobs:
           npm ci --legacy-peer-deps
           npm config set ic-design-system:icdsprefix $ICDS_PREFIX
           npm config list
+          echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_DEV }} >> .env.production
           npm run build:prefixed
 
       - name: Deploy

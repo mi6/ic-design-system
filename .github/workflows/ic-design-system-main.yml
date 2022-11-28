@@ -37,6 +37,7 @@ jobs:
       - name: Build
         run: |
           npm ci --legacy-peer-deps
+          echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_PROD }} >> .env.production
           npm run build
         env:
           GOOGLE_SEARCH_TOKEN: ${{ secrets.GOOGLE_SEARCH_TOKEN }}

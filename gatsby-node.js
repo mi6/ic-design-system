@@ -243,8 +243,6 @@ exports.onCreateWebpackConfig = ({ actions, plugins }) => {
   actions.setWebpackConfig({
     plugins: [
       /**
-       * - @dan80901
-       *
        * See line 203 of:
        *
        * gatsby source: gatsby/cache-dir/navigation.js
