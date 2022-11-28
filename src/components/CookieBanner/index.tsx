@@ -12,20 +12,19 @@ import {
   consentCookieActioned,
   isBotOrDoNotTrack,
   setConsent,
-  setCookie,
 } from "./cookies.helper";
+import CookieConsentContext from "../../context/CookieConsentContext";
 
 const CookieBanner: React.FC = () => {
   const [visible, setVisible] = useState(!consentCookieActioned());
   const [submitted, setSubmitted] = useState(false);
   const banner: React.RefObject<HTMLDivElement> = React.createRef();
+  const { handleCookieConsent } = React.useContext(CookieConsentContext)
 
   const handleConsent = (consent: boolean) => {
     setConsent(consent);
     setSubmitted(true);
-    if (visible && consent) {
-      setCookie(`ICDSPREF=true`);
-    }
+    handleCookieConsent(consent);
   };
 
   useEffect(() => {
@@ -34,10 +33,6 @@ const CookieBanner: React.FC = () => {
       banner.current.focus();
     }
   }, [submitted]);
-
-  if (!consentCookieActioned()) {
-    setCookie(`ICDSPREF=false`);
-  }
 
   if (!visible || isBotOrDoNotTrack()) {
     return null;
