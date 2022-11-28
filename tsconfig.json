@@ -5,7 +5,7 @@
     "jsx": "preserve",
     "lib": ["dom", "es2015", "es2017"],
     //Switch to true once we have migrated to new component versions with types
-    "strict": false,
+    "strict": true,
     "noEmit": true,
     "isolatedModules": true,
     "esModuleInterop": true,
