@@ -19,6 +19,7 @@ const {
   FOOTER_PROPS,
   META_DESCRIPTION,
   GOOGLE_SEARCH_TOKEN,
+  siteUrl,
 } = require("../../config");
 
 interface RouteAnnouncerProps {
@@ -66,6 +67,12 @@ const Layout: React.FC<LayoutProps> = ({
   description = "",
   children,
 }) => {
+
+  let canonicalUrl: string = "";
+    if (typeof window !== "undefined") {
+      canonicalUrl = siteUrl + window.location.pathname;
+  }
+  
   // Destructing GATSBY_ env variables client side returns an empty value. Full reference required.
   // eslint-disable-next-line prefer-destructuring
   const GATSBY_GA_TRACKING_ID = process.env.GATSBY_GA_TRACKING_ID;
@@ -105,7 +112,25 @@ const Layout: React.FC<LayoutProps> = ({
     <Helmet>
       <html lang="en" />
       <title>{title || TITLE} - Intelligence Community Design System</title>
-      <meta name="description" content={`${description || META_DESCRIPTION}`} />
+      <meta
+        property="og:title"
+        content={`${title || TITLE} - Intelligence Community Design System`}
+      />
+      <meta property="og:type" content="website" />
+      <meta
+        name="description"
+        property="og:description"
+        content={`${description || META_DESCRIPTION}`}
+      />
+      <link rel="canonical" href={`${canonicalUrl}`} />
+      <meta property="og:url" content={`${canonicalUrl}`} />
+      <meta
+        property="og:image"
+        content="https://github.com/mi6/ic-design-system/blob/main/src/assets/og-image.png"
+      />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta name="google-site-verification" content={GOOGLE_SEARCH_TOKEN} />
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${GATSBY_GA_TRACKING_ID}`} />
       <script>
