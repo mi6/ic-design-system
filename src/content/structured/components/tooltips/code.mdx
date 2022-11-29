@@ -26,23 +26,65 @@ import { IcTooltip, IcButton } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-tooltip target="text-button" label="This is a description of the button" placement="left"></ic-tooltip>
-<ic-tooltip target="text-button" label="This is a description of the button" placement="top"></ic-tooltip>
-<ic-tooltip target="text-button" label="This is a description of the button" placement="bottom"></ic-tooltip>
-<ic-tooltip target="text-button" label="This is a description of the button" placement="right"></ic-tooltip>`,
+    snippet: `<ic-tooltip target="text-button" label="This is a description of the button" placement="top"></ic-tooltip>
+<ic-tooltip target="text-button" label="This is a description of the button" placement="bottom"></ic-tooltip>`,
   },
   {
     language: "React",
-    snippet: `<IcTooltip target="text-button" label="This is a description of the button" placement="left" />
-<IcTooltip target="text-button" label="This is a description of the button" placement="top" />
-<IcTooltip target="text-button" label="This is a description of the button" placement="bottom" />
-<IcTooltip target="text-button" label="This is a description of the button" placement="right" />`,
+    snippet: `<IcTooltip target="text-button" label="This is a description of the button" placement="top" />
+<IcTooltip target="text-button" label="This is a description of the button" placement="bottom" />`,
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippets}>
+<ComponentPreview snippets={snippets}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <IcTooltip
+      label="This is a description of the button"
+      target="test-button"
+      placement="top"
+    >
+      <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+        Top
+      </IcButton>
+    </IcTooltip>
+    <IcTooltip
+      label="This is a description of the button"
+      target="test-button"
+      placement="bottom"
+    >
+      <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+        Bottom
+      </IcButton>
+    </IcTooltip>
+  </div>
+</ComponentPreview>
+
+<ComponentDetails component="ic-tooltip" />
+
+## Variants
+
+### Left placement
+
+export const snippetsLeft = [
+  {
+    language: "Web component",
+    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="left"></ic-tooltip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTooltip target="text-button" label="This is a description" placement="left" />`,
+  },
+];
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+  }}
+  snippets={snippetsLeft}
+>
   <IcTooltip
-    label="This is a description of the button"
+    label="This is a description"
     target="test-button"
     placement="left"
   >
@@ -50,26 +92,30 @@ export const snippets = [
       Left
     </IcButton>
   </IcTooltip>
+</ComponentPreview>
+
+### Right placement
+
+export const snippetsRight = [
+  {
+    language: "Web component",
+    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="right"></ic-tooltip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTooltip target="text-button" label="This is a description" placement="right" />`,
+  },
+];
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "flex-start",
+  }}
+  snippets={snippetsRight}
+>
   <IcTooltip
-    label="This is a description of the button"
-    target="test-button"
-    placement="top"
-  >
-    <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
-      Top
-    </IcButton>
-  </IcTooltip>
-  <IcTooltip
-    label="This is a description of the button"
-    target="test-button"
-    placement="bottom"
-  >
-    <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
-      Bottom
-    </IcButton>
-  </IcTooltip>
-  <IcTooltip
-    label="This is a description of the button"
+    label="This is a description"
     target="test-button"
     placement="right"
   >
@@ -78,5 +124,3 @@ export const snippets = [
     </IcButton>
   </IcTooltip>
 </ComponentPreview>
-
-<ComponentDetails component="ic-tooltip" />
