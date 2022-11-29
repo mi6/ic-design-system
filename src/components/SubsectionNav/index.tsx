@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FocusEvent, useState } from "react";
 import clsx from "clsx";
 import { Link as GatsbyLink } from "gatsby";
 import { arrayToTree, TreeItem } from "performant-array-to-tree";
@@ -222,6 +222,19 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
   const toggleResponsiveNavOpen = () =>
     setResponsiveNavOpen(!responsiveNavOpen);
 
+  const handleBlur = (e: FocusEvent<HTMLElement>) => {
+    // If not clicking on the elements of the Side Nav
+    if (
+      !(
+        e.relatedTarget?.hasAttribute("title") ||
+        e.relatedTarget?.className === "list-title" ||
+        e.relatedTarget?.matches("ic-button")
+      )
+    ) {
+      setResponsiveNavOpen(false);
+    }
+  };
+
   return (
     <>
       <IcButton
@@ -231,6 +244,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
         aria-controls="icds-section-nav"
         aria-expanded={responsiveNavOpen ? "true" : "false"}
         fullWidth
+        onBlur={handleBlur}
       >
         {responsiveNavOpen ? "Hide" : "Show"} navigation section
         <div slot="icon">
@@ -254,6 +268,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
           "large-only",
           responsiveNavOpen && "force-open"
         )}
+        onBlur={handleBlur}
       >
         <ul className={clsx("list-root", "list")}>
           <ListChildren item={currentNavSection} />
