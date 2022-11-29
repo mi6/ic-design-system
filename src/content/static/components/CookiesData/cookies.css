@@ -1,0 +1,17 @@
+.cookies-card {
+  border: 1px solid var(--ic-architectural-300);
+}
+
+.cookies-card tr:last-child td {
+  border: none;
+}
+
+.cookies-card td {
+  padding: var(--ic-space-md) !important;
+}
+
+.cookies-card caption,
+.cookies-table caption {
+  position: absolute;
+  left: -9999px;
+}
