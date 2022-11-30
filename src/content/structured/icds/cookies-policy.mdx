@@ -9,6 +9,49 @@ subTitle: "Cookies Policy for the Intelligence Community Design System"
 ---
 
 import InlineCookiesManager from "../../static/components/InlineCookiesManager";
+import CookiesData from "../../static/components/CookiesData";
+
+export const cookiesHeaders = ["Provider", "Domain", "Description", "Cookies"];
+export const essentialCookies = [
+  {
+    provider: "design.sis.gov.uk",
+    domain: "design.sis.gov.uk",
+    desc: "This cookie records whether or not the cookie notification pop-up has been acknowledged by the user, including whether or not you permit us to use GA.",
+    cookies: "ICDSPREF",
+  },
+  {
+    provider: "Google Analytics",
+    domain: "sis.gov.uk",
+    desc: "These cookies are generated from our parent site, sis.gov.uk. These cookies are used to collect essential performance data so that we can review performance of the website, including aspects such as number of visitors and which pages are most popular.",
+    cookies: "_ga, _gid, _gcl_au",
+  },
+  {
+    provider: "Google Doubleclick",
+    domain: "sis.gov.uk",
+    desc: "These cookies are used to help us to monitor which digital advertising channels are most effective. By recording which job adverts are generating the most interest, we are able to make better choices about where to advertise.",
+    cookies: "APISID, SSID, NID, PREF, drt, SID, SAPISID, id, HSID",
+  },
+  {
+    provider: "OneTrust",
+    domain: "sis.gov.uk",
+    desc: "These cookies are generated from our parent site, sis.gov.uk. These cookies record whether or not the cookie notification pop-up that appears on our parent site has been acknowledged by the user and records whether consent for the cookies have been given.",
+    cookies: "OptanonConsent, OptanonAlertBoxClosed",
+  },
+  {
+    provider: "Cloudflare",
+    domain: "sis.gov.uk",
+    desc: "This cookie is generated from our parent site, sis.gov.uk. It helps manage incoming traffic to our parent site and allows for better visibility on the origin of a particular request.",
+    cookies: "_cfruid",
+  },
+];
+export const optionalCookies = [
+  {
+    provider: "Google Analytics",
+    domain: "design.sis.gov.uk",
+    desc: "These cookies are used to collect essential performance data so that we can review performance of the website, including aspects such as number of visitors and which pages are most popular.",
+    cookies: "_ga, _gat",
+  },
+];
 
 ## About cookies
 
@@ -28,12 +71,7 @@ We use cookies on this website to help improve the performance of our digital ad
 
 Essential cookies do things like remember the notifications you’ve seen so we don't show them to you again, and to adhere to your cookie preferences. They are always present and help us host the website.
 
-| Provider          | Domain            | Purpose                                                                                                                                                                                                                                                     | Cookies                                              |
-| ----------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| design.sis.gov.uk | design.sis.gov.uk | This cookie records whether or not the cookie notification pop-up has been acknowledged by the user, including whether or not you permit us to use GA.                                                                                                      | ICDSPREF                                             |
-| Google Analytics  | sis.gov.uk        | These cookies are generated from our parent site, sis.gov.uk. These cookies are used to collect essential performance data so that we can review performance of the website, including aspects such as number of visitors and which pages are most popular. | \_ga, \_gid, OptanonConsent, \_gcl_au                |
-| Google Doubleclick| sis.gov.uk        | These cookies are used to help us to monitor which digital advertising channels are most effective. By recording which job adverts are generating the most interest, we are able to make better choices about where to advertise.                           | APISID, SSID, NID, PREF, drt, SID, SAPISID, id, HSID |
-
+<CookiesData headers={cookiesHeaders} data={essentialCookies} />
 
 ## Manage your cookie preferences
 
