@@ -2,7 +2,7 @@
 name: "\U0001F9D1‍\U0001F4BB Suggest a Development/implementation improvement "
 about: Suggest something for the UI Kit or website code.
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
