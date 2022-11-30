@@ -1,15 +1,15 @@
 ---
-path: "/get-started/install-components/testing"
+path: "/get-started/install-components/testing-with-jest"
 
 navPriority: 7
 
-date: "2022-11-15"
+date: "2022-11-30"
 
 title: "Testing with Jest"
 
-subTitle: "To use the components follow the relevant framework instructions."
+subTitle: "How to test our components with Jest."
 
-contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing.mdx"
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing-with-jest.mdx"
 ---
 
 [Jest](https://jestjs.io/) is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows you to write tests with an approachable, familiar and feature-rich API that gives you results quickly.
@@ -56,7 +56,7 @@ Typically, components sit in the DOM, also known as the ['light DOM'](https://ww
 
 A key part of our components is the shadow DOM. With the shadow DOM, we can encapsulate each component’s markup structure, styling and behaviour so different parts don’t clash.
 
-According to [Mozilla](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), the “shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree — this shadow DOM tree starts with a shadow root, underneath which you can attach any element, in the same way as the normal DOM.@
+According to [Mozilla](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), the "shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree — this shadow DOM tree starts with a shadow root, underneath which you can attach any element, in the same way as the normal DOM."
 
 ## Testing shadow components
 
@@ -68,13 +68,20 @@ Note: components that have been slotted in can be found in the 'light' DOM. They
 
 ```js
 // To find all navigation items in a top nav
-document.querySelector(“ic-top-navigation).querySelectorAll("ic-navigation-item")
+document
+  .querySelector("ic-top-navigation")
+  .querySelectorAll("ic-navigation-item");
 
 // Find the text content of the first navigation item in a top nav
-document.querySelector("ic-top-navigation > ic-navigation-item:first-child").shadowRoot.querySelector("ic-tooltip > a > ic-typography").textContent
+document
+  .querySelector("ic-top-navigation > ic-navigation-item:first-child")
+  .shadowRoot.querySelector("ic-tooltip > a > ic-typography").textContent;
 
 // Find the search button for the search bar in the top nav (nested shadow DOM)
-document.querySelector("ic-top-navigation > ic-search-bar").shadowRoot.querySelector("ic-button#search-submit-button").shadowRoot.querySelector("#ic-button-with-tooltip-search-submit-button")
+document
+  .querySelector("ic-top-navigation > ic-search-bar")
+  .shadowRoot.querySelector("ic-button#search-submit-button")
+  .shadowRoot.querySelector("#ic-button-with-tooltip-search-submit-button");
 ```
 
 ## Example test
