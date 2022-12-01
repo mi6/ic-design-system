@@ -25,9 +25,8 @@ import {
   IcPageHeader,
   IcStatusTag,
   IcButton,
-  IcStepper,
-  IcStep,
   IcTextField,
+  IcNavigationItem,
 } from "@ukic/react";
 import pageHeaderFig1 from "./images/fig-1-page-header-anatomy.png";
 import pageHeaderFig2 from "./images/fig-2-dont-use-global-actions-in-a-page-header.png";
@@ -48,7 +47,7 @@ An example of the page header component.
 <ComponentPreview>
   <IcPageHeader
     heading="Coffee recipes"
-    sub-heading="This is a page header component that has an input area, actions and stepper."
+    sub-heading="This is a page header component that has an input area, actions and tabs."
     reverse-order=""
   >
     <IcStatusTag slot="heading-adornment" label="Beta" />
@@ -58,16 +57,9 @@ An example of the page header component.
     <IcButton slot="actions" variant="tertiary">
       Filter coffee
     </IcButton>
-    <IcStepper slot="stepper">
-      <IcStep stepTitle="Warm kettle" stepType="completed" />
-      <IcStep
-        stepTitle="Warm milk"
-        stepSubtitle="Optional"
-        stepType="completed"
-      />
-      <IcStep stepTitle="Pay for order" stepType="current" />
-    </IcStepper>
     <IcTextField slot="input" placeholder="Enter your input" hide-label="" />
+    <IcNavigationItem slot="tabs" label="All recipes" href="#" selected />
+    <IcNavigationItem slot="tabs" label="Favourites" href="#" />
   </IcPageHeader>
 </ComponentPreview>
 
