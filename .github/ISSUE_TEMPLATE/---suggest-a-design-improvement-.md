@@ -2,7 +2,7 @@
 name: "✍️ Suggest a Design improvement "
 about: Suggest some design, research or investigation work.
 title: ""
-labels: ""
+labels: "design"
 assignees: ""
 ---
 
