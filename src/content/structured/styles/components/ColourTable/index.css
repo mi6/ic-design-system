@@ -34,3 +34,15 @@
 .color-token {
   flex-basis: 40%;
 }
+
+@media (forced-colors: active) {
+  .circle {
+    forced-color-adjust: none;
+  }
+}
+
+@media (forced-colors: active) and (prefers-color-scheme: dark) {
+  .circle {
+    border: 1px solid var(--ic-architectural-white);
+  }
+}

@@ -146,7 +146,7 @@
 .list-item a:focus {
   box-shadow: var(--ic-border-focus-inset);
   border-radius: var(--ic-border-radius-inset);
-  outline: none;
+  outline: var(--ic-hc-focus-outline);
 }
 
 .list-item > ul > li > a > ic-typography {
@@ -216,5 +216,52 @@
 
   .scroll {
     height: calc(100vh - var(--ic-space-lg));
+  }
+}
+
+@media (forced-colors: active) {
+  .list-item a:focus {
+    width: calc(100% - 6px);
+    margin-left: 3px;
+    z-index: 1;
+    border-radius: var(--ic-border-radius);
+    transition: outline var(--ic-easing-transition-fast);
+  }
+
+  .list-item a:focus .list-typography {
+    padding-left: calc(var(--ic-space-md) - 3px);
+  }
+
+  .list-item a:focus.active {
+    width: calc(100% - 38px);
+    margin-left: 11px;
+  }
+
+  .list-item a:focus.active .list-typography {
+    margin-left: -3px;
+  }
+
+  .list-item .active:focus::before {
+    left: -11px;
+  }
+
+  .list-root > li.icds-gatsby-lp > a:focus {
+    width: calc(100% - 6px);
+  }
+
+  .list-root > li.icds-gatsby-lp > a:focus .chevron {
+    margin-right: 6px;
+  }
+
+  .list-item > ul > li > a:focus > .list-typography {
+    padding-left: calc(var(--ic-space-xl) - 3px) !important;
+  }
+
+  .list-item > ul > li > a:focus.active > .list-typography {
+    padding-left: var(--ic-space-md) !important;
+  }
+
+  .chevron {
+    color: linktext !important;
   }
 }
