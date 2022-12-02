@@ -109,3 +109,9 @@
     max-width: 90vw;
   }
 }
+
+@media (forced-colors: active) {
+  .snippet {
+    forced-color-adjust: none;
+  }
+}
