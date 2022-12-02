@@ -8,33 +8,37 @@ export const setCookie = (value: string) => {
   document.cookie = `${value}; expires=${date.toUTCString()}; path=/;`;
 };
 
-export const deleteCookie = (name: string) => {
-  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/;`;
-};
-
-export const consentCookieActioned = () => 
+export const consentCookieActioned = () =>
   document.cookie.indexOf("ICDSPREF") !== -1;
 
 export const consentCookieApproved = () =>
   consentCookieActioned() && document.cookie.indexOf("ICDSPREF=true") !== -1;
 
+const deleteDomainCookies = () => {
+  if (typeof window !== "undefined") {
+    const cookies = document.cookie.split("; ");
+    cookies.forEach((cookie) => {
+      const d = window.location.hostname.split(".");
+      while (d.length > 0) {
+        const cookieBase = `${encodeURIComponent(cookie.split(";")[0].split("=")[0])}=;expires=${new Date(0).toUTCString()};domain=${d.join('.')};path=`;
+        document.cookie = `${cookieBase}/`;
+
+        const p = window.location.pathname.split('/');
+        while (p.length > 0) {
+          document.cookie = `${cookieBase}${p.join('/')}`;
+          p.pop();
+        };
+
+        d.shift();
+      }
+    })
+  }
+}
+
 export const setConsent = (consent: boolean) => {
   // treat no consent as 'revoked' and delete existing cookies
   if (!consent) {
-    /* eslint-disable */
-    document.cookie.replace(/(?<=^|;).+?(?=\=|;|$)/g, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname
-        )
-    );
+    deleteDomainCookies();
   }
   setCookie(`ICDSPREF=${consent}`);
 };
