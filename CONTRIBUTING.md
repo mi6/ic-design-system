@@ -122,7 +122,7 @@ For automated versioning, we use [Conventional Commits](https://www.conventional
 
 To make it easy to use we have implemented [Commitizen](https://github.com/commitizen/cz-cli).
 
-Only [signed commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) can be merged into the Design System guidance site repository.
+Please ensure that your commits are [signed](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) when contributing to the Design System guidance site repository.
 
 Follow these steps when making a commit:
 
