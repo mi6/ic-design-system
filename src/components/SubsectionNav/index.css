@@ -264,4 +264,8 @@
   .chevron {
     color: linktext !important;
   }
+
+  .list-item .active::before {
+    background-color: canvastext;
+  }
 }
