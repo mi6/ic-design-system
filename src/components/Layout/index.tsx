@@ -32,6 +32,8 @@ interface LayoutProps {
   title?: string;
   children: ReactNode;
   description?: string;
+  imageUrl?: string;
+  imageAltText?: string;
 }
 
 interface FooterLinks {
@@ -64,12 +66,83 @@ const Layout: React.FC<LayoutProps> = ({
   contentProps = { index: false },
   title = "",
   description = "",
+  imageUrl = "https://user-images.githubusercontent.com/113986285/206001840-854f0997-ab9d-4c33-a39f-05c2327b02f7.png",
+  imageAltText = "Intelligence Community Design System",
   children,
 }) => {
   let canonicalUrl: string = "";
   if (typeof window !== "undefined") {
     canonicalUrl = siteUrl + window.location.pathname;
   }
+
+  // meta info for Open Graph & Twitter
+  const metas = [
+    {
+      property: "og:title",
+      content: `${title || TITLE} - Intelligence Community Design System`,
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      name: "description",
+      property: "og:description",
+      content: `${description || META_DESCRIPTION}`,
+    },
+    {
+      property: "og:url",
+      content: `${canonicalUrl}`,
+    },
+    {
+      property: "og:image",
+      content: `${imageUrl}`,
+    },
+    {
+      property: "og:image:alt",
+      content: `${imageAltText}`,
+    },
+    {
+      property: "og:image:type",
+      content: "image/png",
+    },
+    {
+      property: "og:image:width",
+      content: "1200",
+    },
+    {
+      property: "og:image:height",
+      content: "630",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:domain",
+      content: `${siteUrl}`,
+    },
+    {
+      name: "twitter:url",
+      content: `${canonicalUrl}`,
+    },
+    {
+      name: "twitter:title",
+      content: `${title || TITLE} - Intelligence Community Design System`,
+    },
+    {
+      name: "twitter:description",
+      content: `${description || META_DESCRIPTION}`,
+    },
+    {
+      name: "twitter:image",
+      content: `${imageUrl}`,
+    },
+    {
+      name: "twitter:image:alt",
+      content: `${imageAltText}`,
+    },
+  ];
 
   // Destructing GATSBY_ env variables client side returns an empty value. Full reference required.
   // eslint-disable-next-line prefer-destructuring
@@ -116,25 +189,15 @@ const Layout: React.FC<LayoutProps> = ({
       <Helmet>
         <html lang="en" />
         <title>{title || TITLE} - Intelligence Community Design System</title>
-        <meta
-          property="og:title"
-          content={`${title || TITLE} - Intelligence Community Design System`}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          name="description"
-          property="og:description"
-          content={`${description || META_DESCRIPTION}`}
-        />
         <link rel="canonical" href={`${canonicalUrl}`} />
-        <meta property="og:url" content={`${canonicalUrl}`} />
-        <meta
-          property="og:image"
-          content="https://github.com/mi6/ic-design-system/blob/main/src/assets/og-image.png"
-        />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        {metas.map((meta) => (
+          <meta
+            key={meta.name || meta.property}
+            name={meta.name && meta.name}
+            property={meta.property && meta.property}
+            content={meta.content}
+          />
+        ))}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GATSBY_GA_TRACKING_ID}`}
