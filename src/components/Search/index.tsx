@@ -54,7 +54,7 @@ const Search: React.FC = () => {
   const onIcInput = async (event: CustomEvent) => {
     const newValue = event.detail.value;
     if (idx && value !== newValue) {
-      const rawResults = idx.search(value, {});
+      const rawResults = idx.search(newValue, {});
 
       // process results to handle components pages where 3 different pages (tabs) have the same title
       // i.e. guidance, accessibility & code
