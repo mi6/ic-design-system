@@ -1,0 +1,20 @@
+name: Delete gh-pages folder
+
+on:
+  delete: branches
+
+jobs:
+  delete-folder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: mi6/ic-design-system-githubpages
+
+      - name: Remove and commit
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          add: ""
+          remove: ./branches/${{ github.event.ref }}
+          push: false
