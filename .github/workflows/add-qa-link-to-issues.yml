@@ -1,0 +1,17 @@
+name: Add QA link to issues on successful build
+
+on:
+  deployment_status:
+    state: success
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: View your branch deployment at https://literate-parakeet-8e09c632.pages.github.io/branches/${{ github.event.ref }}
