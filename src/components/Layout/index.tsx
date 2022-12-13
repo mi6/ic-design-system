@@ -2,7 +2,13 @@ import React, { ReactNode, useState } from "react";
 import { withPrefix } from "gatsby";
 
 import { Helmet } from "react-helmet";
-import { IcBackToTop, IcFooter, IcFooterLink, IcLink } from "@ukic/react";
+import {
+  IcBackToTop,
+  IcFooter,
+  IcFooterLink,
+  IcLink,
+  IcAlert,
+} from "@ukic/react";
 
 import "./index.css";
 import TopNavWrapper from "../TopNavWrapper";
@@ -60,6 +66,24 @@ const ClientOnly: React.FC<any> = ({ children, ...delegated }) => {
     return null;
   }
   return <div {...delegated}>{children}</div>;
+};
+
+const ServerOnly: React.FC<any> = () => {
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (hasMounted) {
+    return null;
+  }
+  return (
+    <IcAlert
+      id="requiresText"
+      heading="Javascript required"
+      variant="info"
+      message="This site requires Javascript to be enabled."
+    />
+  );
 };
 
 const Layout: React.FC<LayoutProps> = ({
@@ -220,6 +244,7 @@ const Layout: React.FC<LayoutProps> = ({
         />
       </Helmet>
       <CookieConsentContext.Provider value={value}>
+        <ServerOnly />
         <ClientOnly>
           {title !== "Cookies Policy" && <CookieBanner />}
           <div className="main-page-container">
