@@ -19,7 +19,7 @@ const CookieBanner: React.FC = () => {
   const [visible, setVisible] = useState(!consentCookieActioned());
   const [submitted, setSubmitted] = useState(false);
   const banner: React.RefObject<HTMLDivElement> = React.createRef();
-  const { handleCookieConsent } = React.useContext(CookieConsentContext)
+  const { handleCookieConsent } = React.useContext(CookieConsentContext);
 
   const handleConsent = (consent: boolean) => {
     setConsent(consent);

@@ -125,7 +125,7 @@
   },
   "size-limit": [
     {
-      "limit": "2200 kB",
+      "limit": "3200 kB",
       "path": "public/**/*.js"
     }
   ]

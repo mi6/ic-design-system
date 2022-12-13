@@ -31,11 +31,13 @@ module.exports = {
         text: "Privacy Policy",
         key: "privacy-policy",
       },
-      {
-        link: "/icds/cookies-policy",
-        text: "Cookies Policy",
-        key: "cookies-policy",
-      },
+      process.env.GATSBY_GA_TRACKING_ID
+        ? {
+            link: "/icds/cookies-policy",
+            text: "Cookies Policy",
+            key: "cookies-policy",
+          }
+        : {},
     ],
     content:
       "The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and partners.",
