@@ -22,6 +22,7 @@ const InlineCookiesManager: React.FC = () => {
       label="Optional analytics cookies"
       onIcChange={() => handleChange()}
       showState
+      disabled={!process.env.GATSBY_GA_TRACKING_ID}
     />
   );
 };

@@ -12,31 +12,25 @@ const CookiesCards = ({ headers, data, caption }: CookiesDataProps) => (
         <tr>
           <td>
             <span>
-              <IcTypography variant="subtitle-large">
-                {headers[0]}
-              </IcTypography>
+              <IcTypography variant="subtitle-large">{headers[0]}</IcTypography>
               <IcTypography applyVerticalMargins>
                 {cookieData.provider}
               </IcTypography>
             </span>
             <span>
-              <IcTypography variant="subtitle-large">
-                {headers[1]}
-              </IcTypography>
+              <IcTypography variant="subtitle-large">{headers[1]}</IcTypography>
               <IcTypography applyVerticalMargins>
                 {cookieData.domain}
               </IcTypography>
             </span>
             <span>
-              <IcTypography variant="subtitle-large">
-                {headers[2]}
+              <IcTypography variant="subtitle-large">{headers[2]}</IcTypography>
+              <IcTypography applyVerticalMargins>
+                {cookieData.desc}
               </IcTypography>
-              <IcTypography applyVerticalMargins>{cookieData.desc}</IcTypography>
             </span>
             <span>
-              <IcTypography variant="subtitle-large">
-                {headers[3]}
-              </IcTypography>
+              <IcTypography variant="subtitle-large">{headers[3]}</IcTypography>
               <IcTypography applyVerticalMargins>
                 {cookieData.cookies}
               </IcTypography>

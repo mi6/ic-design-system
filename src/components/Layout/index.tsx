@@ -200,10 +200,15 @@ const Layout: React.FC<LayoutProps> = ({
         ))}
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GATSBY_GA_TRACKING_ID}`}
+          src={
+            GATSBY_GA_TRACKING_ID
+              ? `https://www.googletagmanager.com/gtag/js?id=${GATSBY_GA_TRACKING_ID}`
+              : undefined
+          }
         />
         <script>
-          {`
+          {GATSBY_GA_TRACKING_ID &&
+            `
             window.dataLayer = window.dataLayer || [  ];
             function gtag(){dataLayer.push(arguments);}
             gtag('consent', 'default', {
@@ -212,7 +217,7 @@ const Layout: React.FC<LayoutProps> = ({
             });
             gtag('js', new Date());
             gtag('config', '${GATSBY_GA_TRACKING_ID}');
-        `}
+          `}
         </script>
         <meta
           name="google-site-verification"
@@ -221,7 +226,9 @@ const Layout: React.FC<LayoutProps> = ({
       </Helmet>
       <CookieConsentContext.Provider value={value}>
         <ClientOnly>
-          {title !== "Cookies Policy" && <CookieBanner />}
+          {title !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
+            <CookieBanner />
+          )}
           <div className="main-page-container">
             <IcLink href="#main" id="skip" className="skip-content-link">
               Skip to main content
