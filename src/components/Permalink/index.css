@@ -1,0 +1,40 @@
+ic-typography .permalink svg {
+  opacity: 0;
+  transition: var(--ic-easing-transition-fast);
+}
+
+ic-typography:hover .permalink svg,
+.permalink:focus svg {
+  opacity: 1;
+}
+
+.permalink {
+  transition: var(--ic-easing-transition-fast);
+  width: 42px;
+  padding: 10px 0 0 0 !important;
+  height: 42px;
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: var(--ic-space-sm);
+  padding: 0 var(--ic-space-xxxs);
+  display: inline-flex;
+  justify-content: center;
+}
+
+.permalink:hover {
+  background: var(--ic-action-default-bg-hover);
+}
+
+.permalink:active {
+  background: var(--ic-action-default-bg-active);
+}
+
+.permalink:focus {
+  box-shadow: var(--ic-border-focus);
+  outline: none;
+}
+
+.permalink > svg {
+  vertical-align: top;
+}

@@ -2,25 +2,6 @@ body {
   color: var(--ic-color-primary-text);
 }
 
-.heading-link {
-  transition: var(--ic-easing-transition-fast);
-}
-
-.heading-link:focus {
-  box-shadow: var(--ic-border-focus);
-  border-radius: var(--ic-border-radius);
-  outline: none;
-}
-
-.heading-link.after {
-  margin-left: var(--ic-space-xs);
-  padding: 0 var(--ic-space-xxxs);
-}
-
-.heading-link.after > svg {
-  vertical-align: middle;
-}
-
 .gatsby-highlight {
   display: grid;
 }
