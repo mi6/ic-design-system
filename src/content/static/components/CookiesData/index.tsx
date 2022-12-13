@@ -7,7 +7,7 @@ import CookiesTable from "./CookiesTable";
 export interface CookiesDataProps {
   headers: string[];
   data: CookiesDetails[];
-  caption: string
+  caption: string;
 }
 
 export interface CookiesDetails {
@@ -22,8 +22,8 @@ const CookiesData = ({ headers, data, caption }: CookiesDataProps) => {
   const props = {
     headers,
     data,
-    caption
-  }
+    caption,
+  };
 
   if (typeof window !== "undefined") {
     defaultViewportWidth = window.innerWidth;

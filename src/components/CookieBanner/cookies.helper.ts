@@ -20,20 +20,22 @@ const deleteDomainCookies = () => {
     cookies.forEach((cookie) => {
       const d = window.location.hostname.split(".");
       while (d.length > 0) {
-        const cookieBase = `${encodeURIComponent(cookie.split(";")[0].split("=")[0])}=;expires=${new Date(0).toUTCString()};domain=${d.join('.')};path=`;
+        const cookieBase = `${encodeURIComponent(
+          cookie.split(";")[0].split("=")[0]
+        )}=;expires=${new Date(0).toUTCString()};domain=${d.join(".")};path=`;
         document.cookie = `${cookieBase}/`;
 
-        const p = window.location.pathname.split('/');
+        const p = window.location.pathname.split("/");
         while (p.length > 0) {
-          document.cookie = `${cookieBase}${p.join('/')}`;
+          document.cookie = `${cookieBase}${p.join("/")}`;
           p.pop();
-        };
+        }
 
         d.shift();
       }
-    })
+    });
   }
-}
+};
 
 export const setConsent = (consent: boolean) => {
   // treat no consent as 'revoked' and delete existing cookies
