@@ -52,11 +52,8 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
       <IcTypography variant="h3" applyVerticalMargins>
         <h3>Props</h3>
       </IcTypography>
-      {window.screen.width > 576 ? (
-        <AttributeTable columns={columns} data={data} />
-      ) : (
-        <AttributeCards data={data} />
-      )}
+      <AttributeTable columns={columns} data={data} />
+      <AttributeCards data={data} />
     </>
   );
 };

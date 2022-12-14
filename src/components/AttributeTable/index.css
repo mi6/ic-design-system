@@ -1,4 +1,5 @@
 .attribute-table {
+  display: table;
   border: 1px solid var(--ic-architectural-300);
   border-radius: var(--ic-border-radius);
 }
@@ -25,4 +26,10 @@
 
 .row:last-child > td {
   border-bottom: none;
+}
+
+@media screen and (max-width: 576px) {
+  .attribute-table {
+    display: none;
+  }
 }

@@ -39,11 +39,8 @@ const StyleTable: React.FC<StyleTableProps> = ({ styleData }) => {
       <IcTypography variant="h3" applyVerticalMargins>
         <h3>CSS Custom Properties</h3>
       </IcTypography>
-      {window.screen.width > 576 ? (
-        <AttributeTable columns={columns} data={data} />
-      ) : (
-        <AttributeCards data={data} />
-      )}
+      <AttributeTable columns={columns} data={data} />
+      <AttributeCards data={data} />
     </>
   );
 };
