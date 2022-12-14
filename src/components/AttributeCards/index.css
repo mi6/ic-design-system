@@ -2,6 +2,7 @@
   border: 1px solid var(--ic-architectural-300);
   border-radius: var(--ic-border-radius);
   max-width: 90vw;
+  display: none;
 }
 
 .attribute-cards-cell {
@@ -29,4 +30,10 @@
 .cards-cell-default,
 .cards-cell-signature {
   padding: var(--ic-space-md);
+}
+
+@media screen and (max-width: 576px) {
+  .attribute-cards {
+    display: block;
+  }
 }
