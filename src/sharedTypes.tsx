@@ -36,3 +36,17 @@ export interface Heading {
   depth: number;
   value: string;
 }
+
+export interface MdxFrontMatter {
+  title: string;
+  date: string;
+  classification?: string;
+  deciders?: string[];
+  contribute?: string;
+  subTitle?: string;
+}
+
+export interface MdxFields {
+  slug: string;
+  navSection: string;
+}

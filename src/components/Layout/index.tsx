@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from "react";
-import { withPrefix } from "gatsby";
+import { withPrefix, graphql } from "gatsby";
 
 import { Helmet } from "react-helmet";
 import { IcBackToTop, IcFooter, IcFooterLink, IcLink } from "@ukic/react";
@@ -11,6 +11,8 @@ import CookieBanner from "../CookieBanner";
 
 import CookieConsentContext from "../../context/CookieConsentContext";
 import { consentCookieApproved } from "../CookieBanner/cookies.helper";
+
+import { Heading, MdxFrontMatter, MdxFields } from "../../sharedTypes";
 
 const {
   STATUS,
@@ -26,14 +28,17 @@ interface RouteAnnouncerProps {
 }
 
 interface LayoutProps {
-  contentProps?: {
-    index?: boolean;
-  };
-  title?: string;
   children: ReactNode;
-  description?: string;
   imageUrl?: string;
   imageAltText?: string;
+  data: {
+    mdx: {
+      body: string;
+      fields: MdxFields;
+      frontmatter: MdxFrontMatter;
+      headings: Heading[];
+    };
+  };
 }
 
 interface FooterLinks {
@@ -63,16 +68,26 @@ const ClientOnly: React.FC<any> = ({ children, ...delegated }) => {
 };
 
 const Layout: React.FC<LayoutProps> = ({
-  contentProps = { index: false },
-  title = "",
-  description = "",
   imageUrl = "https://user-images.githubusercontent.com/113986285/206001840-854f0997-ab9d-4c33-a39f-05c2327b02f7.png",
   imageAltText = "Intelligence Community Design System",
   children,
+  data,
 }) => {
   let canonicalUrl: string = "";
   if (typeof window !== "undefined") {
     canonicalUrl = siteUrl + window.location.pathname;
+  }
+
+  let homepage = false;
+  if (typeof window !== "undefined") {
+    homepage = window.location.pathname === "/";
+  }
+
+  let title = homepage ? "Home" : "";
+  let description;
+  if (data !== undefined) {
+    title = data?.mdx?.frontmatter.title;
+    description = data?.mdx?.frontmatter.subTitle;
   }
 
   // meta info for Open Graph & Twitter
@@ -229,51 +244,104 @@ const Layout: React.FC<LayoutProps> = ({
           {title !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
             <CookieBanner />
           )}
-          <div className="main-page-container">
-            <IcLink href="#main" id="skip" className="skip-content-link">
-              Skip to main content
-            </IcLink>
-            <TopNavWrapper appTitle={TITLE} status={STATUS} version={VERSION} />
-            <main id="main" className="homepage-wrapper">
-              {children}
-              {!contentProps?.index && <IcBackToTop target="main" />}
-            </main>
-          </div>
-          <div className="footer">
-            <IcFooter
-              description={FOOTER_PROPS.content}
-              caption={FOOTER_PROPS.caption}
-            >
-              {FOOTER_PROPS.footerLinks.map((footerLinks: FooterLinks) => (
-                <IcFooterLink
-                  slot="link"
-                  href={withPrefix(footerLinks.link)}
-                  key={footerLinks.key}
-                >
-                  {footerLinks.text}
-                </IcFooterLink>
-              ))}
-              <div slot="logo" className="logo-wrapper">
-                <IcFooterLink href="https://sis.gov.uk">
-                  <SISLogo aria-labelledby="SIS Logo" />
-                  <span className="link-text">Go to SIS website</span>
-                </IcFooterLink>
-                <IcFooterLink href="https://www.mi5.gov.uk">
-                  <MI5Logo aria-labelledby="MI5 Logo" />
-                  <span className="link-text">Go to MI5 website</span>
-                </IcFooterLink>
-                <IcFooterLink href="https://gchq.gov.uk">
-                  <GCHQLogo aria-labelledby="GCHQ Logo" />
-                  <span className="link-text">Go to GCHQ website</span>
-                </IcFooterLink>
-              </div>
-            </IcFooter>
-          </div>
         </ClientOnly>
-      </CookieConsentContext.Provider>
+        <div className="main-page-container">
+          <IcLink href="#main" id="skip" className="skip-content-link">
+            Skip to main content
+          </IcLink>
+          <TopNavWrapper appTitle={TITLE} status={STATUS} version={VERSION} />
+          <main id="main" className="homepage-wrapper">
+            {children}
+            {!homepage && <IcBackToTop target="main" />}
+          </main>
+        </div>
+        <div className="footer">
+          <IcFooter
+            description={FOOTER_PROPS.content}
+            caption={FOOTER_PROPS.caption}
+          >
+            {FOOTER_PROPS.footerLinks.map((footerLinks: FooterLinks) => (
+              <IcFooterLink
+                slot="link"
+                href={withPrefix(footerLinks.link)}
+                key={footerLinks.key}
+              >
+                {footerLinks.text}
+              </IcFooterLink>
+            ))}
+            <div slot="logo" className="logo-wrapper">
+              <IcFooterLink href="https://sis.gov.uk">
+                <SISLogo aria-labelledby="SIS Logo" />
+                <span className="link-text">Go to SIS website</span>
+              </IcFooterLink>
+              <IcFooterLink href="https://www.mi5.gov.uk">
+                <MI5Logo aria-labelledby="MI5 Logo" />
+                <span className="link-text">Go to MI5 website</span>
+              </IcFooterLink>
+              <IcFooterLink href="https://gchq.gov.uk">
+                <GCHQLogo aria-labelledby="GCHQ Logo" />
+                <span className="link-text">Go to GCHQ website</span>
+              </IcFooterLink>
+            </div>
+          </IcFooter>
+        </div>
+        </CookieConsentContext.Provider>
       <RouteAnnouncer page={`${title || ""} - ${TITLE}`} />
     </>
   );
 };
 
 export default Layout;
+
+export const pageQuery = graphql`
+  query ($id: String!) {
+    mdx(id: { eq: $id }) {
+      body
+      fileAbsolutePath
+      fields {
+        slug
+        navSection
+      }
+      frontmatter {
+        title
+        subTitle
+        tags
+        categories
+        classification
+        status
+        deciders
+        contribute
+        date
+        tabs {
+          title
+          path
+        }
+      }
+      headings {
+        depth
+        value
+      }
+    }
+    allStructuredNav {
+      id
+      fields {
+        navParent
+        navSection
+        slug
+      }
+      frontmatter {
+        navPriority
+        title
+        tabs {
+          title
+          path
+        }
+      }
+      body
+      headings {
+        depth
+        value
+      }
+    }
+  }
+`;

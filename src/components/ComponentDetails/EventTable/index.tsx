@@ -44,11 +44,8 @@ const EventTable: React.FC<EventTableProps> = ({ eventData }) => {
       <IcTypography variant="h3" applyVerticalMargins>
         <h3>Events</h3>
       </IcTypography>
-      {window.screen.width > 576 ? (
-        <AttributeTable columns={columns} data={data} />
-      ) : (
-        <AttributeCards data={data} />
-      )}
+      <AttributeTable columns={columns} data={data} />
+      <AttributeCards data={data} />
     </>
   );
 };
