@@ -1,17 +1,20 @@
 name: Add QA link to issues on successful build
 
 on:
-  deployment_status:
-    state: success
+  pull_request:
 
 jobs:
-  add-comment:
+  test:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      pull-requests: write
     steps:
-      - name: Add comment
-        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF#refs/heads/})"
+        id: extract_branch
+
+      - uses: mshick/add-pr-comment@v2
         with:
-          issue-number: ${{ github.event.issue.number }}
-          body: View your branch deployment at https://literate-parakeet-8e09c632.pages.github.io/branches/${{ github.event.ref }}
+          message: |
+            View your branch deployment here: https://literate-parakeet-8e09c632.pages.github.io/branches/${{ steps.extract_branch.outputs.branch }}
