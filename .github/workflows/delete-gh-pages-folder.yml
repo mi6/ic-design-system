@@ -1,7 +1,6 @@
-name: Delete gh-pages folder
+name: Delete build folder on branch deletion
 
-on:
-  delete: branches
+on: delete
 
 jobs:
   delete-folder:
