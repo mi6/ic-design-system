@@ -6,6 +6,11 @@ jobs:
   delete-folder:
     runs-on: ubuntu-latest
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF#refs/heads/})"
+        id: extract_branch
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -13,7 +18,8 @@ jobs:
 
       - name: Remove and commit
         uses: EndBug/add-and-commit@v9.1.1
+        if: ${{ steps.extract_branch.outputs.branch != "" }}
         with:
           add: ""
-          remove: ./branches/${{ github.event.ref }}
+          remove: ./branches/${{ steps.extract_branch.outputs.branch }}
           push: false
