@@ -2,14 +2,20 @@
 const EXPIRY_IN_SECONDS = 31104000000;
 
 export const setCookie = (value: string) => {
-  const date = new Date();
+  if (typeof document !== "undefined") {
+    const date = new Date();
 
-  date.setTime(date.getTime() + EXPIRY_IN_SECONDS);
-  document.cookie = `${value}; expires=${date.toUTCString()}; path=/;`;
+    date.setTime(date.getTime() + EXPIRY_IN_SECONDS);
+    document.cookie = `${value}; expires=${date.toUTCString()}; path=/;`;
+  }
 };
 
-export const consentCookieActioned = () =>
-  document.cookie.indexOf("ICDSPREF") !== -1;
+export const consentCookieActioned = () => {
+  if (typeof document !== "undefined") {
+    return document.cookie.indexOf("ICDSPREF") !== -1;
+  }
+  return false;
+};
 
 export const consentCookieApproved = () =>
   consentCookieActioned() && document.cookie.indexOf("ICDSPREF=true") !== -1;
