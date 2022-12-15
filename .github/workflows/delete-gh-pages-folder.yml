@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_HEAD_REF#refs/heads/})"
+        run: echo "branch=${GITHUB_HEAD_REF#refs/heads/}" >> $GITHUB_OUTPUT
         id: extract_branch
 
       - name: Checkout
@@ -23,3 +22,5 @@ jobs:
           add: ""
           remove: ./branches/${{ steps.extract_branch.outputs.branch }}
           push: false
+          message: |
+            Branch: ${{ steps.extract_branch.outputs.branch }} deleted from ic-design-system
