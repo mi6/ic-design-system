@@ -1,12 +1,15 @@
-name: Delete gh-pages folder
+name: Delete build folder on branch deletion
 
-on:
-  delete: branches
+on: delete
 
 jobs:
   delete-folder:
     runs-on: ubuntu-latest
     steps:
+      - name: Extract branch name
+        run: echo "branch=${GITHUB_HEAD_REF#refs/heads/}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -14,7 +17,10 @@ jobs:
 
       - name: Remove and commit
         uses: EndBug/add-and-commit@v9.1.1
+        if: ${{ steps.extract_branch.outputs.branch != "" }}
         with:
           add: ""
-          remove: ./branches/${{ github.event.ref }}
+          remove: ./branches/${{ steps.extract_branch.outputs.branch }}
           push: false
+          message: |
+            Branch: ${{ steps.extract_branch.outputs.branch }} deleted from ic-design-system
