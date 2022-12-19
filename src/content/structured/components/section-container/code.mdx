@@ -1,0 +1,131 @@
+---
+path: "/components/section-container/code"
+
+date: "2022-09-30"
+
+title: "Section container"
+
+status: "BETA"
+
+subTitle: "The section container component is used to consistently align an app's content."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/section-container/code.mdx"
+
+hidden: false
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/section-container" },
+    { title: "Code", path: "/components/section-container/code" },
+  ]
+---
+
+## Component demo
+
+import { IcSectionContainer } from "@ukic/react";
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container>
+  <button>Start</button>
+  <button>End</button>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer>
+  <button>Start</button>
+  <button>End</button>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcSectionContainer>
+    <button type="button">Start</button>
+    <button type="button">End</button>
+  </IcSectionContainer>
+</ComponentPreview>
+
+<ComponentDetails component="ic-section-container" />
+
+## Variants
+
+### Centre align
+
+export const snippetsCenterAlign = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container aligned="center">
+  <button>Start</button>
+  <button>End</button>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer aligned="center">
+  <button>Start</button>
+  <button>End</button>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsCenterAlign}>
+  <IcSectionContainer aligned="center">
+    <button type="button">Start</button>
+    <button type="button">End</button>
+  </IcSectionContainer>
+</ComponentPreview>
+
+### Full width
+
+export const snippetsFullWidth = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container aligned="full-width">
+  <button>Start</button>
+  <button>End</button>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer aligned="full-width">
+  <button>Start</button>
+  <button>End</button>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsFullWidth}>
+  <IcSectionContainer aligned="full-width">
+    <button type="button">Start</button>
+    <button type="button">End</button>
+  </IcSectionContainer>
+</ComponentPreview>
+
+### Full height
+
+export const snippetsFullHeight = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container aligned="full-width" fullHeight="true">
+  <button>Start</button>
+  <button>End</button>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer aligned="full-width" fullHeight>
+  <button>Start</button>
+  <button>End</button>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsFullHeight}>
+  <IcSectionContainer aligned="full-width" fullHeight>
+    <button type="button">Start</button>
+    <button type="button">End</button>
+  </IcSectionContainer>
+</ComponentPreview>
