@@ -19,7 +19,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: |
             # Welcome!
-            Welcome to the ICDS repo, thank you for raising an issue!
+            Welcome to the ic-design-system repo, thank you for raising an issue!
 
             ## How to contribute
             Please read our [CONTRIBUTING.md](https://github.com/mi6/ic-design-system/blob/main/CONTRIBUTING.md), which explains our ways of working and guidelines for contributions.
@@ -29,7 +29,7 @@ jobs:
 
           pr-message: |
             # Welcome!
-            Welcome to the ICDS repo, thank you for submitting a pull request!
+            Welcome to the ic-design-system repo, thank you for submitting a pull request!
 
             ## How to contribute
             Please read our [CONTRIBUTING.md](https://github.com/mi6/ic-design-system/blob/main/CONTRIBUTING.md), which explains our ways of working and guidelines for contributions.
