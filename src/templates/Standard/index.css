@@ -34,7 +34,7 @@
 }
 
 @media screen and (min-width: 769px) {
-  .main-container {
+  #main-container {
     margin: 0;
     border-right: 0;
   }

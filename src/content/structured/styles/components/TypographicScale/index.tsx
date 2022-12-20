@@ -1,5 +1,4 @@
 import React from "react";
-import { IcTypography, IcButton, IcLink } from "@ukic/react";
 
 import "./index.css";
 
@@ -11,122 +10,122 @@ const TypographicScale: React.FC<TypographicScaleProps> = ({ variants }) => (
   <div className="typography-container">
     {variants.indexOf("h1") >= 0 && (
       <>
-        <IcTypography variant="h1">Heading extra large</IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        <ic-typography variant="h1">Heading extra large</ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Nunito Sans • ExtraBold • 42pt • Line-height: 56pt • Letter-spacing:
           normal
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("h2") >= 0 && (
       <>
-        <IcTypography variant="h2">Heading large</IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        <ic-typography variant="h2">Heading large</ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Nunito Sans • Bold • 34pt • Line-height: 45pt • Letter-spacing:
           0.0025rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("h3") >= 0 && (
       <>
-        <IcTypography variant="h3">Heading medium</IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        <ic-typography variant="h3">Heading medium</ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • Regular • 24pt • Line-height: 32pt • Letter-spacing:
           normal
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("h4") >= 0 && (
       <>
-        <IcTypography variant="h4">Heading small</IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        <ic-typography variant="h4">Heading small</ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • SemiBold • 20pt • Line-height: 24pt • Letter-spacing:
           0.0015rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("subtitle-large") >= 0 && (
       <>
-        <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        <ic-typography variant="subtitle-large">Subtitle large</ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • Bold • 16pt • Line-height: 24pt • Letter-spacing:
           0.0015rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("subtitle-small") >= 0 && (
       <>
-        <IcTypography variant="subtitle-small">
+        <ic-typography variant="subtitle-small">
           Subtitle small and table headings
-        </IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        </ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • SemiBold • 14pt • Line-height: 16pt • Letter-spacing:
           0.0015rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("body") >= 0 && (
       <>
-        <IcTypography variant="body">Body</IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        <ic-typography variant="body">Body</ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • Regular • 16pt • Line-height: 24pt • Letter-spacing:
           0.005rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("caption") >= 0 && (
       <>
-        <IcTypography variant="caption">
+        <ic-typography variant="caption">
           Helper text on input fields and other captions
-        </IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        </ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • SemiBold • 12pt • Line-height: 20pt • Letter-spacing:
           0.0025rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("caption-uppercase") >= 0 && (
       <>
-        <IcTypography variant="caption-uppercase">
+        <ic-typography variant="caption-uppercase">
           Helper text on input fields and other captions
-        </IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        </ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • SemiBold • 12pt • Line-height: 20pt • Letter-spacing:
           0.0025rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("label") >= 0 && (
       <>
-        <IcButton variant="secondary" className="additional-padding">
+        <ic-button variant="secondary" data-class="additional-padding">
           Secondary button
-        </IcButton>
-        <IcTypography variant="caption" className="internal-caption">
+        </ic-button>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • SemiBold • 14pt • Line-height: 24pt • Letter-spacing:
           0.0025rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("label-uppercase") >= 0 && (
       <>
-        <IcButton variant="destructive" className="additional-padding">
+        <ic-button variant="destructive" data-class="additional-padding">
           DESTRUCTIVE BUTTON
-        </IcButton>
-        <IcTypography variant="caption" className="internal-caption">
+        </ic-button>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • SemiBold • 14pt • Line-height: 24pt • Letter-spacing:
           0.0025rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
     {variants.indexOf("link") >= 0 && (
       <>
-        <IcTypography variant="body" className="additional-padding">
-          <IcLink href="/styles/typography">Link style</IcLink>
-        </IcTypography>
-        <IcTypography variant="caption" className="internal-caption">
+        <ic-typography variant="body" data-class="additional-padding">
+          <ic-link href="/styles/typography">Link style</ic-link>
+        </ic-typography>
+        <ic-typography variant="caption" data-class="internal-caption">
           Open Sans • Bold underline • 16pt • Line-height: 24pt •
           Letter-spacing: 0.0025rem
-        </IcTypography>
+        </ic-typography>
       </>
     )}
   </div>

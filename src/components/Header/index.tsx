@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import { IcNavigationItem, IcPageHeader, IcStatusTag } from "@ukic/react";
-
 import "./index.css";
 import { IcStatusTagStatuses } from "@ukic/web-components";
 import { NavigationObject } from "../../sharedTypes";
@@ -56,21 +54,21 @@ const Header: React.FC<HeaderProps> = ({
   }
 
   return (
-    <IcPageHeader
+    <ic-page-header
       heading={heading}
       subheading={subheading}
       aligned="center"
-      className="page-header"
+      data-class="page-header"
     >
       {adornment && (
-        <IcStatusTag
+        <ic-status-tag
           slot="heading-adornment"
           label={adornment}
           status={status}
         />
       )}
       {tabs?.map((tab) => (
-        <IcNavigationItem
+        <ic-navigation-item
           label={tab.title}
           onClick={() => onTabChange(tab)}
           slot="tabs"
@@ -78,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({
           href="#"
         />
       ))}
-    </IcPageHeader>
+    </ic-page-header>
   );
 };
 

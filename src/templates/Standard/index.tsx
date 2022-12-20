@@ -1,8 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { IcSectionContainer } from "@ukic/react";
-
 import "./index.css";
 import CoreMDXLayout from "../CoreTemplate";
 import Metadata from "../../components/Metadata";
@@ -39,11 +37,7 @@ const Template: React.FC<TemplateProps> = ({
   );
 
   return (
-    <IcSectionContainer
-      aligned="full-width"
-      fullHeight
-      className="main-container"
-    >
+    <ic-section-container aligned="full-width" full-height id="main-container">
       <div className="page-content-container">
         <div className="subsection-nav">
           <div className="sticky">
@@ -61,7 +55,7 @@ const Template: React.FC<TemplateProps> = ({
           <Metadata publishDate={date} contribute={contribute} />
         </div>
       </div>
-    </IcSectionContainer>
+    </ic-section-container>
   );
 };
 

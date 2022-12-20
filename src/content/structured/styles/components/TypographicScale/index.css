@@ -4,7 +4,8 @@
   border-radius: var(--ic-border-radius);
 }
 
-.additional-padding {
+ic-typography[data-class="additional-padding"],
+ic-button[data-class="additional-padding"] {
   margin-bottom: var(--ic-space-xs);
 }
 
@@ -13,7 +14,7 @@
   margin-bottom: 6px;
 }
 
-.internal-caption {
+ic-typography[data-class="internal-caption"] {
   display: block;
   margin-bottom: var(--ic-space-xl);
 }

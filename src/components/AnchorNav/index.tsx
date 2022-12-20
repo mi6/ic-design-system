@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Link } from "gatsby";
 
-import { IcTypography } from "@ukic/react";
-
 import "./index.css";
 import { Heading } from "../../sharedTypes";
 
@@ -80,9 +78,9 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
           onClick={(e) => handleLinkSelect(e, headingId)}
           onKeyPress={(e) => handleLinkSelect(e, headingId)}
         >
-          <IcTypography variant={isActive ? "subtitle-large" : "body"}>
+          <ic-typography variant={isActive ? "subtitle-large" : "body"}>
             {heading.value}
-          </IcTypography>
+          </ic-typography>
         </Link>
       </li>
     );
@@ -93,7 +91,7 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
       <div className="side-nav">
         <nav aria-label={`${section} section contents`} className="nav">
           <div className="contents-header">
-            <IcTypography variant="subtitle-large">Contents</IcTypography>
+            <ic-typography variant="subtitle-large">Contents</ic-typography>
           </div>
           <ul className="list">
             <div className="nav-list-items-container">

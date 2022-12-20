@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Link as GatsbyLink } from "gatsby";
 
-import { IcLink } from "@ukic/react";
+// import { IcLink } from "@ukic/react";
 
 interface WrappedLinkProps {
   children: ReactNode;
@@ -12,13 +12,13 @@ interface WrappedLinkProps {
 /* eslint-disable react/destructuring-assignment */
 const WrappedLink: React.FC<WrappedLinkProps> = (props) =>
   props.href ? (
-    <IcLink>
+    <ic-link>
       <GatsbyLink to={props.href} {...props}>
         {props.children}
       </GatsbyLink>
-    </IcLink>
+    </ic-link>
   ) : (
-    <IcLink {...props} />
+    <ic-link {...props} />
   );
 /* eslint-enable react/destructuring-assignment */
 

@@ -1,13 +1,13 @@
-.skip-content-link {
+#skip-content-link {
   position: absolute;
   left: -9999px;
 }
 
-.skip-content-link:hover {
+#skip-content-link:hover {
   text-decoration: none;
 }
 
-.skip-content-link:focus {
+#skip-content-link:focus {
   background: var(--ic-architectural-white);
   position: absolute;
   z-index: 100;
@@ -33,6 +33,11 @@
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - var(--ic-space-lg));
+}
+
+.main-page-container ic-top-navigation ic-section-container {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 .footer {
@@ -90,6 +95,18 @@
   flex: 1;
 }
 
+ic-top-navigation .search-actions-container form {
+  display: none;
+}
+
+ic-top-navigation form {
+  width: 320px;
+}
+
+ic-top-navigation form.not-loaded {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .content {
     padding: var(--ic-space-md);
@@ -103,6 +120,24 @@
 
   .logo-wrapper {
     gap: var(--ic-space-lg);
+  }
+
+  ic-top-navigation .navigation-tabs,
+  ic-top-navigation .app-status,
+  ic-top-navigation .app-version {
+    display: none;
+  }
+
+  ic-top-navigation .top-panel-container {
+    max-height: 60px;
+  }
+
+  ic-top-navigation h1 {
+    font-size: 0.7em !important;
+  }
+
+  ic-top-navigation form {
+    width: 100%;
   }
 }
 

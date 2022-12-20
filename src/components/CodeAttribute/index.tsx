@@ -1,12 +1,11 @@
-import { IcTypography } from "@ukic/react";
 import React from "react";
 
 import "./index.css";
 
 const CodeAttribute: React.FC<{ label: string }> = ({ label }) => (
-  <IcTypography variant="caption" className="type-container">
+  <ic-typography variant="caption" data-class="type-container">
     {label}
-  </IcTypography>
+  </ic-typography>
 );
 
 export default CodeAttribute;

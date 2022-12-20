@@ -1,6 +1,4 @@
 import React, { useMemo } from "react";
-
-import { IcTypography } from "@ukic/react";
 import AttributeTable from "../../AttributeTable";
 import AttributeCards from "../../AttributeCards";
 import PropDescription from "./PropDescription";
@@ -49,9 +47,9 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
 
   return (
     <>
-      <IcTypography variant="h3" applyVerticalMargins>
+      <ic-typography variant="h3" apply-vertical-margins>
         <h3>Props</h3>
-      </IcTypography>
+      </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />
     </>

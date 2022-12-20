@@ -6,7 +6,7 @@
   text-decoration: none !important;
 }
 
-.small-only {
+#nav-section-button {
   display: none;
 }
 
@@ -14,21 +14,15 @@
   margin-bottom: var(--ic-space-xs);
 }
 
-.offscreen {
+#skip-page-content-link {
+  display: block;
   position: absolute;
   left: -9999px;
 }
 
-.offscreen:focus {
+#skip-page-content-link:focus {
   position: static;
   left: 0;
-}
-
-.skip-link {
-  display: block;
-}
-
-.skip-link:focus {
   padding: var(--ic-space-md);
 }
 
@@ -73,7 +67,7 @@
   box-shadow: 0 0 0 2px #1759bc, 0 0 0 5px rgb(23 89 188 / 52%) !important;
 }
 
-.list-typography {
+ic-typography[data-class="list-typography"] {
   padding: var(--ic-space-xs) 0 var(--ic-space-xs) var(--ic-space-md);
 }
 
@@ -188,13 +182,24 @@
   display: none;
 }
 
+/* show sub menu content when js disabled */
+nav.not-mounted .list-item:focus .list-closed,
+nav.not-mounted .list-item:focus-within .list-closed {
+  display: block;
+}
+
+nav.not-mounted .list-item:focus .chevron,
+nav.not-mounted .list-item:focus-within .chevron {
+  display: none;
+}
+
 .scroll {
   width: auto;
   overflow-y: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .small-only {
+  #nav-section-button {
     display: flex;
   }
 
@@ -228,7 +233,7 @@
     transition: outline var(--ic-easing-transition-fast);
   }
 
-  .list-item a:focus .list-typography {
+  .list-item a:focus ic-typography[data-class="list-typography"] {
     padding-left: calc(var(--ic-space-md) - 3px);
   }
 
@@ -237,7 +242,7 @@
     margin-left: 11px;
   }
 
-  .list-item a:focus.active .list-typography {
+  .list-item a:focus.active ic-typography[data-class="list-typography"] {
     margin-left: -3px;
   }
 
@@ -253,11 +258,15 @@
     margin-right: 6px;
   }
 
-  .list-item > ul > li > a:focus > .list-typography {
+  .list-item > ul > li > a:focus > ic-typography[data-class="list-typography"] {
     padding-left: calc(var(--ic-space-xl) - 3px) !important;
   }
 
-  .list-item > ul > li > a:focus.active > .list-typography {
+  .list-item
+    > ul
+    > li
+    > a:focus.active
+    > ic-typography[data-class="list-typography"] {
     padding-left: var(--ic-space-md) !important;
   }
 

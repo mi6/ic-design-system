@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IcSwitch } from "@ukic/react";
 import {
   consentCookieApproved,
   setConsent,
@@ -17,11 +16,11 @@ const InlineCookiesManager: React.FC = () => {
   };
 
   return (
-    <IcSwitch
+    <ic-switch
       checked={approved}
       label="Optional analytics cookies"
       onIcChange={() => handleChange()}
-      showState
+      show-state
       disabled={!process.env.GATSBY_GA_TRACKING_ID}
     />
   );
