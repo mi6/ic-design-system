@@ -5,22 +5,32 @@ on: delete
 jobs:
   delete-folder:
     runs-on: ubuntu-latest
+    if: github.event.ref_type == 'branch'
+    env:
+      FULL_BRANCH_NAME: ${{ github.event.ref }}
     steps:
       - name: Extract branch name
-        run: echo "branch=${GITHUB_HEAD_REF#refs/heads/}" >> $GITHUB_OUTPUT
+        run: echo "branch=${FULL_BRANCH_NAME#refs/heads/}" >> $GITHUB_OUTPUT
         id: extract_branch
+
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+        with:
+          app_id: ${{ secrets.DELETE_GH_PAGES_FOLDER_APP_ID }}
+          private_key: ${{ secrets.DELETE_GH_PAGES_FOLDER_APP_PEM }}
 
       - name: Checkout
         uses: actions/checkout@v3
         with:
           repository: mi6/ic-design-system-githubpages
+          token: ${{ steps.generate_token.outputs.token }}
 
       - name: Remove and commit
         uses: EndBug/add-and-commit@v9.1.1
-        if: ${{ steps.extract_branch.outputs.branch != "" }}
+        if: steps.extract_branch.outputs.branch != ''
         with:
           add: ""
-          remove: ./branches/${{ steps.extract_branch.outputs.branch }}
-          push: false
+          remove: ./branches/${{ steps.extract_branch.outputs.branch }} -r
           message: |
-            Branch: ${{ steps.extract_branch.outputs.branch }} deleted from ic-design-system
+            Branch: ${{ steps.extract_branch.outputs.branch }} deleted in ic-design-system
