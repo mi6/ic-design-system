@@ -1,11 +1,4 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
-import {
-  IcButton,
-  IcTab,
-  IcTabContext,
-  IcTabGroup,
-  IcTabPanel,
-} from "@ukic/react";
 import React, { CSSProperties, ReactNode } from "react";
 
 import {
@@ -52,15 +45,14 @@ const CodeSnippet: React.FC<{ code: string }> = ({ code }) => (
       )}
     </Highlight>
     <div className="snippet-container">
-      <IcButton
+      <ic-button
         variant="tertiary"
         appearance="dark"
         onClick={() => navigator.clipboard.writeText(code)}
-        className="copy-button"
       >
         Copy code
         <SlottedSVG path={mdiContentCopy} slot="icon" />
-      </IcButton>
+      </ic-button>
     </div>
   </>
 );
@@ -104,20 +96,20 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
       {children}
     </div>
     {snippets && (
-      <IcTabContext className="tab-context">
+      <ic-tab-context>
         <div className="link-zone">
-          <IcTabGroup inline label="Framework code snippets">
-            {snippets.map((snippet) => (
-              <IcTab>{snippet.language}</IcTab>
+          <ic-tab-group inline label="Framework code snippets">
+            {snippets.map((snippet, index) => (
+              <ic-tab tab-position={index}>{snippet.language}</ic-tab>
             ))}
-          </IcTabGroup>
+          </ic-tab-group>
         </div>
-        {snippets.map((snippet) => (
-          <IcTabPanel className="tab-panel">
+        {snippets.map((snippet, index) => (
+          <ic-tab-panel tab-position={index}>
             <CodeSnippet code={snippet.snippet} />
-          </IcTabPanel>
+          </ic-tab-panel>
         ))}
-      </IcTabContext>
+      </ic-tab-context>
     )}
   </div>
 );

@@ -8,11 +8,6 @@
   padding: var(--ic-space-sm);
 }
 
-.icon-groups-title {
-  color: var(--ic-color-secondary-text);
-  margin-top: var(--ic-space-md);
-}
-
 .icon-group-links {
   min-width: 200px;
   background: var(--ic-architectural-20);
@@ -23,7 +18,12 @@
   gap: var(--ic-space-md);
 }
 
-.icon-group-link {
+.icon-group-links:first-child {
+  color: var(--ic-color-secondary-text);
+  margin-top: var(--ic-space-md);
+}
+
+.icon-group-links ic-link {
   display: table;
   font-size: 14px;
 }
@@ -33,7 +33,7 @@
   flex-wrap: wrap;
 }
 
-.heading {
+ic-typography[data-class="heading"] {
   margin: var(--ic-space-sm);
 }
 
@@ -54,11 +54,11 @@
   transition: var(--ic-easing-transition-fast);
 }
 
-.icon-label {
+ic-typography[data-class="icon-label"] {
   margin: var(--ic-space-sm) 0 0 0;
 }
 
-.icon-caption {
+ic-typography[data-class="icon-caption"] {
   margin: 0 0 0 0;
   font-weight: 400 !important;
   color: var(--ic-color-secondary-text);

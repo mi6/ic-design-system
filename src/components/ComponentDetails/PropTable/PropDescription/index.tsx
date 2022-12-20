@@ -1,4 +1,3 @@
-import { IcTypography } from "@ukic/react";
 import React from "react";
 import CodeAttribute from "../../../CodeAttribute";
 
@@ -7,7 +6,7 @@ const PropDescription: React.FC<{ description: string; type: string }> = ({
   type,
 }) => (
   <div>
-    <IcTypography>{description}</IcTypography>
+    <ic-typography>{description}</ic-typography>
     <CodeAttribute label={`type: ${type}`} />
   </div>
 );

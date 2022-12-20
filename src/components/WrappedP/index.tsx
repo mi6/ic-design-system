@@ -1,11 +1,9 @@
 import React from "react";
 
-import { IcTypography } from "@ukic/react";
-
 const WrappedP: React.FC<{ children: string }> = ({ children }) => (
-  <IcTypography variant="body" applyVerticalMargins>
+  <ic-typography variant="body" apply-vertical-margins>
     <p>{children}</p>
-  </IcTypography>
+  </ic-typography>
 );
 
 export default WrappedP;

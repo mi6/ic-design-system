@@ -42,7 +42,7 @@ ic-alert {
   margin-bottom: calc(var(--ic-space-xxl) + var(--ic-space-lg));
 }
 
-.page {
+#page-section-container {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: fit-content(100%) 1fr;
@@ -80,7 +80,7 @@ ic-alert {
 }
 
 @media screen and (min-width: 1201px) {
-  .page {
+  #page-section-container {
     grid-template-areas: "content content sidenav" "content content sidenav";
   }
 }

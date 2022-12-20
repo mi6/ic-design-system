@@ -1,4 +1,3 @@
-import { IcTypography } from "@ukic/react";
 import React from "react";
 import { useTable } from "react-table";
 
@@ -24,9 +23,9 @@ const AttributeTable: React.FC<AttributeTableProps> = ({ columns, data }) => {
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <th {...column.getHeaderProps()} className="cell">
-                <IcTypography variant="subtitle-small">
+                <ic-typography variant="subtitle-small">
                   {column.render("Header")}
-                </IcTypography>
+                </ic-typography>
               </th>
             ))}
           </tr>
@@ -39,11 +38,11 @@ const AttributeTable: React.FC<AttributeTableProps> = ({ columns, data }) => {
             <tr className="row" {...row.getRowProps()}>
               {row.cells.map((cell, index) => (
                 <td {...cell.getCellProps()} className="cell">
-                  <IcTypography
+                  <ic-typography
                     variant={index === 0 ? "subtitle-large" : "body"}
                   >
                     {cell.render("Cell")}
-                  </IcTypography>
+                  </ic-typography>
                 </td>
               ))}
             </tr>

@@ -67,18 +67,30 @@
   background-color: var(--ic-architectural-40) !important;
 }
 
-.copy-button {
+.snippet-container ic-button {
   margin-top: var(--ic-space-xxs);
   margin-right: var(--ic-space-xs);
   margin-bottom: var(--ic-space-xs);
 }
 
-.tab-panel {
+.snippet-container ic-button button.button {
+  flex-direction: row-reverse;
+}
+
+.snippet-container ic-button button svg {
+  max-width: 24px;
+}
+
+.comp-preview ic-tab-context {
+  display: grid;
+}
+
+.comp-preview ic-tab-panel {
   min-width: 0;
 }
 
-.tab-context {
-  display: grid;
+.comp-preview ic-tab-panel[hidden][tab-position="1"] {
+  display: none;
 }
 
 .comp-icon {

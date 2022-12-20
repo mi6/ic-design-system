@@ -1,6 +1,5 @@
 import React from "react";
 
-import { IcTypography } from "@ukic/react";
 import Permalink from "../Permalink";
 
 import "./index.css";
@@ -12,13 +11,13 @@ interface WrappedH3Props {
 }
 
 const WrappedH3: React.FC<WrappedH3Props> = ({ children }) => (
-  <IcTypography variant="h3" applyVerticalMargins className="h3">
+  <ic-typography variant="h3" apply-vertical-margins data-class="h3">
     {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
     <h5 id={slug(children)}>
       {children}
       <Permalink title={children?.toString()} sluggedTitle={slug(children)} />
     </h5>
-  </IcTypography>
+  </ic-typography>
 );
 
 export default WrappedH3;

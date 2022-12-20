@@ -1,4 +1,3 @@
-import { IcTypography } from "@ukic/react";
 import React from "react";
 import { CookiesDataProps } from "./index";
 
@@ -9,7 +8,7 @@ const CookiesTable = ({ headers, data, caption }: CookiesDataProps) => (
       <tr>
         {headers.map((header: string) => (
           <th>
-            <IcTypography variant="subtitle-small">{header}</IcTypography>
+            <ic-typography variant="subtitle-small">{header}</ic-typography>
           </th>
         ))}
       </tr>

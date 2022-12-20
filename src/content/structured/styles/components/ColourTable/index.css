@@ -9,7 +9,7 @@
   border: 1px solid var(--ic-architectural-black);
 }
 
-.color-class {
+.color-class ic-typography {
   font-family: monospace, monospace !important;
 }
 
