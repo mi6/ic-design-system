@@ -9,13 +9,6 @@ import {
   mdiViewDashboard,
   mdiArrowRight,
 } from "@mdi/js";
-import {
-  IcSectionContainer,
-  IcLink,
-  IcCard,
-  IcTypography,
-  IcHero,
-} from "@ukic/react";
 import icdsHero from "../../../static/icds-hero.jpg";
 
 import "./index.css";
@@ -63,45 +56,40 @@ const Homepage: React.FC = () => {
 
   return (
     <div className="homepage">
-      <IcHero
+      <ic-hero
         heading={homepage.hero.title}
         subheading={homepage.hero.text}
         aligned="center"
-        backgroundImage={icdsHero}
+        background-image={icdsHero}
       >
-        <IcLink
-          appearance="light"
-          slot="interaction"
-          className="get-started-link"
-        >
+        <ic-link appearance="light" slot="interaction" id="get-started-link">
           <GatsbyLink slot="router-item" to="/get-started">
-            <IcTypography variant="h4">
+            <ic-typography variant="h4">
               Get started
               <Icon
                 path={mdiArrowRight}
                 size={1}
                 className="get-started-arrow"
               />
-            </IcTypography>
+            </ic-typography>
           </GatsbyLink>
-        </IcLink>
-      </IcHero>
-      <IcSectionContainer aligned="center" fullHeight>
+        </ic-link>
+      </ic-hero>
+      <ic-section-container aligned="center" full-height>
         <div className="section">
-          <IcTypography variant="h2">{homepage.cards.title}</IcTypography>
+          <ic-typography variant="h2">{homepage.cards.title}</ic-typography>
           <ul className={clsx("cards-container", "explore-cards")}>
             {homepage.cards.content &&
               homepage.cards.content.map((item: homepageCardItem) => (
                 <li>
                   <GatsbyLink to={item.path}>
-                    <IcCard
+                    <ic-card
                       heading={item.title}
                       message={item.description}
-                      fullWidth
-                      className="card"
+                      full-width
                     >
                       {renderIcon(item.icon)}
-                    </IcCard>
+                    </ic-card>
                   </GatsbyLink>
                 </li>
               ))}
@@ -109,75 +97,74 @@ const Homepage: React.FC = () => {
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <IcTypography variant="h2" applyVerticalMargins>
+          <ic-typography variant="h2" apply-vertical-margins>
             {homepage.about.title}
-          </IcTypography>
+          </ic-typography>
           {homepage.about.content.map((text: string[]) => (
-            <IcTypography
+            <ic-typography
               variant="body"
-              className="text-content"
-              applyVerticalMargins
+              data-class="text-content"
+              apply-vertical-margins
             >
               {text}
-            </IcTypography>
+            </ic-typography>
           ))}
-          <IcTypography variant="body">
-            <IcLink href={withPrefix(homepage.about.link)}>
+          <ic-typography variant="body">
+            <ic-link href={withPrefix(homepage.about.link)}>
               {homepage.about.linkText}.
-            </IcLink>
-          </IcTypography>
+            </ic-link>
+          </ic-typography>
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <IcTypography variant="h2" applyVerticalMargins>
+          <ic-typography variant="h2" apply-vertical-margins>
             <h2>{homepage.contribute.title}</h2>
-          </IcTypography>
+          </ic-typography>
           {homepage.contribute.content.map((text: string[]) => (
-            <IcTypography
+            <ic-typography
               variant="body"
-              className="text-content"
-              applyVerticalMargins
+              data-class="text-content"
+              apply-vertical-margins
             >
               {text}
-            </IcTypography>
+            </ic-typography>
           ))}
-          <IcTypography variant="body">
-            <IcLink href={withPrefix(homepage.contribute.link)}>
+          <ic-typography variant="body">
+            <ic-link href={withPrefix(homepage.contribute.link)}>
               {homepage.contribute.linkText}.
-            </IcLink>
-          </IcTypography>
+            </ic-link>
+          </ic-typography>
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <IcTypography variant="h2" applyVerticalMargins>
+          <ic-typography variant="h2" apply-vertical-margins>
             {homepage.resources.title}
-          </IcTypography>
+          </ic-typography>
           {homepage.resources.content.map((text: string[]) => (
-            <IcTypography
+            <ic-typography
               variant="body"
-              className="text-content"
-              applyVerticalMargins
+              data-class="text-content"
+              apply-vertical-margins
             >
               {text}
-            </IcTypography>
+            </ic-typography>
           ))}
           <ul className={clsx("cards-container", "resources-cards")}>
             {homepage.resources.cards &&
               homepage.resources.cards.map((item: homepageCardItem) => (
                 <li>
                   <GatsbyLink to={item.path}>
-                    <IcCard
+                    <ic-card
                       heading={item.title}
                       message={item.description}
-                      fullWidth
-                      className="card"
+                      full-width
                     />
                   </GatsbyLink>
                 </li>
               ))}
           </ul>
         </div>
-      </IcSectionContainer>
+      </ic-section-container>
     </div>
   );
 };

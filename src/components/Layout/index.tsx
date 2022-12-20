@@ -1,8 +1,7 @@
 import React, { ReactNode, useState } from "react";
-import { withPrefix, graphql } from "gatsby";
+import { withPrefix } from "gatsby";
 
 import { Helmet } from "react-helmet";
-import { IcBackToTop, IcFooter, IcFooterLink, IcLink } from "@ukic/react";
 
 import "./index.css";
 import TopNavWrapper from "../TopNavWrapper";
@@ -246,102 +245,49 @@ const Layout: React.FC<LayoutProps> = ({
           )}
         </ClientOnly>
         <div className="main-page-container">
-          <IcLink href="#main" id="skip" className="skip-content-link">
+          <ic-link href="#main" id="skip-content-link">
             Skip to main content
-          </IcLink>
+          </ic-link>
           <TopNavWrapper appTitle={TITLE} status={STATUS} version={VERSION} />
           <main id="main" className="homepage-wrapper">
             {children}
-            {!homepage && <IcBackToTop target="main" />}
+            {!homepage && <ic-back-to-top target="main" />}
           </main>
         </div>
         <div className="footer">
-          <IcFooter
+          <ic-footer
             description={FOOTER_PROPS.content}
             caption={FOOTER_PROPS.caption}
           >
             {FOOTER_PROPS.footerLinks.map((footerLinks: FooterLinks) => (
-              <IcFooterLink
+              <ic-footer-link
                 slot="link"
                 href={withPrefix(footerLinks.link)}
                 key={footerLinks.key}
               >
                 {footerLinks.text}
-              </IcFooterLink>
+              </ic-footer-link>
             ))}
             <div slot="logo" className="logo-wrapper">
-              <IcFooterLink href="https://sis.gov.uk">
+              <ic-footer-link href="https://sis.gov.uk">
                 <SISLogo aria-labelledby="SIS Logo" />
                 <span className="link-text">Go to SIS website</span>
-              </IcFooterLink>
-              <IcFooterLink href="https://www.mi5.gov.uk">
+              </ic-footer-link>
+              <ic-footer-link href="https://www.mi5.gov.uk">
                 <MI5Logo aria-labelledby="MI5 Logo" />
                 <span className="link-text">Go to MI5 website</span>
-              </IcFooterLink>
-              <IcFooterLink href="https://gchq.gov.uk">
+              </ic-footer-link>
+              <ic-footer-link href="https://gchq.gov.uk">
                 <GCHQLogo aria-labelledby="GCHQ Logo" />
                 <span className="link-text">Go to GCHQ website</span>
-              </IcFooterLink>
+              </ic-footer-link>
             </div>
-          </IcFooter>
+          </ic-footer>
         </div>
-        </CookieConsentContext.Provider>
+      </CookieConsentContext.Provider>
       <RouteAnnouncer page={`${title || ""} - ${TITLE}`} />
     </>
   );
 };
 
 export default Layout;
-
-export const pageQuery = graphql`
-  query ($id: String!) {
-    mdx(id: { eq: $id }) {
-      body
-      fileAbsolutePath
-      fields {
-        slug
-        navSection
-      }
-      frontmatter {
-        title
-        subTitle
-        tags
-        categories
-        classification
-        status
-        deciders
-        contribute
-        date
-        tabs {
-          title
-          path
-        }
-      }
-      headings {
-        depth
-        value
-      }
-    }
-    allStructuredNav {
-      id
-      fields {
-        navParent
-        navSection
-        slug
-      }
-      frontmatter {
-        navPriority
-        title
-        tabs {
-          title
-          path
-        }
-      }
-      body
-      headings {
-        depth
-        value
-      }
-    }
-  }
-`;

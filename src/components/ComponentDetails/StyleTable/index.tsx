@@ -1,6 +1,4 @@
 import React, { useMemo } from "react";
-
-import { IcTypography } from "@ukic/react";
 import { JsonDocsStyle } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
@@ -36,9 +34,9 @@ const StyleTable: React.FC<StyleTableProps> = ({ styleData }) => {
 
   return (
     <>
-      <IcTypography variant="h3" applyVerticalMargins>
+      <ic-typography variant="h3" apply-vertical-margins>
         <h3>CSS Custom Properties</h3>
-      </IcTypography>
+      </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />
     </>

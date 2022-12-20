@@ -2,6 +2,7 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { graphql, navigate, useStaticQuery } from "gatsby";
 import FlexSearch, { Index } from "flexsearch";
 import { IcSearchBar } from "@ukic/react";
+import clsx from "clsx";
 
 interface SearchResult {
   path: string;
@@ -22,6 +23,7 @@ const Search: React.FC = () => {
     }
   `);
 
+  const [hasMounted, setHasMounted] = React.useState(false);
   const { index, store } = queryData.localSearchAll;
   const [value, setValue] = useState<string>("");
   const [options, setOptions] = useState<SearchResult[]>();
@@ -31,6 +33,7 @@ const Search: React.FC = () => {
     const importedIndex = FlexSearch.create();
     importedIndex.import(index);
     setIdx(importedIndex);
+    setHasMounted(true);
   }, []);
 
   const onIcOptionSelect = (event: CustomEvent) => {
@@ -104,9 +107,16 @@ const Search: React.FC = () => {
   };
 
   return (
-    <form role="search" slot="search" onSubmit={onSubmit}>
+    <form
+      role="search"
+      slot="search"
+      onSubmit={onSubmit}
+      className={clsx(!hasMounted && "not-loaded")}
+    >
       <IcSearchBar
+        id="search-form"
         label="Search the Design System"
+        hideLabel
         placeholder="Type to search"
         options={options || []}
         onIcInput={onIcInput}
@@ -114,6 +124,7 @@ const Search: React.FC = () => {
         onIcSubmitSearch={onIcSubmitSearch}
         value={value}
         disableFilter
+        fullWidth
         hintText="When autocomplete results are available, use the up and down arrows to choose and press enter to go to that page."
       />
     </form>

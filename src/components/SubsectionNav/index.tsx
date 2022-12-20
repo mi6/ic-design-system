@@ -1,12 +1,10 @@
-import React, { FocusEvent, useState } from "react";
+import React, { FocusEvent, useState, useEffect } from "react";
 import clsx from "clsx";
 import { Link as GatsbyLink } from "gatsby";
 import { arrayToTree, TreeItem } from "performant-array-to-tree";
 
 import Icon from "@mdi/react";
 import { mdiChevronDown } from "@mdi/js";
-
-import { IcTypography, IcButton, IcLink } from "@ukic/react";
 
 import "./index.css";
 import { NavigationObject } from "../../sharedTypes";
@@ -91,7 +89,7 @@ const WrappedListItem: React.FC<WrappedListItemProps> = ({
   if (onClick) {
     return (
       <a
-        href="/"
+        href=".#"
         role="button"
         className="list-title"
         aria-controls={controls}
@@ -102,9 +100,9 @@ const WrappedListItem: React.FC<WrappedListItemProps> = ({
           onClick();
         }}
       >
-        <IcTypography className="list-typography" variant="body">
+        <ic-typography data-class="list-typography" variant="body">
           {text}
-        </IcTypography>
+        </ic-typography>
         <Icon
           path={mdiChevronDown}
           size={1.25}
@@ -120,9 +118,9 @@ const WrappedListItem: React.FC<WrappedListItemProps> = ({
       title={label}
       partiallyActive={tabs && true}
     >
-      <IcTypography className="list-typography" variant="body">
+      <ic-typography data-class="list-typography" variant="body">
         {text}
-      </IcTypography>
+      </ic-typography>
     </GatsbyLink>
   );
 };
@@ -219,8 +217,13 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
   const currentNavSection = getNavTree(allStructuredNav, section, currentPage);
 
   const [responsiveNavOpen, setResponsiveNavOpen] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const toggleResponsiveNavOpen = () =>
     setResponsiveNavOpen(!responsiveNavOpen);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const handleBlur = (e: FocusEvent<HTMLElement>) => {
     // If not clicking on the elements of the Side Nav
@@ -237,13 +240,14 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   return (
     <>
-      <IcButton
+      <ic-button
         variant="secondary"
-        className={clsx("small-only", responsiveNavOpen && "small-only-open")}
+        id="nav-section-button"
+        data-class={clsx(responsiveNavOpen && "small-only-open")}
         onClick={toggleResponsiveNavOpen}
         aria-controls="icds-section-nav"
         aria-expanded={responsiveNavOpen ? "true" : "false"}
-        fullWidth
+        full-width
         onBlur={handleBlur}
       >
         {responsiveNavOpen ? "Hide" : "Show"} navigation section
@@ -256,17 +260,18 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
             )}
           />
         </div>
-      </IcButton>
-      <IcLink className={clsx("skip-link", "offscreen")} href="#page-contents">
+      </ic-button>
+      <ic-link id="skip-page-content-link" href="#page-contents">
         Skip to page content
-      </IcLink>
+      </ic-link>
       <nav
         id="icds-section-nav"
         aria-label={`${section} section`}
         className={clsx(
           "scroll",
           "large-only",
-          responsiveNavOpen && "force-open"
+          responsiveNavOpen && "force-open",
+          !hasMounted && "not-mounted"
         )}
         onBlur={handleBlur}
       >

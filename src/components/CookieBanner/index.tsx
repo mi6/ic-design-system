@@ -1,10 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {
-  IcSectionContainer,
-  IcTypography,
-  IcLink,
-  IcButton,
-} from "@ukic/react";
 
 import "./cookies.css";
 import {
@@ -46,38 +40,38 @@ const CookieBanner: React.FC = () => {
       ref={banner}
     >
       {(submitted && (
-        <IcSectionContainer full-height aligned="full-width" tab-index="-1">
-          <IcTypography role="alert" variant="body">
+        <ic-section-container full-height aligned="full-width" tab-index="-1">
+          <ic-typography role="alert" variant="body">
             You’ve {consentCookieApproved() ? "accepted" : "rejected"} analytics
             cookies. You can{" "}
-            <IcLink href="icds/cookies-policy">
+            <ic-link href="icds/cookies-policy">
               change your cookie settings
-            </IcLink>{" "}
+            </ic-link>{" "}
             at any time.
-          </IcTypography>
+          </ic-typography>
           <div className="buttons">
-            <IcButton variant="primary" onClick={() => setVisible(false)}>
+            <ic-button variant="primary" onClick={() => setVisible(false)}>
               Hide cookie message
-            </IcButton>
+            </ic-button>
           </div>
-        </IcSectionContainer>
+        </ic-section-container>
       )) || (
-        <IcSectionContainer full-height aligned="full-width">
-          <IcTypography variant="h2">Cookies on this site</IcTypography>
-          <IcTypography variant="body">
+        <ic-section-container full-height aligned="full-width">
+          <ic-typography variant="h2">Cookies on this site</ic-typography>
+          <ic-typography variant="body">
             We’d like to use analytics cookies to understand how you use the
             Design System, so that we can make improvements.
-          </IcTypography>
+          </ic-typography>
           <div className="buttons">
-            <IcButton variant="primary" onClick={() => handleConsent(true)}>
+            <ic-button variant="primary" onClick={() => handleConsent(true)}>
               Accept
-            </IcButton>
-            <IcButton variant="secondary" onClick={() => handleConsent(false)}>
+            </ic-button>
+            <ic-button variant="secondary" onClick={() => handleConsent(false)}>
               Decline
-            </IcButton>
-            <IcLink href="icds/cookies-policy">Manage cookies</IcLink>
+            </ic-button>
+            <ic-link href="icds/cookies-policy">Manage cookies</ic-link>
           </div>
-        </IcSectionContainer>
+        </ic-section-container>
       )}
     </div>
   );

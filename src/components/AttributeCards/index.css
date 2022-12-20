@@ -25,10 +25,7 @@
   border-bottom: none;
 }
 
-.cards-cell-name,
-.cards-cell-description,
-.cards-cell-default,
-.cards-cell-signature {
+.attribute-cards-cell ic-typography {
   padding: var(--ic-space-md);
 }
 

@@ -1,9 +1,4 @@
 import React from "react";
-import {
-  IcTopNavigation,
-  IcNavigationItem,
-  IcNavigationButton,
-} from "@ukic/react";
 import { Link as GatsbyLink, withPrefix } from "gatsby";
 
 import "./index.css";
@@ -18,11 +13,11 @@ interface TopNavWrapperProps {
 }
 
 const TopNavItem: React.FC<any> = ({ props, text }) => (
-  <IcNavigationItem slot="navigation">
+  <ic-navigation-item slot="navigation">
     <GatsbyLink slot="navigation-item" {...props}>
       {text}
     </GatsbyLink>
-  </IcNavigationItem>
+  </ic-navigation-item>
 );
 
 const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
@@ -30,8 +25,8 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
   status,
   version,
 }) => (
-  <IcTopNavigation
-    appTitle={appTitle}
+  <ic-top-navigation
+    app-title={appTitle}
     status={status}
     version={version}
     href={withPrefix("/")}
@@ -46,7 +41,7 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
     <Search />
 
     {iconLinks.map((iconLink) => (
-      <IcNavigationButton
+      <ic-navigation-button
         label={iconLink.text}
         slot="buttons"
         href={iconLink.to}
@@ -54,9 +49,9 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
         target={iconLink.target}
       >
         {iconLink.icon({ slot: "icon" })}
-      </IcNavigationButton>
+      </ic-navigation-button>
     ))}
-  </IcTopNavigation>
+  </ic-top-navigation>
 );
 
 export default TopNavWrapper;

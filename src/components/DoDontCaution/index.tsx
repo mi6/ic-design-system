@@ -1,8 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 
-import { IcTypography } from "@ukic/react";
-
 import "./index.css";
 
 import Icon from "@mdi/react";
@@ -62,7 +60,7 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
         <source src={videoSrc} type="video/mp4" />
       </video>
     )}
-    {caption && <IcTypography variant="label">{caption}</IcTypography>}
+    {caption && <ic-typography variant="label">{caption}</ic-typography>}
   </div>
 );
 

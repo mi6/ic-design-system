@@ -1,4 +1,3 @@
-import { IcTypography } from "@ukic/react";
 import React from "react";
 import { CookiesDataProps } from "./index";
 
@@ -12,28 +11,36 @@ const CookiesCards = ({ headers, data, caption }: CookiesDataProps) => (
         <tr>
           <td>
             <span>
-              <IcTypography variant="subtitle-large">{headers[0]}</IcTypography>
-              <IcTypography applyVerticalMargins>
+              <ic-typography variant="subtitle-large">
+                {headers[0]}
+              </ic-typography>
+              <ic-typography apply-vertical-margins>
                 {cookieData.provider}
-              </IcTypography>
+              </ic-typography>
             </span>
             <span>
-              <IcTypography variant="subtitle-large">{headers[1]}</IcTypography>
-              <IcTypography applyVerticalMargins>
+              <ic-typography variant="subtitle-large">
+                {headers[1]}
+              </ic-typography>
+              <ic-typography apply-vertical-margins>
                 {cookieData.domain}
-              </IcTypography>
+              </ic-typography>
             </span>
             <span>
-              <IcTypography variant="subtitle-large">{headers[2]}</IcTypography>
-              <IcTypography applyVerticalMargins>
+              <ic-typography variant="subtitle-large">
+                {headers[2]}
+              </ic-typography>
+              <ic-typography apply-vertical-margins>
                 {cookieData.desc}
-              </IcTypography>
+              </ic-typography>
             </span>
             <span>
-              <IcTypography variant="subtitle-large">{headers[3]}</IcTypography>
-              <IcTypography applyVerticalMargins>
+              <ic-typography variant="subtitle-large">
+                {headers[3]}
+              </ic-typography>
+              <ic-typography apply-vertical-margins>
                 {cookieData.cookies}
-              </IcTypography>
+              </ic-typography>
             </span>
           </td>
         </tr>

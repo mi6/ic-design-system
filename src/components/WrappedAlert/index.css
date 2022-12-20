@@ -1,7 +1,7 @@
-.alert {
+ic-alert[data-class="alert"] {
   margin: 0 0 var(--ic-space-lg) 0;
 }
 
-.alert * {
+ic-alert[data-class="alert"] * {
   line-height: 1.8em;
 }

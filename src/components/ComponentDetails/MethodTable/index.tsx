@@ -1,6 +1,4 @@
 import React, { useMemo } from "react";
-
-import { IcTypography } from "@ukic/react";
 import { JsonDocsMethod } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
@@ -41,9 +39,9 @@ const EventTable: React.FC<MethodTableProps> = ({ methodData }) => {
 
   return (
     <>
-      <IcTypography variant="h3" applyVerticalMargins>
+      <ic-typography variant="h3" apply-vertical-margins>
         <h3>Methods</h3>
-      </IcTypography>
+      </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />
     </>

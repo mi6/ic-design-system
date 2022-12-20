@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 
-import { IcLink, IcTypography } from "@ukic/react";
-
 import "./index.css";
 import iconList from "../IconList";
 import { Icon } from "../../../../../sharedTypes";
@@ -23,19 +21,19 @@ interface IconGroupLinkProps {
 
 const IconGroup: React.FC<IconGroupProps> = ({ title, icons, id, visible }) => (
   <div id={`#${id}`} className={clsx(!visible && "hidden")}>
-    <IcTypography variant="h3" className="heading">
+    <ic-typography variant="h3" data-class="heading">
       <h5>{title} Icons</h5>
-    </IcTypography>
+    </ic-typography>
     <div className="panel">
       {icons.map((icon) => (
         <span key={icon.name} className="icon">
           {icon.icon}
-          <IcTypography variant="label" className="icon-label">
+          <ic-typography variant="label" data-class="icon-label">
             {icon.name}
-          </IcTypography>
-          <IcTypography variant="caption" className="icon-caption">
+          </ic-typography>
+          <ic-typography variant="caption" data-class="icon-caption">
             {icon.library}
-          </IcTypography>
+          </ic-typography>
         </span>
       ))}
     </div>
@@ -48,8 +46,7 @@ const IconGroupLink: React.FC<IconGroupLinkProps> = ({
   setCurrentPanel,
   currentPanel,
 }) => (
-  <IcLink
-    className="icon-group-link"
+  <ic-link
     onClick={() => setCurrentPanel(id)}
     href={`#${id}`}
     aria-expanded={currentPanel === id ? "true" : "false"}
@@ -57,7 +54,7 @@ const IconGroupLink: React.FC<IconGroupLinkProps> = ({
     title={`Click to show icons to be used for "${title}"`}
   >
     {title}
-  </IcLink>
+  </ic-link>
 );
 
 const IconFinder: React.FC = () => {
@@ -65,9 +62,7 @@ const IconFinder: React.FC = () => {
   return (
     <div className="icons-container">
       <div className="icon-group-links">
-        <IcTypography variant="h4" className="icon-groups-title">
-          Icon groups
-        </IcTypography>
+        <ic-typography variant="h4">Icon groups</ic-typography>
         {iconList.map((grp) => (
           <IconGroupLink
             title={grp.title}
