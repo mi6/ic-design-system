@@ -2,7 +2,6 @@ import React from "react";
 import clsx from "clsx";
 
 import "./index.css";
-import { IcTypography } from "@ukic/react";
 
 interface Color {
   gradient?: {
@@ -53,14 +52,12 @@ const PaletteRow: React.FC<PaletteRowProps> = ({ color }) => {
       </div>
       <div className="color-name">{name}</div>
       <div className="color-token color-class">
-        <IcTypography className="color-class" variant="caption">
-          {token}
-        </IcTypography>
+        <ic-typography variant="caption">{token}</ic-typography>
       </div>
       <div className="color-class">
-        <IcTypography className="color-class" variant="body">
+        <ic-typography variant="body">
           {hexDisplay || hex || `${gradient?.color1} ${gradient?.color2}`}
-        </IcTypography>
+        </ic-typography>
       </div>
     </div>
   );

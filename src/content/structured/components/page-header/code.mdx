@@ -123,7 +123,7 @@ export const withActionsInputStepper = [
     <ic-step step-title="Warm milk" step-subtitle="Optional" step-type="completed"></ic-step>
     <ic-step step-title="Pour milk" step-type="current"></ic-step>
   </ic-stepper>
-  <ic-text-field slot="input" placeholder="Enter your input" hide-label="true" />
+  <ic-text-field slot="input" placeholder="Enter your input" label="Input" hide-label="true" />
 </ic-page-header>
     `,
   },
@@ -142,7 +142,7 @@ export const withActionsInputStepper = [
     <IcStep stepTitle="Warm milk" stepSubtitle="Optional" stepType="completed" />
       <IcStep stepTitle="Pour milk" stepType="current" />
   </IcStepper>
-  <IcTextField slot="input" placeholder="Enter your input" hideLabel />
+  <IcTextField slot="input" placeholder="Enter your input" label="Input" hideLabel />
 </IcPageHeader>
     `,
   },
@@ -173,7 +173,12 @@ export const withActionsInputStepper = [
       />
       <IcStep stepTitle="Pour milk" stepType="current" />
     </IcStepper>
-    <IcTextField slot="input" placeholder="Enter your input" hideLabel />
+    <IcTextField
+      slot="input"
+      placeholder="Enter your input"
+      label="Input"
+      hideLabel
+    />
   </IcPageHeader>
 </ComponentPreview>
 
@@ -190,7 +195,7 @@ export const withActionsInputTabs = [
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
-  <ic-text-field slot="input" placeholder="Enter your input" hide-label="true"></ic-text-field>
+  <ic-text-field slot="input" placeholder="Enter your input" label="Input" hide-label="true"></ic-text-field>
   <ic-navigation-item 
     slot="tabs" 
     label="All recipes" 
@@ -222,7 +227,8 @@ export const withActionsInputTabs = [
   </IcButton>
   <IcTextField 
     slot="input" 
-    placeholder="Enter your input" 
+    placeholder="Enter your input"
+    label="Input" 
     hideLabel 
   />
   <IcNavigationItem 
@@ -257,7 +263,12 @@ export const withActionsInputTabs = [
     <IcButton slot="actions" variant="tertiary">
       Filter coffee
     </IcButton>
-    <IcTextField slot="input" placeholder="Enter your input" hideLabel />
+    <IcTextField
+      slot="input"
+      placeholder="Enter your input"
+      label="Input"
+      hideLabel
+    />
     <IcNavigationItem slot="tabs" label="All recipes" href="#" selected />
     <IcNavigationItem slot="tabs" label="Favourites" href="#" />
   </IcPageHeader>
@@ -288,7 +299,8 @@ export const withReactRouter = [
     </IcNavigationItem>
     <IcTextField 
       slot="input" 
-      placeholder="Enter your input" 
+      placeholder="Enter your input"
+      label="Input" 
       hideLabel 
       style={{'@media (maxWidth: 576px)':{width: "280px"}}}
     />
@@ -347,6 +359,7 @@ export const withReactRouter = [
       <IcTextField
         slot="input"
         placeholder="Enter your input"
+        label="Input"
         hideLabel
         style={{ "@media (maxWidth: 576px)": { width: "280px" } }}
       />

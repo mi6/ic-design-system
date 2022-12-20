@@ -1,8 +1,8 @@
-.h2:not(:first-child) {
+ic-typography[data-class="h2"]:not(:first-child) {
   margin-top: var(--ic-space-xxl);
 }
 
-.h2 h4 {
+ic-typography[data-class="h2"] h4 {
   display: inline-flex;
   align-items: center;
 }

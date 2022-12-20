@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import clsx from "clsx";
 
-import { IcSectionContainer } from "@ukic/react";
-
 import "./index.css";
 import AnchorNav from "../../components/AnchorNav";
 import ComponentPreview from "../../components/CodePreview";
@@ -62,7 +60,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({ mdx, tabContent }) => {
           currentPage={pageContent.fields.slug}
           setPageContent={setPageContent}
         />
-        <IcSectionContainer aligned="center" className="page">
+        <ic-section-container aligned="center" id="page-section-container">
           <AnchorNav
             currentPage={pageContent.fields.slug}
             allHeadings={pageContent.headings}
@@ -71,7 +69,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({ mdx, tabContent }) => {
           <div className="content-container">
             <MDXRenderer>{pageContent.body}</MDXRenderer>
           </div>
-        </IcSectionContainer>
+        </ic-section-container>
       </div>
     </MDXProvider>
   );

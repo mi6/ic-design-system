@@ -1,4 +1,3 @@
-import { IcTypography } from "@ukic/react";
 import React from "react";
 
 import "./index.css";
@@ -13,23 +12,17 @@ const AttributeCards: React.FC<AttributeCardsProps> = ({ data }) => (
       {data.map((cell) => (
         <tr className="attribute-cards-row">
           <td className="attribute-cards-cell">
-            <IcTypography variant="subtitle-large" className="cards-cell-name">
-              {cell.name}
-            </IcTypography>
-            <IcTypography variant="body" className="cards-cell-description">
-              {cell.description}
-            </IcTypography>
+            <ic-typography variant="subtitle-large">{cell.name}</ic-typography>
+            <ic-typography variant="body">{cell.description}</ic-typography>
             {cell.default !== undefined ? (
-              <IcTypography variant="body" className="cards-cell-default">
+              <ic-typography variant="body">
                 Default: {cell.default}
-              </IcTypography>
+              </ic-typography>
             ) : (
               ""
             )}
             {cell.signature !== undefined ? (
-              <IcTypography variant="body" className="cards-cell-signature">
-                {cell.signature}
-              </IcTypography>
+              <ic-typography variant="body">{cell.signature}</ic-typography>
             ) : (
               ""
             )}

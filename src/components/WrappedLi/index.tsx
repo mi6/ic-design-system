@@ -1,12 +1,10 @@
 import React, { ReactNode } from "react";
 
-import { IcTypography } from "@ukic/react";
-
 const WrappedLi: React.FC<{ children: ReactNode }> = ({ children }) => (
   <li>
-    <IcTypography variant="body">
+    <ic-typography variant="body">
       <p>{children}</p>
-    </IcTypography>
+    </ic-typography>
   </li>
 );
 
