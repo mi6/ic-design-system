@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    if: github.event.pull_request.head.repo.name == 'ic-design-system'
+    if: github.event.pull_request.head.repo.full_name == 'mi6/ic-design-system'
     steps:
       - name: Extract branch name
         run: echo "branch=${GITHUB_HEAD_REF#refs/heads/}" >> $GITHUB_OUTPUT
