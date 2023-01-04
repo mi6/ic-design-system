@@ -1,0 +1,47 @@
+name: Welcome new contributors to the repo
+
+on:
+  issues:
+    types:
+      - opened
+
+  pull_request_target:
+    types:
+      - opened
+
+jobs:
+  welcome-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            # Welcome 👋
+            Welcome to the `ic-design-system` repo, thank you for raising an issue!
+
+            ## How to contribute
+            Please read our [CONTRIBUTING.md](https://github.com/mi6/ic-design-system/blob/main/CONTRIBUTING.md), which explains our ways of working and guidelines for contributions.
+
+            ## Code of Conduct
+            We'd appreciate it if you could read and abide by our [Code of Conduct](https://github.com/mi6/ic-design-system/blob/main/CODE_OF_CONDUCT.md), as we wish to foster an inclusive and respectful community.
+
+          pr-message: |
+            # Welcome 👋
+            Welcome to the `ic-design-system` repo, thank you for submitting a pull request!
+
+            ## How to contribute
+            Please read our [CONTRIBUTING.md](https://github.com/mi6/ic-design-system/blob/main/CONTRIBUTING.md), which explains our ways of working and guidelines for contributions.
+
+            ## Code of Conduct
+            We'd appreciate it if you could read and abide by our [Code of Conduct](https://github.com/mi6/ic-design-system/blob/main/CODE_OF_CONDUCT.md), as we wish to foster an inclusive and respectful community.
+
+            ## Targeting your pull request
+            We use `develop` rather than `main` as the base for contributions - please make sure your PR is targeting `develop`.
+
+            ## Signing the CLA
+            We require all contributors to sign our [Contributor License Agreement (CLA)](https://cla-assistant.io/mi6/ic-design-system) before we can accept a contribution. If you are contributing on behalf of an organization please follow your organization's policies in signing CLAs.
+
+            ## Associated issue
+            Please make sure that your pull request has an issue open - this allows us to keep track of changes made and offer support where needed.
