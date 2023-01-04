@@ -1,0 +1,180 @@
+---
+path: "/components/section-container/code"
+
+date: "2023-01-04"
+
+title: "Section container"
+
+status: "BETA"
+
+subTitle: "Use the section container component to consistently align content within an app."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/section-container"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/section-container" },
+    { title: "Code", path: "/components/section-container/code" },
+    {
+      title: "Accessibility",
+      path: "/components/section-container/accessibility",
+    },
+  ]
+---
+
+import { IcSectionContainer } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container style="border:1px solid black">
+  <button type="button">One</button>
+  <button type="button">Two</button>
+  <button type="button">Three</button>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer style={{ border: "1px solid black" }}>
+  <button type="button">One</button>
+  <button type="button">Two</button>
+  <button type="button">Three</button>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcSectionContainer style={{ border: "1px solid black" }}>
+    <button type="button">One</button>
+    <button type="button">Two</button>
+    <button type="button">Three</button>
+  </IcSectionContainer>
+</ComponentPreview>
+
+## Section container details
+
+<ComponentDetails component="ic-section-container" />
+
+## Variants
+
+### Center align
+
+export const snippetsCenter = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container
+  aligned="center"
+  style="border:1px solid black"
+>
+  <button type="button">One</button>
+  <button type="button">Two</button>
+  <button type="button">Three</button>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer
+  aligned="center"
+  style={{ border: "1px solid black" }}
+>
+  <button type="button">One</button>
+  <button type="button">Two</button>
+  <button type="button">Three</button>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsCenter}>
+  <IcSectionContainer aligned="center" style={{ border: "1px solid black" }}>
+    <button type="button">One</button>
+    <button type="button">Two</button>
+    <button type="button">Three</button>
+  </IcSectionContainer>
+</ComponentPreview>
+
+### Full-width align
+
+export const snippetsFullWidth = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container
+  aligned="full-width"
+  style="border:1px solid black"
+>
+  <div style="display:flex;justify-content:space-between;">
+    <button type="button">One</button>
+    <button type="button">Two</button>
+    <button type="button">Three</button>
+  </div>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer 
+  aligned="full-width"
+  style={{ border: "1px solid black" }}
+>
+  <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <button type="button">One</button>
+    <button type="button">Two</button>
+    <button type="button">Three</button>
+  </div>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsFullWidth} style={{ display: "block" }}>
+  <IcSectionContainer
+    style={{ border: "1px solid black" }}
+    aligned="full-width"
+  >
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <button type="button">One</button>
+      <button type="button">Two</button>
+      <button type="button">Three</button>
+    </div>
+  </IcSectionContainer>
+</ComponentPreview>
+
+### Full height
+
+export const snippetsFullHeight = [
+  {
+    language: "Web component",
+    snippet: `<ic-section-container
+  aligned="center"
+  full-height="true"
+  style="border:1px solid black"
+>
+  <button type="button">One</button>
+  <button type="button">Two</button>
+  <button type="button">Three</button>
+</ic-section-container>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSectionContainer 
+  aligned="center"
+  fullHeight
+  style={{ border: "1px solid black" }}
+>
+  <button type="button">One</button>
+  <button type="button">Two</button>
+  <button type="button">Three</button>
+</IcSectionContainer>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsFullHeight}>
+  <IcSectionContainer
+    aligned="center"
+    fullHeight
+    style={{ border: "1px solid black" }}
+  >
+    <button type="button">One</button>
+    <button type="button">Two</button>
+    <button type="button">Three</button>
+  </IcSectionContainer>
+</ComponentPreview>
