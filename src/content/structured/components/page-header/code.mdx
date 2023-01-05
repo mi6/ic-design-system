@@ -39,7 +39,7 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="App title" sub-heading="App information"></ic-page-header>`,
+    snippet: `<ic-page-header heading="App title" subheading="App information"></ic-page-header>`,
   },
   {
     language: "React",
@@ -60,13 +60,13 @@ export const snippets = [
 export const withBreadcrumbNavigation = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has breadcrumb navigation.">
+    snippet: `<ic-page-header heading="Coffee recipes" subheading="This is a page header component that has breadcrumb navigation.">
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-breadcrumb-group slot="breadcrumbs">
     <ic-breadcrumb page-title="Breadcrumb 1" href="#"></ic-breadcrumb>
-    <ic-breadcrumb 
-      current="true" 
-      page-title="Breadcrumb 2" 
+    <ic-breadcrumb
+      current="true"
+      page-title="Breadcrumb 2"
       href="#"
     >
     </ic-breadcrumb>
@@ -79,9 +79,9 @@ export const withBreadcrumbNavigation = [
     snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has breadcrumb navigation.">
   <IcStatusTag slot="heading-adornment" label="Beta" />
     <IcBreadcrumb pageTitle="Breadcrumb 1" href="#" />
-    <IcBreadcrumb 
+    <IcBreadcrumb
       current
-      pageTitle="Breadcrumb 2" 
+      pageTitle="Breadcrumb 2"
       href="#"
     />
   </IcBreadcrumbGroup>
@@ -111,7 +111,7 @@ export const withBreadcrumbNavigation = [
 export const withActionsInputStepper = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has an input area, actions &amp; stepper." reverse-order="true">
+    snippet: `<ic-page-header heading="Coffee recipes" subheading="This is a page header component that has an input area, actions &amp; stepper." reverse-order="true">
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
@@ -179,25 +179,25 @@ export const withActionsInputStepper = [
 export const withActionsInputTabs = [
   {
     language: "Web component",
-    snippet: `<ic-page-header 
-  heading="Coffee recipes" 
-  sub-heading="This is a page header component that has an input area, actions &amp; tabs." 
+    snippet: `<ic-page-header
+  heading="Coffee recipes"
+  subheading="This is a page header component that has an input area, actions &amp; tabs."
   reverse-order="true"
 >
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
   <ic-text-field slot="input" placeholder="Enter your input" hide-label="true"></ic-text-field>
-  <ic-navigation-item 
-    slot="tabs" 
-    label="All recipes" 
-    href="#" 
+  <ic-navigation-item
+    slot="tabs"
+    label="All recipes"
+    href="#"
     selected="true"
   >
   </ic-navigation-item>
-  <ic-navigation-item 
-    slot="tabs" 
-    label="Favourites" 
+  <ic-navigation-item
+    slot="tabs"
+    label="Favourites"
     href="#"
   >
   </ic-navigation-item>
@@ -206,9 +206,9 @@ export const withActionsInputTabs = [
   },
   {
     language: "React",
-    snippet: `<IcPageHeader 
-  heading="Coffee recipes" 
-  subHeading="This is a page header component that has an input area, actions and tabs." 
+    snippet: `<IcPageHeader
+  heading="Coffee recipes"
+  subHeading="This is a page header component that has an input area, actions and tabs."
   reverseOrder>
   <IcStatusTag slot="heading-adornment" label="Beta" />
   <IcButton slot="actions" variant="primary">
@@ -217,21 +217,21 @@ export const withActionsInputTabs = [
   <IcButton slot="actions" variant="tertiary">
     Filter coffee
   </IcButton>
-  <IcTextField 
-    slot="input" 
-    placeholder="Enter your input" 
-    hideLabel 
+  <IcTextField
+    slot="input"
+    placeholder="Enter your input"
+    hideLabel
   />
-  <IcNavigationItem 
-    slot="tabs" 
-    label="All recipes" 
-    href="#" 
-    selected 
+  <IcNavigationItem
+    slot="tabs"
+    label="All recipes"
+    href="#"
+    selected
   />
-  <IcNavigationItem 
-    slot="tabs" 
-    label="Favourites" 
-    href="#" 
+  <IcNavigationItem
+    slot="tabs"
+    label="Favourites"
+    href="#"
   />
 </IcPageHeader>
     `,
@@ -268,7 +268,7 @@ export const withReactRouter = [
     snippet: `<MemoryRouter initialEntries={["/"]}>
   <IcPageHeader
     heading="Coffee recipes"
-    sub-heading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
+    subheading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
     reverseOrder
   >
     <IcStatusTag slot="heading-adornment" label="Beta" />
@@ -279,14 +279,14 @@ export const withReactRouter = [
     <IcButton slot="actions" variant="tertiary">Filter coffee</IcButton>
     <IcNavigationItem slot="tabs" selected>
       <NavLink slot="navigation-item" to="/">All recipes</NavLink>
-    </IcNavigationItem>        
+    </IcNavigationItem>
     <IcNavigationItem slot="tabs">
       <NavLink slot="navigation-item" to="/favourites">Favourites</NavLink>
     </IcNavigationItem>
-    <IcTextField 
-      slot="input" 
-      placeholder="Enter your input" 
-      hideLabel 
+    <IcTextField
+      slot="input"
+      placeholder="Enter your input"
+      hideLabel
       style={{'@media (maxWidth: 576px)':{width: "280px"}}}
     />
   </IcPageHeader>
@@ -308,7 +308,7 @@ export const withReactRouter = [
   <MemoryRouter initialEntries={["/"]}>
     <IcPageHeader
       heading="Coffee recipes"
-      sub-heading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
+      subheading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
       reverseOrder
     >
       <IcStatusTag slot="heading-adornment" label="Beta" />
