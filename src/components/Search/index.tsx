@@ -42,6 +42,7 @@ const Search: React.FC = () => {
       const match = options.find((option) => option.value === selectedValue);
       if (match && match.path) {
         navigate(match.path);
+        setValue("");
       }
     }
   };
