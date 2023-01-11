@@ -87,7 +87,7 @@ ic-alert {
 
 @media screen and (min-width: 1201px) and (max-width: 1384px) {
   .content-container {
-    width: calc(100% - var(--ic-space-xxl));
+    width: calc(100% - var(--ic-space-lg));
   }
 }
 
