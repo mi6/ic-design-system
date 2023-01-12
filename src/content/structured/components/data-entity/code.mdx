@@ -34,98 +34,68 @@ import {
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-data-entity heading="My details">
-  <ic-data-row label="First name" value="Dave">
-    <ic-link href="/" slot="end-component">
-      Edit
-    </ic-link>
-  </ic-data-row>
-  <ic-data-row label="Second name" value="Smith">
-    <ic-link href="/" slot="end-component">
-      Edit
-    </ic-link>
-  </ic-data-row>
-  <ic-data-row label="D.o.B" value="01/01/1990">
-    <ic-link href="/" slot="end-component">
-      Edit
-    </ic-link>
-  </ic-data-row>
-  <ic-data-row label="Address">
-    <ic-typography variant="body" slot="value">
-      383 Coffee Drive
-      <br />
-      London
-      <br />
-      SW7 988
-      <br />
-      United Kingdom
-    </ic-typography>
-    <ic-link href="/" slot="end-component">
-      Edit
-    </ic-link>
-  </ic-data-row>
-  <ic-data-row label="Email address" value="dave@dave.com">
-    <ic-link href="/" slot="end-component">
-      Edit
-    </ic-link>
-  </ic-data-row>
-</ic-data-entity>`,
+    snippet: `<ic-data-entity heading="Personal details">
+    <ic-data-row label="Name" value="Michael Johnson">
+      <ic-link href="#" slot="end-component">
+        Edit
+      </ic-link>
+    </ic-data-row>
+    <ic-data-row label="Date of birth" value="16 October 1995">
+      <ic-link href="#" slot="end-component">
+        Edit
+      </ic-link>
+    </ic-data-row>
+    <ic-data-row label="Telephone" value="07449 7654873">
+      <ic-link href="#" slot="end-component">
+        Edit
+      </ic-link>
+    </ic-data-row>
+    <ic-data-row label="Email" value="mjohnson@coffee.gov">
+      <ic-link href="#" slot="end-component">
+        Edit
+      </ic-link>
+    </ic-data-row>
+    <ic-data-row label="Address">
+      <ic-typography variant="body" slot="value">
+        383 Coffee Drive
+        <br />
+        London
+        <br />
+        SW7 988
+        <br />
+        United Kingdom
+      </ic-typography>
+      <ic-link href="#" slot="end-component">
+        Edit
+      </ic-link>
+    </ic-data-row>
+    <ic-data-row label="Travel records" value="Johnson_X46w32.pdf">
+      <ic-button variant="icon" aria-label="Download" slot="end-component">
+          <svg>...</svg>
+      </ic-button>
+    </ic-data-row>
+  </ic-data-entity>`,
   },
   {
     language: "React",
-    snippet: `<IcDataEntity heading="My details">
-  <IcDataRow label="First name" value="Dave">
-    <IcLink href="/" slot="end-component">
-      Edit
-    </IcLink>
-  </IcDataRow>
-  <IcDataRow label="Second name" value="Smith">
-    <IcLink href="/" slot="end-component">
-      Edit
-    </IcLink>
-  </IcDataRow>
-  <IcDataRow label="D.o.B" value="01/01/1990">
-    <IcLink href="/" slot="end-component">
-      Edit
-    </IcLink>
-  </IcDataRow>
-  <IcDataRow label="Address">
-    <IcTypography variant="body" slot="value">
-      383 Coffee Drive
-      <br />
-      London
-      <br />
-      SW7 988
-      <br />
-      United Kingdom
-    </IcTypography>
-    <IcLink href="/" slot="end-component">
-      Edit
-    </IcLink>
-  </IcDataRow>
-  <IcDataRow label="Email address" value="dave@dave.com">
-    <IcLink href="/" slot="end-component">
-      Edit
-    </IcLink>
-  </IcDataRow>
-</IcDataEntity>`,
-  },
-];
-
-<ComponentPreview snippets={snippets}>
-  <IcDataEntity heading="My details">
-    <IcDataRow label="First name" value="Dave">
-      <IcLink href="/" slot="end-component">
+    snippet: `  <IcDataEntity heading="Personal details">
+    <IcDataRow label="Name" value="Michael Johnson">
+      <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Second name" value="Smith">
-      <IcLink href="/" slot="end-component">
+    <IcDataRow label="Date of birth" value="16 October 1995">
+      <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="D.o.B" value="01/01/1990">
-      <IcLink href="/" slot="end-component">
+    <IcDataRow label="Telephone" value="07449 7654873">
+      <IcLink href="#" slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+      <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
@@ -139,14 +109,64 @@ export const snippets = [
         <br />
         United Kingdom
       </IcTypography>
-      <IcLink href="/" slot="end-component">
+      <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Email address" value="dave@dave.com">
-      <IcLink href="/" slot="end-component">
+    <IcDataRow label="Travel records" value="Johnson_X46w32.pdf">
+      <IcButton variant="icon" aria-label="Download" slot="end-component">
+        <svg>...</svg>
+      </IcButton>
+    </IcDataRow>
+  </IcDataEntity>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcDataEntity heading="Personal details">
+    <IcDataRow label="Name" value="Michael Johnson">
+      <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Date of birth" value="16 October 1995">
+      <IcLink href="#" slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Telephone" value="07449 7654873">
+      <IcLink href="#" slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+      <IcLink href="#" slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Address">
+      <IcTypography variant="body" slot="value">
+        383 Coffee Drive
+        <br />
+        London
+        <br />
+        SW7 988
+        <br />
+        United Kingdom
+      </IcTypography>
+      <IcLink href="#" slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Travel records" value="Johnson_X46w32.pdf">
+      <IcButton variant="icon" aria-label="Download" slot="end-component">
+        <svg viewBox="0 0 24 24" height="24px" width="24px">
+          <path
+            d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcButton>
     </IcDataRow>
   </IcDataEntity>
 </ComponentPreview>
@@ -166,136 +186,88 @@ export const snippets = [
 export const withStatusTags = [
   {
     language: "Web component",
-    snippet: `<ic-data-entity heading="My details">
-  <ic-data-row label="First name" value="Dave">
-    <ic-status-tag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </ic-data-row>
-  <ic-data-row label="Second name" value="Smith">
-    <ic-status-tag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </ic-data-row>
-  <ic-data-row label="D.o.B" value="01/01/1990">
-    <ic-status-tag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </ic-data-row>
-  <ic-data-row label="Address">
-    <ic-typography variant="body" slot="value">
-      383 Coffee Drive
-      <br />
-      London
-      <br />
-      SW7 988
-      <br />
-      United Kingdom
-    </ic-typography>
-    <ic-status-tag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </ic-data-row>
-  <ic-data-row label="Email address" value="dave@dave.com">
-    <ic-status-tag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </ic-data-row>
-</ic-data-entity>`,
+    snippet: `<ic-data-entity heading="Personal details">
+    <ic-data-row label="Name" value="Michael Johnson">
+      <ic-status-tag
+        status="success"
+        label="confirmed"
+        variant="secondary"
+        slot="end-component"
+      />
+    </ic-data-row>
+    <ic-data-row label="Date of birth" value="16 October 1995">
+      <ic-status-tag
+        status="warning"
+        label="in review"
+        variant="secondary"
+        slot="end-component"
+      />
+    </ic-data-row>
+    <ic-data-row label="Telephone" value="07449 7654873">
+      <ic-status-tag
+        status="warning"
+        label="in review"
+        variant="secondary"
+        slot="end-component"
+      />
+    </ic-data-row>
+    <ic-data-row label="Email" value="mjohnson@coffee.gov">
+      <ic-status-tag
+        status="success"
+        label="confirmed"
+        variant="secondary"
+        slot="end-component"
+      />
+    </ic-data-row>
+    <ic-data-row label="Address">
+      <ic-typography variant="body" slot="value">
+        383 Coffee Drive
+        <br />
+        London
+        <br />
+        SW7 988
+        <br />
+        United Kingdom
+      </ic-typography>
+      <ic-status-tag
+        label="not confirmed"
+        variant="secondary"
+        slot="end-component"
+      />
+    </ic-data-row>
+  </ic-data-entity>`,
   },
   {
     language: "React",
-    snippet: `<IcDataEntity heading="My details">
-  <IcDataRow label="First name" value="Dave">
-    <IcStatusTag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </IcDataRow>
-  <IcDataRow label="Second name" value="Smith">
-    <IcStatusTag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </IcDataRow>
-  <IcDataRow label="D.o.B" value="01/01/1990">
-    <IcStatusTag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </IcDataRow>
-  <IcDataRow label="Address">
-    <IcTypography variant="body" slot="value">
-      383 Coffee Drive
-      <br />
-      London
-      <br />
-      SW7 988
-      <br />
-      United Kingdom
-    </IcTypography>
-    <IcStatusTag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </IcDataRow>
-  <IcDataRow label="Email address" value="dave@dave.com">
-    <IcStatusTag
-      status="success"
-      label="complete"
-      variant="secondary"
-      slot="end-component"
-    />
-  </IcDataRow>
-</IcDataEntity>`,
-  },
-];
-
-<ComponentPreview snippets={withStatusTags}>
-  <IcDataEntity heading="My details">
-    <IcDataRow label="First name" value="Dave">
+    snippet: `<IcDataEntity heading="Personal details">
+    <IcDataRow label="Name" value="Michael Johnson">
       <IcStatusTag
         status="success"
-        label="complete"
+        label="confirmed"
         variant="secondary"
         slot="end-component"
       />
     </IcDataRow>
-    <IcDataRow label="Second name" value="Smith">
+    <IcDataRow label="Date of birth" value="16 October 1995">
       <IcStatusTag
-        status="success"
-        label="complete"
+        status="warning"
+        label="in review"
         variant="secondary"
         slot="end-component"
       />
     </IcDataRow>
-    <IcDataRow label="D.o.B" value="01/01/1990">
+    <IcDataRow label="Telephone" value="07449 7654873">
+      <IcStatusTag
+        status="warning"
+        label="in review"
+        variant="secondary"
+        slot="end-component"
+      />
+    </IcDataRow>
+    <IcDataRow label="Email" value="mjohnson@coffee.gov">
       <IcStatusTag
         status="success"
-        label="complete"
+        label="confirmed"
         variant="secondary"
         slot="end-component"
       />
@@ -311,16 +283,61 @@ export const withStatusTags = [
         United Kingdom
       </IcTypography>
       <IcStatusTag
-        status="success"
-        label="complete"
+        label="not confirmed"
         variant="secondary"
         slot="end-component"
       />
     </IcDataRow>
-    <IcDataRow label="Email address" value="dave@dave.com">
+  </IcDataEntity>`,
+  },
+];
+
+<ComponentPreview snippets={withStatusTags}>
+  <IcDataEntity heading="Personal details">
+    <IcDataRow label="Name" value="Michael Johnson">
       <IcStatusTag
         status="success"
-        label="complete"
+        label="confirmed"
+        variant="secondary"
+        slot="end-component"
+      />
+    </IcDataRow>
+    <IcDataRow label="Date of birth" value="16 October 1995">
+      <IcStatusTag
+        status="warning"
+        label="in review"
+        variant="secondary"
+        slot="end-component"
+      />
+    </IcDataRow>
+    <IcDataRow label="Telephone" value="07449 7654873">
+      <IcStatusTag
+        status="warning"
+        label="in review"
+        variant="secondary"
+        slot="end-component"
+      />
+    </IcDataRow>
+    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+      <IcStatusTag
+        status="success"
+        label="confirmed"
+        variant="secondary"
+        slot="end-component"
+      />
+    </IcDataRow>
+    <IcDataRow label="Address">
+      <IcTypography variant="body" slot="value">
+        383 Coffee Drive
+        <br />
+        London
+        <br />
+        SW7 988
+        <br />
+        United Kingdom
+      </IcTypography>
+      <IcStatusTag
+        label="not confirmed"
         variant="secondary"
         slot="end-component"
       />
@@ -333,198 +350,198 @@ export const withStatusTags = [
 export const editableExample = [
   {
     language: "Web component",
-    snippet: `<ic-data-entity heading="My details">
-  <ic-data-row label="First name">
-    <ic-text-field 
-      class="text-box" 
-      slot="value" 
-      label="First name" 
-      value="Dave" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </ic-data-row>
-  <ic-data-row label="Second name">
-    <ic-text-field 
-      class="text-box" 
-      slot="value" 
-      label="Second name" 
-      value="Smith" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </ic-data-row>
-  <ic-data-row label="D.o.B">
-    <ic-text-field 
-      class="text-box" 
-      slot="value" 
-      label="D.o.B" 
-      value="01/01/1990" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </ic-data-row>
-  <ic-data-row label="Address">
-    <ic-text-field 
-      class="text-box" 
-      slot="value" 
-      label="Address" 
-      value="383 Coffee Drive, London, SW7 988, United Kingdom"  
-      readonly 
-      hide-label 
-      full-width
-    />
-  </ic-data-row>
-  <ic-data-row label="Email address">
-    <ic-text-field 
-      class="text-box" 
-      slot="value" 
-      label="Email address" 
-      value="dave@dave.com" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </ic-data-row>
-</ic-data-entity>
-<ic-button
-  onclick="
-  var textFields = document.querySelectorAll('.text-box');
-  for (var i=0; i < textFields.length; i++) {
-    textFields[i].setAttribute('readonly', 'false');
-  }"
-    style="margin-right: var(--ic-space-md);margin-top: var(--ic-space-lg);"
->
-  Edit
-</ic-button>
-<ic-button
-  onclick="
-  var textFields = document.querySelectorAll('.text-box');
-  for (var i=0; i < textFields.length; i++) {
-    textFields[i].setAttribute('readonly', 'true');
-  }"
-  variant="secondary"
-  style="margin-top: var(--ic-space-lg);"
->
-  Confirm
-</ic-button>`,
+    snippet: `<ic-data-entity heading="Personal details">
+      <ic-data-row label="Name"> 
+        <ic-text-field 
+          slot="value" 
+          label="Name" 
+          value="Michael Johnson" 
+          readonly 
+          hide-label 
+          full-width
+        />
+      </ic-data-row>
+      <ic-data-row label="Date of birth">
+        <ic-text-field 
+          slot="value" 
+          label="Date of birth" 
+          value="16 October 1995" 
+          readonly 
+          hide-label 
+          full-width
+        />
+      </ic-data-row>
+      <ic-data-row label="Telephone">
+        <ic-text-field 
+          slot="value" 
+          label="Telephone" 
+          value="07449 7654873" 
+          readonly 
+          hide-label 
+          full-width
+        />
+      </ic-data-row>
+      <ic-data-row label="Email">
+        <ic-text-field 
+          slot="value" 
+          label="Email" 
+          value="mjohnson@coffee.gov" 
+          readonly 
+          hide-label 
+          full-width
+        />
+      </ic-data-row>
+      <ic-data-row label="Address">
+        <ic-text-field 
+          slot="value" 
+          label="Address" 
+          value="383 Coffee Drive, London, SW7 988, United Kingdom"  
+          readonly 
+          hide-label 
+          full-width
+        />
+      </ic-data-row>
+    </ic-data-entity>
+    <ic-button
+      onclick="
+        var textFields = document.querySelectorAll('ic-text-field');
+        for (var i=0; i < textFields.length; i++) {
+          textFields[i].setAttribute('readonly', '');
+        }"
+      style="margin-right: var(--ic-space-md);margin-top: var(--ic-space-lg);"
+    >
+      Confirm
+    </ic-button>
+    <ic-button
+      onclick="
+        var textFields = document.querySelectorAll('ic-text-field');
+        for (var i=0; i < textFields.length; i++) {
+          textFields[i].removeAttribute('readonly');
+        }"
+      variant="secondary"
+      style="margin-top: var(--ic-space-lg);"
+    >
+      Edit
+    </ic-button>`,
   },
   {
     language: "React",
-    snippet: `<IcDataEntity heading="My details">
-  <IcDataRow label="First name">
-    <IcTextField 
-      class="text-box" 
-      slot="value" 
-      label="First name" 
-      value="Dave" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </IcDataRow>
-  <IcDataRow label="Second name">
-    <IcTextField 
-      class="text-box" 
-      slot="value" 
-      label="Second name" 
-      value="Smith" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </IcDataRow>
-  <IcDataRow label="D.o.B">
-    <IcTextField 
-      class="text-box" 
-      slot="value" 
-      label="D.o.B" 
-      value="01/01/1990" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </IcDataRow>
-  <IcDataRow label="Address">
-    <IcTextField 
-      class="text-box" 
-      slot="value" 
-      label="Address" 
-      value="383 Coffee Drive, London, SW7 988, United Kingdom"  
-      readonly 
-      hide-label 
-      full-width
-    />
-  </IcDataRow>
-  <IcDataRow label="Email address">
-    <IcTextField 
-      class="text-box" 
-      slot="value" 
-      label="Email address" 
-      value="dave@dave.com" 
-      readonly 
-      hide-label 
-      full-width
-    />
-  </IcDataRow>
-</IcDataEntity>
-<IcButton
-    onclick="
-      var textFields = document.querySelectorAll('.text-box');
-      for (var i=0; i < textFields.length; i++) {
-        textFields[i].setAttribute('readonly', 'false');
-      }"
-    style={{marginRight: "var(--ic-space-md)", marginTop: "var(--ic-space-lg)"}}
-  >
-    Edit
-  </IcButton>
-  <IcButton
-    onclick="
-      var textFields = document.querySelectorAll('.text-box');
-      for (var i=0; i < textFields.length; i++) {
-        textFields[i].setAttribute('readonly', 'true');
-      }"
-    variant="secondary"
-    style={{marginTop: "var(--ic-space-lg)"}}
-  >
-    Confirm
-  </IcButton>`,
+    snippet: `<IcDataEntity heading="Personal details">
+      <IcDataRow label="Name">
+        <IcTextField
+          slot="value"
+          label="Name"
+          value="Michael Johnson"
+          readonly
+          hide-label
+          full-width
+        />
+      </IcDataRow>
+      <IcDataRow label="Date of birth" value="16 October 1995">
+        <IcTextField
+          slot="value"
+          label="Date of birth"
+          value="16 October 1995"
+          readonly
+          hide-label
+          full-width
+        />
+      </IcDataRow>
+      <IcDataRow label="Telephone" value="07449 7654873">
+        <IcTextField
+          slot="value"
+          label="Telephone"
+          value="07449 7654873"
+          readonly
+          hide-label
+          full-width
+        />
+      </IcDataRow>
+      <IcDataRow label="Email" value="mjohnson@coffee.gov">
+        <IcTextField
+          slot="value"
+          label="Email"
+          value="mjohnson@coffee.gov"
+          readonly
+          hide-label
+          full-width
+        />
+      </IcDataRow>
+      <IcDataRow label="Address">
+        <IcTextField
+          slot="value"
+          label="Address"
+          value="383 Coffee Drive, London, SW7 988, United Kingdom"
+          readonly
+          hide-label
+          full-width
+        />
+      </IcDataRow>
+    </IcDataEntity>
+    <IcButton
+      onclick="
+        var textFields = document.querySelectorAll('ic-text-field');
+        for (var i=0; i < textFields.length; i++) {
+          textFields[i].setAttribute('readonly', '');
+        }"
+      style={{
+        marginRight: "var(--ic-space-md)",
+        marginTop: "var(--ic-space-lg)",
+      }}
+    >
+      Confirm
+    </IcButton>
+    <IcButton
+      onclick="
+        var textFields = document.querySelectorAll('ic-text-field');
+        for (var i=0; i < textFields.length; i++) {
+          textFields[i].removeAttribute('readonly');
+        }"
+      variant="secondary"
+      style={{ marginTop: "var(--ic-space-lg)" }}
+    >
+      Edit
+    </IcButton>`,
   },
 ];
 
 <ComponentPreview snippets={editableExample} style={{ display: "block" }}>
-  <IcDataEntity heading="My details">
-    <IcDataRow label="First name">
+  <IcDataEntity heading="Personal details">
+    <IcDataRow label="Name">
       <IcTextField
-        class="text-box"
         slot="value"
-        label="First name"
-        value="Dave"
+        label="Name"
+        value="Michael Johnson"
         readonly
         hide-label
         full-width
       />
     </IcDataRow>
-    <IcDataRow label="Second name">
+    <IcDataRow label="Date of birth" value="16 October 1995">
       <IcTextField
-        class="text-box"
         slot="value"
-        label="Second name"
-        value="Smith"
+        label="Date of birth"
+        value="16 October 1995"
         readonly
         hide-label
         full-width
       />
     </IcDataRow>
-    <IcDataRow label="D.o.B">
+    <IcDataRow label="Telephone" value="07449 7654873">
       <IcTextField
-        class="text-box"
         slot="value"
-        label="D.o.B"
-        value="01/01/1990"
+        label="Telephone"
+        value="07449 7654873"
+        readonly
+        hide-label
+        full-width
+      />
+    </IcDataRow>
+    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+      <IcTextField
+        slot="value"
+        label="Email"
+        value="mjohnson@coffee.gov"
         readonly
         hide-label
         full-width
@@ -532,7 +549,6 @@ export const editableExample = [
     </IcDataRow>
     <IcDataRow label="Address">
       <IcTextField
-        class="text-box"
         slot="value"
         label="Address"
         value="383 Coffee Drive, London, SW7 988, United Kingdom"
@@ -541,40 +557,29 @@ export const editableExample = [
         full-width
       />
     </IcDataRow>
-    <IcDataRow label="Email address">
-      <IcTextField
-        class="text-box"
-        slot="value"
-        label="Email address"
-        value="dave@dave.com"
-        readonly
-        hide-label
-        full-width
-      />
-    </IcDataRow>
   </IcDataEntity>
   <IcButton
     onclick="
-      var textFields = document.querySelectorAll('.text-box');
+      var textFields = document.querySelectorAll('ic-text-field');
       for (var i=0; i < textFields.length; i++) {
-        textFields[i].setAttribute('readonly', 'false');
+        textFields[i].setAttribute('readonly', '');
       }"
     style={{
       marginRight: "var(--ic-space-md)",
       marginTop: "var(--ic-space-lg)",
     }}
   >
-    Edit
+    Confirm
   </IcButton>
   <IcButton
     onclick="
-      var textFields = document.querySelectorAll('.text-box');
+      var textFields = document.querySelectorAll('ic-text-field');
       for (var i=0; i < textFields.length; i++) {
-        textFields[i].setAttribute('readonly', 'true');
+        textFields[i].removeAttribute('readonly');
       }"
     variant="secondary"
     style={{ marginTop: "var(--ic-space-lg)" }}
   >
-    Confirm
+    Edit
   </IcButton>
 </ComponentPreview>
