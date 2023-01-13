@@ -3,11 +3,11 @@ path: "/get-started/install-components/react"
 
 navPriority: 2
 
-date: "2022-11-15"
+date: "2023-01-13"
 
 title: "React"
 
-subTitle: "To use the components follow the relevant framework instructions."
+subTitle: "How to use the components in a React-based framework."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/react.mdx"
 ---
@@ -44,7 +44,51 @@ Add the following into the top level CSS file for your project.
 @import "@ukic/react/dist/core/core.css";
 ```
 
-## Step four
+## Using NextJS
+
+The `@ukic/react` package will need to be transpiled for use with NextJS. The steps required will depend on the version of NextJS you are using.
+
+### NextJS 13
+
+Set the following in the `next.config.js` file.
+
+```jsx
+const nextConfig = {
+  //other configuration
+  transpilePackages: ["@ukic/react"],
+};
+
+module.exports = nextConfig;
+```
+
+### NextJS 12 and earlier
+
+#### Step one
+
+Install the `next-transpile-modules` package in the root of your project.
+
+```shell
+// using npm
+npm install next-transpile-modules
+
+// using yarn
+yarn add next-transpile-modules
+```
+
+#### Step two
+
+Set the following in the `next.config.js` file.
+
+```jsx
+const nextConfig = {
+  //other configuration
+};
+
+const withTM = require("next-transpile-modules")(["@ukic/react"]);
+module.exports = withTM(nextConfig);
+```
+
+## Testing with Jest
 
 The `@ukic/react` package will need to be transformed before you can use these components in Jest tests.
 
