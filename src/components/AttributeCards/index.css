@@ -26,7 +26,11 @@
 }
 
 .attribute-cards-cell ic-typography {
-  padding: var(--ic-space-md);
+  padding: var(--ic-space-md) !important;
+}
+
+.attribute-cards-cell .ic-typography-caption {
+  margin: 0 0 var(--ic-space-md) var(--ic-space-md);
 }
 
 @media screen and (max-width: 576px) {
