@@ -8,6 +8,7 @@ interface StencilProp {
   docs: string;
   type: string;
   default?: string;
+  required: boolean;
 }
 
 interface PropTableProps {
@@ -35,12 +36,12 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
 
   const data = useMemo(
     () =>
-      propData.map((prop) => ({
-        name: prop.name,
+      propData.map(({ name, docs, type, required, default: defaultValue }) => ({
+        name,
         description: (
-          <PropDescription description={prop.docs} type={prop.type} />
+          <PropDescription description={docs} type={type} required={required} />
         ),
-        default: prop.default,
+        default: defaultValue,
       })),
     []
   );
