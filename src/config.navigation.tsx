@@ -3,7 +3,7 @@ import { mdiGithub } from "@mdi/js";
 import { Link as GatsbyLink } from "gatsby";
 
 import React from "react";
-import SlottedSVG from "./components/SlottedSVG";
+import { SlottedSVG } from "@ukic/react";
 
 export const textLinks = [
   {

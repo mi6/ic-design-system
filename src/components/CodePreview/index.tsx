@@ -8,7 +8,7 @@ import {
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import clsx from "clsx";
-import SlottedSVG from "../SlottedSVG";
+import { SlottedSVG } from "@ukic/react";
 
 import "./index.css";
 
