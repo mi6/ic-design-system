@@ -19,4 +19,4 @@ jobs:
       - uses: mshick/add-pr-comment@v2
         with:
           message: |
-            View your branch deployment here: https://literate-parakeet-8e09c632.pages.github.io/branches/${{ steps.extract_branch.outputs.branch }}
+            View your branch deployment here: https://animated-fiesta-gvyom1k.pages.github.io/branches/${{ steps.extract_branch.outputs.branch }}
