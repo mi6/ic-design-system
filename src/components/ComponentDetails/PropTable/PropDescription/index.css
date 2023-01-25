@@ -1,8 +1,10 @@
+.prop-description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ic-space-xs);
+}
+
 .prop-description .ic-typography-subtitle-small::before {
   color: var(--ic-status-error);
   content: "*";
-}
-
-.prop-description .ic-typography-subtitle-small {
-  padding: var(--ic-space-xxs) 0;
 }
