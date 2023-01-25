@@ -1,0 +1,5 @@
+.prop-name {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ic-space-xs);
+}

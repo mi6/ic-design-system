@@ -10,7 +10,7 @@ const PropDescription: React.FC<{
   <div className="prop-description">
     <ic-typography>{description}</ic-typography>
     {required && (
-      <ic-typography variant="subtitle-small">required</ic-typography>
+      <ic-typography variant="subtitle-small">Required</ic-typography>
     )}
     <CodeAttribute label={`type: ${type}`} />
   </div>
