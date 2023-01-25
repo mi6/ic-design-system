@@ -12,7 +12,7 @@ const AttributeCards: React.FC<AttributeCardsProps> = ({ data }) => (
       {data.map((cell) => (
         <tr className="attribute-cards-row">
           <td className="attribute-cards-cell">
-            <ic-typography variant="subtitle-large">{cell.name}</ic-typography>
+            {cell.name}
             {cell.description}
             {cell.default !== undefined ? (
               <ic-typography variant="body">
