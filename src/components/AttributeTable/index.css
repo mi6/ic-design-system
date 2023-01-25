@@ -9,7 +9,7 @@
 }
 
 .cell {
-  padding: var(--ic-space-md) var(--ic-space-lg);
+  padding: var(--ic-space-md) calc(var(--ic-space-lg) / 2);
 }
 
 .cell:last-child {

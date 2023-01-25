@@ -1,10 +1,12 @@
 import React, { useMemo } from "react";
 import AttributeTable from "../../AttributeTable";
 import AttributeCards from "../../AttributeCards";
+import PropName from "./PropName";
 import PropDescription from "./PropDescription";
 
 interface StencilProp {
   name: string;
+  attr: string;
   docs: string;
   type: string;
   default?: string;
@@ -36,13 +38,21 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
 
   const data = useMemo(
     () =>
-      propData.map(({ name, docs, type, required, default: defaultValue }) => ({
-        name,
-        description: (
-          <PropDescription description={docs} type={type} required={required} />
+      propData
+        .map(({ name, attr, docs, type, required, default: defaultValue }) => ({
+          name: <PropName name={name} attribute={attr} />,
+          description: (
+            <PropDescription
+              description={docs}
+              type={type}
+              required={required}
+            />
+          ),
+          default: defaultValue,
+        }))
+        .sort(
+          (a, b) => b.description.props.required - a.description.props.required
         ),
-        default: defaultValue,
-      })),
     []
   );
 
