@@ -1,7 +1,7 @@
 ---
 path: "/get-started/install-components/testing-with-react-testing-library"
 
-navPriority: 8
+navPriority: 9
 
 date: "2023-01-20"
 
@@ -18,7 +18,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 ## Shadow DOM Testing Library
 
-It is not possible to exclusively use RTL to test `@ukic/react` components, as they are React-wrapped web components which use the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) (`<ShadowRoot>`). RTL does not provide utility functions which traverse beyond the shadow DOM. 
+It is not possible to exclusively use RTL to test `@ukic/react` components, as they are React-wrapped web components which use the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) (`<ShadowRoot>`). RTL does not provide utility functions which traverse beyond the shadow DOM.
 With the addition of [Shadow DOM Testing Library](https://github.com/KonnorRogers/shadow-dom-testing-library), elements within the shadow DOM can be selected and then interacted with by using methods provided by RTL. Shadow DOM Testing Library provides functions with 'Shadow' prefixed to the query type (e.g. `getByShadowText()`).
 
 ```tsx
@@ -43,17 +43,17 @@ import { render, waitFor } from "@testing-library/react";
 import { screen } from "shadow-dom-testing-library";
 
 it("renders IcAlert", async () => {
-    const { getByRole /* container */ } = render(<IcAlert message="Foo" />);
+  const { getByRole /* container */ } = render(<IcAlert message="Foo" />);
 
-    // Wait for IcAlert to hydrate before continuing to view the full IcAlert DOM tree.
-    await waitFor(() => {
-        expect(getByRole("alert")).toHaveClass("hydrated");
+  // Wait for IcAlert to hydrate before continuing to view the full IcAlert DOM tree.
+  await waitFor(() => {
+    expect(getByRole("alert")).toHaveClass("hydrated");
 
-        // 'container' can also be used with querySelector to select ic-alert.
-        // expect(container.querySelector('ic-alert')).toHaveClass('hydrated');
-    });
+    // 'container' can also be used with querySelector to select ic-alert.
+    // expect(container.querySelector('ic-alert')).toHaveClass('hydrated');
+  });
 
-    expect(await screen.findByShadowText("Foo")).toBeInTheDocument();
+  expect(await screen.findByShadowText("Foo")).toBeInTheDocument();
 });
 ```
 
@@ -61,33 +61,31 @@ it("renders IcAlert", async () => {
 
 Below are additional examples on testing `@ukic/react` components using RTL and Shadow DOM Testing Library with `IcSelect` and `IcTextField`.
 
-
 ### IcSelect
 
 ```jsx
 // Select.tsx
-import { useState } from 'react';
-import { IcSelect } from '@ukic/react';
-import { IcMenuOption } from '@ukic/web-components';
+import { useState } from "react";
+import { IcSelect } from "@ukic/react";
+import { IcMenuOption } from "@ukic/web-components";
 
 interface IcMenuOptions {
-    options: IcMenuOption[]
+  options: IcMenuOption[];
 }
 
 const Select = ({ options }: IcMenuOptions) => {
-    const [selectedValue, setSelectedValue] = useState<string | undefined>(
-        undefined
-    );
-    return (
-        <IcSelect
-            label='Title'
-            onIcChange={(e) => setSelectedValue(e.detail.value)}
-            options={options}
-            value={selectedValue}
-        />
-    );
+  const [selectedValue, setSelectedValue] =
+    (useState < string) | (undefined > undefined);
+  return (
+    <IcSelect
+      label="Title"
+      onIcChange={(e) => setSelectedValue(e.detail.value)}
+      options={options}
+      value={selectedValue}
+    />
+  );
 };
-  
+
 export default Select;
 ```
 
@@ -181,27 +179,20 @@ import { IcTextField } from "@ukic/react";
 import { useState } from "react";
 
 interface NameProps {
-    name: string
+  name: string;
 }
 
 const TextField = ({ name }: NameProps) => {
-    const [value, setTextFieldValue] = useState<string>('');
+  const [value, setTextFieldValue] = useState < string > "";
 
-    const handleInput = (event: CustomEvent) => {
-        setTextFieldValue(event?.detail?.value)
-    }
+  const handleInput = (event: CustomEvent) => {
+    setTextFieldValue(event?.detail?.value);
+  };
 
-    return (
-        <IcTextField
-            label={name}
-            onIcInput={handleInput}
-            value={value}
-        />
-    )
-}
+  return <IcTextField label={name} onIcInput={handleInput} value={value} />;
+};
 
 export default TextField;
-
 ```
 
 ```jsx
