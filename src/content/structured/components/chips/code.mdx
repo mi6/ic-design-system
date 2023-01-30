@@ -19,12 +19,281 @@ tabs:
   ]
 ---
 
-import { IcAlert } from "@ukic/react";
+import { IcChip } from "@ukic/react";
 
 ## Component demo
 
-<IcAlert
-  heading="Coming soon"
-  message="Chip component is currently in development."
-  variant="info"
-/>
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-chip label="No icon"></ic-chip>
+<ic-chip label="Small" size="small">
+  <svg slot="icon" ... />
+</ic-chip>
+<ic-chip label="Default">
+  <svg slot="icon" ... />
+</ic-chip>
+<ic-chip label="Large" size="large">
+  <svg slot="icon" ... />
+</ic-chip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcChip label="No icon" />
+<IcChip label="Small" size="small">
+  <svg slot="icon" ... />
+</IcChip>
+<IcChip label="Default">
+  <svg slot="icon" ... />
+</IcChip>
+<IcChip label="Large" size="large">
+  <svg slot="icon" ... />
+</IcChip>`,
+  },
+];
+
+<ComponentPreview
+  style={{
+    gap: "8px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  snippets={snippetsDefault}
+>
+  <IcChip label="No icon" />
+  <IcChip label="Small" size="small">
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+  <IcChip label="Default">
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+  <IcChip label="Large" size="large">
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+</ComponentPreview>
+
+## Chip details
+
+<ComponentDetails component="ic-chip" />
+
+## Variants
+
+### Outline
+
+export const snippetsOutline = [
+  {
+    language: "Web component",
+    snippet: `<ic-chip label="Small" size="small" appearance="outline">
+  <svg slot="icon" ... />
+</ic-chip>
+<ic-chip label="Default" appearance="outline">
+  <svg slot="icon" ... />
+</ic-chip>
+<ic-chip label="Large" size="large" appearance="outline">
+  <svg slot="icon" ... />
+</ic-chip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcChip label="Small" size="small" appearance="outline">
+  <svg slot="icon" ... />
+</IcChip>
+<IcChip label="Default" appearance="outline">
+  <svg slot="icon" ... />
+</IcChip>
+<IcChip label="Large" size="large" appearance="outline">
+  <svg slot="icon" ... />
+</IcChip>`,
+  },
+];
+
+<ComponentPreview
+  style={{
+    gap: "8px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  snippets={snippetsOutline}
+>
+  <IcChip label="Small" size="small" appearance="outline">
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+  <IcChip label="Default" appearance="outline">
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+  <IcChip label="Large" size="large" appearance="outline">
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+</ComponentPreview>
+
+### Dismissible
+
+export const snippetsDismissible = [
+  {
+    language: "Web component",
+    snippet: `<ic-chip label="Default" dismissible="true">
+  <svg slot="icon" ... />
+</ic-chip>
+<ic-chip label="Default" appearance="outline" dismissible="true">
+  <svg slot="icon" ... />
+</ic-chip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcChip label="Default" dismissible>
+  <svg slot="icon" ... />
+</IcChip>
+<IcChip label="Default" appearance="outline" dismissible>
+  <svg slot="icon" ... />
+</IcChip>`,
+  },
+];
+
+<ComponentPreview
+  style={{
+    gap: "8px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  snippets={snippetsDismissible}
+>
+  <IcChip label="Default" dismissible>
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+  <IcChip label="Default" appearance="outline" dismissible>
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+</ComponentPreview>
+
+### Disabled
+
+export const snippetsDisabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-chip label="Default" dismissible="true" disabled="true">
+  <svg slot="icon" ... />
+</ic-chip>
+<ic-chip label="Default" appearance="outline" dismissible="true" disabled="true">
+  <svg slot="icon" ... />
+</ic-chip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcChip label="Default" dismissible disabled>
+  <svg slot="icon" ... />
+</IcChip>
+<IcChip label="Default" appearance="outline" dismissible disabled>
+  <svg slot="icon" ... />
+</IcChip>`,
+  },
+];
+
+<ComponentPreview
+  style={{
+    gap: "8px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  snippets={snippetsDisabled}
+>
+  <IcChip label="Default" dismissible disabled>
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+  <IcChip label="Default" appearance="outline" dismissible disabled>
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+</ComponentPreview>
