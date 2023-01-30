@@ -7,7 +7,7 @@ date: "2022-11-15"
 
 title: "Chip"
 
-status: "IN DEVELOPMENT"
+status: "BETA"
 
 subTitle: "Chips are used to filter and present data."
 
@@ -21,7 +21,7 @@ tabs:
   ]
 ---
 
-import { IcAlert } from "@ukic/react";
+import { IcChip } from "@ukic/react";
 import chipsFig1 from "./images/fig-1-use-dismissible-chips-for-filtering-multiple-item.png";
 import chipsFig2 from "./images/fig-2-do-use-static-chip-to-display-descriptive-non-interactive-information.png";
 import chipsFig3 from "./images/fig-3-do-not-replace-status-tags-for-static-chips.png";
@@ -29,13 +29,34 @@ import chipsFig4 from "./images/fig-4-do-use-status-tags-to-display-status.png";
 import chipsVid1 from "./images/anim-1-do-allow-users-to-re-select-the-item-after-it-has-been-dismissed.mp4";
 import chipsVid2 from "./images/anim-2-do-not-use-dismissible-chips-when-the-user-will-not-be-able-to-re-select-the-dismissed-item.mp4";
 
-<IcAlert
-  heading="Coming soon"
-  message="The chip component is currently in development."
-  variant="info"
-/>
-
 ## Component variants
+
+<ComponentPreview style={{ gap: "8px" }}>
+  <IcChip label="Default" dismissible>
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+  <IcChip label="Default">
+    <svg
+      slot="icon"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </IcChip>
+</ComponentPreview>
 
 There are two types of chips: dismissible chips and static chips. Dismissible chips have both filled and outline variants and are interactive, whereas static chips simply present information and aren't actionable.
 
