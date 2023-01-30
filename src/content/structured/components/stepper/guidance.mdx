@@ -57,7 +57,7 @@ Use the default stepper when you have the available space.
   variant="info"
 />
 
-Use the compact variant for compact layouts and processes with many steps.
+Use the compact variant for compact layouts or processes with many steps.
 
 ## When to use
 
@@ -82,7 +82,7 @@ Don't use the stepper to indicate a non-linear process where steps can be comple
 
 Steps are single elements which together form the stepper. Steps have 4 different states:
 
-- Active: Indicates that the step is available but not yet completed by the user.
+- Active: Indicates that the step is available but not yet completed by the user. This step type is rendered as current if displayed in the compact stepper.
 
 - Current: Shows the step the user is currently on.
 
@@ -117,7 +117,7 @@ Always align steppers to the left and place them above the main body content of 
   caption="A stepper that is centre-aligned at the top of the page, showing how the stepper should not be implemented."
 />
 
-When a stepper is too large to fit comfortably within its container, switch to using the compact stepper. This shows the current step along with its status, as well as the next step in the process.
+When a stepper is too large to fit comfortably within its container, it will switch to use the compact stepper. This shows the current step along with its status, as well as the next step in the process.
 
 <DoubleDoDontCaution>
   <DoDontCaution
@@ -132,7 +132,7 @@ When a stepper is too large to fit comfortably within its container, switch to u
 
 ### Labels
 
-Use the step labels to describe each step concisely in one or two words. Avoid using lengthy step labels.
+Use the step title to describe each step concisely in one or two words. Avoid using lengthy step titles.
 
 <DoDontCaution
   imageSrc={stepperFig2}
@@ -157,7 +157,7 @@ When a stepper is used, always use page titles and section headings on the page 
   caption="A stepper accompanied by a page title, showing how the stepper should be implemented."
 />
 
-Use a stepper without step labels if the step content is clearly labelled itself. Do not omit step labels if no headings are provided in the step content.
+Hide step information only if the step content is clearly labelled itself. Do not omit step labels if no headings are provided in the step content.
 
 <DoDontCaution
   imageSrc={stepperFig5}
@@ -165,6 +165,8 @@ Use a stepper without step labels if the step content is clearly labelled itself
   state="bad"
   caption="Don’t use a stepper without step labels if the page content does not include the step name in a heading."
 />
+
+Set a step status to show whether the step is required or optional in the step's subtitle. Override the step subtitle text to provide a custom message. 
 
 ### Validation
 
