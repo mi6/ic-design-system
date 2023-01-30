@@ -3,7 +3,7 @@ import "./index.css";
 
 const PropName: React.FC<{
   name: string;
-  attribute: string;
+  attribute: string | undefined;
 }> = ({ name, attribute }) => (
   <div className="prop-name">
     <div className="prop-name-property">

@@ -6,7 +6,7 @@ import PropDescription from "./PropDescription";
 
 interface StencilProp {
   name: string;
-  attr: string;
+  attr?: string | undefined;
   docs: string;
   type: string;
   default?: string;
