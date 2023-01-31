@@ -297,3 +297,118 @@ export const disabled = [
     ]}
   />
 </ComponentPreview>
+
+## Custom filtering example
+
+This example shows how to filter data asynchronously when the value in the input field changes. The data is mocked and displayed after a one second delay, but could be replaced with a call to an API or database.
+
+export const customFiltering = [
+  {
+    language: "Web component",
+    snippet: `<ic-search-bar 
+  label="What is your favourite coffee?" 
+  debounce="300" 
+  disable-filter="true">
+</ic-search-bar>
+<script>
+  var mockData = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  var select = document.querySelector("ic-search-bar");
+  select.addEventListener("icChange", function (event) {
+    const searchFor = event.detail.value;
+    if (searchFor.length > 1) {
+      mockAPI = (query) => {
+        filteredResults = mockData.filter((m) =>
+          m.label.toLowerCase().includes(query.toLowerCase())
+        );
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(filteredResults), 1000)
+        });
+      };
+      mockAPI(searchFor).then((newResults) => { select.options = newResults });
+    } else {
+      select.options = [];
+    }
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const mockData = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappucino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+const [results, setResults] = React.useState([]);
+<IcSearchBar label="What is your favourite coffee?"
+  debounce="300"
+  disableFilter
+  options={results}
+  onIcChange={(event) => {      
+    const searchFor = event.detail.value;
+    if (searchFor.length > 1) {
+      const mockAPI = (query) => {
+      const filteredResults = mockData.filter((m) =>
+        m.label.toLowerCase().includes(query.toLowerCase())
+        );
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(filteredResults), 1000);
+        });
+      };
+      mockAPI(searchFor).then((newResults) => setResults(newResults));
+    } else {
+      setResults([]);
+    }
+  }}
+/>`,
+  },
+];
+
+export const CustomFilterExample = () => {
+  const mockData = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappucino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  const [results, setResults] = React.useState([]);
+  return (
+    <IcSearchBar
+      label="What is your favourite coffee?"
+      debounce="300"
+      disableFilter
+      options={results}
+      onIcChange={(event) => {
+        const searchFor = event.detail.value;
+        if (searchFor.length > 1) {
+          const mockAPI = (query) => {
+            const filteredResults = mockData.filter((m) =>
+              m.label.toLowerCase().includes(query.toLowerCase())
+            );
+            return new Promise((resolve) => {
+              setTimeout(() => resolve(filteredResults), 1000);
+            });
+          };
+          mockAPI(searchFor).then((newResults) => setResults(newResults));
+        } else {
+          setResults([]);
+        }
+      }}
+    />
+  );
+};
+
+<ComponentPreview snippets={customFiltering}>
+  <CustomFilterExample />
+</ComponentPreview>
