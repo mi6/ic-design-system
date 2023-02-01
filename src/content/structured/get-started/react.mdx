@@ -103,3 +103,29 @@ module.exports = withTM(nextConfig);
 The `@ukic/react` package will need to be transformed before you can use these components in Jest tests.
 
 Add a `transformIgnorePatterns` field with the value `["/node_modules/(?!@ukic/react)"]` to your Jest config.
+
+## Working with slotted SVGs
+
+### Step one
+
+To slot an SVG into one of our React components, import the `SlottedSVG` component from `@ukic/react` into your React files. This will prevent an error stating that property 'slot' doesn't exist.
+
+```jsx
+import { SlottedSVG } from "@ukic/react";
+```
+
+### Step two
+
+Replace any instances of `<svg>` with `<SlottedSVG>`.
+
+```jsx
+//Before
+<IcTopNavigation appTitle="App title">
+  <svg slot="app-icon" path={path} />
+</IcTopNavigation>
+
+//After
+<IcTopNavigation appTitle="App title">
+  <SlottedSVG slot="app-icon" path={path} />
+</IcTopNavigation>
+```
