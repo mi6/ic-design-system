@@ -19,24 +19,25 @@ tabs:
   ]
 ---
 
-import { IcCard, IcStatusTag, IcTypography } from "@ukic/react";
+import { IcCard, IcStatusTag, IcButton } from "@ukic/react";
 
 ## Component demo
 
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-card heading="Card title" message="This is an example of a clickable card" clickable="true"></ic-card>`,
+    snippet: `<ic-card heading="Card heading" subheading="Card subheading" message="This is an example of a clickable card" clickable="true"></ic-card>`,
   },
   {
     language: "React",
-    snippet: `<IcCard heading="Card title" message="This is an example of a clickable card" clickable />`,
+    snippet: `<IcCard heading="Card heading" subheading="Card subheading" message="This is an example of a clickable card" clickable />`,
   },
 ];
 
 <ComponentPreview snippets={snippets}>
   <IcCard
-    heading="Card title"
+    heading="Card heading"
+    subheading="Card subheading"
     message="This is an example of a clickable card"
     clickable
   />
@@ -48,12 +49,12 @@ export const snippets = [
 
 ## Variants
 
-### Title only
+### Heading only
 
-export const titleOnly = [
+export const headingOnly = [
   {
     language: "Web component",
-    snippet: `<ic-card heading="Card title" clickable="true">
+    snippet: `<ic-card heading="Card heading" clickable="true">
   <svg slot="icon">
     ...
   </svg>
@@ -61,7 +62,7 @@ export const titleOnly = [
   },
   {
     language: "React",
-    snippet: `<IcCard heading="Card title" clickable>
+    snippet: `<IcCard heading="Card heading" clickable>
   <svg slot="icon">
     ...
   </svg>
@@ -69,8 +70,8 @@ export const titleOnly = [
   },
 ];
 
-<ComponentPreview snippets={titleOnly}>
-  <IcCard heading="Card title" clickable>
+<ComponentPreview snippets={headingOnly}>
+  <IcCard heading="Card heading" clickable>
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -85,12 +86,300 @@ export const titleOnly = [
   </IcCard>
 </ComponentPreview>
 
+### Interaction button
+
+export const interactionButton = [
+  {
+    language: "Web component",
+    snippet: `<ic-card heading="Card heading" subheading="Card subheading" message="This is an example of an interactive card with interaction button">
+  <svg slot="icon">
+    ...
+  </svg>
+  <ic-button
+    variant="icon"
+    title="More information"
+    slot="interaction-button"
+  >
+    <svg slot="icon">
+      ...
+    </svg>
+  </ic-button>
+</ic-card>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCard heading="Card heading" subheading="Card subheading" message="This is an example of an interactive card with interaction button">
+  <svg slot="icon">
+    ...
+  </svg>
+  <IcButton
+    variant="icon"
+    title="More information"
+    slot="interaction-button"
+  >
+    <svg slot="icon">
+      ...
+    </svg>
+  </IcButton>
+</IcCard>`,
+  },
+];
+
+<ComponentPreview snippets={interactionButton}>
+  <IcCard
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of an interactive card with interaction button"
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+    <IcButton variant="icon" title="More information" slot="interaction-button">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-three-dots-vertical"
+        viewBox="0 0 16 16"
+      >
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+      </svg>
+    </IcButton>
+  </IcCard>
+</ComponentPreview>
+
+### Adornment
+
+export const adornment = [
+  {
+    language: "Web component",
+    snippet: `<ic-card heading="Card heading" subheading="Card subheading" message="This is an example of a card with adornment">
+  <svg slot="icon">
+    ...
+  </svg>
+  <ic-status-tag slot="adornment" label="Neutral" small="true"></ic-status-tag>
+</ic-card>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCard heading="Card heading" subheading="Card subheading" message="This is an example of a card with adornment">
+  <svg slot="icon">
+    ...
+  </svg>
+  <IcStatusTag slot="adornment" label="Neutral" small />
+</IcCard>`,
+  },
+];
+
+<ComponentPreview snippets={adornment}>
+  <IcCard
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of a card with adornment"
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+    <IcStatusTag slot="adornment" label="Neutral" small />
+  </IcCard>
+</ComponentPreview>
+
+### Image
+
+export const image = [
+  {
+    language: "Web component",
+    snippet: `<ic-card heading="Card heading" subheading="Card subheading" message="This is an example of a card with an image" style="width:360px;">
+  <svg slot="icon">
+    ...
+  </svg>
+  <svg slot="image-mid">
+    ...
+  </svg>
+</ic-card>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCard heading="Card heading" subheading="Card subheading" message="This is an example of a card with an image" style={{width: "360px"}}>
+  <svg slot="icon">
+    ...
+  </svg>
+  <svg slot="image-mid">
+    ...
+  </svg>
+</IcCard>`,
+  },
+];
+
+<ComponentPreview snippets={image}>
+  <IcCard
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of a card with an image"
+    style={{ width: "360px" }}
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+    <svg
+      slot="image-mid"
+      style={{ height: "326px", width: " 326px" }}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1600 900"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+  </IcCard>
+</ComponentPreview>
+
+### Interaction controls
+
+export const interactionControls = [
+  {
+    language: "Web component",
+    snippet: `<ic-card heading="Card heading" subheading="Card subheading" message="This is an example of an interactive card with interaction controls">
+  <svg slot="icon">
+    ...
+  </svg>
+  <div slot="interaction-controls" style="display:flex;gap:16px;">
+    <ic-button variant="primary">Learn more</ic-button>
+    <ic-button variant="secondary">Hide</ic-button>
+  </div>
+</ic-card>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCard heading="Card heading" subheading="Card subheading" message="This is an example of an interactive card with interaction controls">
+  <svg slot="icon">
+    ...
+  </svg>
+  <div slot="interaction-controls" style={{display: "flex", gap: "16px"}}>
+    <IcButton variant="primary">Learn more</IcButton>
+    <IcButton variant="secondary">Hide</IcButton>
+  </div>
+</IcCard>`,
+  },
+];
+
+<ComponentPreview snippets={interactionControls}>
+  <IcCard
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of an interactive card with interaction controls"
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+    <div slot="interaction-controls" style={{ display: "flex", gap: "16px" }}>
+      <IcButton variant="primary">Learn more</IcButton>
+      <IcButton variant="secondary">Hide</IcButton>
+    </div>
+  </IcCard>
+</ComponentPreview>
+
+### Expandable
+
+export const expandable = [
+  {
+    language: "Web component",
+    snippet: `<ic-card heading="Card heading" subheading="Card subheading" message="This is an example of an interactive card with expandable content area" expandable="true">
+  <svg slot="icon">
+    ...
+  </svg>
+  <ic-typography slot="expanded-content" variant="body">
+    This is an example of the expanded content area
+  </ic-typography>
+</ic-card>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCard heading="Card heading" subheading="Card subheading" message="This is an example of an interactive card with expandable content area" expandable>
+  <svg slot="icon">
+    ...
+  </svg>
+  <IcTypography slot="expanded-content" variant="body">
+    This is an example of the expanded content area
+  </IcTypography>
+</IcCard>`,
+  },
+];
+
+<ComponentPreview snippets={expandable}>
+  <IcCard
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of an interactive card with expandable content area"
+    expandable
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+    <ic-typography slot="expanded-content" variant="body">
+      This is an example of the expanded content area
+    </ic-typography>
+  </IcCard>
+</ComponentPreview>
+
 ### Disabled
 
 export const disabled = [
   {
     language: "Web component",
-    snippet: `<ic-card heading="Card" message="This is an example of a new card component with text included" clickable="true" disabled="true" onclick="alert('clicked')">
+    snippet: `<ic-card heading="Card heading" subheading="Card subheading" message="This is an example of a disabled clickable card" clickable="true" disabled="true" onclick="alert('clicked')">
   <svg slot="icon">
     ...
   </svg>
@@ -98,7 +387,7 @@ export const disabled = [
   },
   {
     language: "React",
-    snippet: `<IcCard heading="Card" message="This is an example of a new card component with text included" clickable disabled onClick={() => alert('clicked')}>
+    snippet: `<IcCard heading="Card heading" subheading="Card subheading" message="This is an example of a disabled clickable card" clickable disabled onClick={() => alert('clicked')}>
   <svg slot="icon">
     ...
   </svg>
@@ -108,8 +397,9 @@ export const disabled = [
 
 <ComponentPreview snippets={disabled}>
   <IcCard
-    heading="Card"
-    message="This is an example of a new card component with text included"
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of a disabled clickable card"
     clickable
     disabled
     onClick={() => alert("clicked")}
@@ -125,70 +415,5 @@ export const disabled = [
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
     </svg>
-  </IcCard>
-</ComponentPreview>
-
-### Using slots
-
-export const usingSlots = [
-  {
-    language: "Web component",
-    snippet: `<ic-card heading="Card title">
-  <svg slot="icon">
-    ...
-  </svg>
-  <div slot="message" style="display:flex; align-items:center;">
-    <ic-typography variant="body" style="margin-right:8px;">
-      This card uses the icon slot to display an icon and the message slot to display a message with a status tag
-    </ic-typography>
-    <ic-status-tag status="success" label="Active"></ic-status-tag>
-  </div>
-</ic-card>`,
-  },
-  {
-    language: "React",
-    snippet: `<IcCard heading="Card title">
-  <svg slot="icon">
-    ...
-  </svg>
-  <div slot="message" style={{
-    display: "flex",
-    alignItems: "center"
-  }}>
-    <IcTypography variant="body" style={{marginRight: "8px"}}>
-      This card uses the icon slot to display an icon and the message slot to display a message with a status tag
-    </IcTypography>
-    <IcStatusTag status="success" label="Active" />
-  </div>
-</IcCard>`,
-  },
-];
-
-<ComponentPreview snippets={usingSlots}>
-  <IcCard heading="Card title">
-    <svg
-      slot="icon"
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M0 0h24v24H0V0z" fill="none" />
-      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
-    </svg>
-    <div
-      slot="message"
-      style={{
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <IcTypography variant="body" style={{ marginRight: "8px" }}>
-        This card uses the icon slot to display an icon and the message slot to
-        display a message with a status tag
-      </IcTypography>
-      <IcStatusTag label="Active" status="success" />
-    </div>
   </IcCard>
 </ComponentPreview>
