@@ -51,10 +51,10 @@ export const snippetsDefault = [
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
-  <svg slot="app-icon" ...></svg>
+  <SlottedSVG slot="app-icon" ... />
   <IcSearchBar slot="search" placeholder="Search" label="Search" />
   <IcNavigationButton label="Notifications" slot="buttons">
-    <svg slot="icon" ...></svg>
+    <SlottedSVG slot="icon" ... />
   </IcNavigationButton>
   <IcNavigationItem slot="navigation" label="Get started" href="#" />
   <IcNavigationItem slot="navigation" label="Accessibility" href="#" />
@@ -159,7 +159,7 @@ export const snippetsGroupedLinks = [
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
-  <svg slot="app-icon" ...></svg>
+  <SlottedSVG slot="app-icon" ... />
   <IcSearchBar slot="search" placeholder="Search" label="Search" />
   <IcNavigationGroup slot="navigation" label="Navigation group" expandable>
     <IcNavigationItem label="Navigation" href="#" />
@@ -254,9 +254,9 @@ export const snippetsCentreAligned = [
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7" contentAligned="center">
-  <svg slot="app-icon" ...></svg>
+  <SlottedSVG slot="app-icon" ... />
   <IcNavigationButton label="button1" slot="buttons" onclick="alert('test')">
-    <svg slot="icon" ...></svg>
+    <SlottedSVG slot="icon" ... />
   </IcNavigationButton>
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
@@ -332,10 +332,10 @@ export const snippetsLeftAligned = [
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7" contentAligned="left">
-  <svg slot="app-icon" ...></svg>
+  <SlottedSVG slot="app-icon" ... />
   <IcSearchBar slot="search" placeholder="Search" label="Search" />
   <IcNavigationButton label="button1" slot="buttons" onclick="alert('test')">
-    <svg slot="icon" ...></svg>
+    <SlottedSVG slot="icon" ... />
   </IcNavigationButton>
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
@@ -398,10 +398,10 @@ export const withReactRouter = [
     language: "React",
     snippet: `<MemoryRouter initialEntries={["/"]}>
   <IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
-    <svg slot="app-icon" ...></svg>
+    <SlottedSVG slot="app-icon" ... />
     <IcSearchBar slot="search" placeholder="Search" label="Search" />
     <IcNavigationButton label="button1" slot="buttons" onClick={() => alert('test')}>
-      <svg slot="icon" ...></svg>
+      <SlottedSVG slot="icon" ... />
     </IcNavigationButton>
     <IcNavigationItem slot="navigation">
       <NavLink to="/" slot="navigation-item">Home</NavLink>
