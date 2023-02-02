@@ -45,14 +45,16 @@ const CodeSnippet: React.FC<{ code: string }> = ({ code }) => (
       )}
     </Highlight>
     <div className="snippet-container">
-      <ic-button
-        variant="tertiary"
-        appearance="dark"
-        onClick={() => navigator.clipboard.writeText(code)}
-      >
-        Copy code
-        <SlottedSVG path={mdiContentCopy} slot="icon" />
-      </ic-button>
+      <ic-tooltip label="Copied to clipboard" disable-hover="true">
+        <ic-button
+          variant="tertiary"
+          appearance="dark"
+          onClick={() => navigator.clipboard.writeText(code)}
+        >
+          Copy code
+          <SlottedSVG path={mdiContentCopy} slot="icon" />
+        </ic-button>
+      </ic-tooltip>
     </div>
   </>
 );
