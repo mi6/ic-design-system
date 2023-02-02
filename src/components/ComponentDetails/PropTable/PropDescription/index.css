@@ -8,3 +8,13 @@
   color: var(--ic-status-error);
   content: "*";
 }
+
+.prop-description .deprecation-tag {
+  margin-top: var(--ic-space-xs);
+}
+
+@media screen and (max-width: 576px) {
+  .prop-description .deprecation-tag {
+    margin-top: var(--ic-space-lg);
+  }
+}
