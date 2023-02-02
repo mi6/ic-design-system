@@ -11,6 +11,7 @@ interface StencilProp {
   type: string;
   default?: string;
   required: boolean;
+  deprecation?: string | undefined;
 }
 
 interface PropTableProps {
@@ -39,17 +40,28 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
   const data = useMemo(
     () =>
       propData
-        .map(({ name, attr, docs, type, required, default: defaultValue }) => ({
-          name: <PropName name={name} attribute={attr} />,
-          description: (
-            <PropDescription
-              description={docs}
-              type={type}
-              required={required}
-            />
-          ),
-          default: defaultValue,
-        }))
+        .map(
+          ({
+            name,
+            attr,
+            docs,
+            type,
+            required,
+            default: defaultValue,
+            deprecation,
+          }) => ({
+            name: <PropName name={name} attribute={attr} />,
+            description: (
+              <PropDescription
+                description={docs}
+                type={type}
+                required={required}
+                deprecation={deprecation}
+              />
+            ),
+            default: defaultValue,
+          })
+        )
         .sort(
           (a, b) => b.description.props.required - a.description.props.required
         ),
