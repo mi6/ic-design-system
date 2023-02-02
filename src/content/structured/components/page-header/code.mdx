@@ -39,16 +39,16 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="App title" sub-heading="App information"></ic-page-header>`,
+    snippet: `<ic-page-header heading="App title" subheading="App information"></ic-page-header>`,
   },
   {
     language: "React",
-    snippet: `<IcPageHeader heading="App title" subHeading="App information" />`,
+    snippet: `<IcPageHeader heading="App title" subheading="App information" />`,
   },
 ];
 
 <ComponentPreview snippets={snippets} style={{ flexDirection: "column" }}>
-  <IcPageHeader heading="App title" subHeading="App information" />
+  <IcPageHeader heading="App title" subheading="App information" />
 </ComponentPreview>
 
 ## Page header details
@@ -62,7 +62,7 @@ export const snippets = [
 export const withBreadcrumbNavigation = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has breadcrumb navigation.">
+    snippet: `<ic-page-header heading="Coffee recipes" subheading="This is a page header component that has breadcrumb navigation.">
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-breadcrumb-group slot="breadcrumbs">
     <ic-breadcrumb page-title="Breadcrumb 1" href="#"></ic-breadcrumb>
@@ -78,7 +78,7 @@ export const withBreadcrumbNavigation = [
   },
   {
     language: "React",
-    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has breadcrumb navigation.">
+    snippet: `<IcPageHeader heading="Coffee recipes" subheading="This is a page header component that has breadcrumb navigation.">
   <IcStatusTag slot="heading-adornment" label="Beta" />
   <IcBreadcrumbGroup slot="breadcrumbs">
     <IcBreadcrumb pageTitle="Breadcrumb 1" href="#" />
@@ -99,7 +99,7 @@ export const withBreadcrumbNavigation = [
 >
   <IcPageHeader
     heading="Coffee recipes"
-    subHeading="This is a page header component that has breadcrumb navigation."
+    subheading="This is a page header component that has breadcrumb navigation."
   >
     <IcStatusTag slot="heading-adornment" label="Beta" />
     <IcBreadcrumbGroup slot="breadcrumbs">
@@ -114,7 +114,7 @@ export const withBreadcrumbNavigation = [
 export const withActionsInputStepper = [
   {
     language: "Web component",
-    snippet: `<ic-page-header heading="Coffee recipes" sub-heading="This is a page header component that has an input area, actions &amp; stepper." reverse-order="true">
+    snippet: `<ic-page-header heading="Coffee recipes" subheading="This is a page header component that has an input area, actions &amp; stepper." reverse-order="true">
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
@@ -129,7 +129,7 @@ export const withActionsInputStepper = [
   },
   {
     language: "React",
-    snippet: `<IcPageHeader heading="Coffee recipes" subHeading="This is a page header component that has an input area, actions and stepper." reverseOrder>
+    snippet: `<IcPageHeader heading="Coffee recipes" subheading="This is a page header component that has an input area, actions and stepper." reverseOrder>
   <IcStatusTag slot="heading-adornment" label="Beta" />
   <IcButton slot="actions" variant="primary">
     Create coffee
@@ -154,7 +154,7 @@ export const withActionsInputStepper = [
 >
   <IcPageHeader
     heading="Coffee recipes"
-    subHeading="This is a page header component that has an input area, actions and stepper."
+    subheading="This is a page header component that has an input area, actions and stepper."
     reverseOrder
   >
     <IcStatusTag slot="heading-adornment" label="Beta" />
@@ -189,7 +189,7 @@ export const withActionsInputTabs = [
     language: "Web component",
     snippet: `<ic-page-header 
   heading="Coffee recipes" 
-  sub-heading="This is a page header component that has an input area, actions &amp; tabs." 
+  subheading="This is a page header component that has an input area, actions &amp; tabs." 
   reverse-order="true"
 >
   <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
@@ -216,7 +216,7 @@ export const withActionsInputTabs = [
     language: "React",
     snippet: `<IcPageHeader 
   heading="Coffee recipes" 
-  subHeading="This is a page header component that has an input area, actions and tabs." 
+  subheading="This is a page header component that has an input area, actions and tabs." 
   reverseOrder>
   <IcStatusTag slot="heading-adornment" label="Beta" />
   <IcButton slot="actions" variant="primary">
@@ -253,7 +253,7 @@ export const withActionsInputTabs = [
 >
   <IcPageHeader
     heading="Coffee recipes"
-    subHeading="This is a page header component that has an input area, actions and tabs."
+    subheading="This is a page header component that has an input area, actions and tabs."
     reverseOrder
   >
     <IcStatusTag slot="heading-adornment" label="Beta" />
@@ -282,7 +282,7 @@ export const withReactRouter = [
     snippet: `<MemoryRouter initialEntries={["/"]}>
   <IcPageHeader
     heading="Coffee recipes"
-    sub-heading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
+    subheading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
     reverseOrder
   >
     <IcStatusTag slot="heading-adornment" label="Beta" />
@@ -323,7 +323,7 @@ export const withReactRouter = [
   <MemoryRouter initialEntries={["/"]}>
     <IcPageHeader
       heading="Coffee recipes"
-      sub-heading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
+      subheading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
       reverseOrder
     >
       <IcStatusTag slot="heading-adornment" label="Beta" />
