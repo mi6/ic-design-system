@@ -60,6 +60,35 @@ export const snippets = [
 
 ## Variants
 
+### Compact stepper
+
+export const compactStepper = [
+  {
+    language: "Web component",
+    snippet: `<ic-stepper variant="compact">
+  <ic-step step-title="Order coffee" step-type="completed"></ic-step>
+  <ic-step step-title="Pay for order" step-type="current"></ic-step>
+  <ic-step step-title="Collect" step-type="disabled"></ic-step>
+</ic-stepper>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcStepper variant="compact">
+  <IcStep stepTitle="Order coffee" stepType="completed" />
+  <IcStep stepTitle="Pay for order" stepType="current" />
+  <IcStep stepTitle="Collect" stepType="disabled" />
+</IcStepper>`,
+  },
+];
+
+<ComponentPreview snippets={compactStepper}>
+  <IcStepper variant="compact">
+    <IcStep stepTitle="Order coffee" stepType="completed" />
+    <IcStep stepTitle="Pay for order" stepType="current" />
+    <IcStep stepTitle="Collect" stepType="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
 ### Left-aligned
 
 export const leftAligned = [
@@ -89,33 +118,32 @@ export const leftAligned = [
   </IcStepper>
 </ComponentPreview>
 
-### Without step titles
+### With hidden step information
 
-export const withoutStepTitles = [
+export const hiddenStepInfo = [
   {
     language: "Web component",
-    snippet: `<ic-stepper>
-  <ic-step step-type="completed"></ic-step>
-  <ic-step step-type="current"></ic-step>
-  <ic-step step-type="disabled"></ic-step>
-  <ic-step></ic-step>
+    snippet: `<ic-stepper hide-step-info="true">
+  <ic-step step-title="Order coffee" step-type="completed"></ic-step>
+  <ic-step step-title="Pay for order" step-type="current"></ic-step>
+  <ic-step step-title="Collect" step-type="disabled"></ic-step>
 </ic-stepper>`,
   },
   {
     language: "React",
-    snippet: `<IcStepper>
-  <IcStep stepType="completed" />
-  <IcStep stepType="current" />
-  <IcStep stepType="disabled" />
+    snippet: `<IcStepper hideStepInfo>
+  <IcStep stepTitle="Order coffee" stepType="completed" />
+  <IcStep stepTitle="Pay for order" stepType="current" />
+  <IcStep stepTitle="Collect" stepType="disabled" />
 </IcStepper>`,
   },
 ];
 
-<ComponentPreview snippets={withoutStepTitles}>
-  <IcStepper>
-    <IcStep stepType="completed" />
-    <IcStep stepType="current" />
-    <IcStep stepType="disabled" />
+<ComponentPreview snippets={hiddenStepInfo}>
+  <IcStepper hideStepInfo>
+    <IcStep stepTitle="Order coffee" stepType="completed" />
+    <IcStep stepTitle="Pay for order" stepType="current" />
+    <IcStep stepTitle="Collect" stepType="disabled" />
   </IcStepper>
 </ComponentPreview>
 
@@ -190,7 +218,7 @@ export const customConnectorWidth = [
   },
   {
     language: "React",
-    snippet: `<IcStepper aligned="left" connectorWidth="150">
+    snippet: `<IcStepper aligned="left" connectorWidth={150}>
   <IcStep stepTitle="Order coffee" stepType="completed" />
   <IcStep stepTitle="Pay for order" stepType="current" />
   <IcStep stepTitle="Collect" stepType="disabled" />
@@ -199,7 +227,7 @@ export const customConnectorWidth = [
 ];
 
 <ComponentPreview snippets={customConnectorWidth}>
-  <IcStepper aligned="left" connectorWidth="150">
+  <IcStepper aligned="left" connectorWidth={150}>
     <IcStep stepTitle="Order coffee" stepType="completed" />
     <IcStep stepTitle="Pay for order" stepType="current" />
     <IcStep stepTitle="Collect" stepType="disabled" />
