@@ -1,4 +1,4 @@
-.prop-name {
+.attribute-name {
   display: flex;
   flex-direction: column;
   gap: var(--ic-space-xs);

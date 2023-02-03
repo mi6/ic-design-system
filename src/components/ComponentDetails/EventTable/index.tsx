@@ -4,6 +4,7 @@ import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
 import AttributeCards from "../../AttributeCards";
 import EventDescription from "./EventDescription";
+import AttributeName from "../AttributeName";
 
 interface EventTableProps {
   eventData: JsonDocsEvent[];
@@ -28,17 +29,22 @@ const EventTable: React.FC<EventTableProps> = ({ eventData }) => {
     []
   );
 
+  const changetoReactEvent = (event: string) =>
+    `on${event[0].toUpperCase() + event.slice(1)}`;
+
   const data = useMemo(
     () =>
-      eventData.map((event) => ({
-        name: event.event,
-        description: (
-          <EventDescription
-            description={event.docs}
-            deprecation={event.deprecation}
+      eventData.map(({ event, docs, detail, deprecation }) => ({
+        name: (
+          <AttributeName
+            name={["Web component", "React"]}
+            value={[event, changetoReactEvent(event)]}
           />
         ),
-        signature: <CodeAttribute label={event.detail} />,
+        description: (
+          <EventDescription description={docs} deprecation={deprecation} />
+        ),
+        signature: <CodeAttribute label={detail} />,
       })),
     []
   );
