@@ -1,7 +1,7 @@
 ---
 path: "/components/data-entity/code"
 
-date: "2023-02-03"
+date: "2023-02-06"
 
 title: "Data entity"
 
@@ -351,157 +351,159 @@ export const editableExample = [
   {
     language: "Web component",
     snippet: `<ic-data-entity heading="Personal details">
-      <ic-data-row label="Name"> 
-        <ic-text-field 
-          slot="value" 
-          label="Name" 
-          value="Michael Johnson" 
-          readonly 
-          hide-label 
-          full-width
-        />
-      </ic-data-row>
-      <ic-data-row label="Date of birth">
-        <ic-text-field 
-          slot="value" 
-          label="Date of birth" 
-          value="16 October 1995" 
-          readonly 
-          hide-label 
-          full-width
-        />
-      </ic-data-row>
-      <ic-data-row label="Telephone">
-        <ic-text-field 
-          slot="value" 
-          label="Telephone" 
-          value="07449 7654873" 
-          readonly 
-          hide-label 
-          full-width
-        />
-      </ic-data-row>
-      <ic-data-row label="Email">
-        <ic-text-field 
-          slot="value" 
-          label="Email" 
-          value="mjohnson@coffee.gov" 
-          readonly 
-          hide-label 
-          full-width
-        />
-      </ic-data-row>
-      <ic-data-row label="Address">
-        <ic-text-field 
-          slot="value" 
-          label="Address" 
-          value="383 Coffee Drive, London, SW7 988, United Kingdom"  
-          readonly 
-          hide-label 
-          full-width
-        />
-      </ic-data-row>
-    </ic-data-entity>
-    <ic-button
-      onclick="
-        var textFields = document.querySelectorAll('ic-text-field');
-        for (var i=0; i < textFields.length; i++) {
-          textFields[i].setAttribute('readonly', '');
-        }"
-      style="margin-right: var(--ic-space-md);margin-top: var(--ic-space-lg);"
-    >
-      Confirm
-    </ic-button>
-    <ic-button
-      onclick="
-        var textFields = document.querySelectorAll('ic-text-field');
-        for (var i=0; i < textFields.length; i++) {
-          textFields[i].removeAttribute('readonly');
-        }"
-      variant="secondary"
-      style="margin-top: var(--ic-space-lg);"
-    >
-      Edit
-    </ic-button>`,
+  <ic-data-row label="Name"> 
+    <ic-text-field 
+      slot="value" 
+      label="Name" 
+      value="Michael Johnson" 
+      readonly 
+      hide-label 
+      full-width
+    />
+  </ic-data-row>
+  <ic-data-row label="Date of birth">
+    <ic-text-field 
+      slot="value" 
+      label="Date of birth" 
+      value="16 October 1995" 
+      readonly 
+      hide-label 
+      full-width
+    />
+  </ic-data-row>
+  <ic-data-row label="Telephone">
+    <ic-text-field 
+      slot="value" 
+      label="Telephone" 
+      value="07449 7654873" 
+      readonly 
+      hide-label 
+      full-width
+    />
+  </ic-data-row>
+  <ic-data-row label="Email">
+    <ic-text-field 
+      slot="value" 
+      label="Email" 
+      value="mjohnson@coffee.gov" 
+      readonly 
+      hide-label 
+      full-width
+    />
+  </ic-data-row>
+  <ic-data-row label="Address">
+    <ic-text-field 
+      slot="value" 
+      label="Address" 
+      value="383 Coffee Drive, London, SW7 988, United Kingdom"  
+      readonly 
+      hide-label 
+      full-width
+    />
+  </ic-data-row>
+</ic-data-entity>
+<ic-button id='confirm-button' style="margin-right: var(--ic-space-md);margin-top: var(--ic-space-lg);">
+  Confirm
+</ic-button>
+<ic-button id='edit-button' variant="secondary" style="margin-top: var(--ic-space-lg);">
+  Edit
+</ic-button>
+<script>
+  const textFields = document.querySelectorAll('ic-text-field');
+  const confirmBtn = document.querySelector('#confirm-button');
+  confirmBtn.addEventListener('click', () => {
+    textFields.forEach((textField) => {
+      textField.setAttribute('readonly', '');
+    };
+  });
+  const editBtn = document.querySelector('#edit-button');
+  editBtn.addEventListener('click', () => {
+    textFields.forEach((textField) => {
+      textField.removeAttribute('readonly');
+    };
+  });
+</script>`,
   },
   {
     language: "React",
     snippet: `<IcDataEntity heading="Personal details">
-      <IcDataRow label="Name">
-        <IcTextField
-          slot="value"
-          label="Name"
-          value="Michael Johnson"
-          readonly
-          hide-label
-          full-width
-        />
-      </IcDataRow>
-      <IcDataRow label="Date of birth" value="16 October 1995">
-        <IcTextField
-          slot="value"
-          label="Date of birth"
-          value="16 October 1995"
-          readonly
-          hide-label
-          full-width
-        />
-      </IcDataRow>
-      <IcDataRow label="Telephone" value="07449 7654873">
-        <IcTextField
-          slot="value"
-          label="Telephone"
-          value="07449 7654873"
-          readonly
-          hide-label
-          full-width
-        />
-      </IcDataRow>
-      <IcDataRow label="Email" value="mjohnson@coffee.gov">
-        <IcTextField
-          slot="value"
-          label="Email"
-          value="mjohnson@coffee.gov"
-          readonly
-          hide-label
-          full-width
-        />
-      </IcDataRow>
-      <IcDataRow label="Address">
-        <IcTextField
-          slot="value"
-          label="Address"
-          value="383 Coffee Drive, London, SW7 988, United Kingdom"
-          readonly
-          hide-label
-          full-width
-        />
-      </IcDataRow>
-    </IcDataEntity>
-    <IcButton
-      onclick="
-        var textFields = document.querySelectorAll('ic-text-field');
-        for (var i=0; i < textFields.length; i++) {
-          textFields[i].setAttribute('readonly', '');
-        }"
-      style={{
-        marginRight: "var(--ic-space-md)",
-        marginTop: "var(--ic-space-lg)",
-      }}
-    >
-      Confirm
-    </IcButton>
-    <IcButton
-      onclick="
-        var textFields = document.querySelectorAll('ic-text-field');
-        for (var i=0; i < textFields.length; i++) {
-          textFields[i].removeAttribute('readonly');
-        }"
-      variant="secondary"
-      style={{ marginTop: "var(--ic-space-lg)" }}
-    >
-      Edit
-    </IcButton>`,
+  <IcDataRow label="Name">
+    <IcTextField
+      slot="value"
+      label="Name"
+      value="Michael Johnson"
+      readonly
+      hide-label
+      full-width
+    />
+  </IcDataRow>
+  <IcDataRow label="Date of birth" value="16 October 1995">
+    <IcTextField
+      slot="value"
+      label="Date of birth"
+      value="16 October 1995"
+      readonly
+      hide-label
+      full-width
+    />
+  </IcDataRow>
+  <IcDataRow label="Telephone" value="07449 7654873">
+    <IcTextField
+      slot="value"
+      label="Telephone"
+      value="07449 7654873"
+      readonly
+      hide-label
+      full-width
+    />
+  </IcDataRow>
+  <IcDataRow label="Email" value="mjohnson@coffee.gov">
+    <IcTextField
+      slot="value"
+      label="Email"
+      value="mjohnson@coffee.gov"
+      readonly
+      hide-label
+      full-width
+    />
+  </IcDataRow>
+  <IcDataRow label="Address">
+    <IcTextField
+      slot="value"
+      label="Address"
+      value="383 Coffee Drive, London, SW7 988, United Kingdom"
+      readonly
+      hide-label
+      full-width
+    />
+  </IcDataRow>
+</IcDataEntity>
+<IcButton
+  onClick={() => {
+    const textFields = document.querySelectorAll('ic-text-field');
+    textFields.forEach((textField) => {
+      textField.setAttribute('readonly', '');
+    })
+  }}
+  style={{
+    marginRight: "var(--ic-space-md)",
+    marginTop: "var(--ic-space-lg)",
+  }}
+>
+  Confirm
+</IcButton>
+<IcButton
+  onClick={() => {
+    const textFields = document.querySelectorAll('ic-text-field');
+    textFields.forEach((textField) => {
+      textField.removeAttribute('readonly');
+    }
+  }}
+  variant="secondary"
+  style={{ marginTop: "var(--ic-space-lg)" }}
+>
+  Edit
+</IcButton>`,
   },
 ];
 
@@ -559,11 +561,12 @@ export const editableExample = [
     </IcDataRow>
   </IcDataEntity>
   <IcButton
-    onclick="
-      var textFields = document.querySelectorAll('ic-text-field');
-      for (var i=0; i < textFields.length; i++) {
-        textFields[i].setAttribute('readonly', '');
-      }"
+    onClick={() => {
+      const textFields = document.querySelectorAll("ic-text-field");
+      textFields.forEach((textField) => {
+        textField.setAttribute("readonly", "");
+      });
+    }}
     style={{
       marginRight: "var(--ic-space-md)",
       marginTop: "var(--ic-space-lg)",
@@ -572,11 +575,12 @@ export const editableExample = [
     Confirm
   </IcButton>
   <IcButton
-    onclick="
-      var textFields = document.querySelectorAll('ic-text-field');
-      for (var i=0; i < textFields.length; i++) {
-        textFields[i].removeAttribute('readonly');
-      }"
+    onClick={() => {
+      const textFields = document.querySelectorAll("ic-text-field");
+      textFields.forEach((textField) => {
+        textField.removeAttribute("readonly");
+      });
+    }}
     variant="secondary"
     style={{ marginTop: "var(--ic-space-lg)" }}
   >

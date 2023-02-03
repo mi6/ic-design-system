@@ -1,7 +1,7 @@
 ---
 path: "/components/text-input/code"
 
-date: "2023-02-03"
+date: "2023-02-06"
 
 title: "Text field"
 
@@ -30,14 +30,20 @@ export const snippetsDefault = [
     label="What is your favourite coffee?" 
     placeholder="Placeholder" 
     helper-text="Such as Arabica, Robusta or Liberica">
-</ic-text-field>`,
+</ic-text-field>
+<script>
+  const textField = document.querySelector('ic-text-field');
+  textfield.addEventListenter('icChange', (ev) => console.log(ev.detail.value));
+</script>`,
   },
   {
     language: "React",
     snippet: `<IcTextField 
-    label="What is your favourite coffee?" 
-    placeholder="Placeholder" 
-    helperText="Such as Arabica, Robusta or Liberica" />`,
+  label="What is your favourite coffee?" 
+  placeholder="Placeholder" 
+  helperText="Such as Arabica, Robusta or Liberica"
+  onIcChange={(ev) => console.log(ev.detail.value)}
+/>`,
   },
 ];
 
@@ -46,6 +52,7 @@ export const snippetsDefault = [
     label="What is your favourite coffee?"
     placeholder="Placeholder"
     helperText="Such as Arabica, Robusta or Liberica"
+    onIcChange={(ev) => console.log(ev.detail.value)}
   />
 </ComponentPreview>
 

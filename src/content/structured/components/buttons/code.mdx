@@ -1,7 +1,7 @@
 ---
 path: "/components/buttons/code"
 
-date: "2023-02-03"
+date: "2023-02-06"
 
 title: "Button"
 
@@ -26,14 +26,20 @@ import { IcButton } from "@ukic/react";
 export const snippetsDefault = [
   {
     language: "Web component",
-    snippet: `<ic-button variant="primary">Primary button</ic-button>
+    snippet: `<ic-button id='my-button' variant="primary">Primary button</ic-button>
 <ic-button variant="secondary">Secondary button</ic-button>
 <ic-button variant="tertiary">Tertiary button</ic-button>
-<ic-button variant="destructive">Destructive button</ic-button>`,
+<ic-button variant="destructive">Destructive button</ic-button>
+<script>
+  const btn = document.querySelector('#my-button');
+  btn.addEventListener('click', (ev) => {
+    console.log(ev);
+  })
+</script>`,
   },
   {
     language: "React",
-    snippet: `<IcButton variant="primary">Primary button</IcButton>
+    snippet: `<IcButton variant="primary" onClick={(ev) => console.log(ev)}>Primary button</IcButton>
 <IcButton variant="secondary">Secondary button</IcButton>
 <IcButton variant="tertiary">Tertiary button</IcButton>
 <IcButton variant="destructive">Destructive button</IcButton>`,
@@ -41,7 +47,9 @@ export const snippetsDefault = [
 ];
 
 <ComponentPreview style={{ gap: "8px" }} snippets={snippetsDefault}>
-  <IcButton variant="primary">Primary button</IcButton>
+  <IcButton variant="primary" onClick={(ev) => console.log(ev)}>
+    Primary button
+  </IcButton>
   <IcButton variant="secondary">Secondary button</IcButton>
   <IcButton variant="tertiary">Tertiary button</IcButton>
   <IcButton variant="destructive">Destructive button</IcButton>

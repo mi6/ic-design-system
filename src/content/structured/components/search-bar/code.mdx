@@ -1,7 +1,7 @@
 ---
 path: "/components/search-bar/code"
 
-date: "2023-02-03"
+date: "2023-02-06"
 
 title: "Search bar"
 
@@ -37,6 +37,8 @@ export const snippets = [
     { label: "Americano", value: "americano" },
     { label: "Mocha", value: "mocha" },
   ];
+  searchBar.addEventListener('icChange', (ev) => console.log(ev.detail.value));
+  searchBar.addEventListener('icSubmitSearch', (ev) => console.log(ev.detail.value))
 </script>`,
   },
   {
@@ -51,6 +53,8 @@ export const snippets = [
     { label: "Americano", value: "americano" },
     { label: "Mocha", value: "mocha" },
   ]}
+  onIcChange={(ev) => console.log(ev.detail.value)}
+  onIcSubmitSearch={(ev) => console.log(ev.detail.value)}
 />`,
   },
 ];
@@ -66,6 +70,8 @@ export const snippets = [
       { label: "Americano", value: "americano" },
       { label: "Mocha", value: "mocha" },
     ]}
+    onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}
+    onIcSubmitSearch={(ev) => console.log("onIcSubmitSearch", ev.detail.value)}
   />
 </ComponentPreview>
 
@@ -353,7 +359,7 @@ const [results, setResults] = React.useState([]);
   debounce="300"
   disableFilter
   options={results}
-  onIcChange={(event) => {      
+  onIcChange={(event) => {
     const searchFor = event.detail.value;
     if (searchFor.length > 1) {
       const mockAPI = (query) => {
