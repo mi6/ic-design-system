@@ -1,7 +1,7 @@
 ---
 path: "/components/checkboxes/code"
 
-date: "2023-02-03"
+date: "2023-02-06"
 
 title: "Checkbox"
 
@@ -30,12 +30,23 @@ export const snippetsDefault = [
   <ic-checkbox value="extra" label="Extra shot (50p)"></ic-checkbox>
   <ic-checkbox value="Soya milk" label="Soya milk" checked ></ic-checkbox>
   <ic-checkbox value="keep cup" label="Takeaway cup (Reusable keep cups only)" disabled="true" ></ic-checkbox>
-</ic-checkbox-group>`,
+</ic-checkbox-group>
+<script>
+  const checkboxGroup = document.querySelector('ic-checkbox-group');
+  checkboxGroup.addEventListener('icChange', (ev) => console.log('icChange', ev.detail.value));
+  const checkboxes = document.querySelector('ic-checkbox');
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('icCheck', (ev) => {
+      console.log('icCheck', ev);
+    })
+  })
+</script>
+`,
   },
   {
     language: "React",
-    snippet: `<IcCheckboxGroup label="Make changes to your order." name="default">
-  <IcCheckbox value="extra" label="Extra shot (50p)" />
+    snippet: `<IcCheckboxGroup label="Make changes to your order." name="default" onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}>
+  <IcCheckbox value="extra" label="Extra shot (50p)" onIcCheck={(ev) => console.log("onIcCheck", ev)} />
   <IcCheckbox value="Soya milk" label="Soya milk" checked />
   <IcCheckbox value="keep cup" label="Takeaway cup (Reusable keep cups only)" disabled />
 </IcCheckboxGroup>`,
@@ -43,8 +54,16 @@ export const snippetsDefault = [
 ];
 
 <ComponentPreview snippets={snippetsDefault} style={{ marginTop: "24px" }}>
-  <IcCheckboxGroup label="Make changes to your order." name="default">
-    <IcCheckbox value="extra" label="Extra shot (50p)" />
+  <IcCheckboxGroup
+    label="Make changes to your order."
+    name="default"
+    onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}
+  >
+    <IcCheckbox
+      value="extra"
+      label="Extra shot (50p)"
+      onIcCheck={(ev) => console.log("onIcCheck", ev)}
+    />
     <IcCheckbox value="Soya milk" label="Soya milk" checked />
     <IcCheckbox
       value="keep cup"
@@ -54,13 +73,13 @@ export const snippetsDefault = [
   </IcCheckboxGroup>
 </ComponentPreview>
 
-## Checkbox details
-
-<ComponentDetails component="ic-checkbox" />
-
 ## Checkbox group details
 
 <ComponentDetails component="ic-checkbox-group" />
+
+## Checkbox details
+
+<ComponentDetails component="ic-checkbox" />
 
 ## Variants
 

@@ -1,7 +1,7 @@
 ---
 path: "/components/alerts/code"
 
-date: "2023-02-03"
+date: "2023-02-06"
 
 title: "Alert"
 
@@ -108,19 +108,30 @@ export const snippetsWithAction = [
     language: "Web component",
     snippet: `<ic-alert heading="With action" message="This alert has an action.">
       <ic-button slot="action" variant="secondary" appearance="dark">Button</ic-button>
-</ic-alert>`,
+</ic-alert>
+<script>
+  const btn = document.querySelector('ic-button');
+  btn.addEventListener('click', (ev) => {
+    console.log(ev)
+  })
+</script>`,
   },
   {
     language: "React",
     snippet: `<IcAlert heading="With action" message="This alert has an action.">
-    <IcButton slot="action" variant="secondary" appearance="dark">Button</IcButton>
+    <IcButton slot="action" variant="secondary" appearance="dark" onClick={(ev) => console.log(ev)}>Button</IcButton>
 </IcAlert>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsWithAction}>
   <IcAlert heading="With action" message="This alert has an action.">
-    <IcButton slot="action" variant="secondary" appearance="dark">
+    <IcButton
+      slot="action"
+      variant="secondary"
+      appearance="dark"
+      onClick={(ev) => console.log(ev)}
+    >
       Button
     </IcButton>
   </IcAlert>
