@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import AttributeTable from "../../AttributeTable";
 import AttributeCards from "../../AttributeCards";
-import PropName from "./PropName";
+import AttributeName from "../AttributeName";
 import PropDescription from "./PropDescription";
 
 interface StencilProp {
@@ -50,7 +50,12 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
             default: defaultValue,
             deprecation,
           }) => ({
-            name: <PropName name={name} attribute={attr} />,
+            name: (
+              <AttributeName
+                name={["Property", "Attribute"]}
+                value={[name, attr]}
+              />
+            ),
             description: (
               <PropDescription
                 description={docs}
