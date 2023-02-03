@@ -1,7 +1,7 @@
 ---
 path: "/components/tabs/code"
 
-date: "2023-02-03"
+date: "2023-02-06"
 
 title: "Tabs"
 
@@ -35,11 +35,15 @@ export const snippets = [
   <ic-tab-panel>Tab One</ic-tab-panel>
   <ic-tab-panel>Tab Two</ic-tab-panel>
   <ic-tab-panel>Tab Three</ic-tab-panel>
-</ic-tab-context>`,
+</ic-tab-context>
+<script>
+  const tabContext = document.querySelector('ic-tab-context');
+  tabContext.addEventListener('icTabSelect', (ev) => console.log(ev.detail.tabIndex))
+</script>`,
   },
   {
     language: "React",
-    snippet: `<IcTabContext>
+    snippet: `<IcTabContext onIcTabSelect={(ev) => console.log(ev.detail.tabIndex)}>
   <IcTabGroup label="Example tab group">
     <IcTab>One</IcTab>
     <IcTab>Two</IcTab>
@@ -53,7 +57,7 @@ export const snippets = [
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcTabContext>
+  <IcTabContext onIcTabSelect={(ev) => console.log(ev.detail.tabIndex)}>
     <IcTabGroup label="Example tab group">
       <IcTab>One</IcTab>
       <IcTab>Two</IcTab>
