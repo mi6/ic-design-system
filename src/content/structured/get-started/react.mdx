@@ -122,10 +122,17 @@ Replace any instances of `<svg>` with `<SlottedSVG>`.
 //Before
 <IcTopNavigation appTitle="App title">
   <svg slot="app-icon" path={path} />
+  <svg slot="app-icon">
+    <path d="..." />
+  </svg>
 </IcTopNavigation>
 
 //After
 <IcTopNavigation appTitle="App title">
+  {/* Can be implemented either way */}
   <SlottedSVG slot="app-icon" path={path} />
+  <SlottedSVG slot="app-icon">
+    <path d="..." />
+  </SlottedSVG>
 </IcTopNavigation>
 ```
