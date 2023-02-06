@@ -46,3 +46,4 @@ jobs:
         with:
           folder: ./public
           target-folder: ./docs
+          token: ${{ secrets.PUBLISH_PAT }}
