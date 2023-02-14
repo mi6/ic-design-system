@@ -600,7 +600,8 @@ export const clickableLink = [
 export const clickableBtn = [
   {
     language: "Web component",
-    snippet: `<ic-card 
+    snippet: `<ic-card
+  id="clickable-card"
   heading="Card heading" 
   subheading="Card subheading" 
   message="This is an example of a clickable card component rendered as a button."
@@ -608,7 +609,13 @@ export const clickableBtn = [
   <svg slot="icon">
     ...
   </svg>
-</ic-card>`,
+</ic-card>
+<script>
+  const card = document.querySelector('#clickable-card');
+  card.addEventListener('click', (ev) => {
+    console.log(ev);
+  })
+</script>`,
   },
   {
     language: "React",
@@ -616,7 +623,8 @@ export const clickableBtn = [
   heading="Card heading" 
   subheading="Card subheading" 
   message="This is an example of a clickable card component rendered as a button." 
-  clickable>
+  clickable
+  onClick={(ev) => console.log(ev)}>
   <SlottedSVG slot="icon" ... >
     ...
   </SlottedSVG>
@@ -630,6 +638,7 @@ export const clickableBtn = [
     subheading="Card subheading"
     message="This is an example of a clickable card component rendered as a button."
     clickable="true"
+    onClick={(ev) => console.log(ev)}
   >
     <CardIcon />
   </IcCard>
