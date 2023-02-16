@@ -1,0 +1,30 @@
+---
+path: "/get-started/test-components"
+
+navPriority: 2
+
+date: "2023-02-16"
+
+title: "Testing the components"
+
+subTitle: "Test the UI Kit components within the shadow DOM using a testing framework."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/test-components.mdx"
+---
+
+## How we've built the components
+
+Typically, components sit in the DOM, also known as the ['light DOM'](https://www.codecademy.com/resources/blog/what-is-dom/). DOM stands for 'Document Object Model'. The light DOM represents the structure of a webpage as a tree, where each DOM object is a node.
+
+At the core, the UI Kit components are based off the web components specification which utilises the shadow DOM. This makes it possible to encapsulate each component’s markup structure, styling and functionality.
+
+According to [Mozilla](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), the "shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree — this shadow DOM tree starts with a shadow root, underneath which you can attach any element, in the same way as the normal DOM."
+
+Therefore, testing components within the shadow DOM can be problematic because elements inside a shadow root technically do not exist in the main DOM, and can prevent testing frameworks from selecting internal elements.
+
+## Testing the components
+
+To ease the process of testing, here are guides to testing our UI Kit components in different testing frameworks.
+
+- [Jest](/get-started/test-components/testing-with-jest)
+- [React Testing Library](/get-started/test-components/testing-with-react-testing-library)
