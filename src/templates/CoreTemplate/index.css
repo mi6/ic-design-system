@@ -13,9 +13,9 @@ ic-alert {
 .force > p:first-of-type {
   font-weight: 600;
   font-size: 19;
-  line-height: 38px;
+  line-height: 2.375rem;
   margin-bottom: var(--ic-space-lg);
-  margin-top: 36px;
+  margin-top: 2.25rem;
   letter-spacing: -0.1;
 }
 
@@ -34,7 +34,7 @@ ic-alert {
 }
 
 .storybook {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .page-container {
@@ -53,7 +53,7 @@ ic-alert {
 
 .content-container {
   grid-area: content;
-  max-width: 800px;
+  max-width: 50rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -69,7 +69,7 @@ ic-alert {
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .page-container {
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem;
   }
 }
 
@@ -93,6 +93,6 @@ ic-alert {
 
 @media screen and (min-width: 1385px) {
   .content-container {
-    width: 800px;
+    width: 50rem;
   }
 }
