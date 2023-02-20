@@ -58,6 +58,7 @@
     "gatsby/socket.io": "2.3.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
     "@size-limit/file": "^7.0.5",
