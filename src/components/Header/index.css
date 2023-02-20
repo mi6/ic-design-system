@@ -3,7 +3,7 @@ ic-page-header[data-class="page-header"] {
 }
 
 ic-page-header ic-navigation-item .link {
-  height: 44px !important;
+  height: 2.75rem !important;
   color: var(--ic-color-primary-text) !important;
   transition: all var(--ic-easing-transition-fast) !important;
 }
