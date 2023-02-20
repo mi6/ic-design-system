@@ -29,7 +29,7 @@ interface ComponentPreviewProps {
 
 const CodeSnippet: React.FC<{ code: string }> = ({ code }) => (
   <>
-    <Highlight {...defaultProps} code={code} language="tsx" theme={undefined}>
+    <Highlight {...defaultProps} code={code} language="jsx" theme={undefined}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={clsx(className, "snippet")} style={style}>
           <code>
