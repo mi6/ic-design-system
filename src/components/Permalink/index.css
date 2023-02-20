@@ -10,9 +10,9 @@ ic-typography:hover .permalink svg,
 
 .permalink {
   transition: var(--ic-easing-transition-fast);
-  width: 42px;
-  padding: 10px 0 0 0 !important;
-  height: 42px;
+  width: 2.625rem;
+  padding: 0.625rem 0 0 0 !important;
+  height: 2.625rem;
   border-radius: 50%;
   text-align: center;
   box-sizing: border-box;
@@ -40,7 +40,6 @@ ic-typography:hover .permalink svg,
 .permalink > svg {
   vertical-align: top;
 }
-
 
 @media (forced-colors: active) {
   .permalink:focus {
