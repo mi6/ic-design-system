@@ -274,3 +274,65 @@ export const light = [
     <IcTabPanel>Tab Three</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
+
+### Compact
+
+export const compact = [
+  {
+    language: "Web component",
+    snippet: `<ic-tab-context>
+  <div style={{ width: "60%", margin: "auto" }}>
+    <ic-tab-group label="Example tab group">
+      <ic-tab>One</ic-tab>
+      <ic-tab>Two</ic-tab>
+      <ic-tab>Three</ic-tab>
+      <ic-tab>Four</ic-tab>
+      <ic-tab>Five</ic-tab>
+    </ic-tab-group>
+    <ic-tab-panel>Tab One</ic-tab-panel>
+    <ic-tab-panel>Tab Two</ic-tab-panel>
+    <ic-tab-panel>Tab Three</ic-tab-panel>
+    <ic-tab-panel>Tab Four</ic-tab-panel>
+    <ic-tab-panel>Tab Five</ic-tab-panel>
+  </div>
+</ic-tab-context>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTabContext>
+  <div style={{ width: "60%", margin: "auto" }}>
+    <IcTabGroup label="Example tab group">
+      <IcTab>One</IcTab>
+      <IcTab>Two</IcTab>
+      <IcTab>Three</IcTab>
+      <IcTab>Four</IcTab>
+      <IcTab>Five</IcTab>
+    </IcTabGroup>
+    <IcTabPanel>Tab One</IcTabPanel>
+    <IcTabPanel>Tab Two</IcTabPanel>
+    <IcTabPanel>Tab Three</IcTabPanel>
+    <IcTabPanel>Tab Four</IcTabPanel>
+    <IcTabPanel>Tab Five</IcTabPanel>
+  </div>
+</IcTabContext>`,
+  },
+];
+
+<ComponentPreview snippets={compact}>
+  <IcTabContext>
+    <div style={{ width: "60%", margin: "auto" }}>
+      <IcTabGroup label="Example tab group">
+        <IcTab>One</IcTab>
+        <IcTab>Two</IcTab>
+        <IcTab>Three</IcTab>
+        <IcTab>Four</IcTab>
+        <IcTab>Five</IcTab>
+      </IcTabGroup>
+      <IcTabPanel>Tab One</IcTabPanel>
+      <IcTabPanel>Tab Two</IcTabPanel>
+      <IcTabPanel>Tab Three</IcTabPanel>
+      <IcTabPanel>Tab Four</IcTabPanel>
+      <IcTabPanel>Tab Five</IcTabPanel>
+    </div>
+  </IcTabContext>
+</ComponentPreview>
