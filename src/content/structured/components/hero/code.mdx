@@ -28,7 +28,8 @@ export const snippets = [
     language: "Web component",
     snippet: `<ic-hero
   heading="New coffee launches 14 September 2022"
-  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary.">
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+>
   <ic-button variant="primary" slot="interaction">Order now</ic-button>
   <ic-button variant="secondary" slot="interaction">Submit new flavour</ic-button>
 </ic-hero>`,
@@ -37,7 +38,8 @@ export const snippets = [
     language: "React",
     snippet: `<IcHero
   heading="New coffee launches 14 September 2022"
-  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary.">
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+>
   <IcButton variant="primary" slot="interaction">Order now</IcButton>
   <IcButton variant="secondary" slot="interaction">Submit new flavour</IcButton>
 </IcHero>`,
@@ -70,8 +72,9 @@ export const snippetsCentre = [
   {
     language: "Web component",
     snippet: `<ic-hero
-    heading="New coffee launches 14 September 2022"
-    subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center">
+  heading="New coffee launches 14 September 2022"
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center"
+>
   <ic-button variant="primary" slot="interaction">Order now</ic-button>
   <ic-button variant="secondary" slot="interaction">Submit new flavour</ic-button>
 </ic-hero>`,
@@ -80,7 +83,8 @@ export const snippetsCentre = [
     language: "React",
     snippet: `<IcHero
   heading="New coffee launches 14 September 2022"
-  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center">
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center"
+>
   <IcButton variant="primary" slot="interaction">Order now</IcButton>
   <IcButton variant="secondary" slot="interaction">Submit new flavour</IcButton>
 </IcHero>`,
@@ -108,8 +112,9 @@ export const snippetsContentCentre = [
   {
     language: "Web component",
     snippet: `<ic-hero
-    heading="New coffee launches 14 September 2022"
-    subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center" content-aligned="center">
+  heading="New coffee launches 14 September 2022"
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center" content-aligned="center"
+>
   <ic-button variant="primary" slot="interaction">Order now</ic-button>
   <ic-button variant="secondary" slot="interaction">Submit new flavour</ic-button>
 </ic-hero>`,
@@ -118,7 +123,8 @@ export const snippetsContentCentre = [
     language: "React",
     snippet: `<IcHero
   heading="New coffee launches 14 September 2022"
-  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center" contentAligned="center">
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary." aligned="center" contentAligned="center"
+>
   <IcButton variant="primary" slot="interaction">Order now</IcButton>
   <IcButton variant="secondary" slot="interaction">Submit new flavour</IcButton>
 </IcHero>`,
@@ -147,11 +153,12 @@ export const snippetsSecondHeadingSearch = [
   {
     language: "Web component",
     snippet: `<ic-hero
-    heading="New coffee launches 14 September 2022"
-    subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
-    secondary-heading="Secondary Heading" 
-    secondary-subheading="This is a secondary description.">
-    <ic-search-bar slot="interaction"></ic-search-bar>
+  heading="New coffee launches 14 September 2022"
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+  secondary-heading="Secondary Heading" 
+  secondary-subheading="This is a secondary description."
+>
+  <ic-search-bar slot="interaction"></ic-search-bar>
 </ic-hero>`,
   },
   {
@@ -160,7 +167,8 @@ export const snippetsSecondHeadingSearch = [
   heading="New coffee launches 14 September 2022"
   subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
   secondaryHeading="Secondary Heading" 
-  secondarySubheading="This is a secondary description.">
+  secondarySubheading="This is a secondary description."
+>
   <IcSearchBar slot="interaction" />
 </IcHero>`,
   },
@@ -187,10 +195,16 @@ export const snippetsCard = [
   subheading="Hero description. This is a Hero component, it should be used as a page heading." 
   card-heading="Latest announcement" 
   card-message="This is some example text that can be included in the card copy" 
-  aligned="full-width">
+  aligned="full-width"
+>
   <ic-button variant="primary" slot="interaction">Button</ic-button>
   <ic-button variant="secondary" slot="interaction">Button</ic-button>
-  <ic-card heading="Latest announcement" message="This is some example text that can be included in the card copy." slot="secondary" class="hero-card"></ic-card>
+  <ic-card
+    heading="Latest announcement"
+    message="This is some example text that can be included in the card copy."
+    slot="secondary"
+    class="hero-card"
+  ></ic-card>
   <style>
     .hero-card {
       color: var(--ic-theme-text);
@@ -206,13 +220,20 @@ export const snippetsCard = [
   subheading="Hero description. This is a Hero component, it should be used as a page heading." 
   cardHeading="Latest announcement" 
   cardMessage="This is some example text that can be included in the card copy" 
-  aligned="full-width">
-    <IcButton variant="primary" slot="interaction">Button</IcButton>
-    <IcButton variant="secondary" slot="interaction">Button</IcButton>
-    <IcCard heading="Latest announcement" message="This is some example text that can be included in the card copy." slot="secondary" class="hero-card" style={{
-  color: "var(--ic-theme-text",
-  width: "300px"
-  }} />
+  aligned="full-width"
+>
+  <IcButton variant="primary" slot="interaction">Button</IcButton>
+  <IcButton variant="secondary" slot="interaction">Button</IcButton>
+  <IcCard
+    heading="Latest announcement"
+    message="This is some example text that can be included in the card copy."
+    slot="secondary"
+    class="hero-card"
+    style={{
+      color: "var(--ic-theme-text)",
+      width: "300px"
+    }}
+  />
 </IcHero>`,
   },
 ];
@@ -252,7 +273,8 @@ export const snippetsImage = [
     snippet: `<ic-hero 
   heading="Hero heading" 
   subheading="Hero description. This is a Hero component, it should be used as a page heading." 
-  aligned="full-width">
+  aligned="full-width"
+>
   <ic-button variant="primary" slot="interaction">Button</ic-button>
   <ic-button variant="secondary" slot="interaction">Button</ic-button>
   <svg slot="secondary" ...></svg>
@@ -263,7 +285,8 @@ export const snippetsImage = [
     snippet: `<IcHero 
   heading="Hero heading" 
   subheading="Hero description. This is a Hero component, it should be used as a page heading." 
-  aligned="full-width">
+  aligned="full-width"
+>
   <IcButton variant="primary" slot="interaction">Button</IcButton>
   <IcButton variant="secondary" slot="interaction">Button</IcButton>
   <SlottedSVG slot="secondary" ... />
