@@ -44,12 +44,12 @@
 }
 
 .ic-typography[data-class="text-content"] {
-  max-width: 864px;
+  max-width: 54rem;
 }
 
 .hero-card {
   color: var(--ic-theme-text);
-  width: 300px;
+  width: 18.75rem;
 }
 
 .hero .ic-typography-h4 .MuiSvgIcon-root {

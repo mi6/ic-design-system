@@ -1,7 +1,7 @@
 .linkbit {
   display: flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 2.5rem;
   color: var(--ic-action-default) !important;
   text-decoration: none !important;
 }
@@ -56,7 +56,7 @@
 .list-title {
   display: flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 2.5rem;
   text-decoration: none !important;
 }
 
@@ -64,7 +64,7 @@
   outline: none;
   text-decoration: none !important;
   border-radius: var(--ic-border-radius);
-  box-shadow: 0 0 0 2px #1759bc, 0 0 0 5px rgb(23 89 188 / 52%) !important;
+  box-shadow: 0 0 0 0.125rem #1759bc, 0 0 0 0.313rem rgb(23 89 188 / 52%) !important;
 }
 
 ic-typography[data-class="list-typography"] {
@@ -75,7 +75,7 @@ ic-typography[data-class="list-typography"] {
   list-style: none;
   padding: 0;
   margin: 0;
-  min-height: 40px;
+  min-height: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -169,8 +169,8 @@ ic-typography[data-class="list-typography"] {
   color: var(--ic-action-default) !important;
   transition: transform var(--ic-easing-transition-slow);
   position: relative;
-  margin-left: 6px;
-  margin-right: 9px;
+  margin-left: 0.375rem;
+  margin-right: 0.563rem;
   font-size: 1.25em !important;
 }
 
@@ -226,40 +226,40 @@ nav.not-mounted .list-item:focus-within .chevron {
 
 @media (forced-colors: active) {
   .list-item a:focus {
-    width: calc(100% - 6px);
-    margin-left: 3px;
+    width: calc(100% - 0.375rem);
+    margin-left: 0.188rem;
     z-index: 1;
     border-radius: var(--ic-border-radius);
     transition: outline var(--ic-easing-transition-fast);
   }
 
   .list-item a:focus ic-typography[data-class="list-typography"] {
-    padding-left: calc(var(--ic-space-md) - 3px);
+    padding-left: calc(var(--ic-space-md) - 0.188rem);
   }
 
   .list-item a:focus.active {
-    width: calc(100% - 38px);
-    margin-left: 11px;
+    width: calc(100% - 2.375rem);
+    margin-left: 0.688rem;
   }
 
   .list-item a:focus.active ic-typography[data-class="list-typography"] {
-    margin-left: -3px;
+    margin-left: -0.188rem;
   }
 
   .list-item .active:focus::before {
-    left: -11px;
+    left: -0.688rem;
   }
 
   .list-root > li.icds-gatsby-lp > a:focus {
-    width: calc(100% - 6px);
+    width: calc(100% - 0.375rem);
   }
 
   .list-root > li.icds-gatsby-lp > a:focus .chevron {
-    margin-right: 6px;
+    margin-right: 0.375rem;
   }
 
   .list-item > ul > li > a:focus > ic-typography[data-class="list-typography"] {
-    padding-left: calc(var(--ic-space-xl) - 3px) !important;
+    padding-left: calc(var(--ic-space-xl) - 0.188rem) !important;
   }
 
   .list-item

@@ -1,6 +1,6 @@
 .side-nav {
   grid-area: sidenav;
-  width: 256px;
+  width: 16rem;
 }
 
 .nav {
@@ -102,7 +102,7 @@
 @media screen and (min-width: 769px) and (max-width: 1200px) {
   .side-nav {
     margin: auto auto var(--ic-space-lg) 0;
-    max-width: 800px;
+    max-width: 50rem;
     width: calc(100% - var(--ic-space-xl));
   }
 }
