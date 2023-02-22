@@ -6,6 +6,10 @@ on:
       - main
       - gh-pages
 
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ic-design-system-static-analysis-tests:
     name: "Static Analysis Tests"
@@ -18,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --legacy-peer-deps --also=dev
+          npm ci --legacy-peer-deps
 
       - name: Lint site
         run: |
@@ -26,9 +30,6 @@ jobs:
 
   ic-design-system-deploy:
     needs: [ic-design-system-static-analysis-tests]
-    concurrency:
-      group: ci-${{ github.ref }}
-      cancel-in-progress: false
     name: "Deploy"
     runs-on: ubuntu-latest
     steps:
