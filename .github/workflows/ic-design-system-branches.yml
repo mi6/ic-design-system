@@ -24,6 +24,9 @@ jobs:
         run: |
           npm run lint
 
+      - name: Audit
+        run: npm run audit
+
   ic-design-system-deploy:
     needs: [ic-design-system-static-analysis-tests]
     concurrency:
