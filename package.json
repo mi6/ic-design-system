@@ -14,6 +14,7 @@
     "@ukic/fonts": "^2.1.0-beta.7",
     "@ukic/react": "^2.1.0-beta.7",
     "@ukic/web-components": "^2.1.0-beta.7",
+    "audit-ci": "^6.6.1",
     "clsx": "^1.1.1",
     "cross-env": "^7.0.3",
     "dateformat": "^5.0.2",
@@ -120,7 +121,8 @@
     "clean": "gatsby clean",
     "test": "jest --passWithNoTests",
     "prepare": "husky install",
-    "verify-ts": "tsc --noEmit"
+    "verify-ts": "tsc --noEmit",
+    "audit": "audit-ci -m --config audit-ci.json"
   },
   "size-limit": [
     {
