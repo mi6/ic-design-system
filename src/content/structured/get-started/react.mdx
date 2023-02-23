@@ -136,3 +136,19 @@ Replace any instances of `<svg>` with `<SlottedSVG>`.
   </SlottedSVG>
 </IcTopNavigation>
 ```
+
+### Using Material Design Icons (MDI) with SlottedSVG
+
+To use `<SlottedSVG>` with MDI Icons, install and import the `@mdi/js` package.
+
+```bash
+npm i @mdi/js
+```
+
+```jsx
+import { mdiHome } from "@mdi/js";
+
+<IcTopNavigation appTitle="App title">
+  <SlottedSVG slot="app-icon" path={mdiHome} viewBox="0 0 24 24" />
+</IcTopNavigation>;
+```
