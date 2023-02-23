@@ -1,0 +1,174 @@
+---
+path: "/get-started/test-components/testing-with-cypress"
+
+date: "2023-02-22"
+
+title: "Testing with Cypress"
+
+subTitle: "How to test our components with Cypress."
+
+navPriority: 4
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing-with-cypress.mdx"
+---
+
+## About Cypress
+
+[Cypress](https://www.cypress.io/) is a developer-friendly, Javascript-based front-end testing tool. It comes bundled with popular libraries like Mocha and Chai, allowing for swift adoption. Advantages include snapshots at the time of test execution, implicit wait commands, multiple browsers in which to test and real-time command execution with visual feedback.
+
+Cypress allows for end-to-end testing, replicating how "users interact with your app by using a real browser", and component testing, also known as unit testing, which tests a component's functionality, styling & appearance in isolation.
+
+## Cypress and the Shadow DOM
+
+Cypress gives two ways in which to test `@ukic` components in the [shadow DOM](https://design.sis.gov.uk/get-started/install-components/testing-with-jest#what-is-the-shadow-dom).
+
+### Configuring at test level
+
+Add `includeShadowDom: true` to the `cy.get` query.
+
+```js
+// cypress/e2e/test.cy.js
+it("has an app bar with title link", () => {
+  cy.get("ic-top-navigation", { includeShadowDom: true })
+    .shadow()
+    .find(".title-link")
+    .should("have.attr", "href", "/")
+    .should("have.text", "My App Title");
+});
+```
+
+This allows traversing the shadow DOM by chaining the `.shadow()` method.
+
+### Configuring at global level
+
+Add `includeShadowDom: true` to the `cypress.config.js`.
+
+```js
+// cypress.config.js
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  includeShadowDom: true,
+  component: {
+    devServer: {
+      framework: "create-react-app",
+      bundler: "webpack",
+    },
+  },
+});
+```
+
+This allows traversing the shadow DOM using assertions without having to explicitly chain the `.shadow()` method.
+
+## Example: Component testing
+
+Below are examples of component tests on the `@ukic/react` components `IcTextfield` and `IcButton`. Component tests are normally located adjacent to the component they are testing and are rendered on a development server.
+
+```tsx
+// Textfield.tsx
+import { IcTextField, IcButton } from "@ukic/react";
+import React, { useState } from "react";
+
+function Textfield() {
+  const [favouriteCoffee, setFavouriteCoffee] = useState<String>("");
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setFavouriteCoffee(event.detail.value);
+  };
+
+  const handleClick = () => {
+    console.log("This is the best coffee going:", favouriteCoffee);
+  };
+
+  return (
+    <form>
+      <IcTextField
+        label="What is your favourite coffee?"
+        placeholder="Placeholder"
+        helperText="Such as Arabica, Robusta or Liberica"
+        onIcChange={(ev) => handleChange(ev)}
+      />
+
+      <IcButton variant="primary" onClick={() => handleClick()}>
+        Send
+      </IcButton>
+    </form>
+  );
+}
+
+export default Textfield;
+```
+
+```tsx
+// Textfield.cy.tsx
+import React from "react";
+import Textfield from "./Textfield.tsx";
+
+describe("<Textfield />", () => {
+  it("renders", () => {
+    cy.mount(<Textfield />).should("have.property", "component");
+  });
+  it("takes a value in the textfield and prints to console when the button is clicked", () => {
+    // Render the component
+    cy.mount(<Textfield />);
+    // Capture the log to check later
+    cy.stub(window.console, "log").as("consoleLog");
+
+    // Check the IcComponents have finished rendering
+    cy.get("ic-text-field").should("have.class", "hydrated");
+    cy.get("ic-button").should("have.class", "hydrated");
+
+    // Interact with the components and provide assertions
+    cy.get("#ic-text-field-input-1").type("Black");
+    cy.get("ic-button").click();
+    cy.get("@consoleLog").should(
+      "be.calledWith",
+      "This is the best coffee going:",
+      "Black"
+    );
+  });
+});
+```
+
+## Example: End-to-end testing
+
+Below is an additional example for end-to-end tests on the same component. End-to-end tests normally live within the Cypress test directory and are rendered as a complete site with live interaction.
+
+```jsx
+// cypress/e2e/App.cy.js
+describe("Textfield", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:3000/", {
+      onBeforeLoad(window) {
+        // Capture the log to check later
+        cy.stub(window.console, "log").as("consoleLog");
+      },
+    });
+  });
+
+  it("should have visited the correect URL", () => {
+    // Check that your App server is running
+    cy.url().should("eq", "http://localhost:3000/");
+  });
+
+  it("should check the label on the IcTextfield", () => {
+    // Checks the component has rendered fully
+    cy.get("ic-text-field").should("have.class", "hydrated");
+    cy.get("ic-button").should("have.class", "hydrated");
+    cy.get("ic-text-field").should(
+      "have.html",
+      '<input type="hidden" class="ic-input" name="ic-text-field-input-0" value="">'
+    );
+
+    // Interact with the components
+    cy.get("#ic-text-field-input-0").type("Frappucino");
+    cy.get("ic-button").click();
+    cy.get("@consoleLog").should(
+      "be.calledWith",
+      "This is the best coffee going:",
+      "Frappucino"
+    );
+  });
+});
+```
