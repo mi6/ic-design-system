@@ -1,0 +1,13 @@
+{
+  "allowlist": [
+    "GHSA-pfrx-2q88-qq97",
+    "GHSA-9c47-m6qq-7p4h",
+    "GHSA-rp65-9cf3-cjxr",
+    "GHSA-rjqq-98f6-6j3r",
+    "GHSA-mjxr-4v3x-q3m4",
+    "GHSA-w5p7-h5w8-2hfq",
+    "GHSA-3rfm-jhwj-7488",
+    "GHSA-hhq3-ff78-jv3g",
+    "GHSA-76p3-8jx3-jpfq"
+  ]
+}
