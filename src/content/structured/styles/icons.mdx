@@ -33,3 +33,9 @@ Consider alternatives such as dropdowns, merged buttons and splitting a layout a
 Provide a text label when you use icons. Even if the text isn't visible on the screen, assistive technology needs to describe the icon.
 
 Use tooltips on icons or icon buttons so that the meaning of an icon is obvious.
+
+## Slotted SVGs
+
+Adding the `slot` attribute to SVGs within a Typescript file produces an error due to slot not being a SVG prop. `<SlottedSVG>` removes this error and can be used with [native SVGs](/get-started/install-components/react/#working-with-slotted-svgs) or [Material Design Icons (MDI)](/get-started/install-components/react/#using-material-design-icons-mdi-with-slottedsvg).
+
+- [Side navigation component](/components/side-nav/code/#with-material-design-icons-in-slottedsvg) using Material Design Icons with SlottedSVG
