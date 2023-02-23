@@ -1,7 +1,7 @@
 ---
 path: "/components/side-nav/code"
 
-date: "2023-02-03"
+date: "2023-02-22"
 
 title: "Side navigation"
 
@@ -25,9 +25,11 @@ import {
   IcNavigationGroup,
   IcDivider,
   IcLink,
+  SlottedSVG,
 } from "@ukic/react";
 
 import { MemoryRouter, NavLink } from "react-router-dom";
+import { mdiCompassOutline, mdiHome } from "@mdi/js";
 
 ## Component demo
 
@@ -749,6 +751,115 @@ export const withReactRouter = [
       </IcSideNavigation>
     </div>
   </MemoryRouter>
+</ComponentPreview>
+
+### With MUI icons in SlottedSVG
+
+export const withMUIicons = [
+  {
+    language: "React",
+    snippet: `<MemoryRouter initialEntries={["/"]}>
+  <div style={{ display: "flex", flexDirection: "row"}}>
+    <IcSideNavigation
+      appTitle="ACME"
+      version="v0.0.0"
+      status="BETA"
+    >
+      <SlottedSVG slot="app-icon" ... />
+      <IcNavigationItem
+        slot="primary-navigation"
+      >
+        <NavLink to="/" slot="navigation-item">
+          <SlottedSVG slot="icon" ... />
+          Home
+        </NavLink>
+      </IcNavigationItem>
+      <IcNavigationGroup label="Navigation Grouped" slot="primary-navigation" expandable="true">
+        <IcNavigationItem>
+          <NavLink to="/child-item" slot="navigation-item">
+            <SlottedSVG slot="icon" ... />
+            Home
+          </NavLink>
+        </IcNavigationItem>
+        <IcNavigationItem>
+          <NavLink to="/child-item-2" slot="navigation-item">
+            <SlottedSVG slot="icon" ... />
+            Daily Tippers
+          </NavLink>
+        </IcNavigationItem>
+      </IcNavigationGroup>
+      <IcNavigationItem
+        slot="secondary-navigation"
+      >
+        <NavLink to="/daily-tippers" slot="navigation-item">
+          <SlottedSVG slot="icon" ... />
+            Daily Tippers
+        </NavLink>
+      </IcNavigationItem>
+    </IcSideNavigation>
+    <main>
+      <IcSectionContainer>
+        <Routes>
+          <Route path="/" element={() => <IcTypography>This is the home page</IcTypography>} />
+          <Route path="/daily-tippers" element={() => <IcTypography>This page is about daily tippers</IcTypography>} />
+        </Routes>
+      </IcSectionContainer>
+    </main>
+  </div>
+</MemoryRouter>
+    `,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsDefault}
+  style={{
+    display: "flex",
+    height: "100%",
+    justifyContent: "flex-start",
+    overflow: "hidden",
+    position: "relative",
+    padding: "0px",
+  }}
+>
+  <IcSideNavigation
+    appTitle="Application Name"
+    version="v0.0.7"
+    status="BETA"
+    disableAutoParentStyling
+    inline
+  >
+    <SlottedSVG slot="app-icon" path={mdiCompassOutline} viewBox="0 0 24 24" />
+    <IcNavigationItem slot="primary-navigation" href="/" label="Home">
+      <SlottedSVG slot="icon" path={mdiHome} viewBox="0 0 24 24" />
+    </IcNavigationItem>
+    <IcDivider slot="primary-navigation" />
+    <IcNavigationItem slot="primary-navigation" href="/" label="Trends">
+      <SlottedSVG slot="icon" path={mdiHome} viewBox="0 0 24 24" />
+    </IcNavigationItem>
+    <IcNavigationGroup
+      slot="primary-navigation"
+      label="Second navigation group"
+      expandable="true"
+    >
+      <IcNavigationItem label="Different navigation" href="/">
+        <SlottedSVG slot="icon" path={mdiHome} viewBox="0 0 24 24" />
+      </IcNavigationItem>
+      <IcNavigationItem label="Navigation" href="/">
+        <SlottedSVG slot="icon" path={mdiHome} viewBox="0 0 24 24" />
+      </IcNavigationItem>
+    </IcNavigationGroup>
+    <IcNavigationItem
+      slot="primary-navigation"
+      href="/"
+      label="This is a very very very long label for the navigation item"
+    >
+      <SlottedSVG slot="icon" path={mdiHome} viewBox="0 0 24 24" />
+    </IcNavigationItem>
+    <IcNavigationItem slot="secondary-navigation" href="/" label="Settings">
+      <SlottedSVG slot="icon" path={mdiHome} viewBox="0 0 24 24" />
+    </IcNavigationItem>
+  </IcSideNavigation>
 </ComponentPreview>
 
 ## Layout example
