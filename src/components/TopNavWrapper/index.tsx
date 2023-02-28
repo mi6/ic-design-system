@@ -25,12 +25,10 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
   status,
   version,
 }) => (
-  <ic-top-navigation
-    app-title={appTitle}
-    status={status}
-    version={version}
-    href={withPrefix("/")}
-  >
+  <ic-top-navigation status={status} version={version}>
+    <GatsbyLink slot="app-title" to={withPrefix("/")}>
+      {appTitle}
+    </GatsbyLink>
     <span slot="app-icon">
       <ICDSLogo role="img" aria-labelledby="ICDS Logo" className="icds-logo" />
     </span>
