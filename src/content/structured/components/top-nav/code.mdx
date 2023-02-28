@@ -391,13 +391,16 @@ export const snippetsLeftAligned = [
   </IcTopNavigation>
 </ComponentPreview>
 
-### With React Router
+### With React Router (using slots)
+
+The following example also demonstrates using a slotted app title link.
 
 export const withReactRouter = [
   {
     language: "React",
     snippet: `<MemoryRouter initialEntries={["/"]}>
-  <IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
+  <IcTopNavigation status="alpha" version="v0.0.7">
+    <NavLink to="/" slot="app-title">ICDS</NavLink>
     <SlottedSVG slot="app-icon" ... />
     <IcSearchBar slot="search" placeholder="Search" label="Search" />
     <IcNavigationButton label="button1" slot="buttons" onClick={() => alert('test')}>
@@ -428,7 +431,10 @@ export const withReactRouter = [
   style={{ display: "flex", flexDirection: "column" }}
 >
   <MemoryRouter initialEntries={["/"]}>
-    <IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
+    <IcTopNavigation status="alpha" version="v0.0.7">
+      <NavLink to="/" slot="app-title">
+        ICDS
+      </NavLink>
       <svg
         slot="app-icon"
         xmlns="http://www.w3.org/2000/svg"

@@ -577,16 +577,18 @@ export const snippetsStatic = [
 
 ### With React Router (using slots)
 
+The following example also demonstrates using a slotted app title link.
+
 export const withReactRouter = [
   {
     language: "React",
     snippet: `<MemoryRouter initialEntries={["/"]}>
   <div style={{ display: "flex", flexDirection: "row"}}>
     <IcSideNavigation
-      appTitle="ACME"
       version="v0.0.0"
       status="BETA"
     >
+      <NavLink to="/" slot="app-title">ACME</NavLink>
       <SlottedSVG slot="app-icon" ... />
       <IcNavigationItem
         slot="primary-navigation"
@@ -647,12 +649,14 @@ export const withReactRouter = [
   <MemoryRouter initialEntries={["/"]}>
     <div style={{ display: "flex", flexDirection: "row" }}>
       <IcSideNavigation
-        appTitle="ACME"
         version="v0.0.0"
         status="BETA"
         inline
         disableAutoParentStyling
       >
+        <NavLink to="/" slot="app-title">
+          ACME
+        </NavLink>
         <svg
           slot="app-icon"
           xmlns="http://www.w3.org/2000/svg"
