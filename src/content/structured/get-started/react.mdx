@@ -110,6 +110,8 @@ Add a `transformIgnorePatterns` field with the value `["/node_modules/(?!@ukic/r
 
 To slot an SVG into one of our React components, import the `SlottedSVG` component from `@ukic/react` into your React files. This will prevent an error stating that property 'slot' doesn't exist.
 
+To scale the icons, use the [`viewBox` attribute](https://css-tricks.com/scale-svg/#aa-the-viewbox-attribute).
+
 ```jsx
 import { SlottedSVG } from "@ukic/react";
 ```
@@ -130,9 +132,10 @@ Replace any instances of `<svg>` with `<SlottedSVG>`.
 //After
 <IcTopNavigation appTitle="App title">
   {/* Can be implemented either way */}
-  <SlottedSVG slot="app-icon" path={path} />
-  <SlottedSVG slot="app-icon">
+  <SlottedSVG slot="app-icon" path={path} viewBox="0 0 24 24" />
+  <SlottedSVG slot="app-icon" viewBox="0 0 24 24">
     <path d="..." />
+
   </SlottedSVG>
 </IcTopNavigation>
 ```
