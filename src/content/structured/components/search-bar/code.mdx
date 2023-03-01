@@ -330,8 +330,8 @@ export const customFiltering = [
     const searchFor = event.detail.value;
     if (searchFor.length > 1) {
       mockAPI = (query) => {
-        filteredResults = mockData.filter((m) =>
-          m.label.toLowerCase().includes(query.toLowerCase())
+        filteredResults = mockData.filter((item) =>
+          item.label.toLowerCase().includes(query.toLowerCase())
         );
         return new Promise((resolve) => {
           setTimeout(() => resolve(filteredResults), 1000)
@@ -354,27 +354,28 @@ export const customFiltering = [
   { label: "Americano", value: "americano" },
   { label: "Mocha", value: "mocha" },
 ];
-const [results, setResults] = React.useState([]);
+const [results, setResults] = useState([]);
+const changeHandler = (event) =>{
+  const searchFor = event.detail.value;
+  if (searchFor.length > 1) {
+    const mockAPI = (query) => {
+      const filteredResults = mockData.filter((item) =>
+        item.label.toLowerCase().includes(query.toLowerCase())
+      );
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(filteredResults), 1000);
+      });
+    };
+    mockAPI(searchFor).then((newResults) => setResults(newResults));
+  } else {
+    setResults([]);
+  }
+}
 <IcSearchBar label="What is your favourite coffee?"
   debounce="300"
   disableFilter
   options={results}
-  onIcChange={(event) => {
-    const searchFor = event.detail.value;
-    if (searchFor.length > 1) {
-      const mockAPI = (query) => {
-      const filteredResults = mockData.filter((m) =>
-        m.label.toLowerCase().includes(query.toLowerCase())
-        );
-        return new Promise((resolve) => {
-          setTimeout(() => resolve(filteredResults), 1000);
-        });
-      };
-      mockAPI(searchFor).then((newResults) => setResults(newResults));
-    } else {
-      setResults([]);
-    }
-  }}
+  onIcChange={changeHandler}
 />`,
   },
 ];
@@ -389,28 +390,29 @@ export const CustomFilterExample = () => {
     { label: "Mocha", value: "mocha" },
   ];
   const [results, setResults] = React.useState([]);
+  const changeHandler = (event) => {
+    const searchFor = event.detail.value;
+    if (searchFor.length > 1) {
+      const mockAPI = (query) => {
+        const filteredResults = mockData.filter((item) =>
+          item.label.toLowerCase().includes(query.toLowerCase())
+        );
+        return new Promise((resolve) => {
+          setTimeout(() => resolve(filteredResults), 1000);
+        });
+      };
+      mockAPI(searchFor).then((newResults) => setResults(newResults));
+    } else {
+      setResults([]);
+    }
+  };
   return (
     <IcSearchBar
       label="What is your favourite coffee?"
       debounce="300"
       disableFilter
       options={results}
-      onIcChange={(event) => {
-        const searchFor = event.detail.value;
-        if (searchFor.length > 1) {
-          const mockAPI = (query) => {
-            const filteredResults = mockData.filter((m) =>
-              m.label.toLowerCase().includes(query.toLowerCase())
-            );
-            return new Promise((resolve) => {
-              setTimeout(() => resolve(filteredResults), 1000);
-            });
-          };
-          mockAPI(searchFor).then((newResults) => setResults(newResults));
-        } else {
-          setResults([]);
-        }
-      }}
+      onIcChange={changeHandler}
     />
   );
 };
