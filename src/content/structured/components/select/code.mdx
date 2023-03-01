@@ -592,3 +592,164 @@ export const SelectExampleValidation = () => {
 <ComponentPreview snippets={snippetsValidation}>
   <SelectExampleValidation />
 </ComponentPreview>
+
+## Custom filtering example
+
+This example shows how to filter data asynchronously when the value in the select field changes. The data is mocked and displayed after a one second delay, but could be replaced with a call to an API or database.
+
+export const customFiltering = [
+  {
+    language: "Web component",
+    snippet: `<ic-select
+  label="What is your favourite coffee?"
+  searchable="true"
+  debounce="300"
+  disable-filter="true"
+  id="external-filter-select"
+  characters-until-suggestions="2"
+></ic-select>
+<script>
+  const mockData = [
+    { label: "Espresso", value: "Esp" },
+    { label: "Double Espresso", value: "Dou" },
+    { label: "Cappuccino", value: "Cap" },
+    { label: "Latte", value: "Lat" },
+    { label: "Americano", value: "Ame" },
+    { label: "Filter", value: "Fil" },
+    { label: "Flat white", value: "Fla" },
+    { label: "Mocha", value: "Moc" },
+    { label: "Macchiato", value: "Mac" },
+  ];
+  const select = document.querySelector("#external-filter-select");
+  let selectedValue = "";
+  select.addEventListener("icClear", function (event) {
+    select.options = [];
+  });
+  select.addEventListener("icOptionSelect", function (event) {
+    selectedValue = event.detail.value;
+  });
+  select.addEventListener("icChange", function (event) {
+    const value = event.detail.value;
+    select.value = option;
+    if (value !== selectedValue) {
+      if (value && value.length > 1) {
+        mockAPI = (query) => {
+          filteredResults = mockData.filter((item) =>
+            item.label.toLowerCase().includes(query.toLowerCase())
+          );
+          return new Promise((resolve) =>
+            setTimeout(() => resolve(filteredResults), 1000)
+          );
+        };
+        mockAPI(value).then((results) => {
+          select.options = results;
+        });
+      } else {
+        select.options = [];
+      }
+    }
+  });            
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const mockData = [
+  { label: "Espresso", value: "Esp" },
+  { label: "Double Espresso", value: "Dou" },
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat" },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil" },
+  { label: "Flat white", value: "Fla" },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+const [value, setValue] = useState(null);
+const [results, setResults] = useState([]);
+const [selectedValue, setSelectedValue] = useState(null);
+const changeHandler = (event) => {
+  const newValue = event.detail.value;
+  setValue(newValue);
+  if (newValue !== selectedValue) {
+    if (newValue && newValue.length > 1) {
+      const mockAPI = (query) => {
+        const filteredResults = mockData.filter((item) => 
+          item.label.toLowerCase().includes(query.toLowerCase());
+        );
+        return new Promise(resolve => { 
+          setTimeout(() => resolve(filteredResults), 1000)
+        });
+      };
+      mockAPI(newValue).then((results) => setResults(results));
+    } else {
+      setResults([]);
+    }
+  }  
+}
+<IcSelect label="What is your favourite coffee?" 
+  debounce="300"
+  searchable
+  disableFilter
+  charactersUntilSuggestions="2"
+  value={value}
+  options={results} 
+  onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
+  onIcClear={() => setResults([])}
+  onIcChange={changeHandler}
+/>`,
+  },
+];
+
+export const CustomFilterExample = () => {
+  const mockData = [
+    { label: "Espresso", value: "Esp" },
+    { label: "Double Espresso", value: "Dou" },
+    { label: "Cappuccino", value: "Cap" },
+    { label: "Latte", value: "Lat" },
+    { label: "Americano", value: "Ame" },
+    { label: "Filter", value: "Fil" },
+    { label: "Flat white", value: "Fla" },
+    { label: "Mocha", value: "Moc" },
+    { label: "Macchiato", value: "Mac" },
+  ];
+  const [value, setValue] = React.useState(null);
+  const [results, setResults] = React.useState([]);
+  const [selectedValue, setSelectedValue] = React.useState(null);
+  const changeHandler = (event) => {
+    const newValue = event.detail.value;
+    setValue(newValue);
+    if (newValue !== selectedValue) {
+      if (newValue && newValue.length > 1) {
+        const mockAPI = (query) => {
+          const filteredResults = mockData.filter((item) =>
+            item.label.toLowerCase().includes(query.toLowerCase())
+          );
+          return new Promise((resolve) => {
+            setTimeout(() => resolve(filteredResults), 1000);
+          });
+        };
+        mockAPI(newValue).then((newResults) => setResults(newResults));
+      } else {
+        setResults([]);
+      }
+    }
+  };
+  return (
+    <IcSelect
+      label="What is your favourite coffee?"
+      debounce="300"
+      searchable
+      disableFilter
+      charactersUntilSuggestions="2"
+      value={value}
+      options={results}
+      onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
+      onIcClear={() => setResults([])}
+      onIcChange={changeHandler}
+    />
+  );
+};
+
+<ComponentPreview snippets={customFiltering}>
+  <CustomFilterExample />
+</ComponentPreview>
