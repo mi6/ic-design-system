@@ -59,6 +59,7 @@ const Header: React.FC<HeaderProps> = ({
       subheading={subheading}
       aligned="center"
       data-class="page-header"
+      sticky-desktop-only
     >
       {adornment && (
         <ic-status-tag
