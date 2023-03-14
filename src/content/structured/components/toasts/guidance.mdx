@@ -7,7 +7,7 @@ date: "2023-02-03"
 
 title: "Toast"
 
-status: "IN DEVELOPMENT"
+status: "BETA"
 
 subTitle: "Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'."
 
@@ -21,7 +21,8 @@ tabs:
   ]
 ---
 
-import { IcAlert, IcTypography } from "@ukic/react";
+import { IcTypography, IcToast, IcToastRegion, IcButton } from "@ukic/react";
+import { useRef } from "react";
 import toastVid1 from "./images/anim-1-auto-dismiss-toast.mp4";
 import toastVid2 from "./images/anim-2-manual-dismiss-toast.mp4";
 import toastFig1 from "./images/fig-1c-toast-with-action-button.png";
@@ -31,11 +32,29 @@ import toastFig4 from "./images/fig-4c-correct-toast-positioning.png";
 import toastFig5 from "./images/fig-5c-incorrect-toast-positioning.png";
 import toastFig6 from "./images/fig-6c-toast-with-description.png";
 
-<IcAlert
-  heading="Coming soon"
-  message="Toast component is currently in development."
-  variant="info"
-/>
+## Introduction
+
+An example of the toast component.
+
+export const IntroToast = () => {
+  const toastRegionEl = useRef(null);
+  const toastEl = useRef(null);
+  const handleClick = () => {
+    toastRegionEl.current.setVisible(toastEl.current);
+  };
+  return (
+    <>
+      <IcButton onClick={handleClick}>Display toast component</IcButton>
+      <IcToastRegion ref={toastRegionEl}>
+        <IcToast id="toast-01" heading="Your coffee is ready" ref={toastEl} />
+      </IcToastRegion>
+    </>
+  );
+}
+
+<ComponentPreview>
+  <IntroToast />
+</ComponentPreview>
 
 ## When to use
 
