@@ -25,13 +25,17 @@ Toasts can be difficult for people to notice due to their auto-dismiss behaviour
 
 Our guidance highlights the importance of making sure that the content of toast messages is always non-essential to completing a task.
 
+If more time is needed to read the toast's content, then a longer timeout duration can be set. A user can also hover over the toast with their mouse to pause the timer. Auto-dismiss toasts also include a visual timer, to show how long remains until it disappears.
+
 If any actions are included within a toast then it can’t be set to auto-dismiss. This gives a user extra time to locate and trigger the action.
 
 ## For Assistive Technology
 
 Auto-dismissible toasts use a role of alert which uses an `aria-live` region to announce the contents immediately to users of assistive technology.
 
-Toasts that don't auto-dismiss use a role of dialog and focus is moved to the toast when displayed. After dismissing the toast, focus is returned to the same position on the page before the toast was displayed.
+Toasts that don't auto-dismiss use a role of dialog and focus is moved to the toast when displayed. After dismissing the toast, focus is returned to the same position on the page before the toast was displayed. Focus is also trapped between the toast's interactive elements, so that users can complete the action quickly and easily.
+
+Pressing `Escape` on the keyboard will dismiss manual toasts immediately.
 
 ## Based on
 
@@ -41,7 +45,6 @@ The toast component has been based on the following resources:
 - [Scraping burned toast](https://adrianroselli.com/2019/06/scraping-burned-toast.html), Adrian Roselli, accessed March 2022.
 - [Defining toast messages](https://adrianroselli.com/2020/01/defining-toast-messages.html), Adrian Roselli, accessed March 2022.
 - [2.2.1 Timing adjustable](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html), WCAG 2.1, accessed March 2022.
-- [Alert role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role), MDN web docs, accessed March 2022.
 - [Dialog role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role), MDN web docs, accessed March 2022.
 
 ## Testing
