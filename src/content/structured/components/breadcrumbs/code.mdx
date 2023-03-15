@@ -19,7 +19,7 @@ tabs:
   ]
 ---
 
-import { IcBreadcrumbGroup, IcBreadcrumb } from "@ukic/react";
+import { IcBreadcrumbGroup, IcBreadcrumb, IcLink } from "@ukic/react";
 
 import { NavLink, MemoryRouter } from "react-router-dom";
 
@@ -243,7 +243,7 @@ export const collapsed = [
 export const withReactRouter = [
   {
     language: "React",
-    snippet: `  <MemoryRouter initialEntries={["/"]}>
+    snippet: `<MemoryRouter initialEntries={["/"]}>
     <IcBreadcrumbGroup>
       <IcBreadcrumb pageTitle="Home">
         <IcLink>
@@ -267,11 +267,23 @@ export const withReactRouter = [
 ];
 
 <ComponentPreview snippets={withReactRouter}>
-  <MemoryRouter initialEntries={["/"]}>
+<MemoryRouter initialEntries={["/"]}>
     <IcBreadcrumbGroup>
-      <IcBreadcrumb pageTitle="Home" href="#" />
-      <IcBreadcrumb pageTitle="Beverages" href="# " />
-      <IcBreadcrumb current pageTitle="Coffee" href="#" />
+      <IcBreadcrumb pageTitle="Home">
+        <IcLink>
+          <NavLink slot="router-item" to="/">Home</NavLink>
+        </IcLink>
+      </IcBreadcrumb>
+      <IcBreadcrumb pageTitle="Beverages">
+        <IcLink>
+          <NavLink slot="router-item" to="/">Beverages</NavLink>
+        </IcLink>
+      </IcBreadcrumb>
+      <IcBreadcrumb pageTitle="Coffee" current>
+        <IcLink>
+          <NavLink to="/" slot="router-item">Coffee</NavLink>
+        </IcLink>
+      </IcBreadcrumb>
     </IcBreadcrumbGroup>
   </MemoryRouter>
 </ComponentPreview>
