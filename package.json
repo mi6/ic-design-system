@@ -52,7 +52,8 @@
     "react-table": "^7.7.0",
     "react-use-flexsearch": "^0.1.1",
     "serve": "^14.1.2",
-    "sharp": "^0.31.1"
+    "sharp": "^0.31.1",
+    "stencil": "^0.0.5"
   },
   "resolutions": {
     "gatsby/axios": "0.21.1",
