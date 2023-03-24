@@ -19,20 +19,28 @@ tabs:
   ]
 ---
 
-import { IcTooltip, IcButton } from "@ukic/react";
+import { IcTooltip, IcButton, IcChip } from "@ukic/react";
 
 ## Component demo
 
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-tooltip target="text-button" label="This is a description of the button" placement="top"></ic-tooltip>
-<ic-tooltip target="text-button" label="This is a description of the button" placement="bottom"></ic-tooltip>`,
+    snippet: `<ic-tooltip target="text-button" label="This is a description of the button" placement="top">
+  <ic-button id="text-button-0">Top</ic-button>
+</ic-tooltip>
+<ic-tooltip target="text-button" label="This is a description of the button" placement="bottom">
+  <ic-button id="text-button-1">Bottom</ic-button>
+</ic-tooltip>`,
   },
   {
     language: "React",
-    snippet: `<IcTooltip target="text-button" label="This is a description of the button" placement="top" />
-<IcTooltip target="text-button" label="This is a description of the button" placement="bottom" />`,
+    snippet: `<IcTooltip target="text-button" label="This is a description of the button" placement="top">
+  <IcButton id="text-button-0">Top</IcButton>
+</IcTooltip>
+<IcTooltip target="text-button" label="This is a description of the button" placement="bottom">
+  <IcButton id="text-button-1">Bottom</IcButton>
+</IcTooltip>`,
   },
 ];
 
@@ -70,11 +78,15 @@ export const snippets = [
 export const snippetsLeft = [
   {
     language: "Web component",
-    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="left"></ic-tooltip>`,
+    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="left">
+  <ic-button id="text-button">Left</ic-button>
+</ic-tooltip>`,
   },
   {
     language: "React",
-    snippet: `<IcTooltip target="text-button" label="This is a description" placement="left" />`,
+    snippet: `<IcTooltip target="text-button" label="This is a description" placement="left">
+  <IcButton id="text-button">Left</IcButton>
+</IcTooltip>`,
   },
 ];
 
@@ -101,11 +113,15 @@ export const snippetsLeft = [
 export const snippetsRight = [
   {
     language: "Web component",
-    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="right"></ic-tooltip>`,
+    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="right">  
+  <ic-button id="text-button">Right</ic-button>
+</ic-tooltip>`,
   },
   {
     language: "React",
-    snippet: `<IcTooltip target="text-button" label="This is a description" placement="right" />`,
+    snippet: `<IcTooltip target="text-button" label="This is a description" placement="right">
+  <IcButton id="text-button">Right</IcButton>
+</IcTooltip>`,
   },
 ];
 
@@ -124,5 +140,53 @@ export const snippetsRight = [
     <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
       Right
     </IcButton>
+  </IcTooltip>
+</ComponentPreview>
+
+### Chip
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-tooltip target="small-chip" label="This is a description"> 
+  <ic-chip id="small-chip" label="Small" size="small">
+    <svg slot="icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+    </svg>
+  </ic-chip>
+</ic-tooltip>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTooltip target="small-chip" label="This is a description">
+  <IcChip id="small-chip" label="Small" size="small">
+    <SlottedSVG slot="icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    </IcChip>
+</IcTooltip>`,
+  },
+];
+
+<ComponentPreview
+  style={{
+    gap: "8px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  snippets={snippetsDefault}
+>
+  <IcTooltip target="small-chip" label="This is a description">
+    <IcChip id="small-chip" label="Small" size="small">
+      <svg
+        slot="icon"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 3C11.66 3 13 4.34 13 6C13 7.66 11.66 9 10 9C8.34 9 7 7.66 7 6C7 4.34 8.34 3 10 3ZM10 17.2C7.5 17.2 5.29 15.92 4 13.98C4.03 11.99 8 10.9 10 10.9C11.99 10.9 15.97 11.99 16 13.98C14.71 15.92 12.5 17.2 10 17.2Z" />
+      </svg>
+    </IcChip>
   </IcTooltip>
 </ComponentPreview>
