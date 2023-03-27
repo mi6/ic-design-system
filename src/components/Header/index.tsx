@@ -62,11 +62,7 @@ const Header: React.FC<HeaderProps> = ({
       sticky-desktop-only
     >
       {adornment && (
-        <ic-status-tag
-          slot="heading-adornment"
-          label={adornment}
-          status={status}
-        />
+        <ic-chip slot="heading-adornment" label={adornment} size="large" />
       )}
       {tabs?.map((tab) => (
         <ic-navigation-item

@@ -22,7 +22,6 @@ tabs:
 import {
   IcPageHeader,
   IcButton,
-  IcStatusTag,
   IcStepper,
   IcStep,
   IcTextField,
@@ -30,6 +29,7 @@ import {
   IcBreadcrumb,
   IcBreadcrumbGroup,
   IcSectionContainer,
+  IcChip,
 } from "@ukic/react";
 
 import { NavLink, MemoryRouter } from "react-router-dom";
@@ -63,7 +63,7 @@ export const withBreadcrumbNavigation = [
   {
     language: "Web component",
     snippet: `<ic-page-header heading="Coffee recipes" subheading="This is a page header component that has breadcrumb navigation.">
-  <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
+  <ic-chip slot="heading-adornment" label="BETA" size="large"></ic-chip>
   <ic-breadcrumb-group slot="breadcrumbs">
     <ic-breadcrumb page-title="Breadcrumb 1" href="#"></ic-breadcrumb>
     <ic-breadcrumb 
@@ -79,7 +79,7 @@ export const withBreadcrumbNavigation = [
   {
     language: "React",
     snippet: `<IcPageHeader heading="Coffee recipes" subheading="This is a page header component that has breadcrumb navigation.">
-  <IcStatusTag slot="heading-adornment" label="Beta" />
+  <IcChip slot="heading-adornment" label="BETA" size="large" />
   <IcBreadcrumbGroup slot="breadcrumbs">
     <IcBreadcrumb pageTitle="Breadcrumb 1" href="#" />
     <IcBreadcrumb 
@@ -101,7 +101,7 @@ export const withBreadcrumbNavigation = [
     heading="Coffee recipes"
     subheading="This is a page header component that has breadcrumb navigation."
   >
-    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcChip slot="heading-adornment" label="BETA" size="large" />
     <IcBreadcrumbGroup slot="breadcrumbs">
       <IcBreadcrumb pageTitle="Breadcrumb 1" href="#" />
       <IcBreadcrumb current pageTitle="Breadcrumb 2" href="#" />
@@ -115,7 +115,7 @@ export const withActionsInputStepper = [
   {
     language: "Web component",
     snippet: `<ic-page-header heading="Coffee recipes" subheading="This is a page header component that has an input area, actions &amp; stepper." reverse-order="true">
-  <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
+  <ic-chip slot="heading-adornment" label="BETA" size="large"></ic-chip>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
   <ic-stepper slot="stepper">
@@ -130,7 +130,7 @@ export const withActionsInputStepper = [
   {
     language: "React",
     snippet: `<IcPageHeader heading="Coffee recipes" subheading="This is a page header component that has an input area, actions and stepper." reverseOrder>
-  <IcStatusTag slot="heading-adornment" label="Beta" />
+  <IcChip slot="heading-adornment" label="BETA" size="large" />
   <IcButton slot="actions" variant="primary">
     Create coffee
   </IcButton>
@@ -157,7 +157,7 @@ export const withActionsInputStepper = [
     subheading="This is a page header component that has an input area, actions and stepper."
     reverseOrder
   >
-    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcChip slot="heading-adornment" label="BETA" size="large" />
     <IcButton slot="actions" variant="primary">
       Create coffee
     </IcButton>
@@ -192,7 +192,7 @@ export const withActionsInputTabs = [
   subheading="This is a page header component that has an input area, actions &amp; tabs." 
   reverse-order="true"
 >
-  <ic-status-tag slot="heading-adornment" label="Beta"></ic-status-tag>
+  <ic-chip slot="heading-adornment" label="BETA" size="large"></ic-chip>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
   <ic-text-field slot="input" placeholder="Enter your input" label="Input" hide-label="true"></ic-text-field>
@@ -218,7 +218,7 @@ export const withActionsInputTabs = [
   heading="Coffee recipes" 
   subheading="This is a page header component that has an input area, actions and tabs." 
   reverseOrder>
-  <IcStatusTag slot="heading-adornment" label="Beta" />
+  <IcChip slot="heading-adornment" label="BETA" size="large" />
   <IcButton slot="actions" variant="primary">
     Create coffee
   </IcButton>
@@ -256,7 +256,7 @@ export const withActionsInputTabs = [
     subheading="This is a page header component that has an input area, actions and tabs."
     reverseOrder
   >
-    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcChip slot="heading-adornment" label="BETA" size="large" />
     <IcButton slot="actions" variant="primary">
       Create coffee
     </IcButton>
@@ -285,7 +285,7 @@ export const withReactRouter = [
     subheading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
     reverseOrder
   >
-    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcChip slot="heading-adornment" label="BETA" size="large"/>
     <IcButton slot="actions" variant="primary"
       >Create coffee
       <SlottedSVG slot="icon" ... />
@@ -326,7 +326,7 @@ export const withReactRouter = [
       subheading="This is a page header component that has an input area, actions and tabs. This page header uses React Router."
       reverseOrder
     >
-      <IcStatusTag slot="heading-adornment" label="Beta" />
+      <IcChip slot="heading-adornment" label="BETA" size="large" />
       <IcButton slot="actions" variant="primary">
         Create coffee
         <svg
