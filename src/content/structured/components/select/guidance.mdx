@@ -38,24 +38,19 @@ There are two types of select components:
 
 An example of the single-select component.
 
-export const SelectExample = () => {
-  const [value, setValue] = React.useState(null);
-  return (
-    <IcSelect
-      label="What is your favourite coffee?"
-      options={[
-        { label: "Espresso", value: "espresso" },
-        { label: "Double Espresso", value: "doubleespresso" },
-        { label: "Flat White", value: "flatwhite" },
-        { label: "Cappuccino", value: "cappuccino" },
-        { label: "Americano", value: "americano" },
-        { label: "Mocha", value: "mocha" },
-      ]}
-      value={value}
-      onIcChange={(event) => setValue(event.detail.value)}
-    />
-  );
-};
+export const SelectExample = () => (
+  <IcSelect
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+);
 
 <ComponentPreview>
   <SelectExample />
