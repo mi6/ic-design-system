@@ -52,7 +52,7 @@ const PaletteRow: React.FC<PaletteRowProps> = ({ color }) => {
       </div>
       <div className="color-name">{name}</div>
       <div className="color-token color-class">
-        <ic-typography variant="caption">{token}</ic-typography>
+        <ic-typography variant="body">{token}</ic-typography>
       </div>
       <div className="color-class">
         <ic-typography variant="body">
