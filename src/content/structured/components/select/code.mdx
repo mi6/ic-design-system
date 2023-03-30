@@ -1,7 +1,7 @@
 ---
 path: "/components/select/code"
 
-date: "2023-02-03"
+date: "2023-03-30"
 
 title: "Select"
 
@@ -533,6 +533,296 @@ export const SelectExampleValidation = () => (
 
 <ComponentPreview snippets={snippetsValidation}>
   <SelectExampleValidation />
+</ComponentPreview>
+
+### Searchable
+
+export const snippetsSearchable = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?" searchable="true"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Cappuccino", value: "Cap" },
+    { label: "Latte", value: "Lat" },
+    { label: "Americano", value: "Ame" },
+    { label: "Flat white", value: "Fla" },
+    { label: "Mocha", value: "Moc" },
+    { label: "Macchiato", value: "Mac" },
+    { label: "Café au lait", value: "Caf" },
+    { label: "Espresso", value: "Esp" },
+    { label: "Cortado", value: "Cor" },
+    { label: "Latte macchiato", value: "Lam" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    console.log(event.detail.value);
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSelect 
+  label="What is your favourite coffee?"
+  options={[
+    { label: "Cappuccino", value: "Cap" },
+    { label: "Latte", value: "Lat" },
+    { label: "Americano", value: "Ame" },
+    { label: "Flat white", value: "Fla" },
+    { label: "Mocha", value: "Moc" },
+    { label: "Macchiato", value: "Mac" },
+    { label: "Café au lait", value: "Caf" },
+    { label: "Espresso", value: "Esp" },
+    { label: "Cortado", value: "Cor" },
+    { label: "Latte macchiato", value: "Lam" },
+  ]}
+  searchable
+  onIcChange={(event) => console.log(event.detail.value)}
+/>`,
+  },
+];
+
+export const SearchableSelectExample = () => (
+  <IcSelect
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Flat white", value: "Fla" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+      { label: "Café au lait", value: "Caf" },
+      { label: "Espresso", value: "Esp" },
+      { label: "Cortado", value: "Cor" },
+      { label: "Latte macchiato", value: "Lam" },
+    ]}
+    searchable
+    onIcChange={(event) => console.log(event.detail.value)}
+  />
+);
+
+<ComponentPreview snippets={snippetsSearchable}>
+  <SearchableSelectExample />
+</ComponentPreview>
+
+### Searchable - with descriptions included in search
+
+export const snippetsSearchableWithDescriptions = [
+  {
+    language: "Web component",
+    snippet: `<ic-select 
+  label="What is your favourite coffee?" 
+  searchable="true" 
+  include-description-in-search="true"
+></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Cappuccino", value: "Cap", description: "Coffee frothed up with pressurised steam" },
+    { label: "Americano", value: "Ame", description: "Espresso coffee diluted with hot water" },
+    { label: "Mocha", value: "Moc", description: "Coffee with chocolate" },
+    { label: "Latte", value: "Lat", description: "Milky coffee with one or two shots of espresso" },
+    { label: "Flat white", value: "Fla", description: "Coffee with frothed milk poured over espresso" },
+    { label: "Macchiato", value: "Mac", description: "Espresso coffee topped with steamed milk" },
+    { label: "Café au lait", value: "Caf", description: "Brewed coffee with steamed milk" },
+    { label: "Espresso", value: "Esp", description: "Concentrated form of coffee" },
+    { label: "Cortado", value: "Cor", description: "Coffee cut with milk" },
+    { label: "Latte macchiato", value: "Lam", description: "Espresso coffee with milk and a spoonful of foamed milk" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    console.log(event.detail.value);
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSelect 
+  label="What is your favourite coffee?"
+  options={[
+    { label: "Cappuccino", value: "Cap", description: "Coffee frothed up with pressurised steam" },
+    { label: "Americano", value: "Ame", description: "Espresso coffee diluted with hot water" },
+    { label: "Mocha", value: "Moc", description: "Coffee with chocolate" },
+    { label: "Latte", value: "Lat", description: "Milky coffee with one or two shots of espresso" },
+    { label: "Flat white", value: "Fla", description: "Coffee with frothed milk poured over espresso" },
+    { label: "Macchiato", value: "Mac", description: "Espresso coffee topped with steamed milk" },
+    { label: "Café au lait", value: "Caf", description: "Brewed coffee with steamed milk" },
+    { label: "Espresso", value: "Esp", description: "Concentrated form of coffee" },
+    { label: "Cortado", value: "Cor", description: "Coffee cut with milk" },
+    { label: "Latte macchiato", value: "Lam", description: "Espresso coffee with milk and a spoonful of foamed milk" },
+  ]}
+  searchable
+  includeDescriptionsInSearch
+  onIcChange={(event) => console.log(event.detail.value)}
+/>`,
+  },
+];
+
+export const SearchableSelectWithDescriptionsExample = () => (
+  <IcSelect
+    label="What is your favourite coffee?"
+    options={[
+      {
+        label: "Cappuccino",
+        value: "Cap",
+        description: "Coffee frothed up with pressurised steam",
+      },
+      {
+        label: "Americano",
+        value: "Ame",
+        description: "Espresso coffee diluted with hot water",
+      },
+      { label: "Mocha", value: "Moc", description: "Coffee with chocolate" },
+      {
+        label: "Latte",
+        value: "Lat",
+        description: "Milky coffee with one or two shots of espresso",
+      },
+      {
+        label: "Flat white",
+        value: "Fla",
+        description: "Coffee with frothed milk poured over espresso",
+      },
+      {
+        label: "Macchiato",
+        value: "Mac",
+        description: "Espresso coffee topped with steamed milk",
+      },
+      {
+        label: "Café au lait",
+        value: "Caf",
+        description: "Brewed coffee with steamed milk",
+      },
+      {
+        label: "Espresso",
+        value: "Esp",
+        description: "Concentrated form of coffee",
+      },
+      { label: "Cortado", value: "Cor", description: "Coffee cut with milk" },
+      {
+        label: "Latte macchiato",
+        value: "Lam",
+        description: "Espresso coffee with milk and a spoonful of foamed milk",
+      },
+    ]}
+    searchable
+    includeDescriptionsInSearch
+    onIcChange={(event) => console.log(event.detail.value)}
+  />
+);
+
+<ComponentPreview snippets={snippetsSearchableWithDescriptions}>
+  <SearchableSelectWithDescriptionsExample />
+</ComponentPreview>
+
+### Searchable - with group titles included in search
+
+export const snippetsSearchableWithGroups = [
+  {
+    language: "Web component",
+    snippet: `<ic-select 
+  label="What is your favourite coffee?" 
+  searchable="true" 
+  include-group-titles-in-search="true"
+></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    {
+      label: "Fancy",
+      children: [
+        { label: "Cappuccino", value: "Cap" },
+        { label: "Flat white", value: "Flat" },
+        { label: "Mocha", value: "Moc" },
+        { label: "Macchiato", value: "Mac" },
+        { label: "Cortado", value: "Cor" },
+        { label: "Latte macchiato", value: "Lam" },
+      ],
+    },
+    {
+      label: "Boring",
+      children: [
+        { label: "Filter", value: "Fil" },
+        { label: "Latte", value: "Lat" },
+        { label: "Americano", value: "Ame" },
+        { label: "Espresso", value: "Esp" },
+      ],
+    },
+  ];
+  select.addEventListener("icChange", function (event) {
+    console.log(event.detail.value);
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSelect 
+  label="What is your favourite coffee?"
+  options={[
+    {
+      label: "Fancy",
+      children: [
+        { label: "Cappuccino", value: "Cap" },
+        { label: "Flat white", value: "Flat" },
+        { label: "Mocha", value: "Moc" },
+        { label: "Macchiato", value: "Mac" },
+        { label: "Cortado", value: "Cor" },
+        { label: "Latte macchiato", value: "Lam" },
+      ],
+    },
+    {
+      label: "Boring",
+      children: [
+        { label: "Filter", value: "Fil" },
+        { label: "Latte", value: "Lat" },
+        { label: "Americano", value: "Ame" },
+        { label: "Espresso", value: "Esp" },
+      ],
+    },
+  ]}
+  searchable
+  includeGroupTitlesInSearch
+  onIcChange={(event) => console.log(event.detail.value)}
+/>`,
+  },
+];
+
+export const SearchableSelectWithGroupsExample = () => (
+  <IcSelect
+    label="What is your favourite coffee?"
+    options={[
+      {
+        label: "Fancy",
+        children: [
+          { label: "Cappuccino", value: "Cap" },
+          { label: "Flat white", value: "Flat" },
+          { label: "Mocha", value: "Moc" },
+          { label: "Macchiato", value: "Mac" },
+          { label: "Cortado", value: "Cor" },
+          { label: "Latte macchiato", value: "Lam" },
+        ],
+      },
+      {
+        label: "Boring",
+        children: [
+          { label: "Filter", value: "Fil" },
+          { label: "Latte", value: "Lat" },
+          { label: "Americano", value: "Ame" },
+          { label: "Espresso", value: "Esp" },
+        ],
+      },
+    ]}
+    searchable
+    includeGroupTitlesInSearch
+    onIcChange={(event) => console.log(event.detail.value)}
+  />
+);
+
+<ComponentPreview snippets={snippetsSearchableWithGroups}>
+  <SearchableSelectWithGroupsExample />
 </ComponentPreview>
 
 ## Custom filtering example
