@@ -56,6 +56,10 @@ ic-alert {
   max-width: 50rem;
 }
 
+video.half-width {
+    width: 48.5%;
+  }
+
 @media screen and (max-width: 768px) {
   .page-container {
     margin-bottom: var(--ic-space-xxl);
@@ -63,6 +67,10 @@ ic-alert {
 
   .content-container {
     padding: 0;
+    width: 100%;
+  }
+
+  video.half-width {
     width: 100%;
   }
 }
