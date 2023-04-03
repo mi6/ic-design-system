@@ -100,16 +100,33 @@ export const withIcon = [
   {
     language: "Web component",
     snippet: `<ic-card heading="Card heading">
-  <svg slot="icon">
-    ...
+  
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
 </ic-card>`,
   },
   {
     language: "React",
     snippet: `<IcCard heading="Card heading">
-  <SlottedSVG slot="icon" ... >
-    ...
+  <SlottedSVG     
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </SlottedSVG>
 </IcCard>`,
   },
@@ -117,7 +134,17 @@ export const withIcon = [
 
 <ComponentPreview snippets={withIcon}>
   <IcCard heading="Card heading">
-    <CardIcon />
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </SlottedSVG>
   </IcCard>
 </ComponentPreview>
 
@@ -127,16 +154,32 @@ export const withMessage = [
   {
     language: "Web component",
     snippet: `<ic-card heading="Card heading" message="This is an example of a card component with text included.">
-  <svg slot="icon">
-    ...
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
 </ic-card>`,
   },
   {
     language: "React",
     snippet: `<IcCard heading="Card heading" message="This is an example of a card component with text included.">
-  <SlottedSVG slot="icon" ... >
-    ...
+  <SlottedSVG     
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </SlottedSVG>
 </IcCard>`,
   },
@@ -160,8 +203,16 @@ export const withSubHeading = [
   heading="Card heading" 
   subheading="Card subheading" 
   message="This is an example of a card component with text included.">
-  <svg slot="icon">
-    ...
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
 </ic-card>`,
   },
@@ -171,9 +222,17 @@ export const withSubHeading = [
   heading="Card heading"
   subheading="Card subheading"
   message="This is an example of a card component with text included.">
-  <SlottedSVG slot="icon" ... >
-    ...
-  </SlottedSVG>
+  <SlottedSVG     
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </SlottedSVG>
 </IcCard>`,
   },
 ];
@@ -197,12 +256,28 @@ export const interactionButton = [
   heading="Card heading" 
   subheading="Card subheading" 
   message="This is an example of an interactive card with interaction button.">
-  <svg slot="icon">
-    ...
-  </svg>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
-    <svg slot="icon">
-      ...
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-three-dots-vertical"
+      viewBox="0 0 16 16"
+    >
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </svg>
   </ic-button>
 </ic-card>`,
@@ -213,12 +288,27 @@ export const interactionButton = [
   heading="Card heading"
   subheading="Card subheading"
   message="This is an example of an interactive card with interaction button.">
-  <SlottedSVG slot="icon" ... >
-    ...
-  </SlottedSVG>
+    <SlottedSVG     
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
-    <SlottedSVG slot="icon" ... >
-      ...
+    <SlottedSVG slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-three-dots-vertical"
+      viewBox="0 0 16 16"
+    >
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </SlottedSVG>
   </IcButton>
 </IcCard>`,
@@ -247,9 +337,17 @@ export const adornment = [
   heading="Card heading" 
   subheading="Card subheading"
   message="This is an example of a card with adornment.">
-  <svg slot="icon">
-    ...
-  </svg>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
   <ic-status-tag slot="adornment" label="Neutral" small="true"></ic-status-tag>
 </ic-card>`,
   },
@@ -259,9 +357,17 @@ export const adornment = [
   heading="Card heading" 
   subheading="Card subheading" 
   message="This is an example of a card with adornment.">
-  <SlottedSVG slot="icon" ... >
-    ...
-  </SlottedSVG>
+    <SlottedSVG 
+      slot="icon"   
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </SlottedSVG>
   <IcStatusTag slot="adornment" label="Neutral" small />
 </IcCard>`,
   },
@@ -288,17 +394,55 @@ export const topImage = [
   subheading="Card subheading" 
   message="This is an example of a card with a top image."
   style="width:360px;">
-  <svg slot="image-top">
-    ...
-  </svg>
-  <svg slot="icon">
-    ...
-  </svg>  
-  <ic-button variant="icon" title="More information" slot="interaction-button">
-    <svg slot="icon">
-      ...
+    <svg
+      slot="image-top"
+      style={{
+        height: "100%",
+        width: "100%",
+        maxHeight: "20.375rem",
+        maxWidth: "20.375rem",
+      }}
+      viewBox="0 0 1600 1250"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </svg>
-  </ic-button>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+    <ic-button variant="icon" title="More information" slot="interaction-button">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-three-dots-vertical"
+        viewBox="0 0 16 16"
+      >
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+      </svg>
+    </ic-button>
   <ic-status-tag slot="adornment" label="Neutral" small="true"></ic-status-tag>
 </ic-card>`,
   },
@@ -309,16 +453,54 @@ export const topImage = [
   subheading="Card subheading"
   message="This is an example of a card with a top image."
   style={{width: "360px"}}>
-  <SlottedSVG slot="image-top" ... >
-    ...
-  </SlottedSVG>
-  <SlottedSVG slot="icon" ... >
-    ...
-  </SlottedSVG>
-  <IcButton variant="icon" title="More information" slot="interaction-button">
-    <SlottedSVG slot="icon" ... >
-      ...
+    <SlottedSVG
+      slot="image-top"
+      style={{
+        height: "100%",
+        width: "100%",
+        maxHeight: "20.375rem",
+        maxWidth: "20.375rem",
+      }}
+      viewBox="0 0 1600 1250"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </SlottedSVG>
+    <SlottedSVG>
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </SlottedSVG>
+    <icButton variant="icon" title="More information" slot="interaction-button">
+      <SlottedSVG>
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-three-dots-vertical"
+        viewBox="0 0 16 16"
+      >
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+      </SlottedSVG>
   </IcButton> 
   <IcStatusTag slot="adornment" label="Neutral" small />
 </IcCard>`,
@@ -338,16 +520,14 @@ export const topImage = [
       <InteractionIcon />
     </IcButton>
     <svg
-      slot="image-top"
-      style={{
+      slot="image-top" style=
+      {{
         height: "100%",
         width: "100%",
         maxHeight: "20.375rem",
         maxWidth: "20.375rem",
       }}
-      viewBox="0 0 1600 1250"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      viewBox="0 0 1600 1250" xmlns="http://www.w3.org/2000/svg" >
       <rect fill="#ff7700" width="1600" height="1600" y="-350" />
       <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
       <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
@@ -375,18 +555,55 @@ export const midImage = [
   subheading="Card subheading" 
   message="This is an example of a card with a middle image."
   style="width:360px;">
-  <svg slot="icon">
-    ...
-  </svg>  
+ <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+  </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
-    <svg slot="icon">
-      ...
-    </svg>
+    <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-three-dots-vertical"
+        viewBox="0 0 16 16"
+      >
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+      </svg>
   </ic-button>
   <ic-status-tag slot="adornment" label="Neutral" small="true"></ic-status-tag>
-  <svg slot="image-mid">
-    ...
-  </svg>
+    <svg
+      slot="image-mid"
+      style={{
+        height: "100%",
+        width: "100%",
+        maxHeight: "20.375rem",
+        maxWidth: "20.375rem",
+      }}
+      viewBox="0 0 1600 1250"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
 </ic-card>`,
   },
   {
@@ -396,18 +613,55 @@ export const midImage = [
   subheading="Card subheading"
   message="This is an example of a card with a middle image."
   style={{width: "360px"}}>
-  <SlottedSVG slot="icon" ... >
-    ...
-  </SlottedSVG>
-  <IcButton variant="icon" title="More information" slot="interaction-button">
-    <SlottedSVG slot="icon" ... >
-      ...
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
     </SlottedSVG>
+  <IcButton variant="icon" title="More information" slot="interaction-button">
+    <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-three-dots-vertical"
+        viewBox="0 0 16 16"
+      >
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+      </SlottedSVG>
   </IcButton> 
   <IcStatusTag slot="adornment" label="Neutral" small />
-  <SlottedSVG slot="image-mid" ... >
-    ...
-  </SlottedSVG>
+    <SlottedSVG
+      slot="image-mid"
+      style={{
+        height: "100%",
+        width: "100%",
+        maxHeight: "20.375rem",
+        maxWidth: "20.375rem",
+      }}
+      viewBox="0 0 1600 1250"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </SlottedSVG>
 </IcCard>`,
   },
 ];
@@ -460,8 +714,16 @@ export const interactionControls = [
   heading="Card heading" 
   subheading="Card subheading"
   message="This is an example of an interactive card with interaction controls.">
-  <svg slot="icon">
-    ...
+ <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
   <div slot="interaction-controls" style="display:flex;gap:16px;">
     <ic-button variant="primary">Learn more</ic-button>
@@ -475,8 +737,16 @@ export const interactionControls = [
   heading="Card heading"
   subheading="Card subheading"
   message="This is an example of an interactive card with interaction controls.">
-  <SlottedSVG slot="icon" ... >
-    ...
+ <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </SlottedSVG>
   <div slot="interaction-controls" style={{display: "flex", gap: "16px"}}>
     <IcButton variant="primary">Learn more</IcButton>
@@ -510,8 +780,16 @@ export const expandable = [
   subheading="Card subheading" 
   message="This is an example of an interactive card with an expandable content area."
   expandable="true">
-  <svg slot="icon">
-    ...
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
   <div slot="interaction-controls" style="display:flex;gap:16px;">
     <ic-button variant="primary">Learn more</ic-button>
@@ -529,8 +807,16 @@ export const expandable = [
   subheading="Card subheading"
   message="This is an example of an interactive card with an expandable content area."
   expandable>
-  <SlottedSVG slot="icon" ... >
-    ...
+  <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </SlottedSVG>
   <div slot="interaction-controls" style={{display: "flex", gap: "16px"}}>
     <IcButton variant="primary">Learn more</IcButton>
@@ -572,8 +858,16 @@ export const clickableLink = [
   message="This is an example of a clickable card component rendered as a link."
   clickable="true"
   href="#">
-  <svg slot="icon">
-    ...
+ <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
 </ic-card>`,
   },
@@ -585,8 +879,16 @@ export const clickableLink = [
   message="This is an example of a clickable card component rendered as a link." 
   clickable
   href="#">
-  <SlottedSVG slot="icon" ... >
-    ...
+ <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </SlottedSVG>
 </IcCard>`,
   },
@@ -615,8 +917,16 @@ export const clickableBtn = [
   subheading="Card subheading" 
   message="This is an example of a clickable card component rendered as a button."
   clickable="true">
-  <svg slot="icon">
-    ...
+ <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
 </ic-card>
 <script>
@@ -634,8 +944,16 @@ export const clickableBtn = [
   message="This is an example of a clickable card component rendered as a button." 
   clickable
   onClick={(ev) => console.log(ev)}>
-  <SlottedSVG slot="icon" ... >
-    ...
+ <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </SlottedSVG>
 </IcCard>`,
   },
@@ -664,8 +982,16 @@ export const disabled = [
   message="This is an example of a disabled clickable card."
   clickable="true" 
   disabled="true">
-  <svg slot="icon">
-    ...
+ <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
 </ic-card>`,
   },
@@ -677,9 +1003,17 @@ export const disabled = [
   message="This is an example of a disabled clickable card." 
   clickable
   disabled>
-  <SlottedSVG slot="icon" ... >
-    ...
-  </SlottedSVG>
+ <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+  </svg>
 </IcCard>`,
   },
 ];
@@ -706,8 +1040,16 @@ export const fullWidth = [
   subheading="Card subheading"
   message="This is an example of a card component that fills it's parent container."
   clickable="true"> 
-  <svg slot="icon">
-    ...
+ <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </svg>
 </ic-card>`,
   },
@@ -718,8 +1060,16 @@ export const fullWidth = [
   subheading="Card subheading" 
   message="This is an example of a card component that fills it's parent container." 
   clickable>
-  <SlottedSVG slot="icon" ... >
-    ...
+ <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
   </SlottedSVG>
 </IcCard>`,
   },
@@ -747,8 +1097,16 @@ export const wrapped = [
     heading="Card heading"
     subheading="Card subheading"
     message="This is an example of a card component wrapped by a link."> 
-    <svg slot="icon">
-      ...
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
     </svg>
   </ic-card>
 </a>`,
@@ -760,9 +1118,17 @@ export const wrapped = [
     heading="Card heading"
     subheading="Card subheading" 
     message="This is an example of a card component wrapped by a link.">
-    <SlottedSVG slot="icon" ... >
-      ...
-    </SlottedSVG>
+  <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
   </IcCard>
 </a>`,
   },

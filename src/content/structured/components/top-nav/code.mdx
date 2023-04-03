@@ -35,10 +35,29 @@ export const snippetsDefault = [
   {
     language: "Web component",
     snippet: `<ic-top-navigation app-title="ICDS" status="alpha" version="v0.0.7">
-  <svg slot="app-icon" ...></svg>
+  <svg
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </svg>
   <ic-search-bar slot="search" placeholder="Search" label="Search"></ic-search-bar>
   <ic-navigation-button label="Notifications" slot="buttons">
-    <svg slot="icon" ...></svg>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+    </svg>
   </ic-navigation-button>
   <ic-navigation-item slot="navigation" label="Get started" href="#"></ic-navigation-item>
   <ic-navigation-item slot="navigation" label="Accessibility" href="#"></ic-navigation-item>
@@ -51,10 +70,29 @@ export const snippetsDefault = [
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
-  <SlottedSVG slot="app-icon" ... />
+  <SlottedSVG
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </SlottedSVG>
   <IcSearchBar slot="search" placeholder="Search" label="Search" />
   <IcNavigationButton label="Notifications" slot="buttons">
-    <SlottedSVG slot="icon" ... />
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+    </SlottedSVG>
   </IcNavigationButton>
   <IcNavigationItem slot="navigation" label="Get started" href="#" />
   <IcNavigationItem slot="navigation" label="Accessibility" href="#" />
@@ -68,7 +106,7 @@ export const snippetsDefault = [
 
 <ComponentPreview snippets={snippetsDefault}>
   <IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
-    <svg
+    <SlottedSVG
       slot="app-icon"
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
@@ -78,10 +116,10 @@ export const snippetsDefault = [
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
-    </svg>
+    </SlottedSVG>
     <IcSearchBar slot="search" placeholder="Search" label="Search" />
     <IcNavigationButton label="Notifications" slot="buttons">
-      <svg
+      <SlottedSVG
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
@@ -90,17 +128,12 @@ export const snippetsDefault = [
         fill="#000000"
       >
         <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
-      </svg>
+      </SlottedSVG>
     </IcNavigationButton>
     <IcNavigationItem slot="navigation" label="Get started" href="#" />
     <IcNavigationItem slot="navigation" label="Accessibility" href="#" />
     <IcNavigationItem slot="navigation" label="Styles" href="#" />
-    <IcNavigationItem
-      slot="navigation"
-      label="Components"
-      href="#"
-      selected="true"
-    />
+    <IcNavigationItem slot="navigation" label="Components" href="#" selected />
     <IcNavigationItem slot="navigation" label="Patterns" href="#" />
     <IcNavigationItem slot="navigation" label="Community" href="#" />
   </IcTopNavigation>
@@ -130,36 +163,56 @@ export const snippetsGroupedLinks = [
   {
     language: "Web component",
     snippet: `<ic-top-navigation app-title="ICDS" status="alpha" version="v0.0.7">
-  <svg slot="app-icon" ...></svg>
+  <svg
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </svg>
   <ic-search-bar slot="search" placeholder="Search" label="Search"></ic-search-bar>
   <ic-navigation-group slot="navigation" label="Navigation group" expandable="true">
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    </ic-navigation-group>
-    <ic-navigation-group slot="navigation" label="Second navigation group" expandable="true">
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-      <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    </ic-navigation-group>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+  </ic-navigation-group>
+  <ic-navigation-group slot="navigation" label="Second navigation group" expandable="true">
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+  </ic-navigation-group>
 </ic-top-navigation>`,
   },
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
-  <SlottedSVG slot="app-icon" ... />
+  <SlottedSVG
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </SlottedSVG>
   <IcSearchBar slot="search" placeholder="Search" label="Search" />
   <IcNavigationGroup slot="navigation" label="Navigation group" expandable>
     <IcNavigationItem label="Navigation" href="#" />
@@ -240,9 +293,29 @@ export const snippetsCentreAligned = [
   {
     language: "Web component",
     snippet: `<ic-top-navigation app-title="ICDS" status="alpha" version="v0.0.7" content-aligned="center">
-  <svg slot="app-icon" ...></svg>
+  <svg
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </svg>
   <ic-navigation-button label="button1" slot="buttons" onclick="alert('test')">
-    <svg slot="icon" ...></svg>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </svg>
   </ic-navigation-button>
   <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
   <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
@@ -254,9 +327,29 @@ export const snippetsCentreAligned = [
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7" contentAligned="center">
-  <SlottedSVG slot="app-icon" ... />
+  <SlottedSVG
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </SlottedSVG>
   <IcNavigationButton label="button1" slot="buttons" onclick="alert('test')">
-    <SlottedSVG slot="icon" ... />
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </SlottedSVG>
   </IcNavigationButton>
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
@@ -317,10 +410,30 @@ export const snippetsLeftAligned = [
   {
     language: "Web component",
     snippet: `<ic-top-navigation app-title="ICDS" status="alpha" version="v0.0.7" content-aligned="left">
-  <svg slot="app-icon" ...></svg>
+  <svg
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </svg>
   <ic-search-bar slot="search" placeholder="Search" label="Search"></ic-search-bar>
   <ic-navigation-button label="button1" slot="buttons" onclick="alert('test')">
-    <svg slot="icon" ...></svg>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </svg>
   </ic-navigation-button>
   <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
   <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
@@ -332,10 +445,30 @@ export const snippetsLeftAligned = [
   {
     language: "React",
     snippet: `<IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7" contentAligned="left">
-  <SlottedSVG slot="app-icon" ... />
+  <SlottedSVG
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </SlottedSVG>
   <IcSearchBar slot="search" placeholder="Search" label="Search" />
   <IcNavigationButton label="button1" slot="buttons" onclick="alert('test')">
-    <SlottedSVG slot="icon" ... />
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </SlottedSVG>
   </IcNavigationButton>
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
   <IcNavigationItem slot="navigation" label="Navigation" href="/" />
@@ -401,10 +534,30 @@ export const withReactRouter = [
     snippet: `<MemoryRouter initialEntries={["/"]}>
   <IcTopNavigation status="alpha" version="v0.0.7">
     <NavLink to="/" slot="app-title">ICDS</NavLink>
-    <SlottedSVG slot="app-icon" ... />
-    <IcSearchBar slot="search" placeholder="Search" label="Search" />
-    <IcNavigationButton label="button1" slot="buttons" onClick={() => alert('test')}>
-      <SlottedSVG slot="icon" ... />
+    <SlottedSVG
+      slot="app-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </SlottedSVG>
+  <IcSearchBar slot="search" placeholder="Search" label="Search" />
+  <IcNavigationButton label="button1" slot="buttons" onClick={() => alert('test')}>
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </SlottedSVG>
     </IcNavigationButton>
     <IcNavigationItem slot="navigation">
       <NavLink to="/" slot="navigation-item">Home</NavLink>
