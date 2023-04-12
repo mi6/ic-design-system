@@ -1,0 +1,35 @@
+name: Check Versions
+
+on:
+  repository_dispatch:
+    types: design-system-release
+
+jobs:
+  ic-design-system-install-comps:
+    name: "IC Design System Install Comps"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: browser-actions/setup-chrome@latest
+      - name: Install latest components
+        run: |
+          git fetch
+          git checkout develop
+          git checkout -b check-versions develop
+          DOCS_VERSION=$(npm view @ukic/docs version)
+          FONTS_VERSION=$(npm view @ukic/fonts verion)
+          REACT_VERSION=$(npm view @ukic/react version)
+          WEB_COMPS_VERSION=$(npm view @ukic/web-components version)
+          npm install @ukic/docs@$DOCS_VERSION @ukic/fonts@$FONTS_VERSION @ukic/react@$REACT_VERSION @ukic/web-components@$WEB_COMPS_VERSION --legacy-peer-deps
+      - name: Create check-versions Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "check-versions -> develop"
+          commit-message: "chore(root): Update to latest versions"
+          body: "Github action updated package versions"
+          branch: check-versions
+          base: develop
