@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types: [closed]
+
+jobs:
+  create-pr:
+    if: github.event.pull_request.head.ref == 'check-versions' && github.event.pull_request.merged == true
+    name: "Create PR"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: browser-actions/setup-chrome@latest
+      - name: Delete check-versions
+        uses: SvanBoxel/delete-merged-branch@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create develop -> main PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "develop -> main"
+          commit-message: "ci(root): develop -> main"
+          body: "Latest updates with latest package versions"
+          branch: develop
+          base: main
