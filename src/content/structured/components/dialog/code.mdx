@@ -1,0 +1,472 @@
+---
+path: "/components/dialog/code"
+
+date: "2023-04-18"
+
+title: "Dialog"
+
+status: "BETA"
+
+subTitle: "Dialogs are modal windows that interrupt the user's current task to bring something important to attention."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/dialog"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/dialog" },
+    { title: "Code", path: "/components/dialog/code" },
+    { title: "Accessibility", path: "/components/dialog/accessibility" },
+  ]
+---
+
+import { IcDialog, IcButton, IcCheckboxGroup, IcCheckbox } from "@ukic/react";
+
+export const showDialog = (id) => {
+  const dialog = document.querySelector(id);
+  dialog.showDialog();
+};
+
+export const hideDialog = (id) => {
+  const dialog = document.querySelector(id);
+  dialog.hideDialog();
+};
+
+export const confirm = () => {
+  alert("Confirmed!");
+  hideDialog();
+};
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<script>
+      function showDefaultDialog() {
+        dialog = document.querySelector("#default-dialog");
+        dialog.showDialog();
+      }
+    </script>
+    <ic-button variant="primary" onclick="showDefaultDialog()">Add to basket</ic-button>
+    <ic-dialog heading="Are you sure?" label="Coffee order" id="default-dialog" buttonProps={[
+        {
+          label: "Go back",
+          onclick: "this.hideDialog()",
+        },{
+          label: "Continue",
+          onclick: "alert('Added to basket'); this.hideDialog()",
+        },
+      ]}>
+        You are about to add 'Americano' to your basket. Are you sure you want to continue?
+      </ic-dialog>`,
+  },
+  {
+    language: "React",
+    snippet: `const showDefaultDialog() {
+  const dialog = document.querySelector("#default-dialog");
+  dialog.showDialog();
+};
+return (
+  <>
+    <IcButton variant="primary" onclick={showDefaultDialog}>
+      Add to basket
+    </IcButton>
+    <IcDialog heading="Are you sure?" label="Coffee order" id="default-dialog" buttonProps={[
+        {
+          label: "Go back",
+          onclick: "this.hideDialog()",
+        },{
+          label: "Continue",
+          onclick: "alert('Added to basket'); this.hideDialog()",
+        },
+      ]}>
+        You are about to add 'Americano' to your basket. Are you sure you want to continue?
+    </IcDialog>
+  </>
+);`,
+  },
+];
+
+export const DefaultDialog = () => (
+  <>
+    <IcButton variant="primary" onclick={showDialog("#default-dialog")}>
+      Add to basket
+    </IcButton>
+    <IcDialog
+      heading="Are you sure?"
+      label="Coffee order"
+      id="default-dialog"
+      buttonProps={[
+        {
+          label: "Go back",
+          onclick: "this.hideDialog()",
+        },
+        {
+          label: "Continue",
+          onclick: "alert('Added to basket'); this.hideDialog()",
+        },
+      ]}
+    >
+      You are about to add 'Americano' to your basket. Are you sure you want to
+      continue?
+    </IcDialog>
+  </>
+);
+
+<ComponentPreview snippets={snippetsDefault}>
+  <DefaultDialog />
+</ComponentPreview>
+
+## Dialog details
+
+<ComponentDetails component="ic-dialog" />
+
+## Variants
+
+### Scrollable
+
+export const scrollableSnippet = [
+  {
+    language: "Web component",
+    snippet: `<script>
+        function showScrollableDialog() {
+          dialog = document.querySelector("ic-dialog");
+          dialog.showDialog();
+        }
+      </>
+      <ic-button variant="primary" onclick="showScrollableDialog()"
+        >Launch scrollable dialog</ic-button
+      >
+      <ic-dialog
+        heading="About this product"
+        label="Americano"
+      >
+      Caffè Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added.
+        What is Lorem Ipsum?
+      <br />
+      <br />
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <br />
+      <br />
+      Why do we use it?
+      <br />
+      <br />
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      </ic-dialog>`,
+  },
+  {
+    language: "React",
+    snippet: `const showScrollableDialog() => {
+  dialog = document.querySelector("ic-dialog");
+  dialog.showDialog();
+}
+return (
+  <>
+    <IcButton variant="primary" onclick={showScrollableDialog}>
+      Launch scrollable dialog
+    </IcButton>
+    <IcDialog heading="This dialog has overflowing content" label="Scrollable">
+       What is Lorem Ipsum?
+      <br />
+      <br />
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <br />
+      <br />
+      Why do we use it?
+      <br />
+      <br />
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </IcDialog>
+  </>)`,
+  },
+];
+
+export const ScrollableSnippet = () => (
+  <>
+    <IcButton variant="primary" onclick={showDialog("#scrollable-dialog")}>
+      Launch scrollable dialog
+    </IcButton>
+    <IcDialog
+      heading="This dialog has overflowing content"
+      label="Scrollable"
+      id="scrollable-dialog"
+    >
+      What is Lorem Ipsum?
+      <br />
+      <br />
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type
+      specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised
+      in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+      and more recently with desktop publishing software like Aldus PageMaker including
+      versions of Lorem Ipsum.
+      <br />
+      <br />
+      Why do we use it?
+      <br />
+      <br />
+      It is a long established fact that a reader will be distracted by the readable
+      content of a page when looking at its layout. The point of using Lorem Ipsum
+      is that it has a more-or-less normal distribution of letters, as opposed to
+      using 'Content here, content here', making it look like readable English. Many
+      desktop publishing packages and web page editors now use Lorem Ipsum as their
+      default model text, and a search for 'lorem ipsum' will uncover many web sites
+      still in their infancy. Various versions have evolved over the years, sometimes
+      by accident, sometimes on purpose (injected humour and the like).
+    </IcDialog>
+  </>
+);
+
+<ComponentPreview snippets={scrollableSnippet}>
+  <ScrollableSnippet />
+</ComponentPreview>
+
+### Slotted content
+
+export const withSlottedContentSnippet = [
+  {
+    language: "Web component",
+    snippet: `<script>
+  function showSlottedContentDialog() {
+    dialog = document.querySelector("#slotted-content-dialog");
+    dialog.showDialog();
+  };
+  function hideSlottedContentDialog() {
+    dialog.hideDialog();
+  };
+  function confirm() {
+    alert("Confirmed!");
+    hideDialog();
+  };
+</script>
+<ic-button variant="primary" onclick="showSlottedContentDialog()">
+  Submit
+</ic-button>
+<ic-dialog
+  heading="Please agree to our terms and conditions"
+  label="Coffee order"
+  id="slotted-content-dialog"
+>
+  Before continuing, please agree to our terms and conditions.
+  <ic-checkbox-group
+    style="margin: 8px 0 0"
+    hide-label
+    label="terms and conditions"
+    name="terms"
+  >
+    <ic-checkbox label="I agree to the terms and conditions." value="agree"></ic-checkbox>
+  </ic-checkbox-group>
+  <ic-button
+    variant="tertiary"
+    onclick="hideSlottedContentDialog()"
+    slot="dialog-controls"
+  >
+    Go back
+  </ic-button>
+  <ic-button
+    variant="primary"
+    onclick="confirm()"
+    slot="dialog-controls"
+    id="focus"
+  >
+    Continue
+  </ic-button>
+</ic-dialog>`,
+  },
+  {
+    language: "React",
+    snippet: `const showSlottedContentDialog = () => {
+  const dialog = document.querySelector("#slotted-content-dialog");
+  dialog.showDialog();
+};
+const hideSlottedContentDialog = () => {
+  const dialog = document.querySelector("#slotted-content-dialog");
+  dialog.hideDialog();
+};
+const confirm = () => {
+  alert("Confirmed!");
+  hideDialog();
+};
+return (
+  <>
+    <IcButton variant="primary" onclick={showSlottedContentDialog}>
+      Submit
+    </IcButton>
+    <IcDialog
+      heading="Please agree to our terms and conditions"
+      label="Coffee order"
+      id="slotted-content-dialog"
+    >
+      Before continuing, please agree to our terms and conditions.
+      <IcCheckboxGroup
+        style={{ marginTop: "8px" }}
+        hideLabel
+        label="terms and conditions"
+        name="terms"
+      >
+        <IcCheckbox
+          label="I agree to the terms and conditions."
+          value="agree"
+        ></IcCheckbox>
+      </IcCheckboxGroup>
+      <IcButton
+        variant="tertiary"
+        onclick={hideSlottedContentDialog}
+        slot="dialog-controls"
+      >
+        Go back
+      </IcButton>
+      <IcButton
+        variant="primary"
+        onclick={confirm}
+        slot="dialog-controls"
+        id="focus"
+      >
+        Continue
+      </IcButton>
+    </IcDialog>
+  </>
+)`,
+  },
+];
+
+export const SlottedContent = () => (
+  <>
+    <IcButton variant="primary" onclick={showDialog("#slotted-content-dialog")}>
+      Submit
+    </IcButton>
+    <IcDialog
+      heading="Please agree to our terms and conditions"
+      label="Coffee order"
+      id="slotted-content-dialog"
+    >
+      Before continuing, please agree to our terms and conditions.
+      <IcCheckboxGroup
+        style={{ marginTop: "8px" }}
+        hideLabel
+        label="terms and conditions"
+        name="terms"
+      >
+        <IcCheckbox
+          label="I agree to the terms and conditions."
+          value="agree"
+        />
+      </IcCheckboxGroup>
+      <IcButton
+        variant="tertiary"
+        onclick={hideDialog("#slotted-content-dialog")}
+        slot="dialog-controls"
+      >
+        Go back
+      </IcButton>
+      <IcButton
+        variant="primary"
+        onclick={confirm}
+        slot="dialog-controls"
+        id="focus"
+      >
+        Continue
+      </IcButton>
+    </IcDialog>
+  </>
+);
+
+<ComponentPreview snippets={withSlottedContentSnippet}>
+  <SlottedContent />
+</ComponentPreview>
+
+### Destructive
+
+export const withDestructiveActionSnippet = [
+  {
+    language: "Web component",
+    snippet: `<script>
+    function showDestructiveDialog() {
+      dialog = document.querySelector("#destructive-dialog");
+      dialog.showDialog();
+    }
+  </script>
+<ic-button variant="primary" onclick="showDialog">
+  Launch dialog
+</ic-button>
+<ic-dialog
+  heading="Remove item from basket?"
+  label="Coffee order"
+  id="destructive-dialog"
+  buttonProps={[
+    {
+      label: "Go back",
+      onclick: "this.hideDialog()",
+    },{
+      label: "Remove",
+      onclick: "alert('Removed from basket'); this.hideDialog()",
+    },
+  ]}
+  destructive
+>
+  You are about to remove 'Americano' from your basket. Are you sure you want to continue?
+</ic-dialog>`,
+  },
+  {
+    language: "React",
+    snippet: `const showDestructiveDialog = () => {
+      const dialog = document.querySelector("#destructive-dialog");
+      dialog.showDialog();
+    }
+    return(<>
+    <IcButton variant="primary" onclick={showDialog}>
+      Launch dialog
+    </IcButton>
+    <IcDialog
+      heading="Remove item from basket?"
+      label="Coffee order"
+      id="destructive-dialog"
+      buttonProps={[
+        {
+          label: "Go back",
+          onclick: "this.hideDialog()",
+        },{
+          label: "Remove",
+          onclick: "alert('Removed from basket'); this.hideDialog()",
+        },
+      ]}
+      destructive
+    >
+      You are about to remove 'Americano' from your basket. Are you sure you want to continue?
+    </IcDialog>
+  </>)`,
+  },
+];
+
+export const DestructiveDialog = () => (
+  <>
+    <IcButton variant="primary" onclick={showDialog("#destructive-dialog")}>
+      Launch dialog
+    </IcButton>
+    <IcDialog
+      heading="Remove item from basket?"
+      label="Coffee order"
+      id="destructive-dialog"
+      buttonProps={[
+        {
+          label: "Go back",
+          onclick: "this.hideDialog()",
+        },
+        {
+          label: "Remove",
+          onclick: "alert('Removed from basket'); this.hideDialog()",
+        },
+      ]}
+      destructive
+    >
+      You are about to remove 'Americano' from your basket. Are you sure you
+      want to continue?
+    </IcDialog>
+  </>
+);
+
+<ComponentPreview snippets={withDestructiveActionSnippet}>
+  <DestructiveDialog />
+</ComponentPreview>
