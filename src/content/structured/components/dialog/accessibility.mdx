@@ -1,0 +1,55 @@
+---
+path: "/components/dialog/accessibility"
+
+date: "2023-06-07"
+
+title: "Dialog"
+
+status: "BETA"
+
+subTitle: "Dialogs are modal windows that interrupt the user's current task to bring something important to attention."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/dialog"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/dialog" },
+    { title: "Code", path: "/components/dialog/code" },
+    { title: "Accessibility", path: "/components/dialog/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+Dialogs always include a dismiss button in the top right to provide a consistent way to quickly close a dialog and return to the previous page. Often, 'cancel' buttons are included in the interaction area at the bottom of the modal. These provide a specific decision to cancel the task, as opposed to simply closing the modal.
+
+When a dialog is open, the page in the background is effectively disabled. It cannot be scrolled and focus cannot be moved to any element on it. This is so that the user's attention is constrained to the content of the dialog until they choose an action to continue.
+
+For dialogs that contain a primary action, focus is automatically applied to the primary action button when opened. This is so that it is easy to perform the main call-to-action if included.
+
+However, if a destructive action button is used, then focus is automatically applied to the dismiss button, as accidentally triggering the destructive action could be problematic. It also emphasises the user decision to choose to continue with the destructive action.
+
+If a dialog contains interactive elements such as inputs or selection methods, then focus is automatically applied to the first interaction element in the body section. This follows a logical tab order when completing a task in a dialog.
+
+When a dialog is closed, focus returns to the element that triggered the dialog in the first place. This helps the user pick up where they left off.
+
+## For Assistive Technology
+
+Dialogs resize to become full-screen on smaller devices to make use of all of the available screen space. This is especially useful when text is resized or the browser window is zoomed.
+
+Dialogs always appear centred so that a consistent location is used to find them. This can be helpful to users of screen magnifiers as the position of dialogs is consistent and therefore easier to find if displayed outside of the magnified area.
+
+Dialogs are announced by screen readers when displayed and their content can be navigated through using the virtual cursor.
+
+## Based on
+
+The dialog component has been based on the following resources:
+
+- [Use the dialog element (reasonably)](https://www.scottohara.me/blog/2023/01/26/use-the-dialog-element.html), Scott O'Hara, published 26th January 2023, accessed February 2023
+- [Creating An Accessible Dialog From Scratch](https://www.smashingmagazine.com/2021/07/accessible-dialog-from-scratch/), Kitty Giraudel, published 28th July 2021, accessed February 2023
+- [Modal & Nonmodal Dialogs: When (& When Not) to Use Them](https://www.nngroup.com/articles/modal-nonmodal-dialog/), Therese Fessenden, NNg, published April 23rd 2017, accessed February 2023
+- [Dialog Focus in Screen Readers](https://adrianroselli.com/2020/10/dialog-focus-in-screen-readers.html), Adrian Roselli, updated 26th January 2023, accessed February 2023
+
+## Testing
+
+We've tested this component against WCAG 2.1 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.
