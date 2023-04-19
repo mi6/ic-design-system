@@ -17,6 +17,12 @@
 
 .comp-preview ic-side-navigation {
   height: 43.75rem;
+  z-index: 0;
+}
+
+.comp-preview ic-page-header,
+.comp-preview ic-classification-banner {
+  z-index: 0;
 }
 
 .offscreen {
