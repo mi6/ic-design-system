@@ -6,12 +6,28 @@ on:
       - main
       - gh-pages
 
+  pull_request:
+    types: [opened, reopened, edited]
+
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  ci-check:
+    name: "CI Check"
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@v5
+        with:
+          concurrent_skipping: "same_content_newer"
+
   ic-design-system-static-analysis-tests:
+    needs: ci-check
+    if: needs.ci-check.outputs.should_skip != 'true'
     name: "Static Analysis Tests"
     runs-on: ubuntu-latest
     steps:
@@ -33,6 +49,7 @@ jobs:
 
   ic-design-system-deploy:
     needs: [ic-design-system-static-analysis-tests]
+    if: github.repository_owner == 'mi6'
     name: "Deploy"
     runs-on: ubuntu-latest
     steps:
