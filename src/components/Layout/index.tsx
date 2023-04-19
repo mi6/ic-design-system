@@ -251,7 +251,7 @@ const Layout: React.FC<LayoutProps> = ({
           <TopNavWrapper appTitle={TITLE} status={STATUS} version={VERSION} />
           <main id="main" className="homepage-wrapper">
             {children}
-            {<ic-back-to-top target="main" />}
+            <ic-back-to-top target="main" />
           </main>
         </div>
         <div className="footer">
