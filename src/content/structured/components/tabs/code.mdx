@@ -1,7 +1,7 @@
 ---
 path: "/components/tabs/code"
 
-date: "2023-02-06"
+date: "2023-04-20"
 
 title: "Tabs"
 
@@ -392,5 +392,82 @@ export const compact = [
       <IcTabPanel>Tab Four</IcTabPanel>
       <IcTabPanel>Tab Five</IcTabPanel>
     </div>
+  </IcTabContext>
+</ComponentPreview>
+
+### Nested Tabs
+
+export const nested = [
+  {
+    language: "Web component",
+    snippet: `<ic-tab-context>
+  <ic-tab-group label="Example tab group">
+    <ic-tab>Outer Tab One</ic-tab>
+    <ic-tab>Outer Tab Two</ic-tab>
+    <ic-tab>Outer Tab Three</ic-tab>
+  </ic-tab-group>
+  <ic-tab-panel>
+    <ic-tab-context context-id="context-nested">
+      <ic-tab-group label="Example tab group">
+        <ic-tab>Nested One</ic-tab>
+        <ic-tab>Nested Two</ic-tab>
+        <ic-tab>Nested Three</ic-tab>
+      </ic-tab-group>
+      <ic-tab-panel>Nested Tab Panel One</ic-tab-panel>
+      <ic-tab-panel>Nested Tab Panel Two</ic-tab-panel>
+      <ic-tab-panel>Nested Tab Panel Three</ic-tab-panel>
+    </ic-tab-context>
+  </ic-tab-panel>
+  <ic-tab-panel>Outer Tab Panel Two</ic-tab-panel>
+  <ic-tab-panel>Outer Tab Panel Three</ic-tab-panel>
+</ic-tab-context>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTabContext>
+  <IcTabGroup label="Example tab group">
+    <IcTab>Outer Tab One</IcTab>
+    <IcTab>Outer Tab Two</IcTab>
+    <IcTab>Outer Tab Three</IcTab>
+  </IcTabGroup>
+  <IcTabPanel>
+    <IcTabContext context-id="context-nested">
+      <IcTabGroup label="Example tab group">
+        <IcTab>Nested One</IcTab>
+        <IcTab>Nested Two</IcTab>
+        <IcTab>Nested Three</IcTab>
+      </IcTabGroup>
+      <IcTabPanel>Nested Tab Panel One</IcTabPanel>
+      <IcTabPanel>Nested Tab Panel Two</IcTabPanel>
+      <IcTabPanel>Nested Tab Panel Three</IcTabPanel>
+    </IcTabContext>
+  </IcTabPanel>
+  <IcTabPanel>Outer Tab Panel Two</IcTabPanel>
+  <IcTabPanel>Outer Tab Panel Three</IcTabPanel>
+</IcTabContext>`,
+  },
+];
+
+<ComponentPreview snippets={nested}>
+  <IcTabContext>
+    <IcTabGroup label="Example tab group">
+      <IcTab>Outer Tab One</IcTab>
+      <IcTab>Outer Tab Two</IcTab>
+      <IcTab>Outer Tab Three</IcTab>
+    </IcTabGroup>
+    <IcTabPanel>
+      <IcTabContext context-id="context-nested">
+        <IcTabGroup label="Example tab group">
+          <IcTab>Nested One</IcTab>
+          <IcTab>Nested Two</IcTab>
+          <IcTab>Nested Three</IcTab>
+        </IcTabGroup>
+        <IcTabPanel>Nested Tab Panel One</IcTabPanel>
+        <IcTabPanel>Nested Tab Panel Two</IcTabPanel>
+        <IcTabPanel>Nested Tab Panel Three</IcTabPanel>
+      </IcTabContext>
+    </IcTabPanel>
+    <IcTabPanel>Outer Tab Panel Two</IcTabPanel>
+    <IcTabPanel>Outer Tab Panel Three</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
