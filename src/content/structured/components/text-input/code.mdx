@@ -1,7 +1,7 @@
 ---
 path: "/components/text-input/code"
 
-date: "2023-02-06"
+date: "2023-04-25"
 
 title: "Text field"
 
@@ -323,6 +323,50 @@ export const snippetsValidation = [
       validationText="Now it has really gone to (coffee) pot"
     />
   </div>
+</ComponentPreview>
+
+### With min and max values
+
+In this example, an error message will display when the input is either below the min value or above the max value. This only affects numeric input fields.
+
+export const snippetsMinMax = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field
+  label="How many coffees do you want?"
+  helper-text="Our coffee machines have a maximum capacity of 4 coffees at a time."
+  type="number"
+  inputmode="numeric"
+  min="1"
+  max="4"
+  value="6"
+>
+</ic-text-field>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField
+  label="How many coffees do you want?"
+  helperText="Our coffee machines have a maximum capacity of 4 coffees at a time."
+  type="number"
+  inputmode="numeric"
+  min="1"
+  max="4"
+  value="6"
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsMinMax}>
+  <IcTextField
+    label="How many coffees do you want?"
+    helperText="Our coffee machines have a maximum capacity of 4 coffees at a time."
+    type="number"
+    inputmode="numeric"
+    min="1"
+    max="4"
+    value="6"
+  />
 </ComponentPreview>
 
 ### Text area with resize
