@@ -897,7 +897,7 @@ export const customFiltering = [
   { label: "Macchiato", value: "Mac" },
 ];
 const [results, setResults] = useState([]);
-const [selectedValue, setSelectedValue] = useState(null);
+const [selectedValue, setSelectedValue] = useState("");
 const changeHandler = (event) => {
   const newValue = event.detail.value;
   console.log(newValue);
@@ -943,7 +943,7 @@ export const CustomFilterExample = () => {
     { label: "Macchiato", value: "Mac" },
   ];
   const [results, setResults] = React.useState([]);
-  const [selectedValue, setSelectedValue] = React.useState(null);
+  const [selectedValue, setSelectedValue] = React.useState("");
   const changeHandler = (event) => {
     const newValue = event.detail.value;
     console.log(newValue);
