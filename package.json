@@ -20,7 +20,7 @@
     "dateformat": "^5.0.2",
     "dotenv": "^10.0.0",
     "flexsearch": "0.6.32",
-    "gatsby": "^4.2.0",
+    "gatsby": "^4.25.6",
     "gatsby-plugin-catch-links": "^4.2.0",
     "gatsby-plugin-local-search": "^2.0.1",
     "gatsby-plugin-manifest": "^4.2.0",
