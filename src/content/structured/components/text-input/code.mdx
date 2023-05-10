@@ -1,7 +1,7 @@
 ---
 path: "/components/text-input/code"
 
-date: "2023-02-06"
+date: "2023-04-25"
 
 title: "Text field"
 
@@ -68,32 +68,54 @@ export const snippetsIconValueMaxLength = [
   {
     language: "Web component",
     snippet: `<ic-text-field 
-    max-length="25" 
-    value="Arabica" 
-    label="What is your favourite coffee?" 
-    required="true" 
-    placeholder="Placeholder" 
-    helper-text="Such as Arabica, Robusta or Liberica" >
-  <svg slot="icon" ...></svg>
+  max-length="25" 
+  value="Arabica" 
+  label="What is your favourite coffee?" 
+  required="true" 
+  placeholder="Placeholder" 
+  helper-text="Such as Arabica, Robusta or Liberica" 
+>
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+  </svg>
 </ic-text-field>`,
   },
   {
     language: "React",
     snippet: `<IcTextField 
-    maxLength="25" 
-    value="Arabica" 
-    label="What is your favourite coffee?" 
-    required 
-    placeholder="Placeholder" 
-    helperText="Such as Arabica, Robusta or Liberica">
-  <SlottedSVG slot="icon" ... />
+  maxLength={25} 
+  value="Arabica" 
+  label="What is your favourite coffee?" 
+  required 
+  placeholder="Placeholder" 
+  helperText="Such as Arabica, Robusta or Liberica"
+>
+  <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+  </SlottedSVG>
 </IcTextField>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsIconValueMaxLength}>
   <IcTextField
-    maxLength="25"
+    maxLength={25}
     value="Arabica"
     label="What is your favourite coffee?"
     required
@@ -124,7 +146,17 @@ export const snippetsDisabled = [
     required="true" 
     placeholder="Placeholder" 
     disabled="true">
-  <svg slot="icon" ...></svg>
+    <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+  </svg>
 </ic-text-field>`,
   },
   {
@@ -134,7 +166,17 @@ export const snippetsDisabled = [
     required 
     placeholder="Placeholder" 
     disabled>
-  <SlottedSVG slot="icon" ... />
+  <SlottedSVG 
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+  </SlottedSVG>
 </IcTextField>`,
   },
 ];
@@ -207,7 +249,7 @@ export const snippetsValidation = [
   {
     language: "React",
     snippet: `<IcTextField 
-    maxLength="25" 
+    maxLength={25} 
     value="Arabica" 
     label="What is your favourite coffee?" 
     required 
@@ -215,7 +257,7 @@ export const snippetsValidation = [
     validationStatus="success" 
     validationText="Good choice!" />
 <IcTextField 
-  maxLength="25" 
+  maxLength={25} 
   value="Arabica" 
   label="What is your favourite coffee?" 
   required 
@@ -224,7 +266,7 @@ export const snippetsValidation = [
   validationText="Good choice!" 
   validationInline />
 <IcTextField 
-  maxLength="25" 
+  maxLength={25} 
   value="Arabica" 
   label="What is your favourite coffee?" 
   required 
@@ -232,7 +274,7 @@ export const snippetsValidation = [
   validationStatus="warning" 
   validationText="A very long warning message to test if wrapping works" />
 <IcTextField 
-  maxLength="25" 
+  maxLength={25} 
   value="Tea" 
   label="What is your favourite coffee?" 
   required helperText="Such as Arabica, Robusta or Liberica" 
@@ -244,7 +286,7 @@ export const snippetsValidation = [
 <ComponentPreview snippets={snippetsValidation}>
   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
     <IcTextField
-      maxLength="25"
+      maxLength={25}
       value="Arabica"
       label="What is your favourite coffee?"
       required
@@ -253,7 +295,7 @@ export const snippetsValidation = [
       validationText="Good choice!"
     />
     <IcTextField
-      maxLength="25"
+      maxLength={25}
       value="Arabica"
       label="What is your favourite coffee?"
       required
@@ -263,7 +305,7 @@ export const snippetsValidation = [
       validationInline
     />
     <IcTextField
-      maxLength="25"
+      maxLength={25}
       value="Arabica"
       label="What is your favourite coffee?"
       required
@@ -272,7 +314,7 @@ export const snippetsValidation = [
       validationText="A very long warning message to test if wrapping works"
     />
     <IcTextField
-      maxLength="25"
+      maxLength={25}
       value="Tea"
       label="What is your favourite coffee?"
       required
@@ -283,13 +325,57 @@ export const snippetsValidation = [
   </div>
 </ComponentPreview>
 
+### With min and max values
+
+In this example, an error message will display when the input is either below the min value or above the max value. This only affects numeric input fields.
+
+export const snippetsMinMax = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field
+  label="How many coffees do you want?"
+  helper-text="Our coffee machines have a maximum capacity of 4 coffees at a time."
+  type="number"
+  inputmode="numeric"
+  min="1"
+  max="4"
+  value="6"
+>
+</ic-text-field>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField
+  label="How many coffees do you want?"
+  helperText="Our coffee machines have a maximum capacity of 4 coffees at a time."
+  type="number"
+  inputmode="numeric"
+  min="1"
+  max="4"
+  value="6"
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsMinMax}>
+  <IcTextField
+    label="How many coffees do you want?"
+    helperText="Our coffee machines have a maximum capacity of 4 coffees at a time."
+    type="number"
+    inputmode="numeric"
+    min="1"
+    max="4"
+    value="6"
+  />
+</ComponentPreview>
+
 ### Text area with resize
 
 export const snippetsTextArea = [
   {
     language: "Web component",
     snippet: `<ic-text-field 
-    rows="6" 
+    rows="6"
     resize="true" 
     label="What is your favourite coffee?" 
     placeholder="Placeholder" 
@@ -299,7 +385,7 @@ export const snippetsTextArea = [
   {
     language: "React",
     snippet: `<IcTextField 
-    rows="6" 
+    rows={6} 
     resize 
     label="What is your favourite coffee?" 
     placeholder="Placeholder" 
@@ -309,7 +395,7 @@ export const snippetsTextArea = [
 
 <ComponentPreview snippets={snippetsTextArea}>
   <IcTextField
-    rows="6"
+    rows={6}
     resize
     label="What is your favourite coffee?"
     placeholder="Placeholder"

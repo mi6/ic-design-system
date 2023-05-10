@@ -240,6 +240,9 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   return (
     <>
+      <ic-link id="skip-page-content-link" href="#page-contents">
+        Skip to page content
+      </ic-link>
       <ic-button
         variant="secondary"
         id="nav-section-button"
@@ -261,9 +264,6 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
           />
         </div>
       </ic-button>
-      <ic-link id="skip-page-content-link" href="#page-contents">
-        Skip to page content
-      </ic-link>
       <nav
         id="icds-section-nav"
         aria-label={`${section} section`}

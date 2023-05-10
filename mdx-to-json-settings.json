@@ -1,11 +1,11 @@
 {
-    "name": "icds-guidance-pages",
-    "cwd": "./",
-    "src": "./src/content/structured/",
-    "filePattern": "**/*.mdx",
-    "dist": "public/icds-pages-data.json",
-    "metadata": true,
-    "server": false,
-    "port": 3001,
-    "deterministicOrder": false
-  }
+  "name": "icds-guidance-pages",
+  "cwd": "./",
+  "src": "./src/content/structured/",
+  "filePattern": "**/*.mdx",
+  "dist": "public/icds-pages-data.json",
+  "metadata": true,
+  "server": false,
+  "port": 3001,
+  "deterministicOrder": false
+}
