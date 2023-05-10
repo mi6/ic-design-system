@@ -1,0 +1,52 @@
+---
+path: "/components/pagination/accessibility"
+
+date: "2023-05-05"
+
+title: "Pagination"
+
+status: "BETA"
+
+subTitle: "Use the Pagination components to split large amounts of content into pages and navigate between them."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/pagination"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/pagination" },
+    { title: "Code", path: "/components/pagination/code" },
+    { title: "Accessibility", path: "/components/pagination/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+The elements within a pagination bar follow a logical tabbing order when moving through them. Buttons are triggered using either the ‘enter’ or ‘space’ key.
+
+The current page is always displayed in the component so that the user knows where in the data set they are.
+
+When the user is at the start or end of the data, the navigation buttons are disabled so that it is clear there is no more data past that point.
+
+Using the items per page selector in the pagination bar allows users to control how much information is available per page. This can help to either simplify complex pages or to increase the information density.
+
+## For Assistive Technology
+
+Each pagination component uses accessible names for buttons that lack meaning in the context of a screen reader. Page buttons that simply have their page number as the visible label are given an accessible label of ‘Go to page X’ so that it is clearer what their function is.
+
+The term ‘page X’ can be overridden in the case that it is not accurate. For example, this can be changed to read ‘sheet X’, ‘set X’, ‘slide X’ instead if it is a better representation.
+
+Similarly, the icon buttons used for next, previous, first and last are also given accessible name so that their action is clearer when announced by a screen reader.
+
+The pagination components use the nav element so that they become navigational landmarks on a page and can therefore be swiftly navigated to by users of assistive technology.
+
+## Based on
+
+The radio component has been based on the following resources:
+
+- [Accessible Pagination](https://www.a11ymatters.com/pattern/pagination/), Accessibility Matters, published October 2016, accessed March 2023.
+- [Using navigation landmarks](https://accessibility.blog.gov.uk/2016/05/27/using-navigation-landmarks/), Accessibility in government, published May 2016, accessed March 2023.
+- [UX: Infinite scrolling vs. Pagination](https://uxplanet.org/ux-infinite-scrolling-vs-pagination-1030d29376f1), Nick Babich, published May 2016, accessed March 2023.
+
+## Testing
+
+We’ve tested this component against WCAG 2.1 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.
