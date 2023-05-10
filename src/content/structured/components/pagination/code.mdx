@@ -1,0 +1,175 @@
+---
+path: "/components/pagination/code"
+
+date: "2023-05-05"
+
+title: "Pagination"
+
+status: "BETA"
+
+subTitle: "Use the Pagination components to split large amounts of content into pages and navigate between them."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/pagination"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/pagination" },
+    { title: "Code", path: "/components/pagination/code" },
+    { title: "Accessibility", path: "/components/pagination/accessibility" },
+  ]
+---
+
+import { IcPagination } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination pages="15"></ic-pagination>
+<ic-pagination pages="15" type="complex"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination pages="15" />
+<IcPagination pages="15" type="complex" />`,
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", margin: "auto" }}
+  snippets={snippets}
+>
+  <div style={{ width: "fit-content", margin: "auto" }}>
+    <IcPagination pages="15" />
+  </div>
+  <IcPagination pages="15" type="complex" />
+</ComponentPreview>
+
+## Pagination details
+
+<ComponentDetails component="ic-pagination" />
+
+## Variants
+
+### Hide first and last page buttons
+
+export const hideFirstLast = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination hide-first-and-last-page-button="true" pages="15"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination hideFirstAndLastPageButton pages="15" />`,
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", margin: "auto" }}
+  snippets={hideFirstLast}
+>
+  <IcPagination hideFirstAndLastPageButton pages="15" />
+</ComponentPreview>
+
+### Hide current page (only in 'simple' type)
+
+export const hideCurrent = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination hide-current-page="true" pages="15"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination hideCurrentPage pages="15" />`,
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", margin: "auto" }}
+  snippets={hideCurrent}
+>
+  <IcPagination hideCurrentPage pages="15" />
+</ComponentPreview>
+
+### Appearance
+
+export const appearance = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination appearance="dark" pages="15"></ic-pagination>
+<ic-pagination appearance="light" pages="15"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination appearance="dark" pages="15" />
+<IcPagination appearance="light" pages="15" />`,
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", margin: "auto" }}
+  snippets={appearance}
+>
+  <IcPagination appearance="dark" pages="15" />
+  <div style={{ backgroundColor: "#000", marginBottom: "0.75rem" }}>
+    <IcPagination appearance="light" pages="15" />
+  </div>
+</ComponentPreview>
+
+### Boundary and Adjacent items set
+
+export const boundaryAdjacent = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination type="complex" adjacentCount="2" boundaryCount="2" pages="15"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination type="complex" adjacentCount="2" boundaryCount="2" pages="15" />`,
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", margin: "auto" }}
+  snippets={boundaryAdjacent}
+>
+  <IcPagination type="complex" adjacentCount="2" boundaryCount="2" pages="15" />
+</ComponentPreview>
+
+### Disabled
+
+export const disabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination type="complex" disabled="true" pages="12"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination type="complex" disabled pages="12" />`,
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", margin: "auto" }}
+  snippets={disabled}
+>
+  <IcPagination type="complex" disabled pages="12" />
+</ComponentPreview>
+
+### Label
+
+export const label = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination label="Slide" pages="12"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination label="Slide" pages="12" />`,
+  },
+];
+
+<ComponentPreview style={{ display: "block", margin: "auto" }} snippets={label}>
+  <IcPagination label="Slide" pages="12" />
+</ComponentPreview>
