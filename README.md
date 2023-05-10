@@ -30,7 +30,7 @@ The Design System is being used to build our powerful, flexible and complex capa
 
 We track many sources of accessibility expertise, as well as using our internal experts and communities. For example, many of our patterns and components are based on awesome work from the [Government Digital Service (GDS) Design System](https://design-system.service.gov.uk/). Where we can, we'll contribute back!
 
-If you think we could improve something, please do [raise an issue](https://github.com/mi6/ic-ui-kit/issues/new/choose).
+If you think we could improve something, please do [raise an issue](https://github.com/mi6/ic-design-system/issues/new/choose).
 
 ## Installing
 
