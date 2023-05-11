@@ -2,6 +2,8 @@ const SITE_URL = process.env.GATSBY_ICDS_WEBSITE_BASE
   ? process.env.GATSBY_ICDS_WEBSITE_BASE
   : "https://design.sis.gov.uk/";
 
+const pkg = require("../package.json");
+
 module.exports = {
   author: `ICDS`,
 
@@ -16,7 +18,7 @@ module.exports = {
   META_DESCRIPTION:
     "Use the UK Intelligence Community's Design System to create accessible, usable, and consistent capabilities for complex and specialised needs",
 
-  VERSION: "V2.0.7",
+  VERSION: pkg.dependencies["@ukic/web-components"].replace("^", ""),
   STATUS: "BETA",
 
   FOOTER_PROPS: {
