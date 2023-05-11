@@ -22,10 +22,9 @@ const TopNavItem: React.FC<any> = ({ props, text }) => (
 
 const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
   appTitle,
-  status,
   version,
 }) => (
-  <ic-top-navigation status={status} version={version} app-title={appTitle}>
+  <ic-top-navigation version={version} app-title={appTitle}>
     <GatsbyLink slot="app-title" to={withPrefix("/")}>
       {appTitle}
     </GatsbyLink>
