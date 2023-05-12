@@ -190,3 +190,76 @@ export const snippetsDefault = [
     </IcChip>
   </IcTooltip>
 </ComponentPreview>
+
+## Programmatic trigger
+
+export const snippetsProgrammatic = [
+  {
+    language: "Web component",
+    snippet: `<script>
+  let display = true;
+  document
+    .querySelector("#clickMe")
+    .addEventListener("click", handleDisplay);
+  const tooltip = document.querySelector("ic-tooltip");
+  function handleDisplay() {
+    tooltip.displayTooltip(display, true);
+    display = !display;
+  }
+</script>
+<ic-button id="clickMe">Show tooltip</ic-button>
+<ic-tooltip label="This is a description" target="test-button">
+  <ic-button id="test-button" aria-describedby="ic-tooltip-test-button">
+    Target
+  </ic-button>
+</ic-tooltip>`,
+  },
+  {
+    language: "React",
+    snippet: `let display = true;
+const handleDisplay = () => {
+  document.querySelector("ic-tooltip").displayTooltip(display, true);
+  display = !display;
+}
+return (
+  <>
+    <IcButton onClick={handleDisplay}>Show tooltip</IcButton>
+    <IcTooltip label="This is a description" target="test-button">
+      <IcButton aria-describedby="ic-tooltip-test-button" id="test-button">
+        Target
+      </IcButton>
+    </IcTooltip>
+  </>
+);`,
+  },
+];
+
+export const TriggerExample = () => {
+  let display = true;
+  const handleDisplay = () => {
+    document.querySelector("ic-tooltip").displayTooltip(display, true);
+    display = !display;
+  };
+  return (
+    <>
+      <IcButton onClick={handleDisplay}>Show tooltip</IcButton>
+      <IcTooltip target="test-button" label="This is a description">
+        <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+          Target
+        </IcButton>
+      </IcTooltip>
+    </>
+  );
+};
+
+<ComponentPreview
+  style={{
+    gap: "8px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  snippets={snippetsProgrammatic}
+>
+  <TriggerExample />
+</ComponentPreview>
