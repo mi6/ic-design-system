@@ -93,11 +93,11 @@ export default Select;
 // Select.test.tsx
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { screen } from 'shadow-dom-testing-library';
-import Select from '../components/Select';
+import Select from './components/Select';
 import userEvent from '@testing-library/user-event';
 
 const options = [
-    { label: 'Americano', value: 'americano' }
+    { label: 'Americano', value: 'americano' },
     { label: 'Espresso', value: 'espresso' },
 ]
 
@@ -117,7 +117,7 @@ describe('IcSelect', () => {
          * There are multiple instances where 'Title' is selected due to aria properties
          * so one level deep is enough to select the label.
          */
-        expect(screen.getByShadowLabelText('Title', { shallow: true })).toBeInTheDocument();
+        expect(screen.getByShadowText('Title')).toBeInTheDocument();
     })
 
     it("should render the correct number of options in the menu", async () => {
