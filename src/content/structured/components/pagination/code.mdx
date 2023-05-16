@@ -31,8 +31,8 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `<IcPagination pages="15" />
-<IcPagination pages="15" type="complex" />`,
+    snippet: `<IcPagination pages={15} />
+<IcPagination pages={15} type="complex" />`,
   },
 ];
 
@@ -41,9 +41,9 @@ export const snippets = [
   snippets={snippets}
 >
   <div style={{ width: "fit-content", margin: "auto" }}>
-    <IcPagination pages="15" />
+    <IcPagination pages={15} />
   </div>
-  <IcPagination pages="15" type="complex" />
+  <IcPagination pages={15} type="complex" />
 </ComponentPreview>
 
 ## Pagination details
@@ -61,7 +61,7 @@ export const hideFirstLast = [
   },
   {
     language: "React",
-    snippet: `<IcPagination hideFirstAndLastPageButton pages="15" />`,
+    snippet: `<IcPagination hideFirstAndLastPageButton pages={15} />`,
   },
 ];
 
@@ -69,7 +69,7 @@ export const hideFirstLast = [
   style={{ display: "block", margin: "auto" }}
   snippets={hideFirstLast}
 >
-  <IcPagination hideFirstAndLastPageButton pages="15" />
+  <IcPagination hideFirstAndLastPageButton pages={15} />
 </ComponentPreview>
 
 ### Hide current page (only in 'simple' type)
@@ -81,7 +81,7 @@ export const hideCurrent = [
   },
   {
     language: "React",
-    snippet: `<IcPagination hideCurrentPage pages="15" />`,
+    snippet: `<IcPagination hideCurrentPage pages={15} />`,
   },
 ];
 
@@ -89,7 +89,7 @@ export const hideCurrent = [
   style={{ display: "block", margin: "auto" }}
   snippets={hideCurrent}
 >
-  <IcPagination hideCurrentPage pages="15" />
+  <IcPagination hideCurrentPage pages={15} />
 </ComponentPreview>
 
 ### Appearance
@@ -102,8 +102,8 @@ export const appearance = [
   },
   {
     language: "React",
-    snippet: `<IcPagination appearance="dark" pages="15" />
-<IcPagination appearance="light" pages="15" />`,
+    snippet: `<IcPagination appearance="dark" pages={15} />
+<IcPagination appearance="light" pages={15} />`,
   },
 ];
 
@@ -111,9 +111,9 @@ export const appearance = [
   style={{ display: "block", margin: "auto" }}
   snippets={appearance}
 >
-  <IcPagination appearance="dark" pages="15" />
+  <IcPagination appearance="dark" pages={15} />
   <div style={{ backgroundColor: "#000", marginBottom: "0.75rem" }}>
-    <IcPagination appearance="light" pages="15" />
+    <IcPagination appearance="light" pages={15} />
   </div>
 </ComponentPreview>
 
@@ -122,11 +122,11 @@ export const appearance = [
 export const boundaryAdjacent = [
   {
     language: "Web component",
-    snippet: `<ic-pagination type="complex" adjacentCount="2" boundaryCount="2" pages="15"></ic-pagination>`,
+    snippet: `<ic-pagination type="complex" adjacent-count="2" boundary-count="2" pages="15"></ic-pagination>`,
   },
   {
     language: "React",
-    snippet: `<IcPagination type="complex" adjacentCount="2" boundaryCount="2" pages="15" />`,
+    snippet: `<IcPagination type="complex" adjacentCount={2} boundaryCount={2} pages={15} />`,
   },
 ];
 
@@ -134,7 +134,7 @@ export const boundaryAdjacent = [
   style={{ display: "block", margin: "auto" }}
   snippets={boundaryAdjacent}
 >
-  <IcPagination type="complex" adjacentCount="2" boundaryCount="2" pages="15" />
+  <IcPagination type="complex" adjacentCount={2} boundaryCount={2} pages={15} />
 </ComponentPreview>
 
 ### Disabled
@@ -146,7 +146,7 @@ export const disabled = [
   },
   {
     language: "React",
-    snippet: `<IcPagination type="complex" disabled pages="12" />`,
+    snippet: `<IcPagination type="complex" disabled pages={12} />`,
   },
 ];
 
@@ -154,7 +154,7 @@ export const disabled = [
   style={{ display: "block", margin: "auto" }}
   snippets={disabled}
 >
-  <IcPagination type="complex" disabled pages="12" />
+  <IcPagination type="complex" disabled pages={12} />
 </ComponentPreview>
 
 ### Label
@@ -166,10 +166,10 @@ export const label = [
   },
   {
     language: "React",
-    snippet: `<IcPagination label="Slide" pages="12" />`,
+    snippet: `<IcPagination label="Slide" pages={12} />`,
   },
 ];
 
 <ComponentPreview style={{ display: "block", margin: "auto" }} snippets={label}>
-  <IcPagination label="Slide" pages="12" />
+  <IcPagination label="Slide" pages={12} />
 </ComponentPreview>
