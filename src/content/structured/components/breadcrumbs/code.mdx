@@ -318,17 +318,19 @@ export const withReactRouter = [
     snippet: `<MemoryRouter initialEntries={["/"]}>
   <IcBreadcrumbGroup>
     <IcBreadcrumb pageTitle="Home">
-      <NavLink to="/">Home</NavLink>
+      <IcLink>
+        <NavLink slot="router-item" to="/">Home</NavLink>
+      </IcLink>
     </IcBreadcrumb>
     <IcBreadcrumb pageTitle="Beverages">
-      <NavLink to="/">Beverages</NavLink>
+      <IcLink>
+        <NavLink slot="router-item" to="/">Beverages</NavLink>
+      </IcLink>
     </IcBreadcrumb>
-    <IcBreadcrumb 
-      pageTitle="Coffee" 
-      current
-      href="#"
-    >
-      <NavLink to="/">Coffee</NavLink>
+    <IcBreadcrumb pageTitle="Coffee" current>
+      <IcLink>
+        <NavLink to="/" slot="router-item">Coffee</NavLink>
+      </IcLink>
     </IcBreadcrumb>
   </IcBreadcrumbGroup>
 </MemoryRouter>
@@ -340,13 +342,25 @@ export const withReactRouter = [
   <MemoryRouter initialEntries={["/"]}>
     <IcBreadcrumbGroup>
       <IcBreadcrumb pageTitle="Home">
-        <NavLink to="/">Home</NavLink>
+        <IcLink>
+          <NavLink slot="router-item" to="/">
+            Home
+          </NavLink>
+        </IcLink>
       </IcBreadcrumb>
       <IcBreadcrumb pageTitle="Beverages">
-        <NavLink to="/">Beverages</NavLink>
+        <IcLink>
+          <NavLink slot="router-item" to="/">
+            Beverages
+          </NavLink>
+        </IcLink>
       </IcBreadcrumb>
-      <IcBreadcrumb pageTitle="Coffee" current href="#">
-        <NavLink to="/">Coffee</NavLink>
+      <IcBreadcrumb pageTitle="Coffee" current>
+        <IcLink>
+          <NavLink to="/" slot="router-item">
+            Coffee
+          </NavLink>
+        </IcLink>
       </IcBreadcrumb>
     </IcBreadcrumbGroup>
   </MemoryRouter>
