@@ -9,11 +9,11 @@ const PropDescription: React.FC<{
   deprecation: string | undefined;
 }> = ({ description, type, required, deprecation }) => (
   <div className="prop-description">
-    <ic-typography>{description}</ic-typography>
+    {!!description && <ic-typography>{description}</ic-typography>}
     {required && (
       <ic-typography variant="subtitle-small">Required</ic-typography>
     )}
-    <CodeAttribute label={`type: ${type}`} />
+    {!deprecation && <CodeAttribute label={`type: ${type}`} />}
     {deprecation && (
       <>
         <ic-typography>{deprecation}</ic-typography>
