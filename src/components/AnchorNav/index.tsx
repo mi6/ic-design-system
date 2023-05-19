@@ -93,10 +93,8 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
           <div className="contents-header">
             <ic-typography variant="subtitle-large">Contents</ic-typography>
           </div>
-          <ul className="list">
-            <div className="nav-list-items-container">
-              {headings.map((heading) => getNavListItem(heading))}
-            </div>
+          <ul className="nav-item-list">
+            {headings.map((heading) => getNavListItem(heading))}
           </ul>
         </nav>
       </div>
