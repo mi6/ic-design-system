@@ -40,9 +40,10 @@
   margin: 0 0 0 var(--ic-space-xs);
 }
 
-.list {
+.nav-item-list {
   list-style: none;
   margin: 0;
+  border-left: 0.063rem solid var(--ic-architectural-300);
 }
 
 .nav-list-item {
@@ -65,10 +66,6 @@
   display: block;
   width: var(--ic-space-xs);
   background: var(--ic-action-default);
-}
-
-.nav-list-items-container {
-  border-left: 1px solid var(--ic-architectural-300);
 }
 
 @media screen and (max-width: 576px) {
@@ -112,7 +109,7 @@
     padding: var(--ic-space-md) var(--ic-space-md) var(--ic-space-xs);
   }
 
-  .nav-list-items-container {
+  .nav-item-list {
     border-left: none;
     padding-bottom: var(--ic-space-lg);
   }
