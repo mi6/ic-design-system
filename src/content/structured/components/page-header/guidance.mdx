@@ -23,11 +23,11 @@ tabs:
 
 import {
   IcPageHeader,
-  IcStatusTag,
   IcButton,
   IcTextField,
   IcStepper,
   IcStep,
+  IcChip,
 } from "@ukic/react";
 import pageHeaderFig1 from "./images/fig-1-page-header-anatomy.png";
 import pageHeaderFig2 from "./images/fig-2-dont-use-global-actions-in-a-page-header.png";
@@ -51,7 +51,7 @@ An example of the page header component.
     subheading="This is a page header component that has an input area, actions and stepper."
     reverseOrder
   >
-    <IcStatusTag slot="heading-adornment" label="Beta" />
+    <IcChip slot="heading-adornment" label="BETA" size="large" />
     <IcButton slot="actions" variant="primary">
       Create coffee
     </IcButton>
