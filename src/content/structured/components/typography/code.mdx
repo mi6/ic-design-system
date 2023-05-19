@@ -1,7 +1,7 @@
 ---
 path: "/components/typography/code"
 
-date: "2023-02-03"
+date: "2023-05-22"
 
 title: "Typography"
 
@@ -72,5 +72,59 @@ export const spacingSnippets = [
 <ComponentPreview snippets={spacingSnippets}>
   <IcTypography variant="h2" applyVerticalMargins>
     <h5>H5 with H2 styling and margins applied</h5>
+  </IcTypography>
+</ComponentPreview>
+
+### Truncation
+
+Text can be truncated to a maximum number of lines when using `variant="body"`.
+
+export const truncationSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-typography max-lines="3" variant="body">
+  Body of text that is truncated to three lines. Click the 'See more' link
+  to expand the text, then click 'See less' to truncate the text once
+  more!
+  <br />
+  Dripper caramelization java saucer grounds galão, mocha, and robusta
+  kopi-luwak, percolator, instant, qui saucer latte in brewed café au
+  lait. Con panna, cup, cream, body americano affogato cup espresso, rich
+  milk seasonal saucer grinder spoon that cultivar strong redeye
+  frappuccino barista extraction redeye mazagran. Grounds, french press
+  dripper organic and foam id saucer, crema, black rich dark, grounds
+  breve coffee steamed caramelization percolator.
+</ic-typography>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTypography maxLines="3" variant="body">
+  Body of text that is truncated to three lines. Click the 'See more' link
+  to expand the text, then click 'See less' to truncate the text once
+  more!
+  <br />
+  Dripper caramelization java saucer grounds galão, mocha, and robusta
+  kopi-luwak, percolator, instant, qui saucer latte in brewed café au
+  lait. Con panna, cup, cream, body americano affogato cup espresso, rich
+  milk seasonal saucer grinder spoon that cultivar strong redeye
+  frappuccino barista extraction redeye mazagran. Grounds, french press
+  dripper organic and foam id saucer, crema, black rich dark, grounds
+  breve coffee steamed caramelization percolator.
+</IcTypography>`,
+  },
+];
+
+<ComponentPreview snippets={truncationSnippets}>
+  <IcTypography maxLines="3" variant="body">
+    Body of text that is truncated to three lines. Click the 'See more' link to
+    expand the text, then click 'See less' to truncate the text once more!
+    <br />
+    Dripper caramelization java saucer grounds galão, mocha, and robusta
+    kopi-luwak, percolator, instant, qui saucer latte in brewed café au lait.
+    Con panna, cup, cream, body americano affogato cup espresso, rich milk
+    seasonal saucer grinder spoon that cultivar strong redeye frappuccino
+    barista extraction redeye mazagran. Grounds, french press dripper organic
+    and foam id saucer, crema, black rich dark, grounds breve coffee steamed
+    caramelization percolator.
   </IcTypography>
 </ComponentPreview>
