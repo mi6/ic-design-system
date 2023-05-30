@@ -11,6 +11,8 @@ status: "BETA"
 
 subTitle: "Use the Pagination components to split large amounts of content into pages and navigate between them."
 
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/pagination"
+
 tabs:
   [
     { title: "Guidance", path: "/components/pagination" },
@@ -41,6 +43,12 @@ Pagination enables large amounts of content to be split across multiple pages so
 
 ## Component variants
 
+<IcAlert
+  heading="Coming soon"
+  message="The carousel functionality is in development."
+  variant="info"
+/>
+
 There are three types of pagination that can be used to control pages of content:
 
 - Complex pagination: Contains buttons for navigating to next, previous, first and last pages as well as individual page buttons for adjacent and boundary pages.
@@ -52,14 +60,6 @@ Use the pagination components within a pagination bar to provide other navigatio
 - Items per page selector: Switch the number of content items visible per page.
 - Item count: Display the range of currently visible items as well as the total number of items.
 - Go to page shortcut: Allow quick access to any page number by typing the page number and hitting ‘go’.
-
-## Carousel Pagination
-
-<IcAlert
-  heading="Coming soon"
-  message="The carousel functionality is in development."
-  variant="info"
-/>
 
 ## When to use
 
@@ -86,12 +86,14 @@ Use simple pagination to navigate sequentially between pages using the ‘next�
 
 Use carousel pagination for small numbers of pages where all pages can be shown as carousel items in the pagination component.
 
-<DoDontCaution
-  imageSrc={paginationFig2}
-  imageAlt="An image showing three pagination components. Complex pagination provides numbered buttons for each page. Simple pagination simply provides next, previous, first and last buttons. Carousel pagination shows pages as dots and does not show page numbers."
-  state="none"
-  caption="Use complex, simple or carousel pagination variants for different implementations."
-/>
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={paginationFig2}
+    imageAlt="An image showing three pagination components. Complex pagination provides numbered buttons for each page. Simple pagination simply provides next, previous, first and last buttons. Carousel pagination shows pages as dots and does not show page numbers."
+    state="none"
+    caption="Use complex, simple or carousel pagination variants for different implementations."
+  />
+</DoubleDoDontCaution>
 
 Use a pagination bar to provide more navigation functionality through particularly complex data sets. For example, use pagination bars with data tables to navigate large data sets easily.
 
