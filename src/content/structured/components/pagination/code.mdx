@@ -173,3 +173,23 @@ export const label = [
 <ComponentPreview style={{ display: "block", margin: "auto" }} snippets={label}>
   <IcPagination label="Slide" pages={12} />
 </ComponentPreview>
+
+### Default page
+
+export const defaultPage = [
+  {
+    language: "Web component",
+    snippet: `<ic-pagination pages="12" default-page="4"></ic-pagination>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPagination pages={12} defaultPage={4}/>`,
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", margin: "auto" }}
+  snippets={defaultPage}
+>
+  <IcPagination pages={12} defaultPage={4} />
+</ComponentPreview>
