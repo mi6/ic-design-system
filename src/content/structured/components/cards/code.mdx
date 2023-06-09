@@ -19,7 +19,13 @@ tabs:
   ]
 ---
 
-import { IcCard, IcStatusTag, IcButton } from "@ukic/react";
+import {
+  IcCard,
+  IcStatusTag,
+  IcButton,
+  IcTypography,
+  SlottedSVG,
+} from "@ukic/react";
 
 export const CardIcon = () => (
   <svg
@@ -843,9 +849,9 @@ export const expandable = [
       <IcButton variant="primary">Learn more</IcButton>
       <IcButton variant="secondary">Hide</IcButton>
     </div>
-    <ic-typography slot="expanded-content" variant="body">
+    <IcTypography slot="expanded-content" variant="body">
       This is an example of the expanded content area
-    </ic-typography>
+    </IcTypography>
   </IcCard>
 </ComponentPreview>
 

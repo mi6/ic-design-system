@@ -748,6 +748,7 @@ export const withReactRouter = [
     <IcSideNavigation
     version="v0.0.7"
     status="Alpha"
+    appTitle="ACME coffee shop"
     >
       <NavLink to="/" slot="app-title">ACME coffee shop</NavLink>
       <SlottedSVG slot="app-icon" path={mdiCoffeeOutline} viewBox="0 0 24 24" />
@@ -813,7 +814,11 @@ export const withReactRouter = [
 >
   <MemoryRouter initialEntries={["/"]}>
     <div style={{ display: "flex", flexDirection: "row" }}>
-      <IcSideNavigation version="v0.0.7" status="Alpha">
+      <IcSideNavigation
+        appTitle="ACME coffee shop"
+        version="v0.0.7"
+        status="Alpha"
+      >
         <NavLink to="/" slot="app-title">
           ACME coffee shop
         </NavLink>
