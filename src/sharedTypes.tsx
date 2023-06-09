@@ -40,8 +40,6 @@ export interface Heading {
 export interface MdxFrontMatter {
   title: string;
   date: string;
-  classification?: string;
-  deciders?: string[];
   contribute?: string;
   subTitle?: string;
 }

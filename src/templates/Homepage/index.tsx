@@ -77,7 +77,6 @@ const Homepage: React.FC = () => {
       </ic-hero>
       <ic-section-container aligned="center" full-height>
         <div className="section">
-          <ic-typography variant="h2">{homepage.cards.title}</ic-typography>
           <ul className={clsx("cards-container", "explore-cards")}>
             {homepage.cards.content &&
               homepage.cards.content.map((item: homepageCardItem) => (
@@ -100,7 +99,7 @@ const Homepage: React.FC = () => {
           <ic-typography variant="h2" apply-vertical-margins>
             {homepage.about.title}
           </ic-typography>
-          {homepage.about.content.map((text: string[]) => (
+          {homepage.about.content.map((text: string) => (
             <ic-typography
               variant="body"
               data-class="text-content"
@@ -120,7 +119,7 @@ const Homepage: React.FC = () => {
           <ic-typography variant="h2" apply-vertical-margins>
             <h2>{homepage.contribute.title}</h2>
           </ic-typography>
-          {homepage.contribute.content.map((text: string[]) => (
+          {homepage.contribute.content.map((text: string) => (
             <ic-typography
               variant="body"
               data-class="text-content"

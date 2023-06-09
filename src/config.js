@@ -141,12 +141,10 @@ module.exports = {
   pageGroups: [
     {
       folder: "/content/structured/",
-      templateComponent: "src/templates/Standard/index.tsx",
       templateStyle: "sectionnav",
     },
     {
       folder: "/content/static/",
-      templateComponent: "src/templates/Standard/index.tsx",
       templateStyle: "tableofcontents",
     },
   ],
@@ -155,8 +153,6 @@ module.exports = {
     {
       // For this specific file...
       pageFilepath: "/content/static/accessibility-statement.md",
-      // Use this template component...
-      templateComponent: "src/templates/Standard/index.tsx",
       // With this configuration.
       templateStyle: "tableofcontents",
     },
