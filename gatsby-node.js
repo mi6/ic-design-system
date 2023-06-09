@@ -1,4 +1,5 @@
 const path = require(`path`);
+// eslint-disable-next-line import/no-extraneous-dependencies
 const webpack = require("webpack");
 const pagesConfig = require("./src/config");
 
@@ -15,10 +16,6 @@ const createPosts = ({ createPage, createRedirect, edges }) => {
       (grp) => filePath.indexOf(grp.folder) > -1
     );
 
-    let template = pageTypeConfig
-      ? pageTypeConfig.templateComponent
-      : pagesConfig.defaultTemplateComponent;
-
     let templateType = pageTypeConfig
       ? pageTypeConfig.templateStyle
       : "tableofcontents";
@@ -27,32 +24,28 @@ const createPosts = ({ createPage, createRedirect, edges }) => {
       (pg) => filePath.endsWith(pg.pageFilepath)
     );
 
-    if (pageTemplateOverrideConfig) {
-      template = pageTemplateOverrideConfig.templateComponent;
-      templateType = pageTemplateOverrideConfig.templateStyle
-        ? pageTemplateOverrideConfig.templateStyle
-        : "tableofcontents";
-    }
+    if (pageTemplateOverrideConfig)
+      templateType = pageTemplateOverrideConfig.templateStyle;
 
     createPage({
       path: pagePath,
-      component: path.resolve(template),
+      component: path.resolve(pagesConfig.defaultTemplateComponent),
       context: {
         id: node.id,
+        returnBodies: node.fields.navSection === "components",
+        navSection: node.fields.navSection,
         pageType: templateType,
       },
     });
 
-    if (!oldPath || oldPath === pagePath) {
-      return;
+    if (oldPath && oldPath !== pagePath) {
+      createRedirect({
+        redirectInBrowser: true,
+        isPermanent: true,
+        fromPath: `${oldPath}`,
+        toPath: `${pagePath}`,
+      });
     }
-
-    createRedirect({
-      redirectInBrowser: true,
-      isPermanent: true,
-      fromPath: `${oldPath}`,
-      toPath: `${pagePath}`,
-    });
   });
 };
 
@@ -67,6 +60,7 @@ const createArticles = ({ data, actions }) => {
   return null;
 };
 
+// eslint-disable-next-line consistent-return
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const manualPageGroupsRegex = pagesConfig.manualPageGroups.join("|");
 
@@ -77,6 +71,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       body
       fields {
         slug
+        navSection
       }
       frontmatter {
         path
@@ -114,6 +109,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 exports.onCreateNode = (...args) => {
   if (args[0].node.internal.type === "Mdx") {
     if (!args[0].node) {
+      // eslint-disable-next-line no-console
       console.log(args[0].node);
     }
     onCreateMarkdownNode(...args);
@@ -184,7 +180,7 @@ exports.createResolvers = ({ createResolvers }) => {
       allStructuredNav: {
         type: [`Mdx`],
         resolve: (source, args, context) => {
-          const nodes = context.nodeModel.getAllNodes({
+          const nodes = context.nodeModel.findAll({
             type: "Mdx",
           });
 
@@ -203,14 +199,14 @@ exports.createResolvers = ({ createResolvers }) => {
       allArticles: {
         type: [`Mdx`],
         resolve: (source, args, context) => {
-          const nodes = context.nodeModel.getAllNodes({
+          const nodes = context.nodeModel.findAll({
             type: "Mdx",
           });
           const articles = nodes.filter(
             (cont) =>
               cont.frontmatter.path &&
-              !isNaN(Date.parse(cont.frontmatter.date)) &&
-              RegExp("/content/articles/", "i").test(cont.fileAbsolutePath) &&
+              !Number.isNaN(Date.parse(cont.frontmatter.date)) &&
+              /\/content\/articles\//i.test(cont.fileAbsolutePath) &&
               !cont.frontmatter.hidden
           );
           return articles;
@@ -220,15 +216,15 @@ exports.createResolvers = ({ createResolvers }) => {
       // actually is allContent?
       allContent: {
         type: [`Mdx`],
-        resolve: (source, args, context) => {
-          const nodes = context.nodeModel.getAllNodes({
+        resolve: async (source, args, context) => {
+          const { entries } = await context.nodeModel.findAll({
             type: "Mdx",
           });
-          const structured = nodes.filter(
+          const structured = entries.filter(
             (cont) =>
               cont.frontmatter.path &&
-              !isNaN(Date.parse(cont.frontmatter.date)) &&
-              RegExp("/content/", "i").test(cont.fileAbsolutePath) &&
+              !Number.isNaN(Date.parse(cont.frontmatter.date)) &&
+              /\/content\//i.test(cont.fileAbsolutePath) &&
               !cont.frontmatter.hidden
           );
           return structured;
@@ -239,7 +235,7 @@ exports.createResolvers = ({ createResolvers }) => {
   createResolvers(resolvers);
 };
 
-exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     plugins: [
       /**

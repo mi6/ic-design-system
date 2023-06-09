@@ -17,7 +17,9 @@ interface TemplateProps {
     pageType: string;
   };
   data: {
-    allStructuredNav: NavigationObject[];
+    allMdx: {
+      nodes: NavigationObject[];
+    };
     mdx: {
       body: string;
       fields: MdxFields;
@@ -29,9 +31,10 @@ interface TemplateProps {
 
 const Template: React.FC<TemplateProps> = ({
   pageContext: { pageType },
-  data: { mdx, allStructuredNav },
+  data: { mdx, allMdx },
 }) => {
   const { title, date, contribute } = mdx.frontmatter;
+  const allStructuredNav = allMdx.nodes;
   const tabContent = allStructuredNav.filter(
     (page) => page.frontmatter.title === title
   );
@@ -62,10 +65,9 @@ const Template: React.FC<TemplateProps> = ({
 export default Template;
 
 export const pageQuery = graphql`
-  query ($id: String!) {
+  query ($id: String!, $navSection: String, $returnBodies: Boolean!) {
     mdx(id: { eq: $id }) {
       body
-      fileAbsolutePath
       fields {
         slug
         navSection
@@ -73,11 +75,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subTitle
-        tags
-        categories
-        classification
         status
-        deciders
         contribute
         date
         tabs {
@@ -90,25 +88,26 @@ export const pageQuery = graphql`
         value
       }
     }
-    allStructuredNav {
-      id
-      fields {
-        navParent
-        navSection
-        slug
-      }
-      frontmatter {
-        navPriority
-        title
-        tabs {
-          title
-          path
+    allMdx(filter: { fields: { navSection: { eq: $navSection } } }) {
+      nodes {
+        id
+        fields {
+          navParent
+          navSection
+          slug
         }
-      }
-      body
-      headings {
-        depth
-        value
+        frontmatter {
+          navPriority
+          title
+          tabs {
+            path
+          }
+        }
+        body @include(if: $returnBodies)
+        headings {
+          depth
+          value
+        }
       }
     }
   }

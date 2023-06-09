@@ -163,7 +163,7 @@ export const withMultilineSnippet = [
     language: "Web component",
     snippet: `<ic-button onclick="displayToast()">Display multi-line toast</ic-button>
 <ic-toast-region>
-  <ic-toast id="toast-03" heading="Your coffee is ready" message="Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold. Dont delay! We wouldn't want you to lose out on your fantastic coffee now would we?"></ic-toast>
+  <ic-toast id="toast-03" heading="Your coffee is ready" message="Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold."></ic-toast>
 </ic-toast-region>
 <script>
   const toastRegion = document.querySelector("ic-toast-region");
@@ -187,7 +187,7 @@ return (
       <IcToast
         heading='Your coffee is ready'
         ref={toastEl}
-        message='Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold. Dont delay! We wouldnt want you to lose out on your fantastic coffee now would we?'
+        message='Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold.'
       />
     </IcToastRegion>
   </>
@@ -208,7 +208,7 @@ export const MultilineToast = () => {
         <IcToast
           heading="Your coffee is ready"
           ref={toastEl}
-          message="Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold. Dont delay! We wouldnt want you to lose out on your fantastic coffee now would we?"
+          message="Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold."
         />
       </IcToastRegion>
     </>
