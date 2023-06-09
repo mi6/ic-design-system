@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({
           onClick={() => onTabChange(tab)}
           slot="tabs"
           selected={activeTab === tab.title}
-          href="#"
+          href={tab.path}
         />
       ))}
     </ic-page-header>
