@@ -70,6 +70,8 @@ module.exports = {
         "react/no-unescaped-entities": "off",
         "react/jsx-no-undef": "off",
         "import/prefer-default-export": "off",
+        "no-alert": "off",
+        "no-console": "off",
       },
     },
     {
