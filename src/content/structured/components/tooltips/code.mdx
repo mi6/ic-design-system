@@ -26,20 +26,20 @@ import { IcTooltip, IcButton, IcChip } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-tooltip target="text-button" label="This is a description of the button" placement="top">
-  <ic-button id="text-button-0">Top</ic-button>
+    snippet: `<ic-tooltip target="test-button-0" label="This is a description of the button" placement="top">
+  <ic-button id="test-button-0" aria-describedby="ic-tooltip-test-button-0">Top</ic-button>
 </ic-tooltip>
-<ic-tooltip target="text-button" label="This is a description of the button" placement="bottom">
-  <ic-button id="text-button-1">Bottom</ic-button>
+<ic-tooltip target="test-button-1" label="This is a description of the button" placement="bottom">
+  <ic-button id="test-button-1" aria-describedby="ic-tooltip-test-button-1">Bottom</ic-button>
 </ic-tooltip>`,
   },
   {
     language: "React",
-    snippet: `<IcTooltip target="text-button" label="This is a description of the button" placement="top">
-  <IcButton id="text-button-0">Top</IcButton>
+    snippet: `<IcTooltip target="test-button-0" label="This is a description of the button" placement="top">
+  <IcButton id="test-button-0" aria-describedby="ic-tooltip-test-button-0">Top</IcButton>
 </IcTooltip>
-<IcTooltip target="text-button" label="This is a description of the button" placement="bottom">
-  <IcButton id="text-button-1">Bottom</IcButton>
+<IcTooltip target="test-button-1" label="This is a description of the button" placement="bottom">
+  <IcButton id="test-button-1" aria-describedby="ic-tooltip-test-button-1">Bottom</IcButton>
 </IcTooltip>`,
   },
 ];
@@ -48,19 +48,19 @@ export const snippets = [
   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
     <IcTooltip
       label="This is a description of the button"
-      target="test-button"
+      target="test-button-0"
       placement="top"
     >
-      <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+      <IcButton id="test-button-0" aria-describedby="ic-tooltip-test-button-0">
         Top
       </IcButton>
     </IcTooltip>
     <IcTooltip
       label="This is a description of the button"
-      target="test-button"
+      target="test-button-1"
       placement="bottom"
     >
-      <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+      <IcButton id="test-button-1" aria-describedby="ic-tooltip-test-button-1">
         Bottom
       </IcButton>
     </IcTooltip>
@@ -78,14 +78,14 @@ export const snippets = [
 export const snippetsLeft = [
   {
     language: "Web component",
-    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="left">
-  <ic-button id="text-button">Left</ic-button>
+    snippet: `<ic-tooltip target="test-button" label="This is a description" placement="left">
+  <ic-button id="test-button" aria-describedby="ic-tooltip-test-button">Left</ic-button>
 </ic-tooltip>`,
   },
   {
     language: "React",
-    snippet: `<IcTooltip target="text-button" label="This is a description" placement="left">
-  <IcButton id="text-button">Left</IcButton>
+    snippet: `<IcTooltip target="test-button" label="This is a description" placement="left">
+  <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">Left</IcButton>
 </IcTooltip>`,
   },
 ];
@@ -113,14 +113,14 @@ export const snippetsLeft = [
 export const snippetsRight = [
   {
     language: "Web component",
-    snippet: `<ic-tooltip target="text-button" label="This is a description" placement="right">  
-  <ic-button id="text-button">Right</ic-button>
+    snippet: `<ic-tooltip target="test-button" label="This is a description" placement="right">  
+  <ic-button id="test-button" aria-describedby="ic-tooltip-test-button">Right</ic-button>
 </ic-tooltip>`,
   },
   {
     language: "React",
-    snippet: `<IcTooltip target="text-button" label="This is a description" placement="right">
-  <IcButton id="text-button">Right</IcButton>
+    snippet: `<IcTooltip target="test-button" label="This is a description" placement="right">
+  <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">Right</IcButton>
 </IcTooltip>`,
   },
 ];
