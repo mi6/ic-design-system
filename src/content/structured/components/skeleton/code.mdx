@@ -19,7 +19,13 @@ tabs:
   ]
 ---
 
-import { IcSkeleton, IcTypography } from "@ukic/react";
+import {
+  IcSkeleton,
+  IcTypography,
+  IcCard,
+  IcButton,
+  SlottedSVG,
+} from "@ukic/react";
 
 ## Component demo
 
@@ -172,4 +178,349 @@ export const snippetsLight = [
     </IcTypography>
     <IcSkeleton light="true" />
   </div>
+</ComponentPreview>
+
+### Within IcCard component
+
+export const snippetsInCard = [
+  {
+    language: "Web component",
+    snippet: `
+    <div>
+      <div id="content-container"></div>
+      <br />
+      <ic-button variant="primary" id="reload">
+        <svg
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none"></path>
+          <path
+            d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+          ></path>
+        </svg>
+        Reload
+      </ic-button>
+    </div>
+    <script>
+     window.onload = function () {
+        document.getElementById("content-container").innerHTML = loading();
+      };
+   const loading = () => {
+        return (
+          <ic-card
+            heading="Card heading"
+            subheading="Card subheading"
+            message="This is an example of an interactive card with interaction controls."
+          >
+            <ic-skeleton
+              slot="icon"
+              variant="circle"
+              style="height: 32px; width: 32px;"
+            />
+            <ic-skeleton
+              slot="heading"
+              variant="rectangle"
+              style="height: 32px; width: 130px;"
+            />
+            <ic-skeleton
+              slot="subheading"
+              variant="text"
+              style="height: 18px;  width: 150px;"
+            />
+            <ic-skeleton
+              slot="message"
+              variant="rectangle"
+              style="height: 24px; width: 500px;"
+            />
+            <ic-skeleton
+              slot="interaction-controls"
+              variant="rectangle"
+              style="height: 40px; width: 110px;"
+            />
+            <ic-skeleton
+              slot="interaction-controls"
+              variant="rectangle"
+              style="height: 40px; width: 110px;"
+            />
+          </ic-card>
+        );
+      };
+const loaded = () => {
+        return (
+          <ic-card
+            heading="Card heading"
+            subheading="Card subheading"
+            message="This is an example of an interactive card with interaction controls."
+          >
+            <svg
+              slot="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+            </svg>
+            <div slot="interaction-controls" style="display: flex; gap: 16px;">
+              <ic-button variant="primary">Learn more</ic-button>
+              <ic-button variant="secondary">Hide</ic-button>
+            </div>
+          </ic-card>
+        );
+      };
+  const btn = document.querySelector("#reload");
+      btn.addEventListener("click", (ev) => {
+        setTimeout(() => {
+          document.getElementById("content-container").innerHTML = loaded();
+        }, 3000);
+      });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const loading = () => {
+  return (
+    <IcCard
+      heading="Card heading"
+      subheading="Card subheading"
+      message="This is an example of an interactive card with interaction controls."
+    >
+      <IcSkeleton
+        slot="icon"
+        variant="circle"
+        style={{
+          height: "32px",
+          width: "32px",
+        }}
+      />
+      <IcSkeleton
+        slot="heading"
+        variant="rectangle"
+        style={{
+          height: "32px",
+          width: "130px",
+        }}
+      />
+      <IcSkeleton
+        slot="subheading"
+        variant="text"
+        style={{
+          height: "18px",
+          width: "150px",
+        }}
+      />
+      <IcSkeleton
+        slot="message"
+        variant="rectangle"
+        style={{
+          height: "24px",
+          width: "500px",
+        }}
+      />
+      <IcSkeleton
+        slot="interaction-controls"
+        variant="rectangle"
+        style={{
+          height: "40px",
+          width: "110px",
+        }}
+      />
+      <IcSkeleton
+        slot="interaction-controls"
+        variant="rectangle"
+        style={{
+          height: "40px",
+          width: "110px",
+        }}
+      />
+    </IcCard>
+  );
+};
+const loaded = () => {
+  return (
+    <IcCard
+      heading="Card heading"
+      subheading="Card subheading"
+      message="This is an example of an interactive card with interaction controls."
+    >
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+      </SlottedSVG>
+      <div slot="interaction-controls" style={{ display: "flex", gap: "16px" }}>
+        <IcButton variant="primary">Learn more</IcButton>
+        <IcButton variant="secondary">Hide</IcButton>
+      </div>
+    </IcCard>
+  );
+};
+ const ContentFunction = () => {
+  const [content, setContent] = React.useState(loading);
+  const loadFunc = () => {
+    setContent(loading);
+    setTimeout(() => {
+      setContent(loaded);
+    }, 3000);
+  };
+  return (
+    <div>
+      {content}
+      <br />
+      <IcButton
+        variant="primary"
+        onClick={() => {
+          loadFunc();
+        }}
+      >
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none"></path>
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+        </SlottedSVG>
+        Refresh
+      </IcButton>
+    </div>
+  );
+};`,
+  },
+];
+
+export const loading = () => (
+  <IcCard
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of an interactive card with interaction controls."
+  >
+    <IcSkeleton
+      slot="icon"
+      variant="circle"
+      style={{
+        height: "32px",
+        width: "32px",
+      }}
+    />
+    <IcSkeleton
+      slot="heading"
+      variant="rectangle"
+      style={{
+        height: "32px",
+        width: "130px",
+      }}
+    />
+    <IcSkeleton
+      slot="subheading"
+      variant="text"
+      style={{
+        height: "18px",
+        width: "150px",
+      }}
+    />
+    <IcSkeleton
+      slot="message"
+      variant="rectangle"
+      style={{
+        height: "24px",
+        width: "500px",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "40px",
+        width: "110px",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "40px",
+        width: "110px",
+      }}
+    />
+  </IcCard>
+);
+
+export const loaded = () => (
+  <IcCard
+    heading="Card heading"
+    subheading="Card subheading"
+    message="This is an example of an interactive card with interaction controls."
+  >
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </SlottedSVG>
+    <div slot="interaction-controls" style={{ display: "flex", gap: "16px" }}>
+      <IcButton variant="primary">Learn more</IcButton>
+      <IcButton variant="secondary">Hide</IcButton>
+    </div>
+  </IcCard>
+);
+
+export const ContentFunction = () => {
+  const [content, setContent] = React.useState(loaded);
+  const loadFunc = () => {
+    setContent(loading);
+    setTimeout(() => {
+      setContent(loaded);
+    }, 3000);
+  };
+  return (
+    <div>
+      {content}
+      <br />
+      <IcButton
+        variant="primary"
+        onClick={() => {
+          loadFunc();
+        }}
+      >
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+        </SlottedSVG>
+        Refresh
+      </IcButton>
+    </div>
+  );
+};
+
+<ComponentPreview snippets={snippetsInCard}>
+  <ContentFunction />
 </ComponentPreview>
