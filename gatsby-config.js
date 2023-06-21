@@ -110,5 +110,17 @@ module.exports = {
         icon: pagesConfig.favIcon,
       },
     },
+    {
+      resolve: `gatsby-plugin-postbuild`,
+      options: {
+        processing: {
+          strategy: "parallel",
+          concurrency: 15,
+        },
+        reporting: true,
+        enabled: true,
+      },
+    },
+    `gatsby-plugin-no-sourcemaps`,
   ],
 };

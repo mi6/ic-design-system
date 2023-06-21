@@ -35,6 +35,48 @@ interface SubsectionNavProps {
   currentPage: string;
 }
 
+const getNavTree = (
+  navFromGraphQl: NavigationObject[],
+  section: string,
+  currentPage: string
+): TreeItem | undefined => {
+  navFromGraphQl.sort(
+    (a, b) =>
+      +(a.frontmatter.navPriority === null) -
+        +(b.frontmatter.navPriority === null) ||
+      +(a.frontmatter.navPriority! > b.frontmatter.navPriority!) ||
+      -(a.frontmatter.navPriority! < b.frontmatter.navPriority!)
+  );
+
+  const tree = arrayToTree(navFromGraphQl, {
+    id: "fields.slug",
+    parentId: "fields.navParent",
+    rootParentIds: { NONE: true },
+  });
+
+  const select = (
+    array: TreeItem[],
+    value: string,
+    object: { selected: boolean }
+  ): boolean => {
+    let found = false;
+    array.forEach((result) => {
+      if (
+        result.data.fields.slug === value ||
+        select(result.children || [], value, object)
+      ) {
+        found = true;
+        Object.assign(result, object);
+      }
+    });
+    return found;
+  };
+
+  select(tree, currentPage, { selected: true });
+
+  return tree.find((el) => el.data.fields.navSection === section);
+};
+
 const WrappedListItem: React.FC<WrappedListItemProps> = ({
   text,
   url = "",
@@ -170,12 +212,9 @@ const ListChildren: React.FC<ListChildenProps> = ({ item }) => {
 const SubsectionNav: React.FC<SubsectionNavProps> = ({
   allStructuredNav,
   section,
+  currentPage,
 }) => {
-  const currentNavSection = arrayToTree(allStructuredNav, {
-    id: "fields.slug",
-    parentId: "fields.navParent",
-    rootParentIds: { NONE: true },
-  })[0];
+  const currentNavSection = getNavTree(allStructuredNav, section, currentPage);
 
   const [responsiveNavOpen, setResponsiveNavOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
