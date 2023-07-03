@@ -26,6 +26,7 @@ const Search: React.FC = () => {
   const [hasMounted, setHasMounted] = React.useState(false);
   const { index, store } = queryData.localSearchAll;
   const [value, setValue] = useState<string>("");
+  const [loading, setLoading] = useState(false);
   const [options, setOptions] = useState<SearchResult[]>();
   const [idx, setIdx] = useState<Index<any>>();
 
@@ -58,6 +59,7 @@ const Search: React.FC = () => {
   const onIcInput = async (event: CustomEvent) => {
     const newValue = event.detail.value;
     if (idx && value !== newValue) {
+      setLoading(true);
       const rawResults = idx.search(newValue, {});
 
       // process results to handle components pages where 3 different pages (tabs) have the same title
@@ -96,6 +98,7 @@ const Search: React.FC = () => {
           return 0;
         });
 
+      setLoading(false);
       setOptions(mappedResults);
     }
 
@@ -124,6 +127,8 @@ const Search: React.FC = () => {
         onIcOptionSelect={onIcOptionSelect}
         onIcSubmitSearch={onIcSubmitSearch}
         value={value}
+        loading={loading}
+        timeout={1000}
         disableFilter
         fullWidth
         hintText="When autocomplete results are available, use the up and down arrows to choose and press enter to go to that page."
