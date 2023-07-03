@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { JsonDocsSlot } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import AttributeCards from "../../AttributeCards";
+import AttributeName from "../AttributeName";
 
 interface PropTableProps {
   slotData: JsonDocsSlot[];
@@ -25,7 +26,7 @@ const PropTable: React.FC<PropTableProps> = ({ slotData }) => {
   const data = useMemo(
     () =>
       slotData.map((slot) => ({
-        name: slot.name,
+        name: <AttributeName name={["Slot"]} value={[slot.name]} />,
         description: slot.docs,
       })),
     []

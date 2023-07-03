@@ -3,6 +3,7 @@ import { JsonDocsMethod } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
 import AttributeCards from "../../AttributeCards";
+import AttributeName from "../AttributeName";
 
 interface MethodTableProps {
   methodData: JsonDocsMethod[];
@@ -30,7 +31,7 @@ const EventTable: React.FC<MethodTableProps> = ({ methodData }) => {
   const data = useMemo(
     () =>
       methodData.map((method) => ({
-        name: method.name,
+        name: <AttributeName name={["Method"]} value={[method.name]} />,
         description: method.docs,
         signature: <CodeAttribute label={method.signature} />,
       })),
