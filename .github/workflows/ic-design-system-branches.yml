@@ -2,6 +2,9 @@ name: Branches
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "develop"
   pull_request:
     types: [opened, reopened, edited, synchronize]
 
@@ -32,7 +35,7 @@ jobs:
 
   ic-design-system-deploy:
     needs: [ic-design-system-static-analysis-tests]
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
     name: "Deploy"
     runs-on: ubuntu-latest
     steps:
@@ -42,9 +45,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
+
+      - name: Extract branch name
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
       - name: Build
         run: |
-          BRANCH=${{ github.ref_name }}
+          BRANCH=${{ steps.extract_branch.outputs.branch }}
           export ICDS_PREFIX=/branches/$BRANCH
           npm ci --legacy-peer-deps
           npm config set ic-design-system:icdsprefix $ICDS_PREFIX
@@ -58,5 +66,5 @@ jobs:
         with:
           repository-name: mi6/ic-design-system-githubpages
           folder: ./public
-          target-folder: ./branches/${{ github.ref_name }}
+          target-folder: ./branches/${{ steps.extract_branch.outputs.branch }}
           token: ${{ secrets.IC_DESIGN_SYSTEM_QA }}
