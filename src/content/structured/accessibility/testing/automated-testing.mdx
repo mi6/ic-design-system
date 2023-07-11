@@ -37,11 +37,49 @@ Test web apps using tools and extensions for that browser and test in multiple b
 
 You need to use at least two accessibility testing extensions because each one will highlight slightly different accessibility problems.
 
-The UK Government Digital Service (GDS) published an [accessibility tool audit](https://alphagov.github.io/accessibility-tool-audit/). The Design System recommends:
-
-- [axe DevTools](https://www.deque.com/axe/axe-for-web/).
-- [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview).
-- [WAVE](https://wave.webaim.org/extension/).
+<p>
+  The UK Government Digital Service (GDS) published an{" "}
+  <ic-link
+    target="_blank"
+    href="https://alphagov.github.io/accessibility-tool-audit/"
+    rel="noreferer noopener nofollow"
+  >
+    accessibility tool audit
+  </ic-link>
+  . The Design System recommends:
+</p>
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.deque.com/axe/axe-for-web/"
+      rel="noreferer noopener nofollow"
+    >
+      axe DevTools
+    </ic-link>
+    .
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://accessibilityinsights.io/docs/en/web/overview"
+      rel="noreferer noopener nofollow"
+    >
+      Accessibility Insights for Web
+    </ic-link>
+    .
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://wave.webaim.org/extension/"
+      rel="noreferer noopener nofollow"
+    >
+      WAVE
+    </ic-link>
+    .
+  </li>
+</ul>
 
 Most of these tools will highlight the WCAG or best practice accessibility problems on the page and tell you how to fix the issue.
 
@@ -55,7 +93,21 @@ Tools called 'linters' analyse source code for a range of potential bugs. Some l
 
 Linters detect issues very early and can prevent certain accessibility problems from ever being implemented.
 
-The [UI Kit](/components) uses the ESLint accessibility plugin [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y). Equivalent ESLint plugins are available for Vue and Angular.
+<p>
+  The{" "}
+  <ic-link target="" href="/components" rel="noreferer noopener nofollow">
+    UI Kit
+  </ic-link>{" "}
+  uses the ESLint accessibility plugin{" "}
+  <ic-link
+    target="_blank"
+    href="https://github.com/jsx-eslint/eslint-plugin-jsx-a11y"
+    rel="noreferer noopener nofollow"
+  >
+    eslint-plugin-jsx-a11y
+  </ic-link>
+  . Equivalent ESLint plugins are available for Vue and Angular.
+</p>
 
 ## Integration and unit testing
 
@@ -67,37 +119,151 @@ This is often done as part of a Continuous Integration and Continuous Delivery (
 
 End-to-end testing is where the entire app is tested from a user's perspective.
 
-[Selenium](https://www.selenium.dev/) and [Cypress](https://www.cypress.io/) are common tools for end-to-end testing. Both tools have axe-core wrappers: [axe-selenium](https://github.com/dequelabs/axe-selenium-java) and [cypress-axe](https://github.com/avanslaars/cypress-axe), respectively.
+<p>
+  <ic-link
+    target="_blank"
+    href="https://www.selenium.dev/"
+    rel="noreferer noopener nofollow"
+  >
+    Selenium
+  </ic-link>{" "}
+  and{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.cypress.io/"
+    rel="noreferer noopener nofollow"
+  >
+    Cypress
+  </ic-link>{" "}
+  are common tools for end-to-end testing. Both tools have axe-core wrappers:{" "}
+  <ic-link
+    target="_blank"
+    href="https://github.com/dequelabs/axe-selenium-java"
+    rel="noreferer noopener nofollow"
+  >
+    axe-selenium
+  </ic-link>{" "}
+  and{" "}
+  <ic-link
+    target="_blank"
+    href="https://github.com/avanslaars/cypress-axe"
+    rel="noreferer noopener nofollow"
+  >
+    cypress-axe
+  </ic-link>
+  , respectively.
+</p>
 
 Well configured end-to-end tests should also test multiple pages, dialogs and other temporary elements.
 
 ### axe-core
 
-[axe-core](https://github.com/dequelabs/axe-core) can test pages on your app in the same way other unit or integration tests would.
+<p>
+  <ic-link
+    target="_blank"
+    href="https://github.com/dequelabs/axe-core"
+    rel="noreferer noopener nofollow"
+  >
+    axe-core
+  </ic-link>{" "}
+  can test pages on your app in the same way other unit or integration tests
+  would.
+</p>
 
-Axe-core is used by the browser-based extensions [axe DevTools](https://www.deque.com/axe/axe-for-web/) and [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview).
+<p>
+  Axe-core is used by the browser-based extensions{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.deque.com/axe/axe-for-web/"
+    rel="noreferer noopener nofollow"
+  >
+    axe DevTools
+  </ic-link>{" "}
+  and{" "}
+  <ic-link
+    target="_blank"
+    href="https://accessibilityinsights.io/docs/en/web/overview"
+    rel="noreferer noopener nofollow"
+  >
+    Accessibility Insights for Web
+  </ic-link>
+  .
+</p>
 
 ### Pa11y
 
-[Pa11y](https://pa11y.org/) runs accessibility tests via the command line or Node.js for automating testing.
+<p>
+  <ic-link
+    target="_blank"
+    href="https://pa11y.org/"
+    rel="noreferer noopener nofollow"
+  >
+    Pa11y
+  </ic-link>{" "}
+  runs accessibility tests via the command line or Node.js for automating
+  testing.
+</p>
 
-It uses axe-core as well as [HTML CodeSniffer](http://squizlabs.github.io/HTML_CodeSniffer/) to look for potential accessibility issues.
+<p>
+  It uses axe-core as well as{" "}
+  <ic-link
+    target="_blank"
+    href="http://squizlabs.github.io/HTML_CodeSniffer/"
+    rel="noreferer noopener nofollow"
+  >
+    HTML CodeSniffer
+  </ic-link>{" "}
+  to look for potential accessibility issues.
+</p>
 
-[Pa11y CI](https://github.com/pa11y/pa11y-ci) is a CI-centric accessibility test runner, built using Pa11y.
+<p>
+  <ic-link
+    target="_blank"
+    href="https://github.com/pa11y/pa11y-ci"
+    rel="noreferer noopener nofollow"
+  >
+    Pa11y CI
+  </ic-link>{" "}
+  is a CI-centric accessibility test runner, built using Pa11y.
+</p>
 
 ### SonarQube
 
-Tools such as [SonarQube](https://www.sonarqube.org/), which provide code-quality assurance of your source code, also have a number of [accessibility rules](https://rules.sonarsource.com/html/tag/accessibility) in SonarHTML.
+<p>
+  Tools such as{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.sonarqube.org/"
+    rel="noreferer noopener nofollow"
+  >
+    SonarQube
+  </ic-link>{" "}
+  , which provide code-quality assurance of your source code, also have a number
+  of{" "}
+  <ic-link
+    target="_blank"
+    href="https://rules.sonarsource.com/html/tag/accessibility"
+    rel="noreferer noopener nofollow"
+  >
+    accessibility rules
+  </ic-link>{" "}
+  in SonarHTML.
+</p>
 
 SonarQube recommends using this alongside other [linting](#linters) such as ESLint<sup id="ref-1"><a href="#fn-1">1</a></sup>.
 
 ## References
 
-1. <a
-     href="https://community.sonarsource.com/t/how-to-scan-accessibility-issues-using-sonarqube/17307"
-     id="fn-1"
-   >
-     How to scan accessibility issues using SonarQube?
-   </a>
-   . Discussion.<i> SonarSource Community</i>. December 2019. Accessed 5 November
-   2022. <a href="#ref-1">Back to content</a>
+<p>
+  1.{" "}
+  <ic-link
+    target="_blank"
+    href="https://community.sonarsource.com/t/how-to-scan-accessibility-issues-using-sonarqube/17307"
+    rel="noreferer noopener nofollow"
+    id="fn-1"
+  >
+    How to scan accessibility issues using SonarQube?
+  </ic-link>{" "}
+  . Discussion.<i> SonarSource Community</i>. December 2019. Accessed 5 November
+  2022. <a href="#ref-1">Back to content</a>
+</p>

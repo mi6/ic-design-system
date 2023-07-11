@@ -22,7 +22,25 @@ A limitation with automated accessibility testing is that results often need som
 
 Checks in automated accessibility testing tools have a yes or no outcome. The biggest limitation of these automated tools is because they can't test for context.
 
-Deque's [Accessibility Developers' Guide](https://dequeuniversity.com/checklists/web/guide) shows what type of testing is needed to meet [WCAG 2.1 Level AA](/accessibility/requirement/wcag).
+<p>
+  Deque’s{" "}
+  <ic-link
+    target="_blank"
+    href="https://dequeuniversity.com/checklists/web/guide"
+    rel="noreferer noopener nofollow"
+  >
+    Accessibility Developers' Guide
+  </ic-link>{" "}
+  shows what type of testing is needed to meet{" "}
+  <ic-link
+    target=""
+    href="/accessibility/requirement/wcag"
+    rel="noreferer noopener nofollow"
+  >
+    WCAG 2.1 Level AA
+  </ic-link>
+  .
+</p>
 
 Of the 66 success criteria needed to meet WCAG AA, there are none that can be met fully with automated testing alone.
 
@@ -38,13 +56,34 @@ Manual accessibility testing, and other functional testing, is needed to make su
 
 For some success criteria such as those around colour contrast, automated testing tools are vital.
 
-[1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=141#contrast-minimum) requires the visual presentation of text and images of text to have a contrast ratio of at least 4.5:1 (with exceptions).
+<p>
+  <ic-link
+    target="_blank"
+    href="https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=141#contrast-minimum"
+    rel="noreferer noopener nofollow"
+  >
+    1.4.3 Contrast (Minimum)
+  </ic-link>{" "}
+  requires the visual presentation of text and images of text to have a contrast
+  ratio of at least 4.5:1 (with exceptions).
+</p>
 
 An automated testing tool can't test for context so can't tell you if the failing contrast ratio was one of the permitted exceptions, so is actually meeting the success criteria (a false positive).
 
 ## Example: alt text
 
-[Guideline 1.1 – Text Alternatives](https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives) requires you to provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.
+<p>
+  <ic-link
+    target="_blank"
+    href="https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives"
+    rel="noreferer noopener nofollow"
+  >
+    Guideline 1.1 – Text Alternatives
+  </ic-link>{" "}
+  requires you to provide text alternatives for any non-text content so that it
+  can be changed into other forms people need, such as large print, braille,
+  speech, symbols or simpler language.
+</p>
 
 Most automated accessibility checking tools will warn you if alternative text does not on images. However, automated tools can't tell whether the alternative text provided is useful and providing enough context of the image.
 

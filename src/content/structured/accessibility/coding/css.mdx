@@ -20,7 +20,19 @@ Don't use inline styles; keep CSS separate to the HTML. This can be a separate C
 
 Decoupling the styling will create more flexibility as the visual styling can be updated without touching the HTML.
 
-Don't use `!important` on a style declaration as this overrides any other declarations. You can read more information from Mozilla on [importance exception](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#The_!important_exception).
+<p>
+  Don't use <code style={{ backgroundColor: "#EEEFF0" }}>!important</code> on a
+  style declaration as this overrides any other declarations. You can read more
+  information from Mozilla on{" "}
+  <ic-link
+    target="_blank"
+    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#The_!important_exception"
+    rel="noreferer noopener nofollow"
+  >
+    importance exception
+  </ic-link>
+  .
+</p>
 
 ## When it goes wrong
 
@@ -30,6 +42,17 @@ Assistive technologies and users may change browser default styles to improve ac
 
 ## Best practice and WCAG
 
-Inline styles is mentioned in half of the HMTL best practice articles and will help meet [guideline 4.1 – compatible](https://www.w3.org/WAI/WCAG21/quickref/#compatible).
+<p>
+  Inline styles is mentioned in half of the HMTL best practice articles and will
+  help meet{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.w3.org/WAI/WCAG21/quickref/#compatible"
+    rel="noreferer noopener nofollow"
+  >
+    guideline 4.1 – compatible
+  </ic-link>
+  .
+</p>
 
 Whilst CSS is mentioned in a number of advisory techniques for a few success criteria, there are currently none relating specifically to ensuring CSS can be overridden by the user.
