@@ -22,14 +22,56 @@ This tells the browser how to render the HTML, as in this example:
 <!DOCTYPE html>
 ```
 
-This is the HTML5 doctype but W3C provides information on [choosing the right doctype](https://www.w3.org/wiki/Doctypes_and_markup_styles).
+<p>
+  This is the HTML5 doctype but W3C provides information on{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.w3.org/wiki/Doctypes_and_markup_styles"
+    rel="noreferer noopener nofollow"
+    id="fn-1"
+  >
+    choosing the right doctype
+  </ic-link>
+  .
+</p>
 
 ## When it goes wrong
 
-If no valid `<!DOCTYPE>` is declared, the browser switches to [quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode). This means it emulates non-standard behaviour of deprecated browsers.
+<p>
+  If no valid{" "}
+  <code style={{ backgroundColor: "#EEEFF0" }}>&lt;!DOCTYPE&gt;</code> is
+  declared, the browser switches to{" "}
+  <ic-link
+    target="_blank"
+    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode"
+    rel="noreferer noopener nofollow"
+  >
+    quirks mode
+  </ic-link>
+  . This means it emulates non-standard behaviour of deprecated browsers.
+</p>
 
 In this case, elements from the HTML5 specification may not parse or render properly. This can cause issues for people who use assistive technologies.
 
 ## Best practice and WCAG
 
-Declaring a doctype is mentioned in most HMTL best practice articles and will help meet WCAG success criteria [4.1.1 parsing](https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&showtechniques=411#parsing) in the sufficient technique [G134: validating web pages](https://www.w3.org/WAI/WCAG21/Techniques/general/G134.html).
+<p>
+  Declaring a doctype is mentioned in most HMTL best practice articles and will
+  help meet WCAG success criteria{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0&showtechniques=411#parsing"
+    rel="noreferer noopener nofollow"
+  >
+    4.1.1 parsing
+  </ic-link>{" "}
+  in the sufficient technique{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.w3.org/WAI/WCAG21/Techniques/general/G134.html"
+    rel="noreferer noopener nofollow"
+  >
+    G134: validating web pages
+  </ic-link>
+  .
+</p>
