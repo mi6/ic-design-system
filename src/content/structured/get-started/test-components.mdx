@@ -14,11 +14,34 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 ## How we've built the components
 
-Typically, components sit in the DOM, also known as the ['light DOM'](https://www.codecademy.com/resources/blog/what-is-dom/). DOM stands for 'Document Object Model'. The light DOM represents the structure of a webpage as a tree, where each DOM object is a node.
+<p>
+  Typically, components sit in the DOM, also known as the{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.codecademy.com/resources/blog/what-is-dom/"
+    rel="noreferer noopener nofollow"
+  >
+    'light DOM'
+  </ic-link>
+  . DOM stands for 'Document Object Model'. The light DOM represents the structure
+  of a webpage as a tree, where each DOM object is a node.
+</p>
 
 At the core, the UI Kit components are based off the web components specification which utilises the shadow DOM. This makes it possible to encapsulate each component’s markup structure, styling and functionality.
 
-According to [Mozilla](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), the "shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree — this shadow DOM tree starts with a shadow root, underneath which you can attach any element, in the same way as the normal DOM."
+<p>
+  According to{" "}
+  <ic-link
+    target="_blank"
+    href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"
+    rel="noreferer noopener nofollow"
+  >
+    Mozilla
+  </ic-link>
+  , the "shadow DOM allows hidden DOM trees to be attached to elements in the regular
+  DOM tree — this shadow DOM tree starts with a shadow root, underneath which you
+  can attach any element, in the same way as the normal DOM."
+</p>
 
 Therefore, testing components within the shadow DOM can be problematic because elements inside a shadow root technically do not exist in the main DOM, and can prevent testing frameworks from selecting internal elements.
 
