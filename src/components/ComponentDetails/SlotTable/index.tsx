@@ -62,7 +62,11 @@ const PropTable: React.FC<PropTableProps> = ({ slotData }) => {
       </ic-typography>
       <ic-typography apply-vertical-margins>
         <p>
-          <ic-link href="https://javascript.info/slots-composition">
+          <ic-link
+            href="https://javascript.info/slots-composition"
+            target="_blank"
+            rel="noreferer noopener nofollow"
+          >
             Read more about slots
           </ic-link>
           .
