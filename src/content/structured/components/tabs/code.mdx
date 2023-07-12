@@ -338,8 +338,7 @@ export const light = [
 export const compact = [
   {
     language: "Web component",
-    snippet: `<ic-tab-context>
-  <div style={{ width: "60%", margin: "auto" }}>
+    snippet: `<ic-tab-context class="tabs">
     <ic-tab-group label="Example tab group">
       <ic-tab>One</ic-tab>
       <ic-tab>Two</ic-tab>
@@ -352,13 +351,19 @@ export const compact = [
     <ic-tab-panel>Tab Three</ic-tab-panel>
     <ic-tab-panel>Tab Four</ic-tab-panel>
     <ic-tab-panel>Tab Five</ic-tab-panel>
-  </div>
+  <style>
+    .tabs ic-tab-group,
+    .tabs ic-tab-panel {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </ic-tab-context>`,
   },
   {
     language: "React",
-    snippet: `<IcTabContext>
-  <div style={{ width: "60%", margin: "auto" }}>
+    snippet: `<IcTabContext class="tabs">
     <IcTabGroup label="Example tab group">
       <IcTab>One</IcTab>
       <IcTab>Two</IcTab>
@@ -371,27 +376,32 @@ export const compact = [
     <IcTabPanel>Tab Three</IcTabPanel>
     <IcTabPanel>Tab Four</IcTabPanel>
     <IcTabPanel>Tab Five</IcTabPanel>
-  </div>
+  <style>
+    .tabs ic-tab-group,
+    .tabs ic-tab-panel {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </IcTabContext>`,
   },
 ];
 
 <ComponentPreview snippets={compact}>
-  <IcTabContext>
-    <div style={{ width: "60%", margin: "auto" }}>
-      <IcTabGroup label="Example tab group">
-        <IcTab>One</IcTab>
-        <IcTab>Two</IcTab>
-        <IcTab>Three</IcTab>
-        <IcTab>Four</IcTab>
-        <IcTab>Five</IcTab>
-      </IcTabGroup>
-      <IcTabPanel>Tab One</IcTabPanel>
-      <IcTabPanel>Tab Two</IcTabPanel>
-      <IcTabPanel>Tab Three</IcTabPanel>
-      <IcTabPanel>Tab Four</IcTabPanel>
-      <IcTabPanel>Tab Five</IcTabPanel>
-    </div>
+  <IcTabContext class="tabs">
+    <IcTabGroup label="Example tab group">
+      <IcTab>One</IcTab>
+      <IcTab>Two</IcTab>
+      <IcTab>Three</IcTab>
+      <IcTab>Four</IcTab>
+      <IcTab>Five</IcTab>
+    </IcTabGroup>
+    <IcTabPanel>Tab One</IcTabPanel>
+    <IcTabPanel>Tab Two</IcTabPanel>
+    <IcTabPanel>Tab Three</IcTabPanel>
+    <IcTabPanel>Tab Four</IcTabPanel>
+    <IcTabPanel>Tab Five</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
 

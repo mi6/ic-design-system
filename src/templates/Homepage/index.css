@@ -58,6 +58,13 @@
   vertical-align: top;
 }
 
+.tabs ic-tab-group,
+.tabs ic-tab-panel {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #get-started-link {
   --ic-hyperlink-contrast-visited: var(--ic-architectural-white);
 }
