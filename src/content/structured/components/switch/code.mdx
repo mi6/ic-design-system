@@ -28,8 +28,8 @@ export const snippetsDefault = [
     language: "Web component",
     snippet: `<ic-switch label="Unlimited coffee"></ic-switch>
 <script>
-  const switch = document.querySelector('ic-switch');
-  switch.addEventListener('icChange', (ev) => {
+  const switchEl = document.querySelector('ic-switch');
+  switchEl.addEventListener('icChange', (ev) => {
     console.log({
       checked: ev.detail.checked,
       value: ev.detail.value
