@@ -9,6 +9,7 @@ import { ICDSLogo } from "../../assets/svg";
 interface TopNavWrapperProps {
   appTitle: string;
   status: string;
+  shortTitle: string;
   version: string;
 }
 
@@ -20,8 +21,16 @@ const TopNavItem: React.FC<any> = ({ props, text }) => (
   </ic-navigation-item>
 );
 
-const TopNavWrapper: React.FC<TopNavWrapperProps> = ({ appTitle, version }) => (
-  <ic-top-navigation version={version} app-title={appTitle}>
+const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
+  appTitle,
+  version,
+  shortTitle,
+}) => (
+  <ic-top-navigation
+    version={version}
+    app-title={appTitle}
+    short-app-title={shortTitle}
+  >
     <GatsbyLink slot="app-title" to={withPrefix("/")}>
       {appTitle}
     </GatsbyLink>
