@@ -1,7 +1,7 @@
 ---
 path: "/components/top-nav/code"
 
-date: "2023-02-03"
+date: "2023-07-17"
 
 title: "Top navigation"
 
@@ -509,6 +509,86 @@ export const snippetsLeftAligned = [
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
       </svg>
     </IcNavigationButton>
+    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+    <IcNavigationItem
+      slot="navigation"
+      label="Navigation"
+      href="/"
+      selected="true"
+    />
+    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+  </IcTopNavigation>
+</ComponentPreview>
+
+### With short app title
+
+View on a small screen size to display the short title in place of the app title.
+
+export const snippetsShortTitle = [
+  {
+    language: "Web component",
+    snippet: `<ic-top-navigation app-title="Intelligence Community Design System" short-app-title="ICDS" status="alpha" version="v0.0.7">
+  <svg
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </svg>
+  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Navigation" href="/" selected="true"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
+</ic-top-navigation>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTopNavigation appTitle="Intelligence Community Design System" shortAppTitle="ICDS" status="alpha" version="v0.0.7">
+  <SlottedSVG
+    slot="app-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+  </SlottedSVG>
+  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+  <IcNavigationItem slot="navigation" label="Navigation" href="/" selected />
+  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+</IcTopNavigation>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsShortTitle}>
+  <IcTopNavigation
+    appTitle="Intelligence Community Design System"
+    status="alpha"
+    version="v0.0.7"
+    shortAppTitle="ICDS"
+  >
+    <svg
+      slot="app-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+    </svg>
     <IcNavigationItem slot="navigation" label="Navigation" href="/" />
     <IcNavigationItem slot="navigation" label="Navigation" href="/" />
     <IcNavigationItem slot="navigation" label="Navigation" href="/" />
