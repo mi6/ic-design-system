@@ -16,6 +16,7 @@ import { Heading, MdxFrontMatter, MdxFields } from "../../sharedTypes";
 const {
   STATUS,
   TITLE,
+  SHORT_TITLE,
   VERSION,
   FOOTER_PROPS,
   META_DESCRIPTION,
@@ -251,7 +252,12 @@ const Layout: React.FC<LayoutProps> = ({
           <ic-link href="#main" id="skip-content-link">
             Skip to main content
           </ic-link>
-          <TopNavWrapper appTitle={TITLE} status={STATUS} version={VERSION} />
+          <TopNavWrapper
+            appTitle={TITLE}
+            status={STATUS}
+            version={VERSION}
+            shortTitle={SHORT_TITLE}
+          />
           <main id="main" className="homepage-wrapper">
             {children}
             <ic-back-to-top target="main" />
