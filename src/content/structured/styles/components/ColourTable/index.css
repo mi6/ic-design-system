@@ -35,6 +35,25 @@
   flex-basis: 40%;
 }
 
+@media screen and (max-width: 576px) {
+  .circle {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .color-circle {
+    flex-basis: 0.5rem;
+  }
+  .color-row div {
+    padding-right: 0;
+  }
+  .color-token {
+    flex-basis: 30%;
+  }
+  .color-name {
+    flex-basis: 25%;
+  }
+}
+
 @media (forced-colors: active) {
   .circle {
     forced-color-adjust: none;
