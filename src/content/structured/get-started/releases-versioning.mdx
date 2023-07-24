@@ -1,7 +1,7 @@
 ---
 path: "/get-started/releases-versions"
 
-date: "2022-11-21"
+date: "2023-07-24"
 
 title: "Releases and versions"
 
@@ -12,7 +12,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 ## How we release and version
 
-This page provides details on how the `@ukic/` packages will be released and versioned when published for open source.
+This page provides details on how the `@ukic/` packages and website will be released and versioned.
 
 <p>
   Releases will be triggered once the `develop` branch pull request is merged
@@ -54,6 +54,24 @@ major.minor.patch;
 
 All packages will be published with identical version numbers.
 
-## Supporting versions
+## How we manage Beta components
 
-As the component library matures and new versions arrive, the ICDS team will actively maintain and support the previous version for up to 6 months. This is to allow the team to provide as much resource as possible on the current version. Any support for the legacy versions will only include security updates and bug fixes. No new features will be added.
+Beta components are an intermediate stage in our versioning system, between the initial "Alpha" testing phase (peer review) and the stable release. 
+
+When a component reaches the Beta stage, it has passed the preliminary phase but is not yet deemed fully stable. This allows us to release components for wider testing and gather feedback from our user community while further fine-tuning their functionalities and addressing potential issues.
+
+Beta components are integrated into our normal `@ukic/` packages and can be installed just like any other stable component. They are easily accessible to developers and users who wish to explore the latest developments and contribute to the improvements.
+
+It is important to be aware of a few points when working with Beta components:
+
+1. **Potential API changes:** As Beta components are still in development, there may be changes to their application programming interface (API) between major version updates. This could require manual adjustments in the codebase to accommodate the changes.
+2. **Presence of bugs:** Beta components may contain bugs or missing features.
+3. **Potential future major changes:** Since Beta components are actively evolving, there may be major behind-the-scenes changes planned for the future.
+
+We consider Beta components acceptable for use in production-ready applications, as long as customers are happy with the issues mentioned previously. 
+
+We regularly review the stability and reliability of Beta components. When the component meets the criteria it can be transitioned to a stable release.
+
+## Supporting previous versions
+
+As the component library matures and new versions arrive, the ICDS team will actively maintain and support the previous major version for up to 6 months. This is to allow the team to provide as much resource as possible on the current version. Any support for the legacy versions will only include security updates and bug fixes. No new features will be added.
