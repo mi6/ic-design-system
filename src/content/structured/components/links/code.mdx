@@ -1,7 +1,7 @@
 ---
 path: "/components/links/code"
 
-date: "2023-02-03"
+date: "2023-07-27"
 
 title: "Link"
 
@@ -51,16 +51,16 @@ export const snippets = [
 export const snippetsIcon = [
   {
     language: "Web component",
-    snippet: `<ic-link href="/" show-icon="true">This is a link</ic-link>`,
+    snippet: `<ic-link href="/" target="_blank">This is a link</ic-link>`,
   },
   {
     language: "React",
-    snippet: `<IcLink href="/" showIcon>This is a link</IcLink>`,
+    snippet: `<IcLink href="/" target="_blank">This is a link</IcLink>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsIcon}>
-  <IcLink href="/" showIcon>
+  <IcLink href="/" target="_blank">
     This is a link
   </IcLink>
 </ComponentPreview>
@@ -70,13 +70,13 @@ export const snippetsIcon = [
 export const snippetsLightDark = [
   {
     language: "Web component",
-    snippet: `<ic-link href="/" appearance="dark" show-icon="true">This is a link</ic-link>
-<ic-link href="/" appearance="light" show-icon="true">This is a link</ic-link>`,
+    snippet: `<ic-link href="/" appearance="dark" target="_blank">This is a link</ic-link>
+<ic-link href="/" appearance="light" target="_blank">This is a link</ic-link>`,
   },
   {
     language: "React",
-    snippet: `<IcLink href="/" appearance="dark" showIcon>This is a link</IcLink>
-<IcLink href="/" appearance="light" showIcon>This is a link</IcLink>`,
+    snippet: `<IcLink href="/" appearance="dark" target="_blank">This is a link</IcLink>
+<IcLink href="/" appearance="light" target="_blank">This is a link</IcLink>`,
   },
 ];
 
@@ -86,7 +86,7 @@ export const snippetsLightDark = [
       padding: "8px",
     }}
   >
-    <IcLink href="/" appearance="dark" showIcon>
+    <IcLink href="/" appearance="dark" target="_blank">
       This is a link
     </IcLink>
   </div>
@@ -96,7 +96,7 @@ export const snippetsLightDark = [
       padding: "8px",
     }}
   >
-    <IcLink href="/" appearance="light" showIcon>
+    <IcLink href="/" appearance="light" target="_blank">
       This is a link
     </IcLink>
   </div>
