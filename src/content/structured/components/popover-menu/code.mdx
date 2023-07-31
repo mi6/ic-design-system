@@ -1,7 +1,7 @@
 ---
 path: "/components/popover-menu/code"
 
-date: "2023-03-31"
+date: "2023-07-31"
 
 title: "Popover menu"
 
@@ -20,6 +20,7 @@ tabs:
 ---
 
 import { IcPopoverMenu, IcMenuItem, IcMenuGroup, IcButton } from "@ukic/react";
+import { useRef } from "react";
 
 ## Component demo
 
@@ -68,8 +69,9 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `const handleClick = () => {
-  document.querySelector("#popover-menu").open = true;
+    snippet: `const popoverEl = useRef(null);
+const handleClick = () => {
+  popoverEl.current.open = true;
 };
 return (
   <>
@@ -91,7 +93,7 @@ return (
         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
       </SlottedSVG>
     </IcButton>
-    <IcPopoverMenu anchor="button-1" aria-label="popover" id="popover-menu">
+    <IcPopoverMenu anchor="button-1" aria-label="popover" ref={popoverEl}>
       <IcMenuItem label="Copy code" />
       <IcMenuItem label="Paste code" />
       <IcMenuItem label="Actions" submenuTriggerFor="actions" />
@@ -107,8 +109,9 @@ return (
 ];
 
 export const DemoPopover = () => {
+  const popoverEl = useRef(null);
   const handleClick = () => {
-    document.querySelector("#popover-menu").open = true;
+    popoverEl.current.open = true;
   };
   return (
     <>
@@ -130,7 +133,7 @@ export const DemoPopover = () => {
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-1" aria-label="popover" id="popover-menu">
+      <IcPopoverMenu anchor="button-1" aria-label="popover" ref={popoverEl}>
         <IcMenuItem label="Copy code" />
         <IcMenuItem label="Paste code" />
         <IcMenuItem label="Actions" submenuTriggerFor="actions" />
@@ -224,8 +227,9 @@ export const snippetsButtons = [
   },
   {
     language: "React",
-    snippet: `const handleClick = () => {
-  document.querySelector("#popover-menu-2").open = true;
+    snippet: `const popoverEl = useRef(null);
+const handleClick = () => {
+  popoverEl.current.open = true;
 };
 return (
   <>
@@ -247,7 +251,7 @@ return (
         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
       </SlottedSVG>
     </IcButton>
-    <IcPopoverMenu anchor="button-2" aria-label="popover" id="popover-menu-2">
+    <IcPopoverMenu anchor="button-2" aria-label="popover" ref={popoverEl}>
       <IcMenuItem label="Copy" disabled />
       <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />
       <IcMenuItem label="Edit" description="This is used to edit the original." />
@@ -275,8 +279,9 @@ return (
 ];
 
 export const ButtonsPopover = () => {
+  const popoverEl = useRef(null);
   const handleClick = () => {
-    document.querySelector("#popover-menu-2").open = true;
+    popoverEl.current.open = true;
   };
   return (
     <>
@@ -298,7 +303,7 @@ export const ButtonsPopover = () => {
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-2" aria-label="popover" id="popover-menu-2">
+      <IcPopoverMenu anchor="button-2" aria-label="popover" ref={popoverEl}>
         <IcMenuItem label="Copy" disabled />
         <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />
         <IcMenuItem
@@ -379,8 +384,9 @@ export const snippetsGroups = [
   },
   {
     language: "React",
-    snippet: `const handleClick = () => {
-  document.querySelector("#popover-menu-3").open = true;
+    snippet: `const popoverEl = useRef(null);
+const handleClick = () => {
+  popoverEl.current.open = true;
 };
 return (
   <>
@@ -402,7 +408,7 @@ return (
         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
       </SlottedSVG>
     </IcButton>
-    <IcPopoverMenu anchor="button-3" aria-label="popover" id="popover-menu-3">
+    <IcPopoverMenu anchor="button-3" aria-label="popover" ref={popoverEl}>
       <IcMenuGroup label="Edit options">
         <IcMenuItem label="Copy" disabled />
         <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />
@@ -418,8 +424,9 @@ return (
 ];
 
 export const GroupsPopover = () => {
+  const popoverEl = useRef(null);
   const handleClick = () => {
-    document.querySelector("#popover-menu-3").open = true;
+    popoverEl.current.open = true;
   };
   return (
     <>
@@ -441,7 +448,7 @@ export const GroupsPopover = () => {
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-3" aria-label="popover" id="popover-menu-3">
+      <IcPopoverMenu anchor="button-3" aria-label="popover" ref={popoverEl}>
         <IcMenuGroup label="Edit options">
           <IcMenuItem label="Copy" disabled />
           <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />

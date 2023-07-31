@@ -1,7 +1,7 @@
 ---
 path: "/components/tooltips/code"
 
-date: "2023-02-03"
+date: "2023-07-31"
 
 title: "Tooltip"
 
@@ -20,6 +20,7 @@ tabs:
 ---
 
 import { IcTooltip, IcButton, IcChip } from "@ukic/react";
+import { useRef } from "react";
 
 ## Component demo
 
@@ -217,14 +218,15 @@ export const snippetsProgrammatic = [
   {
     language: "React",
     snippet: `let display = true;
+const tooltipEl = useRef(null);
 const handleDisplay = () => {
-  document.querySelector("#targetTooltip").displayTooltip(display, display);
+  tooltipEl.current.displayTooltip(display, display);
   display = !display;
 }
 return (
   <>
     <IcButton onClick={handleDisplay}>Show tooltip</IcButton>
-    <IcTooltip id="targetTooltip" label="This is a description" target="test-button">
+    <IcTooltip ref={tooltipEl} label="This is a description" target="test-button">
       <IcButton aria-describedby="ic-tooltip-test-button" id="test-button">
         Target
       </IcButton>
@@ -236,15 +238,16 @@ return (
 
 export const TriggerExample = () => {
   let display = true;
+  const tooltipEl = useRef(null);
   const handleDisplay = () => {
-    document.querySelector("#targetTooltip").displayTooltip(display, display);
+    tooltipEl.current.displayTooltip(display, display);
     display = !display;
   };
   return (
     <>
       <IcButton onClick={handleDisplay}>Show tooltip</IcButton>
       <IcTooltip
-        id="targetTooltip"
+        ref={tooltipEl}
         target="test-button"
         label="This is a description"
       >
