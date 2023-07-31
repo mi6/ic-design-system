@@ -238,6 +238,9 @@ const Layout: React.FC<LayoutProps> = ({
           content={process.env.GATSBY_GOOGLE_SEARCH_TOKEN}
         />
       </Helmet>
+      {!GATSBY_GA_TRACKING_ID && (
+        <ic-classification-banner classification="official" />
+      )}
       <CookieConsentContext.Provider value={value}>
         <ClientOnly>
           {title !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
