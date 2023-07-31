@@ -3,7 +3,7 @@ path: "/components/dialog"
 
 navPriority: 10
 
-date: "2023-06-07"
+date: "2023-07-31"
 
 title: "Dialog"
 
@@ -22,6 +22,7 @@ tabs:
 ---
 
 import { IcDialog, IcButton, IcTypography } from "@ukic/react";
+import { useRef } from "react";
 import dialogFig1 from "./images/fig-1-use-action-buttons-to-provide-user-with-choice.png";
 import dialogFig2 from "./images/fig-2-use-inputs-to-get-important-information-from-users.png";
 import dialogFig3 from "./images/fig-3-use-dialogs-to-show-additional-info.png";
@@ -39,9 +40,9 @@ Dialogs work best when used for short tasks or to alert the user to information 
 ## Component demo
 
 export const DialogExample = () => {
+  const dialogEl = useRef(null);
   const showDialog = () => {
-    const dialog = document.querySelector("#example-dialog");
-    dialog.showDialog();
+    dialogEl.current.showDialog();
   };
   return (
     <>
@@ -49,7 +50,7 @@ export const DialogExample = () => {
       <IcDialog
         heading="This dialog has two buttons"
         label="Two buttons"
-        id="example-dialog"
+        ref={dialogEl}
         buttonProps={[
           { label: "Cancel", onclick: "this.cancelDialog()" },
           {
