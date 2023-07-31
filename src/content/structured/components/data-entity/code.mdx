@@ -1,7 +1,7 @@
 ---
 path: "/components/data-entity/code"
 
-date: "2023-02-06"
+date: "2023-07-31"
 
 title: "Data entity"
 
@@ -424,13 +424,13 @@ export const editableExample = [
   confirmBtn.addEventListener('click', () => {
     textFields.forEach((textField) => {
       textField.setAttribute('readonly', '');
-    };
+    });
   });
   const editBtn = document.querySelector('#edit-button');
   editBtn.addEventListener('click', () => {
     textFields.forEach((textField) => {
       textField.removeAttribute('readonly');
-    };
+    });
   });
 </script>`,
   },
@@ -507,7 +507,7 @@ export const editableExample = [
     const textFields = document.querySelectorAll('ic-text-field');
     textFields.forEach((textField) => {
       textField.removeAttribute('readonly');
-    }
+    })
   }}
   variant="secondary"
   style={{ marginTop: "var(--ic-space-lg)" }}
