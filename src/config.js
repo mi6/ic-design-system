@@ -25,7 +25,7 @@ module.exports = {
   FOOTER_PROPS: {
     footerLinks: [
       {
-        link: "/icds",
+        link: "/icds/accessibility-statement",
         text: "Accessibility Statement",
         key: "a11y-statement",
       },
