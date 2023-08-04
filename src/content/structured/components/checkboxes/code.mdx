@@ -1,7 +1,7 @@
 ---
 path: "/components/checkboxes/code"
 
-date: "2023-02-06"
+date: "2023-08-07"
 
 title: "Checkbox"
 
@@ -132,6 +132,74 @@ export const snippetsHelperText = [
   <IcCheckboxGroup label="This is a label" name="1" helperText="Helper text">
     <IcCheckbox value="valueName1" label="Unselected / Default" />
     <IcCheckbox value="valueName2" label="Selected / Default" checked />
+  </IcCheckboxGroup>
+</ComponentPreview>
+
+### Sizes
+
+export const snippetsSizes = [
+  {
+    language: "Web component",
+    snippet: `<ic-checkbox-group label="This is a small checkbox group" name="1" size="small">
+  <ic-checkbox value="valueName1" label="Unselected / Small"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Selected / Small" checked="true"></ic-checkbox>
+</ic-checkbox-group>
+<ic-checkbox-group label="This is a default checkbox group" name="2">
+  <ic-checkbox value="valueName1" label="Unselected / Default"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Selected / Default" checked="true"></ic-checkbox>
+</ic-checkbox-group>
+<ic-checkbox-group label="This is a large checkbox group" name="3" size="large">
+  <ic-checkbox value="valueName1" label="Unselected / Large"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Selected / Large" checked="true"></ic-checkbox>
+</ic-checkbox-group>
+<ic-checkbox-group label="Checkboxes define size in this checkbox group" name="4">
+  <ic-checkbox value="valueName1" label="Small" size="Small"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Default"></ic-checkbox>
+  <ic-checkbox value="valueName2" label="Large" size="large"></ic-checkbox>
+</ic-checkbox-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcCheckboxGroup label="This is a small checkbox group" name="1" size="small">
+  <IcCheckbox value="valueName1" label="Unselected / Small" />
+  <IcCheckbox value="valueName2" label="Selected / Small" checked />
+</IcCheckboxGroup>
+<IcCheckboxGroup label="This is a default checkbox group" name="2">
+  <IcCheckbox value="valueName1" label="Unselected / Default" />
+  <IcCheckbox value="valueName2" label="Selected / Default" checked />
+</IcCheckboxGroup>
+<IcCheckboxGroup label="This is a large checkbox group" name="3" size="large">
+  <IcCheckbox value="valueName1" label="Unselected / Large" />
+  <IcCheckbox value="valueName2" label="Selected / Large" checked />
+</IcCheckboxGroup>
+<IcCheckboxGroup label="Checkboxes define size in this checkbox group" name="4">
+  <IcCheckbox value="valueName1" label="Small" size="small" />
+  <IcCheckbox value="valueName2" label="Default" />
+  <IcCheckbox value="valueName3" label="Large" size="large" />
+</IcCheckboxGroup>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSizes} style={{ gap: "24px" }}>
+  <IcCheckboxGroup label="This is a small checkbox group" name="1" size="small">
+    <IcCheckbox value="valueName1" label="Unselected / Small" />
+    <IcCheckbox value="valueName2" label="Selected / Small" checked />
+  </IcCheckboxGroup>
+  <IcCheckboxGroup label="This is a default checkbox group" name="2">
+    <IcCheckbox value="valueName1" label="Unselected / Default" />
+    <IcCheckbox value="valueName2" label="Selected / Default" checked />
+  </IcCheckboxGroup>
+  <IcCheckboxGroup label="This is a large checkbox group" name="3" size="large">
+    <IcCheckbox value="valueName1" label="Unselected / Large" />
+    <IcCheckbox value="valueName2" label="Selected / Large" checked />
+  </IcCheckboxGroup>
+  <IcCheckboxGroup
+    label="Checkboxes define size in this checkbox group"
+    name="4"
+  >
+    <IcCheckbox value="valueName1" label="Small" size="small" />
+    <IcCheckbox value="valueName2" label="Default" />
+    <IcCheckbox value="valueName3" label="Large" size="large" />
   </IcCheckboxGroup>
 </ComponentPreview>
 
