@@ -1,0 +1,231 @@
+---
+path: "/components/accordion"
+
+navPriority: 1
+
+date: "2023-08-14"
+
+title: "Accordion"
+
+status: "BETA"
+
+subTitle: "Accordions are expandable and collapsible sections which are used to show and hide additional content."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/accordion"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/accordion" },
+    { title: "Code", path: "/components/accordion/code" },
+    { title: "Accessibility", path: "/components/accordion/accessibility" },
+  ]
+---
+
+import { IcAccordion, IcAccordionGroup, SlottedSVG } from "@ukic/react";
+import accordionFig1 from "./images/fig-1-add-accordion-titles-to-help-organise-content.png";
+import accordionFig2a from "./images/fig-2a-use-see-all-button-to-open-all-accordions-within-an-accordion-group-at-once.png";
+import accordionFig2b from "./images/fig-2b-use-hide-all-button-to-close-all-accordions-within-an-accordion-group-at-once.png";
+import accordionFig3 from "./images/fig-3-use-the-slotted-content-of-an-accordion-to-house-other-content.png";
+import accordionFig4 from "./images/fig-4-do-not-nest-an-accordion-or-accordion-group-within-an-already-nested-accordion-one-level-of-nesting-is-the-maximum.png";
+import accordionFig5a from "./images/fig-5a-use-an-accordion-group-with-a-title-for-clearer-organisation.png";
+import accordionFig5b from "./images/fig-5b-consider-using-an-accordion-group-instead-of-nested-accordions-for-clearer-organisation.png";
+import accordionFig6 from "./images/fig-6-always-make-sure-your-title-is-relevant-to-your-accordion-group-content.png";
+import accordionFig7 from "./images/fig-7-do-not-use-scroll-bars-within-accordions.png";
+
+## Introduction
+
+An accordion is an expandable and collapsible section which is used to show and hide content. Accordions are used to shorten the length of a page by hiding information.
+
+Group accordions to hide more content on the page and to structure content into different sections.
+
+An accordion group can be nested within another accordion to create one layer of nested content. Do not nest more accordion groups within an already nested accordion group. Only use one level of nesting.
+
+<ComponentPreview style={{flexDirection: "column"}}>
+  <IcAccordionGroup groupTitle="Title of the Accordion Group">
+    <IcAccordion heading="Accordion 1">
+      <SlottedSVG
+        slot="icon"
+        width="20"
+        height="1em"
+        viewBox="0 0 512 512"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+      </SlottedSVG>
+      <IcTypography variant="body">
+        This is an example of the main body text
+      </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Accordion 2">
+      <SlottedSVG
+        slot="icon"
+        width="20"
+        height="1em"
+        viewBox="0 0 512 512"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+      </SlottedSVG>
+      <IcAccordion heading="Nested Accordion 1">
+        <IcTypography variant="body">
+          This is an example of the nested accordion body text
+        </IcTypography>
+      </IcAccordion>
+      <IcAccordion heading="Nested Accordion 2">
+        <IcTypography variant="body">
+          This is an example of the nested accordion body text
+        </IcTypography>
+      </IcAccordion>
+    </IcAccordion>
+  </IcAccordionGroup>
+</ComponentPreview>
+
+## When to use
+
+Use accordions to organise information, shorten the page length and reduce the scroll time when the page is initially loaded.
+
+Use accordion groups to categorise accordions into sections with a title.
+
+For example, use an accordion group for a frequently asked questions (FAQs) page.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig1}
+    imageAlt="Two collapsed accordion groups. One titled ‘Bari-star member benefits’ and one titled ‘FAQs’, both containing three accordions."
+    state="good"
+    caption="Add accordion titles to help organise content."
+  />
+</DoubleDoDontCaution>
+
+Use the accordion title section to title the group of accordions and contain the ‘see all’ or ‘hide all’ button. Don’t display a title to achieve a title section with only the ‘see all’ or ‘hide all’ button.
+
+Use ‘see all’ and ‘hide all’ functionality to show or hide all information from all accordions at once.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig2a}
+    imageAlt="A collapsed accordion group titled ‘Bari-star member benefits’ with a ‘see all’ button."
+    state="good"
+    caption="Use the ‘see all’ button to open all accordions within an accordion group at once. "
+  />
+</DoubleDoDontCaution>
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig2b}
+    imageAlt="An expanded accordion group titled ‘Bari-star member benefits’ with a ‘hide all’ button."
+    state="good"
+    caption="Use the ‘hide all’ button to close all accordions within an accordion group at once."
+  />
+</DoubleDoDontCaution>
+
+Add custom content to an accordion using the slotted section to create different uses for your accordions.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig3}
+    imageAlt="An accordion titled ‘Order details’ including a three-row data entity for a coffee order in the content area."
+    state="good"
+    caption="Use the slotted content of an accordion to house other content."
+  />
+</DoubleDoDontCaution>
+
+Set an accordion to open one at a time when the information in the accordions is unrelated.
+
+Set an accordion to open all at once when all information can be viewed at the same time and is related.
+
+## When not to use
+
+Do not use accordions when all information is critical to the people using the page.
+
+Avoid overusing accordions to hide all information on a page. Accordions may be ignored if used too frequently.
+
+Do not place accordion groups within nested accordion groups, one layer of nesting is the maximum.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig4}
+    imageAlt="An accordion group titled ‘Roasting hot’ containing an accordion group with another nested accordion group within it."
+    state="bad"
+    caption="Do not nest an accordion or accordion group within an already nested accordion. One level of nesting is the maximum. "
+  />
+</DoubleDoDontCaution>
+
+Do not use nested accordions as a replacement for an accordion group. Consider using multiple accordion groups on the page instead.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig5a}
+    imageAlt="An accordion group titled Coffee with three collapsed accordions"
+    state="good"
+    caption="Use an accordion group with a title for clearer organisation."
+  />
+  <DoDontCaution
+    imageSrc={accordionFig5b}
+    imageAlt="A parent accordion with the heading Coffee with a nested accordion group containing three accordions."
+    state="caution"
+    caption="Avoid nesting an accordion group to add a title. Instead, use an accordion group title."
+  />
+</DoubleDoDontCaution>
+
+## Colour
+
+Use the dark or light appearance to achieve colour contrast compliance when using accordions on different coloured backgrounds.
+
+## Sizing
+
+Use an accordion's size property to change its vertical size and achieve compact or spacious layouts.
+
+Set the width of the accordion depending on the screen size or the container that is being used.
+
+## Layout and placement
+
+Use accordions in main page content. Accordions can also be placed within other components to organise content.
+
+## Content
+
+### Heading and title
+
+When using a title for an accordion group, make sure it is relevant to the information provided by each accordion header.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig6}
+    imageAlt="An accordion group containing three accordions with headings of different types of tea, with a title of ‘Our coffee menu’"
+    state="bad"
+    caption="Always make sure your title is relevant to your accordion group content."
+  />
+</DoubleDoDontCaution>
+
+Always give an accordion a suitable header that is relevant to the information that it contains.
+
+Relevant titles and headings allow people to skip over the information if it is not relevant.
+
+### Accordion content
+
+Use text content by default or use the accordion slot to provide custom content or layouts.
+
+Do not make accordion content scrollable as this will interfere with the page scroll.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={accordionFig7}
+    imageAlt="An accordion group with three accordions where the first accordion is expanded, containing a scroll bar."
+    state="bad"
+    caption="Do not use scroll bars within accordions."
+  />
+</DoubleDoDontCaution>
+
+### Icons
+
+Use an icon on an accordion header to provide additional meaning or to aid in recognition.
+
+Make sure that the icon is understandable and relevant to the accordion header and content.
+
+Always provide alternative descriptions for icons if they aren't decorative. Only use icons if they are necessary, they are removed as default.
+
+## Accessibility considerations
+
+Make sure to change an accordion’s semantic heading style to achieve a logical heading structure on the page.
