@@ -1,0 +1,36 @@
+---
+path: "/components/empty-state/accessibility"
+
+date: "2023-08-08"
+
+title: "Empty state"
+
+status: "BETA"
+
+subTitle: "Use the empty state component when there is no content to display. It provides a consistent way of communicating to people what to do next."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/empty-state"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/empty-state" },
+    { title: "Code", path: "/components/empty-state/code" },
+    { title: "Accessibility", path: "/components/empty-state/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+Providing an empty state is good practice as it informs people that nothing is present when something could be. This allows actions to be provided so that people can continue their tasks and understand that something might be missing.
+
+The empty state component’s text elements provide a way of clearly indicating what the problem is, why it happened, and what action is best to perform next.
+
+Interactive elements within the empty state follow a logical tabbing order.
+
+## For Assistive Technology
+
+Empty state components should be announced by a screen reader if they appear due to another user action on a page. They may constitute a status change on the page so should be announced by a screen region after the change has occurred.
+
+## Testing
+
+We’ve tested this component against WCAG 2.1 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

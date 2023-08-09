@@ -1,0 +1,424 @@
+---
+path: "/components/empty-state/code"
+
+date: "2023-08-09"
+
+title: "Empty state"
+
+status: "BETA"
+
+subTitle: "Use the empty state component when there is no content to display. It provides a consistent way of communicating to people what to do next."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/empty-state"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/empty-state" },
+    { title: "Code", path: "/components/empty-state/code" },
+    { title: "Accessibility", path: "/components/empty-state/accessibility" },
+  ]
+---
+
+import { IcEmptyState, IcButton, IcLink } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again.">
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again." 
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcEmptyState
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+  />
+</ComponentPreview>
+
+## Empty state details
+
+<ComponentDetails component="ic-empty-state" />
+
+## Variants
+
+### Actions slot
+
+export const actionsSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+    <ic-button slot="actions">Try again</ic-button>
+    <ic-link slot="actions" href="/">Customer support</ic-link>
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+    <IcButton slot="actions">Try again</IcButton>
+    <IcLink slot="actions" href="/">Customer support</IcLink>
+</IcEmptyState>`,
+  },
+];
+
+<ComponentPreview snippets={actionsSnippets}>
+  <IcEmptyState
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+  >
+    <IcButton slot="actions">Try again</IcButton>
+    <IcLink slot="actions" href="/">
+      Customer support
+    </IcLink>
+  </IcEmptyState>
+</ComponentPreview>
+
+### Image slot
+
+export const imageSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+    <svg
+      slot="image"
+      viewBox="0 0 1600 1600"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+    <SlottedSVG
+      slot="image"
+      viewBox="0 0 1600 1600"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </SlottedSVG>
+</IcEmptyState>`,
+  },
+];
+
+<ComponentPreview snippets={imageSnippets}>
+  <IcEmptyState
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+  >
+    <svg slot="image" viewBox="0 0 1600 1600">
+      <rect fill="#ff7700" width="1600" height="1600" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+  </IcEmptyState>
+</ComponentPreview>
+
+### Image size
+
+export const imageLargeSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    image-size="large" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+    <svg
+      slot="image"
+      viewBox="0 0 1600 1600"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    imageSize="large" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+    <SlottedSVG
+      slot="image"
+      viewBox="0 0 1600 1600"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </SlottedSVG>
+</IcEmptyState>`,
+  },
+];
+
+<ComponentPreview snippets={imageLargeSnippets}>
+  <IcEmptyState
+    imageSize="large"
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+  >
+    <svg slot="image" viewBox="0 0 1600 1600">
+      <rect fill="#ff7700" width="1600" height="1600" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+  </IcEmptyState>
+</ComponentPreview>
+
+### Icon in the image slot
+
+export const iconSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+  <svg
+    slot="image"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="#D07932"
+  >
+    <title id="warning-title">Warning</title>
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+  </svg>
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+>
+  <SlottedSVG
+    slot="image"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="#D07932"
+  >
+    <title id="warning-title">Warning</title>
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+  </SlottedSVG>
+</IcEmptyState>`,
+  },
+];
+
+<ComponentPreview snippets={iconSnippets}>
+  <IcEmptyState
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+  >
+    <svg
+      slot="image"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="#D07932"
+    >
+      <title id="warning-title">Warning</title>
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+    </svg>
+  </IcEmptyState>
+</ComponentPreview>
+
+### Right aligned
+
+export const rightSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    aligned="right" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again.">
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    aligned="right" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again." 
+/>`,
+  },
+];
+
+<ComponentPreview snippets={rightSnippets}>
+  <IcEmptyState
+    aligned="right"
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+  />
+</ComponentPreview>
+
+### Center aligned
+
+export const centreSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    aligned="center" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again.">
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    aligned="center" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again." 
+/>`,
+  },
+];
+
+<ComponentPreview snippets={centreSnippets}>
+  <IcEmptyState
+    aligned="center"
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+  />
+</ComponentPreview>
+
+### Max lines
+
+export const maxLinesSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-empty-state 
+    body-max-lines="1" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you.">
+</ic-empty-state>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcEmptyState 
+    bodyMaxLines="1" 
+    heading="There's nothing here" 
+    subheading="We couldn't find anything to display here, but we’ll keep looking." 
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you." 
+/>`,
+  },
+];
+
+<ComponentPreview snippets={maxLinesSnippets}>
+  <IcEmptyState
+    bodyMaxLines="1"
+    heading="There's nothing here"
+    subheading="We couldn't find anything to display here, but we’ll keep looking."
+    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you."
+  />
+</ComponentPreview>
