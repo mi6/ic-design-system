@@ -13,6 +13,7 @@ interface Color {
   border?: boolean;
   token?: string;
   name: string;
+  deprecated?: boolean;
 }
 
 interface ColorConfig {
@@ -33,9 +34,9 @@ interface ColorTableProps {
 }
 
 const PaletteRow: React.FC<PaletteRowProps> = ({ color }) => {
-  const { gradient, hex, hexDisplay, name, border, token } = color;
+  const { gradient, hex, hexDisplay, name, border, token, deprecated } = color;
   return (
-    <div className="color-row">
+    <div className={clsx("color-row", deprecated && "deprecation")}>
       <div className="color-circle">
         <div
           style={
@@ -53,6 +54,11 @@ const PaletteRow: React.FC<PaletteRowProps> = ({ color }) => {
       <div className="color-name">{name}</div>
       <div className="color-token color-class">
         <ic-typography variant="body">{token}</ic-typography>
+        {deprecated && (
+          <div className="deprecation-tag">
+            <ic-status-tag label="Deprecated" status="warning" small />
+          </div>
+        )}
       </div>
       <div className="color-class">
         <ic-typography variant="body">
