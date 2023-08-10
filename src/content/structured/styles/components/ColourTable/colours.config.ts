@@ -146,8 +146,8 @@ export const ColoursStatus = [
     colors: [
       { name: "Success", token: "--ic-status-success", hex: "#00703C" },
       {
-        name: "Success background",
-        token: "--ic-status-success-background",
+        name: "Success light",
+        token: "--ic-status-success-light",
         hex: "#E8FEF3",
       },
       {
@@ -155,16 +155,15 @@ export const ColoursStatus = [
         token: "--ic-status-success-contrast",
         hex: "#1BB56C",
       },
-      { name: "Warning", token: "--ic-status-warning", hex: "#FFC107" },
-      { name: "Warning mid", token: "--ic-status-warning-mid", hex: "#D07932" },
       {
-        name: "Warning dark",
-        token: "--ic-status-warning-dark",
-        hex: "#7A4C3C",
+        name: "Success dark",
+        token: "--ic-status-success-dark",
+        hex: "#0E3020",
       },
+      { name: "Warning", token: "--ic-status-warning", hex: "#D07932" },
       {
-        name: "Warning background",
-        token: "--ic-status-warning-background",
+        name: "Warning light",
+        token: "--ic-status-warning-light",
         hex: "#FFFBD8",
       },
       {
@@ -172,10 +171,15 @@ export const ColoursStatus = [
         token: "--ic-status-warning-contrast",
         hex: "#FFC107",
       },
+      {
+        name: "Warning dark",
+        token: "--ic-status-warning-dark",
+        hex: "#7A4C3C",
+      },
       { name: "Error", token: "--ic-status-error", hex: "#D4351C" },
       {
-        name: "Error background",
-        token: "--ic-status-error-background",
+        name: "Error light",
+        token: "--ic-status-error-light",
         hex: "#FFE4E3",
       },
       {
@@ -183,16 +187,95 @@ export const ColoursStatus = [
         token: "--ic-status-error-contrast",
         hex: "#F15B4E",
       },
-      { name: "Information", token: "--ic-status-info", hex: "#3170C2" },
       {
-        name: "Information background",
-        token: "--ic-status-info-background",
+        name: "Error dark",
+        token: "--ic-status-error-dark",
+        hex: "610A05",
+      },
+      { name: "Information", token: "--ic-status-info", hex: "#124DB3" },
+      {
+        name: "Information light",
+        token: "--ic-status-info-light",
         hex: "#E1F0FC",
       },
       {
         name: "Information contrast",
         token: "--ic-status-info-contrast",
         hex: "#488FE3",
+      },
+      {
+        name: "Information dark",
+        token: "--ic-status-info-dark",
+        hex: "#041144",
+      },
+      { name: "Anomalous", token: "--ic-status-anomalous", hex: "#7C25C2" },
+      {
+        name: "Anomalous light",
+        token: "--ic-status-anomalous-light",
+        hex: "#EFDBFF",
+      },
+      {
+        name: "Anomalous contrast",
+        token: "--ic-status-anomalous-contrast",
+        hex: "#B764FB",
+      },
+      {
+        name: "Anomalous dark",
+        token: "--ic-status-anomalous-dark",
+        hex: "#350F54",
+      },
+      { name: "Unknown", token: "--ic-status-unknown", hex: "#6C7580" },
+      {
+        name: "Unknown light",
+        token: "--ic-status-unknown-light",
+        hex: "#F4F4F5",
+      },
+      {
+        name: "Unknown contrast",
+        token: "--ic-status-unknown-contrast",
+        hex: "#A7ACB3",
+      },
+      {
+        name: "Unknown dark",
+        token: "--ic-status-unknown-dark",
+        hex: "#2C2F34",
+      },
+    ],
+  },
+];
+
+export const ColoursDeprecatedStatus = [
+  {
+    colors: [
+      {
+        name: "Success background",
+        token: "--ic-status-success-background",
+        hex: "#E8FEF3",
+        deprecated: true,
+      },
+      {
+        name: "Warning mid",
+        token: "--ic-status-warning-mid",
+        hex: "#D07932",
+        deprecated: true,
+      },
+      {
+        name: "Warning background",
+        token: "--ic-status-warning-background",
+        hex: "#FFFBD8",
+        deprecated: true,
+      },
+      {
+        name: "Error background",
+        token: "--ic-status-error-background",
+        hex: "#FFE4E3",
+        deprecated: true,
+      },
+      {
+        name: "Information background",
+        token: "--ic-status-info-background",
+        hex: "#E1F0FC",
+        deprecated: true,
       },
     ],
   },

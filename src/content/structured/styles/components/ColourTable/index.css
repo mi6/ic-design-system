@@ -19,6 +19,18 @@
   align-items: center;
 }
 
+.deprecation {
+  align-items: inherit;
+}
+
+.deprecation .color-name {
+  margin-top: 0.625rem;
+}
+
+.deprecation .color-class {
+  margin-top: 0.425rem;
+}
+
 .color-row div {
   padding: 0 0.375rem;
 }
@@ -35,20 +47,28 @@
   flex-basis: 40%;
 }
 
+.deprecation-tag {
+  margin-top: var(--ic-space-xxs);
+}
+
 @media screen and (max-width: 576px) {
   .circle {
     width: 1.5rem;
     height: 1.5rem;
   }
+
   .color-circle {
     flex-basis: 0.5rem;
   }
+
   .color-row div {
     padding-right: 0;
   }
+
   .color-token {
     flex-basis: 30%;
   }
+
   .color-name {
     flex-basis: 25%;
   }
