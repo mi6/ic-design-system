@@ -239,7 +239,7 @@ export default TextField;
 ```jsx
 // TextField.test.tsx
 import { render, waitFor } from '@testing-library/react';
-import { screen } from 'shadow-dom-testing-library';
+import { screen, findByShadowLabelText } from 'shadow-dom-testing-library';
 import TextField from '../components/TextField';
 import userEvent from '@testing-library/user-event';
 
