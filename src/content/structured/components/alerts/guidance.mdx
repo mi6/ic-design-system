@@ -3,7 +3,7 @@ path: "/components/alert"
 
 navPriority: 1
 
-date: "2023-02-03"
+date: "2023-08-22"
 
 title: "Alert"
 
@@ -25,6 +25,7 @@ import { IcAlert } from "@ukic/react";
 import alertFig1 from "./images/fig-1-do-use-alerts-inline-with-other-associated-page-content.png";
 import alertFig2 from "./images/fig-2-do-use-alerts-with-an-optional-action-and-dismiss-button.png";
 import alertFig3 from "./images/fig-3-dont-use-alerts-overlaid-on-page-content.png";
+import alertFig4 from "./images/fig-4-dont-use-an-alert-variant-unrelated-to-its-message.png";
 import alertFig5 from "./images/fig-5-avoid-using-lengthy-messages-within-an-alert.png";
 
 ## Introduction
@@ -92,6 +93,13 @@ Don’t overlay alerts on page content. Alerts are placed inline with the rest o
 />
 
 Use the [form validation pattern](/patterns/form-validation) for errors on a text field or in a form.
+
+<DoDontCaution
+  imageSrc={alertFig4}
+  imageAlt="A form titled ‘The perfect blend’ that contains 2 skeletons. A success alert shows an error message that says ‘There was an error on this page. Please fix any errors highlighted before continuing.’"
+  state="bad"
+  caption="Do not use an alert variant that is not related to its message."
+/>
 
 ## Content
 
