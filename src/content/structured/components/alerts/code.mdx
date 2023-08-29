@@ -142,18 +142,18 @@ export const snippetsWithAction = [
 export const snippetsTitleAbove = [
   {
     language: "Web component",
-    snippet: `<ic-alert heading="Title above" message="This alert has the title at the top of the alert." title-above="true"></ic-alert>`,
+    snippet: `<ic-alert heading="Title displayed above the message" message="This alert has the title at the top of the alert and the message below it." title-above="true"></ic-alert>`,
   },
   {
     language: "React",
-    snippet: `<IcAlert heading="Title above" message="This alert has the title at the top of the alert." titleAbove />`,
+    snippet: `<IcAlert heading="Title displayed above the message" message="This alert has the title at the top of the alert and the message below it." titleAbove />`,
   },
 ];
 
 <ComponentPreview snippets={snippetsTitleAbove}>
   <IcAlert
-    heading="Title above"
-    message="This alert has the title at the top of the alert."
+    heading="Title displayed above the message"
+    message="This alert has the title at the top of the alert and the message below it."
     titleAbove
   />
 </ComponentPreview>
