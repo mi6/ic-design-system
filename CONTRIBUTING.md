@@ -116,6 +116,16 @@ These tools are ran as part of the pre-commit and can also be ran separately.
 
 Resolve linting and formatting issues via `npm run lint:fix` and `npm run prettier:fix`.
 
+### Git user configuration
+
+As a data protection measure, this repository enforces the use of GitHub user email address in your commit. Please follow these steps:
+
+1. Visit your [GitHub email settings](https://github.com/settings/emails)
+   - Optionally check the settings "Keep my email addresses private" and "Block command line pushes that expose my email"
+2. On this page, under **Primary Email Address** you'll see a user email that follows the pattern `<username>@users.noreply.github.com`.
+3. Inside your developer environment, open a command line in the directory of the ic-ui-kit repository
+4. Enter the command `git config user.email <EMAIL>` where you replace `<EMAIL>` with the address from step 3. This will be applied to commits made in this repository.
+
 ### Git commit
 
 For automated versioning, we use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
