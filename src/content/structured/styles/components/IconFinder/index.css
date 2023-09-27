@@ -37,7 +37,7 @@ ic-typography[data-class="heading"] {
   margin: var(--ic-space-sm);
 }
 
-.icon {
+span.icon {
   flex: 1;
   flex-basis: 28%;
   flex-shrink: 0;
