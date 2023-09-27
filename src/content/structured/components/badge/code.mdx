@@ -1,0 +1,690 @@
+---
+path: "/components/badge/code"
+
+date: "2023-02-03"
+
+title: "Badge"
+
+status: "BETA"
+
+subTitle: "Badges are attached to other components to provide an indication that something new is available, or that something has changed."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/badge"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/badge" },
+    { title: "Code", path: "/components/badge/code" },
+    { title: "Accessibility", path: "/components/badge/accessibility" },
+  ]
+---
+
+import { IcButton, IcBadge, SlottedSVG, IcChip, IcTab, IcTabPanel, IcTabContext, IcTabGroup } from "@ukic/react";
+import { useRef } from "react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge       
+    text-label="1000"
+    max-number="99"
+    slot="badge"
+    variant="info"
+  >
+  </ic-badge>
+  Default
+</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge
+    text-label="1000"
+    max-number="99"
+    slot="badge"
+    variant="info"
+  />
+  Default
+</IcButton>`,
+  },
+];
+
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge
+      text-label="1000"
+      max-number="99"
+      slot="badge"
+      variant="info"
+    />
+    Default
+  </IcButton>
+</ComponentPreview>
+
+## Badge details
+
+<ComponentDetails component="ic-badge" />
+
+## Variants
+
+### Sizes
+
+export const snippetsSizes = [
+  {
+    language: "Web component",
+    snippet: `<ic-button size="small" variant="secondary" style="margin-right:16px">
+  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
+  Small
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
+  Default
+</ic-button>
+<ic-button size="large" variant="secondary" style="margin-right:16px">
+  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
+  Large
+</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="secondary">
+  <IcBadge size="small" text-label="1" slot="badge" variant="info"/>
+  Small
+</IcButton>
+<IcButton variant="secondary">
+  <IcBadge text-label="1" slot="badge" variant="info"/>
+  Default
+</IcButton>
+<IcButton variant="secondary">
+  <IcBadge size="large" text-label="1" slot="badge" variant="info"/>
+  Large
+</IcButton>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSizes}>
+  <IcButton size="small" variant="secondary" style={{marginRight:"16px"}} >
+    <IcBadge text-label="1" slot="badge" variant="info" size="small"/>
+    Small
+  </IcButton>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge text-label="1" slot="badge" variant="info" size="default"/>
+    Default
+  </IcButton>
+  <IcButton size="large" variant="secondary">
+    <IcBadge text-label="1" slot="badge" variant="info" size="large"/>
+    Large
+  </IcButton>
+</ComponentPreview>
+
+### Status 
+
+export const snippetsStatus = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge slot="badge" variant="neutral"></ic-badge>
+  Neutral
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge slot="badge" variant="info"></ic-badge>
+  Information
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge slot="badge" variant="error"></ic-badge>
+  Error
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge slot="badge" variant="success"></ic-badge>
+  Success
+</ic-button>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge slot="badge" variant="neutral"/>
+  Neutral
+</IcButton>
+<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge slot="badge" variant="info"/>
+  Information
+</IcButton>
+<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge slot="badge" variant="error"/>
+  Error
+</IcButton>
+<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge slot="badge" variant="success"/>
+  Success
+</IcButton>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsStatus}>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge slot="badge" variant="neutral"/>
+    Neutral
+  </IcButton>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge slot="badge" variant="info"/>
+    Information
+  </IcButton>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge slot="badge" variant="error"/>
+    Error
+  </IcButton>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge slot="badge" variant="success"/>
+    Success
+  </IcButton>
+</ComponentPreview>
+
+### With information
+
+export const snippetsInformation = [
+  {
+    language: "Web component",
+    snippet: `<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge slot="badge" variant="info"></ic-badge>
+  Dot
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
+  Number
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+<ic-badge type="icon" slot="badge" variant="info"></ic-badge>
+  <svg
+    slot="badge-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path
+      d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+    />
+  </svg> 
+  Icon
+</ic-button>`,
+  },
+  {
+    language: "React",
+      snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge slot="badge" variant="info"/>
+  Dot
+</IcButton>
+<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge text-label="1" slot="badge" variant="info"/>
+  Number
+</IcButton>
+<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge type="icon" slot="badge" variant="info">
+    <svg
+      slot="badge-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path
+        d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+      />
+    </svg>
+  </IcBadge>
+  Success
+</IcButton>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsInformation}>
+  <div style={{padding:"16px"}}>
+    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+      <IcBadge text-label="1" slot="badge" variant="info" />
+      Number
+    </IcButton>
+  </div>
+  <div style={{padding:"16px"}}>
+    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+      <IcBadge type="dot" slot="badge" variant="info" />
+      Dot
+    </IcButton>
+  </div>
+  <div style={{padding:"16px"}}>
+    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+      <IcBadge type="icon" slot="badge" variant="info">
+        <SlottedSVG 
+          width="24px"
+          height="24px"
+          slot="badge-icon" 
+          viewBox="0 0 24 24"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path
+            d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+          />
+        </SlottedSVG>
+      </IcBadge>
+      Icon
+    </IcButton>
+  </div>
+</ComponentPreview>
+
+### Max number
+
+
+export const snippetsMaxNumber = [
+  {
+    language: "Web component",
+    snippet: `<div style="padding:16px;">
+  <ic-button variant="secondary" style="margin-right:16px">
+    <ic-badge 
+      text-label="1000" 
+      max-number="99" 
+      slot="badge" 
+      variant="info"
+    >
+    </ic-badge>
+    Default
+  </ic-button>
+</div>`,
+  },
+  {
+    language: "React",
+    snippet: `<div style={{padding:"16px"}}>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge
+      text-label="1000"
+      max-number="99"
+      slot="badge"
+      variant="info"
+    />
+    Default
+  </IcButton>
+</div>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsMaxNumber}>
+  <div style={{padding:"16px"}}>
+    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+      <IcBadge
+        text-label="1000"
+        max-number="99"
+        slot="badge"
+        variant="info"
+       />
+      Default
+    </IcButton>
+  </div>
+</ComponentPreview>
+
+## Position near
+
+export const snippetsNear = [
+  {
+    language: "Web component",
+    snippet: `<div style="padding:16px;">
+  <ic-chip size="small" label="Small" style="margin-right:16px;">
+    <ic-badge
+      text-label="1"
+      slot="badge"
+      position="near"
+      size="small"
+      variant="info"
+    >
+    </ic-badge>
+  </ic-chip>
+  <ic-chip label="Default" style="margin-right:16px;">
+    <ic-badge 
+      text-label="1" 
+      slot="badge" 
+      position="near" 
+      variant="info"
+    >
+    </ic-badge>
+  </ic-chip>
+  <ic-chip size="large" label="Large">
+    <ic-badge
+      text-label="1"
+      slot="badge"
+      position="near"
+      size="large"
+      variant="info"
+    >
+    </ic-badge>
+  </ic-chip>
+</div>`,
+  },
+  {
+    language: "React",
+    snippet: `<div style={{padding:"16px"}}>
+  <IcChip size="small" label="Small" style={{marginRight:"16px"}}>
+    <IcBadge
+      text-label="1"
+      slot="badge"
+      position="near"
+      size="small"
+      variant="info"
+    />
+  </IcChip>
+  <IcChip label="Default" style={{marginRight:"16px"}}>
+    <IcBadge
+      text-label="1"
+      slot="badge"
+      position="near"
+      variant="info"
+    />
+  </IcChip>
+  <IcChip size="large" label="Large">
+    <IcBadge
+      text-label="1"
+      slot="badge"
+      position="near"
+      size="large"
+      variant="info"
+    />
+  </IcChip>
+</div>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsNear}>
+  <div  style={{ display: "grid" }} >
+    <div style={{padding:"16px"}}>
+      <IcChip size="small" label="Small" style={{marginRight:"16px"}}>
+        <IcBadge
+          text-label="1"
+          slot="badge"
+          position="near"
+          size="small"
+          variant="info"
+         />
+      </IcChip>
+      <IcChip label="Default" style={{marginRight:"16px"}}>
+        <IcBadge
+          text-label="1"
+          slot="badge"
+          position="near"
+          variant="info"
+         />
+      </IcChip>
+      <IcChip size="large" label="Large">
+        <IcBadge
+          text-label="1"
+          slot="badge"
+          position="near"
+          size="large"
+          variant="info"
+         />
+      </IcChip>
+    </div>
+  </div>
+</ComponentPreview>
+
+### Position inline
+
+export const snippetsInline = [
+  {
+    language: "Web component",
+    snippet: `<ic-tab-context>
+  <ic-tab-group label="Example tab group">
+    <ic-tab> Small
+      <ic-badge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        size="small"
+        accessible-label="1 notification found"
+        variant="info"
+      > 
+      </ic-badge>
+    </ic-tab>
+    <ic-tab>
+    Default
+      <ic-badge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        accessible-label="1 notification found"
+        variant="info"
+      >
+      </ic-badge>
+    </ic-tab>
+    <ic-tab>
+    Large
+      <ic-badge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        size="large"
+        accessible-label="1 notification found"
+        variant="info"
+      >
+      </ic-badge>
+    </ic-tab>
+  </ic-tab-group>
+  <ic-tab-panel>Small badge</ic-tab-panel>
+  <ic-tab-panel>Default badge</ic-tab-panel>
+  <ic-tab-panel>Large badge</ic-tab-panel>
+</ic-tab-context>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTabContext>
+  <IcTabGroup label="Example tab group">
+    <IcTab>
+    Small
+      <IcBadge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        size="small"
+        accessibleLabel="1 notification found"
+        variant="info"
+      />
+    </IcTab>
+    <IcTab>
+    Default
+      <IcBadge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        accessibleLabel="1 notification found"
+        variant="info"
+      />
+    </IcTab>
+    <IcTab>
+    Large
+      <IcBadge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        size="large"
+        accessibleLabel="1 notification found"
+        variant="info"
+      />
+    </IcTab>
+  </IcTabGroup>
+  <IcTabPanel>Small badge</IcTabPanel>
+  <IcTabPanel>Default badge</IcTabPanel>
+  <IcTabPanel>Large badge</IcTabPanel>
+</IcTabContext>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsInline}>
+  <IcTabContext>
+  <IcTabGroup label="Example tab group">
+    <IcTab>
+    Small
+      <IcBadge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        size="small"
+        accessibleLabel="1 notification found"
+        variant="info"
+      />
+    </IcTab>
+    <IcTab>
+      Default
+      <IcBadge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        accessibleLabel="1 notification found"
+        variant="info"
+      />
+    </IcTab>
+    <IcTab>
+    Large
+      <IcBadge
+        text-label="1"
+        slot="badge"
+        position="inline"
+        size="large"
+        accessibleLabel="1 notification found"
+        variant="info"
+      />
+    </IcTab>   
+  </IcTabGroup>
+    <IcTabPanel>Small badge</IcTabPanel>
+    <IcTabPanel>Default badge</IcTabPanel>
+    <IcTabPanel>Large badge</IcTabPanel>
+  </IcTabContext>
+</ComponentPreview>
+
+### Hide and show badge
+
+export const snippetsHideBadge = [
+  {
+    language: "Web component",
+    snippet: `<script>
+  function showHideBadge() {
+    badge = document.querySelector("ic-badge");
+    if (badge.classList.contains("show")) {
+      badge.hideBadge();
+    } else {
+      badge.showBadge();
+    }
+  }
+</script>
+<div style="padding:16px;">
+  <ic-button variant="secondary" onclick="showHideBadge()">
+    <ic-badge text-label="1" slot="badge"></ic-badge>
+    Show/Hidebadge
+  </ic-button>
+</div> `,
+  },
+  {
+    language: "React",
+    snippet: `export const ToggleBadge = () => {
+  const badgeEl = useRef(null);
+  const showHideBadge = () => {
+  const badge = badgeEl.current;
+   if(badge.classList.contains("show")) {
+      badge.hideBadge();
+   } else {
+    badge.showBadge();
+   }
+  };
+    return (
+      <div style={{padding:"16px"}}>
+        <IcButton variant="secondary" onclick={showHideBadge}>
+          <IcBadge variant="info" text-label="1" slot="badge" ref={badgeEl}/>
+          Hide/Show badge
+        </IcButton>
+      </div> 
+    );
+  };`,
+  },
+];
+
+export const ToggleBadge = () => {
+  const badgeEl = useRef(null);
+  const showHideBadge = () => {
+  const badge = badgeEl.current;
+   if(badge.classList.contains("show")) {
+      badge.hideBadge();
+   } else {
+    badge.showBadge();
+   }
+  };
+    return (
+      <div style={{padding:"16px"}}>
+        <IcButton variant="secondary" onclick={showHideBadge}>
+          <IcBadge variant="info" text-label="1" slot="badge" ref={badgeEl}/>
+          Hide/Show badge
+        </IcButton>
+      </div> 
+    );
+};
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "center",
+  }}
+  snippets={snippetsHideBadge}
+>
+  <ToggleBadge />
+</ComponentPreview>
+
+### Accessible label
+
+export const snippetsAccessibleLabel = [
+  {
+    language: "Web component",
+    snippet: `<div style="padding:16px;">
+  <ic-button variant="secondary" style="margin-right:16px"> 
+    <ic-badge
+      text-label="1"
+      slot="badge"
+      size="large"
+      variant="info"
+      accessible-label="1 notification found"
+    >
+    </ic-badge>
+    Default
+  </ic-button>
+</div>`,
+  },
+  {
+    language: "React",
+    snippet: `<div style={{padding:"16px"}}>
+  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    <IcBadge
+      text-label="1"
+      slot="badge"
+      size="large"
+      variant="info"
+      accessible-label="1 notification found"
+    />
+    Default
+  </IcButton>
+</div>`,
+  },
+];
+
+
+<ComponentPreview snippets={snippetsAccessibleLabel}>
+  <div style={{padding:"16px"}}>
+    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+      <IcBadge
+        text-label="1"
+        slot="badge"
+        size="large"
+        accessible-label="1 notification found"
+        variant="info"
+      />
+      Default
+    </IcButton>
+  </div> 
+</ComponentPreview>
