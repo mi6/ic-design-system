@@ -52,7 +52,7 @@ const CodeSnippet: React.FC<{ code: string }> = ({ code }) => (
           onClick={() => navigator.clipboard.writeText(code)}
         >
           Copy code
-          <SlottedSVG path={mdiContentCopy} slot="icon" />
+          <SlottedSVG path={mdiContentCopy} slot="left-icon" />
         </ic-button>
       </ic-tooltip>
     </div>
