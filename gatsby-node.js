@@ -32,7 +32,6 @@ const createPosts = ({ createPage, createRedirect, edges }) => {
       component: path.resolve(pagesConfig.defaultTemplateComponent),
       context: {
         id: node.id,
-        returnBodies: node.fields.navSection === "components",
         navSection: node.fields.navSection,
         pageType: templateType,
       },
