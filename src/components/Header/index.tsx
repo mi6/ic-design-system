@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useCallback } from "react";
 
 import "./index.css";
 import { IcStatusTagStatuses } from "@ukic/web-components";
-import { NavigationObject } from "../../sharedTypes";
+import { Link as GatsbyLink } from "gatsby";
 
 interface HeaderProps {
   heading: string;
   subheading: string;
   tabs: Tab[];
   adornment: string;
-  tabContent: NavigationObject[];
-  currentPage: string;
-  setPageContent: React.Dispatch<NavigationObject>;
+  location: string;
 }
 
 interface Tab {
@@ -24,21 +22,39 @@ const Header: React.FC<HeaderProps> = ({
   subheading,
   tabs,
   adornment,
-  tabContent,
-  currentPage,
-  setPageContent,
+  location,
 }) => {
-  const [activeTab, setActiveTab] = useState(
-    tabs?.find((tab) => tab.path === currentPage)?.title
-  );
+  const locationRef = useCallback(
+    (node: HTMLElement | null) => {
+      const storedLocation = sessionStorage.getItem("location");
+      if (!storedLocation) sessionStorage.setItem("location", location);
+      else if (storedLocation !== location) {
+        let pathNameEls: string[] = [];
+        const getRelativePathName = (pathName: string) => {
+          pathNameEls = pathName.split("/");
+          return pathNameEls.length > 3
+            ? pathNameEls.slice(0, 3).join("/")
+            : pathName;
+        };
 
-  const onTabChange = ({ title, path }: Tab) => {
-    const newPage = tabContent.find((page) => page.fields.slug === path);
-    if (newPage) {
-      setPageContent(newPage);
-      setActiveTab(title);
-    }
-  };
+        if (
+          getRelativePathName(storedLocation) === getRelativePathName(location)
+        ) {
+          let tabId = pathNameEls[pathNameEls.length - 1];
+          if (!(tabId === "code" || tabId === "accessibility"))
+            tabId = "guidance";
+          setTimeout(() => {
+            (
+              Array.from(node!.children).find((el) => el.id === tabId)!
+                .firstElementChild as HTMLElement
+            ).focus();
+          }, 100);
+        }
+        sessionStorage.setItem("location", location);
+      }
+    },
+    [location]
+  );
 
   let status: IcStatusTagStatuses = "neutral";
 
@@ -60,6 +76,7 @@ const Header: React.FC<HeaderProps> = ({
       aligned="center"
       data-class="page-header"
       sticky-desktop-only
+      ref={locationRef}
     >
       {adornment && (
         <ic-status-tag
@@ -70,12 +87,18 @@ const Header: React.FC<HeaderProps> = ({
       )}
       {tabs?.map((tab) => (
         <ic-navigation-item
-          label={tab.title}
-          onClick={() => onTabChange(tab)}
+          key={tab.title}
+          id={tab.title.toLowerCase()}
           slot="tabs"
-          selected={activeTab === tab.title}
-          href={tab.path}
-        />
+        >
+          <GatsbyLink
+            slot="navigation-item"
+            to={tab.path}
+            activeClassName="active"
+          >
+            {tab.title}
+          </GatsbyLink>
+        </ic-navigation-item>
       ))}
     </ic-page-header>
   );
