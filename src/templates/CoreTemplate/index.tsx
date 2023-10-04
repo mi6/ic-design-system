@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import clsx from "clsx";
 
@@ -20,16 +20,19 @@ import WrappedLi from "../../components/WrappedLi";
 import WrappedLink from "../../components/WrappedLink";
 import WrappedP from "../../components/WrappedP";
 
-import { NavigationObject } from "../../sharedTypes";
-
 const { MDXProvider } = require("@mdx-js/react");
 
 interface CoreMDXLayoutProps {
   mdx: any;
-  tabContent: NavigationObject[];
+  children: string & React.ReactNode;
+  location: string;
 }
 
-const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({ mdx, tabContent }) => {
+const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
+  mdx,
+  children,
+  location,
+}) => {
   const shortcodes = {
     h1: WrappedH1,
     h2: WrappedH2,
@@ -46,7 +49,6 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({ mdx, tabContent }) => {
     DoDontCaution,
     DoubleDoDontCaution,
   };
-  const [pageContent, setPageContent] = useState(mdx);
 
   return (
     <MDXProvider components={shortcodes}>
@@ -56,18 +58,16 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({ mdx, tabContent }) => {
           subheading={mdx.frontmatter.subTitle}
           adornment={mdx.frontmatter.status}
           tabs={mdx.frontmatter.tabs}
-          tabContent={tabContent}
-          currentPage={pageContent.fields.slug}
-          setPageContent={setPageContent}
+          location={location}
         />
         <ic-section-container aligned="center" id="page-section-container">
           <AnchorNav
-            currentPage={pageContent.fields.slug}
-            allHeadings={pageContent.headings}
-            section={pageContent.fields.navSection}
+            currentPage={mdx.fields.slug}
+            allHeadings={mdx.headings}
+            section={mdx.fields.navSection}
           />
           <div className="content-container">
-            <MDXRenderer>{pageContent.body}</MDXRenderer>
+            <MDXRenderer>{children}</MDXRenderer>
           </div>
         </ic-section-container>
       </div>

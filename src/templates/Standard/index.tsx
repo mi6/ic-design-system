@@ -27,17 +27,16 @@ interface TemplateProps {
       headings: Heading[];
     };
   };
+  location: string;
 }
 
 const Template: React.FC<TemplateProps> = ({
   pageContext: { pageType },
   data: { mdx, allMdx },
+  location,
 }) => {
-  const { title, date, contribute } = mdx.frontmatter;
+  const { date, contribute } = mdx.frontmatter;
   const allStructuredNav = allMdx.nodes;
-  const tabContent = allStructuredNav.filter(
-    (page) => page.frontmatter.title === title
-  );
 
   return (
     <ic-section-container aligned="full-width" full-height id="main-container">
@@ -54,7 +53,9 @@ const Template: React.FC<TemplateProps> = ({
           </div>
         </div>
         <div className="page-content">
-          <CoreMDXLayout mdx={mdx} tabContent={tabContent} />
+          <CoreMDXLayout mdx={mdx} location={location}>
+            {mdx.body}
+          </CoreMDXLayout>
           <Metadata publishDate={date} contribute={contribute} />
         </div>
       </div>
@@ -65,7 +66,7 @@ const Template: React.FC<TemplateProps> = ({
 export default Template;
 
 export const pageQuery = graphql`
-  query ($id: String!, $navSection: String, $returnBodies: Boolean!) {
+  query ($id: String!, $navSection: String) {
     mdx(id: { eq: $id }) {
       body
       fields {
@@ -102,11 +103,6 @@ export const pageQuery = graphql`
           tabs {
             path
           }
-        }
-        body @include(if: $returnBodies)
-        headings {
-          depth
-          value
         }
       }
     }

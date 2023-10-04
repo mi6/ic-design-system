@@ -15,8 +15,6 @@ export interface NavigationObject {
   id: string;
   frontmatter: FrontMatter;
   fields: Fields;
-  body: string;
-  headings: Heading[];
 }
 
 export interface Icon {

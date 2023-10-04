@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactElement, useState } from "react";
 import { withPrefix } from "gatsby";
 
 import { Helmet } from "react-helmet";
@@ -28,7 +28,7 @@ interface RouteAnnouncerProps {
 }
 
 interface LayoutProps {
-  children: ReactNode;
+  children: ReactElement;
   imageUrl?: string;
   imageAltText?: string;
   data: {
@@ -38,6 +38,9 @@ interface LayoutProps {
       frontmatter: MdxFrontMatter;
       headings: Heading[];
     };
+  };
+  location: {
+    pathname: string;
   };
 }
 
@@ -72,6 +75,7 @@ const Layout: React.FC<LayoutProps> = ({
   imageAltText = "Intelligence Community Design System",
   children,
   data,
+  location,
 }) => {
   let canonicalUrl: string = "";
   if (typeof window !== "undefined") {
@@ -259,7 +263,7 @@ const Layout: React.FC<LayoutProps> = ({
             shortTitle={SHORT_TITLE}
           />
           <main id="main" className="homepage-wrapper">
-            {children}
+            {React.cloneElement(children, { location: location.pathname })}
             <ic-back-to-top target="main" />
           </main>
         </div>
