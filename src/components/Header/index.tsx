@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useEffect } from "react";
 
 import "./index.css";
 import { IcStatusTagStatuses } from "@ukic/web-components";
@@ -24,37 +24,38 @@ const Header: React.FC<HeaderProps> = ({
   adornment,
   location,
 }) => {
-  const locationRef = useCallback(
-    (node: HTMLElement | null) => {
-      const storedLocation = sessionStorage.getItem("location");
-      if (!storedLocation) sessionStorage.setItem("location", location);
-      else if (storedLocation !== location) {
-        let pathNameEls: string[] = [];
-        const getRelativePathName = (pathName: string) => {
-          pathNameEls = pathName.split("/");
-          return pathNameEls.length > 3
-            ? pathNameEls.slice(0, 3).join("/")
-            : pathName;
-        };
+  const tabSwitch = () => {
+    sessionStorage.setItem("tabSwitch", "true");
+  };
 
-        if (
-          getRelativePathName(storedLocation) === getRelativePathName(location)
-        ) {
-          let tabId = pathNameEls[pathNameEls.length - 1];
-          if (!(tabId === "code" || tabId === "accessibility"))
-            tabId = "guidance";
-          setTimeout(() => {
-            (
-              Array.from(node!.children).find((el) => el.id === tabId)!
-                .firstElementChild as HTMLElement
-            ).focus();
-          }, 100);
+  useEffect(() => {
+    let tabId = "guidance";
+    if (location.indexOf("/accessibility") > 0) {
+      tabId = "accessibility";
+    } else if (location.indexOf("/code") > 0) {
+      tabId = "code";
+    }
+
+    const getActiveLinkEl = () => {
+      const el = document.querySelector(`#${tabId}`)!
+        .firstElementChild as HTMLElement;
+      el.classList.add("active");
+      return el;
+    };
+
+    sessionStorage.setItem("currTab", "");
+    if (sessionStorage.getItem("tabSwitch") === "true") {
+      sessionStorage.setItem("currTab", tabId);
+      setTimeout(() => {
+        const el = getActiveLinkEl();
+        if (el && el.focus) {
+          el.focus();
         }
-        sessionStorage.setItem("location", location);
-      }
-    },
-    [location]
-  );
+      }, 300);
+    } else if (location.indexOf("/components/") === 0) getActiveLinkEl();
+
+    sessionStorage.setItem("tabSwitch", "false");
+  }, []);
 
   let status: IcStatusTagStatuses = "neutral";
 
@@ -76,7 +77,6 @@ const Header: React.FC<HeaderProps> = ({
       aligned="center"
       data-class="page-header"
       sticky-desktop-only
-      ref={locationRef}
     >
       {adornment && (
         <ic-status-tag
@@ -90,6 +90,7 @@ const Header: React.FC<HeaderProps> = ({
           key={tab.title}
           id={tab.title.toLowerCase()}
           slot="tabs"
+          onClick={tabSwitch}
         >
           <GatsbyLink
             slot="navigation-item"
