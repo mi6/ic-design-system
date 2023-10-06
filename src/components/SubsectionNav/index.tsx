@@ -117,6 +117,7 @@ const WrappedListItem: React.FC<WrappedListItemProps> = ({
       to={url}
       title={label}
       partiallyActive={tabs && true}
+      onClick={() => sessionStorage.setItem("navlinkclick", "true")}
     >
       <ic-typography data-class="list-typography" variant="body">
         {text}
@@ -223,6 +224,16 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   useEffect(() => {
     setHasMounted(true);
+    const linkClick = sessionStorage.getItem("navlinkclick");
+    sessionStorage.setItem("navlinkclick", "false");
+    if (linkClick === "true") {
+      setTimeout(() => {
+        const currentEl = document.querySelector(
+          "li.list-item a.active"
+        ) as HTMLElement;
+        if (currentEl) currentEl.focus();
+      }, 300);
+    }
   }, []);
 
   const handleBlur = (e: FocusEvent<HTMLElement>) => {

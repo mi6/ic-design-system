@@ -57,13 +57,23 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
   const handleLinkSelect = (
     e: React.MouseEvent | React.KeyboardEvent,
     headingId: string
-  ) => {
+  ): void => {
     // Move focus to heading when link is selected using Enter key
     if (e.detail === 0) {
       document
         .querySelector<HTMLAnchorElement>(`a[href='#${headingId}`)
         ?.focus();
     }
+
+    // reset the active class on current tab
+    setTimeout(() => {
+      const tabId = sessionStorage.getItem("currTab");
+      if (tabId !== "") {
+        const el = document.querySelector(`#${tabId}`)!
+          .firstElementChild as HTMLElement;
+        el.classList.add("active");
+      }
+    }, 300);
   };
 
   const getNavListItem = (heading: Heading) => {
@@ -76,7 +86,6 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
           className={clsx("nav-link", isActive && "active-nav-link")}
           to={`#${headingId}`}
           onClick={(e) => handleLinkSelect(e, headingId)}
-          onKeyPress={(e) => handleLinkSelect(e, headingId)}
         >
           <ic-typography variant={isActive ? "subtitle-large" : "body"}>
             {heading.value}
