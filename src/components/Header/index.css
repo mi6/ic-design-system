@@ -2,35 +2,35 @@ ic-page-header[data-class="page-header"] {
   margin-bottom: var(--ic-space-lg);
 }
 
-ic-page-header ic-navigation-item .link {
+ic-page-header ic-navigation-item a {
   height: 2.75rem !important;
   color: var(--ic-color-primary-text) !important;
   transition: all var(--ic-easing-transition-fast) !important;
 }
 
-ic-page-header ic-navigation-item.navigation-item-selected .link:after {
+ic-page-header ic-navigation-item.navigation-item-selected a:after {
   box-shadow: inset 0 calc(-1 * var(--ic-space-xxs)) 0 var(--ic-action-default) !important;
 }
 
-ic-page-header ic-navigation-item .link:hover {
+ic-page-header ic-navigation-item a:hover {
   background-color: var(--ic-action-default-bg-hover) !important;
   cursor: pointer;
 }
 
-ic-page-header ic-navigation-item .link:focus {
+ic-page-header ic-navigation-item a:focus {
   box-shadow: var(--ic-border-focus);
 }
 
-ic-page-header ic-navigation-item .link:active {
+ic-page-header ic-navigation-item a:active {
   background-color: var(--ic-action-default-bg-active) !important;
 }
 
-ic-page-header ic-navigation-item.navigation-item-selected .link:focus {
+ic-page-header ic-navigation-item.navigation-item-selected a:focus {
   box-shadow: var(--ic-border-focus),
     inset 0 calc(-1 * var(--ic-space-xxs)) 0 var(--ic-action-default);
 }
 
-ic-page-header ic-navigation-item.navigation-item-selected .link:focus::before {
+ic-page-header ic-navigation-item.navigation-item-selected a:focus::before {
   display: none;
 }
 
