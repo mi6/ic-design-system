@@ -59,17 +59,15 @@ export const snippets = [
   },
 ];
 
-<ComponentPreview style={{flexDirection: "column"}} snippets={snippets}>
-    <IcAccordion heading="English Breakfast">
-      <IcTypography variant="body">
-        A blend of different black teas
-      </IcTypography>
-    </IcAccordion>
-    <IcAccordion heading="Earl Grey">
-      <IcTypography variant="body">
-        A tea blend that has been flavoured with oil of bergamot
-      </IcTypography>
-    </IcAccordion>
+<ComponentPreview style={{ flexDirection: "column" }} snippets={snippets}>
+  <IcAccordion heading="English Breakfast">
+    <IcTypography variant="body">A blend of different black teas</IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Earl Grey">
+    <IcTypography variant="body">
+      A tea blend that has been flavoured with oil of bergamot
+    </IcTypography>
+  </IcAccordion>
 </ComponentPreview>
 
 ## Accordion details
@@ -161,42 +159,40 @@ export const withIcon = [
   },
 ];
 
-<ComponentPreview snippets={withIcon} style={{flexDirection: "column"}}>
-    <IcAccordion heading="English Breakfast">
-      <SlottedSVG
-        slot="icon"
-        width="20"
-        height="1em"
-        viewBox="0 0 512 512"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
-      </SlottedSVG>
-      <IcTypography variant="body">
-        A blend of different black teas
-      </IcTypography>
-    </IcAccordion>
-    <IcAccordion heading="Earl Grey">
-      <SlottedSVG
-        slot="icon"
-        width="20"
-        height="1em"
-        viewBox="0 0 512 512"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
-      </SlottedSVG>
-      <IcTypography variant="body">
-        A tea blend that has been flavoured with oil of bergamot
-      </IcTypography>
-    </IcAccordion>
+<ComponentPreview snippets={withIcon} style={{ flexDirection: "column" }}>
+  <IcAccordion heading="English Breakfast">
+    <SlottedSVG
+      slot="icon"
+      width="20"
+      height="1em"
+      viewBox="0 0 512 512"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+    </SlottedSVG>
+    <IcTypography variant="body">A blend of different black teas</IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Earl Grey">
+    <SlottedSVG
+      slot="icon"
+      width="20"
+      height="1em"
+      viewBox="0 0 512 512"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+    </SlottedSVG>
+    <IcTypography variant="body">
+      A tea blend that has been flavoured with oil of bergamot
+    </IcTypography>
+  </IcAccordion>
 </ComponentPreview>
 
 ### With group title and see all / hide all button
 
-<ComponentPreview snippets={groupTitle} style={{flexDirection: "column"}}>
+<ComponentPreview snippets={groupTitle} style={{ flexDirection: "column" }}>
   <IcAccordionGroup group-title="Coffee">
     <IcAccordion heading="Cappuccino">
       <SlottedSVG
@@ -210,7 +206,8 @@ export const withIcon = [
         <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
       </SlottedSVG>
       <IcTypography variant="body">
-        An espresso-based drink that is traditionally prepared with steamed milk foam
+        An espresso-based drink that is traditionally prepared with steamed milk
+        foam
       </IcTypography>
     </IcAccordion>
     <IcAccordion heading="Americano">
@@ -314,7 +311,7 @@ export const groupTitle = [
 
 ### With nested accordions
 
-<ComponentPreview snippets={groupTitle} style={{flexDirection: "column"}}>
+<ComponentPreview snippets={groupTitle} style={{ flexDirection: "column" }}>
   <IcAccordionGroup group-title="Coffee">
     <IcAccordion heading="Cappuccino">
       <SlottedSVG
@@ -328,7 +325,8 @@ export const groupTitle = [
         <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
       </SlottedSVG>
       <IcTypography variant="body">
-        An espresso-based drink that is traditionally prepared with steamed milk foam
+        An espresso-based drink that is traditionally prepared with steamed milk
+        foam
       </IcTypography>
     </IcAccordion>
     <IcAccordion heading="Americano">

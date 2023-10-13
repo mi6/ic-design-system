@@ -19,7 +19,16 @@ tabs:
   ]
 ---
 
-import { IcButton, IcBadge, SlottedSVG, IcChip, IcTab, IcTabPanel, IcTabContext, IcTabGroup } from "@ukic/react";
+import {
+  IcButton,
+  IcBadge,
+  SlottedSVG,
+  IcChip,
+  IcTab,
+  IcTabPanel,
+  IcTabContext,
+  IcTabGroup,
+} from "@ukic/react";
 import { useRef } from "react";
 
 ## Component demo
@@ -52,15 +61,9 @@ export const snippetsDefault = [
   },
 ];
 
-
 <ComponentPreview snippets={snippetsDefault}>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge
-      text-label="1000"
-      max-number="99"
-      slot="badge"
-      variant="info"
-    />
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge text-label="1000" max-number="99" slot="badge" variant="info" />
     Default
   </IcButton>
 </ComponentPreview>
@@ -107,21 +110,21 @@ export const snippetsSizes = [
 ];
 
 <ComponentPreview snippets={snippetsSizes}>
-  <IcButton size="small" variant="secondary" style={{marginRight:"16px"}} >
-    <IcBadge text-label="1" slot="badge" variant="info" size="small"/>
+  <IcButton size="small" variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge text-label="1" slot="badge" variant="info" size="small" />
     Small
   </IcButton>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge text-label="1" slot="badge" variant="info" size="default"/>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge text-label="1" slot="badge" variant="info" size="default" />
     Default
   </IcButton>
   <IcButton size="large" variant="secondary">
-    <IcBadge text-label="1" slot="badge" variant="info" size="large"/>
+    <IcBadge text-label="1" slot="badge" variant="info" size="large" />
     Large
   </IcButton>
 </ComponentPreview>
 
-### Status 
+### Status
 
 export const snippetsStatus = [
   {
@@ -165,20 +168,20 @@ export const snippetsStatus = [
 ];
 
 <ComponentPreview snippets={snippetsStatus}>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge slot="badge" variant="neutral"/>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge slot="badge" variant="neutral" />
     Neutral
   </IcButton>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge slot="badge" variant="info"/>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge slot="badge" variant="info" />
     Information
   </IcButton>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge slot="badge" variant="error"/>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge slot="badge" variant="error" />
     Error
   </IcButton>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge slot="badge" variant="success"/>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge slot="badge" variant="success" />
     Success
   </IcButton>
 </ComponentPreview>
@@ -215,7 +218,7 @@ export const snippetsInformation = [
   },
   {
     language: "React",
-      snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
+    snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
   <IcBadge slot="badge" variant="info"/>
   Dot
 </IcButton>
@@ -244,31 +247,29 @@ export const snippetsInformation = [
 ];
 
 <ComponentPreview snippets={snippetsInformation}>
-  <div style={{padding:"16px"}}>
-    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <div style={{ padding: "16px" }}>
+    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge text-label="1" slot="badge" variant="info" />
       Number
     </IcButton>
   </div>
-  <div style={{padding:"16px"}}>
-    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <div style={{ padding: "16px" }}>
+    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge type="dot" slot="badge" variant="info" />
       Dot
     </IcButton>
   </div>
-  <div style={{padding:"16px"}}>
-    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <div style={{ padding: "16px" }}>
+    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge type="icon" slot="badge" variant="info">
-        <SlottedSVG 
+        <SlottedSVG
           width="24px"
           height="24px"
-          slot="badge-icon" 
+          slot="badge-icon"
           viewBox="0 0 24 24"
         >
           <path d="M0 0h24v24H0V0z" fill="none" />
-          <path
-            d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
-          />
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
         </SlottedSVG>
       </IcBadge>
       Icon
@@ -277,7 +278,6 @@ export const snippetsInformation = [
 </ComponentPreview>
 
 ### Max number
-
 
 export const snippetsMaxNumber = [
   {
@@ -312,14 +312,9 @@ export const snippetsMaxNumber = [
 ];
 
 <ComponentPreview snippets={snippetsMaxNumber}>
-  <div style={{padding:"16px"}}>
-    <IcButton variant="secondary" style={{marginRight:"16px"}}>
-      <IcBadge
-        text-label="1000"
-        max-number="99"
-        slot="badge"
-        variant="info"
-       />
+  <div style={{ padding: "16px" }}>
+    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+      <IcBadge text-label="1000" max-number="99" slot="badge" variant="info" />
       Default
     </IcButton>
   </div>
@@ -396,24 +391,19 @@ export const snippetsNear = [
 ];
 
 <ComponentPreview snippets={snippetsNear}>
-  <div  style={{ display: "grid" }} >
-    <div style={{padding:"16px"}}>
-      <IcChip size="small" label="Small" style={{marginRight:"16px"}}>
+  <div style={{ display: "grid" }}>
+    <div style={{ padding: "16px" }}>
+      <IcChip size="small" label="Small" style={{ marginRight: "16px" }}>
         <IcBadge
           text-label="1"
           slot="badge"
           position="near"
           size="small"
           variant="info"
-         />
+        />
       </IcChip>
-      <IcChip label="Default" style={{marginRight:"16px"}}>
-        <IcBadge
-          text-label="1"
-          slot="badge"
-          position="near"
-          variant="info"
-         />
+      <IcChip label="Default" style={{ marginRight: "16px" }}>
+        <IcBadge text-label="1" slot="badge" position="near" variant="info" />
       </IcChip>
       <IcChip size="large" label="Large">
         <IcBadge
@@ -422,7 +412,7 @@ export const snippetsNear = [
           position="near"
           size="large"
           variant="info"
-         />
+        />
       </IcChip>
     </div>
   </div>
@@ -521,40 +511,40 @@ export const snippetsInline = [
 
 <ComponentPreview snippets={snippetsInline}>
   <IcTabContext>
-  <IcTabGroup label="Example tab group">
-    <IcTab>
-    Small
-      <IcBadge
-        text-label="1"
-        slot="badge"
-        position="inline"
-        size="small"
-        accessibleLabel="1 notification found"
-        variant="info"
-      />
-    </IcTab>
-    <IcTab>
-      Default
-      <IcBadge
-        text-label="1"
-        slot="badge"
-        position="inline"
-        accessibleLabel="1 notification found"
-        variant="info"
-      />
-    </IcTab>
-    <IcTab>
-    Large
-      <IcBadge
-        text-label="1"
-        slot="badge"
-        position="inline"
-        size="large"
-        accessibleLabel="1 notification found"
-        variant="info"
-      />
-    </IcTab>   
-  </IcTabGroup>
+    <IcTabGroup label="Example tab group">
+      <IcTab>
+        Small
+        <IcBadge
+          text-label="1"
+          slot="badge"
+          position="inline"
+          size="small"
+          accessibleLabel="1 notification found"
+          variant="info"
+        />
+      </IcTab>
+      <IcTab>
+        Default
+        <IcBadge
+          text-label="1"
+          slot="badge"
+          position="inline"
+          accessibleLabel="1 notification found"
+          variant="info"
+        />
+      </IcTab>
+      <IcTab>
+        Large
+        <IcBadge
+          text-label="1"
+          slot="badge"
+          position="inline"
+          size="large"
+          accessibleLabel="1 notification found"
+          variant="info"
+        />
+      </IcTab>
+    </IcTabGroup>
     <IcTabPanel>Small badge</IcTabPanel>
     <IcTabPanel>Default badge</IcTabPanel>
     <IcTabPanel>Large badge</IcTabPanel>
@@ -610,21 +600,21 @@ export const snippetsHideBadge = [
 export const ToggleBadge = () => {
   const badgeEl = useRef(null);
   const showHideBadge = () => {
-  const badge = badgeEl.current;
-   if(badge.classList.contains("show")) {
+    const badge = badgeEl.current;
+    if (badge.classList.contains("show")) {
       badge.hideBadge();
-   } else {
-    badge.showBadge();
-   }
+    } else {
+      badge.showBadge();
+    }
   };
-    return (
-      <div style={{padding:"16px"}}>
-        <IcButton variant="secondary" onclick={showHideBadge}>
-          <IcBadge variant="info" text-label="1" slot="badge" ref={badgeEl}/>
-          Hide/Show badge
-        </IcButton>
-      </div> 
-    );
+  return (
+    <div style={{ padding: "16px" }}>
+      <IcButton variant="secondary" onclick={showHideBadge}>
+        <IcBadge variant="info" text-label="1" slot="badge" ref={badgeEl} />
+        Hide/Show badge
+      </IcButton>
+    </div>
+  );
 };
 
 <ComponentPreview
@@ -673,10 +663,9 @@ export const snippetsAccessibleLabel = [
   },
 ];
 
-
 <ComponentPreview snippets={snippetsAccessibleLabel}>
-  <div style={{padding:"16px"}}>
-    <IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <div style={{ padding: "16px" }}>
+    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge
         text-label="1"
         slot="badge"
@@ -686,5 +675,5 @@ export const snippetsAccessibleLabel = [
       />
       Default
     </IcButton>
-  </div> 
+  </div>
 </ComponentPreview>

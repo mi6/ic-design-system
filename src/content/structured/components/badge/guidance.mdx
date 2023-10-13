@@ -40,28 +40,28 @@ import badgeFig14 from "./images/fig-14-confusing-badge-content.png";
 
 An example of the badge component.
 
-<ComponentPreview >
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge text-label="1" slot="badge" variant="success"/>
+<ComponentPreview>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge text-label="1" slot="badge" variant="success" />
     Success
   </IcButton>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge text-label="1" slot="badge" variant="error"/>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge text-label="1" slot="badge" variant="error" />
     Error
   </IcButton>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge text-label="1" slot="badge" variant="neutral"/>
+  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+    <IcBadge text-label="1" slot="badge" variant="neutral" />
     Neutral
   </IcButton>
 </ComponentPreview>
 
 ## Component Variants
 
-There are three types of badges available: 
+There are three types of badges available:
 
-- Text badge: Contains a short text label. 
-- Icon badge: Contains an icon. 
-- Dot badge: Badge background without any content. 
+- Text badge: Contains a short text label.
+- Icon badge: Contains an icon.
+- Dot badge: Badge background without any content.
 
 <DoDontCaution
   imageSrc={badgeFig1}
@@ -80,8 +80,7 @@ Use badges to draw attention to new or updated information. For example, use the
   caption="Use text badges to draw attention to new information such as new messages in an inbox."
 />
 
-Use text badges to attach short labels to other information. For example, a badge could be used to highlight a new item in a list. Remember to keep labels concise. 
-
+Use text badges to attach short labels to other information. For example, a badge could be used to highlight a new item in a list. Remember to keep labels concise.
 
 <DoubleDoDontCaution>
   <DoDontCaution
@@ -98,11 +97,11 @@ Use text badges to attach short labels to other information. For example, a badg
   />
 </DoubleDoDontCaution>
 
-Use a dot badge to indicate that something has changed or updated without displaying a text label or icon. 
+Use a dot badge to indicate that something has changed or updated without displaying a text label or icon.
 
-Use a text badge with numerical label to show the number of updates. 
+Use a text badge with numerical label to show the number of updates.
 
-For example, use a dot badge to highlight that new comments are available to review, without giving the number of new comments. 
+For example, use a dot badge to highlight that new comments are available to review, without giving the number of new comments.
 
 <DoubleDoDontCaution>
   <DoDontCaution
@@ -113,9 +112,9 @@ For example, use a dot badge to highlight that new comments are available to rev
   />
 </DoubleDoDontCaution>
 
-Only use badges when the component that it is attached to allows navigation to where the information related to the badge is stored. For example, a button that navigates someone to their inbox may show a badge displaying the number of new notifications that can be found there. 
+Only use badges when the component that it is attached to allows navigation to where the information related to the badge is stored. For example, a button that navigates someone to their inbox may show a badge displaying the number of new notifications that can be found there.
 
-One exception is when using icon badges to add additional meaning only. For example, use an icon badge with a padlock icon to indicate that something may be currently locked due to access rights. 
+One exception is when using icon badges to add additional meaning only. For example, use an icon badge with a padlock icon to indicate that something may be currently locked due to access rights.
 
 <DoubleDoDontCaution>
   <DoDontCaution
@@ -128,7 +127,7 @@ One exception is when using icon badges to add additional meaning only. For exam
 
 Use badges to convey status, but make sure to use a status icon on the badge to provide a clear way of understanding the status. Don’t rely only on the colour of the badge to indicate status.
 
-For example, use a success status dot badge to indicate that something has gone online, but always try to back up the status message with textual messaging elsewhere on the page. 
+For example, use a success status dot badge to indicate that something has gone online, but always try to back up the status message with textual messaging elsewhere on the page.
 
 ## When not to use
 
@@ -136,7 +135,7 @@ Don’t use text badges as the only method of showing information, back the mess
 
 Avoid attaching badges to non-interactive components. Aim to attach a badge to components that allow navigation to the information that the badge relates to.
 
-Don’t use an icon badge as the only means of showing information on a non-navigational component. Always back up the message by including written messaging elsewhere on the page or showing feedback when the component is clicked. 
+Don’t use an icon badge as the only means of showing information on a non-navigational component. Always back up the message by including written messaging elsewhere on the page or showing feedback when the component is clicked.
 
 For example, if using an icon badge with a lock symbol to indicate limited access to a navigation button, then allow the navigation button to still be clicked, but show a message stating that it is locked using a dialog or alert.
 
@@ -170,7 +169,6 @@ Use the different colour variations of badges to make sure it achieves at least 
 
 Specify a custom colour for the badge, but take care to make sure the colour contrast requirements are met.
 
-
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={badgeFig10}
@@ -192,7 +190,7 @@ Use the same sized badge for the size of the component that the badge is attache
 
 ## Layout and placement
 
-Badges are always positioned in the top right corner of the component it is attached to. Make sure the badge overlaps the border of the component by adjusting the badge’s positioning using the ‘far’ and ‘near’ positioning options. For square components use the ‘far’ positioning option, and for rounded components use the ‘near’ positioning. 
+Badges are always positioned in the top right corner of the component it is attached to. Make sure the badge overlaps the border of the component by adjusting the badge’s positioning using the ‘far’ and ‘near’ positioning options. For square components use the ‘far’ positioning option, and for rounded components use the ‘near’ positioning.
 
 For components that are adjacent to one another, such as tabs, use ‘inline’ badge positioning so that the badge sits in line with the component’s label.
 
@@ -205,7 +203,7 @@ For components that are adjacent to one another, such as tabs, use ‘inline’ 
   />
 </DoubleDoDontCaution>
 
-## Content 
+## Content
 
 Make sure that it is obvious what the badge relates to. Only use badges when the component it is attached to is labelled clearly to indicate what the badge references. For example, a numeric badge on an inbox is easily understandable, whereas a numeric badge on a menu button may not be as clear as to what the badge represents.
 
@@ -224,7 +222,7 @@ Make sure that it is obvious what the badge relates to. Only use badges when the
   />
 </DoubleDoDontCaution>
 
-When using text badges, keep the text label short and only use a single word. Avoid using more than four characters on a text badge. For example, use a text badge to label something as ‘New’. Don’t use badges to add long labels; consider adding that information elsewhere instead. 
+When using text badges, keep the text label short and only use a single word. Avoid using more than four characters on a text badge. For example, use a text badge to label something as ‘New’. Don’t use badges to add long labels; consider adding that information elsewhere instead.
 
 If displaying numbers in a text badge, then set the ‘maxNumber’ property to limit the number of characters shown. This will show a ‘+’ symbol if the value is larger than the maxNumber.
 
@@ -234,7 +232,7 @@ Take care when using icon badges so that the icon is immediately understandable 
 
 ## Accessibility considerations
 
-Always provide a badge with an accessible label to add context for people who use screen readers. For example, a text badge displaying the number 10 might have an accessible label that reads ‘10 new notifications’. 
+Always provide a badge with an accessible label to add context for people who use screen readers. For example, a text badge displaying the number 10 might have an accessible label that reads ‘10 new notifications’.
 
 When using an icon badge, make sure that the icon alt-text makes sense to its function and use the accessible label to add context.
 
