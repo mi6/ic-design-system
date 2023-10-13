@@ -4,5 +4,6 @@
 bash "$(dirname "$0")/email-check.sh"
 
 npm run test
+npm run prettier
 
 npx lint-staged
