@@ -3,8 +3,6 @@
     "GHSA-pfrx-2q88-qq97",
     "GHSA-9c47-m6qq-7p4h",
     "GHSA-rp65-9cf3-cjxr",
-    "GHSA-rjqq-98f6-6j3r",
-    "GHSA-mjxr-4v3x-q3m4",
     "GHSA-w5p7-h5w8-2hfq",
     "GHSA-3rfm-jhwj-7488",
     "GHSA-hhq3-ff78-jv3g",
@@ -17,13 +15,9 @@
     "GHSA-vh95-rmgr-6w4m",
     "GHSA-xvch-5gv4-984h",
     "GHSA-776f-qx25-q3cc",
-    "GHSA-f9xv-q969-pqx4",
     "GHSA-q9mw-68c2-j6m5",
     "GHSA-c2qf-rxjj-qqgw",
-    "GHSA-j8xg-fqg3-53r7",
     "GHSA-72xf-g2v4-qvf3",
-    "GHSA-hpx4-r86g-5jrg",
-    "GHSA-gxpj-cx7g-858c",
-    "GHSA-7fh5-64p2-3v2j"
+    "GHSA-gxpj-cx7g-858c"
   ]
 }
