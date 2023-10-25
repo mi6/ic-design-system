@@ -3,7 +3,7 @@ path: "/components/dialog"
 
 navPriority: 12
 
-date: "2023-08-30"
+date: "2023-10-24"
 
 title: "Dialog"
 
@@ -42,7 +42,7 @@ Dialogs work best when used for short tasks or to alert the user to information 
 export const DialogExample = () => {
   const dialogEl = useRef(null);
   const showDialog = () => {
-    dialogEl.current.showDialog();
+    dialogEl.current.open = true;
   };
   return (
     <>
@@ -55,7 +55,7 @@ export const DialogExample = () => {
           { label: "Cancel", onclick: "this.cancelDialog()" },
           {
             label: "Confirm",
-            onclick: "alert('Confirmed!'); this.hideDialog()",
+            onclick: "alert('Confirmed!'); this.open = false;",
           },
         ]}
       >

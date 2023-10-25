@@ -126,7 +126,7 @@ module.exports = {
         },
         {
           path: "/get-started/figma",
-          title: "Figma UI kit",
+          title: "Figma UI Kit",
           description:
             "Reusable and flexible Figma components used to design, prototype and hand-off designs for apps and digital products.",
         },

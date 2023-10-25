@@ -1,7 +1,7 @@
 ---
 path: "/components/dialog/code"
 
-date: "2023-07-31"
+date: "2023-10-26"
 
 title: "Dialog"
 
@@ -20,6 +20,7 @@ tabs:
 ---
 
 import {
+  IcAlert,
   IcDialog,
   IcButton,
   IcCheckboxGroup,
@@ -35,22 +36,36 @@ export const buttonProps = [
   },
   {
     label: "Continue",
-    onclick: "alert('Added to basket'); this.hideDialog()",
+    onclick: "alert('Added to basket'); this.open = false;",
   },
 ];
 
 export const showDialog = (ref) => {
-  ref.current.showDialog();
+  const el = ref.current;
+  el.open = true;
+};
+
+export const showAlertDialog = (dialogRef) => {
+  const dialog = dialogRef.current;
+  // only needed on our site as the titleAbove prop doesn't get applied
+  const alerts = document.querySelectorAll("ic-alert");
+  /* eslint-disable-next-line no-plusplus */
+  for (let i = 0; i < alerts.length; i++) {
+    alerts[i].setAttribute("title-above", "true");
+  }
+  dialog.open = true;
 };
 
 export const confirmDialog = (ev) => {
   alert("Confirmed");
-  ev.target.hideDialog();
+  const el = ev.target;
+  el.open = false;
 };
 
 export const confirmedAdd = (ev) => {
   alert("Added to basket");
-  ev.target.hideDialog();
+  const el = ev.target;
+  el.open = false;
 };
 
 ## Component demo
@@ -61,11 +76,11 @@ export const snippetsDefault = [
     snippet: `<script>
   const dialog = document.querySelector("#default-dialog");
   function showDialog() {    
-    dialog.showDialog();
+    dialog.open = true;
   }
   function dialogConfirmed(ev) {
     alert("Added to basket");
-    ev.target.hideDialog();
+    ev.target.open = false;
   }
   dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
 </script>
@@ -80,11 +95,11 @@ export const snippetsDefault = [
     language: "React",
     snippet: `const dialogEl = useRef(null);
 const showDialog = () => {
-  dialogEl.current.showDialog();
+  dialogEl.current.open = true;
 };
 const confirmDialog = (ev) => {    
   alert("Added to basket");
-  ev.target.hideDialog();
+  ev.target.open = false;
 };
 return (
   <>
@@ -138,11 +153,11 @@ export const snippetsSizes = [
     language: "Web component",
     snippet: `<script>
   function showDialog(id) {
-    document.querySelector(id).showDialog();
+    document.querySelector(id).open = true;
   }
   function dialogConfirmed(ev) {
     alert("Added to basket");
-    ev.target.hideDialog();
+    ev.target.open = false;
   }
   const diags = document.querySelectorAll("ic-dialog");
   diags.forEach((diag) => {diag.addEventListener("icDialogConfirmed", dialogConfirmed)});
@@ -172,11 +187,11 @@ export const snippetsSizes = [
 const dialogEl = useRef(null);
 const largeDialogEl = useRef(null);
 const showDialog = (ref) => {    
-  ref.current.showDialog();
+  ref.current.open = true;
 };
 const confirmDialog = (ev) => {    
   alert("Added to basket");
-  ev.target.hideDialog();
+  ev.target.open = false;
 };
 return(
   <>
@@ -279,11 +294,11 @@ export const snippetsAlert = [
     language: "Web component",
     snippet: `<script>
   function showDialog(id) {
-    document.querySelector(id).showDialog();
+    document.querySelector(id).open = true;
   }
   function dialogConfirmed(ev) {
     alert("Added to basket");
-    ev.target.hideDialog();
+    ev.target.open = false;
   }
   const diags = document.querySelectorAll("ic-dialog");
   diags.forEach((diag) => {diag.addEventListener("icDialogConfirmed", dialogConfirmed)});
@@ -293,42 +308,38 @@ export const snippetsAlert = [
 <ic-button onclick="showDialog('#warn-dialog')">Launch warning dialog</ic-button>
 <ic-button onclick="showDialog('#error-dialog')">Launch error dialog</ic-button>
 <ic-button onclick="showDialog('#success-dialog')">Launch success dialog</ic-button>
-<ic-dialog id="neutral-dialog" heading="Are you sure?" label="Coffee order"  
-  status="neutral" alert-heading="They're both good"
-  alert-message="Some say tea is just as good as coffee."
->
+<ic-dialog id="neutral-dialog" heading="Are you sure?" label="Coffee order">
+  <ic-alert slot="alert" heading="They're both good" message="Some say tea is just as good as coffee." variant="neutral" title-above="true">
+  </ic-alert>
   <ic-typography>
     You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
 </ic-dialog>
 <ic-dialog id="info-dialog" heading="Are you sure?" label="Coffee order"  
-  status="info" alert-heading="Did you know?"
-  alert-message="There are lots of different varieties of coffee."
 >
+  <ic-alert slot="alert" heading="Did you know?" message="There are lots of different varieties of coffee." variant="info" title-above="true">
+  </ic-alert>
   <ic-typography>
     You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
 </ic-dialog>
-<ic-dialog id="warn-dialog" heading="Are you sure?" label="Coffee order"  
-  status="warning" alert-heading="Only a few left"
-  alert-message="Act fast to get one of the last few left."
->
+<ic-dialog id="warn-dialog" heading="Are you sure?" label="Coffee order">
+  <ic-alert slot="alert" heading="Only a few left" message="Act fast to get one of the last few left." variant="warning" title-above="true">
+  </ic-alert>
   <ic-typography>
     You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
 </ic-dialog>
-<ic-dialog id="error-dialog" heading="Are you sure?" label="Coffee order"  
-  status="error" alert-heading="No coffee left"
-  alert-message="If you order you will receive tea instead."
->
+<ic-dialog id="error-dialog" heading="Are you sure?" label="Coffee order">
+  <ic-alert slot="alert" heading="No coffee left" message="If you order you will receive tea instead." variant="error" title-above="true">
+  </ic-alert>
   <ic-typography>
     You are about to add 'Tea' to your basket. Are you sure you want to continue?
   </ic-typography>
 </ic-dialog>
-<ic-dialog id="success-dialog" heading="Are you sure?" label="Coffee order"  
-  status="success" alert-heading="Good news"
-  alert-message="There is an unlimited supply of coffee."
->
+<ic-dialog id="success-dialog" heading="Are you sure?" label="Coffee order">
+  <ic-alert slot="alert" heading="Good news" message="There is an unlimited supply of coffee." variant="success" title-above="true">
+  </ic-alert>
   <ic-typography>
     You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
@@ -342,11 +353,11 @@ const warnDialogEl = useRef(null);
 const errDialogEl = useRef(null);
 const successDialogEl = useRef(null);
 const showDialog = (ref) => {
-  ref.current.showDialog();
+  ref.current.open = true;
 };
 const confirmDialog = (ev) => {    
   alert("Added to basket");
-  ev.target.hideDialog();
+  ev.target.open = false;
 };
 return (
   <>
@@ -356,50 +367,45 @@ return (
     <IcButton onClick={() => showDialog(errDialogEl)}>Launch error dialog</IcButton>
     <IcButton onClick={() => showDialog(successDialogEl)}>Launch success dialog</IcButton>
     <IcDialog ref={neutralDialogEl} heading="Are you sure?" label="Coffee order"
-      status="neutral" alertHeading="They're both good"
-      alertMessage="Some say tea is just as good as coffee."
       onIcDialogConfirmed={confirmDialog}
     >
+      <IcAlert slot="alert" heading="They're both good" message="Some say tea is just as good as coffee." variant="neutral" titleAbove/>
       <IcTypography>
         You are about to add 'Americano' to your basket. Are you sure you want to
         continue?
       </IcTypography>
     </IcDialog>
     <IcDialog ref={infoDialogEl} heading="Are you sure?" label="Coffee order"
-      status="info" alertHeading="Did you know?" 
-      alertMessage="There are lots of different varieties of coffee."
       onIcDialogConfirmed={confirmDialog}
     >
+      <IcAlert slot="alert" heading="Did you know?" message="There are lots of different varieties of coffee." variant="info" titleAbove/>
       <IcTypography>
         You are about to add 'Americano' to your basket. Are you sure you want to
         continue?
       </IcTypography>
     </IcDialog>
     <IcDialog ref={warnDialogEl} heading="Are you sure?" label="Coffee order"
-      status="warning" alertHeading="Only a few left"
-      alertMessage="Act fast to get one of the last few left."
       onIcDialogConfirmed={confirmDialog}
     >
+      <IcAlert slot="alert" heading="Only a few left" message="Act fast to get one of the last few left." variant="warning" titleAbove/>
       <IcTypography>
         You are about to add 'Americano' to your basket. Are you sure you want to
         continue?
       </IcTypography>
     </IcDialog>
     <IcDialog ref={errDialogEl} heading="Are you sure?" label="Coffee order"
-      status="error" alertHeading="No coffee left"
-      alertMessage="If you order you will receive tea instead."
       onIcDialogConfirmed={confirmDialog}
     >
+      <IcAlert slot="alert" heading="No coffee left" message="If you order you will receive tea instead." variant="error" titleAbove/>
       <IcTypography>
         You are about to add 'Tea' to your basket. Are you sure you want to
         continue?
       </IcTypography>
     </IcDialog>
     <IcDialog ref={successDialogEl} heading="Are you sure?" label="Coffee order"
-      status="success" alertHeading="Good news"
-      alertMessage="There is an unlimited supply of coffee."
       onIcDialogConfirmed={confirmDialog}
     >
+      <IcAlert slot="alert" heading="Good news" message="There is an unlimited supply of coffee." variant="success" titleAbove/>
       <IcTypography>
         You are about to add 'Americano' to your basket. Are you sure you want to
         continue?
@@ -419,19 +425,34 @@ export const AlertDialog = () => {
   return (
     <>
       <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-        <IcButton variant="primary" onClick={() => showDialog(neutralDialogEl)}>
+        <IcButton
+          variant="primary"
+          onClick={() => showAlertDialog(neutralDialogEl)}
+        >
           Launch neutral dialog
         </IcButton>
-        <IcButton variant="primary" onClick={() => showDialog(infoDialogEl)}>
+        <IcButton
+          variant="primary"
+          onClick={() => showAlertDialog(infoDialogEl)}
+        >
           Launch info dialog
         </IcButton>
-        <IcButton variant="primary" onClick={() => showDialog(warnDialogEl)}>
+        <IcButton
+          variant="primary"
+          onClick={() => showAlertDialog(warnDialogEl)}
+        >
           Launch warning dialog
         </IcButton>
-        <IcButton variant="primary" onClick={() => showDialog(errDialogEl)}>
+        <IcButton
+          variant="primary"
+          onClick={() => showAlertDialog(errDialogEl)}
+        >
           Launch error dialog
         </IcButton>
-        <IcButton variant="primary" onClick={() => showDialog(successDialogEl)}>
+        <IcButton
+          variant="primary"
+          onClick={() => showAlertDialog(successDialogEl)}
+        >
           Launch success dialog
         </IcButton>
       </div>
@@ -439,11 +460,14 @@ export const AlertDialog = () => {
         ref={neutralDialogEl}
         heading="Are you sure?"
         label="Coffee order"
-        status="neutral"
-        alertHeading="They're both good"
-        alertMessage="Some say tea is just as good as coffee."
         onIcDialogConfirmed={confirmedAdd}
       >
+        <IcAlert
+          slot="alert"
+          heading="They're both good"
+          message="Some say tea is just as good as coffee."
+          variant="neutral"
+        />
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
           to continue?
@@ -453,11 +477,14 @@ export const AlertDialog = () => {
         ref={infoDialogEl}
         heading="Are you sure?"
         label="Coffee order"
-        status="info"
-        alertHeading="Did you know?"
-        alertMessage="There are lots of different varieties of coffee."
         onIcDialogConfirmed={confirmedAdd}
       >
+        <IcAlert
+          slot="alert"
+          heading="Did you know?"
+          message="There are lots of different varieties of coffee."
+          variant="info"
+        />
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
           to continue?
@@ -467,11 +494,14 @@ export const AlertDialog = () => {
         ref={warnDialogEl}
         heading="Are you sure?"
         label="Coffee order"
-        status="warning"
-        alertHeading="Only a few left"
-        alertMessage="Act fast to get one of the last few left."
         onIcDialogConfirmed={confirmedAdd}
       >
+        <IcAlert
+          slot="alert"
+          heading="Only a few left"
+          message="Act fast to get one of the last few left."
+          variant="warning"
+        />
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
           to continue?
@@ -481,11 +511,14 @@ export const AlertDialog = () => {
         ref={errDialogEl}
         heading="Are you sure?"
         label="Coffee order"
-        status="error"
-        alertHeading="No coffee left"
-        alertMessage="If you order you will receive tea instead."
         onIcDialogConfirmed={confirmedAdd}
       >
+        <IcAlert
+          slot="alert"
+          heading="No coffee left"
+          message="If you order you will receive tea instead."
+          variant="error"
+        />
         <IcTypography>
           You are about to add 'Tea' to your basket. Are you sure you want to
           continue?
@@ -495,11 +528,14 @@ export const AlertDialog = () => {
         ref={successDialogEl}
         heading="Are you sure?"
         label="Coffee order"
-        status="success"
-        alertHeading="Good news"
-        alertMessage="There is an unlimited supply of coffee."
         onIcDialogConfirmed={confirmedAdd}
       >
+        <IcAlert
+          slot="alert"
+          heading="Good news"
+          message="There is an unlimited supply of coffee."
+          variant="success"
+        />
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
           to continue?
@@ -520,27 +556,27 @@ export const snippetsCustomButtons = [
     language: "Web component",
     snippet: `<script>
   function showDialog(id) {
-    document.querySelector(id).showDialog();
+    document.querySelector(id).open = true;
   }
   function dialogConfirmed(ev) {
     alert("Confirmed");
-    ev.target.hideDialog();
+    ev.target.open = false;
   }
   const doubleDialog = document.querySelector("#double-dialog");
   doubleDialog.addEventListener("icDialogConfirmed", dialogConfirmed);
   const tripleDialog = document.querySelector("#triple-dialog");
   tripleDialog.buttonProps = [
-    { label: "Cancel", onclick: "this.hideDialog();" },
+    { label: "Cancel", onclick: "this.open = false;" },
     { label: "Options", onclick: "alert('Options...');" },
-    { label: "Confirm", onclick: "alert('Confirmed');this.hideDialog();" },
+    { label: "Confirm", onclick: "alert('Confirmed');this.open = false;" },
   ];
   const singleDialog = document.querySelector("#single-dialog");
   singleDialog.buttonProps = [
-    { label: "Confirm", onclick: "alert('Confirmed');this.hideDialog();" },
+    { label: "Confirm", onclick: "alert('Confirmed');this.open = false;" },
   ];
   const destructiveDialog = document.querySelector("#destructive-dialog");
   destructiveDialog.buttonProps = [
-    { label: "Confirm", onclick: "alert('Confirmed');this.hideDialog();" },
+    { label: "Confirm", onclick: "alert('Confirmed');this.open = false;" },
   ];
 </script>
   <ic-button onclick="showDialog('#plain-dialog')">Launch no button dialog</ic-button>
@@ -587,11 +623,11 @@ const doubleDialogEl = useRef(null);
 const tripleDialogEl = useRef(null);
 const destructiveDialogEl = useRef(null);
 const showDialog = (ref) => {    
-  ref.current.showDialog();
+  ref.current.open = true;
 };
 const confirmDialog = (ev) => {    
   alert("Confirmed");
-  ev.target.hideDialog();
+  ev.target.open = false;
 };
 return (
   <>
@@ -753,6 +789,115 @@ export const CustomButtonsDialog = () => {
   <CustomButtonsDialog />
 </ComponentPreview>
 
+### Slotted buttons
+
+export const snippetsSlottedButtons = [
+  {
+    language: "Web component",
+    snippet: `<script>
+  const dialog = document.querySelector("#default-dialog");
+  function showDialog() {    
+    dialog.open = true;
+  }
+  function hideDialog() {
+    dialog.open = false;
+  }
+  function addToBasket() {
+    alert("Added to basket");
+    dialog.open = false;
+  }
+</script>
+<ic-button onclick="showDialog()">Launch dialog</ic-button>
+<ic-dialog id="default-dialog" heading="Are you sure?" label="Coffee order">
+  <ic-typography>
+    You are about to add 'Americano' to your basket. Are you sure you want to continue?
+  </ic-typography>
+  <ic-button slot="dialog-controls" variant="secondary" onclick="hideDialog()">
+    Go back
+  </ic-button>
+  <ic-button slot="dialog-controls" onclick="addToBasket()">
+    Add to basket
+  </ic-button>
+</ic-dialog>`,
+  },
+  {
+    language: "React",
+    snippet: `const dialogEl = useRef(null);
+const showDialog = () => {
+  const dialog = dialogEl.current;
+  dialog.open = true;
+}
+const hideDialog = () => {
+  const dialog = dialogEl.current;
+  dialog.open = false;
+}
+const addToBasket = () => {
+  alert("Added to basket");
+  const dialog = dialogEl.current;
+  dialog.open = false;
+}
+return (
+  <>
+    <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
+    <IcDialog
+      heading="Are you sure?"
+      label="Coffee order"
+      ref={dialogEl}
+    >
+      <IcTypography>
+        You are about to add 'Americano' to your basket. Are you sure you want
+        to continue?
+      </IcTypography>
+      <IcButton slot="dialog-controls" variant="secondary" onClick={() => hideDialog()}>
+        Go back
+      </IcButton>
+      <IcButton slot="dialog-controls" onClick={() => addToBasket()}>
+        Add to basket
+      </IcButton>
+    </IcDialog>
+  </>
+);`,
+  },
+];
+
+export const SlottedButtonsDialog = () => {
+  const dialogEl = useRef(null);
+  const hideDialog = () => {
+    const dialog = dialogEl.current;
+    dialog.open = false;
+  };
+  const addToBasket = () => {
+    alert("Added to basket");
+    const dialog = dialogEl.current;
+    dialog.open = false;
+  };
+  return (
+    <>
+      <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
+      <IcDialog heading="Are you sure?" label="Coffee order" ref={dialogEl}>
+        <IcTypography>
+          You are about to add 'Americano' to your basket. Are you sure you want
+          to continue?
+        </IcTypography>
+        <IcButton
+          slot="dialog-controls"
+          variant="secondary"
+          onClick={() => hideDialog()}
+        >
+          Go back
+        </IcButton>
+        <IcButton slot="dialog-controls" onClick={() => addToBasket()}>
+          Add to basket
+        </IcButton>
+      </IcDialog>
+    </>
+  );
+};
+
+<ComponentPreview snippets={snippetsSlottedButtons}>
+  <SlottedButtonsDialog />
+</ComponentPreview>
+
 ### Interactive content
 
 export const interactiveContentSnippet = [
@@ -763,7 +908,7 @@ export const interactiveContentSnippet = [
   const checkGroup = document.querySelector("ic-checkbox-group");
   let termsAgreed = false;
   function showDialog() {
-    dialog.showDialog();
+    dialog.open = true;
   }
   function toggleTermsAgreed() {
     termsAgreed = !termsAgreed;
@@ -771,7 +916,7 @@ export const interactiveContentSnippet = [
   function dialogConfirmed(ev) {
     const message = (termsAgreed) ? "Terms agreed" : "Terms not agreed";
     alert(message);
-    ev.target.hideDialog();
+    ev.target.open = false;
   }
   dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
   checkGroup.addEventListener("icChange", toggleTermsAgreed);
@@ -796,7 +941,7 @@ export const interactiveContentSnippet = [
     snippet: `const [termsAgreed, setTermsAgreed] = useState(false);
 const dialogEl = useRef(null);
 const showDialog = () => {
-  dialogEl.current.showDialog();
+  dialogEl.current.open = true;
 };
 const toggleTermsAgreed = () => {
   setTermsAgreed(!termsAgreed);
@@ -804,7 +949,7 @@ const toggleTermsAgreed = () => {
 const termsDialogConfirmed = (ev) => {
   const message = (termsAgreed) ? "Terms agreed" : "Terms not agreed";
   alert(message);
-  ev.target.hideDialog();
+  ev.target.open = false;
 } 
 return (
   <>
@@ -838,7 +983,8 @@ export const InteractiveContent = () => {
   const termsDialogConfirmed = (ev) => {
     const message = termsAgreed ? "Terms agreed" : "Terms not agreed";
     alert(message);
-    ev.target.hideDialog();
+    const el = ev.target;
+    el.open = false;
   };
   return (
     <>
@@ -881,11 +1027,11 @@ export const noCloseSnippet = [
     snippet: `<script>
   const dialog = document.querySelector("#no-close-dialog");
   function showDialog() {
-    dialog.showDialog();
+    dialog.open = true;
   }
   function dialogConfirmed(ev) {
     alert("Confirmed!");
-    ev.target.hideDialog();
+    ev.target.open = false;
   }
   dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
 </script>
@@ -903,11 +1049,11 @@ export const noCloseSnippet = [
     language: "React",
     snippet: `const dialogEl = useRef(null);
 const showDialog = () => {
-  dialogEl.current.showDialog();
+  dialogEl.current.open = true;
 };
 const confirmDialog = (ev) => {    
   alert("Confirmed!");
-  ev.target.hideDialog();
+  ev.target.open = false;
 };
 return (
   <>
@@ -960,11 +1106,11 @@ export const eventsSnippet = [
     snippet: `<script>
   const evDialog=document.querySelector("#ev-dialog");
   function showDialog() {
-    evDialog.showDialog();
+    evDialog.open = true;
   }
   function dialogConfirmed() {          
     alert("Dialog confirmed");
-    evDialog.hideDialog();
+    evDialog.open = false;
   }
   function dialogCancelled() {
     alert("Dialog cancelled");
@@ -1004,7 +1150,7 @@ export const eventsSnippet = [
     language: "React",
     snippet: `const dialogEl = useRef(null);
 const showDialog = () => {
-  dialogEl.current.showDialog();
+  dialogEl.current.open = true;
 };
 const dialogOpened = () => {
   alert("Dialog opened");
@@ -1017,7 +1163,7 @@ const dialogCancelled = () => {
 }
 const dialogConfirmed = () => {
   alert("Dialog confirmed");
-  dialogEl.current.hideDialog();
+  dialogEl.current.open = false;
 }
 const cancelDialog = () => {
   dialogEl.current.cancelDialog();
@@ -1063,7 +1209,7 @@ export const EventsContent = () => {
   };
   const dialogConfirmed = () => {
     alert("Dialog confirmed");
-    dialogEl.current.hideDialog();
+    dialogEl.current.open = false;
   };
   const cancelDialog = () => {
     dialogEl.current.cancelDialog();

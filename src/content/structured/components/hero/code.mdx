@@ -1,7 +1,7 @@
 ---
 path: "/components/hero/code"
 
-date: "2023-02-03"
+date: "2023-10-25"
 
 title: "Hero"
 
@@ -142,6 +142,48 @@ export const snippetsContentCentre = [
       Order now
     </IcButton>
     <IcButton variant="secondary" slot="interaction">
+      Submit new flavour
+    </IcButton>
+  </IcHero>
+</ComponentPreview>
+
+### Size small
+
+export const snippetsSmall = [
+  {
+    language: "Web component",
+    snippet: `<ic-hero
+  heading="New coffee launches 14 September 2022"
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+  size="small"
+>
+  <ic-button variant="primary" slot="interaction" size="small">Order now</ic-button>
+  <ic-button variant="secondary" slot="interaction" size="small">Submit new flavour</ic-button>
+</ic-hero>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcHero
+  heading="New coffee launches 14 September 2022"
+  subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+  size="small"
+>
+  <IcButton variant="primary" slot="interaction" size="small">Order now</IcButton>
+  <IcButton variant="secondary" slot="interaction" size="small">Submit new flavour</IcButton>
+</IcHero>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSmall}>
+  <IcHero
+    heading="New coffee launches 14 September 2022"
+    subheading="Brand new flavours now available! Irresistible. Caramel. Decadence. Sugary."
+    size="small"
+  >
+    <IcButton variant="primary" slot="interaction" size="small">
+      Order now
+    </IcButton>
+    <IcButton variant="secondary" slot="interaction" size="small">
       Submit new flavour
     </IcButton>
   </IcHero>

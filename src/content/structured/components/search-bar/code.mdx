@@ -1,7 +1,7 @@
 ---
 path: "/components/search-bar/code"
 
-date: "2023-02-06"
+date: "2023-10-25"
 
 title: "Search bar"
 
@@ -293,6 +293,58 @@ export const disabled = [
   <IcSearchBar
     label="What is your favourite coffee?"
     disabled
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+</ComponentPreview>
+
+### Size small
+
+export const sizeSmall = [
+  {
+    language: "Web component",
+    snippet: `<ic-search-bar label="What is your favourite coffee?" size="small"
+>
+</ic-search-bar>
+<script>
+  const searchBar = document.querySelector("ic-search-bar");
+  searchBar.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSearchBar
+  label="What is your favourite coffee?"
+  size="small"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={sizeSmall}>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    size="small"
     options={[
       { label: "Espresso", value: "espresso" },
       { label: "Double Espresso", value: "doubleespresso" },

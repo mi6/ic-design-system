@@ -1,7 +1,7 @@
 ---
 path: "/components/radio/code"
 
-date: "2023-02-06"
+date: "2023-10-25"
 
 title: "Radio button"
 
@@ -199,7 +199,7 @@ export const withHelperText = [
     language: "React",
     snippet: `<IcRadioGroup 
     label="Do you have any special requests?" 
-    helperText="Helper text"
+    helperText="Let us know if you'd like an alternative to dairy milk"
     name='radio-group-4'
 >
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
@@ -219,19 +219,57 @@ export const withHelperText = [
   </IcRadioGroup>
 </ComponentPreview>
 
-### With validation
+### Size small
 
-export const withValidation = [
+export const smallSnippet = [
   {
     language: "Web component",
-    snippet: `<ic-radio-group name='radio-group-5' label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required="true">
+    snippet: `<ic-radio-group 
+  label="Do you have any special requests?" 
+  name='radio-group-5'
+  size="small"
+>
   <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
   <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
 </ic-radio-group>`,
   },
   {
     language: "React",
-    snippet: `<IcRadioGroup name='radio-group-5' label="Do you have any special requests?" validationStatus="error" validationText="An answer to this question is required" required>
+    snippet: `<IcRadioGroup 
+    label="Do you have any special requests?" 
+    name='radio-group-5'
+    size="small"
+>
+  <IcRadioOption value="request" label="Yes, I want to modify my order" />
+  <IcRadioOption value="none" label="No, standard please" />
+</IcRadioGroup>`,
+  },
+];
+
+<ComponentPreview style={{ marginTop: "24px" }} snippets={smallSnippet}>
+  <IcRadioGroup
+    label="Do you have any special requests?"
+    name="radio-group-5"
+    size="small"
+  >
+    <IcRadioOption value="request" label="Yes, I want to modify my order" />
+    <IcRadioOption value="none" label="No, standard please" />
+  </IcRadioGroup>
+</ComponentPreview>
+
+### With validation
+
+export const withValidation = [
+  {
+    language: "Web component",
+    snippet: `<ic-radio-group name='radio-group-6' label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required="true">
+  <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
+  <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
+</ic-radio-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcRadioGroup name='radio-group-6' label="Do you have any special requests?" validationStatus="error" validationText="An answer to this question is required" required>
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
   <IcRadioOption value="none" label="No, standard please" />
 </IcRadioGroup>`,
@@ -244,7 +282,7 @@ export const withValidation = [
     validationStatus="error"
     validationText="An answer to this question is required"
     required
-    name="radio-group-5"
+    name="radio-group-6"
   >
     <IcRadioOption value="request" label="Yes, I want to modify my order" />
     <IcRadioOption value="none" label="No, standard please" />

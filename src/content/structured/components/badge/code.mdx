@@ -1,7 +1,7 @@
 ---
 path: "/components/badge/code"
 
-date: "2023-02-03"
+date: "2023-10-24"
 
 title: "Badge"
 
@@ -130,38 +130,38 @@ export const snippetsStatus = [
   {
     language: "Web component",
     snippet: `<ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="neutral"></ic-badge>
+  <ic-badge slot="badge" variant="neutral" text-label="1"></ic-badge>
   Neutral
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="info"></ic-badge>
+  <ic-badge slot="badge" variant="info" text-label="1"></ic-badge>
   Information
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="error"></ic-badge>
+  <ic-badge slot="badge" variant="error" text-label="1"></ic-badge>
   Error
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="success"></ic-badge>
+  <ic-badge slot="badge" variant="success" text-label="1"></ic-badge>
   Success
 </ic-button>`,
   },
   {
     language: "React",
     snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="neutral"/>
+  <IcBadge slot="badge" variant="neutral" textLabel="1"/>
   Neutral
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="info"/>
+  <IcBadge slot="badge" variant="info" textLabel="1"/>
   Information
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="error"/>
+  <IcBadge slot="badge" variant="error" textLabel="1"/>
   Error
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="success"/>
+  <IcBadge slot="badge" variant="success" textLabel="1"/>
   Success
 </IcButton>`,
   },
@@ -169,19 +169,19 @@ export const snippetsStatus = [
 
 <ComponentPreview snippets={snippetsStatus}>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="neutral" />
+    <IcBadge slot="badge" variant="neutral" textLabel="1" />
     Neutral
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="info" />
+    <IcBadge slot="badge" variant="info" textLabel="1" />
     Information
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="error" />
+    <IcBadge slot="badge" variant="error" textLabel="1" />
     Error
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="success" />
+    <IcBadge slot="badge" variant="success" textLabel="1" />
     Success
   </IcButton>
 </ComponentPreview>
@@ -560,9 +560,9 @@ export const snippetsHideBadge = [
   function showHideBadge() {
     badge = document.querySelector("ic-badge");
     if (badge.classList.contains("show")) {
-      badge.hideBadge();
+      badge.visible = false;
     } else {
-      badge.showBadge();
+      badge.visible = true;
     }
   }
 </script>
@@ -580,9 +580,9 @@ export const snippetsHideBadge = [
   const showHideBadge = () => {
   const badge = badgeEl.current;
    if(badge.classList.contains("show")) {
-      badge.hideBadge();
+      badge.visible = false;
    } else {
-    badge.showBadge();
+    badge.visible = true;
    }
   };
     return (
@@ -602,9 +602,9 @@ export const ToggleBadge = () => {
   const showHideBadge = () => {
     const badge = badgeEl.current;
     if (badge.classList.contains("show")) {
-      badge.hideBadge();
+      badge.visible = false;
     } else {
-      badge.showBadge();
+      badge.visible = true;
     }
   };
   return (

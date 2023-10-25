@@ -1,7 +1,7 @@
 ---
 path: "/components/text-field/code"
 
-date: "2023-04-25"
+date: "2023-10-25"
 
 title: "Text field"
 
@@ -200,6 +200,41 @@ export const snippetsDisabled = [
       <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
     </svg>
   </IcTextField>
+</ComponentPreview>
+
+### Size small
+
+export const snippetsSmall = [
+  {
+    language: "Web component",
+    snippet: `<ic-text-field 
+    label="What is your favourite coffee?" 
+    placeholder="Placeholder" 
+    size="small">
+</ic-text-field>
+<script>
+  const textField = document.querySelector('ic-text-field');
+  textfield.addEventListenter('icChange', (ev) => console.log(ev.detail.value));
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTextField 
+  label="What is your favourite coffee?" 
+  placeholder="Placeholder" 
+  size="small"
+  onIcChange={(ev) => console.log(ev.detail.value)}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSmall}>
+  <IcTextField
+    label="What is your favourite coffee?"
+    placeholder="Placeholder"
+    size="small"
+    onIcChange={(ev) => console.log(ev.detail.value)}
+  />
 </ComponentPreview>
 
 ### Validation
