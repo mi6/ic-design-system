@@ -1,9 +1,9 @@
-.event-description .deprecation-tag {
+.table-description .deprecation-tag {
   margin-top: var(--ic-space-xs);
 }
 
 @media screen and (max-width: 576px) {
-  .event-description .deprecation-tag {
+  .table-description .deprecation-tag {
     margin-top: var(--ic-space-lg);
   }
 }

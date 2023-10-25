@@ -1,7 +1,7 @@
 ---
 path: "/components/select/code"
 
-date: "2023-03-30"
+date: "2023-10-25"
 
 title: "Select"
 
@@ -248,6 +248,65 @@ export const SelectExampleOptionsDisabled = () => (
 
 <ComponentPreview snippets={snippetsOptionDisabled}>
   <SelectExampleOptionsDisabled />
+</ComponentPreview>
+
+### Size small
+
+export const snippetsSmall = [
+  {
+    language: "Web component",
+    snippet: `<ic-select label="What is your favourite coffee?" size="small"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    console.log(event.detail.value);
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcSelect label="What is your favourite coffee?"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  onIcChange={(event) => console.log(event.detail.value)}
+  size="small"
+/>`,
+  },
+];
+
+export const SelectExampleSmall = () => (
+  <IcSelect
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+    onIcChange={(event) => console.log(event.detail.value)}
+    size="small"
+  />
+);
+
+<ComponentPreview snippets={snippetsSmall}>
+  <SelectExampleSmall />
 </ComponentPreview>
 
 ### Hidden label

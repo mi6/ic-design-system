@@ -1,7 +1,7 @@
 ---
 path: "/components/data-entity/code"
 
-date: "2023-07-31"
+date: "2023-10-25"
 
 title: "Data entity"
 
@@ -83,7 +83,7 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `  <IcDataEntity heading="Personal details">
+    snippet: `<IcDataEntity heading="Personal details">
     <IcDataRow label="Name" value="Michael Johnson">
       <IcLink href="#" slot="end-component">
         Edit
@@ -133,7 +133,7 @@ export const snippets = [
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcDataEntity heading="Personal details">
+  <IcDataEntity heading="Personal details" style={{ width: "90%" }}>
     <IcDataRow label="Name" value="Michael Johnson">
       <IcLink href="#" slot="end-component">
         Edit
@@ -201,7 +201,7 @@ export const withStatusTags = [
       <ic-status-tag
         status="success"
         label="confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </ic-data-row>
@@ -209,7 +209,7 @@ export const withStatusTags = [
       <ic-status-tag
         status="warning"
         label="in review"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </ic-data-row>
@@ -217,7 +217,7 @@ export const withStatusTags = [
       <ic-status-tag
         status="warning"
         label="in review"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </ic-data-row>
@@ -225,7 +225,7 @@ export const withStatusTags = [
       <ic-status-tag
         status="success"
         label="confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </ic-data-row>
@@ -241,7 +241,7 @@ export const withStatusTags = [
       </ic-typography>
       <ic-status-tag
         label="not confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </ic-data-row>
@@ -254,7 +254,7 @@ export const withStatusTags = [
       <IcStatusTag
         status="success"
         label="confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -262,7 +262,7 @@ export const withStatusTags = [
       <IcStatusTag
         status="warning"
         label="in review"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -270,7 +270,7 @@ export const withStatusTags = [
       <IcStatusTag
         status="warning"
         label="in review"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -278,7 +278,7 @@ export const withStatusTags = [
       <IcStatusTag
         status="success"
         label="confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -294,7 +294,7 @@ export const withStatusTags = [
       </IcTypography>
       <IcStatusTag
         label="not confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -303,12 +303,12 @@ export const withStatusTags = [
 ];
 
 <ComponentPreview snippets={withStatusTags}>
-  <IcDataEntity heading="Personal details">
+  <IcDataEntity heading="Personal details" style={{ width: "90%" }}>
     <IcDataRow label="Name" value="Michael Johnson">
       <IcStatusTag
         status="success"
         label="confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -316,7 +316,7 @@ export const withStatusTags = [
       <IcStatusTag
         status="warning"
         label="in review"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -324,7 +324,7 @@ export const withStatusTags = [
       <IcStatusTag
         status="warning"
         label="in review"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -332,7 +332,7 @@ export const withStatusTags = [
       <IcStatusTag
         status="success"
         label="confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
     </IcDataRow>
@@ -348,9 +348,154 @@ export const withStatusTags = [
       </IcTypography>
       <IcStatusTag
         label="not confirmed"
-        variant="secondary"
+        variant="filled"
         slot="end-component"
       />
+    </IcDataRow>
+  </IcDataEntity>
+</ComponentPreview>
+
+### Size small
+
+export const smallSnippet = [
+  {
+    language: "Web component",
+    snippet: `<ic-data-entity heading="Personal details" size="small">
+  <ic-data-row label="Name" value="Michael Johnson">
+    <ic-status-tag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Date of birth" value="16 October 1995">
+    <ic-status-tag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Telephone" value="07449 7654873">
+    <ic-status-tag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Email" value="mjohnson@coffee.gov">
+    <ic-status-tag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Address">
+    <ic-typography variant="body" slot="value">
+      383 Coffee Drive
+      <br />
+      London
+      <br />
+      SW7 988
+      <br />
+      United Kingdom
+    </ic-typography>
+    <ic-status-tag
+      label="not confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+</ic-data-entity>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDataEntity heading="Personal details" size="small">
+  <IcDataRow label="Name" value="Michael Johnson">
+    <IcStatusTag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Date of birth" value="16 October 1995">
+    <IcStatusTag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Telephone" value="07449 7654873">
+    <IcStatusTag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Email" value="mjohnson@coffee.gov">
+    <IcStatusTag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Address">
+    <IcTypography variant="body" slot="value">
+      383 Coffee Drive
+      <br />
+      London
+      <br />
+      SW7 988
+      <br />
+      United Kingdom
+    </IcTypography>
+    <IcStatusTag
+      label="not confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+</IcDataEntity>`,
+  },
+];
+
+<ComponentPreview snippets={smallSnippet}>
+  <IcDataEntity
+    heading="Personal details"
+    size="small"
+    style={{ width: "90%" }}
+  >
+    <IcDataRow label="Name" value="Michael Johnson" />
+    <IcDataRow label="Date of birth" value="16 October 1995" />
+    <IcDataRow label="Telephone" value="07449 7654873" />
+    <IcDataRow label="Email" value="mjohnson@coffee.gov" />
+    <IcDataRow label="Address">
+      <IcTypography variant="body" slot="value">
+        383 Coffee Drive
+        <br />
+        London
+        <br />
+        SW7 988
+        <br />
+        United Kingdom
+      </IcTypography>
     </IcDataRow>
   </IcDataEntity>
 </ComponentPreview>
@@ -518,7 +663,7 @@ export const editableExample = [
 ];
 
 <ComponentPreview snippets={editableExample} style={{ display: "block" }}>
-  <IcDataEntity heading="Personal details">
+  <IcDataEntity heading="Personal details" style={{ width: "90%" }}>
     <IcDataRow label="Name">
       <IcTextField
         slot="value"

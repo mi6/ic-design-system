@@ -1,7 +1,7 @@
 ---
 path: "/components/skeleton/code"
 
-date: "2023-02-03"
+date: "2023-10-24"
 
 title: "Skeleton"
 
@@ -154,29 +154,29 @@ width: "200px"
 export const snippetsLight = [
   {
     language: "Web component",
-    snippet: `<ic-skeleton variant="circle" light="true"></ic-skeleton>
+    snippet: `<ic-skeleton variant="circle" appearance="light"></ic-skeleton>
 <ic-typography variant="caption">
-  <ic-skeleton variant="text" light="true"></ic-skeleton>
+  <ic-skeleton variant="text" appearance="light"></ic-skeleton>
 </ic-typography>
-<ic-skeleton light="true"></ic-skeleton>`,
+<ic-skeleton appearance="light"></ic-skeleton>`,
   },
   {
     language: "React",
-    snippet: `<IcSkeleton variant="circle" light="true" />
+    snippet: `<IcSkeleton variant="circle" appearance="light" />
 <IcTypography variant="caption">
-  <IcSkeleton variant="text" light="true" />
+  <IcSkeleton variant="text" appearance="light" />
 </IcTypography>
-<IcSkeleton light="true" />`,
+<IcSkeleton appearance="light" />`,
   },
 ];
 
 <ComponentPreview snippets={snippetsLight}>
   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-    <IcSkeleton variant="circle" light="true" />
+    <IcSkeleton variant="circle" appearance="light" />
     <IcTypography variant="caption">
-      <IcSkeleton variant="text" light="true" />
+      <IcSkeleton variant="text" appearance="light" />
     </IcTypography>
-    <IcSkeleton light="true" />
+    <IcSkeleton appearance="light" />
   </div>
 </ComponentPreview>
 
@@ -185,8 +185,7 @@ export const snippetsLight = [
 export const snippetsInCard = [
   {
     language: "Web component",
-    snippet: `
-    <div>
+    snippet: `<div>
       <div id="content-container"></div>
       <br />
       <ic-button variant="primary" id="reload">

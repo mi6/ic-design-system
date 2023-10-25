@@ -1,7 +1,7 @@
 ---
 path: "/components/page-header/code"
 
-date: "2023-02-03"
+date: "2023-10-25"
 
 title: "Page header"
 
@@ -57,6 +57,23 @@ export const snippets = [
 <ComponentDetails component="ic-page-header" />
 
 ## Variants
+
+### Size small
+
+export const snippetsSmall = [
+  {
+    language: "Web component",
+    snippet: `<ic-page-header size="small" heading="App title" subheading="App information"></ic-page-header>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcPageHeader size="small" heading="App title" subheading="App information" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSmall} style={{ flexDirection: "column" }}>
+  <IcPageHeader size="small" heading="App title" subheading="App information" />
+</ComponentPreview>
 
 ### With breadcrumb navigation
 
