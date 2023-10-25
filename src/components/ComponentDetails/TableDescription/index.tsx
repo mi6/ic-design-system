@@ -1,11 +1,11 @@
 import React from "react";
 import "./index.css";
 
-const EventDescription: React.FC<{
+const TableDescription: React.FC<{
   description: string;
   deprecation: string | undefined;
 }> = ({ description, deprecation }) => (
-  <div className="event-description">
+  <div className="table-description">
     {!!description && <ic-typography>{description}</ic-typography>}
     {deprecation && (
       <>
@@ -18,4 +18,4 @@ const EventDescription: React.FC<{
   </div>
 );
 
-export default EventDescription;
+export default TableDescription;

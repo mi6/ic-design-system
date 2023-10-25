@@ -3,7 +3,7 @@ import { JsonDocsEvent } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
 import AttributeCards from "../../AttributeCards";
-import EventDescription from "./EventDescription";
+import TableDescription from "../TableDescription";
 import AttributeName from "../AttributeName";
 
 interface EventTableProps {
@@ -42,7 +42,7 @@ const EventTable: React.FC<EventTableProps> = ({ eventData }) => {
           />
         ),
         description: (
-          <EventDescription description={docs} deprecation={deprecation} />
+          <TableDescription description={docs} deprecation={deprecation} />
         ),
         signature: <CodeAttribute label={detail} />,
       })),

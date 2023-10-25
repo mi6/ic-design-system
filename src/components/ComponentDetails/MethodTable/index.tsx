@@ -4,6 +4,7 @@ import AttributeTable from "../../AttributeTable";
 import CodeAttribute from "../../CodeAttribute";
 import AttributeCards from "../../AttributeCards";
 import AttributeName from "../AttributeName";
+import TableDescription from "../TableDescription";
 
 interface MethodTableProps {
   methodData: JsonDocsMethod[];
@@ -32,7 +33,12 @@ const EventTable: React.FC<MethodTableProps> = ({ methodData }) => {
     () =>
       methodData.map((method) => ({
         name: <AttributeName name={["Method"]} value={[method.name]} />,
-        description: method.docs,
+        description: (
+          <TableDescription
+            description={method.docs}
+            deprecation={method.deprecation}
+          />
+        ),
         signature: <CodeAttribute label={method.signature} />,
       })),
     []
