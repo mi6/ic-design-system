@@ -1,0 +1,50 @@
+@import "@ukic/fonts/dist/fonts.css";
+@import "@ukic/react/dist/core/core.css";
+@import "@ukic/react/dist/core/normalize.css";
+
+.card-container {
+  margin-top: var(--ic-space-xs);
+  margin-bottom: var(--ic-space-xl);
+  grid-gap: var(--ic-space-lg);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+}
+
+ic-page-header[heading="Components"] + ic-section-container .content-container {
+  width: 100%;
+  max-width: none;
+}
+
+.card-container > * {
+  flex-grow: 1;
+}
+
+.card-container * {
+  height: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .card-container {
+    grid-template-columns: auto;
+    margin-bottom: var(--ic-space-md);
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 993px) {
+  .card-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .card-container {
+    grid-gap: var(--ic-space-md);
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 1200px) {
+  .card-container {
+    margin-bottom: var(--ic-space-lg);
+  }
+}
