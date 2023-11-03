@@ -2,6 +2,10 @@ ic-page-header[data-class="page-header"] {
   margin-bottom: var(--ic-space-lg);
 }
 
+ic-page-header[heading="Components"] {
+  margin-bottom: 0;
+}
+
 ic-page-header ic-navigation-item a {
   height: 2.75rem !important;
   color: var(--ic-color-primary-text) !important;
@@ -43,5 +47,11 @@ ic-page-header ic-navigation-item.navigation-item-selected a:focus::before {
 @media screen and (min-width: 577px) and (max-width: 768px) {
   ic-page-header[data-class="page-header"] {
     margin: var(--ic-space-xs) calc(-1 * var(--ic-space-md)) var(--ic-space-lg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ic-page-header[heading="Components"] {
+    margin-bottom: 0;
   }
 }
