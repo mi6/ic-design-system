@@ -1,7 +1,7 @@
 import React from "react";
+import { Link as GatsbyLink } from "gatsby";
 import "./index.css";
-// eslint-disable-next-line import/no-unresolved
-import pagesData from "../../../public/icds-pages-data.json";
+import pagesData from "../../icds-pages-data.json";
 
 interface ComponentDetails {
   title: string;
@@ -31,13 +31,14 @@ const ComponentGallery: React.FC = () => {
       {uniqueComponentDetails &&
         uniqueComponentDetails.map((item: ComponentDetails) => (
           <li>
-            <ic-card
-              heading={item.title}
-              message={item.subTitle}
-              full-width
-              clickable
-              href={`${item.path}`}
-            />
+            <GatsbyLink to={`${item.path}`}>
+              <ic-card
+                heading={item.title}
+                message={item.subTitle}
+                full-width
+                clickable
+              />
+            </GatsbyLink>
           </li>
         ))}
     </ul>

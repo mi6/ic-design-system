@@ -20,6 +20,7 @@
     "dateformat": "^5.0.2",
     "dotenv": "^10.0.0",
     "flexsearch": "0.6.32",
+    "fs-extra": "^11.1.1",
     "gatsby": "^4.2.0",
     "gatsby-plugin-catch-links": "^4.2.0",
     "gatsby-plugin-local-search": "^2.0.1",
@@ -119,14 +120,14 @@
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "static-analysis": "npm run lint & npm run prettier",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
-    "start": "npm run develop",
+    "start": "npm run mdx-to-json && npm run develop",
     "serve": "gatsby serve -p 8000",
     "clean": "gatsby clean",
     "test": "jest --passWithNoTests",
     "prepare": "husky install",
     "verify-ts": "tsc --noEmit",
     "audit": "audit-ci -m --config audit-ci.json",
-    "mdx-to-json": "markdown-json -c ./mdx-to-json-settings.json"
+    "mdx-to-json": "markdown-json -c ./mdx-to-json-settings.json && node copy-json.js"
   },
   "size-limit": [
     {

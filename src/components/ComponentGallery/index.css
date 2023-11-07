@@ -1,14 +1,10 @@
-@import "@ukic/fonts/dist/fonts.css";
-@import "@ukic/react/dist/core/core.css";
-@import "@ukic/react/dist/core/normalize.css";
-
 .card-container {
-  margin-top: var(--ic-space-xs);
-  margin-bottom: var(--ic-space-xl);
   grid-gap: var(--ic-space-lg);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
+  margin-left: 0;
+  margin-top: var(--ic-space-xs);
 }
 
 ic-page-header[heading="Components"] + ic-section-container .content-container {
@@ -27,7 +23,17 @@ ic-page-header[heading="Components"] + ic-section-container .content-container {
 @media screen and (max-width: 576px) {
   .card-container {
     grid-template-columns: auto;
-    margin-bottom: var(--ic-space-md);
+    margin-left: calc(var(--ic-space-xs) * -1);
+    margin-right: calc(var(--ic-space-xs) * -1);
+    grid-gap: var(--ic-space-xs);
+  }
+
+  ic-page-header[heading="Components"]
+    + ic-section-container
+    .content-container
+    ic-typography {
+    margin-left: calc(var(--ic-space-xs) * -1);
+    margin-right: calc(var(--ic-space-xs) * -1);
   }
 }
 
@@ -37,14 +43,23 @@ ic-page-header[heading="Components"] + ic-section-container .content-container {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  ic-page-header[heading="Components"]
+    + ic-section-container
+    .content-container
+    ic-typography {
+    margin-left: calc(var(--ic-space-sm) * -1);
+    margin-right: calc(var(--ic-space-sm) * -1);
+  }
+
   .card-container {
-    grid-gap: var(--ic-space-md);
+    margin: var(--ic-space-xs) calc(var(--ic-space-sm) * -1) var(--ic-space-xl);
   }
 }
 
 @media screen and (min-width: 577px) and (max-width: 1200px) {
   .card-container {
     margin-bottom: var(--ic-space-lg);
+    grid-gap: var(--ic-space-md);
   }
 }
