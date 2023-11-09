@@ -1,7 +1,7 @@
 ---
 path: "/components/toast/code"
 
-date: "2023-02-03"
+date: "2023-11-09"
 
 title: "Toast"
 
@@ -39,7 +39,7 @@ export const defaultSnippet = [
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
     var toast = document.querySelector("#toast-01");
-    toastRegion.setVisible(toast);
+    toastRegion.openToast = toast;
   }
 </script>`,
   },
@@ -48,7 +48,7 @@ export const defaultSnippet = [
     snippet: `const toastRegionEl = useRef(null);
 const toastEl = useRef(null);
 const handleClick = () => {
-  toastRegionEl.current.setVisible(toastEl.current);
+  toastRegionEl.current.openToast = toastEl.current;
 }
 return (
   <>
@@ -66,8 +66,8 @@ return (
 export const DefaultToast = () => {
   const toastRegionEl = useRef(null);
   const toastEl = useRef(null);
-  const handleClick = async () => {
-    await toastRegionEl.current.setVisible(toastEl.current);
+  const handleClick = () => {
+    toastRegionEl.current.openToast = toastEl.current;
   };
   return (
     <>
@@ -93,18 +93,38 @@ export const DefaultToast = () => {
 
 ## Variants
 
-export const withVariantSnippet = [
+### Displaying toasts
+
+Use the `openToast` prop on the toast region component to display a toast message. Do not use the `setVisible` method on the toast component as this does not work with the toast queuing functionality.
+
+### Queuing toasts
+
+To view the toasts queuing in the following example, click each button to open a toast and then the dismiss button on the visible toast. Each toast will appear one after the other.
+
+export const queuingSnippet = [
   {
     language: "Web component",
-    snippet: `<ic-button onclick="displayToast()">Display success toast</ic-button>
+    snippet: `<ic-button onclick="handleClick()">Display default toast</ic-button>
+<ic-button onclick="handleErrorClick()">Display error toast</ic-button>
+<ic-button onclick="handleAutoDismissClick()">Display auto dismiss toast</ic-button>
 <ic-toast-region>
-  <ic-toast id="toast-02" heading="Your coffee is ready" message="Please dismiss and collect"></ic-toast>
+  <ic-toast id="toast-01" heading="Your coffee is ready"></ic-toast>
+  <ic-toast id="toast-02" heading="There is no coffee left" variant="error"></ic-toast>
+  <ic-toast id="toast-03" heading="Your coffee is ready" dismiss-mode="automatic" auto-dismiss-timeout="10000"></ic-toast>
 </ic-toast-region>
 <script>
   const toastRegion = document.querySelector("ic-toast-region");
-  function displayToast() {
-    const successToast = document.querySelector("#toast-02");
-    toastRegion.setVisible(successToast);
+  function handleClick() {
+    var toast = document.querySelector("#toast-01");
+    toastRegion.openToast = toast;
+  }
+  function handleErrorClick() {
+    var toast = document.querySelector("#toast-02");
+    toastRegion.openToast = toast;
+  }
+  function handleAutoDismissClick() {
+    var toast = document.querySelector("#toast-03");
+    toastRegion.openToast = toast;
   }
 </script>`,
   },
@@ -112,8 +132,102 @@ export const withVariantSnippet = [
     language: "React",
     snippet: `const toastRegionEl = useRef(null);
 const toastEl = useRef(null);
-const handleClick = async () => {
-  await toastRegionEl.current.setVisible(toastEl.current);
+const errorToastEl = useRef(null);
+const autoDismissToastEl = useRef(null);
+const handleClick = () => {
+  toastRegionEl.current.openToast = toastEl.current;
+};
+const handleErrorClick = () => {
+  toastRegionEl.current.openToast = errorToastEl.current;
+};
+const handleAutoDismissClick = () => {
+  toastRegionEl.current.openToast = autoDismissToastEl.current;
+};
+return (
+  <>
+    <div style={{ display: "flex", gap: "8px" }}>
+    <IcButton onClick={handleClick}>Display default toast</IcButton>
+    <IcButton onClick={handleErrorClick}>Display error toast</IcButton>
+    <IcButton onClick={handleAutoDismissClick}>Display auto dismiss toast</IcButton>
+    </div>
+    <IcToastRegion ref={toastRegionEl}>
+      <IcToast heading="Your coffee is ready" ref={toastEl} />
+      <IcToast heading="There is no coffee left" variant="error" ref={errorToastEl} />
+      <IcToast heading="Your coffee is ready" dismissMode="automatic" autoDismissTimeout={10000} ref={autoDismissToastEl} />
+    </IcToastRegion>
+  </>
+);`,
+  },
+];
+
+export const QueuingToast = () => {
+  const toastRegionEl = useRef(null);
+  const toastEl = useRef(null);
+  const errorToastEl = useRef(null);
+  const autoDismissToastEl = useRef(null);
+  const handleClick = () => {
+    toastRegionEl.current.openToast = toastEl.current;
+  };
+  const handleErrorClick = () => {
+    toastRegionEl.current.openToast = errorToastEl.current;
+  };
+  const handleAutoDismissClick = () => {
+    toastRegionEl.current.openToast = autoDismissToastEl.current;
+  };
+  return (
+    <>
+      <div style={{ display: "flex", gap: "8px" }}>
+        <IcButton onClick={handleClick}>Display default toast</IcButton>
+        <IcButton onClick={handleErrorClick}>Display error toast</IcButton>
+        <IcButton onClick={handleAutoDismissClick}>
+          Display auto dismiss toast
+        </IcButton>
+      </div>
+      <IcToastRegion ref={toastRegionEl}>
+        <IcToast heading="Your coffee is ready" ref={toastEl} />
+        <IcToast
+          heading="There is no coffee left"
+          variant="error"
+          ref={errorToastEl}
+        />
+        <IcToast
+          heading="Your coffee is ready"
+          dismissMode="automatic"
+          autoDismissTimeout={10000}
+          ref={autoDismissToastEl}
+        />
+      </IcToastRegion>
+    </>
+  );
+};
+
+<ComponentPreview snippets={queuingSnippet}>
+  <QueuingToast />
+</ComponentPreview>
+
+### Status variant
+
+export const withVariantSnippet = [
+  {
+    language: "Web component",
+    snippet: `<ic-button onclick="displayToast()">Display success toast</ic-button>
+<ic-toast-region>
+  <ic-toast variant="success" id="toast-02" heading="Your coffee is ready" message="Please dismiss and collect"></ic-toast>
+</ic-toast-region>
+<script>
+  const toastRegion = document.querySelector("ic-toast-region");
+  function displayToast() {
+    const successToast = document.querySelector("#toast-02");
+    toastRegion.openToast = successToast;
+  }
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const toastRegionEl = useRef(null);
+const toastEl = useRef(null);
+const handleClick = () => {
+ toastRegionEl.current.openToast = toastEl.current;
 }
 return (
   <>
@@ -134,8 +248,8 @@ return (
 export const WithVariantToast = () => {
   const toastRegionEl = useRef(null);
   const toastEl = useRef(null);
-  const handleClick = async () => {
-    await toastRegionEl.current.setVisible(toastEl.current);
+  const handleClick = () => {
+    toastRegionEl.current.openToast = toastEl.current;
   };
   return (
     <>
@@ -169,7 +283,7 @@ export const withMultilineSnippet = [
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
     const multilineToast = document.querySelector("#toast-03");
-    toastRegion.setVisible(multilineToast);
+    toastRegion.openToast = multilineToast;
   }
 </script>`,
   },
@@ -177,8 +291,8 @@ export const withMultilineSnippet = [
     language: "React",
     snippet: `const toastRegionEl = useRef(null);
 const toastEl = useRef(null);
-const handleClick = async () => {
-  await toastRegionEl.current.setVisible(toastEl.current);
+const handleClick = () => {
+  toastRegionEl.current.openToast = toastEl.current;
 }
 return (
   <>
@@ -198,8 +312,8 @@ return (
 export const MultilineToast = () => {
   const toastRegionEl = useRef(null);
   const toastEl = useRef(null);
-  const handleClick = async () => {
-    await toastRegionEl.current.setVisible(toastEl.current);
+  const handleClick = () => {
+    toastRegionEl.current.openToast = toastEl.current;
   };
   return (
     <>
@@ -238,11 +352,11 @@ export const slottedActionsSnippet = [
   const toastRegion = document.querySelector("ic-toast-region");
   function displayButtonToast() {
     const slottedButtonToast = document.querySelector("#toast-04");
-    toastRegion.setVisible(slottedButtonToast);
+    toastRegion.openToast = slottedButtonToast;
   }
   function displayLinkToast() {
     const slottedLinkToast = document.querySelector("#toast-05");
-    toastRegion.setVisible(slottedLinkToast);
+    toastRegion.openToast = slottedLinkToast;
   }
 </script>`,
   },
@@ -251,11 +365,11 @@ export const slottedActionsSnippet = [
     snippet: `const toastRegionEl = useRef(null);
 const buttonToastEl = useRef(null);
 const linkToastEl = useRef(null);
-const handleButtonToastClick = async () => {
-  await toastRegionEl.current.setVisible(buttonToastEl.current);
+const handleButtonToastClick = () => {
+  toastRegionEl.current.openToast = buttonToastEl.current;
 }
-const handleLinkToastClick = async () => {
-  await toastRegionEl.current.setVisible(linkToastEl.current);
+const handleLinkToastClick = () => {
+  toastRegionEl.current.openToast = linkToastEl.current;
 }
 return (
   <>
@@ -290,11 +404,11 @@ export const SlottedActionsToast = () => {
   const toastRegionEl = useRef(null);
   const buttonToastEl = useRef(null);
   const linkToastEl = useRef(null);
-  const handleButtonToastClick = async () => {
-    await toastRegionEl.current.setVisible(buttonToastEl.current);
+  const handleButtonToastClick = () => {
+    toastRegionEl.current.openToast = buttonToastEl.current;
   };
-  const handleLinkToastClick = async () => {
-    await toastRegionEl.current.setVisible(linkToastEl.current);
+  const handleLinkToastClick = () => {
+    toastRegionEl.current.openToast = linkToastEl.current;
   };
   return (
     <>
@@ -349,7 +463,7 @@ export const autoDismissSnippet = [
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
     var toast = document.querySelector("#toast-06");
-    toastRegion.setVisible(toast);
+    toastRegion.openToast = toast;
   }
 </script>`,
   },
@@ -358,7 +472,7 @@ export const autoDismissSnippet = [
     snippet: `const toastRegionEl = useRef(null);
 const toastEl = useRef(null);
 const handleClick = () => {
-  toastRegionEl.current.setVisible(toastEl.current);
+  toastRegionEl.current.openToast = toastEl.current;
 }
 return (
   <>
@@ -375,7 +489,7 @@ export const AutoDismissToast = () => {
   const toastRegionEl = useRef(null);
   const toastEl = useRef(null);
   const handleClick = () => {
-    toastRegionEl.current.setVisible(toastEl.current);
+    toastRegionEl.current.openToast = toastEl.current;
   };
   return (
     <>
@@ -415,7 +529,7 @@ export const customIconAriaLabelsSnippet = [
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
     var toast = document.querySelector("#toast-07");
-    toastRegion.setVisible(toast);
+    toastRegion.openToast = toast;
   }
 </script>`,
   },
@@ -424,7 +538,7 @@ export const customIconAriaLabelsSnippet = [
     snippet: `const toastRegionEl = useRef(null);
 const toastEl = useRef(null);
 const handleClick = () => {
-  toastRegionEl.current.setVisible(toastEl.current);
+  toastRegionEl.current.openToast = toastEl.current;
 }
 return (
   <>
@@ -452,7 +566,7 @@ export const CustomIconAriaLabels = () => {
   const toastRegionEl = useRef(null);
   const toastEl = useRef(null);
   const handleClick = () => {
-    toastRegionEl.current.setVisible(toastEl.current);
+    toastRegionEl.current.openToast = toastEl.current;
   };
   return (
     <>
