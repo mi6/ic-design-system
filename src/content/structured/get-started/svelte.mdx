@@ -47,16 +47,6 @@ defineCustomElements();
 
 ## Step four
 
-In your HTML, you can now declare a component as follows:
-
-```html
-<ic-status-tag label="Neutral"></ic-status-tag>
-```
-
-## Step five
-
-To get the correct styling with the ICDS components, import the core CSS file.
-
 Add the following into the top level CSS file for your project. For newly generated Svelte projects this will be `src/global.css`.
 
 ```css
@@ -84,4 +74,12 @@ If you would like to import these styles to apply them to the rest of your proje
 
 ```css
 @import "@ukic/web-components/dist/core/normalize.css";
+```
+
+## Step five
+
+In your HTML, you can now declare a component as follows:
+
+```html
+<ic-status-tag label="Neutral"></ic-status-tag>
 ```
