@@ -69,16 +69,6 @@ defineCustomElements();
 
 ## Step six
 
-Declare the component in your `app.component.html` file.
-
-```html
-<ic-status-tag label="Neutral"></ic-status-tag>
-```
-
-## Step seven
-
-To get the correct styling with the ICDS components, import the core CSS file.
-
 Add the following into the top level CSS file for your project. For newly generated Angular projects this will be `src/styles.css`.
 
 ```css
@@ -106,4 +96,12 @@ If you would like to import these styles to apply them to the rest of your proje
 
 ```css
 @import "@ukic/web-components/dist/core/normalize.css";
+```
+
+## Step seven
+
+Declare the component in your `app.component.html` file.
+
+```html
+<ic-status-tag label="Neutral"></ic-status-tag>
 ```
