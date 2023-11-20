@@ -27,24 +27,12 @@ yarn add @ukic/react @ukic/fonts
 
 ## Step two
 
-Import the component(s) in your React files.
-
-```jsx
-import { IcComponent } from "@ukic/react";
-```
-
-## Step three
-
-To get the correct styling with the ICDS components, import the core CSS file.
-
 Add the following into the top level CSS file for your project.
 
 ```css
 @import "@ukic/fonts/dist/fonts.css";
 @import "@ukic/react/dist/core/core.css";
 ```
-
-<br />
 
 <p>
   In order to be rendered consistently across browsers and in line with modern
@@ -64,6 +52,14 @@ If you would like to import these styles to apply them to the rest of your proje
 
 ```css
 @import "@ukic/react/dist/core/normalize.css";
+```
+
+## Step three
+
+Import the component(s) in your React files.
+
+```jsx
+import { IcComponent } from "@ukic/react";
 ```
 
 ## Using NextJS

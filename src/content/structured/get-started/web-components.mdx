@@ -45,15 +45,7 @@ defineCustomElements();
 
 ## Step four
 
-In your HTML, you can now declare a component as follows:
-
-```jsx
-<ic-status-tag label="Neutral"></ic-status-tag>
-```
-
-## Step five
-
-To get the correct styling with the ICDS components, import the core CSS file. Depending on your framework or build tool, this can be included in either a CSS file or Javascript\Typescript file.
+Depending on your framework or build tool, this can be included in either a CSS file or Javascript\Typescript file.
 
 Add the following into the top level CSS file for your project.
 
@@ -82,6 +74,14 @@ If you would like to import these styles to apply them to the rest of your proje
 
 ```css
 @import "@ukic/web-components/dist/core/normalize.css";
+```
+
+## Step five
+
+In your HTML, you can now declare a component as follows:
+
+```jsx
+<ic-status-tag label="Neutral"></ic-status-tag>
 ```
 
 ## Webpack example
