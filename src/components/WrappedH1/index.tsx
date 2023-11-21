@@ -9,7 +9,7 @@ const WrappedH1: React.FC = (props: any) => (
     data-class="heading-extra-large"
   >
     {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
-    <h3 {...props} />
+    <h2 {...props} />
   </ic-typography>
 );
 
