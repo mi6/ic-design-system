@@ -35,7 +35,7 @@ const PropTable: React.FC<PropTableProps> = ({ slotData }) => {
   return (
     <>
       <ic-typography variant="h3" apply-vertical-margins>
-        <h3>Slots</h3>
+        <h4>Slots</h4>
       </ic-typography>
       <ic-typography apply-vertical-margins>
         <p>
