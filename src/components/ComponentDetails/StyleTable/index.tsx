@@ -35,7 +35,7 @@ const StyleTable: React.FC<StyleTableProps> = ({ styleData }) => {
   return (
     <>
       <ic-typography variant="h3" apply-vertical-margins>
-        <h3>CSS Custom Properties</h3>
+        <h4>CSS Custom Properties</h4>
       </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />
