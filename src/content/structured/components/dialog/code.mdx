@@ -26,8 +26,9 @@ import {
   IcCheckboxGroup,
   IcCheckbox,
   IcTypography,
+  IcSelect,
 } from "@ukic/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export const buttonProps = [
   {
@@ -1250,4 +1251,92 @@ export const EventsContent = () => {
 
 <ComponentPreview snippets={eventsSnippet}>
   <EventsContent />
+</ComponentPreview>
+
+### Popout elements in dialog
+
+export const popoutElements = [
+  {
+    language: "Web component",
+    snippet: `<script>
+  const milkSelect = document.querySelector('ic-select');
+  milkSelect.options = [
+    { value: 'whole', label: 'Whole' },
+    { value: 'semiskinned', label: 'Semi Skinned' },
+    { value: 'oat', label: 'Oat' },
+    { value: 'almond', label: 'Almond' }
+  ];
+  const btn = document.querySelector('ic-button');
+  btn.addEventListener('click', () => {
+    document.querySelector('ic-dialog').open = 'true';
+  })
+</script>
+<ic-button>Display dialog with popover elements</ic-button>
+<ic-dialog label='Coffee order' heading='Please add your milk?' disable-height-constraint='true'>
+<ic-typography>What type of milk would you like with your flat white coffee?</ic-typography>
+  <ic-select label='Please select a type of milk'></ic-select>
+</ic-dialog>`,
+  },
+  {
+    language: "React",
+    snippet: `const [open, setOpen] = useState(false);
+const handleClick = () => {
+  setOpen(!open)
+}
+return (
+  <>
+    <IcButton onClick={handleClick}>Display dialog with popover elements</IcButton>
+    <IcDialog label='Coffee order' heading="Please add your milk" disableHeightConstraint open={open}>
+      <IcTypography>What type of milk would you like with your flat white coffee?</IcTypography>
+      <IcSelect 
+        label='Select a type of milk'
+        options={[
+          { value: 'whole', label: 'Whole' },
+          { value: 'semiskinned', label: 'Semi Skinned' },
+          { value: 'oat', label: 'Oat' },
+          { value: 'almond', label: 'Almond' }
+        ]}
+      />
+    </IcDialog>
+  </>
+)`,
+  },
+];
+
+export const DialogWithPopout = () => {
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(!open);
+  };
+  return (
+    <>
+      <IcButton onClick={handleClick}>
+        Launch dialog with popout elements
+      </IcButton>
+      <IcDialog
+        label="Coffee order"
+        heading="Please add your milk"
+        disableHeightConstraint
+        open={open}
+      >
+        <IcTypography>
+          What type of milk would you like with your flat white coffee?
+        </IcTypography>
+        <br />
+        <IcSelect
+          label="Select a type of milk"
+          options={[
+            { value: "whole", label: "Whole" },
+            { value: "semiskinned", label: "Semi Skinned" },
+            { value: "oat", label: "Oat" },
+            { value: "almond", label: "Almond" },
+          ]}
+        />
+      </IcDialog>
+    </>
+  );
+};
+
+<ComponentPreview snippets={popoutElements}>
+  <DialogWithPopout />
 </ComponentPreview>
