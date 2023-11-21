@@ -52,7 +52,7 @@ const EventTable: React.FC<EventTableProps> = ({ eventData }) => {
   return (
     <>
       <ic-typography variant="h3" apply-vertical-margins>
-        <h3>Events</h3>
+        <h4>Events</h4>
       </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />

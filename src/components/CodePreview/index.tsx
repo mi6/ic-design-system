@@ -69,7 +69,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   state = "none",
 }) => (
   <div className="comp-preview">
-    <h3 className="offscreen">Interactive example</h3>
+    <h4 className="offscreen">Interactive example</h4>
     <div
       className={clsx(
         "comp-zone",

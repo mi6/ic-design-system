@@ -47,7 +47,7 @@ const EventTable: React.FC<MethodTableProps> = ({ methodData }) => {
   return (
     <>
       <ic-typography variant="h3" apply-vertical-margins>
-        <h3>Methods</h3>
+        <h4>Methods</h4>
       </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />

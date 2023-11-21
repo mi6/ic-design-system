@@ -13,10 +13,10 @@ interface WrappedH2Props {
 const WrappedH2: React.FC<WrappedH2Props> = ({ children }) => (
   <ic-typography variant="h2" apply-vertical-margins data-class="h2">
     {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
-    <h4 id={slug(children)}>
+    <h3 id={slug(children)}>
       {children}
       <Permalink title={children} sluggedTitle={slug(children)} />
-    </h4>
+    </h3>
   </ic-typography>
 );
 
