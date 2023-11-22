@@ -73,7 +73,7 @@
     "@types/react-helmet": "^6.1.5",
     "@types/react-table": "^7.7.11",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "axios": "^0.24.0",
+    "axios": "^1.6.0",
     "babel-jest": "^27.4.0",
     "babel-preset-gatsby": "^2.2.0",
     "commitizen": "^4.2.4",
