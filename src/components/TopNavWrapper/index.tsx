@@ -26,17 +26,16 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
   version,
   shortTitle,
 }) => (
-  <ic-top-navigation
-    version={version}
-    app-title={appTitle}
-    short-app-title={shortTitle}
-  >
+  <ic-top-navigation version={version}>
     <GatsbyLink slot="app-title" to={withPrefix("/")}>
       {appTitle}
     </GatsbyLink>
-    <span slot="app-icon">
+    <GatsbyLink slot="short-app-title" to={withPrefix("/")}>
+      {shortTitle}
+    </GatsbyLink>
+    <a slot="app-icon" href={withPrefix("/")}>
       <ICDSLogo role="img" aria-labelledby="ICDS Logo" className="icds-logo" />
-    </span>
+    </a>
     {textLinks.map(({ key, ...rest }) => (
       <TopNavItem {...rest} key={key} />
     ))}
