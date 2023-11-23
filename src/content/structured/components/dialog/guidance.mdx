@@ -167,7 +167,7 @@ Always give dialogs a meaningful heading and describe the task that the dialog c
 
 Add an optional label to a dialog to add categorisation or other secondary information.
 
-Specify any content within the dialog's body section, but take care not to place too much information in a dialog if it is best placed as a page itself.
+Specify any content within the dialog's body section, but take care not to place too much information in a dialog if it is best placed as a page itself. Also, consider using a full page instead of a dialog when lots of interactive elements are reqiured.
 
 Always follow the [content style](/styles/content-style) when writing textual content.
 
@@ -177,3 +177,5 @@ Always follow the [content style](/styles/content-style) when writing textual co
   state="none"
   caption="Dialogs have three sections: a title area, a content area and an action area."
 />
+
+When adding interactive content to a dialog and it has popover elements, to avoid the elements being cut off within the content area, use the prop `disableHeightConstraint` to allow the dialog to stretch to contain it's content.
