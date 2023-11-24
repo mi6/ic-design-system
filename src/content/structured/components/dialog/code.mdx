@@ -41,34 +41,6 @@ export const buttonProps = [
   },
 ];
 
-export const showDialog = (ref) => {
-  const el = ref.current;
-  el.open = true;
-};
-
-export const showAlertDialog = (dialogRef) => {
-  const dialog = dialogRef.current;
-  // only needed on our site as the titleAbove prop doesn't get applied
-  const alerts = document.querySelectorAll("ic-alert");
-  /* eslint-disable-next-line no-plusplus */
-  for (let i = 0; i < alerts.length; i++) {
-    alerts[i].setAttribute("title-above", "true");
-  }
-  dialog.open = true;
-};
-
-export const confirmDialog = (ev) => {
-  alert("Confirmed");
-  const el = ev.target;
-  el.open = false;
-};
-
-export const confirmedAdd = (ev) => {
-  alert("Added to basket");
-  const el = ev.target;
-  el.open = false;
-};
-
 ## Component demo
 
 export const snippetsDefault = [
@@ -79,11 +51,18 @@ export const snippetsDefault = [
   function showDialog() {    
     dialog.open = true;
   }
+  // Used if dismiss button is clicked
+  function hideDialog() { 
+    if (dialog.open) {
+      dialog.open = false;
+    }   
+  }
   function dialogConfirmed(ev) {
     alert("Added to basket");
-    ev.target.open = false;
+    dialog.open = false;
   }
   dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
+  dialog.addEventListener("icDialogClosed", hideDialog);
 </script>
 <ic-button onclick="showDialog()">Launch dialog</ic-button>
 <ic-dialog id="default-dialog" heading="Are you sure?" label="Coffee order">
@@ -94,39 +73,46 @@ export const snippetsDefault = [
   },
   {
     language: "React",
-    snippet: `const dialogEl = useRef(null);
-const showDialog = () => {
-  dialogEl.current.open = true;
-};
-const confirmDialog = (ev) => {    
-  alert("Added to basket");
-  ev.target.open = false;
-};
+    snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
 return (
   <>
-    <IcButton onClick={showDialog}>Launch dialog</IcButton>
-    <IcDialog ref={dialogEl} heading="Are you sure?" label="Coffee order"
-      onIcDialogConfirmed={confirmDialog}
+    <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+    <IcDialog
+      heading="Are you sure?"
+      label="Coffee order"
+      open={openDialog}
+      // Set state to false if dismiss button is clicked
+      onIcDialogClosed={openDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
     >
       <IcTypography>
-        You are about to add 'Americano' to your basket. Are you sure you want to continue?
+        You are about to add 'Americano' to your basket. Are you sure you want
+        to continue?
       </IcTypography>
     </IcDialog>
   </>
-);`,
+)
+    `,
   },
 ];
 
 export const DefaultDialog = () => {
-  const dialogEl = useRef(null);
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
   return (
     <>
-      <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
+      <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
       <IcDialog
         heading="Are you sure?"
         label="Coffee order"
-        ref={dialogEl}
-        onIcDialogConfirmed={confirmedAdd}
+        open={openDialog}
+        onIcDialogClosed={openDialog && handleDialogClose} // Event fired when dismiss button is clicked
+        onIcDialogConfirmed={handleDialogClose}
+        onIcDialogCancelled={handleDialogClose}
       >
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
@@ -153,30 +139,30 @@ export const snippetsSizes = [
   {
     language: "Web component",
     snippet: `<script>
-  function showDialog(id) {
-    document.querySelector(id).open = true;
+  const dialog = document.querySelector("#size-dialog");
+  function showDialog() {
+    dialog.open = true;
+  }
+  function hideDialog() {
+    if (dialog.open) {
+      dialog.open = false;
+    }
   }
   function dialogConfirmed(ev) {
     alert("Added to basket");
-    ev.target.open = false;
+    dialog.open = false;
   }
-  const diags = document.querySelectorAll("ic-dialog");
-  diags.forEach((diag) => {diag.addEventListener("icDialogConfirmed", dialogConfirmed)});
+  const dialog = document.querySelector("ic-dialog");
+  dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
+  dialog.addEventListener("icDialogClosed", hideDialog);
 </script>
-<ic-button onclick="showDialog('#small-dialog')">Launch small dialog</ic-button>
-<ic-button onclick="showDialog('#medium-dialog')">Launch medium dialog</ic-button>
-<ic-button onclick="showDialog('#large-dialog')">Launch large dialog</ic-button>
-<ic-dialog id="small-dialog" size="small" heading="Are you sure?" label="Coffee order">
-  <ic-typography>
-    You are about to add 'Americano' to your basket. Are you sure you want to continue?
-  </ic-typography>
-</ic-dialog>
-<ic-dialog id="medium-dialog" size="medium" heading="Are you sure?" label="Coffee order">
-  <ic-typography>
-    You are about to add 'Americano' to your basket. Are you sure you want to continue?
-  </ic-typography>
-</ic-dialog>
-<ic-dialog id="large-dialog" size="large" heading="Are you sure?" label="Coffee order">
+<ic-button onclick="showDialog('#size-dialog')">Launch sizes dialog</ic-button>
+<ic-dialog
+  id="size-dialog"
+  size="large" // "small" | "medium" | "large"
+  heading="Are you sure?"
+  label="Coffee order"
+>
   <ic-typography>
     You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
@@ -184,39 +170,20 @@ export const snippetsSizes = [
   },
   {
     language: "React",
-    snippet: `const smallDialogEl = useRef(null);
-const dialogEl = useRef(null);
-const largeDialogEl = useRef(null);
-const showDialog = (ref) => {    
-  ref.current.open = true;
-};
-const confirmDialog = (ev) => {    
-  alert("Added to basket");
-  ev.target.open = false;
-};
-return(
+    snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+return (
   <>
-    <IcButton onClick={() => showDialog(smallDialogEl)}>Launch small dialog</IcButton>
-    <IcButton onClick={() => showDialog(dialogEl)}>Launch medium dialog</IcButton>
-    <IcButton onClick={() => showDialog(largeDialogEl)}>Launch large dialog</IcButton>
-    <IcDialog size="small" ref={smallDialogEl} label="Coffee order" 
-      heading="Are you sure?" onIcDialogConfirmed={confirmDialog}
-    >
-      <IcTypography>
-        You are about to add 'Americano' to your basket. Are you sure you want to
-        continue?
-      </IcTypography>
-    </IcDialog>
-    <IcDialog size="medium" ref={dialogEl} label="Coffee order" 
-      heading="Are you sure?" onIcDialogConfirmed={confirmDialog}
-    >
-      <IcTypography>
-        You are about to add 'Americano' to your basket. Are you sure you want to
-        continue?
-      </IcTypography>
-    </IcDialog>
-    <IcDialog size="large" ref={largeDialogEl} label="Coffee order" 
-      heading="Are you sure?" onIcDialogConfirmed={confirmDialog}
+    <IcButton onClick={handleDialogOpen}>Launch sizes dialog</IcButton>
+    <IcDialog
+      size="large" // "small" | "medium" | "large"
+      open={openDialog}
+      label="Coffee order" 
+      heading="Are you sure?"
+      onIcDialogClosed={openDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
     >
       <IcTypography>
         You are about to add 'Americano' to your basket. Are you sure you want to
@@ -229,55 +196,24 @@ return(
 ];
 
 export const SizesDialogs = () => {
-  const smallDialogEl = useRef(null);
-  const dialogEl = useRef(null);
-  const largeDialogEl = useRef(null);
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
   return (
     <>
-      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-        <IcButton onClick={() => showDialog(smallDialogEl)}>
-          Launch small dialog
-        </IcButton>
-        <IcButton onClick={() => showDialog(dialogEl)}>
-          Launch medium dialog
-        </IcButton>
-        <IcButton onClick={() => showDialog(largeDialogEl)}>
-          Launch large dialog
-        </IcButton>
-      </div>
-      <IcDialog
-        heading="Are you sure?"
-        label="Coffee order"
-        ref={smallDialogEl}
-        onIcDialogConfirmed={confirmedAdd}
-      >
-        <IcTypography>
-          You are about to add 'Americano' to your basket. Are you sure you want
-          to continue?
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        size="medium"
-        heading="Are you sure?"
-        label="Coffee order"
-        ref={dialogEl}
-        onIcDialogConfirmed={confirmedAdd}
-      >
-        <IcTypography>
-          You are about to add 'Americano' to your basket. Are you sure you want
-          to continue?
-        </IcTypography>
-      </IcDialog>
+      <IcButton onClick={handleDialogOpen}>Launch sizes dialog</IcButton>
       <IcDialog
         size="large"
+        open={openDialog}
+        label="Coffee order" 
         heading="Are you sure?"
-        label="Coffee order"
-        ref={largeDialogEl}
-        onIcDialogConfirmed={confirmedAdd}
+        onIcDialogClosed={openDialog && handleDialogClose}
+        onIcDialogConfirmed={handleDialogClose}
+        onIcDialogCancelled={handleDialogClose}
       >
         <IcTypography>
-          You are about to add 'Americano' to your basket. Are you sure you want
-          to continue?
+          You are about to add 'Americano' to your basket. Are you sure you want to
+          continue?
         </IcTypography>
       </IcDialog>
     </>
@@ -294,52 +230,37 @@ export const snippetsAlert = [
   {
     language: "Web component",
     snippet: `<script>
-  function showDialog(id) {
-    document.querySelector(id).open = true;
+  const dialog = document.querySelector("#status-dialog");
+  function showDialog() {
+    dialog.open = true;
+  }
+  function hideDialog() {
+    if (dialog.open) {
+      dialog.open = false;
+    }
   }
   function dialogConfirmed(ev) {
     alert("Added to basket");
-    ev.target.open = false;
+    dialog.open = false;
   }
-  const diags = document.querySelectorAll("ic-dialog");
-  diags.forEach((diag) => {diag.addEventListener("icDialogConfirmed", dialogConfirmed)});
+  const dialog = document.querySelector("ic-dialog");
+  dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
+  dialog.addEventListener("icDialogClosed", hideDialog);
 </script>
-<ic-button onclick="showDialog('#neutral-dialog')">Launch neutral dialog</ic-button>
-<ic-button onclick="showDialog('#info-dialog')">Launch info dialog</ic-button>
-<ic-button onclick="showDialog('#warn-dialog')">Launch warning dialog</ic-button>
-<ic-button onclick="showDialog('#error-dialog')">Launch error dialog</ic-button>
-<ic-button onclick="showDialog('#success-dialog')">Launch success dialog</ic-button>
-<ic-dialog id="neutral-dialog" heading="Are you sure?" label="Coffee order">
-  <ic-alert slot="alert" heading="They're both good" message="Some say tea is just as good as coffee." variant="neutral" title-above="true">
-  </ic-alert>
-  <ic-typography>
-    You are about to add 'Americano' to your basket. Are you sure you want to continue?
-  </ic-typography>
-</ic-dialog>
-<ic-dialog id="info-dialog" heading="Are you sure?" label="Coffee order"  
+<ic-button onclick="showDialog('#status-dialog')">Launch status dialog</ic-button>
+<ic-dialog
+  id="status-dialog"
+  heading="Are you sure?"
+  label="Coffee order"
+  size="medium"
 >
-  <ic-alert slot="alert" heading="Did you know?" message="There are lots of different varieties of coffee." variant="info" title-above="true">
-  </ic-alert>
-  <ic-typography>
-    You are about to add 'Americano' to your basket. Are you sure you want to continue?
-  </ic-typography>
-</ic-dialog>
-<ic-dialog id="warn-dialog" heading="Are you sure?" label="Coffee order">
-  <ic-alert slot="alert" heading="Only a few left" message="Act fast to get one of the last few left." variant="warning" title-above="true">
-  </ic-alert>
-  <ic-typography>
-    You are about to add 'Americano' to your basket. Are you sure you want to continue?
-  </ic-typography>
-</ic-dialog>
-<ic-dialog id="error-dialog" heading="Are you sure?" label="Coffee order">
-  <ic-alert slot="alert" heading="No coffee left" message="If you order you will receive tea instead." variant="error" title-above="true">
-  </ic-alert>
-  <ic-typography>
-    You are about to add 'Tea' to your basket. Are you sure you want to continue?
-  </ic-typography>
-</ic-dialog>
-<ic-dialog id="success-dialog" heading="Are you sure?" label="Coffee order">
-  <ic-alert slot="alert" heading="Good news" message="There is an unlimited supply of coffee." variant="success" title-above="true">
+  <ic-alert
+    slot="alert"
+    heading="They're both good"
+    message="Some say tea is just as good as coffee."
+    variant="neutral" // "neutral" | "info" | "warn" | "error" | "success"
+    title-above="true"
+  >
   </ic-alert>
   <ic-typography>
     You are about to add 'Americano' to your basket. Are you sure you want to continue?
@@ -348,194 +269,79 @@ export const snippetsAlert = [
   },
   {
     language: "React",
-    snippet: `const neutralDialogEl = useRef(null);
-const infoDialogEl = useRef(null);
-const warnDialogEl = useRef(null);
-const errDialogEl = useRef(null);
-const successDialogEl = useRef(null);
-const showDialog = (ref) => {
-  ref.current.open = true;
-};
-const confirmDialog = (ev) => {    
-  alert("Added to basket");
-  ev.target.open = false;
-};
+    snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenlDialog(false);
 return (
   <>
-    <IcButton onClick={() => showDialog(neutralDialogEl)}>Launch neutral dialog</IcButton>
-    <IcButton onClick={() => showDialog(infoDialogEl)}>Launch info dialog</IcButton>
-    <IcButton onClick={() => showDialog(warnDialogEl)}>Launch warning dialog</IcButton>
-    <IcButton onClick={() => showDialog(errDialogEl)}>Launch error dialog</IcButton>
-    <IcButton onClick={() => showDialog(successDialogEl)}>Launch success dialog</IcButton>
-    <IcDialog ref={neutralDialogEl} heading="Are you sure?" label="Coffee order"
-      onIcDialogConfirmed={confirmDialog}
+    <IcButton
+      variant="primary"
+      onClick={handleDialogOpen}
     >
-      <IcAlert slot="alert" heading="They're both good" message="Some say tea is just as good as coffee." variant="neutral" titleAbove/>
-      <IcTypography>
-        You are about to add 'Americano' to your basket. Are you sure you want to
-        continue?
-      </IcTypography>
-    </IcDialog>
-    <IcDialog ref={infoDialogEl} heading="Are you sure?" label="Coffee order"
-      onIcDialogConfirmed={confirmDialog}
+      Launch status dialog
+    </IcButton>
+    <IcDialog
+      open={openDialog}
+      heading="Are you sure?"
+      label="Coffee order"
+      onIcDialogClosed={openDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
+      size="medium"
     >
-      <IcAlert slot="alert" heading="Did you know?" message="There are lots of different varieties of coffee." variant="info" titleAbove/>
+      <IcAlert
+        slot="alert"
+        heading="They're both good"
+        message="Some say tea is just as good as coffee."
+        variant="neutral" // "neutral" | "info" | "warn" | "error" | "success" 
+        titleAbove
+      />
       <IcTypography>
-        You are about to add 'Americano' to your basket. Are you sure you want to
-        continue?
-      </IcTypography>
-    </IcDialog>
-    <IcDialog ref={warnDialogEl} heading="Are you sure?" label="Coffee order"
-      onIcDialogConfirmed={confirmDialog}
-    >
-      <IcAlert slot="alert" heading="Only a few left" message="Act fast to get one of the last few left." variant="warning" titleAbove/>
-      <IcTypography>
-        You are about to add 'Americano' to your basket. Are you sure you want to
-        continue?
-      </IcTypography>
-    </IcDialog>
-    <IcDialog ref={errDialogEl} heading="Are you sure?" label="Coffee order"
-      onIcDialogConfirmed={confirmDialog}
-    >
-      <IcAlert slot="alert" heading="No coffee left" message="If you order you will receive tea instead." variant="error" titleAbove/>
-      <IcTypography>
-        You are about to add 'Tea' to your basket. Are you sure you want to
-        continue?
-      </IcTypography>
-    </IcDialog>
-    <IcDialog ref={successDialogEl} heading="Are you sure?" label="Coffee order"
-      onIcDialogConfirmed={confirmDialog}
-    >
-      <IcAlert slot="alert" heading="Good news" message="There is an unlimited supply of coffee." variant="success" titleAbove/>
-      <IcTypography>
-        You are about to add 'Americano' to your basket. Are you sure you want to
-        continue?
+        You are about to add 'Americano' to your basket. Are you sure you want
+        to continue?
       </IcTypography>
     </IcDialog>
   </>
-);`,
+);`
   },
 ];
 
 export const AlertDialog = () => {
-  const neutralDialogEl = useRef(null);
-  const infoDialogEl = useRef(null);
-  const warnDialogEl = useRef(null);
-  const errDialogEl = useRef(null);
-  const successDialogEl = useRef(null);
+  const dialogEl = useRef(null);
+  const addTitleAboveAttribute = () => {
+    dialogEl.current.querySelector('ic-alert')
+      .setAttribute('title-above', 'true');
+  };
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleDialogOpen = () => {
+    addTitleAboveAttribute();
+    setOpenDialog(true);
+  }
+  const handleDialogClose = () => setOpenDialog(false);
   return (
     <>
-      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-        <IcButton
-          variant="primary"
-          onClick={() => showAlertDialog(neutralDialogEl)}
-        >
-          Launch neutral dialog
-        </IcButton>
-        <IcButton
-          variant="primary"
-          onClick={() => showAlertDialog(infoDialogEl)}
-        >
-          Launch info dialog
-        </IcButton>
-        <IcButton
-          variant="primary"
-          onClick={() => showAlertDialog(warnDialogEl)}
-        >
-          Launch warning dialog
-        </IcButton>
-        <IcButton
-          variant="primary"
-          onClick={() => showAlertDialog(errDialogEl)}
-        >
-          Launch error dialog
-        </IcButton>
-        <IcButton
-          variant="primary"
-          onClick={() => showAlertDialog(successDialogEl)}
-        >
-          Launch success dialog
-        </IcButton>
-      </div>
+      <IcButton
+        variant="primary"
+        onClick={handleDialogOpen}
+      >
+        Launch dialog
+      </IcButton>
       <IcDialog
-        ref={neutralDialogEl}
+        ref={dialogEl}
+        open={openDialog}
         heading="Are you sure?"
         label="Coffee order"
-        onIcDialogConfirmed={confirmedAdd}
+        onIcDialogClosed={openDialog && handleDialogClose}
+        onIcDialogConfirmed={handleDialogClose}
+        onIcDialogCancelled={handleDialogClose}
+        size="medium"
       >
         <IcAlert
           slot="alert"
           heading="They're both good"
           message="Some say tea is just as good as coffee."
           variant="neutral"
-        />
-        <IcTypography>
-          You are about to add 'Americano' to your basket. Are you sure you want
-          to continue?
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={infoDialogEl}
-        heading="Are you sure?"
-        label="Coffee order"
-        onIcDialogConfirmed={confirmedAdd}
-      >
-        <IcAlert
-          slot="alert"
-          heading="Did you know?"
-          message="There are lots of different varieties of coffee."
-          variant="info"
-        />
-        <IcTypography>
-          You are about to add 'Americano' to your basket. Are you sure you want
-          to continue?
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={warnDialogEl}
-        heading="Are you sure?"
-        label="Coffee order"
-        onIcDialogConfirmed={confirmedAdd}
-      >
-        <IcAlert
-          slot="alert"
-          heading="Only a few left"
-          message="Act fast to get one of the last few left."
-          variant="warning"
-        />
-        <IcTypography>
-          You are about to add 'Americano' to your basket. Are you sure you want
-          to continue?
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={errDialogEl}
-        heading="Are you sure?"
-        label="Coffee order"
-        onIcDialogConfirmed={confirmedAdd}
-      >
-        <IcAlert
-          slot="alert"
-          heading="No coffee left"
-          message="If you order you will receive tea instead."
-          variant="error"
-        />
-        <IcTypography>
-          You are about to add 'Tea' to your basket. Are you sure you want to
-          continue?
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={successDialogEl}
-        heading="Are you sure?"
-        label="Coffee order"
-        onIcDialogConfirmed={confirmedAdd}
-      >
-        <IcAlert
-          slot="alert"
-          heading="Good news"
-          message="There is an unlimited supply of coffee."
-          variant="success"
+          titleAbove
         />
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
@@ -556,58 +362,63 @@ export const snippetsCustomButtons = [
   {
     language: "Web component",
     snippet: `<script>
+  const singleButtonDialog = document.querySelector("#single-button-dialog");
+  const threeButtonsDialog = document.querySelector("#three-buttons-dialog");
+  const destructiveButtonDialog = document.querySelector("#destructive-dialog");
   function showDialog(id) {
     document.querySelector(id).open = true;
+  }
+  function hideDialog(ev) {
+    if (ev.target.open) {
+      ev.target.open = false;
+    }
   }
   function dialogConfirmed(ev) {
     alert("Confirmed");
     ev.target.open = false;
   }
-  const doubleDialog = document.querySelector("#double-dialog");
-  doubleDialog.addEventListener("icDialogConfirmed", dialogConfirmed);
-  const tripleDialog = document.querySelector("#triple-dialog");
-  tripleDialog.buttonProps = [
+  singleButtonDialog.buttonProps = [
+    { label: "Confirm", onclick: "alert('Confirmed');this.open = false;" },
+  ];
+  threeButtonsDialog.buttonProps = [
     { label: "Cancel", onclick: "this.open = false;" },
     { label: "Options", onclick: "alert('Options...');" },
-    { label: "Confirm", onclick: "alert('Confirmed');this.open = false;" },
+    { label: "Confirm", onclick: "alert('Confirmed'); this.open = false;" },
   ];
-  const singleDialog = document.querySelector("#single-dialog");
-  singleDialog.buttonProps = [
-    { label: "Confirm", onclick: "alert('Confirmed');this.open = false;" },
+  destructiveButtonDialog.buttonProps = [
+    { label: "Confirm", onclick: "alert('Confirmed'); this.open = false;" },
   ];
-  const destructiveDialog = document.querySelector("#destructive-dialog");
-  destructiveDialog.buttonProps = [
-    { label: "Confirm", onclick: "alert('Confirmed');this.open = false;" },
-  ];
+  singleButtonDialog.addEventListener('icDialogClosed', hideDialog);
+  threeButtonsDialog.addEventListener('icDialogClosed', hideDialog);
+  destructiveButtonDialog.addEventListener('icDialogClosed', hideDialog);
 </script>
-  <ic-button onclick="showDialog('#plain-dialog')">Launch no button dialog</ic-button>
-  <ic-button onclick="showDialog('#single-dialog')">Launch single button dialog</ic-button>
-  <ic-button onclick="showDoubleshowDialog('#double-dialog')">Launch two button dialog</ic-button>
-  <ic-button onclick="showDialog('#triple-dialog')">Launch three button dialog</ic-button>
+  <ic-button onclick="showDialog('#no-button-dialog')">Launch no button dialog</ic-button>
+  <ic-button onclick="showDialog('#single-button-dialog')">Launch single button dialog</ic-button>
+  <ic-button onclick="showDialog('#three-buttons-dialog')">Launch three button dialog</ic-button>
   <ic-button onclick="showDialog('#destructive-dialog')">Launch destructive button dialog</ic-button>
-  <ic-dialog  id="plain-dialog" buttons="false" label="None"
+  <ic-dialog
+    id="no-button-dialog"
+    buttons="false"
+    label="None"
     heading="This dialog has no default buttons"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua.
   </ic-dialog>
-  <ic-dialog id="single-dialog" label="Single" heading="This dialog has a single button">
+  <ic-dialog id="single-button-dialog" label="Single" heading="This dialog has a single button">
     <ic-typography>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </ic-typography>
   </ic-dialog>
-  <ic-dialog id="double-dialog" label="Double" heading="This dialog has two default buttons">
-    <ic-typography>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </ic-typography>
-  </ic-dialog>
-  <ic-dialog id="triple-dialog" label="Triple" heading="This dialog has three default buttons">
+  <ic-dialog id="three-buttons-dialog" label="Three buttons" heading="This dialog has three default buttons">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua.
   </ic-dialog>
-  <ic-dialog id="destructive-dialog" destructive="true" label="Destructive" 
+  <ic-dialog
+    id="destructive-dialog"
+    destructive="true"
+    label="Destructive" 
     heading="This dialog has a default destructive button"
   >
     <ic-typography>
@@ -618,66 +429,99 @@ export const snippetsCustomButtons = [
   },
   {
     language: "React",
-    snippet: `const dialogEl = useRef(null);
-const singleDialogEl = useRef(null);
-const doubleDialogEl = useRef(null);
-const tripleDialogEl = useRef(null);
-const destructiveDialogEl = useRef(null);
-const showDialog = (ref) => {    
-  ref.current.open = true;
-};
-const confirmDialog = (ev) => {    
-  alert("Confirmed");
-  ev.target.open = false;
-};
+    snippet: `const [openNoButtonDialog, setOpenNoButtonDialog] = useState(false);
+const [openSingleButtonDialog, setOpenSingleButtonDialog] = useState(false);
+const [openThreeButtonsDialog, setOpenThreeButtonsDialog] = useState(false);
+const [openDestructiveButtonDialog, setOpenDestructiveButtonDialog] = useState(false);
+const handleNoButtonDialogOpen = () => setOpenNoButtonDialog(true);
+const handleSingleButtonDialogOpen = () => setOpenSingleButtonDialog(true);
+const handleThreeButtonsDialogOpen = () => setOpenThreeButtonsDialog(true);
+const handleDestructiveButtonDialogOpen = () => setOpenDestructiveButtonDialog(true);
+const handleDialogClose = () => {
+  setOpenNoButtonDialog(false);
+  setOpenSingleButtonDialog(false);
+  setOpenThreeButtonsDialog(false);
+  setOpenDestructiveButtonDialog(false);
+}
 return (
   <>
-    <IcButton onClick={() => showDialog(dialogEl)}>Launch no button dialog</IcButton>
-    <IcButton onClick={() => showDialog(singleDialogEl)}>Launch single button dialog</IcButton>
-    <IcButton onClick={() => showDialog(doubleDialogEl)}>Launch two button dialog</IcButton>
-    <IcButton onClick={() => showDialog(tripleDialogEl)}>Launch three button dialog</IcButton>
-    <IcButton onClick={() => showDialog(destructiveDialogEl)}>Launch destructive button dialog</IcButton>
-    <IcDialog ref={dialogEl} buttons="false" label="None"
+    <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+      <IcButton onClick={handleNoButtonDialogOpen}>
+        Launch no button dialog
+      </IcButton>
+      <IcButton onClick={handleSingleButtonDialogOpen}>
+        Launch single button dialog
+      </IcButton>
+      <IcButton onClick={handleThreeButtonsDialogOpen}>
+        Launch three button dialog
+      </IcButton>
+      <IcButton onClick={handleDestructiveButtonDialogOpen}>
+        Launch destructive button dialog
+      </IcButton>
+    </div>
+    <IcDialog
+      open={openNoButtonDialog}
+      buttons={false}
+      label="None"
       heading="This dialog has no default buttons"
+      onIcDialogClosed={openNoButtonDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
     >
       <IcTypography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </IcTypography>
     </IcDialog>
-    <IcDialog ref={singleDialogEl} label="Single" heading="This dialog has a single button"
-      buttonProps={[{ label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()"}]}
-    >
-      <IcTypography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </IcTypography>
-    </IcDialog>
-    <IcDialog ref={doubleDialogEl} label="Double" heading="This dialog has two default buttons">
-      <IcTypography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </IcTypography>
-    </IcDialog>
-    <IcDialog ref={tripleDialogEl} label="Triple" heading="This dialog has three default buttons" 
+    <IcDialog
+      open={openSingleButtonDialog}
+      label="Single"
+      heading="This dialog has a single button"
       buttonProps={[
-        {label: "Close", onclick: "this.hideDialog()"},
-        {label: "Options", onclick: "alert('Options...')"},
-        {label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()"}, 
+        { label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()" },
       ]}
+      onIcDialogClosed={openSingleButtonDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
     >
       <IcTypography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </IcTypography>
     </IcDialog>
-    <IcDialog ref={destructiveDialogEl} destructive label="Destructive"
-      heading="This dialog has a default destructive button" 
-      buttonProps={[{ label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()"}]}
+    <IcDialog
+      open={openThreeButtonsDialog}
+      label="Triple"
+      heading="This dialog has three default buttons"
+      buttonProps={[
+        { label: "Close", onclick: "this.hideDialog()" },
+        { label: "Options", onclick: "alert('Options...')" },
+        { label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()" },
+      ]}
+      onIcDialogClosed={openThreeButtonsDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
     >
       <IcTypography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </IcTypography>
+    </IcDialog>
+    <IcDialog
+      open={openDestructiveButtonDialog}
+      destructive
+      label="Destructive"
+      heading="This dialog has a default destructive button"
+      buttonProps={[
+        { label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()" },
+      ]}
+      onIcDialogClosed={openDestructiveButtonDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
+    >
+      <IcTypography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </IcTypography>
     </IcDialog>
   </>
@@ -686,104 +530,103 @@ return (
 ];
 
 export const CustomButtonsDialog = () => {
-  const dialogEl = useRef(null);
-  const singleDialogEl = useRef(null);
-  const doubleDialogEl = useRef(null);
-  const tripleDialogEl = useRef(null);
-  const destructiveDialogEl = useRef(null);
-  return (
-    <>
-      <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-        <IcButton onClick={() => showDialog(dialogEl)}>
-          Launch no button dialog
-        </IcButton>
-        <IcButton onClick={() => showDialog(singleDialogEl)}>
-          Launch single button dialog
-        </IcButton>
-        <IcButton onClick={() => showDialog(doubleDialogEl)}>
-          Launch two button dialog
-        </IcButton>
-        <IcButton onClick={() => showDialog(tripleDialogEl)}>
-          Launch three button dialog
-        </IcButton>
-        <IcButton onClick={() => showDialog(destructiveDialogEl)}>
-          Launch destructive button dialog
-        </IcButton>
-      </div>
-      <IcDialog
-        ref={dialogEl}
-        buttons="false"
-        label="None"
-        heading="This dialog has no default buttons"
-      >
-        <IcTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={singleDialogEl}
-        label="Single"
-        heading="This dialog has a single button"
-        buttonProps={[
-          {
-            label: "Confirm",
-            onclick: "alert('Confirmed'); this.hideDialog()",
-          },
-        ]}
-      >
-        <IcTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={doubleDialogEl}
-        label="Double"
-        heading="This dialog has two default buttons"
-      >
-        <IcTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={tripleDialogEl}
-        label="Triple"
-        heading="This dialog has three default buttons"
-        buttonProps={[
-          { label: "Close", onclick: "this.hideDialog()" },
-          { label: "Options", onclick: "alert('Options...')" },
-          {
-            label: "Confirm",
-            onclick: "alert('Confirmed'); this.hideDialog()",
-          },
-        ]}
-      >
-        <IcTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </IcTypography>
-      </IcDialog>
-      <IcDialog
-        ref={destructiveDialogEl}
-        destructive
-        label="Destructive"
-        heading="This dialog has a default destructive button"
-        buttonProps={[
-          {
-            label: "Confirm",
-            onclick: "alert('Confirmed'); this.hideDialog()",
-          },
-        ]}
-      >
-        <IcTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </IcTypography>
-      </IcDialog>
-    </>
-  );
+const [openNoButtonDialog, setOpenNoButtonDialog] = useState(false);
+const [openSingleButtonDialog, setOpenSingleButtonDialog] = useState(false);
+const [openThreeButtonsDialog, setOpenThreeButtonsDialog] = useState(false);
+const [openDestructiveButtonDialog, setOpenDestructiveButtonDialog] = useState(false);
+const handleNoButtonDialogOpen = () => setOpenNoButtonDialog(true);
+const handleSingleButtonDialogOpen = () => setOpenSingleButtonDialog(true);
+const handleThreeButtonsDialogOpen = () => setOpenThreeButtonsDialog(true);
+const handleDestructiveButtonDialogOpen = () => setOpenDestructiveButtonDialog(true);
+const handleDialogClose = () => {
+  setOpenNoButtonDialog(false);
+  setOpenSingleButtonDialog(false);
+  setOpenThreeButtonsDialog(false);
+  setOpenDestructiveButtonDialog(false);
+}
+return (
+  <>
+    <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+      <IcButton onClick={handleNoButtonDialogOpen}>
+        Launch no button dialog
+      </IcButton>
+      <IcButton onClick={handleSingleButtonDialogOpen}>
+        Launch single button dialog
+      </IcButton>
+      <IcButton onClick={handleThreeButtonsDialogOpen}>
+        Launch three button dialog
+      </IcButton>
+      <IcButton onClick={handleDestructiveButtonDialogOpen}>
+        Launch destructive button dialog
+      </IcButton>
+    </div>
+    <IcDialog
+      open={openNoButtonDialog}
+      buttons={false}
+      label="None"
+      heading="This dialog has no default buttons"
+      onIcDialogClosed={openNoButtonDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
+    >
+      <IcTypography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </IcTypography>
+    </IcDialog>
+    <IcDialog
+      open={openSingleButtonDialog}
+      label="Single"
+      heading="This dialog has a single button"
+      buttonProps={[
+        { label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()" },
+      ]}
+      onIcDialogClosed={openSingleButtonDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
+    >
+      <IcTypography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </IcTypography>
+    </IcDialog>
+    <IcDialog
+      open={openThreeButtonsDialog}
+      label="Triple"
+      heading="This dialog has three default buttons"
+      buttonProps={[
+        { label: "Close", onclick: "this.hideDialog()" },
+        { label: "Options", onclick: "alert('Options...')" },
+        { label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()" },
+      ]}
+      onIcDialogClosed={openThreeButtonsDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
+    >
+      <IcTypography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </IcTypography>
+    </IcDialog>
+    <IcDialog
+      open={openDestructiveButtonDialog}
+      destructive
+      label="Destructive"
+      heading="This dialog has a default destructive button"
+      buttonProps={[
+        { label: "Confirm", onclick: "alert('Confirmed'); this.hideDialog()" },
+      ]}
+      onIcDialogClosed={openDestructiveButtonDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
+    >
+      <IcTypography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </IcTypography>
+    </IcDialog>
+  </>
+);
 };
 
 <ComponentPreview snippets={snippetsCustomButtons}>
@@ -796,20 +639,24 @@ export const snippetsSlottedButtons = [
   {
     language: "Web component",
     snippet: `<script>
-  const dialog = document.querySelector("#default-dialog");
+  const dialog = document.querySelector("#slotted-dialog");
   function showDialog() {    
     dialog.open = true;
   }
   function hideDialog() {
-    dialog.open = false;
+    if (dialog.open) {
+      dialog.open = false;
+    }
   }
   function addToBasket() {
     alert("Added to basket");
     dialog.open = false;
   }
+  dialog.addEventListener('icDialogClosed', hideDialog);
+  dialog.addEventListener('icDialogCancelled', hideDialog);
 </script>
 <ic-button onclick="showDialog()">Launch dialog</ic-button>
-<ic-dialog id="default-dialog" heading="Are you sure?" label="Coffee order">
+<ic-dialog id="slotted-dialog" heading="Are you sure?" label="Coffee order">
   <ic-typography>
     You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
@@ -823,36 +670,30 @@ export const snippetsSlottedButtons = [
   },
   {
     language: "React",
-    snippet: `const dialogEl = useRef(null);
-const showDialog = () => {
-  const dialog = dialogEl.current;
-  dialog.open = true;
-}
-const hideDialog = () => {
-  const dialog = dialogEl.current;
-  dialog.open = false;
-}
-const addToBasket = () => {
+    snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+const handleAddToBasket = () => {
   alert("Added to basket");
-  const dialog = dialogEl.current;
-  dialog.open = false;
+  setOpenDialog(false);
 }
 return (
   <>
-    <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
+    <IcButton onClick={handleDialogOpen}>Launch slotted buttons dialog</IcButton>
     <IcDialog
       heading="Are you sure?"
       label="Coffee order"
-      ref={dialogEl}
+      open={openDialog}
+      onIcDialogClosed={openDialog && handleDialogClose}
     >
       <IcTypography>
         You are about to add 'Americano' to your basket. Are you sure you want
         to continue?
       </IcTypography>
-      <IcButton slot="dialog-controls" variant="secondary" onClick={() => hideDialog()}>
+      <IcButton slot="dialog-controls" variant="secondary" onClick={handleDialogClose}>
         Go back
       </IcButton>
-      <IcButton slot="dialog-controls" onClick={() => addToBasket()}>
+      <IcButton slot="dialog-controls" onClick={handleAddToBasket}>
         Add to basket
       </IcButton>
     </IcDialog>
@@ -862,37 +703,35 @@ return (
 ];
 
 export const SlottedButtonsDialog = () => {
-  const dialogEl = useRef(null);
-  const hideDialog = () => {
-    const dialog = dialogEl.current;
-    dialog.open = false;
-  };
-  const addToBasket = () => {
-    alert("Added to basket");
-    const dialog = dialogEl.current;
-    dialog.open = false;
-  };
-  return (
-    <>
-      <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
-      <IcDialog heading="Are you sure?" label="Coffee order" ref={dialogEl}>
-        <IcTypography>
-          You are about to add 'Americano' to your basket. Are you sure you want
-          to continue?
-        </IcTypography>
-        <IcButton
-          slot="dialog-controls"
-          variant="secondary"
-          onClick={() => hideDialog()}
-        >
-          Go back
-        </IcButton>
-        <IcButton slot="dialog-controls" onClick={() => addToBasket()}>
-          Add to basket
-        </IcButton>
-      </IcDialog>
-    </>
-  );
+const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+const handleAddToBasket = () => {
+  alert("Added to basket");
+  setOpenDialog(false);
+}
+return (
+  <>
+    <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+    <IcDialog
+      heading="Are you sure?"
+      label="Coffee order"
+      open={openDialog}
+      onIcDialogClosed={openDialog && handleDialogClose}
+    >
+      <IcTypography>
+        You are about to add 'Americano' to your basket. Are you sure you want
+        to continue?
+      </IcTypography>
+      <IcButton slot="dialog-controls" variant="secondary" onClick={handleDialogClose}>
+        Go back
+      </IcButton>
+      <IcButton slot="dialog-controls" onClick={handleAddToBasket}>
+        Add to basket
+      </IcButton>
+    </IcDialog>
+  </>
+);
 };
 
 <ComponentPreview snippets={snippetsSlottedButtons}>
@@ -911,6 +750,11 @@ export const interactiveContentSnippet = [
   function showDialog() {
     dialog.open = true;
   }
+  function hideDialog() {
+    if (dialog.open) {
+      dialog.open = false;
+    }
+  }
   function toggleTermsAgreed() {
     termsAgreed = !termsAgreed;
   }
@@ -920,101 +764,116 @@ export const interactiveContentSnippet = [
     ev.target.open = false;
   }
   dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
+  dialog.addEventListener("icDialogClosed", hideDialog);
   checkGroup.addEventListener("icChange", toggleTermsAgreed);
 </script>
 <ic-button onclick="showDialog()">Launch dialog</ic-button>
-<ic-dialog id="interactive-content-dialog" label="Coffee order"
+<ic-dialog 
+  id="interactive-content-dialog" 
+  label="Coffee order"
   heading="Please agree to our terms and conditions"
 >
   <ic-typography>
     Before continuing, please agree to our terms and conditions.
   </ic-typography>
-  <ic-checkbox-group name="terms" label="terms and conditions" hide-label="true"
+  <ic-checkbox-group 
+    name="terms" 
+    label="terms and conditions" 
+    hide-label="true"
     style="marginTop: 8px"
   >
-    <ic-checkbox label="I agree to the terms and conditions." value="agree">
-    </ic-checkbox>
+    <ic-checkbox label="I agree to the terms and conditions." value="agree"></ic-checkbox>
   </ic-checkbox-group>
 </ic-dialog>`,
   },
   {
     language: "React",
     snippet: `const [termsAgreed, setTermsAgreed] = useState(false);
-const dialogEl = useRef(null);
-const showDialog = () => {
-  dialogEl.current.open = true;
-};
+const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
 const toggleTermsAgreed = () => {
   setTermsAgreed(!termsAgreed);
 }
 const termsDialogConfirmed = (ev) => {
   const message = (termsAgreed) ? "Terms agreed" : "Terms not agreed";
   alert(message);
-  ev.target.open = false;
+  setOpenDialog(false);
 } 
 return (
   <>
-    <IcButton onClick={showDialog}>Launch dialog</IcButton>
-    <IcDialog ref={dialogEl} label="Coffee order"
+    <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+    <IcDialog
+      open={openDialog}
+      label="Coffee order"
       heading="Please agree to our terms and conditions"
+      onIcDialogClosed={openDialog && handleDialogClose}
+      onIcDialogConfirmed={termsDialogConfirmed}
+      onIcDialogCancelled={handleDialogClose}
     >
       <IcTypography>
         Before continuing, please agree to our terms and conditions.
       </IcTypography>
-      <IcCheckboxGroup name="terms" label="terms and conditions" hideLabel
-        onIcChange={toggleTermsAgreed} style={{ marginTop: "8px" }} 
+      <IcCheckboxGroup 
+        name="terms" 
+        label="terms and conditions" 
+        hideLabel
+        onIcChange={toggleTermsAgreed}
+        style={{ marginTop: "8px" }} 
       >
         <IcCheckbox
           label="I agree to the terms and conditions."
           value="agree"
-        ></IcCheckbox>
+        />
       </IcCheckboxGroup>
     </IcDialog>
   </>
-)`,
+);`,
   },
 ];
 
 export const InteractiveContent = () => {
-  const [termsAgreed, setTermsAgreed] = React.useState(false);
-  const dialogEl = useRef(null);
-  const toggleTermsAgreed = () => {
-    setTermsAgreed(!termsAgreed);
-  };
-  const termsDialogConfirmed = (ev) => {
-    const message = termsAgreed ? "Terms agreed" : "Terms not agreed";
-    alert(message);
-    const el = ev.target;
-    el.open = false;
-  };
-  return (
-    <>
-      <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
-      <IcDialog
-        ref={dialogEl}
-        label="Coffee order"
-        heading="Please agree to our terms and conditions"
-        onIcDialogConfirmed={termsDialogConfirmed}
+const [termsAgreed, setTermsAgreed] = useState(false);
+const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+const toggleTermsAgreed = () => {
+  setTermsAgreed(!termsAgreed);
+}
+const termsDialogConfirmed = () => {
+  const message = (termsAgreed) ? "Terms agreed" : "Terms not agreed";
+  alert(message);
+  setOpenDialog(false);
+} 
+return (
+  <>
+  <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+    <IcDialog 
+      open={openDialog}
+      label="Coffee order"
+      heading="Please agree to our terms and conditions"
+      onIcDialogClosed={openDialog && handleDialogClose}
+      onIcDialogConfirmed={termsDialogConfirmed}
+      onIcDialogCancelled={handleDialogClose}
+    >
+      <IcTypography>
+        Before continuing, please agree to our terms and conditions.
+      </IcTypography>
+      <IcCheckboxGroup 
+        name="terms" 
+        label="terms and conditions" 
+        hideLabel
+        onIcChange={toggleTermsAgreed}
+        style={{ marginTop: "8px" }} 
       >
-        <IcTypography>
-          Before continuing, please agree to our terms and conditions.
-        </IcTypography>
-        <IcCheckboxGroup
-          style={{ marginTop: "8px" }}
-          hideLabel
-          label="terms and conditions"
-          name="terms"
-          onIcChange={toggleTermsAgreed}
-        >
-          <IcCheckbox
-            label="I agree to the terms and conditions."
-            value="agree"
-          />
-        </IcCheckboxGroup>
-      </IcDialog>
-    </>
-  );
-};
+        <IcCheckbox
+          label="I agree to the terms and conditions."
+          value="agree"
+        />
+      </IcCheckboxGroup>
+    </IcDialog>
+  </>
+)};
 
 <ComponentPreview snippets={interactiveContentSnippet}>
   <InteractiveContent />
@@ -1030,16 +889,26 @@ export const noCloseSnippet = [
   function showDialog() {
     dialog.open = true;
   }
+  function hideDialog() {
+    if (dialog.open) {
+      dialog.open = false;
+    }
+  }
   function dialogConfirmed(ev) {
     alert("Confirmed!");
     ev.target.open = false;
   }
+  dialog.addEventListener("icDialogClosed", hideDialog);
+  dialog.addEventListener("icDialogCancelled", hideDialog);
   dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
 </script>
 <ic-button onclick="showDialog()">Launch dialog</ic-button>
-<ic-dialog id="no-close-dialog" close-on-backdrop-click="false" 
+<ic-dialog
+  id="no-close-dialog"
+  close-on-backdrop-click="false" 
   label="Background close prevented"
-  heading="This dialog can't be closed by clicking the background">
+  heading="This dialog can't be closed by clicking the background"
+>
   <ic-typography>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -1048,21 +917,24 @@ export const noCloseSnippet = [
   },
   {
     language: "React",
-    snippet: `const dialogEl = useRef(null);
-const showDialog = () => {
-  dialogEl.current.open = true;
-};
-const confirmDialog = (ev) => {    
+    snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);    
+const handleDialogClose = () => setOpenDialog(false);    
+const handleConfirmDialog = (ev) => {    
   alert("Confirmed!");
-  ev.target.open = false;
+  setOpenDialog(false);
 };
 return (
   <>
-    <IcButton onClick={showDialog}>Launch dialog</IcButton>
-    <IcDialog ref={dialogEl} closeOnBackdropClick="false" 
+    <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+    <IcDialog
+      open={openDialog}
+      closeOnBackdropClick={false} 
       label="Background close prevented"
       heading="This dialog can't be closed by clicking the background"
-      onIcDialogConfirmed={confirmDialog} 
+      onIcDialogClosed={openDialog && handleDialogClose} 
+      onIcDialogConfirmed={handleConfirmDialog} 
+      onIcDialogCancelled={handleDialogClose} 
     >
       <IcTypography>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -1075,43 +947,56 @@ return (
 ];
 
 export const NoCloseContent = () => {
-  const dialogEl = useRef(null);
-  return (
-    <>
-      <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
-      <IcDialog
-        ref={dialogEl}
-        closeOnBackdropClick="false"
-        label="Background close prevented"
-        heading="This dialog can't be closed by clicking the background"
-        onIcDialogConfirmed={confirmDialog}
-      >
-        <IcTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </IcTypography>
-      </IcDialog>
-    </>
-  );
+const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);    
+const handleDialogClose = () => setOpenDialog(false);    
+const handleConfirmDialog = () => {    
+  alert("Confirmed!");
+  setOpenDialog(false);
+};
+return (
+  <>
+    <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+    <IcDialog
+      open={openDialog}
+      closeOnBackdropClick={false} 
+      label="Background close prevented"
+      heading="This dialog can't be closed by clicking the background"
+      onIcDialogClosed={openDialog && handleDialogClose} 
+      onIcDialogConfirmed={handleConfirmDialog} 
+      onIcDialogCancelled={handleDialogClose} 
+    >
+      <IcTypography>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </IcTypography>
+    </IcDialog>
+  </>
+);
 };
 
 <ComponentPreview snippets={noCloseSnippet}>
   <NoCloseContent />
 </ComponentPreview>
 
-### Events example
+### Events
 
 export const eventsSnippet = [
   {
     language: "Web component",
     snippet: `<script>
-  const evDialog=document.querySelector("#ev-dialog");
+  const dialog = document.querySelector("#ev-dialog");
   function showDialog() {
     evDialog.open = true;
   }
+  function hideDialog() {
+    if (dialog.open) {
+      dialog.open = false;
+    }
+  }
   function dialogConfirmed() {          
     alert("Dialog confirmed");
-    evDialog.open = false;
+    dialog.open = false;
   }
   function dialogCancelled() {
     alert("Dialog cancelled");
@@ -1121,17 +1006,20 @@ export const eventsSnippet = [
   }
   function dialogClosed() {
     alert("Dialog closed");
+    hideDialog();
   }
   function cancelDialog(){
-    evDialog.cancelDialog();
+    alert("Slotted cancel button");
+    dialog.open = false;
   }
   function confirmDialog(){
-    evDialog.confirmDialog();
+    alert("Slotted confirm button");
+    dialog.open = false;
   }
-  evDialog.addEventListener("icDialogConfirmed", dialogConfirmed);
-  evDialog.addEventListener("icDialogCancelled", dialogCancelled);
-  evDialog.addEventListener("icDialogOpened", dialogOpened);
-  evDialog.addEventListener("icDialogClosed", dialogClosed);
+  dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
+  dialog.addEventListener("icDialogCancelled", dialogCancelled);
+  dialog.addEventListener("icDialogOpened", dialogOpened);
+  dialog.addEventListener("icDialogClosed", dialogClosed);
 </script>
 <ic-button onclick="showDialog()">Launch dialog</ic-button>
 <ic-dialog id="ev-dialog" heading="This dialog utilises events" label="Events">
@@ -1149,46 +1037,52 @@ export const eventsSnippet = [
   },
   {
     language: "React",
-    snippet: `const dialogEl = useRef(null);
-const showDialog = () => {
-  dialogEl.current.open = true;
-};
-const dialogOpened = () => {
-  alert("Dialog opened");
-}
-const dialogClosed = () => {
+    snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+const handleDialogOpened = () => alert("Dialog opened");
+const handleDialogClosed = () => {
   alert("Dialog closed");
+  if (openDialog) {
+    handleDialogClose();
+  }
 }
-const dialogCancelled = () => {
+const handleDialogCancelled = () => {
   alert("Dialog cancelled");
+  setOpenDialog(false);
 }
-const dialogConfirmed = () => {
+const handleDialogConfirmed = () => {
   alert("Dialog confirmed");
-  dialogEl.current.open = false;
-}
-const cancelDialog = () => {
-  dialogEl.current.cancelDialog();
-}
-const confirmDialog = () => {
-  dialogEl.current.confirmDialog();
-}
+  setOpenDialog(false);
+};
+const handleSlottedCancel = () => {
+  alert('Slotted cancel button');
+  setOpenDialog(false);
+};
+const handleSlottedConfirm = () => {
+  alert('Slotted confirm button');
+  setOpenDialog(false);
+};
 return (
   <>
-    <IcButton onClick={showDialog}>Launch dialog</IcButton>
-    <IcDialog ref={dialogEl} heading="This dialog utilises events" label="Events"
-      onIcDialogOpened={dialogOpened}
-      onIcDialogConfirmed={dialogConfirmed}
-      onIcDialogCancelled={dialogCancelled}
-      onIcDialogClosed={dialogClosed}        
+    <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+    <IcDialog
+      open={openDialog}
+      heading="This dialog utilises events"
+      label="Events"
+      onIcDialogOpened={handleDialogOpened}
+      onIcDialogConfirmed={handleDialogConfirmed}
+      onIcDialogCancelled={handleDialogCancelled}
+      onIcDialogClosed={handleDialogClosed}
     >
       <IcTypography>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </IcTypography>
-      <IcButton variant="tertiary" onClick={cancelDialog} slot="dialog-controls">
+      <IcButton variant="tertiary" onClick={handleSlottedCancel} slot="dialog-controls">
         Cancel
       </IcButton>
-      <IcButton onClick={confirmDialog} slot="dialog-controls">
+      <IcButton onClick={handleSlottedConfirm} slot="dialog-controls">
         Confirm
       </IcButton>
     </IcDialog>
@@ -1198,37 +1092,43 @@ return (
 ];
 
 export const EventsContent = () => {
-  const dialogEl = useRef(null);
-  const dialogOpened = () => {
-    alert("Dialog opened");
-  };
-  const dialogClosed = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
+  const handleDialogOpened = () => alert("Dialog opened");
+  const handleDialogClosed = () => {
     alert("Dialog closed");
-  };
-  const dialogCancelled = () => {
+    if (openDialog) {
+      handleDialogClose();
+    }
+  }
+  const handleDialogCancelled = () => {
     alert("Dialog cancelled");
-  };
-  const dialogConfirmed = () => {
+    setOpenDialog(false);
+  }
+  const handleDialogConfirmed = () => {
     alert("Dialog confirmed");
-    dialogEl.current.open = false;
+    setOpenDialog(false);
   };
-  const cancelDialog = () => {
-    dialogEl.current.cancelDialog();
+  const handleSlottedCancel = () => {
+    alert('Slotted cancel button')
+    setOpenDialog(false);
   };
-  const confirmTheDialog = () => {
-    dialogEl.current.confirmDialog();
+  const handleSlottedConfirm = () => {
+    alert('Slotted confirm button')
+    setOpenDialog(false);
   };
   return (
     <>
-      <IcButton onClick={() => showDialog(dialogEl)}>Launch dialog</IcButton>
+      <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
       <IcDialog
-        ref={dialogEl}
+        open={openDialog}
         heading="This dialog utilises events"
         label="Events"
-        onIcDialogOpened={dialogOpened}
-        onIcDialogConfirmed={dialogConfirmed}
-        onIcDialogCancelled={dialogCancelled}
-        onIcDialogClosed={dialogClosed}
+        onIcDialogOpened={handleDialogOpened}
+        onIcDialogConfirmed={handleDialogConfirmed}
+        onIcDialogCancelled={handleDialogCancelled}
+        onIcDialogClosed={handleDialogClosed}
       >
         <IcTypography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -1236,12 +1136,12 @@ export const EventsContent = () => {
         </IcTypography>
         <IcButton
           variant="tertiary"
-          onClick={cancelDialog}
+          onClick={handleSlottedCancel}
           slot="dialog-controls"
         >
           Cancel
         </IcButton>
-        <IcButton onClick={confirmTheDialog} slot="dialog-controls">
+        <IcButton onClick={handleSlottedConfirm} slot="dialog-controls">
           Confirm
         </IcButton>
       </IcDialog>
@@ -1253,41 +1153,61 @@ export const EventsContent = () => {
   <EventsContent />
 </ComponentPreview>
 
-### Popout elements in dialog
+### Disabled height constraint
 
 export const popoutElements = [
   {
     language: "Web component",
     snippet: `<script>
   const milkSelect = document.querySelector('ic-select');
+  const dialog = document.querySelector('ic-dialog');
   milkSelect.options = [
     { value: 'whole', label: 'Whole' },
     { value: 'semiskinned', label: 'Semi Skinned' },
     { value: 'oat', label: 'Oat' },
     { value: 'almond', label: 'Almond' }
   ];
-  const btn = document.querySelector('ic-button');
-  btn.addEventListener('click', () => {
-    document.querySelector('ic-dialog').open = 'true';
-  })
+  function showDialog() {
+    dialog.open = true;
+  }
+  function hideDialog() {
+    if (dialog.open) {
+      dialog.open = false;
+    }
+  }
+  dialog.addEventListener('icDialogClosed', hideDialog);
+  dialog.addEventListener('icDialogCancelled', hideDialog);
 </script>
-<ic-button>Display dialog with popover elements</ic-button>
-<ic-dialog label='Coffee order' heading='Please add your milk?' disable-height-constraint='true'>
-<ic-typography>What type of milk would you like with your flat white coffee?</ic-typography>
+<ic-button onclick='showDialog()'>Launch disabled height constraint dialog</ic-button>
+<ic-dialog
+  label='Coffee order'
+  heading='Please add your milk?'
+  disable-height-constraint='true'
+>
+  <ic-typography>Sure, let's dive into the delightful world of milk, where dairy dreams and coffee collide in the harmonious dance of a flat white. Picture this: you stroll into your favorite coffee haunt, the aroma of freshly ground beans tickling your senses. You approach the counter, ready to make a crucial decision – what kind of milk will accompany your flat white?</ic-typography><br/>
+  <ic-typography>In the end, whether you go for the classic, embrace the trendy, or opt for the exotic, the flat white remains a canvas waiting to be painted with your milk of choice. So, next time you're at the coffee counter, let your taste buds embark on a journey – a journey where milk and coffee meet, and every sip tells a story, sprinkled with a dash of humor and a whole lot of flavor. Cheers to the caffeinated adventure!</ic-typography><br/>
   <ic-select label='Please select a type of milk'></ic-select>
 </ic-dialog>`,
   },
   {
     language: "React",
-    snippet: `const [open, setOpen] = useState(false);
-const handleClick = () => {
-  setOpen(!open)
-}
+    snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
 return (
   <>
-    <IcButton onClick={handleClick}>Display dialog with popover elements</IcButton>
-    <IcDialog label='Coffee order' heading="Please add your milk" disableHeightConstraint open={open}>
-      <IcTypography>What type of milk would you like with your flat white coffee?</IcTypography>
+    <IcButton onClick={handleDialogOpen}>Launch disabled height constraint dialog</IcButton>
+    <IcDialog
+      label='Coffee order'
+      heading="Please add your milk"
+      disableHeightConstraint 
+      open={openDialog}
+      onIcDialogConfirmed={openDialog && handleDialogClose}
+      onIcDialogConfirmed={handleDialogClose}
+      onIcDialogCancelled={handleDialogClose}
+    >
+      <IcTypography>Sure, let's dive into the delightful world of milk, where dairy dreams and coffee collide in the harmonious dance of a flat white. Picture this: you stroll into your favorite coffee haunt, the aroma of freshly ground beans tickling your senses. You approach the counter, ready to make a crucial decision – what kind of milk will accompany your flat white?</IcTypography><br/>
+      <IcTypography>In the end, whether you go for the classic, embrace the trendy, or opt for the exotic, the flat white remains a canvas waiting to be painted with your milk of choice. So, next time you're at the coffee counter, let your taste buds embark on a journey – a journey where milk and coffee meet, and every sip tells a story, sprinkled with a dash of humor and a whole lot of flavor. Cheers to the caffeinated adventure!</IcTypography><br/>
       <IcSelect 
         label='Select a type of milk'
         options={[
@@ -1304,25 +1224,29 @@ return (
 ];
 
 export const DialogWithPopout = () => {
-  const [open, setOpen] = useState(false);
-  const handleClick = () => {
-    setOpen(!open);
-  };
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
   return (
     <>
-      <IcButton onClick={handleClick}>
-        Launch dialog with popout elements
+      <IcButton onClick={handleDialogOpen}>
+        Launch disabled height constraint dialog
       </IcButton>
       <IcDialog
         label="Coffee order"
         heading="Please add your milk"
         disableHeightConstraint
-        open={open}
+        open={openDialog}
+        onIcDialogClosed={openDialog && handleDialogClose}
+        onIcDialogConfirmed={handleDialogClose}
+        onIcDialogCancelled={handleDialogClose}
       >
         <IcTypography>
-          What type of milk would you like with your flat white coffee?
+          Sure, let's dive into the delightful world of milk, where dairy dreams and coffee collide in the harmonious dance of a flat white. Picture this: you stroll into your favorite coffee haunt, the aroma of freshly ground beans tickling your senses. You approach the counter, ready to make a crucial decision – what kind of milk will accompany your flat white?
         </IcTypography>
         <br />
+        <IcTypography>In the end, whether you go for the classic, embrace the trendy, or opt for the exotic, the flat white remains a canvas waiting to be painted with your milk of choice. So, next time you're at the coffee counter, let your taste buds embark on a journey – a journey where milk and coffee meet, and every sip tells a story, sprinkled with a dash of humor and a whole lot of flavor. Cheers to the caffeinated adventure!</IcTypography>
+        <br/>
         <IcSelect
           label="Select a type of milk"
           options={[
