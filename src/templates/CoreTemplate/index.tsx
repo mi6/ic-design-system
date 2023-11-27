@@ -71,6 +71,13 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
           <div className="content-container">
             <MDXRenderer>{children}</MDXRenderer>
           </div>
+          {mdx.fields.navSection === "components" && (
+            <ic-toast
+              id="copy-to-clipboard-toast"
+              heading="Copied to clipboard"
+              dismiss-mode="automatic"
+            />
+          )}
         </ic-section-container>
       </div>
     </MDXProvider>

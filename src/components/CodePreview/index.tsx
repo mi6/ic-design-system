@@ -45,16 +45,19 @@ const CodeSnippet: React.FC<{ code: string }> = ({ code }) => (
       )}
     </Highlight>
     <div className="snippet-container">
-      <ic-tooltip label="Copied to clipboard" disable-hover="true">
-        <ic-button
-          variant="tertiary"
-          appearance="dark"
-          onClick={() => navigator.clipboard.writeText(code)}
-        >
-          Copy code
-          <SlottedSVG path={mdiContentCopy} slot="left-icon" />
-        </ic-button>
-      </ic-tooltip>
+      <ic-button
+        variant="tertiary"
+        appearance="dark"
+        onClick={() => {
+          navigator.clipboard.writeText(code);
+          document
+            .querySelector<HTMLIcToastElement>("#copy-to-clipboard-toast")
+            ?.setVisible();
+        }}
+      >
+        Copy code
+        <SlottedSVG path={mdiContentCopy} slot="left-icon" />
+      </ic-button>
     </div>
   </>
 );
