@@ -1,7 +1,7 @@
 ---
 path: "/components/typography/code"
 
-date: "2023-05-22"
+date: "2023-11-27"
 
 title: "Typography"
 
@@ -28,6 +28,72 @@ import { IcTypography } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
+    snippet: `<ic-typography variant="h1">H1</ic-typography>
+<ic-typography variant="h2">H2</ic-typography>
+<ic-typography variant="h3">H3</ic-typography>
+<ic-typography variant="h4">H4</ic-typography>
+<ic-typography>Body</ic-typography>
+<ic-typography variant="subtitle-large">Subtitle large</ic-typography>
+<ic-typography variant="subtitle-small">Subtitle small</ic-typography>
+<ic-typography variant="label">Label</ic-typography>
+<ic-typography variant="label-uppercase">Label uppercase</ic-typography>
+<ic-typography variant="caption">Caption</ic-typography>
+<ic-typography variant="caption-uppercase">Caption uppercase</ic-typography>
+<ic-typography variant="code-large">Code large</ic-typography>
+<ic-typography variant="code-small">Code small</ic-typography>
+<ic-typography variant="code-extra-small">Code extra small</ic-typography>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTypography variant="h1">H1</IcTypography>
+<IcTypography variant="h2">H2</IcTypography>
+<IcTypography variant="h3">H3</IcTypography>
+<IcTypography variant="h4">H4</IcTypography>
+<IcTypography>Body</IcTypography>
+<IcTypography variant="subtitle-large">Subtitle large</IcTypography>
+<IcTypography variant="subtitle-small">Subtitle small</IcTypography>
+<IcTypography variant="label">Label</IcTypography>
+<IcTypography variant="label-uppercase">Label uppercase</IcTypography>
+<IcTypography variant="caption">Caption</IcTypography>
+<IcTypography variant="caption-uppercase">Caption uppercase</IcTypography>
+<IcTypography variant="code-large">Code large</IcTypography>
+<IcTypography variant="code-small">Code small</IcTypography>
+<IcTypography variant="code-extra-small">Code extra small</IcTypography>`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <div>
+    <IcTypography variant="h1">H1</IcTypography>
+    <IcTypography variant="h2">H2</IcTypography>
+    <IcTypography variant="h3">H3</IcTypography>
+    <IcTypography variant="h4">H4</IcTypography>
+    <IcTypography>Body</IcTypography>
+    <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
+    <IcTypography variant="subtitle-small">Subtitle small</IcTypography>
+    <IcTypography variant="label">Label</IcTypography>
+    <IcTypography variant="label-uppercase">Label uppercase</IcTypography>
+    <IcTypography variant="caption">Caption</IcTypography>
+    <IcTypography variant="caption-uppercase">Caption uppercase</IcTypography>
+    <IcTypography variant="code-large">Code large</IcTypography>
+    <IcTypography variant="code-small">Code small</IcTypography>
+    <IcTypography variant="code-extra-small">Code extra small</IcTypography>
+  </div>
+</ComponentPreview>
+
+## Typography details
+
+<ComponentDetails component="ic-typography" />
+
+## Variants
+
+### Re-styled typography
+
+Add a variant to the typography element to change its style. This does not change the semantic level of the typography element.
+
+export const snippetsRestyled = [
+  {
+    language: "Web component",
     snippet: `<ic-typography variant="h2">
   <h5>H5 with H2 styling</h5>
 </ic-typography>`,
@@ -40,13 +106,38 @@ export const snippets = [
   },
 ];
 
-<ComponentPreview snippets={snippets}>
+<ComponentPreview snippets={snippetsRestyled}>
   <IcTypography variant="h2">
     <h5>H5 with H2 styling</h5>
   </IcTypography>
 </ComponentPreview>
 
+### Vertical margins applied
+
 export const spacingSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-typography apply-vertical-margins="true">
+  <h5>H5 with margins applied</h5>
+</ic-typography>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTypography applyVerticalMargins>
+  <h5>H5 with margins applied</h5>
+</IcTypography>`,
+  },
+];
+
+<ComponentPreview snippets={spacingSnippets}>
+  <IcTypography applyVerticalMargins>
+    <h5>H5 with margins applied</h5>
+  </IcTypography>
+</ComponentPreview>
+
+### Vertical margins applied on re-styled typography
+
+export const spacingRestyledSnippets = [
   {
     language: "Web component",
     snippet: `<ic-typography variant="h2" apply-vertical-margins="true">
@@ -61,15 +152,7 @@ export const spacingSnippets = [
   },
 ];
 
-## Typography details
-
-<ComponentDetails component="ic-typography" />
-
-## Variants
-
-### With top and bottom margins applied
-
-<ComponentPreview snippets={spacingSnippets}>
+<ComponentPreview snippets={spacingRestyledSnippets}>
   <IcTypography variant="h2" applyVerticalMargins>
     <h5>H5 with H2 styling and margins applied</h5>
   </IcTypography>
@@ -127,4 +210,40 @@ export const truncationSnippets = [
     and foam id saucer, crema, black rich dark, grounds breve coffee steamed
     caramelization percolator.
   </IcTypography>
+</ComponentPreview>
+
+### Additional styling
+
+export const additionalStylingSnippets = [
+  {
+    language: "Web component",
+    snippet: `<ic-typography variant="h4" bold="true">Bold</ic-typography>
+<ic-typography variant="h4" italic="true">Italic</ic-typography>
+<ic-typography variant="h4" underline="true">Underline</ic-typography>
+<ic-typography variant="h4" strikethrough="true">Strikethrough</ic-typography>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcTypography variant="h4" bold>Bold</IcTypography>
+<IcTypography variant="h4" italic>Italic</IcTypography>
+<IcTypography variant="h4" underline>Underline</IcTypography>
+<IcTypography variant="h4" strikethrough>Strikethrough</IcTypography>`,
+  },
+];
+
+<ComponentPreview snippets={additionalStylingSnippets}>
+  <div>
+    <IcTypography variant="h4" bold>
+      Bold
+    </IcTypography>
+    <IcTypography variant="h4" italic>
+      Italic
+    </IcTypography>
+    <IcTypography variant="h4" underline>
+      Underline
+    </IcTypography>
+    <IcTypography variant="h4" strikethrough>
+      Strikethrough
+    </IcTypography>
+  </div>
 </ComponentPreview>
