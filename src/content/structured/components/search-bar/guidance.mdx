@@ -33,7 +33,20 @@ import searchBarFig6 from "./images/fig-6-suggested-options-empty-state.png";
 An example of the search bar component.
 
 <ComponentPreview>
-  <IcSearchBar label="What is your favourite coffee?" />
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+    onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}
+    onIcSubmitSearch={(ev) => console.log("onIcSubmitSearch", ev.detail.value)}
+    placeholder="Start typing to search…"
+  />
 </ComponentPreview>
 
 ## When to use

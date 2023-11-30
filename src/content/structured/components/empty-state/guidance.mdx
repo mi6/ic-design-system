@@ -39,9 +39,9 @@ import emptyStateFig12 from "./images/fig-12-dont-use-other-component-in-interac
 
 <ComponentPreview>
   <IcEmptyState
-    heading="There's nothing here"
-    subheading="We couldn't find anything to display here, but we’ll keep looking."
-    body="Don’t worry, none of your content has been lost, we just can’t find what you’re looking for right now. Please try looking again."
+    heading="Hmm...there's nothing here"
+    subheading="We don't currently have any favourite teas, probably because coffee is much better."
+    body="Take a look at our favourite coffees instead, there's much more of those."
   >
     <svg slot="image" viewBox="0 0 1600 1600">
       <rect fill="#ff7700" width="1600" height="1600" />
@@ -58,8 +58,8 @@ import emptyStateFig12 from "./images/fig-12-dont-use-other-component-in-interac
       <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
       <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </svg>
-    <IcButton slot="actions">Try again</IcButton>
-    <IcLink slot="actions" href="/">
+    <IcButton slot="actions">Go to favourite coffees</IcButton>
+    <IcLink slot="actions" href="#" onClick={(e) => e.preventDefault()}>
       Customer support
     </IcLink>
   </IcEmptyState>

@@ -55,9 +55,22 @@ export const snippets = [
 
 <ComponentPreview snippets={snippets}>
   <IcBreadcrumbGroup>
-    <IcBreadcrumb pageTitle="Home" href="#" />
-    <IcBreadcrumb pageTitle="Beverages" href="#" />
-    <IcBreadcrumb current pageTitle="Coffee" href="#" />
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcBreadcrumbGroup>
 </ComponentPreview>
 
@@ -103,9 +116,22 @@ export const back = [
 
 <ComponentPreview snippets={back}>
   <IcBreadcrumbGroup backBreadcrumbOnly>
-    <IcBreadcrumb pageTitle="Home" href="#" />
-    <IcBreadcrumb pageTitle="Beverages" href="#" />
-    <IcBreadcrumb current pageTitle="Coffee" href="#" />
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcBreadcrumbGroup>
 </ComponentPreview>
 
@@ -224,7 +250,7 @@ export const withIcons = [
 
 <ComponentPreview snippets={withIcons}>
   <IcBreadcrumbGroup>
-    <IcBreadcrumb pageTitle="Home" href="#">
+    <IcBreadcrumb pageTitle="Home" href="#" onClick={(e) => e.preventDefault()}>
       <svg
         slot="icon"
         width="24"
@@ -239,7 +265,11 @@ export const withIcons = [
         />
       </svg>
     </IcBreadcrumb>
-    <IcBreadcrumb pageTitle="Beverages" href="#">
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    >
       <svg
         slot="icon"
         width="24"
@@ -254,7 +284,12 @@ export const withIcons = [
         />
       </svg>
     </IcBreadcrumb>
-    <IcBreadcrumb pageTitle="Coffee" current href="#">
+    <IcBreadcrumb
+      pageTitle="Coffee"
+      current
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    >
       <svg
         slot="icon"
         width="24"
@@ -304,9 +339,22 @@ export const collapsed = [
 
 <ComponentPreview snippets={collapsed}>
   <IcBreadcrumbGroup collapsed>
-    <IcBreadcrumb pageTitle="Home" href="#" />
-    <IcBreadcrumb pageTitle="Beverages" href="#" />
-    <IcBreadcrumb pageTitle="Coffee" current href="#" />
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Coffee"
+      current
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcBreadcrumbGroup>
 </ComponentPreview>
 

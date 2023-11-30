@@ -44,7 +44,7 @@ export const snippetsDefault = [
     variant="info"
   >
   </ic-badge>
-  Default
+  Coffee orders
 </ic-button>`,
   },
   {
@@ -56,7 +56,7 @@ export const snippetsDefault = [
     slot="badge"
     variant="info"
   />
-  Default
+  Coffee orders
 </IcButton>`,
   },
 ];
@@ -64,7 +64,7 @@ export const snippetsDefault = [
 <ComponentPreview snippets={snippetsDefault}>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
     <IcBadge text-label="1000" max-number="99" slot="badge" variant="info" />
-    Default
+    Coffee orders
   </IcButton>
 </ComponentPreview>
 
@@ -80,47 +80,47 @@ export const snippetsSizes = [
   {
     language: "Web component",
     snippet: `<ic-button size="small" variant="secondary" style="margin-right:16px">
-  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
-  Small
+  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
-  Default
+  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  Coffee orders
 </ic-button>
 <ic-button size="large" variant="secondary" style="margin-right:16px">
-  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
-  Large
+  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  Coffee orders
 </ic-button>`,
   },
   {
     language: "React",
     snippet: `<IcButton variant="secondary">
-  <IcBadge size="small" text-label="1" slot="badge" variant="info"/>
-  Small
+  <IcBadge size="small" text-label="8" slot="badge" variant="info"/>
+  Coffee orders
 </IcButton>
 <IcButton variant="secondary">
-  <IcBadge text-label="1" slot="badge" variant="info"/>
-  Default
+  <IcBadge text-label="8" slot="badge" variant="info"/>
+  Coffee orders
 </IcButton>
 <IcButton variant="secondary">
-  <IcBadge size="large" text-label="1" slot="badge" variant="info"/>
-  Large
+  <IcBadge size="large" text-label="8" slot="badge" variant="info"/>
+  Coffee orders
 </IcButton>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsSizes}>
   <IcButton size="small" variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge text-label="1" slot="badge" variant="info" size="small" />
-    Small
+    <IcBadge text-label="8" slot="badge" variant="info" size="small" />
+    Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge text-label="1" slot="badge" variant="info" size="default" />
-    Default
+    <IcBadge text-label="8" slot="badge" variant="info" size="default" />
+    Coffee orders
   </IcButton>
   <IcButton size="large" variant="secondary">
-    <IcBadge text-label="1" slot="badge" variant="info" size="large" />
-    Large
+    <IcBadge text-label="8" slot="badge" variant="info" size="large" />
+    Coffee orders
   </IcButton>
 </ComponentPreview>
 
@@ -130,74 +130,74 @@ export const snippetsStatus = [
   {
     language: "Web component",
     snippet: `<ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="neutral" text-label="1"></ic-badge>
-  Neutral
+  <ic-badge slot="badge" text-label="8" variant="neutral"></ic-badge>
+  Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="info" text-label="1"></ic-badge>
-  Information
+  <ic-badge slot="badge" text-label="New" variant="info"></ic-badge>
+  Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="error" text-label="1"></ic-badge>
-  Error
+  <ic-badge slot="badge" text-label="Unavailable" variant="error"></ic-badge>
+  Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="success" text-label="1"></ic-badge>
-  Success
+  <ic-badge slot="badge" text-label="Available" variant="success"></ic-badge>
+  Coffee orders
 </ic-button>`,
   },
   {
     language: "React",
     snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="neutral" textLabel="1"/>
-  Neutral
+  <IcBadge slot="badge" text-label="8" variant="neutral"/>
+  Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="info" textLabel="1"/>
-  Information
+  <IcBadge slot="badge" text-label="New" variant="info"/>
+  Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="error" textLabel="1"/>
-  Error
+  <IcBadge slot="badge" text-label="Unavailable" variant="error"/>
+  Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="success" textLabel="1"/>
-  Success
+  <IcBadge slot="badge" text-label="Available" variant="success"/>
+  Coffee orders
 </IcButton>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsStatus}>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="neutral" textLabel="1" />
-    Neutral
+    <IcBadge slot="badge" text-label="8" variant="neutral" />
+    Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="info" textLabel="1" />
-    Information
+    <IcBadge slot="badge" text-label="New" variant="info" />
+    Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="error" textLabel="1" />
-    Error
+    <IcBadge slot="badge" text-label="Unavailable" variant="error" />
+    Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" variant="success" textLabel="1" />
-    Success
+    <IcBadge slot="badge" text-label="Available" variant="success" />
+    Coffee orders
   </IcButton>
 </ComponentPreview>
 
-### With information
+### Types
 
 export const snippetsInformation = [
   {
     language: "Web component",
     snippet: `<ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge slot="badge" variant="info"></ic-badge>
-  Dot
+  <ic-badge slot="badge" type="text" text-label="8" variant="info"></ic-badge>
+  Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge text-label="1" slot="badge" variant="info"></ic-badge>
-  Number
+  <ic-badge slot="badge" type="dot" variant="info"></ic-badge>
+  Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
 <ic-badge type="icon" slot="badge" variant="info"></ic-badge>
@@ -213,18 +213,18 @@ export const snippetsInformation = [
       d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
     />
   </svg> 
-  Icon
+  Coffee orders
 </ic-button>`,
   },
   {
     language: "React",
     snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" variant="info"/>
-  Dot
+  <IcBadge slot="badge" type="text" text-label="8" variant="info"/>
+  Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge text-label="1" slot="badge" variant="info"/>
-  Number
+  <IcBadge slot="badge" type="dot" variant="info"/>
+  Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
   <IcBadge type="icon" slot="badge" variant="info">
@@ -241,7 +241,7 @@ export const snippetsInformation = [
       />
     </svg>
   </IcBadge>
-  Success
+  Coffee orders
 </IcButton>`,
   },
 ];
@@ -249,14 +249,14 @@ export const snippetsInformation = [
 <ComponentPreview snippets={snippetsInformation}>
   <div style={{ padding: "16px" }}>
     <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge text-label="1" slot="badge" variant="info" />
-      Number
+      <IcBadge text-label="8" slot="badge" type="text" variant="info" />
+      Coffee orders
     </IcButton>
   </div>
   <div style={{ padding: "16px" }}>
     <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge type="dot" slot="badge" variant="info" />
-      Dot
+      Coffee orders
     </IcButton>
   </div>
   <div style={{ padding: "16px" }}>
@@ -272,7 +272,7 @@ export const snippetsInformation = [
           <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
         </SlottedSVG>
       </IcBadge>
-      Icon
+      Coffee orders
     </IcButton>
   </div>
 </ComponentPreview>
@@ -291,7 +291,7 @@ export const snippetsMaxNumber = [
       variant="info"
     >
     </ic-badge>
-    Default
+    Coffee orders
   </ic-button>
 </div>`,
   },
@@ -305,7 +305,7 @@ export const snippetsMaxNumber = [
       slot="badge"
       variant="info"
     />
-    Default
+    Coffee orders
   </IcButton>
 </div>`,
   },
@@ -315,76 +315,91 @@ export const snippetsMaxNumber = [
   <div style={{ padding: "16px" }}>
     <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge text-label="1000" max-number="99" slot="badge" variant="info" />
-      Default
+      Coffee orders
     </IcButton>
   </div>
 </ComponentPreview>
 
-## Position near
+### Positioning
 
 export const snippetsNear = [
   {
     language: "Web component",
     snippet: `<div style="padding:16px;">
-  <ic-chip size="small" label="Small" style="margin-right:16px;">
-    <ic-badge
-      text-label="1"
-      slot="badge"
-      position="near"
-      size="small"
-      variant="info"
-    >
-    </ic-badge>
-  </ic-chip>
-  <ic-chip label="Default" style="margin-right:16px;">
+  <ic-chip label="Americano" style="margin-right:16px;">
     <ic-badge 
-      text-label="1" 
+      type="icon" 
       slot="badge" 
       position="near" 
-      variant="info"
+      variant="success"
     >
     </ic-badge>
+      <svg
+        slot="badge-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+      </svg> 
   </ic-chip>
-  <ic-chip size="large" label="Large">
-    <ic-badge
-      text-label="1"
-      slot="badge"
-      position="near"
-      size="large"
-      variant="info"
+    <ic-chip label="Americano" style="margin-right:16px;">
+    <ic-badge 
+      type="icon" 
+      slot="badge" 
+      position="far" 
+      variant="success"
     >
     </ic-badge>
+      <svg
+        slot="badge-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+      </svg> 
   </ic-chip>
 </div>`,
   },
   {
     language: "React",
     snippet: `<div style={{padding:"16px"}}>
-  <IcChip size="small" label="Small" style={{marginRight:"16px"}}>
+  <IcChip label="Americano" style={{marginRight:"16px"}}>
     <IcBadge
-      text-label="1"
+      type="icon"
       slot="badge"
       position="near"
-      size="small"
-      variant="info"
+      variant="success"
     />
+      <svg
+        slot="badge-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+      </svg> 
   </IcChip>
-  <IcChip label="Default" style={{marginRight:"16px"}}>
+    <IcChip label="Americano" style={{marginRight:"16px"}}>
     <IcBadge
-      text-label="1"
+      type="icon"
       slot="badge"
-      position="near"
-      variant="info"
+      position="far"
+      variant="success"
     />
-  </IcChip>
-  <IcChip size="large" label="Large">
-    <IcBadge
-      text-label="1"
-      slot="badge"
-      position="near"
-      size="large"
-      variant="info"
-    />
+      <svg
+        slot="badge-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+      </svg> 
   </IcChip>
 </div>`,
   },
@@ -393,26 +408,29 @@ export const snippetsNear = [
 <ComponentPreview snippets={snippetsNear}>
   <div style={{ display: "grid" }}>
     <div style={{ padding: "16px" }}>
-      <IcChip size="small" label="Small" style={{ marginRight: "16px" }}>
-        <IcBadge
-          text-label="1"
-          slot="badge"
-          position="near"
-          size="small"
-          variant="info"
-        />
+      <IcChip label="Americano" style={{ marginRight: "16px" }}>
+        <IcBadge type="icon" slot="badge" position="near" variant="success">
+          <SlottedSVG
+            width="24px"
+            height="24px"
+            slot="badge-icon"
+            viewBox="0 0 24 24"
+          >
+            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+          </SlottedSVG>
+        </IcBadge>
       </IcChip>
-      <IcChip label="Default" style={{ marginRight: "16px" }}>
-        <IcBadge text-label="1" slot="badge" position="near" variant="info" />
-      </IcChip>
-      <IcChip size="large" label="Large">
-        <IcBadge
-          text-label="1"
-          slot="badge"
-          position="near"
-          size="large"
-          variant="info"
-        />
+      <IcChip label="Americano" style={{ marginRight: "16px" }}>
+        <IcBadge type="icon" slot="badge" position="far" variant="success">
+          <SlottedSVG
+            width="24px"
+            height="24px"
+            slot="badge-icon"
+            viewBox="0 0 24 24"
+          >
+            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+          </SlottedSVG>
+        </IcBadge>
       </IcChip>
     </div>
   </div>
@@ -425,32 +443,15 @@ export const snippetsInline = [
     language: "Web component",
     snippet: `<ic-tab-context>
   <ic-tab-group label="Example tab group">
-    <ic-tab> Small
-      <ic-badge
-        text-label="1"
-        slot="badge"
-        position="inline"
-        size="small"
-        accessible-label="1 notification found"
-        variant="info"
-      > 
-      </ic-badge>
+    <ic-tab> About
     </ic-tab>
     <ic-tab>
-    Default
-      <ic-badge
-        text-label="1"
-        slot="badge"
-        position="inline"
-        accessible-label="1 notification found"
-        variant="info"
-      >
-      </ic-badge>
+    Ingredients
     </ic-tab>
     <ic-tab>
-    Large
+    Orders
       <ic-badge
-        text-label="1"
+        text-label="8"
         slot="badge"
         position="inline"
         size="large"
@@ -460,9 +461,9 @@ export const snippetsInline = [
       </ic-badge>
     </ic-tab>
   </ic-tab-group>
-  <ic-tab-panel>Small badge</ic-tab-panel>
-  <ic-tab-panel>Default badge</ic-tab-panel>
-  <ic-tab-panel>Large badge</ic-tab-panel>
+  <ic-tab-panel>About page</ic-tab-panel>
+  <ic-tab-panel>Ingredients page</ic-tab-panel>
+  <ic-tab-panel>Orders page</ic-tab-panel>
 </ic-tab-context>`,
   },
   {
@@ -470,30 +471,15 @@ export const snippetsInline = [
     snippet: `<IcTabContext>
   <IcTabGroup label="Example tab group">
     <IcTab>
-    Small
-      <IcBadge
-        text-label="1"
-        slot="badge"
-        position="inline"
-        size="small"
-        accessibleLabel="1 notification found"
-        variant="info"
-      />
+    About
     </IcTab>
     <IcTab>
-    Default
-      <IcBadge
-        text-label="1"
-        slot="badge"
-        position="inline"
-        accessibleLabel="1 notification found"
-        variant="info"
-      />
+    Ingredients
     </IcTab>
     <IcTab>
-    Large
+    Orders
       <IcBadge
-        text-label="1"
+        text-label="8"
         slot="badge"
         position="inline"
         size="large"
@@ -502,9 +488,9 @@ export const snippetsInline = [
       />
     </IcTab>
   </IcTabGroup>
-  <IcTabPanel>Small badge</IcTabPanel>
-  <IcTabPanel>Default badge</IcTabPanel>
-  <IcTabPanel>Large badge</IcTabPanel>
+  <IcTabPanel>About page</IcTabPanel>
+  <IcTabPanel>Ingredients page</IcTabPanel>
+  <IcTabPanel>Orders page</IcTabPanel>
 </IcTabContext>`,
   },
 ];
@@ -512,31 +498,12 @@ export const snippetsInline = [
 <ComponentPreview snippets={snippetsInline}>
   <IcTabContext>
     <IcTabGroup label="Example tab group">
+      <IcTab>About</IcTab>
+      <IcTab>Ingredients</IcTab>
       <IcTab>
-        Small
+        Orders
         <IcBadge
-          text-label="1"
-          slot="badge"
-          position="inline"
-          size="small"
-          accessibleLabel="1 notification found"
-          variant="info"
-        />
-      </IcTab>
-      <IcTab>
-        Default
-        <IcBadge
-          text-label="1"
-          slot="badge"
-          position="inline"
-          accessibleLabel="1 notification found"
-          variant="info"
-        />
-      </IcTab>
-      <IcTab>
-        Large
-        <IcBadge
-          text-label="1"
+          text-label="8"
           slot="badge"
           position="inline"
           size="large"
@@ -545,13 +512,15 @@ export const snippetsInline = [
         />
       </IcTab>
     </IcTabGroup>
-    <IcTabPanel>Small badge</IcTabPanel>
-    <IcTabPanel>Default badge</IcTabPanel>
-    <IcTabPanel>Large badge</IcTabPanel>
+    <IcTabPanel>About page</IcTabPanel>
+    <IcTabPanel>Ingredients page</IcTabPanel>
+    <IcTabPanel>Orders page</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
 
 ### Hide and show badge
+
+Click the button to hide and show the badge.
 
 export const snippetsHideBadge = [
   {
@@ -568,8 +537,8 @@ export const snippetsHideBadge = [
 </script>
 <div style="padding:16px;">
   <ic-button variant="secondary" onclick="showHideBadge()">
-    <ic-badge text-label="1" slot="badge"></ic-badge>
-    Show/Hidebadge
+    <ic-badge text-label="8" slot="badge"></ic-badge>
+    Coffee orders
   </ic-button>
 </div> `,
   },
@@ -585,11 +554,11 @@ export const snippetsHideBadge = [
       <IcButton variant="secondary" onClick={handleShowHideBadge}>
         <IcBadge
           variant="info"
-          textLabel="1"
+          textLabel="8"
           slot="badge"
           visible={showBadge}
         />
-        Hide/Show badge
+        Coffee orders
       </IcButton>
     </div>
   );
@@ -607,11 +576,11 @@ export const ToggleBadge = () => {
       <IcButton variant="secondary" onClick={handleShowHideBadge}>
         <IcBadge
           variant="info"
-          textLabel="1"
+          textLabel="8"
           slot="badge"
           visible={showBadge}
         />
-        Hide/Show badge
+        Coffee orders
       </IcButton>
     </div>
   );
@@ -635,14 +604,14 @@ export const snippetsAccessibleLabel = [
     snippet: `<div style="padding:16px;">
   <ic-button variant="secondary" style="margin-right:16px"> 
     <ic-badge
-      text-label="1"
+      text-label="8"
       slot="badge"
       size="large"
       variant="info"
-      accessible-label="1 notification found"
+      accessible-label="8 coffee orders found"
     >
     </ic-badge>
-    Default
+    Coffee orders
   </ic-button>
 </div>`,
   },
@@ -651,13 +620,13 @@ export const snippetsAccessibleLabel = [
     snippet: `<div style={{padding:"16px"}}>
   <IcButton variant="secondary" style={{marginRight:"16px"}}>
     <IcBadge
-      text-label="1"
+      text-label="8"
       slot="badge"
       size="large"
       variant="info"
-      accessible-label="1 notification found"
+      accessible-label="8 coffee orders found"
     />
-    Default
+    Coffee orders
   </IcButton>
 </div>`,
   },
@@ -667,13 +636,13 @@ export const snippetsAccessibleLabel = [
   <div style={{ padding: "16px" }}>
     <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge
-        text-label="1"
+        text-label="8"
         slot="badge"
         size="large"
-        accessible-label="1 notification found"
+        accessible-label="8 coffee orders found"
         variant="info"
       />
-      Default
+      Coffee orders
     </IcButton>
   </div>
 </ComponentPreview>

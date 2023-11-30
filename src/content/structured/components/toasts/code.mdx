@@ -341,10 +341,10 @@ export const slottedActionsSnippet = [
     snippet: `<ic-button onclick="displayButtonToast()">Display slotted buttons toast</ic-button>
 <ic-button onclick="displayLinkToast()">Display slotted buttons toast</ic-button>
 <ic-toast-region>
-  <ic-toast id="toast-04" heading="Your coffee is ready" message="Please dismiss and try again" variant='warning'>
+  <ic-toast id="toast-04" heading="Your order could not be placed" message="Please try again" variant='warning'>
     <ic-button slot='action' appearance='light'>Retry</ic-button>
   </ic-toast>
-  <ic-toast id="toast-05" heading="Your coffee is ready" message="Please dismiss and try again" variant='warning'>
+  <ic-toast id="toast-05" heading="Your order could not be placed" message="Please try again" variant='warning'>
     <ic-link slot='action' appearance='light'>Retry</ic-link>
   </ic-toast>
 </ic-toast-region>
@@ -379,17 +379,17 @@ return (
     </div>
     <IcToastRegion ref={toastRegionEl}>
       <IcToast
-        heading='Your coffee is ready'
+        heading='Your order could not be placed'
         ref={buttonToastEl}
-        message='Please dismiss and try again'
+        message='Please try again'
         variant='warning'
       >
         <IcButton slot='action' appearance='light'>Retry</IcButton>
       </IcToast>
       <IcToast
-        heading='Your coffee is ready'
+        heading='Your order could not be placed'
         ref={linkToastEl}
-        message='Please dismiss and try again'
+        message='Please try again'
         variant='warning'
       >
         <IcLink href="#" slot="action" appearance="light">Retry</IcLink>
@@ -422,9 +422,9 @@ export const SlottedActionsToast = () => {
       </div>
       <IcToastRegion ref={toastRegionEl}>
         <IcToast
-          heading="Your coffee is ready"
+          heading="Your order could not be placed"
           ref={buttonToastEl}
-          message="Please dismiss and try again"
+          message="Please try again"
           variant="warning"
         >
           <IcButton slot="action" appearance="light">
@@ -432,9 +432,9 @@ export const SlottedActionsToast = () => {
           </IcButton>
         </IcToast>
         <IcToast
-          heading="Your coffee is ready"
+          heading="Your order could not be placed"
           ref={linkToastEl}
-          message="Please dismiss and try again"
+          message="Please try again"
           variant="warning"
         >
           <IcLink href="#" slot="action" appearance="light">

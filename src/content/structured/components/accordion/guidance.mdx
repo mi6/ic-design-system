@@ -3,7 +3,7 @@ path: "/components/accordion"
 
 navPriority: 1
 
-date: "2023-08-14"
+date: "2023-10-11"
 
 title: "Accordion"
 
@@ -41,41 +41,48 @@ Group accordions to hide more content on the page and to structure content into 
 An accordion group can be nested within another accordion to create one layer of nested content. Do not nest more accordion groups within an already nested accordion group. Only use one level of nesting.
 
 <ComponentPreview style={{ flexDirection: "column" }}>
-  <IcAccordionGroup groupTitle="Title of the Accordion Group">
-    <IcAccordion heading="Accordion 1">
+  <IcAccordionGroup groupTitle="Our coffees - Ingredients">
+    <IcAccordion heading="Americano">
       <SlottedSVG
         slot="icon"
-        width="20"
-        height="1em"
-        viewBox="0 0 512 512"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
       </SlottedSVG>
       <IcTypography variant="body">
-        This is an example of the main body text
+        A simple drink made by topping up espresso with hot water.
       </IcTypography>
     </IcAccordion>
-    <IcAccordion heading="Accordion 2">
+    <IcAccordion heading="Cappuccino">
       <SlottedSVG
         slot="icon"
-        width="20"
-        height="1em"
-        viewBox="0 0 512 512"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z" />
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
       </SlottedSVG>
-      <IcAccordion heading="Nested Accordion 1">
+      <IcAccordion heading="Espresso">
         <IcTypography variant="body">
-          This is an example of the nested accordion body text
+          Our tasty double shot of espresso made from the finest Arabica beans.
         </IcTypography>
       </IcAccordion>
-      <IcAccordion heading="Nested Accordion 2">
+      <IcAccordion heading="Steamed milk">
         <IcTypography variant="body">
-          This is an example of the nested accordion body text
+          Steamy milk how you like it. Choose from whole, semi-skimmed, soy, oat
+          or almond.
+        </IcTypography>
+      </IcAccordion>
+      <IcAccordion heading="Chocolate sprinkles">
+        <IcTypography variant="body">
+          No cappuccino is complete without the sprinkles. Ours are made from
+          sumptuous dark Belgian chocolate.
         </IcTypography>
       </IcAccordion>
     </IcAccordion>

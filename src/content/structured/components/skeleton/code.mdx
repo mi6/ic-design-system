@@ -212,9 +212,9 @@ export const snippetsInCard = [
    const loading = () => {
         return (
           <ic-card
-            heading="Card heading"
-            subheading="Card subheading"
-            message="This is an example of an interactive card with interaction controls."
+            heading="Coffee"
+            subheading="What is coffee?"
+            message="Coffee is a brewed drink."
           >
             <ic-skeleton
               slot="icon"
@@ -252,9 +252,9 @@ export const snippetsInCard = [
 const loaded = () => {
         return (
           <ic-card
-            heading="Card heading"
-            subheading="Card subheading"
-            message="This is an example of an interactive card with interaction controls."
+            heading="Coffee"
+            subheading="What is coffee?"
+            message="Coffee is a brewed drink."
           >
             <svg
               slot="icon"
@@ -287,9 +287,9 @@ const loaded = () => {
     snippet: `const loading = () => {
   return (
     <IcCard
-      heading="Card heading"
-      subheading="Card subheading"
-      message="This is an example of an interactive card with interaction controls."
+      heading="Coffee"
+      subheading="What is coffee?"
+      message="Coffee is a brewed drink."
     >
       <IcSkeleton
         slot="icon"
@@ -345,9 +345,9 @@ const loaded = () => {
 const loaded = () => {
   return (
     <IcCard
-      heading="Card heading"
-      subheading="Card subheading"
-      message="This is an example of an interactive card with interaction controls."
+      heading="Coffee"
+      subheading="What is coffee?"
+      message="Coffee is a brewed drink."
     >
       <SlottedSVG
         slot="icon"
@@ -405,11 +405,7 @@ const loaded = () => {
 ];
 
 export const loading = () => (
-  <IcCard
-    heading="Card heading"
-    subheading="Card subheading"
-    message="This is an example of an interactive card with interaction controls."
-  >
+  <IcCard heading="Americano Order" subheading="Name: Michael">
     <IcSkeleton
       slot="icon"
       variant="circle"
@@ -463,9 +459,9 @@ export const loading = () => (
 
 export const loaded = () => (
   <IcCard
-    heading="Card heading"
-    subheading="Card subheading"
-    message="This is an example of an interactive card with interaction controls."
+    heading="Americano Order"
+    subheading="Name: Michael"
+    message="Extras: double espresso shot & oat milk"
   >
     <SlottedSVG
       slot="icon"
@@ -475,12 +471,11 @@ export const loaded = () => (
       width="24px"
       fill="#000000"
     >
-      <path d="M0 0h24v24H0V0z" fill="none" />
-      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </SlottedSVG>
     <div slot="interaction-controls" style={{ display: "flex", gap: "16px" }}>
-      <IcButton variant="primary">Learn more</IcButton>
-      <IcButton variant="secondary">Hide</IcButton>
+      <IcButton variant="primary">Accept</IcButton>
+      <IcButton variant="secondary">Cancel</IcButton>
     </div>
   </IcCard>
 );

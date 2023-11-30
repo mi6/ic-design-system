@@ -24,7 +24,7 @@ tabs:
   ]
 ---
 
-import { IcButton, IcSectionContainer } from "@ukic/react";
+import { IcChip, IcSectionContainer } from "@ukic/react";
 import image1 from "./images/Fig-1-section-containers-align-content.png";
 import image2 from "./images/Fig-2-full-height-example.png";
 import image3 from "./images/Fig-3-section-containers-align-centre.png";
@@ -46,18 +46,32 @@ Section containers are used in ICDS components to control alignment of their con
 
 <ComponentPreview style={{ display: "contents" }}>
   <IcSectionContainer style={{ border: "1px solid black" }} aligned="center">
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <IcButton>One</IcButton>
-      <IcButton>Two</IcButton>
-      <IcButton>Three</IcButton>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "8px",
+        gap: "8px",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
     </div>
   </IcSectionContainer>
   <br />
   <IcSectionContainer style={{ border: "1px solid black" }}>
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <IcButton>One</IcButton>
-      <IcButton>Two</IcButton>
-      <IcButton>Three</IcButton>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "8px",
+        gap: "8px",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
     </div>
   </IcSectionContainer>
   <br />
@@ -65,10 +79,17 @@ Section containers are used in ICDS components to control alignment of their con
     style={{ border: "1px solid black" }}
     aligned="full-width"
   >
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <IcButton>One</IcButton>
-      <IcButton>Two</IcButton>
-      <IcButton>Three</IcButton>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "8px",
+        gap: "8px",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
     </div>
   </IcSectionContainer>
 </ComponentPreview>

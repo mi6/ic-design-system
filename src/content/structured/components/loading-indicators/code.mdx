@@ -58,17 +58,17 @@ export const snippets = [
 export const snippetsSizes = [
   {
     language: "Web component",
-    snippet: `<ic-loading-indicator type="circular" label="Small" size="small"/>
-<ic-loading-indicator type="circular" label="Large" size="large"/>
-<ic-loading-indicator type="linear" label="Small" size="small"/>
-<ic-loading-indicator type="linear" label="Large" size="large"/>`,
+    snippet: `<ic-loading-indicator type="circular" label="Loading..." size="small"/>
+<ic-loading-indicator type="circular" label="Loading..." size="large"/>
+<ic-loading-indicator type="linear" label="Loading..." size="small"/>
+<ic-loading-indicator type="linear" label="Loading..." size="large"/>`,
   },
   {
     language: "React",
-    snippet: `<IcLoadingIndicator type="circular" label="Small" size="small" />
-<IcLoadingIndicator type="circular" label="Large" size="large" />
-<IcLoadingIndicator type="linear" label="Small" size="small" />
-<IcLoadingIndicator type="linear" label="Large" size="large" />`,
+    snippet: `<IcLoadingIndicator type="circular" label="Loading..." size="small" />
+<IcLoadingIndicator type="circular" label="Loading..." size="large" />
+<IcLoadingIndicator type="linear" label="Loading..." size="small" />
+<IcLoadingIndicator type="linear" label="Loading..." size="large" />`,
   },
 ];
 
@@ -76,10 +76,10 @@ export const snippetsSizes = [
   snippets={snippetsSizes}
   style={{ flexDirection: "column", gap: "8px" }}
 >
-  <IcLoadingIndicator type="circular" label="Small" size="small" />
-  <IcLoadingIndicator type="circular" label="Large" size="large" />
-  <IcLoadingIndicator type="linear" label="Small" size="small" />
-  <IcLoadingIndicator type="linear" label="Large" size="large" />
+  <IcLoadingIndicator type="circular" label="Loading..." size="small" />
+  <IcLoadingIndicator type="circular" label="Loading..." size="large" />
+  <IcLoadingIndicator type="linear" label="Loading..." size="small" />
+  <IcLoadingIndicator type="linear" label="Loading..." size="large" />
 </ComponentPreview>
 
 ### Icon
@@ -104,13 +104,13 @@ export const snippetsIcon = [
 export const snippetsDeterminate = [
   {
     language: "Web component",
-    snippet: `<ic-loading-indicator type="circular" label="Progress" progress="30" min="0" max="100"/>
-<ic-loading-indicator type="linear" label="Progress" progress="30" min="0" max="100"/>`,
+    snippet: `<ic-loading-indicator type="circular" label="Progress 30%" progress="30" min="0" max="100"/>
+<ic-loading-indicator type="linear" label="Progress 30%" progress="30" min="0" max="100"/>`,
   },
   {
     language: "React",
-    snippet: `<IcLoadingIndicator type="circular" label="Progress" progress="30" min="0" max="100" />
-<IcLoadingIndicator type="linear" label="Progress" progress="30" min="0" max="100" />`,
+    snippet: `<IcLoadingIndicator type="circular" label="Progress 30%" progress="30" min="0" max="100" />
+<IcLoadingIndicator type="linear" label="Progress 30%" progress="30" min="0" max="100" />`,
   },
 ];
 
@@ -120,14 +120,14 @@ export const snippetsDeterminate = [
 >
   <IcLoadingIndicator
     type="circular"
-    label="Progress"
+    label="Progress 30%"
     progress="30"
     min="0"
     max="100"
   />
   <IcLoadingIndicator
     type="linear"
-    label="Progress"
+    label="Progress 30%"
     progress="30"
     min="0"
     max="100"
