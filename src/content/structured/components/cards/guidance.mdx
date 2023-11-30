@@ -42,13 +42,13 @@ There are three variants of cards:
 
 <ComponentPreview>
   <IcCard
-    heading="This is the card heading"
-    subheading="This is the subheading"
-    message="This is an example of an interactive card"
+    heading="Americano order"
+    subheading="Name: Michael"
+    message="Extras: Double espresso shot and oat milk."
     expandable
     style={{ width: "360px" }}
   >
-    <IcStatusTag slot="adornment" label="Neutral" small />
+    <IcStatusTag slot="adornment" status="warning" label="In Progress" small />
     <IcButton variant="icon" title="More information" slot="interaction-button">
       <svg
         slot="icon"
@@ -94,15 +94,14 @@ There are three variants of cards:
       width="24px"
       fill="#000000"
     >
-      <path d="M0 0h24v24H0V0z" fill="none" />
-      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
     <div slot="interaction-controls" style={{ display: "flex", gap: "16px" }}>
-      <IcButton variant="primary">Learn more</IcButton>
-      <IcButton variant="secondary">Hide</IcButton>
+      <IcButton variant="primary">Accept</IcButton>
+      <IcButton variant="secondary">Cancel</IcButton>
     </div>
     <IcTypography slot="expanded-content" variant="body">
-      This is an example of an expanded content area
+      To cancel your order click cancel.
     </IcTypography>
   </IcCard>
 </ComponentPreview>

@@ -26,51 +26,51 @@ import { IcAlert, IcButton, IcLink } from "@ukic/react";
 export const snippetsDefault = [
   {
     language: "Web component",
-    snippet: `<ic-alert heading="Neutral" message="This alert is for displaying miscellaneous messages."></ic-alert>
-<ic-alert variant="info" heading="Info" message="This alert is for displaying information."></ic-alert>
-<ic-alert variant="error" heading="Error" message="This alert is for displaying errors."></ic-alert>
-<ic-alert variant="warning" heading="Warning" message="This alert is for displaying warnings."></ic-alert>
-<ic-alert variant="success" heading="Success" message="This alert is for displaying success messages."></ic-alert>`,
+    snippet: `<ic-alert heading="Americano order" message="Preparation status is unavailable."></ic-alert>
+<ic-alert variant="info" heading="Did you know?" message="Coffee is a brewed drink prepared from roasted coffee beans."></ic-alert>
+<ic-alert variant="error" heading="Americano order error" message="Americano couldn't be made, we ran out of beans."></ic-alert>
+<ic-alert variant="warning" heading="Hot drink" message="Please be careful the drink is hot."></ic-alert>
+<ic-alert variant="success" heading="Americano order complete" message="Success, your coffee is good to go."></ic-alert>`,
   },
   {
     language: "React",
-    snippet: `<IcAlert heading="Neutral" message="This alert is for displaying miscellaneous messages."/>
-<IcAlert variant="info" heading="Info" message="This alert is for displaying information." />
-<IcAlert variant="error" heading="Error" message="This alert is for displaying errors." />
-<IcAlert variant="warning" heading="Warning" message="This alert is for displaying warnings." />
-<IcAlert variant="success" heading="Success" message="This alert is for displaying success messages." />`,
+    snippet: `<ic-alert heading="Americano order" message="Preparation status is unavailable."></ic-alert>
+<ic-alert variant="info" heading="Did you know?" message="Coffee is a brewed drink prepared from roasted coffee beans."></ic-alert>
+<IcAlert variant="error" heading="Americano order error" message="Americano couldn't be made, we ran out of beans." />
+<ic-alert variant="warning" heading="Hot drink" message="Please be careful the drink is hot."></ic-alert>
+<IcAlert variant="success" heading="Americano order complete" message="Success, your coffee is good to go." />`,
   },
 ];
 
 <ComponentPreview style={{ display: "block" }} snippets={snippetsDefault}>
   <IcAlert
     style={{ marginBottom: "16px" }}
-    heading="Neutral"
-    message="This alert is for displaying miscellaneous messages."
+    heading="Americano order"
+    message="Preparation status is unavailable."
   />
   <IcAlert
     style={{ marginBottom: "16px" }}
     variant="info"
-    heading="Info"
-    message="This alert is for displaying information."
+    heading="Did you know?"
+    message="Coffee is a brewed drink prepared from roasted coffee beans."
   />
   <IcAlert
     style={{ marginBottom: "16px" }}
     variant="error"
-    heading="Error"
-    message="This alert is for displaying errors."
+    heading="Americano order error"
+    message="Americano couldn't be made, we ran out of beans."
   />
   <IcAlert
     style={{ marginBottom: "16px" }}
     variant="warning"
-    heading="Warning"
-    message="This alert is for displaying warnings."
+    heading="Hot drink"
+    message="Please be careful the drink is hot."
   />
   <IcAlert
     style={{ marginBottom: "16px" }}
     variant="success"
-    heading="Success"
-    message="This alert is for displaying success messages."
+    heading="Americano order complete"
+    message="Success, your coffee is good to go."
   />
 </ComponentPreview>
 
@@ -85,18 +85,18 @@ export const snippetsDefault = [
 export const snippetsDismissible = [
   {
     language: "Web component",
-    snippet: `<ic-alert heading="Dismissible" message="This alert is dismissible." dismissible="true"></ic-alert>`,
+    snippet: `<ic-alert heading="Americano order nearly ready" message="Your coffee is nearly ready. We'll send you another alert once it is complete." dismissible="true"></ic-alert>`,
   },
   {
     language: "React",
-    snippet: `<IcAlert heading="Dismissible" message="This alert is dismissible." dismissible />`,
+    snippet: `<IcAlert heading="Americano order nearly ready" message="Your coffee is nearly ready. We'll send you another alert once it is complete." dismissible />`,
   },
 ];
 
 <ComponentPreview snippets={snippetsDismissible}>
   <IcAlert
-    heading="Dismissible"
-    message="This alert is dismissible."
+    heading="Americano order nearly ready"
+    message="Your coffee is nearly ready. We'll send you another alert once it is complete."
     dismissible
   />
 </ComponentPreview>
@@ -106,8 +106,8 @@ export const snippetsDismissible = [
 export const snippetsWithAction = [
   {
     language: "Web component",
-    snippet: `<ic-alert heading="With action" message="This alert has an action.">
-      <ic-button slot="action" variant="secondary" appearance="dark">Button</ic-button>
+    snippet: `<ic-alert variant="info" heading="Did you know?" message="There is a new range of coffees to try.">
+      <ic-button slot="action" variant="secondary" appearance="dark">View Drinks</ic-button>
 </ic-alert>
 <script>
   const btn = document.querySelector('ic-button');
@@ -118,21 +118,25 @@ export const snippetsWithAction = [
   },
   {
     language: "React",
-    snippet: `<IcAlert heading="With action" message="This alert has an action.">
-    <IcButton slot="action" variant="secondary" appearance="dark" onClick={(ev) => console.log(ev)}>Button</IcButton>
+    snippet: `<IcAlert variant="info" heading="Did you know?" message="There is a new range of coffees to try.">
+    <IcButton slot="action" variant="secondary" appearance="dark" onClick={(ev) => console.log(ev)}>View Drinks</IcButton>
 </IcAlert>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsWithAction}>
-  <IcAlert heading="With action" message="This alert has an action.">
+  <IcAlert
+    variant="info"
+    heading="Did you know?"
+    message="There is a new range of coffees to try."
+  >
     <IcButton
       slot="action"
       variant="secondary"
       appearance="dark"
       onClick={(ev) => console.log(ev)}
     >
-      Button
+      View Drinks
     </IcButton>
   </IcAlert>
 </ComponentPreview>
@@ -142,19 +146,29 @@ export const snippetsWithAction = [
 export const snippetsTitleAbove = [
   {
     language: "Web component",
-    snippet: `<ic-alert heading="Title displayed above the message" message="This alert has the title at the top of the alert and the message below it." title-above="true"></ic-alert>`,
+    snippet: `<ic-alert 
+    heading="What is Coffee?" 
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
+    title-above="true" 
+    variant="info">
+  </ic-alert>`,
   },
   {
     language: "React",
-    snippet: `<IcAlert heading="Title displayed above the message" message="This alert has the title at the top of the alert and the message below it." titleAbove />`,
+    snippet: `<IcAlert 
+    heading="What is Coffee?" 
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
+    titleAbove 
+    variant="info"/>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsTitleAbove}>
   <IcAlert
-    heading="Title displayed above the message"
-    message="This alert has the title at the top of the alert and the message below it."
+    heading="What is Coffee?"
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus."
     titleAbove
+    variant="info"
   />
 </ComponentPreview>
 
@@ -163,18 +177,26 @@ export const snippetsTitleAbove = [
 export const snippetsResponsiveTitle = [
   {
     language: "Web component",
-    snippet: `<ic-alert heading="This title is very long so should force the alert to add 'title-above'" message="This alert does not have 'title-above' added as a prop but it's forced to add it due to the length of the title."></ic-alert>`,
+    snippet: `<ic-alert 
+    heading="Here you can find out lots more information about the world's favourite hot drink." 
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee."
+    variant="info">
+    </ic-alert>`,
   },
   {
     language: "React",
-    snippet: `<IcAlert heading="This title is very long so should force the alert to add 'title-above'" message="This alert does not have 'title-above' added as a prop but it's forced to add it due to the length of the title." />`,
+    snippet: `<IcAlert 
+    heading="Here you can find out lots more information about the world's favourite hot drink." 
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee." 
+    variant="info"/>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsResponsiveTitle}>
   <IcAlert
-    heading="This title is very long so should force the alert to add 'title-above'"
-    message="This alert does not have 'title-above' added as a prop but it's forced to add it due to the length of the title."
+    heading="Here you can find out lots more information about the world's favourite hot drink."
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee."
+    variant="info"
   />
 </ComponentPreview>
 
@@ -183,20 +205,20 @@ export const snippetsResponsiveTitle = [
 export const snippetsCustomMessage = [
   {
     language: "Web component",
-    snippet: `<ic-alert heading="This alert uses a custom message slot">
-  <span slot="message">This is some text and <ic-link href="/" inline="">this is an inline link</ic-link> within the text.</span>
+    snippet: `<ic-alert variant="info" heading="Want to know more about our coffee?">
+  <span slot="message"> Go to our <ic-link href="/" inline="">coffee page</ic-link> to learn more.</span>
 </ic-alert>`,
   },
   {
     language: "React",
-    snippet: `<IcAlert heading="This alert uses a custom message slot">
-  <span slot="message">This is some text and <IcLink href="/" inline>this is an inline link</IcLink> within the text.</span>
+    snippet: `<IcAlert variant="info" heading="Want to know more about our coffee?">
+  <span slot="message"> Go to our <IcLink href="/" inline>coffee page</IcLink> to learn more.</span>
 </IcAlert>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsCustomMessage}>
-  <IcAlert heading="This alert uses a custom message slot">
+  <IcAlert variant="info" heading="Want to know more about our coffee?">
     <span
       slot="message"
       style={{
@@ -204,11 +226,11 @@ export const snippetsCustomMessage = [
         letterSpacing: "var(--ic-font-letter-spacing-0pt005)",
       }}
     >
-      This is some text and{" "}
-      <IcLink href="/" inline="">
-        this is an inline link
+      Got to our{" "}
+      <IcLink href="#" onClick={(e) => e.preventDefault()} inline="">
+        coffee page
       </IcLink>{" "}
-      within the text.
+      to learn more.
     </span>
   </IcAlert>
 </ComponentPreview>

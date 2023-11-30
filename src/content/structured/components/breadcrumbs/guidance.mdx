@@ -33,9 +33,22 @@ An example of the breadcrumbs component.
 
 <ComponentPreview>
   <IcBreadcrumbGroup>
-    <IcBreadcrumb pageTitle="Home" href="#" />
-    <IcBreadcrumb pageTitle="Beverages" href="#" />
-    <IcBreadcrumb current="true" pageTitle="Coffee" href="#" />
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current="true"
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcBreadcrumbGroup>
 </ComponentPreview>
 

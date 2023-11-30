@@ -39,11 +39,12 @@ export const snippets = [
   ];
   searchBar.addEventListener('icChange', (ev) => console.log(ev.detail.value));
   searchBar.addEventListener('icSubmitSearch', (ev) => console.log(ev.detail.value))
+  placeholder="Start typing to search…"
 </script>`,
   },
   {
     language: "React",
-    snippet: `<IcSearchBar
+    snippet: `<IcSearchBar 
   label="What is your favourite coffee?"
   options={[
     { label: "Espresso", value: "espresso" },
@@ -55,6 +56,7 @@ export const snippets = [
   ]}
   onIcChange={(ev) => console.log(ev.detail.value)}
   onIcSubmitSearch={(ev) => console.log(ev.detail.value)}
+  placeholder="Start typing to search…"
 />`,
   },
 ];
@@ -72,6 +74,7 @@ export const snippets = [
     ]}
     onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}
     onIcSubmitSearch={(ev) => console.log("onIcSubmitSearch", ev.detail.value)}
+    placeholder="Start typing to search…"
   />
 </ComponentPreview>
 
@@ -86,7 +89,7 @@ export const snippets = [
 export const optionsNoFiltering = [
   {
     language: "Web component",
-    snippet: `<ic-search-bar
+    snippet: `<ic-search-bar placeholder="Start typing to search…"
   label="What is your favourite coffee?"
   disable-filter="true"
 >
@@ -108,7 +111,7 @@ export const optionsNoFiltering = [
   },
   {
     language: "React",
-    snippet: `<IcSearchBar
+    snippet: `<IcSearchBar placeholder="Start typing to search…"
   label="What is your favourite coffee?"
   disableFilter
   options={[
@@ -130,6 +133,7 @@ export const optionsNoFiltering = [
   style={{ flexDirection: "column", alignItems: "center" }}
 >
   <IcSearchBar
+    placeholder="Start typing to search…"
     label="What is your favourite coffee?"
     disableFilter
     options={[
@@ -152,9 +156,9 @@ export const optionsNoFiltering = [
 export const withHelperText = [
   {
     language: "Web component",
-    snippet: `<ic-search-bar
+    snippet: `<ic-search-bar placeholder="Start typing to search…"
   label="What is your favourite coffee?"
-  helper-text="Some helper text"
+  helper-text="Coffee options will be displayed as you type."
 >
 </ic-search-bar>
 <script>
@@ -170,9 +174,9 @@ export const withHelperText = [
   },
   {
     language: "React",
-    snippet: `<IcSearchBar
+    snippet: `<IcSearchBar placeholder="Start typing to search…"
   label="What is your favourite coffee?"
-  helperText="Some helper text"
+  helperText="Coffee options will be displayed as you type."
   options={[
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso" },
@@ -187,8 +191,9 @@ export const withHelperText = [
 
 <ComponentPreview snippets={withHelperText}>
   <IcSearchBar
+    placeholder="Start typing to search…"
     label="What is your favourite coffee?"
-    helperText="Some helper text"
+    helperText="Coffee options will be displayed as you type."
     options={[
       { label: "Espresso", value: "espresso" },
       { label: "Double Espresso", value: "doubleespresso" },
@@ -205,7 +210,7 @@ export const withHelperText = [
 export const withHiddenLabel = [
   {
     language: "Web component",
-    snippet: `<ic-search-bar label="What is your favourite coffee?" hide-label="true"
+    snippet: `<ic-search-bar placeholder="Start typing to search…" label="What is your favourite coffee?" hide-label="true"
 >
 </ic-search-bar>
 <script>
@@ -222,7 +227,7 @@ export const withHiddenLabel = [
   },
   {
     language: "React",
-    snippet: `<IcSearchBar
+    snippet: `<IcSearchBar placeholder="Start typing to search…"
   label="What is your favourite coffee?"
   hideLabel
   options={[
@@ -239,6 +244,7 @@ export const withHiddenLabel = [
 
 <ComponentPreview snippets={withHiddenLabel}>
   <IcSearchBar
+    placeholder="Start typing to search…"
     label="What is your favourite coffee?"
     hideLabel
     options={[
@@ -363,7 +369,7 @@ This example shows how to filter data asynchronously when the value in the input
 export const customFiltering = [
   {
     language: "Web component",
-    snippet: `<ic-search-bar 
+    snippet: `<ic-search-bar placeholder="Start typing to search…"
   label="What is your favourite coffee?" 
   debounce="300" 
   disable-filter="true">
@@ -423,7 +429,7 @@ const changeHandler = (event) =>{
     setResults([]);
   }
 }
-<IcSearchBar label="What is your favourite coffee?"
+<IcSearchBar placeholder="Start typing to search…" label="What is your favourite coffee?"
   debounce="300"
   disableFilter
   options={results}
@@ -460,6 +466,7 @@ export const CustomFilterExample = () => {
   };
   return (
     <IcSearchBar
+      placeholder="Start typing to search…"
       label="What is your favourite coffee?"
       debounce="300"
       disableFilter

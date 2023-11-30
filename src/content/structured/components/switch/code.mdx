@@ -26,7 +26,7 @@ import { IcSwitch } from "@ukic/react";
 export const snippetsDefault = [
   {
     language: "Web component",
-    snippet: `<ic-switch label="Unlimited coffee"></ic-switch>
+    snippet: `<ic-switch label="Coffee preferences"></ic-switch>
 <script>
   const switchEl = document.querySelector('ic-switch');
   switchEl.addEventListener('icChange', (ev) => {
@@ -40,7 +40,7 @@ export const snippetsDefault = [
   {
     language: "React",
     snippet: `<IcSwitch
-  label="Unlimited coffee"
+  label="Coffee preferences"
   onIcChange={(ev) => console.log({ 
     checked: ev.detail.checked, 
     value: ev.detail.value
@@ -51,7 +51,7 @@ export const snippetsDefault = [
 
 <ComponentPreview snippets={snippetsDefault}>
   <IcSwitch
-    label="Unlimited coffee"
+    label="Coffee preferences"
     onIcChange={(ev) =>
       console.log({
         checked: ev.detail.checked,
@@ -72,16 +72,16 @@ export const snippetsDefault = [
 export const snippetsState = [
   {
     language: "Web component",
-    snippet: `<ic-switch label="Unlimited coffee" show-state="true"></ic-switch>`,
+    snippet: `<ic-switch label="Coffee preferences" show-state="true" ></ic-switch>`,
   },
   {
     language: "React",
-    snippet: `<IcSwitch label="Unlimited coffee" showState/>`,
+    snippet: `<IcSwitch label="Coffee preferences" showState/>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsState}>
-  <IcSwitch label="Unlimited coffee" showState />
+  <IcSwitch label="Coffee preferences" showState />
 </ComponentPreview>
 
 ### Small
@@ -89,16 +89,16 @@ export const snippetsState = [
 export const snippetsSmall = [
   {
     language: "Web component",
-    snippet: `<ic-switch label="Unlimited coffee" show-state="true" size="small"></ic-switch>`,
+    snippet: `<ic-switch label="Coffee preferences" show-state="true" size="small"></ic-switch>`,
   },
   {
     language: "React",
-    snippet: `<IcSwitch label="Unlimited coffee" showState size="small"/>`,
+    snippet: `<IcSwitch label="Coffee preferences" showState size="small"/>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsSmall}>
-  <IcSwitch label="Unlimited coffee" showState size="small" />
+  <IcSwitch label="Coffee preferences" showState size="small" />
 </ComponentPreview>
 
 ### Disabled
@@ -106,20 +106,20 @@ export const snippetsSmall = [
 export const snippetsDisabled = [
   {
     language: "Web component",
-    snippet: `<ic-switch label="Unlimited coffee" show-state="true" disabled="true"></ic-switch>
-<ic-switch label="Unlimited coffee" show-state="true" disabled="true" checked="true"></ic-switch>`,
+    snippet: `<ic-switch label="Coffee preferences" show-state="true" disabled="true"></ic-switch>
+<ic-switch label="Coffee preferences" show-state="true" disabled="true" checked="true"></ic-switch>`,
   },
   {
     language: "React",
-    snippet: `<IcSwitch label="Unlimited coffee" showState disabled/>
-<IcSwitch label="Unlimited coffee" showState disabled checked/>`,
+    snippet: `<IcSwitch label="Coffee preferences" showState disabled/>
+<IcSwitch label="Coffee preferences" showState disabled checked/>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsDisabled}>
   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-    <IcSwitch label="Unlimited coffee" showState disabled />
-    <IcSwitch label="Unlimited coffee" showState disabled checked />
+    <IcSwitch label="Coffee preferences" showState disabled />
+    <IcSwitch label="Coffee preferences" showState disabled checked />
   </div>
 </ComponentPreview>
 
@@ -128,56 +128,50 @@ export const snippetsDisabled = [
 export const snippetsHelperAndAdornment = [
   {
     language: "Web component",
-    snippet: `<ic-switch label="Unlimited coffee" helper-text="Helper Text">
+    snippet: `<ic-switch label="Coffee preferences" helper-text="Choose your coffee preferences">
   <svg
     slot="right-adornment"
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z"
-      fill="black"
-    />
+     <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z"/>
   </svg>
 </ic-switch>`,
   },
   {
     language: "React",
-    snippet: `<IcSwitch label="Unlimited coffee" helperText="Helper Text">
+    snippet: `<IcSwitch label="Coffee preferences" helperText="Choose your coffee preferences">
   <SlottedSVG
     slot="right-adornment"
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z"
-      fill="black"
-    />
+    <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z"/>
   </SlottedSVG>
 </IcSwitch>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsHelperAndAdornment}>
-  <IcSwitch label="Unlimited coffee" helperText="Helper Text">
+  <IcSwitch
+    label="Coffee preferences"
+    helperText="Choose your coffee preferences"
+  >
     <svg
       slot="right-adornment"
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z"
-        fill="black"
-      />
+      <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
     </svg>
   </IcSwitch>
 </ComponentPreview>

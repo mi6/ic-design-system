@@ -26,18 +26,20 @@ import { MemoryRouter, NavLink } from "react-router-dom";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-link href="/components/link/code">Links code page</ic-link>`,
+    snippet: `<ic-link href="/components/link/code">About our coffees</ic-link>`,
   },
   {
     language: "React",
-    snippet: `<IcLink href="/components/link/code">Links code page</IcLink>`,
+    snippet: `<IcLink href="/components/link/code">About our coffees</IcLink>`,
   },
 ];
 
 ## Component demo
 
 <ComponentPreview snippets={snippets}>
-  <IcLink href="/components/link/code">Links code page</IcLink>
+  <IcLink href="#" onClick={(e) => e.preventDefault()}>
+    About our coffees
+  </IcLink>
 </ComponentPreview>
 
 ## Link details
@@ -51,17 +53,17 @@ export const snippets = [
 export const snippetsIcon = [
   {
     language: "Web component",
-    snippet: `<ic-link href="/" target="_blank">This is a link</ic-link>`,
+    snippet: `<ic-link href="/" target="_blank">About our coffees</ic-link>`,
   },
   {
     language: "React",
-    snippet: `<IcLink href="/" target="_blank">This is a link</IcLink>`,
+    snippet: `<IcLink href="/" target="_blank">About our coffees</IcLink>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsIcon}>
   <IcLink href="/" target="_blank">
-    This is a link
+    About our coffees
   </IcLink>
 </ComponentPreview>
 
@@ -70,13 +72,13 @@ export const snippetsIcon = [
 export const snippetsLightDark = [
   {
     language: "Web component",
-    snippet: `<ic-link href="/" appearance="dark" target="_blank">This is a link</ic-link>
-<ic-link href="/" appearance="light" target="_blank">This is a link</ic-link>`,
+    snippet: `<ic-link href="/" appearance="dark" target="_blank">About our coffees</ic-link>
+<ic-link href="/" appearance="light" target="_blank">About our coffees</ic-link>`,
   },
   {
     language: "React",
-    snippet: `<IcLink href="/" appearance="dark" target="_blank">This is a link</IcLink>
-<IcLink href="/" appearance="light" target="_blank">This is a link</IcLink>`,
+    snippet: `<IcLink href="/" appearance="dark" target="_blank">About our coffees</IcLink>
+<IcLink href="/" appearance="light" target="_blank">About our coffees</IcLink>`,
   },
 ];
 
@@ -87,7 +89,7 @@ export const snippetsLightDark = [
     }}
   >
     <IcLink href="/" appearance="dark" target="_blank">
-      This is a link
+      About our coffees
     </IcLink>
   </div>
   <div
@@ -97,7 +99,7 @@ export const snippetsLightDark = [
     }}
   >
     <IcLink href="/" appearance="light" target="_blank">
-      This is a link
+      About our coffees
     </IcLink>
   </div>
 </ComponentPreview>
@@ -113,13 +115,13 @@ export const withReactRouter = [
       <NavLink to="/" slot="router-item">Home</NavLink>
     </IcLink>
     <IcLink>
-      <NavLink to="/daily-tippers" slot="router-item">Daily Tippers</NavLink>
+      <NavLink to="/daily-tippers" slot="router-item">Beverages</NavLink>
     </IcLink>
   </div>
   <IcSectionContainer>
     <Routes>
       <Route path="/" element={() => <IcTypography>This is the home page</IcTypography>} />
-      <Route path="/daily-tippers" element={() => <IcTypography>This page is about daily tippers</IcTypography>} />
+      <Route path="/daily-tippers" element={() => <IcTypography>This page is about beverages</IcTypography>} />
     </Routes>
   </IcSectionContainer>
 </MemoryRouter>
@@ -146,7 +148,7 @@ export const withReactRouter = [
       </IcLink>
       <IcLink>
         <NavLink to="/daily-tippers" slot="router-item">
-          Daily Tippers
+          Beverages
         </NavLink>
       </IcLink>
     </div>

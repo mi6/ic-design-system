@@ -34,42 +34,36 @@ import {
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-data-entity heading="Personal details">
-    <ic-data-row label="Name" value="Michael Johnson">
+    snippet: `<ic-data-entity heading="Order details">
+    <ic-data-row label="Order name" value="Michael">
       <ic-link href="#" slot="end-component">
         Edit
       </ic-link>
     </ic-data-row>
-    <ic-data-row label="Date of birth" value="16 October 1995">
+    <ic-data-row label="Drink" value="Americano">
       <ic-link href="#" slot="end-component">
         Edit
       </ic-link>
     </ic-data-row>
-    <ic-data-row label="Telephone" value="07449 7654873">
+    <ic-data-row label="Milk option" value="Soya milk">
       <ic-link href="#" slot="end-component">
         Edit
       </ic-link>
     </ic-data-row>
-    <ic-data-row label="Email" value="mjohnson@coffee.gov">
+    <ic-data-row label="Price" value="£3.25">
       <ic-link href="#" slot="end-component">
         Edit
       </ic-link>
     </ic-data-row>
-    <ic-data-row label="Address">
+    <ic-data-row label="Payment method">
       <ic-typography variant="body" slot="value">
-        383 Coffee Drive
-        <br />
-        London
-        <br />
-        SW7 988
-        <br />
-        United Kingdom
+        VISA ending 5896
       </ic-typography>
       <ic-link href="#" slot="end-component">
         Edit
       </ic-link>
     </ic-data-row>
-    <ic-data-row label="Travel records" value="Johnson_X46w32.pdf">
+    <ic-data-row label="Download receipt" value="CoffeeOrder_X46w32.pdf">
       <ic-button variant="icon" aria-label="Download" slot="end-component">
         <svg viewBox="0 0 24 24" height="24px" width="24px">
           <path
@@ -83,42 +77,36 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `<IcDataEntity heading="Personal details">
-    <IcDataRow label="Name" value="Michael Johnson">
+    snippet: `  <IcDataEntity heading="Order details">
+    <IcDataRow label="Order name" value="Michael">
       <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Date of birth" value="16 October 1995">
+    <IcDataRow label="Drink" value="Americano">
       <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Telephone" value="07449 7654873">
+    <IcDataRow label="Milk option" value="Soya milk">
       <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+    <IcDataRow label="Price" value="£3.25">
       <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Address">
+    <IcDataRow label="Payment method">
       <IcTypography variant="body" slot="value">
-        383 Coffee Drive
-        <br />
-        London
-        <br />
-        SW7 988
-        <br />
-        United Kingdom
+        VISA ending 5896
       </IcTypography>
       <IcLink href="#" slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Travel records" value="Johnson_X46w32.pdf">
+    <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
       <IcButton variant="icon" aria-label="Download" slot="end-component">
         <SlottedSVG viewBox="0 0 24 24" height="24px" width="24px">
           <path
@@ -133,42 +121,36 @@ export const snippets = [
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcDataEntity heading="Personal details" style={{ width: "90%" }}>
-    <IcDataRow label="Name" value="Michael Johnson">
-      <IcLink href="#" slot="end-component">
+  <IcDataEntity heading="Order details" style={{ width: "90%" }}>
+    <IcDataRow label="Order name" value="Michael">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Date of birth" value="16 October 1995">
-      <IcLink href="#" slot="end-component">
+    <IcDataRow label="Drink" value="Americano">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Telephone" value="07449 7654873">
-      <IcLink href="#" slot="end-component">
+    <IcDataRow label="Milk option" value="Soya milk">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Email" value="mjohnson@coffee.gov">
-      <IcLink href="#" slot="end-component">
+    <IcDataRow label="Price" value="£3.25">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Address">
+    <IcDataRow label="Payment method">
       <IcTypography variant="body" slot="value">
-        383 Coffee Drive
-        <br />
-        London
-        <br />
-        SW7 988
-        <br />
-        United Kingdom
+        VISA ending 5896
       </IcTypography>
-      <IcLink href="#" slot="end-component">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
         Edit
       </IcLink>
     </IcDataRow>
-    <IcDataRow label="Travel records" value="Johnson_X46w32.pdf">
+    <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
       <IcButton variant="icon" aria-label="Download" slot="end-component">
         <svg viewBox="0 0 24 24" height="24px" width="24px">
           <path
@@ -196,51 +178,27 @@ export const snippets = [
 export const withStatusTags = [
   {
     language: "Web component",
-    snippet: `<ic-data-entity heading="Personal details">
-    <ic-data-row label="Name" value="Michael Johnson">
-      <ic-status-tag
-        status="success"
-        label="confirmed"
-        variant="filled"
-        slot="end-component"
-      />
+    snippet: `<ic-data-entity heading="Order details">
+    <ic-data-row label="Order name" value="Michael">
     </ic-data-row>
-    <ic-data-row label="Date of birth" value="16 October 1995">
+    <ic-data-row label="Drink" value="Americano">
       <ic-status-tag
         status="warning"
-        label="in review"
-        variant="filled"
+        label="In Progress"
+        variant="secondary"
         slot="end-component"
       />
     </ic-data-row>
-    <ic-data-row label="Telephone" value="07449 7654873">
-      <ic-status-tag
-        status="warning"
-        label="in review"
-        variant="filled"
-        slot="end-component"
-      />
+    <ic-data-row label="Milk option" value="Soya milk">
     </ic-data-row>
-    <ic-data-row label="Email" value="mjohnson@coffee.gov">
-      <ic-status-tag
-        status="success"
-        label="confirmed"
-        variant="filled"
-        slot="end-component"
-      />
+    <ic-data-row label="Price" value="£3.25">
     </ic-data-row>
-    <ic-data-row label="Address">
+    <ic-data-row label="Payment method">
       <ic-typography variant="body" slot="value">
-        383 Coffee Drive
-        <br />
-        London
-        <br />
-        SW7 988
-        <br />
-        United Kingdom
+        VISA ending 5896
       </ic-typography>
       <ic-status-tag
-        label="not confirmed"
+        label="Not Confirmed"
         variant="filled"
         slot="end-component"
       />
@@ -249,51 +207,27 @@ export const withStatusTags = [
   },
   {
     language: "React",
-    snippet: `<IcDataEntity heading="Personal details">
-    <IcDataRow label="Name" value="Michael Johnson">
-      <IcStatusTag
-        status="success"
-        label="confirmed"
-        variant="filled"
-        slot="end-component"
-      />
+    snippet: `<IcDataEntity heading="Order details">
+    <IcDataRow label="Order name" value="Michael">
     </IcDataRow>
-    <IcDataRow label="Date of birth" value="16 October 1995">
+    <IcDataRow label="Drink" value="Americano">
       <IcStatusTag
         status="warning"
-        label="in review"
+        label="In Progress"
         variant="filled"
         slot="end-component"
       />
     </IcDataRow>
-    <IcDataRow label="Telephone" value="07449 7654873">
-      <IcStatusTag
-        status="warning"
-        label="in review"
-        variant="filled"
-        slot="end-component"
-      />
+    <IcDataRow label="Milk option" value="Soya milk">
     </IcDataRow>
-    <IcDataRow label="Email" value="mjohnson@coffee.gov">
-      <IcStatusTag
-        status="success"
-        label="confirmed"
-        variant="filled"
-        slot="end-component"
-      />
+    <IcDataRow label="Price" value="£3.25">
     </IcDataRow>
-    <IcDataRow label="Address">
+    <IcDataRow label="Payment method">
       <IcTypography variant="body" slot="value">
-        383 Coffee Drive
-        <br />
-        London
-        <br />
-        SW7 988
-        <br />
-        United Kingdom
+        VISA ending 5896
       </IcTypography>
       <IcStatusTag
-        label="not confirmed"
+        label="Not Confirmed"
         variant="filled"
         slot="end-component"
       />
@@ -303,51 +237,24 @@ export const withStatusTags = [
 ];
 
 <ComponentPreview snippets={withStatusTags}>
-  <IcDataEntity heading="Personal details" style={{ width: "90%" }}>
-    <IcDataRow label="Name" value="Michael Johnson">
-      <IcStatusTag
-        status="success"
-        label="confirmed"
-        variant="filled"
-        slot="end-component"
-      />
-    </IcDataRow>
-    <IcDataRow label="Date of birth" value="16 October 1995">
+  <IcDataEntity heading="Order details" style={{ width: "90%" }}>
+    <IcDataRow label="Order name" value="Michael" />
+    <IcDataRow label="Drink" value="Americano">
       <IcStatusTag
         status="warning"
-        label="in review"
+        label="In Progress"
         variant="filled"
         slot="end-component"
       />
     </IcDataRow>
-    <IcDataRow label="Telephone" value="07449 7654873">
-      <IcStatusTag
-        status="warning"
-        label="in review"
-        variant="filled"
-        slot="end-component"
-      />
-    </IcDataRow>
-    <IcDataRow label="Email" value="mjohnson@coffee.gov">
-      <IcStatusTag
-        status="success"
-        label="confirmed"
-        variant="filled"
-        slot="end-component"
-      />
-    </IcDataRow>
-    <IcDataRow label="Address">
+    <IcDataRow label="Milk option" value="Soya milk" />
+    <IcDataRow label="Price" value="£3.25" />
+    <IcDataRow label="Payment method">
       <IcTypography variant="body" slot="value">
-        383 Coffee Drive
-        <br />
-        London
-        <br />
-        SW7 988
-        <br />
-        United Kingdom
+        VISA ending 5896
       </IcTypography>
       <IcStatusTag
-        label="not confirmed"
+        label="Not Confirmed"
         variant="filled"
         slot="end-component"
       />
@@ -505,52 +412,52 @@ export const smallSnippet = [
 export const editableExample = [
   {
     language: "Web component",
-    snippet: `<ic-data-entity heading="Personal details">
-  <ic-data-row label="Name"> 
+    snippet: `<ic-data-entity heading="Order details">
+  <ic-data-row label="Order name"> 
     <ic-text-field 
       slot="value" 
-      label="Name" 
-      value="Michael Johnson" 
+      label="Order name" 
+      value="Michael" 
       readonly 
       hide-label 
       full-width
     />
   </ic-data-row>
-  <ic-data-row label="Date of birth">
+  <ic-data-row label="Drink">
     <ic-text-field 
       slot="value" 
-      label="Date of birth" 
-      value="16 October 1995" 
+      label="Drink" 
+      value="Americano" 
       readonly 
       hide-label 
       full-width
     />
   </ic-data-row>
-  <ic-data-row label="Telephone">
+  <ic-data-row label="Milk option">
     <ic-text-field 
       slot="value" 
-      label="Telephone" 
-      value="07449 7654873" 
+      label="Milk option" 
+      value="Soya milk" 
       readonly 
       hide-label 
       full-width
     />
   </ic-data-row>
-  <ic-data-row label="Email">
+  <ic-data-row label="Price">
     <ic-text-field 
       slot="value" 
-      label="Email" 
-      value="mjohnson@coffee.gov" 
+      label="Price" 
+      value="£3.25" 
       readonly 
       hide-label 
       full-width
     />
   </ic-data-row>
-  <ic-data-row label="Address">
+  <ic-data-row label="Payment method">
     <ic-text-field 
       slot="value" 
-      label="Address" 
-      value="383 Coffee Drive, London, SW7 988, United Kingdom"  
+      label="Payment method" 
+      value="VISA ending 5896"  
       readonly 
       hide-label 
       full-width
@@ -581,52 +488,52 @@ export const editableExample = [
   },
   {
     language: "React",
-    snippet: `<IcDataEntity heading="Personal details">
-  <IcDataRow label="Name">
+    snippet: `<IcDataEntity heading="Order details">
+  <IcDataRow label="Order name">
     <IcTextField
       slot="value"
-      label="Name"
-      value="Michael Johnson"
+      label="Order name"
+      value="Michael"
       readonly
       hide-label
       full-width
     />
   </IcDataRow>
-  <IcDataRow label="Date of birth" value="16 October 1995">
+  <IcDataRow label="Drink" value="Americano">
     <IcTextField
       slot="value"
-      label="Date of birth"
-      value="16 October 1995"
+      label="Drink"
+      value="Americano"
       readonly
       hide-label
       full-width
     />
   </IcDataRow>
-  <IcDataRow label="Telephone" value="07449 7654873">
+  <IcDataRow label="Milk option" value="Soya milk">
     <IcTextField
       slot="value"
-      label="Telephone"
-      value="07449 7654873"
+      label="Milk option"
+      value="Soya milk"
       readonly
       hide-label
       full-width
     />
   </IcDataRow>
-  <IcDataRow label="Email" value="mjohnson@coffee.gov">
+  <IcDataRow label="Price" value="£3.25">
     <IcTextField
       slot="value"
-      label="Email"
-      value="mjohnson@coffee.gov"
+      label="Price"
+      value="£3.25"
       readonly
       hide-label
       full-width
     />
   </IcDataRow>
-  <IcDataRow label="Address">
+  <IcDataRow label="Payment method">
     <IcTextField
       slot="value"
-      label="Address"
-      value="383 Coffee Drive, London, SW7 988, United Kingdom"
+      label="Payment method"
+      value="VISA ending 5896"
       readonly
       hide-label
       full-width
@@ -663,52 +570,52 @@ export const editableExample = [
 ];
 
 <ComponentPreview snippets={editableExample} style={{ display: "block" }}>
-  <IcDataEntity heading="Personal details" style={{ width: "90%" }}>
-    <IcDataRow label="Name">
+  <IcDataEntity heading="Order details" style={{ width: "90%" }}>
+    <IcDataRow label="Order name">
       <IcTextField
         slot="value"
-        label="Name"
-        value="Michael Johnson"
+        label="Order name"
+        value="Michael"
         readonly
         hide-label
         full-width
       />
     </IcDataRow>
-    <IcDataRow label="Date of birth" value="16 October 1995">
+    <IcDataRow label="Drink" value="Americano">
       <IcTextField
         slot="value"
-        label="Date of birth"
-        value="16 October 1995"
+        label="Drink"
+        value="Americano"
         readonly
         hide-label
         full-width
       />
     </IcDataRow>
-    <IcDataRow label="Telephone" value="07449 7654873">
+    <IcDataRow label="Milk option" value="Soya milk">
       <IcTextField
         slot="value"
-        label="Telephone"
-        value="07449 7654873"
+        label="Milk option"
+        value="Soya milk"
         readonly
         hide-label
         full-width
       />
     </IcDataRow>
-    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+    <IcDataRow label="Price" value="£3.25">
       <IcTextField
         slot="value"
-        label="Email"
-        value="mjohnson@coffee.gov"
+        label="Price"
+        value="£3.25"
         readonly
         hide-label
         full-width
       />
     </IcDataRow>
-    <IcDataRow label="Address">
+    <IcDataRow label="Payment method">
       <IcTextField
         slot="value"
-        label="Address"
-        value="383 Coffee Drive, London, SW7 988, United Kingdom"
+        label="Payment method"
+        value="VISA ending 5896"
         readonly
         hide-label
         full-width

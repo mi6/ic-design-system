@@ -22,7 +22,7 @@ tabs:
   ]
 ---
 
-import { IcSectionContainer } from "@ukic/react";
+import { IcChip, IcSectionContainer } from "@ukic/react";
 
 ## Component demo
 
@@ -30,26 +30,39 @@ export const snippetsDefault = [
   {
     language: "Web component",
     snippet: `<ic-section-container style="border:1px solid black">
-  <button type="button">One</button>
-  <button type="button">Two</button>
-  <button type="button">Three</button>
+    <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <ic-chip label="Americano"/>
+      <ic-chip label="Cappuccino"/>
+      <ic-chip label="Latte"/>
+    </div>
 </ic-section-container>`,
   },
   {
     language: "React",
     snippet: `<IcSectionContainer style={{ border: "1px solid black" }}>
-  <button type="button">One</button>
-  <button type="button">Two</button>
-  <button type="button">Three</button>
+    <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <IcChip label="Americano"/>
+      <IcChip label="Cappuccino"/>
+      <IcChip label="Latte"/>
+    </div>
 </IcSectionContainer>`,
   },
 ];
 
-<ComponentPreview snippets={snippetsDefault}>
+<ComponentPreview snippets={snippetsDefault} style={{ display: "contents" }}>
   <IcSectionContainer style={{ border: "1px solid black" }}>
-    <button type="button">One</button>
-    <button type="button">Two</button>
-    <button type="button">Three</button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "8px",
+        gap: "8px",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
+    </div>
   </IcSectionContainer>
 </ComponentPreview>
 
@@ -68,9 +81,11 @@ export const snippetsCenter = [
   aligned="center"
   style="border:1px solid black"
 >
-  <button type="button">One</button>
-  <button type="button">Two</button>
-  <button type="button">Three</button>
+  <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <ic-chip label="Americano"/>
+      <ic-chip label="Cappuccino"/>
+      <ic-chip label="Latte"/>
+    </div>
 </ic-section-container>`,
   },
   {
@@ -79,18 +94,29 @@ export const snippetsCenter = [
   aligned="center"
   style={{ border: "1px solid black" }}
 >
-  <button type="button">One</button>
-  <button type="button">Two</button>
-  <button type="button">Three</button>
+  <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <IcChip label="Americano"/>
+      <IcChip label="Cappuccino"/>
+      <IcChip label="Latte"/>
+  </div>
 </IcSectionContainer>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsCenter}>
   <IcSectionContainer aligned="center" style={{ border: "1px solid black" }}>
-    <button type="button">One</button>
-    <button type="button">Two</button>
-    <button type="button">Three</button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "8px",
+        gap: "8px",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
+    </div>
   </IcSectionContainer>
 </ComponentPreview>
 
@@ -103,10 +129,10 @@ export const snippetsFullWidth = [
   aligned="full-width"
   style="border:1px solid black"
 >
-  <div style="display:flex;justify-content:space-between;">
-    <button type="button">One</button>
-    <button type="button">Two</button>
-    <button type="button">Three</button>
+  <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <ic-chip label="Americano"/>
+      <ic-chip label="Cappuccino"/>
+      <ic-chip label="Latte"/>
   </div>
 </ic-section-container>`,
   },
@@ -116,10 +142,10 @@ export const snippetsFullWidth = [
   aligned="full-width"
   style={{ border: "1px solid black" }}
 >
-  <div style={{ display: "flex", justifyContent: "space-between" }}>
-    <button type="button">One</button>
-    <button type="button">Two</button>
-    <button type="button">Three</button>
+  <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <IcChip label="Americano"/>
+      <IcChip label="Cappuccino"/>
+      <IcChip label="Latte"/>
   </div>
 </IcSectionContainer>`,
   },
@@ -130,10 +156,17 @@ export const snippetsFullWidth = [
     style={{ border: "1px solid black" }}
     aligned="full-width"
   >
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <button type="button">One</button>
-      <button type="button">Two</button>
-      <button type="button">Three</button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "8px",
+        gap: "8px",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
     </div>
   </IcSectionContainer>
 </ComponentPreview>
@@ -148,9 +181,11 @@ export const snippetsFullHeight = [
   full-height="true"
   style="border:1px solid black"
 >
-  <button type="button">One</button>
-  <button type="button">Two</button>
-  <button type="button">Three</button>
+  <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <ic-chip label="Americano"/>
+      <ic-chip label="Cappuccino"/>
+      <ic-chip label="Latte"/>
+  </div>
 </ic-section-container>`,
   },
   {
@@ -160,9 +195,11 @@ export const snippetsFullHeight = [
   fullHeight
   style={{ border: "1px solid black" }}
 >
-  <button type="button">One</button>
-  <button type="button">Two</button>
-  <button type="button">Three</button>
+  <div style={{ display: "flex", justifyContent: "space-between", padding: "8px", gap: "8px" }}>
+      <IcChip label="Americano"/>
+      <IcChip label="Cappuccino"/>
+      <IcChip label="Latte"/>
+  </div>
 </IcSectionContainer>`,
   },
 ];
@@ -173,8 +210,17 @@ export const snippetsFullHeight = [
     fullHeight
     style={{ border: "1px solid black" }}
   >
-    <button type="button">One</button>
-    <button type="button">Two</button>
-    <button type="button">Three</button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "8px",
+        gap: "8px",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
+    </div>
   </IcSectionContainer>
 </ComponentPreview>
