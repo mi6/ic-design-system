@@ -29,7 +29,7 @@ import {
   IcTabContext,
   IcTabGroup,
 } from "@ukic/react";
-import { useRef } from "react";
+import { useState } from "react";
 
 ## Component demo
 
@@ -576,41 +576,41 @@ export const snippetsHideBadge = [
   {
     language: "React",
     snippet: `export const ToggleBadge = () => {
-  const badgeEl = useRef(null);
-  const showHideBadge = () => {
-  const badge = badgeEl.current;
-   if(badge.classList.contains("show")) {
-      badge.visible = false;
-   } else {
-    badge.visible = true;
-   }
+  const [showBadge, setShowBadge] = useState(false);
+  const handleShowHideBadge = () => {
+    setShowBadge(!showBadge);
   };
-    return (
-      <div style={{padding:"16px"}}>
-        <IcButton variant="secondary" onclick={showHideBadge}>
-          <IcBadge variant="info" text-label="1" slot="badge" ref={badgeEl}/>
-          Hide/Show badge
-        </IcButton>
-      </div> 
-    );
-  };`,
+  return (
+    <div style={{ padding: '16px' }}>
+      <IcButton variant="secondary" onClick={handleShowHideBadge}>
+        <IcBadge
+          variant="info"
+          textLabel="1"
+          slot="badge"
+          visible={showBadge}
+        />
+        Hide/Show badge
+      </IcButton>
+    </div>
+  );
+};`,
   },
 ];
 
 export const ToggleBadge = () => {
-  const badgeEl = useRef(null);
-  const showHideBadge = () => {
-    const badge = badgeEl.current;
-    if (badge.classList.contains("show")) {
-      badge.visible = false;
-    } else {
-      badge.visible = true;
-    }
+  const [showBadge, setShowBadge] = useState(false);
+  const handleShowHideBadge = () => {
+    setShowBadge(!showBadge);
   };
   return (
     <div style={{ padding: "16px" }}>
-      <IcButton variant="secondary" onclick={showHideBadge}>
-        <IcBadge variant="info" text-label="1" slot="badge" ref={badgeEl} />
+      <IcButton variant="secondary" onClick={handleShowHideBadge}>
+        <IcBadge
+          variant="info"
+          textLabel="1"
+          slot="badge"
+          visible={showBadge}
+        />
         Hide/Show badge
       </IcButton>
     </div>
