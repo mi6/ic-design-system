@@ -1,6 +1,6 @@
-<!-- markdownlint-disable-next-line -->
+<!-- markdownlint-disable-file -->
 <p align="center">
-  <img width="150px" src="/static/icds-logo.png" alt="Logo of the Intelligence Community Design System">
+  <img width="150px" src="/static/icds-logo.png" alt="Logo of the Intelligence Community Design System" loading="lazy">
 </p>
 
 # The UK Intelligence Community Design System (ICDS)
@@ -11,9 +11,8 @@ The [Intelligence Community Design System](https://design.sis.gov.uk) helps the 
 
 This is a joint project led by [MI6](https://www.sis.gov.uk), working with [GCHQ](https://www.gchq.gov.uk) and [MI5](https://www.mi5.gov.uk).
 
-<!-- markdownlint-disable-next-line -->
 <p align="center">
-  <img src="/static/icds-orgs.png" alt="SIS (MI6), GCHQ and MI5 Logos">
+  <img src="/static/icds-orgs.png" alt="SIS (MI6), GCHQ and MI5 Logos" loading="lazy">
 </p>
 
 This repo holds the website at [`design.sis.gov.uk`](https://design.sis.gov.uk), look at the [`ic-ui-kit` repo](https://github.com/mi6/ic-ui-kit) for the ICDS UI Kit components.
