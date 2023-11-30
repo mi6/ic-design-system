@@ -13,6 +13,11 @@ interface DoDontCautionProps {
   caption?: string;
   videoSrc?: string;
 }
+const STATE_VALUES = {
+  good: { icon: mdiCheck, classPrefix: "do" },
+  bad: { icon: mdiClose, classPrefix: "dont" },
+  caution: { icon: mdiAlert, classPrefix: "caution" },
+};
 
 const DoDontCaution: React.FC<DoDontCautionProps> = ({
   imageSrc = "",
@@ -22,38 +27,27 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
   caption = "",
 }) => (
   <div
-    className={clsx(
-      state === "bad" && "dont",
-      state === "good" && "do",
-      state === "caution" && "caution",
-      state === "none" && "none"
-    )}
+    className={clsx(state === "none" ? state : STATE_VALUES[state].classPrefix)}
   >
-    {state === "bad" && (
+    {state !== "none" && (
       <div
         slot="icon"
-        className={clsx("do-dont-caution-containers", "dont-icon")}
+        className={clsx(
+          "do-dont-caution-containers",
+          `${STATE_VALUES[state].classPrefix}-icon`
+        )}
       >
-        <Icon path={mdiClose} aria-hidden="true" />
+        <Icon path={STATE_VALUES[state].icon} aria-hidden="true" />
       </div>
     )}
-    {state === "good" && (
-      <div
-        slot="icon"
-        className={clsx("do-dont-caution-containers", "do-icon")}
-      >
-        <Icon path={mdiCheck} aria-hidden="true" />
-      </div>
+    {imageSrc && (
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        className="image-wide"
+        loading="lazy"
+      />
     )}
-    {state === "caution" && (
-      <div
-        slot="icon"
-        className={clsx("do-dont-caution-containers", "caution-icon")}
-      >
-        <Icon path={mdiAlert} aria-hidden="true" />
-      </div>
-    )}
-    {imageSrc && <img src={imageSrc} alt={imageAlt} className="image-wide" />}
     {videoSrc && (
       // eslint-disable-next-line jsx-a11y/media-has-caption
       <video controls loop className="image-wide">
