@@ -7,7 +7,7 @@ import "./404.css";
 
 const NotFoundPage: React.FC<PageProps> = () => (
   <ic-section-container aligned="full-width" id="container-404">
-    <img src={fig404} alt="" width="200" />
+    <img src={fig404} alt="" width="200" loading="lazy" />
     <ic-typography variant="h1" apply-vertical-margins>
       <h2>That page wasn&apos;t found</h2>
     </ic-typography>
