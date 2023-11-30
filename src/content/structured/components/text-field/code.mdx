@@ -28,7 +28,7 @@ export const snippetsDefault = [
     language: "Web component",
     snippet: `<ic-text-field 
     label="What is your favourite coffee?" 
-    placeholder="Placeholder" 
+    placeholder="Please enter…" 
     helper-text="Such as Arabica, Robusta or Liberica">
 </ic-text-field>
 <script>
@@ -40,7 +40,7 @@ export const snippetsDefault = [
     language: "React",
     snippet: `<IcTextField 
   label="What is your favourite coffee?" 
-  placeholder="Placeholder" 
+  placeholder="Please enter…" 
   helperText="Such as Arabica, Robusta or Liberica"
   onIcChange={(ev) => console.log(ev.detail.value)}
 />`,
@@ -50,7 +50,7 @@ export const snippetsDefault = [
 <ComponentPreview snippets={snippetsDefault}>
   <IcTextField
     label="What is your favourite coffee?"
-    placeholder="Placeholder"
+    placeholder="Please enter…"
     helperText="Such as Arabica, Robusta or Liberica"
     onIcChange={(ev) => console.log(ev.detail.value)}
   />
@@ -72,7 +72,7 @@ export const snippetsIconValueMaxLength = [
   value="Arabica" 
   label="What is your favourite coffee?" 
   required="true" 
-  placeholder="Placeholder" 
+  placeholder="Please enter…" 
   helper-text="Such as Arabica, Robusta or Liberica" 
 >
   <svg
@@ -83,8 +83,7 @@ export const snippetsIconValueMaxLength = [
     width="24px"
     fill="#000000"
   >
-    <path d="M0 0h24v24H0z" fill="none" />
-    <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+    <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
   </svg>
 </ic-text-field>`,
   },
@@ -95,7 +94,7 @@ export const snippetsIconValueMaxLength = [
   value="Arabica" 
   label="What is your favourite coffee?" 
   required 
-  placeholder="Placeholder" 
+  placeholder="Please enter…" 
   helperText="Such as Arabica, Robusta or Liberica"
 >
   <SlottedSVG
@@ -106,8 +105,7 @@ export const snippetsIconValueMaxLength = [
     width="24px"
     fill="#000000"
   >
-    <path d="M0 0h24v24H0z" fill="none" />
-    <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+    <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
   </SlottedSVG>
 </IcTextField>`,
   },
@@ -119,7 +117,7 @@ export const snippetsIconValueMaxLength = [
     value="Arabica"
     label="What is your favourite coffee?"
     required
-    placeholder="Placeholder"
+    placeholder="Please enter…"
     helperText="Such as Arabica, Robusta or Liberica"
   >
     <svg
@@ -130,8 +128,7 @@ export const snippetsIconValueMaxLength = [
       width="24px"
       fill="#000000"
     >
-      <path d="M0 0h24v24H0z" fill="none" />
-      <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+      <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
     </svg>
   </IcTextField>
 </ComponentPreview>
@@ -144,7 +141,7 @@ export const snippetsDisabled = [
     snippet: `<ic-text-field 
     label="What is your favourite coffee?" 
     required="true" 
-    placeholder="Placeholder" 
+    placeholder="Please enter…" 
     disabled="true">
     <svg
     slot="icon"
@@ -164,7 +161,7 @@ export const snippetsDisabled = [
     snippet: `<IcTextField 
     label="What is your favourite coffee?" 
     required 
-    placeholder="Placeholder" 
+    placeholder="Please enter…" 
     disabled>
   <SlottedSVG 
     slot="icon"
@@ -185,7 +182,7 @@ export const snippetsDisabled = [
   <IcTextField
     label="What is your favourite coffee?"
     required
-    placeholder="Placeholder"
+    placeholder="Please enter…"
     disabled
   >
     <svg
@@ -209,7 +206,7 @@ export const snippetsSmall = [
     language: "Web component",
     snippet: `<ic-text-field 
     label="What is your favourite coffee?" 
-    placeholder="Placeholder" 
+    placeholder="Please enter…" 
     size="small">
 </ic-text-field>
 <script>
@@ -221,7 +218,7 @@ export const snippetsSmall = [
     language: "React",
     snippet: `<IcTextField 
   label="What is your favourite coffee?" 
-  placeholder="Placeholder" 
+  placeholder="Please enter…" 
   size="small"
   onIcChange={(ev) => console.log(ev.detail.value)}
 />`,
@@ -231,7 +228,7 @@ export const snippetsSmall = [
 <ComponentPreview snippets={snippetsSmall}>
   <IcTextField
     label="What is your favourite coffee?"
-    placeholder="Placeholder"
+    placeholder="Please enter…"
     size="small"
     onIcChange={(ev) => console.log(ev.detail.value)}
   />
@@ -247,7 +244,7 @@ export const snippetsValidation = [
     validation-text="Good choice!" 
     value="Arabica" max-length="25" 
     label="What is your favourite coffee?" 
-    required="true" placeholder="Placeholder" 
+    required="true" placeholder="Please enter…" 
     helper-text="Such as Arabica, Robusta or Liberica">
 </ic-text-field>
 <ic-text-field 
@@ -257,17 +254,17 @@ export const snippetsValidation = [
   value="Arabica" 
   max-length="25" 
   label="What is your favourite coffee?" 
-  required="true" placeholder="Placeholder" 
+  required="true" placeholder="Please enter…" 
   helper-text="Such as Arabica, Robusta or Liberica">
 </ic-text-field>
 <ic-text-field 
   validation-status="warning" 
-  validation-text="A very long warning message to test if wrapping works" 
+  validation-text="There’s only a few left! Order now to avoid missing out." 
   value="Arabica"
   max-length="25" 
   label="What is your favourite coffee?" 
   required="true" 
-  placeholder="Placeholder" 
+  placeholder="Please enter…" 
   helper-text="Such as Arabica, Robusta or Liberica">
 </ic-text-field>
 <ic-text-field 
@@ -277,7 +274,7 @@ export const snippetsValidation = [
   max-length="25" 
   label="What is your favourite coffee?" 
   required="true" 
-  placeholder="Placeholder" 
+  placeholder="Please enter…" 
   helper-text="Such as Arabica, Robusta or Liberica">
 </ic-text-field>`,
   },
@@ -288,6 +285,7 @@ export const snippetsValidation = [
     value="Arabica" 
     label="What is your favourite coffee?" 
     required 
+    placeholder="Please enter…" 
     helperText="Such as Arabica, Robusta or Liberica" 
     validationStatus="success" 
     validationText="Good choice!" />
@@ -296,6 +294,7 @@ export const snippetsValidation = [
   value="Arabica" 
   label="What is your favourite coffee?" 
   required 
+  placeholder="Please enter…" 
   helperText="Such as Arabica, Robusta or Liberica" 
   validationStatus="success" 
   validationText="Good choice!" 
@@ -305,14 +304,17 @@ export const snippetsValidation = [
   value="Arabica" 
   label="What is your favourite coffee?" 
   required 
+  placeholder="Please enter…" 
   helperText="Such as Arabica, Robusta or Liberica" 
   validationStatus="warning" 
-  validationText="A very long warning message to test if wrapping works" />
+  validationText="There’s only a few left! Order now to avoid missing out." />
 <IcTextField 
   maxLength={25} 
   value="Tea" 
   label="What is your favourite coffee?" 
-  required helperText="Such as Arabica, Robusta or Liberica" 
+  required 
+  placeholder="Please enter…" 
+  helperText="Such as Arabica, Robusta or Liberica" 
   validationStatus="error" 
   validationText="Now it has really gone to (coffee) pot" />`,
   },
@@ -325,6 +327,7 @@ export const snippetsValidation = [
       value="Arabica"
       label="What is your favourite coffee?"
       required
+      placeholder="Please enter…"
       helperText="Such as Arabica, Robusta or Liberica"
       validationStatus="success"
       validationText="Good choice!"
@@ -334,6 +337,7 @@ export const snippetsValidation = [
       value="Arabica"
       label="What is your favourite coffee?"
       required
+      placeholder="Please enter…"
       helperText="Such as Arabica, Robusta or Liberica"
       validationStatus="success"
       validationText="Good choice!"
@@ -344,15 +348,17 @@ export const snippetsValidation = [
       value="Arabica"
       label="What is your favourite coffee?"
       required
+      placeholder="Please enter…"
       helperText="Such as Arabica, Robusta or Liberica"
       validationStatus="warning"
-      validationText="A very long warning message to test if wrapping works"
+      validationText="There’s only a few left! Order now to avoid missing out."
     />
     <IcTextField
       maxLength={25}
       value="Tea"
       label="What is your favourite coffee?"
       required
+      placeholder="Please enter…"
       helperText="Such as Arabica, Robusta or Liberica"
       validationStatus="error"
       validationText="Now it has really gone to (coffee) pot"
@@ -370,6 +376,7 @@ export const snippetsMinMax = [
     snippet: `<ic-text-field
   label="How many coffees do you want?"
   helper-text="Our coffee machines have a maximum capacity of 4 coffees at a time."
+  placeholder="Please enter…" 
   type="number"
   inputmode="numeric"
   min="1"
@@ -383,6 +390,7 @@ export const snippetsMinMax = [
     snippet: `<IcTextField
   label="How many coffees do you want?"
   helperText="Our coffee machines have a maximum capacity of 4 coffees at a time."
+  placeholder="Please enter…" 
   type="number"
   inputmode="numeric"
   min="1"
@@ -396,6 +404,7 @@ export const snippetsMinMax = [
   <IcTextField
     label="How many coffees do you want?"
     helperText="Our coffee machines have a maximum capacity of 4 coffees at a time."
+    placeholder="Please enter…"
     type="number"
     inputmode="numeric"
     min="1"
@@ -413,7 +422,7 @@ export const snippetsTextArea = [
     rows="6"
     resize="true" 
     label="What is your favourite coffee?" 
-    placeholder="Placeholder" 
+    placeholder="Please enter…" 
     helper-text="Such as Arabica, Robusta or Liberica">
 </ic-text-field>`,
   },
@@ -423,7 +432,7 @@ export const snippetsTextArea = [
     rows={6} 
     resize 
     label="What is your favourite coffee?" 
-    placeholder="Placeholder" 
+    placeholder="Please enter…" 
     helperText="Such as Arabica, Robusta or Liberica" />`,
   },
 ];
@@ -433,7 +442,7 @@ export const snippetsTextArea = [
     rows={6}
     resize
     label="What is your favourite coffee?"
-    placeholder="Placeholder"
+    placeholder="Please enter…"
     helperText="Such as Arabica, Robusta or Liberica"
   />
 </ComponentPreview>

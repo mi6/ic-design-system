@@ -26,7 +26,7 @@ import { IcRadioGroup, IcRadioOption, IcTextField } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-radio-group name='radio-group-1' label="Add a free purchase with any hot drink.">
+    snippet: `<ic-radio-group name='radio-group-1' label="Add a free purchase with any hot drink">
   <ic-radio-option value="crisps" label="Crisps"></ic-radio-option>
   <ic-radio-option
     value="cookie"
@@ -45,7 +45,7 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `<IcRadioGroup name='radio-group-1' label="Add a free purchase with any hot drink." onIcChange={(ev) => console.log(ev.detail.value)}>
+    snippet: `<IcRadioGroup name='radio-group-1' label="Add a free purchase with any hot drink" onIcChange={(ev) => console.log(ev.detail.value)}>
   <IcRadioOption value="crisps" label="Crisps" />
   <IcRadioOption
     value="cookie"
@@ -62,7 +62,7 @@ export const snippets = [
 <ComponentPreview style={{ marginTop: "24px" }} snippets={snippets}>
   <IcRadioGroup
     name="radio-group-1"
-    label="Add a free purchase with any hot drink."
+    label="Add a free purchase with any hot drink"
     onIcChange={(ev) => console.log(ev.detail.value)}
   >
     <IcRadioOption value="crisps" label="Crisps" />
@@ -188,7 +188,7 @@ export const withHelperText = [
     language: "Web component",
     snippet: `<ic-radio-group 
   label="Do you have any special requests?" 
-  helper-text="Let us know if you'd like an alternative to dairy milk"
+  helper-text="Let us know if you'd like an alternative to dairy milk."
   name='radio-group-4'
 >
   <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
@@ -199,7 +199,7 @@ export const withHelperText = [
     language: "React",
     snippet: `<IcRadioGroup 
     label="Do you have any special requests?" 
-    helperText="Let us know if you'd like an alternative to dairy milk"
+    helperText="Let us know if you'd like an alternative to dairy milk."
     name='radio-group-4'
 >
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
@@ -211,7 +211,7 @@ export const withHelperText = [
 <ComponentPreview style={{ marginTop: "24px" }} snippets={withHelperText}>
   <IcRadioGroup
     label="Do you have any special requests?"
-    helperText="Let us know if you'd like an alternative to dairy milk"
+    helperText="Let us know if you'd like an alternative to dairy milk."
     name="radio-group-4"
   >
     <IcRadioOption value="request" label="Yes, I want to modify my order" />

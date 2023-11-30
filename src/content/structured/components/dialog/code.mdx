@@ -400,13 +400,11 @@ export const snippetsCustomButtons = [
     label="None"
     heading="This dialog has no default buttons"
   >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
+    Sorry, you cannot place orders at the moment. Please try again later.
   </ic-dialog>
   <ic-dialog id="single-button-dialog" label="Single" heading="This dialog has a single button">
     <ic-typography>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Your order for an Americano coffee has been placed.
     </ic-typography>
   </ic-dialog>
   <ic-dialog id="three-buttons-dialog" label="Three buttons" heading="This dialog has three default buttons">
@@ -420,8 +418,7 @@ export const snippetsCustomButtons = [
     heading="This dialog has a default destructive button"
   >
     <ic-typography>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      You are about to cancel your order for an Americano. Are you sure you want to continue?
     </ic-typography>
   </ic-dialog>`,
   },
@@ -924,8 +921,7 @@ export const noCloseSnippet = [
   heading="This dialog can't be closed by clicking the background"
 >
   <ic-typography>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
 </ic-dialog>`,
   },
@@ -951,8 +947,7 @@ return (
       onIcDialogCancelled={handleDialogClose} 
     >
       <IcTypography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        You are about to add 'Americano' to your basket. Are you sure you want to continue?
       </IcTypography>
     </IcDialog>
   </>
@@ -1036,10 +1031,9 @@ export const eventsSnippet = [
   dialog.addEventListener("icDialogClosed", dialogClosed);
 </script>
 <ic-button onclick="showDialog()">Launch dialog</ic-button>
-<ic-dialog id="ev-dialog" heading="This dialog utilises events" label="Events">
+<ic-dialog id="ev-dialog" heading="Are you sure?" label="Coffee order">
   <ic-typography>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    You are about to add 'Americano' to your basket. Are you sure you want to continue?
   </ic-typography>
   <ic-button variant="tertiary" onclick="cancelDialog()" slot="dialog-controls">
     Cancel
@@ -1090,8 +1084,7 @@ return (
       onIcDialogClosed={handleDialogClosed}
     >
       <IcTypography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        You are about to add 'Americano' to your basket. Are you sure you want to continue?
       </IcTypography>
       <IcButton variant="tertiary" onClick={handleSlottedCancel} slot="dialog-controls">
         Cancel
@@ -1145,8 +1138,8 @@ export const EventsContent = () => {
         onIcDialogClosed={handleDialogClosed}
       >
         <IcTypography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          You are about to add 'Americano' to your basket. Are you sure you want
+          to continue?
         </IcTypography>
         <IcButton
           variant="tertiary"

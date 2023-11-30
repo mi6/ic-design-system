@@ -133,11 +133,37 @@ export const snippetsDefault = [
         <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
       </SlottedSVG>
     </IcNavigationButton>
-    <IcNavigationItem slot="navigation" label="Get started" href="#" />
-    <IcNavigationItem slot="navigation" label="Accessibility" href="#" />
-    <IcNavigationItem slot="navigation" label="Styles" href="#" />
-    <IcNavigationItem slot="navigation" label="Components" href="#" selected />
-    <IcNavigationItem slot="navigation" label="Patterns" href="#" />
+    <IcNavigationItem
+      slot="navigation"
+      label="Get started"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Accessibility"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Styles"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Components"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+      selected
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Patterns"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcTopNavigation>
 </ComponentPreview>
 
@@ -177,27 +203,14 @@ export const snippetsGroupedLinks = [
     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
   </svg>
   <ic-search-bar slot="search" placeholder="Search" label="Search"></ic-search-bar>
-  <ic-navigation-group slot="navigation" label="Navigation group" expandable="true">
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Navigation" href="#"></ic-navigation-item>
+  <ic-navigation-group slot="navigation" label="Get started" expandable="true">
+    <ic-navigation-item label="Tests" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Theme" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Design" href="#"></ic-navigation-item>
   </ic-navigation-group>
-  <ic-navigation-group slot="navigation" label="Second navigation group" expandable="true">
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
-    <ic-navigation-item label="Second navigation" href="#"></ic-navigation-item>
+  <ic-navigation-group slot="navigation" label="Accessibility" expandable="true">
+    <ic-navigation-item label="Introduction" href="#"></ic-navigation-item>
+    <ic-navigation-item label="Accessibility Statement" href="#"></ic-navigation-item>
   </ic-navigation-group>
 </ic-top-navigation>`,
   },
@@ -216,28 +229,14 @@ export const snippetsGroupedLinks = [
     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
   </SlottedSVG>
   <IcSearchBar slot="search" placeholder="Search" label="Search" />
-  <IcNavigationGroup slot="navigation" label="Navigation group" expandable>
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
-    <IcNavigationItem label="Navigation" href="#" />
+  <IcNavigationGroup slot="navigation" label="Get started" expandable>
+    <IcNavigationItem label="Tests" href="#" />
+    <IcNavigationItem label="Theme" href="#" />
+    <IcNavigationItem label="Design" href="#" />
   </IcNavigationGroup>
-  <IcNavigationGroup slot="navigation" label="Second navigation group" expandable>
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-    <IcNavigationItem label="Second navigation" href="#" />
-  </IcNavigationGroup>
+  <IcNavigationGroup slot="navigation" label="Accessibility" expandable>
+    <IcNavigationItem label="Introduction" href="#" />
+    <IcNavigationItem label="Accessibility statement" href="#" />
 </IcTopNavigation>`,
   },
 ];
@@ -256,35 +255,38 @@ export const snippetsGroupedLinks = [
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
     </svg>
     <IcSearchBar slot="search" placeholder="Search" label="Search" />
-    <IcNavigationGroup
-      slot="navigation"
-      label="Navigation group"
-      expandable="true"
-    >
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
-      <IcNavigationItem label="Navigation" href="#" />
+    <IcNavigationGroup slot="navigation" label="Get started" expandable="true">
+      <IcNavigationItem
+        label="Tests"
+        href="#"
+        onClick={(e) => e.preventDefault()}
+      />
+      <IcNavigationItem
+        label="Theme"
+        href="#"
+        onClick={(e) => e.preventDefault()}
+      />
+      <IcNavigationItem
+        label="Design"
+        href="#"
+        onClick={(e) => e.preventDefault()}
+      />
     </IcNavigationGroup>
     <IcNavigationGroup
       slot="navigation"
-      label="Second navigation group"
+      label="Accessibility"
       expandable="true"
     >
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
-      <IcNavigationItem label="Second navigation" href="#" />
+      <IcNavigationItem
+        label="Introduction"
+        href="#"
+        onClick={(e) => e.preventDefault()}
+      />
+      <IcNavigationItem
+        label="Accessibility statement"
+        href="#"
+        onClick={(e) => e.preventDefault()}
+      />
     </IcNavigationGroup>
   </IcTopNavigation>
 </ComponentPreview>
@@ -319,11 +321,11 @@ export const snippetsCentreAligned = [
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
     </svg>
   </ic-navigation-button>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/" selected="true"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Get started" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Accessibility" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Styles" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Components" href="/" selected="true"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Patterns" href="/"></ic-navigation-item>
 </ic-top-navigation>`,
   },
   {
@@ -353,11 +355,11 @@ export const snippetsCentreAligned = [
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
     </SlottedSVG>
   </IcNavigationButton>
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" selected />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+  <IcNavigationItem slot="navigation" label="Get started" href="/" />
+  <IcNavigationItem slot="navigation" label="Accessibility" href="/" />
+  <IcNavigationItem slot="navigation" label="Styles" href="/" />
+  <IcNavigationItem slot="navigation" label="Components" href="/" selected />
+  <IcNavigationItem slot="navigation" label="Patterns" href="/" />
 </IcTopNavigation>`,
   },
 ];
@@ -393,16 +395,37 @@ export const snippetsCentreAligned = [
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
       </svg>
     </IcNavigationButton>
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
     <IcNavigationItem
       slot="navigation"
-      label="Navigation"
-      href="/"
-      selected="true"
+      label="Get started"
+      href="#"
+      onClick={(e) => e.preventDefault()}
     />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+    <IcNavigationItem
+      slot="navigation"
+      label="Accessibility"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Styles"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Components"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+      selected
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Patterns"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcTopNavigation>
 </ComponentPreview>
 
@@ -437,11 +460,11 @@ export const snippetsLeftAligned = [
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
     </svg>
   </ic-navigation-button>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/" selected="true"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Get started" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Accessibility" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Styles" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Components" href="/" selected="true"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Patterns" href="/"></ic-navigation-item>
 </ic-top-navigation>`,
   },
   {
@@ -472,11 +495,11 @@ export const snippetsLeftAligned = [
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
     </SlottedSVG>
   </IcNavigationButton>
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" selected />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+  <IcNavigationItem slot="navigation" label="Get started" href="/" />
+  <IcNavigationItem slot="navigation" label="Accessibility" href="/" />
+  <IcNavigationItem slot="navigation" label="Styles" href="/" />
+  <IcNavigationItem slot="navigation" label="Components" href="/" selected />
+  <IcNavigationItem slot="navigation" label="Patterns" href="/" />
 </IcTopNavigation>`,
   },
 ];
@@ -513,16 +536,37 @@ export const snippetsLeftAligned = [
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
       </svg>
     </IcNavigationButton>
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
     <IcNavigationItem
       slot="navigation"
-      label="Navigation"
-      href="/"
-      selected="true"
+      label="Get started"
+      href="#"
+      onClick={(e) => e.preventDefault()}
     />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+    <IcNavigationItem
+      slot="navigation"
+      label="Accessibility"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Styles"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Components"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+      selected
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Patterns"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcTopNavigation>
 </ComponentPreview>
 
@@ -628,11 +672,37 @@ export const snippetsBadge = [
         <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
       </SlottedSVG>
     </IcNavigationButton>
-    <IcNavigationItem slot="navigation" label="Get started" href="#" />
-    <IcNavigationItem slot="navigation" label="Accessibility" href="#" />
-    <IcNavigationItem slot="navigation" label="Styles" href="#" />
-    <IcNavigationItem slot="navigation" label="Components" href="#" selected />
-    <IcNavigationItem slot="navigation" label="Patterns" href="#" />
+    <IcNavigationItem
+      slot="navigation"
+      label="Get started"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Accessibility"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Styles"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Components"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+      selected
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Patterns"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcTopNavigation>
 </ComponentPreview>
 
@@ -655,11 +725,11 @@ export const snippetsShortTitle = [
     <path d="M0 0h24v24H0V0z" fill="none" />
     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
   </svg>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/" selected="true"></ic-navigation-item>
-  <ic-navigation-item slot="navigation" label="Navigation" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Get started" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Accessibility" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Styles" href="/"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Components" href="/" selected="true"></ic-navigation-item>
+  <ic-navigation-item slot="navigation" label="Patterns" href="/"></ic-navigation-item>
 </ic-top-navigation>`,
   },
   {
@@ -676,11 +746,11 @@ export const snippetsShortTitle = [
     <path d="M0 0h24v24H0V0z" fill="none" />
     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
   </SlottedSVG>
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" selected />
-  <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+    <IcNavigationItem slot="navigation" label="Get started" href="#" />
+    <IcNavigationItem slot="navigation" label="Accessibility" href="#" />
+    <IcNavigationItem slot="navigation" label="Styles" href="#" />
+    <IcNavigationItem slot="navigation" label="Components" href="#" selected />
+    <IcNavigationItem slot="navigation" label="Patterns" href="#" />
 </IcTopNavigation>`,
   },
 ];
@@ -703,16 +773,37 @@ export const snippetsShortTitle = [
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
     </svg>
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
     <IcNavigationItem
       slot="navigation"
-      label="Navigation"
-      href="/"
-      selected="true"
+      label="Get started"
+      href="#"
+      onClick={(e) => e.preventDefault()}
     />
-    <IcNavigationItem slot="navigation" label="Navigation" href="/" />
+    <IcNavigationItem
+      slot="navigation"
+      label="Accessibility"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Styles"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Components"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+      selected
+    />
+    <IcNavigationItem
+      slot="navigation"
+      label="Patterns"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
   </IcTopNavigation>
 </ComponentPreview>
 
@@ -752,17 +843,17 @@ export const withReactRouter = [
     </SlottedSVG>
     </IcNavigationButton>
     <IcNavigationItem slot="navigation">
-      <NavLink to="/" slot="navigation-item">Home</NavLink>
+      <NavLink to="/" slot="navigation-item">Get started</NavLink>
     </IcNavigationItem>
     <IcNavigationItem slot="navigation">
-      <NavLink to="/daily-tippers" slot="navigation-item">Daily Tippers</NavLink>
+      <NavLink to="/accessibility" slot="navigation-item">Accessibility</NavLink>
     </IcNavigationItem>
   </IcTopNavigation>
   <main>
     <IcSectionContainer style={{padding: "16px"}}>
       <Routes>
-        <Route path="/" element={() => <IcTypography>This is the home page</IcTypography>} />
-        <Route path="/daily-tippers" element={() => <IcTypography>This page is about daily tippers</IcTypography>} />
+        <Route path="/" element={() => <IcTypography>This is the get started page</IcTypography>} />
+        <Route path="/accessibility" element={() => <IcTypography>This page is about accessibility</IcTypography>} />
       </Routes>
     </IcSectionContainer>
   </main>
@@ -811,12 +902,12 @@ export const withReactRouter = [
       </IcNavigationButton>
       <IcNavigationItem slot="navigation">
         <NavLink to="/" slot="navigation-item">
-          Home
+          Get started
         </NavLink>
       </IcNavigationItem>
       <IcNavigationItem slot="navigation">
-        <NavLink to="/daily-tippers" slot="navigation-item">
-          Daily Tippers
+        <NavLink to="/accessibility" slot="navigation-item">
+          Accessibility
         </NavLink>
       </IcNavigationItem>
     </IcTopNavigation>
