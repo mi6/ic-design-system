@@ -26,7 +26,7 @@ import { IcSelect } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+    snippet: `<ic-select placeholder="Select an option..." label="What is your favourite coffee?"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -45,7 +45,7 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
+    snippet: `<IcSelect placeholder="Select an option..." label="What is your favourite coffee?"
   options={[
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso" },
@@ -61,6 +61,7 @@ export const snippets = [
 
 export const SelectExample = () => (
   <IcSelect
+    placeholder="Select an option..."
     label="What is your favourite coffee?"
     options={[
       { label: "Espresso", value: "espresso" },
@@ -89,7 +90,7 @@ export const SelectExample = () => (
 export const snippetsWithExtras = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?" placeholder="Placeholder goes here" helper-text="Some helper text" show-clear-button="true" searchable="true"></ic-select>
+    snippet: `<ic-select label="What is your favourite coffee?" placeholder="Select an option..." helper-text="Select one option from the list" show-clear-button="true" searchable="true"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -111,8 +112,8 @@ export const snippetsWithExtras = [
     { label: "Americano", value: "americano", description: "Espresso coffee diluted with hot water" },
     { label: "Mocha", value: "mocha", description: "Coffee with chocolate" },
   ]}
-  placeholder="Placeholder goes here"
-  helperText="Some helper text"
+  placeholder="Select an option…"
+  helperText="Select one option from the list"
   showClearButton
   searchable
   onIcChange={(event) => console.log(event.detail.value)}
@@ -140,8 +141,8 @@ export const SelectExampleWithExtras = () => (
         description: "Coffee with chocolate",
       },
     ]}
-    placeholder="Placeholder goes here"
-    helperText="Some helper text"
+    placeholder="Select an option…"
+    helperText="Select one option from the list"
     showClearButton
     searchable
     onIcChange={(event) => console.log(event.detail.value)}
@@ -157,7 +158,7 @@ export const SelectExampleWithExtras = () => (
 export const snippetsDisabled = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?" disabled="true"></ic-select>
+    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" disabled="true"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -173,7 +174,7 @@ export const snippetsDisabled = [
   },
   {
     language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
+    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
   options={[
     { label: "Cappuccino", value: "cappuccino" },
     { label: "Americano", value: "americano" },
@@ -187,6 +188,7 @@ export const snippetsDisabled = [
 
 export const SelectExampleDisabled = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       { label: "Cappuccino", value: "cappuccino" },
@@ -207,7 +209,7 @@ export const SelectExampleDisabled = () => (
 export const snippetsOptionDisabled = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -223,7 +225,7 @@ export const snippetsOptionDisabled = [
   },
   {
     language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
+    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
   options={[
     { label: "Cappuccino", value: "cappuccino" },
     { label: "Americano", value: "americano", disabled: true },
@@ -236,6 +238,7 @@ export const snippetsOptionDisabled = [
 
 export const SelectExampleOptionsDisabled = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       { label: "Cappuccino", value: "cappuccino" },
@@ -314,7 +317,7 @@ export const SelectExampleSmall = () => (
 export const snippetsHideLabel = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?" hide-label="true"></ic-select>
+    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" hide-label="true"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -330,7 +333,7 @@ export const snippetsHideLabel = [
   },
   {
     language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
+    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
   options={[
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso" },
@@ -344,6 +347,7 @@ export const snippetsHideLabel = [
 
 export const SelectExampleHideLabel = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       { label: "Espresso", value: "espresso" },
@@ -364,7 +368,7 @@ export const SelectExampleHideLabel = () => (
 export const snippetsGroups = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -391,7 +395,7 @@ export const snippetsGroups = [
   },
   {
     language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
+    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
   options={[
     {
       label: "Fancy",
@@ -415,6 +419,7 @@ export const snippetsGroups = [
 
 export const SelectExampleGroups = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       {
@@ -445,7 +450,7 @@ export const SelectExampleGroups = () => (
 export const snippetsRecommended = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?"></ic-select>
+    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -464,7 +469,7 @@ export const snippetsRecommended = [
   },
   {
     language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
+    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
   options={[
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso", recommended: true },
@@ -480,6 +485,7 @@ export const snippetsRecommended = [
 
 export const SelectExampleRecommended = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       { label: "Espresso", value: "espresso" },
@@ -506,9 +512,48 @@ export const SelectExampleRecommended = () => (
 export const snippetsValidation = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?" 
-    validation-status="success" // also shown above are warning and error
-    validation-text="Success message"></ic-select>
+    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" 
+    validation-status="success" 
+    validation-text="Coffee available"
+    value="americano"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    console.log(event.detail.value);
+  });
+</script>
+<ic-select placeholder="Select an option…" label="What is your favourite coffee?" 
+    validation-status="warning" 
+    validation-text="Only a few left"
+    value="cappuccino"></ic-select>
+<script>
+  const select = document.querySelector("ic-select");
+  let option = "Cappuccino";
+  select.options = [
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ];
+  select.addEventListener("icChange", function (event) {
+    console.log(event.detail.value);
+  });
+</script>
+<ic-select placeholder="Select an option…" label="What is your favourite coffee?" 
+    validation-status="error" 
+    validation-text="Coffee unavailable"
+    value="mocha"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -527,7 +572,8 @@ export const snippetsValidation = [
   },
   {
     language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
+    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
+    value="americano"
   options={[
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso" },
@@ -536,8 +582,36 @@ export const snippetsValidation = [
     { label: "Americano", value: "americano" },
     { label: "Mocha", value: "mocha" },
   ]}
-  validationStatus="success" // also shown above are warning and error
-  validationText="Success message"
+  validationStatus="success"
+  validationText="Coffee available"
+  onIcChange={(event) => console.log(event.detail.value)}
+/>
+  <IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
+  value="cappuccino"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  validationStatus="warning" 
+  validationText="Only a few left"
+  onIcChange={(event) => console.log(event.detail.value)}
+/>
+  <IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
+  value="mocha"
+  options={[
+    { label: "Espresso", value: "espresso" },
+    { label: "Double Espresso", value: "doubleespresso" },
+    { label: "Flat White", value: "flatwhite" },
+    { label: "Cappuccino", value: "cappuccino" },
+    { label: "Americano", value: "americano" },
+    { label: "Mocha", value: "mocha" },
+  ]}
+  validationStatus="error" 
+  validationText="Coffee unavailable"
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
   },
@@ -546,7 +620,9 @@ export const snippetsValidation = [
 export const SelectExampleValidation = () => (
   <div>
     <IcSelect
+      placeholder="Select an option…"
       label="What is your favourite coffee?"
+      value="americano"
       options={[
         { label: "Espresso", value: "espresso" },
         { label: "Double Espresso", value: "doubleespresso" },
@@ -556,11 +632,13 @@ export const SelectExampleValidation = () => (
         { label: "Mocha", value: "mocha" },
       ]}
       validationStatus="success"
-      validationText="Success message"
+      validationText="Coffee available"
       onIcChange={(event) => console.log(event.detail.value)}
     />
     <IcSelect
+      placeholder="Select an option…"
       label="What is your favourite coffee?"
+      value="cappuccino"
       options={[
         { label: "Espresso", value: "espresso" },
         { label: "Double Espresso", value: "doubleespresso" },
@@ -570,11 +648,13 @@ export const SelectExampleValidation = () => (
         { label: "Mocha", value: "mocha" },
       ]}
       validationStatus="warning"
-      validationText="Warning message"
+      validationText="Only a few left"
       onIcChange={(event) => console.log(event.detail.value)}
     />
     <IcSelect
+      placeholder="Select an option…"
       label="What is your favourite coffee?"
+      value="mocha"
       options={[
         { label: "Espresso", value: "espresso" },
         { label: "Double Espresso", value: "doubleespresso" },
@@ -584,7 +664,7 @@ export const SelectExampleValidation = () => (
         { label: "Mocha", value: "mocha" },
       ]}
       validationStatus="error"
-      validationText="Error message"
+      validationText="Coffee unavailable"
       onIcChange={(event) => console.log(event.detail.value)}
     />
   </div>
@@ -599,7 +679,7 @@ export const SelectExampleValidation = () => (
 export const snippetsSearchable = [
   {
     language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?" searchable="true"></ic-select>
+    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" searchable="true"></ic-select>
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -622,7 +702,7 @@ export const snippetsSearchable = [
   },
   {
     language: "React",
-    snippet: `<IcSelect 
+    snippet: `<IcSelect placeholder="Select an option…"
   label="What is your favourite coffee?"
   options={[
     { label: "Cappuccino", value: "Cap" },
@@ -644,6 +724,7 @@ export const snippetsSearchable = [
 
 export const SearchableSelectExample = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       { label: "Cappuccino", value: "Cap" },
@@ -671,7 +752,7 @@ export const SearchableSelectExample = () => (
 export const snippetsSearchableWithDescriptions = [
   {
     language: "Web component",
-    snippet: `<ic-select 
+    snippet: `<ic-select placeholder="Select an option…"
   label="What is your favourite coffee?" 
   searchable="true" 
   include-description-in-search="true"
@@ -698,7 +779,7 @@ export const snippetsSearchableWithDescriptions = [
   },
   {
     language: "React",
-    snippet: `<IcSelect 
+    snippet: `<IcSelect placeholder="Select an option…"
   label="What is your favourite coffee?"
   options={[
     { label: "Cappuccino", value: "Cap", description: "Coffee frothed up with pressurised steam" },
@@ -721,6 +802,7 @@ export const snippetsSearchableWithDescriptions = [
 
 export const SearchableSelectWithDescriptionsExample = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       {
@@ -781,7 +863,7 @@ export const SearchableSelectWithDescriptionsExample = () => (
 export const snippetsSearchableWithGroups = [
   {
     language: "Web component",
-    snippet: `<ic-select 
+    snippet: `<ic-select placeholder="Select an option…"
   label="What is your favourite coffee?" 
   searchable="true" 
   include-group-titles-in-search="true"
@@ -818,7 +900,7 @@ export const snippetsSearchableWithGroups = [
   },
   {
     language: "React",
-    snippet: `<IcSelect 
+    snippet: `<IcSelect placeholder="Select an option…"
   label="What is your favourite coffee?"
   options={[
     {
@@ -851,6 +933,7 @@ export const snippetsSearchableWithGroups = [
 
 export const SearchableSelectWithGroupsExample = () => (
   <IcSelect
+    placeholder="Select an option…"
     label="What is your favourite coffee?"
     options={[
       {
@@ -891,7 +974,7 @@ This example shows how to filter data asynchronously when the value in the selec
 export const customFiltering = [
   {
     language: "Web component",
-    snippet: `<ic-select
+    snippet: `<ic-select placeholder="Select an option…"
   label="What is your favourite coffee?"
   searchable="true"
   debounce="300"
@@ -976,7 +1059,7 @@ const changeHandler = (event) => {
     }
   }  
 }
-<IcSelect label="What is your favourite coffee?" 
+<IcSelect placeholder="Select an option…" label="What is your favourite coffee?" 
   debounce="300"
   searchable
   disableFilter
@@ -1024,6 +1107,7 @@ export const CustomFilterExample = () => {
   };
   return (
     <IcSelect
+      placeholder="Select an option…"
       label="What is your favourite coffee?"
       debounce="300"
       searchable

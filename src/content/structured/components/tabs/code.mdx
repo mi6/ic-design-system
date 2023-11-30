@@ -28,13 +28,13 @@ export const snippets = [
     language: "Web component",
     snippet: `<ic-tab-context>
   <ic-tab-group label="Example tab group">
-    <ic-tab>One</ic-tab>
-    <ic-tab>Two</ic-tab>
-    <ic-tab>Three</ic-tab>
+    <ic-tab>Ingredients</ic-tab>
+    <ic-tab>Method</ic-tab>
+    <ic-tab>History</ic-tab>
   </ic-tab-group>
-  <ic-tab-panel>Tab One</ic-tab-panel>
-  <ic-tab-panel>Tab Two</ic-tab-panel>
-  <ic-tab-panel>Tab Three</ic-tab-panel>
+  <ic-tab-panel>Tab One - Ingredients</ic-tab-panel>
+  <ic-tab-panel>Tab Two - Method</ic-tab-panel>
+  <ic-tab-panel>Tab Three - History</ic-tab-panel>
 </ic-tab-context>
 <script>
   const tabContext = document.querySelector('ic-tab-context');
@@ -45,13 +45,13 @@ export const snippets = [
     language: "React",
     snippet: `<IcTabContext onIcTabSelect={(ev) => console.log(ev.detail.tabIndex)}>
   <IcTabGroup label="Example tab group">
-    <IcTab>One</IcTab>
-    <IcTab>Two</IcTab>
-    <IcTab>Three</IcTab>
+    <IcTab>Ingredients</IcTab>
+    <IcTab>Method</IcTab>
+    <IcTab>History</IcTab>
   </IcTabGroup>
-  <IcTabPanel>Tab One</IcTabPanel>
-  <IcTabPanel>Tab Two</IcTabPanel>
-  <IcTabPanel>Tab Three</IcTabPanel>
+  <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+  <IcTabPanel>Tab Two - Method</IcTabPanel>
+  <IcTabPanel>Tab Three - History</IcTabPanel>
 </IcTabContext>`,
   },
 ];
@@ -59,13 +59,13 @@ export const snippets = [
 <ComponentPreview snippets={snippets}>
   <IcTabContext onIcTabSelect={(ev) => console.log(ev.detail.tabIndex)}>
     <IcTabGroup label="Example tab group">
-      <IcTab>One</IcTab>
-      <IcTab>Two</IcTab>
-      <IcTab>Three</IcTab>
+      <IcTab>Ingredients</IcTab>
+      <IcTab>Method</IcTab>
+      <IcTab>History</IcTab>
     </IcTabGroup>
-    <IcTabPanel>Tab One</IcTabPanel>
-    <IcTabPanel>Tab Two</IcTabPanel>
-    <IcTabPanel>Tab Three</IcTabPanel>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
 
@@ -95,7 +95,7 @@ export const withIcons = [
     snippet: `<ic-tab-context>
   <ic-tab-group label="Example tab group">
     <ic-tab>
-      One
+      Ingredients
       <svg 
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -104,12 +104,11 @@ export const withIcons = [
         width="24px"
         fill="#000000"
       >
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+        <path d="M9,21V22H7V21A2,2 0 0,1 5,19V4A2,2 0 0,1 7,2H17A2,2 0 0,1 19,4V19A2,2 0 0,1 17,21V22H15V21H9M7,4V9H17V4H7M7,19H17V11H7V19M8,12H10V15H8V12M8,6H10V8H8V6Z" />
       </svg>
     </ic-tab>
     <ic-tab>
-      Two
+      Method
       <svg
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -118,12 +117,11 @@ export const withIcons = [
         width="24px"
         fill="#000000"
       >
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M19 3H4.99c-1.11 0-1.98.89-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19v10z" />
+        <path d="M3,5H9V11H3V5M5,7V9H7V7H5M11,7H21V9H11V7M11,15H21V17H11V15M5,20L1.5,16.5L2.91,15.09L5,17.17L9.59,12.59L11,14L5,20Z" />
       </svg>
     </ic-tab>
     <ic-tab>
-      Three
+      History
       <svg
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -132,13 +130,13 @@ export const withIcons = [
         width="24px"
         fill="#000000"
       >
-        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+        <path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" />
       </svg>
     </ic-tab>
   </ic-tab-group>
-  <ic-tab-panel>Tab One</ic-tab-panel>
-  <ic-tab-panel>Tab Two</ic-tab-panel>
-  <ic-tab-panel>Tab Three</ic-tab-panel>
+  <ic-tab-panel>Tab One - Ingredients</ic-tab-panel>
+  <ic-tab-panel>Tab Two - Method</ic-tab-panel>
+  <ic-tab-panel>Tab Three - History</ic-tab-panel>
 </ic-tab-context>`,
   },
   {
@@ -146,7 +144,7 @@ export const withIcons = [
     snippet: `<IcTabContext>
     <IcTabGroup label="Example tab group">
       <IcTab>
-        One
+        Ingredients
         <SlottedSVG
           slot="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -155,12 +153,11 @@ export const withIcons = [
           width="24px"
           fill="#000000"
         >
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+          <path d="M9,21V22H7V21A2,2 0 0,1 5,19V4A2,2 0 0,1 7,2H17A2,2 0 0,1 19,4V19A2,2 0 0,1 17,21V22H15V21H9M7,4V9H17V4H7M7,19H17V11H7V19M8,12H10V15H8V12M8,6H10V8H8V6Z" />
         </SlottedSVG>
       </IcTab>
       <IcTab>
-        Two
+        Method
         <SlottedSVG
           slot="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -169,12 +166,11 @@ export const withIcons = [
           width="24px"
           fill="#000000"
         >
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path d="M19 3H4.99c-1.11 0-1.98.89-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19v10z" />
+          <path d="M3,5H9V11H3V5M5,7V9H7V7H5M11,7H21V9H11V7M11,15H21V17H11V15M5,20L1.5,16.5L2.91,15.09L5,17.17L9.59,12.59L11,14L5,20Z" />
         </SlottedSVG>
       </IcTab>
       <IcTab>
-        Three
+        History
         <SlottedSVG
           slot="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -183,13 +179,13 @@ export const withIcons = [
           width="24px"
           fill="#000000"
         >
-          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+          <path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" />
         </SlottedSVG>
       </IcTab>
     </IcTabGroup>
-    <IcTabPanel>Tab One</IcTabPanel>
-    <IcTabPanel>Tab Two</IcTabPanel>
-    <IcTabPanel>Tab Three</IcTabPanel>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
   </IcTabContext>`,
   },
 ];
@@ -198,7 +194,7 @@ export const withIcons = [
   <IcTabContext>
     <IcTabGroup label="Example tab group">
       <IcTab>
-        One
+        Ingredients
         <svg
           slot="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -207,12 +203,11 @@ export const withIcons = [
           width="24px"
           fill="#000000"
         >
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+          <path d="M9,21V22H7V21A2,2 0 0,1 5,19V4A2,2 0 0,1 7,2H17A2,2 0 0,1 19,4V19A2,2 0 0,1 17,21V22H15V21H9M7,4V9H17V4H7M7,19H17V11H7V19M8,12H10V15H8V12M8,6H10V8H8V6Z" />
         </svg>
       </IcTab>
       <IcTab>
-        Two
+        Method
         <svg
           slot="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -221,12 +216,11 @@ export const withIcons = [
           width="24px"
           fill="#000000"
         >
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path d="M19 3H4.99c-1.11 0-1.98.89-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19v10z" />
+          <path d="M3,5H9V11H3V5M5,7V9H7V7H5M11,7H21V9H11V7M11,15H21V17H11V15M5,20L1.5,16.5L2.91,15.09L5,17.17L9.59,12.59L11,14L5,20Z" />
         </svg>
       </IcTab>
       <IcTab>
-        Three
+        History
         <svg
           slot="icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -235,13 +229,13 @@ export const withIcons = [
           width="24px"
           fill="#000000"
         >
-          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+          <path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" />
         </svg>
       </IcTab>
     </IcTabGroup>
-    <IcTabPanel>Tab One</IcTabPanel>
-    <IcTabPanel>Tab Two</IcTabPanel>
-    <IcTabPanel>Tab Three</IcTabPanel>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
 
@@ -252,26 +246,26 @@ export const disabled = [
     language: "Web component",
     snippet: `<ic-tab-context>
   <ic-tab-group label="Example tab group">
-    <ic-tab>One</ic-tab>
-    <ic-tab disabled="true">Two</ic-tab>
-    <ic-tab>Three</ic-tab>
+    <ic-tab>Ingredients</ic-tab>
+    <ic-tab disabled="true">Method</ic-tab>
+    <ic-tab>History</ic-tab>
   </ic-tab-group>
-  <ic-tab-panel>Tab One</ic-tab-panel>
-  <ic-tab-panel>Tab Two</ic-tab-panel>
-  <ic-tab-panel>Tab Three</ic-tab-panel>
+  <ic-tab-panel>Tab One - Ingredients</ic-tab-panel>
+  <ic-tab-panel>Tab Two - Method</ic-tab-panel>
+  <ic-tab-panel>Tab Three - History</ic-tab-panel>
 </ic-tab-context>`,
   },
   {
     language: "React",
     snippet: `<IcTabContext>
   <IcTabGroup label="Example tab group">
-    <IcTab>One</IcTab>
-    <IcTab disabled>Two</IcTab>
-    <IcTab>Three</IcTab>
+    <IcTab>Ingredients</IcTab>
+    <IcTab disabled>Method</IcTab>
+    <IcTab>History</IcTab>
   </IcTabGroup>
-  <IcTabPanel>Tab One</IcTabPanel>
-  <IcTabPanel>Tab Two</IcTabPanel>
-  <IcTabPanel>Tab Three</IcTabPanel>
+  <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+  <IcTabPanel>Tab Two - Method</IcTabPanel>
+  <IcTabPanel>Tab Three - History</IcTabPanel>
 </IcTabContext>`,
   },
 ];
@@ -279,13 +273,13 @@ export const disabled = [
 <ComponentPreview snippets={disabled}>
   <IcTabContext>
     <IcTabGroup label="Example tab group">
-      <IcTab>One</IcTab>
-      <IcTab disabled>Two</IcTab>
-      <IcTab>Three</IcTab>
+      <IcTab>Ingredients</IcTab>
+      <IcTab disabled>Method</IcTab>
+      <IcTab>History</IcTab>
     </IcTabGroup>
-    <IcTabPanel>Tab One</IcTabPanel>
-    <IcTabPanel>Tab Two</IcTabPanel>
-    <IcTabPanel>Tab Three</IcTabPanel>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
 
@@ -296,26 +290,26 @@ export const light = [
     language: "Web component",
     snippet: `<ic-tab-context appearance="light">
   <ic-tab-group label="Example tab group">
-    <ic-tab>One</ic-tab>
-    <ic-tab>Two</ic-tab>
-    <ic-tab>Three</ic-tab>
+    <ic-tab>Ingredients</ic-tab>
+    <ic-tab>Method</ic-tab>
+    <ic-tab>History</ic-tab>
   </ic-tab-group>
-  <ic-tab-panel>Tab One</ic-tab-panel>
-  <ic-tab-panel>Tab Two</ic-tab-panel>
-  <ic-tab-panel>Tab Three</ic-tab-panel>
+  <ic-tab-panel>Tab One - Ingredients</ic-tab-panel>
+  <ic-tab-panel>Tab Two - Method</ic-tab-panel>
+  <ic-tab-panel>Tab Three - History</ic-tab-panel>
 </ic-tab-context>`,
   },
   {
     language: "React",
     snippet: `<IcTabContext appearance="light">
   <IcTabGroup label="Example tab group">
-    <IcTab>One</IcTab>
-    <IcTab>Two</IcTab>
-    <IcTab>Three</IcTab>
+    <IcTab>Ingredients</IcTab>
+    <IcTab>Method</IcTab>
+    <IcTab>History</IcTab>
   </IcTabGroup>
-  <IcTabPanel>Tab One</IcTabPanel>
-  <IcTabPanel>Tab Two</IcTabPanel>
-  <IcTabPanel>Tab Three</IcTabPanel>
+  <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+  <IcTabPanel>Tab Two - Method</IcTabPanel>
+  <IcTabPanel>Tab Three - History</IcTabPanel>
 </IcTabContext>`,
   },
 ];
@@ -323,13 +317,13 @@ export const light = [
 <ComponentPreview snippets={light} style={{ backgroundColor: "#2c2f34" }}>
   <IcTabContext appearance="light">
     <IcTabGroup label="Example tab group">
-      <IcTab>One</IcTab>
-      <IcTab>Two</IcTab>
-      <IcTab>Three</IcTab>
+      <IcTab>Ingredients</IcTab>
+      <IcTab>Method</IcTab>
+      <IcTab>History</IcTab>
     </IcTabGroup>
-    <IcTabPanel>Tab One</IcTabPanel>
-    <IcTabPanel>Tab Two</IcTabPanel>
-    <IcTabPanel>Tab Three</IcTabPanel>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
 
@@ -340,17 +334,17 @@ export const compact = [
     language: "Web component",
     snippet: `<ic-tab-context class="tabs">
     <ic-tab-group label="Example tab group">
-      <ic-tab>One</ic-tab>
-      <ic-tab>Two</ic-tab>
-      <ic-tab>Three</ic-tab>
-      <ic-tab>Four</ic-tab>
-      <ic-tab>Five</ic-tab>
+      <ic-tab>Ingredients</ic-tab>
+      <ic-tab>Method</ic-tab>
+      <ic-tab>History</ic-tab>
+      <ic-tab>Drinks</ic-tab>
+      <ic-tab>Recipes</ic-tab>
     </ic-tab-group>
-    <ic-tab-panel>Tab One</ic-tab-panel>
-    <ic-tab-panel>Tab Two</ic-tab-panel>
-    <ic-tab-panel>Tab Three</ic-tab-panel>
-    <ic-tab-panel>Tab Four</ic-tab-panel>
-    <ic-tab-panel>Tab Five</ic-tab-panel>
+    <ic-tab-panel>Tab One - Ingredients</ic-tab-panel>
+    <ic-tab-panel>Tab Two - Method</ic-tab-panel>
+    <ic-tab-panel>Tab Three - History</ic-tab-panel>
+    <ic-tab-panel>Tab Four - Drinks</ic-tab-panel>
+    <ic-tab-panel>Tab Five - Recipes</ic-tab-panel>
   <style>
     .tabs ic-tab-group,
     .tabs ic-tab-panel {
@@ -365,17 +359,17 @@ export const compact = [
     language: "React",
     snippet: `<IcTabContext class="tabs">
     <IcTabGroup label="Example tab group">
-      <IcTab>One</IcTab>
-      <IcTab>Two</IcTab>
-      <IcTab>Three</IcTab>
-      <IcTab>Four</IcTab>
-      <IcTab>Five</IcTab>
+      <IcTab>Ingredients</IcTab>
+      <IcTab>Method</IcTab>
+      <IcTab>History</IcTab>
+      <IcTab>Drinks</IcTab>
+      <IcTab>Recipes</IcTab>
     </IcTabGroup>
-    <IcTabPanel>Tab One</IcTabPanel>
-    <IcTabPanel>Tab Two</IcTabPanel>
-    <IcTabPanel>Tab Three</IcTabPanel>
-    <IcTabPanel>Tab Four</IcTabPanel>
-    <IcTabPanel>Tab Five</IcTabPanel>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
+    <IcTabPanel>Tab Four - Drinks</IcTabPanel>
+    <IcTabPanel>Tab Five - Recipes</IcTabPanel>
   <style>
     .tabs ic-tab-group,
     .tabs ic-tab-panel {
@@ -391,17 +385,17 @@ export const compact = [
 <ComponentPreview snippets={compact}>
   <IcTabContext class="tabs">
     <IcTabGroup label="Example tab group">
-      <IcTab>One</IcTab>
-      <IcTab>Two</IcTab>
-      <IcTab>Three</IcTab>
-      <IcTab>Four</IcTab>
-      <IcTab>Five</IcTab>
+      <IcTab>Ingredients</IcTab>
+      <IcTab>Method</IcTab>
+      <IcTab>History</IcTab>
+      <IcTab>Drinks</IcTab>
+      <IcTab>Recipes</IcTab>
     </IcTabGroup>
-    <IcTabPanel>Tab One</IcTabPanel>
-    <IcTabPanel>Tab Two</IcTabPanel>
-    <IcTabPanel>Tab Three</IcTabPanel>
-    <IcTabPanel>Tab Four</IcTabPanel>
-    <IcTabPanel>Tab Five</IcTabPanel>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
+    <IcTabPanel>Tab Four - Drinks</IcTabPanel>
+    <IcTabPanel>Tab Five - Recipes</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>
 
@@ -412,48 +406,48 @@ export const nested = [
     language: "Web component",
     snippet: `<ic-tab-context>
   <ic-tab-group label="Example tab group">
-    <ic-tab>Outer Tab One</ic-tab>
-    <ic-tab>Outer Tab Two</ic-tab>
-    <ic-tab>Outer Tab Three</ic-tab>
+    <ic-tab>Ingredients</ic-tab>
+    <ic-tab>Method</ic-tab>
+    <ic-tab>History</ic-tab>
   </ic-tab-group>
   <ic-tab-panel>
     <ic-tab-context context-id="context-nested">
       <ic-tab-group label="Example tab group">
-        <ic-tab>Nested One</ic-tab>
-        <ic-tab>Nested Two</ic-tab>
-        <ic-tab>Nested Three</ic-tab>
+        <ic-tab>Espresso</ic-tab>
+        <ic-tab>Water</ic-tab>
+        <ic-tab>Milk</ic-tab>
       </ic-tab-group>
-      <ic-tab-panel>Nested Tab Panel One</ic-tab-panel>
-      <ic-tab-panel>Nested Tab Panel Two</ic-tab-panel>
-      <ic-tab-panel>Nested Tab Panel Three</ic-tab-panel>
+      <ic-tab-panel>Nested Tab Panel One - Espresso</ic-tab-panel>
+      <ic-tab-panel>Nested Tab Panel Two - Water</ic-tab-panel>
+      <ic-tab-panel>Nested Tab Panel Three - Milk</ic-tab-panel>
     </ic-tab-context>
   </ic-tab-panel>
-  <ic-tab-panel>Outer Tab Panel Two</ic-tab-panel>
-  <ic-tab-panel>Outer Tab Panel Three</ic-tab-panel>
+  <ic-tab-panel>Outer Tab Panel Two - Method</ic-tab-panel>
+  <ic-tab-panel>Outer Tab Panel Three - History</ic-tab-panel>
 </ic-tab-context>`,
   },
   {
     language: "React",
     snippet: `<IcTabContext>
   <IcTabGroup label="Example tab group">
-    <IcTab>Outer Tab One</IcTab>
-    <IcTab>Outer Tab Two</IcTab>
-    <IcTab>Outer Tab Three</IcTab>
+    <IcTab>Ingredients</IcTab>
+    <IcTab>Method</IcTab>
+    <IcTab>History</IcTab>
   </IcTabGroup>
   <IcTabPanel>
     <IcTabContext contextId="context-nested">
       <IcTabGroup label="Example tab group">
-        <IcTab>Nested One</IcTab>
-        <IcTab>Nested Two</IcTab>
-        <IcTab>Nested Three</IcTab>
+        <IcTab>Espresso</IcTab>
+        <IcTab>Water</IcTab>
+        <IcTab>Milk</IcTab>
       </IcTabGroup>
-      <IcTabPanel>Nested Tab Panel One</IcTabPanel>
-      <IcTabPanel>Nested Tab Panel Two</IcTabPanel>
-      <IcTabPanel>Nested Tab Panel Three</IcTabPanel>
+      <IcTabPanel>Nested Tab Panel One - Espresso</IcTabPanel>
+      <IcTabPanel>Nested Tab Panel Two - Water</IcTabPanel>
+      <IcTabPanel>Nested Tab Panel Three - Milk</IcTabPanel>
     </IcTabContext>
   </IcTabPanel>
-  <IcTabPanel>Outer Tab Panel Two</IcTabPanel>
-  <IcTabPanel>Outer Tab Panel Three</IcTabPanel>
+  <IcTabPanel>Outer Tab Panel Two - Method</IcTabPanel>
+  <IcTabPanel>Outer Tab Panel Three - History</IcTabPanel>
 </IcTabContext>`,
   },
 ];
@@ -461,23 +455,23 @@ export const nested = [
 <ComponentPreview snippets={nested}>
   <IcTabContext>
     <IcTabGroup label="Example tab group">
-      <IcTab>Outer Tab One</IcTab>
-      <IcTab>Outer Tab Two</IcTab>
-      <IcTab>Outer Tab Three</IcTab>
+      <IcTab>Ingredients</IcTab>
+      <IcTab>Method</IcTab>
+      <IcTab>History</IcTab>
     </IcTabGroup>
     <IcTabPanel>
       <IcTabContext contextId="context-nested">
         <IcTabGroup label="Example tab group">
-          <IcTab>Nested One</IcTab>
-          <IcTab>Nested Two</IcTab>
-          <IcTab>Nested Three</IcTab>
+          <IcTab>Espresso</IcTab>
+          <IcTab>Water</IcTab>
+          <IcTab>Milk</IcTab>
         </IcTabGroup>
-        <IcTabPanel>Nested Tab Panel One</IcTabPanel>
-        <IcTabPanel>Nested Tab Panel Two</IcTabPanel>
-        <IcTabPanel>Nested Tab Panel Three</IcTabPanel>
+        <IcTabPanel>Nested Tab Panel One - Espresso</IcTabPanel>
+        <IcTabPanel>Nested Tab Panel Two - Water</IcTabPanel>
+        <IcTabPanel>Nested Tab Panel Three - Milk</IcTabPanel>
       </IcTabContext>
     </IcTabPanel>
-    <IcTabPanel>Outer Tab Panel Two</IcTabPanel>
-    <IcTabPanel>Outer Tab Panel Three</IcTabPanel>
+    <IcTabPanel>Outer Tab Panel Two - Method</IcTabPanel>
+    <IcTabPanel>Outer Tab Panel Three - History</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>

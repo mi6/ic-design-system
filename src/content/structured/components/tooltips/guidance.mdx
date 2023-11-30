@@ -36,11 +36,26 @@ A tooltip wraps around a component and displays a message when the component is 
 Below is an example of the tooltip component on a button.
 
 <ComponentPreview>
-  <IcTooltip label="This is a description of the button" target="test-button">
-    <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
-      Default
-    </IcButton>
-  </IcTooltip>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <IcTooltip
+      label="Add Americano to favourites"
+      target="test-button-0"
+      placement="top"
+    >
+      <IcButton id="test-button-0" aria-describedby="ic-tooltip-test-button-0">
+        Add
+      </IcButton>
+    </IcTooltip>
+    <IcTooltip
+      label="Remove Americano from favourites"
+      target="test-button-1"
+      placement="bottom"
+    >
+      <IcButton id="test-button-1" aria-describedby="ic-tooltip-test-button-1">
+        Remove
+      </IcButton>
+    </IcTooltip>
+  </div>
 </ComponentPreview>
 
 ## When to use

@@ -12,6 +12,7 @@ const Permalink: React.FC<PermalinkProps> = ({ title, sluggedTitle }) => (
     className="permalink"
     href={`#${sluggedTitle}`}
     title={`Permalink to ${title}`}
+    aria-label={`Permalink to ${title}`}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
