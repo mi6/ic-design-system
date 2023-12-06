@@ -63,7 +63,7 @@ git remote add upstream git@github.com:mi6/ic-design-system.git
 **NPM**
 
 ```
-npm install
+npm install --legacy-peer-deps
 npm start
 ```
 
@@ -71,7 +71,7 @@ npm start
 
 ```
 rm package-lock.json
-yarn install
+yarn install --legacy-peer-deps
 yarn run start
 ```
 
