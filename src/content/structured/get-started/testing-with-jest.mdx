@@ -85,6 +85,12 @@ Finally, run your tests using `npm test` or `yarn test`.
   .
 </p>
 
+## Testing with React components
+
+The `@ukic/react` package will need to be transformed before you can use these components in Jest tests.
+
+Add a `transformIgnorePatterns` field with the value `["/node_modules/(?!@ukic/react)"]` to your Jest config.
+
 ## Testing shadow components
 
 In the DOM, elements can be found using `document.querySelector`. Shadow components can be found in a similar way using the `shadowRoot` prefix. The shadow root is the root node of the shadow DOM tree.
