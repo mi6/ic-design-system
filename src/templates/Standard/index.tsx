@@ -35,7 +35,7 @@ const Template: React.FC<TemplateProps> = ({
   data: { mdx, allMdx },
   location,
 }) => {
-  const { date, contribute } = mdx.frontmatter;
+  const { date } = mdx.frontmatter;
   const allStructuredNav = allMdx.nodes;
 
   return (
@@ -56,7 +56,7 @@ const Template: React.FC<TemplateProps> = ({
           <CoreMDXLayout mdx={mdx} location={location}>
             {mdx.body}
           </CoreMDXLayout>
-          <Metadata publishDate={date} contribute={contribute} />
+          <Metadata publishDate={date} />
         </div>
       </div>
     </ic-section-container>
