@@ -18,9 +18,9 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
   currentPage,
   section,
 }) => {
-  const headings = allHeadings.filter((heading) => heading.depth === 2);
+  const headings = allHeadings.filter(({ depth }) => depth === 2);
 
-  const headingIds = headings.map((heading) => slug(heading.value));
+  const headingIds = headings.map(({ value }) => slug(value));
 
   const [activeId, setActiveId] = useState(headingIds[0]);
 
@@ -28,9 +28,9 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
     setActiveId(headingIds[0]);
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+        entries.forEach(({ isIntersecting, target }) => {
+          if (isIntersecting) {
+            setActiveId(target.id);
           }
         });
       },
@@ -40,7 +40,7 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
     headingIds.forEach((id) => {
       const heading = document.getElementById(id);
       if (heading) {
-        observer.observe(heading!);
+        observer.observe(heading);
       }
     });
 
@@ -48,7 +48,7 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
       headingIds.forEach((id) => {
         const heading = document.getElementById(id);
         if (heading) {
-          observer.unobserve(heading!);
+          observer.unobserve(heading);
         }
       });
     };
@@ -69,15 +69,15 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
     setTimeout(() => {
       const tabId = sessionStorage.getItem("currTab");
       if (tabId !== "") {
-        const el = document.querySelector(`#${tabId}`)!
-          .firstElementChild as HTMLElement;
-        el.classList.add("active");
+        document
+          .querySelector(`#${tabId}`)!
+          .firstElementChild!.classList.add("active");
       }
     }, 300);
   };
 
-  const getNavListItem = (heading: Heading) => {
-    const headingId = slug(heading.value);
+  const getNavListItem = (value: string, index: number) => {
+    const headingId = headingIds[index];
     const isActive = headingId === activeId;
 
     return (
@@ -86,31 +86,28 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
           className={clsx("nav-link", isActive && "active-nav-link")}
           to={`#${headingId}`}
           onClick={(e) => handleLinkSelect(e, headingId)}
+          title={value}
         >
           <ic-typography variant={isActive ? "subtitle-large" : "body"}>
-            {heading.value}
+            {value}
           </ic-typography>
         </Link>
       </li>
     );
   };
 
-  if (headings.length > 0) {
-    return (
-      <div className="side-nav">
-        <nav aria-label={`${section} section contents`} className="nav">
-          <div className="contents-header">
-            <ic-typography variant="subtitle-large">Contents</ic-typography>
-          </div>
-          <ul className="nav-item-list">
-            {headings.map((heading) => getNavListItem(heading))}
-          </ul>
-        </nav>
-      </div>
-    );
-  }
-
-  return null;
+  return headings.length > 0 ? (
+    <div className="side-nav">
+      <nav aria-label={`${section} section contents`} className="nav">
+        <div className="contents-header">
+          <ic-typography variant="subtitle-large">Contents</ic-typography>
+        </div>
+        <ul className="nav-item-list">
+          {headings.map(({ value }, index) => getNavListItem(value, index))}
+        </ul>
+      </nav>
+    </div>
+  ) : null;
 };
 
 export default AnchorNav;

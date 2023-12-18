@@ -46,7 +46,9 @@ export const DialogExample = () => {
   };
   return (
     <>
-      <IcButton onclick={showDialog}>Launch dialog</IcButton>
+      <IcButton onclick={showDialog} aria-label="Launch dialog">
+        Launch dialog
+      </IcButton>
       <IcDialog
         heading="Are you sure?"
         label="Coffee order"

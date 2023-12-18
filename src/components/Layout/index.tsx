@@ -1,17 +1,23 @@
-import React, { ReactElement, useState } from "react";
 import { withPrefix } from "gatsby";
+import React, {
+  ReactElement,
+  cloneElement,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 import { Helmet } from "react-helmet";
 
-import "./index.css";
-import TopNavWrapper from "../TopNavWrapper";
 import { GCHQLogo, MI5Logo, SISLogo } from "../../assets/svg";
 import CookieBanner from "../CookieBanner";
+import TopNavWrapper from "../TopNavWrapper";
+import "./index.css";
 
 import CookieConsentContext from "../../context/CookieConsentContext";
 import { consentCookieApproved } from "../CookieBanner/cookies.helper";
 
-import { Heading, MdxFrontMatter, MdxFields } from "../../sharedTypes";
+import { Heading, MdxFields, MdxFrontMatter } from "../../sharedTypes";
 
 const {
   STATUS,
@@ -22,10 +28,6 @@ const {
   META_DESCRIPTION,
   siteUrl,
 } = require("../../config");
-
-interface RouteAnnouncerProps {
-  page: string;
-}
 
 interface LayoutProps {
   children: ReactElement;
@@ -50,24 +52,12 @@ interface FooterLinks {
   link: string;
 }
 
-const RouteAnnouncer: React.FC<RouteAnnouncerProps> = ({ page }) => (
-  <div
-    className="route-announcer"
-    role="status"
-    aria-live="assertive"
-    aria-atomic="true"
-  >{`Navigated to ${page}`}</div>
-);
-
 const ClientOnly: React.FC<any> = ({ children, ...delegated }) => {
-  const [hasMounted, setHasMounted] = React.useState(false);
-  React.useEffect(() => {
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
     setHasMounted(true);
   }, []);
-  if (!hasMounted) {
-    return null;
-  }
-  return <div {...delegated}>{children}</div>;
+  return hasMounted ? <div {...delegated}>{children}</div> : null;
 };
 
 const Layout: React.FC<LayoutProps> = ({
@@ -77,28 +67,27 @@ const Layout: React.FC<LayoutProps> = ({
   data,
   location,
 }) => {
-  let canonicalUrl: string = "";
-  if (typeof window !== "undefined") {
-    canonicalUrl = siteUrl + window.location.pathname;
-  }
-
+  let canonicalUrl = "";
   let homepage = false;
   if (typeof window !== "undefined") {
-    homepage = window.location.pathname === "/";
+    const { pathname } = window.location;
+    canonicalUrl = siteUrl + pathname;
+    homepage = pathname === "/";
   }
 
-  let title = homepage ? "Home" : "";
+  let pageTitle = homepage ? "Home" : "";
   let description;
   if (data !== undefined) {
-    title = data?.mdx?.frontmatter.title;
-    description = data?.mdx?.frontmatter.subTitle;
+    const { subTitle, title } = data.mdx.frontmatter;
+    pageTitle = title;
+    description = subTitle;
   }
 
   // meta info for Open Graph & Twitter
   const metas = [
     {
       property: "og:title",
-      content: `${title || TITLE} - Intelligence Community Design System`,
+      content: `${pageTitle || TITLE} - Intelligence Community Design System`,
     },
     {
       property: "og:type",
@@ -147,7 +136,7 @@ const Layout: React.FC<LayoutProps> = ({
     },
     {
       name: "twitter:title",
-      content: `${title || TITLE} - Intelligence Community Design System`,
+      content: `${pageTitle || TITLE} - Intelligence Community Design System`,
     },
     {
       name: "twitter:description",
@@ -167,26 +156,20 @@ const Layout: React.FC<LayoutProps> = ({
   // eslint-disable-next-line prefer-destructuring
   const GATSBY_GA_TRACKING_ID = process.env.GATSBY_GA_TRACKING_ID;
 
-  let defaultCookieConsentValue;
-
   // document object is not available during SSR so a check is in place.
   // document.cookie is required for consentCookieApproved method
-  if (typeof document !== "undefined") {
-    defaultCookieConsentValue = consentCookieApproved();
-  } else {
-    defaultCookieConsentValue = false;
-  }
+  const defaultCookieConsentValue =
+    typeof document !== "undefined" ? consentCookieApproved() : false;
 
-  const [cookieConsent, setCookieConsent] = useState<boolean>(
-    defaultCookieConsentValue
-  );
+  const [cookieConsent, setCookieConsent] = useState(defaultCookieConsentValue);
+  const defaultConsent = cookieConsent ? "granted" : "denied";
 
   const handleCookieConsent = (consent: boolean) => {
     setCookieConsent(true);
     updateConsent(consent);
   };
 
-  const value = React.useMemo(
+  const value = useMemo(
     () => ({
       cookieConsent,
       handleCookieConsent,
@@ -194,11 +177,12 @@ const Layout: React.FC<LayoutProps> = ({
     [cookieConsent, handleCookieConsent]
   );
 
-  const updateConsent = (consent: boolean) => {
+  const updateConsent = (consentGranted: boolean) => {
+    const consent = consentGranted ? "granted" : "denied";
     if (typeof window !== "undefined") {
       window.gtag("consent", "update", {
-        ad_storage: consent ? "granted" : "denied",
-        analytics_storage: consent ? "granted" : "denied",
+        ad_storage: consent,
+        analytics_storage: consent,
       });
     }
   };
@@ -207,14 +191,16 @@ const Layout: React.FC<LayoutProps> = ({
     <>
       <Helmet>
         <html lang="en" />
-        <title>{title || TITLE} - Intelligence Community Design System</title>
+        <title>
+          {pageTitle || TITLE} - Intelligence Community Design System
+        </title>
         <link rel="canonical" href={`${canonicalUrl}`} />
-        {metas.map((meta) => (
+        {metas.map(({ name, property, content }) => (
           <meta
-            key={meta.name || meta.property}
-            name={meta.name && meta.name}
-            property={meta.property && meta.property}
-            content={meta.content}
+            key={name || property}
+            name={name && name}
+            property={property && property}
+            content={content}
           />
         ))}
         <script
@@ -231,8 +217,8 @@ const Layout: React.FC<LayoutProps> = ({
             window.dataLayer = window.dataLayer || [  ];
             function gtag(){dataLayer.push(arguments);}
             gtag('consent', 'default', {
-              'ad_storage': '${cookieConsent ? "granted" : "denied"}',
-              'analytics_storage': '${cookieConsent ? "granted" : "denied"}',
+              'ad_storage': '${defaultConsent}',
+              'analytics_storage': '${defaultConsent}',
             });
             gtag('js', new Date());
             gtag('config', '${GATSBY_GA_TRACKING_ID}');
@@ -248,7 +234,7 @@ const Layout: React.FC<LayoutProps> = ({
       )}
       <CookieConsentContext.Provider value={value}>
         <ClientOnly>
-          {title !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
+          {pageTitle !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
             <CookieBanner />
           )}
         </ClientOnly>
@@ -263,7 +249,7 @@ const Layout: React.FC<LayoutProps> = ({
             shortTitle={SHORT_TITLE}
           />
           <main id="main" className="homepage-wrapper">
-            {React.cloneElement(children, { location: location.pathname })}
+            {cloneElement(children, { location: location.pathname })}
             <ic-back-to-top target="main" />
           </main>
         </div>
@@ -272,13 +258,13 @@ const Layout: React.FC<LayoutProps> = ({
             description={FOOTER_PROPS.content}
             caption={FOOTER_PROPS.caption}
           >
-            {FOOTER_PROPS.footerLinks.map((footerLinks: FooterLinks) => (
+            {FOOTER_PROPS.footerLinks.map((footerLink: FooterLinks) => (
               <ic-footer-link
                 slot="link"
-                href={withPrefix(footerLinks.link)}
-                key={footerLinks.key}
+                href={withPrefix(footerLink.link)}
+                key={footerLink.key}
               >
-                {footerLinks.text}
+                {footerLink.text}
               </ic-footer-link>
             ))}
             <div slot="logo" className="logo-wrapper">
@@ -298,7 +284,12 @@ const Layout: React.FC<LayoutProps> = ({
           </ic-footer>
         </div>
       </CookieConsentContext.Provider>
-      <RouteAnnouncer page={`${title || ""} - ${TITLE}`} />
+      <div
+        className="route-announcer"
+        role="status"
+        aria-live="assertive"
+        aria-atomic="true"
+      >{`Navigated to ${pageTitle || ""} - ${TITLE}`}</div>
     </>
   );
 };
