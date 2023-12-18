@@ -206,13 +206,13 @@ export const snippetsCustomMessage = [
   {
     language: "Web component",
     snippet: `<ic-alert variant="info" heading="Want to know more about our coffee?">
-  <span slot="message"> Go to our <ic-link href="/" inline="">coffee page</ic-link> to learn more.</span>
+  <span slot="message"> Go to our <ic-link href="/">coffee page</ic-link> to learn more.</span>
 </ic-alert>`,
   },
   {
     language: "React",
     snippet: `<IcAlert variant="info" heading="Want to know more about our coffee?">
-  <span slot="message"> Go to our <IcLink href="/" inline>coffee page</IcLink> to learn more.</span>
+  <span slot="message"> Go to our <IcLink href="/">coffee page</IcLink> to learn more.</span>
 </IcAlert>`,
   },
 ];
@@ -227,7 +227,7 @@ export const snippetsCustomMessage = [
       }}
     >
       Got to our{" "}
-      <IcLink href="#" onClick={(e) => e.preventDefault()} inline="">
+      <IcLink href="#" onClick={(e) => e.preventDefault()}>
         coffee page
       </IcLink>{" "}
       to learn more.
