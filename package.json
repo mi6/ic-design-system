@@ -55,11 +55,7 @@
     "react-table": "^7.7.0",
     "react-use-flexsearch": "^0.1.1",
     "serve": "^14.1.2",
-    "sharp": "^0.31.1"
-  },
-  "resolutions": {
-    "gatsby/axios": "0.21.1",
-    "gatsby/socket.io": "2.3.0"
+    "sharp": "^0.33.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",
@@ -73,7 +69,6 @@
     "@types/react-helmet": "^6.1.5",
     "@types/react-table": "^7.7.11",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "axios": "^0.24.0",
     "babel-jest": "^27.4.0",
     "babel-preset-gatsby": "^2.2.0",
     "commitizen": "^4.2.4",
@@ -96,9 +91,7 @@
     "npm-check-updates": "^11.4.1",
     "prettier": "2.5.1",
     "react-test-renderer": "^17.0.2",
-    "size-limit": "^7.0.5",
-    "socket.io": "^4.4.0",
-    "start-server-and-test": "^1.12.1"
+    "size-limit": "^7.0.5"
   },
   "keywords": [
     "gatsby",
