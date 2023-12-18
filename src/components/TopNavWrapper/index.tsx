@@ -42,15 +42,15 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
 
     <Search />
 
-    {iconLinks.map((iconLink) => (
+    {iconLinks.map(({ text, to, key, target, icon }) => (
       <ic-navigation-button
-        label={iconLink.text}
+        label={text}
         slot="buttons"
-        href={iconLink.to}
-        key={iconLink.key}
-        target={iconLink.target}
+        href={to}
+        key={key}
+        target={target}
       >
-        {iconLink.icon({ slot: "icon" })}
+        {icon({ slot: "icon" })}
       </ic-navigation-button>
     ))}
   </ic-top-navigation>
