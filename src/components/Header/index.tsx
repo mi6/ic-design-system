@@ -85,19 +85,15 @@ const Header: React.FC<HeaderProps> = ({
           status={status}
         />
       )}
-      {tabs?.map((tab) => (
+      {tabs?.map(({ title, path }) => (
         <ic-navigation-item
-          key={tab.title}
-          id={tab.title.toLowerCase()}
+          key={title}
+          id={title.toLowerCase()}
           slot="tabs"
           onClick={tabSwitch}
         >
-          <GatsbyLink
-            slot="navigation-item"
-            to={tab.path}
-            activeClassName="active"
-          >
-            {tab.title}
+          <GatsbyLink slot="navigation-item" to={path} activeClassName="active">
+            {title}
           </GatsbyLink>
         </ic-navigation-item>
       ))}
