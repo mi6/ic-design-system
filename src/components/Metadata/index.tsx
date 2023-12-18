@@ -7,9 +7,7 @@ interface MetadataProps {
   publishDate?: string;
 }
 
-const Metadata: React.FC<MetadataProps> = ({
-  publishDate = null,
-}) => (
+const Metadata: React.FC<MetadataProps> = ({ publishDate = null }) => (
   <div>
     <hr className="bottom-line" />
     <ic-section-container>
