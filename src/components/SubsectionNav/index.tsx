@@ -285,6 +285,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
           !hasMounted && "not-mounted"
         )}
         onBlur={handleBlur}
+        tabIndex={-1}
       >
         <ul className={clsx("list-root", "list")}>
           <ListChildren item={currentNavSection} />
