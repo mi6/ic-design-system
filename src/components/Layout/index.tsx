@@ -250,6 +250,7 @@ const Layout: React.FC<LayoutProps> = ({
           />
           <main id="main" className="homepage-wrapper">
             {cloneElement(children, { location: location.pathname })}
+            <ic-back-to-top target="main" />
           </main>
         </div>
         <div className="footer">
