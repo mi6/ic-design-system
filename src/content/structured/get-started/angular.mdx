@@ -51,13 +51,23 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 ## Step four
 
+Set skipLibCheck to `true` in your `tsconfig.json` file.
+
+```jsx
+"compilerOptions": {
+  "skipLibCheck": true,
+},
+```
+
+## Step five
+
 Import defineCustomElements in your `main.ts` file.
 
 ```jsx
 import { defineCustomElements } from "@ukic/web-components/loader";
 ```
 
-## Step five
+## Step six
 
 Call defineCustomElements at the bottom of `main.ts`:
 
@@ -67,7 +77,7 @@ Call defineCustomElements at the bottom of `main.ts`:
 defineCustomElements();
 ```
 
-## Step six
+## Step seven
 
 Add the following into the top level CSS file for your project. For newly generated Angular projects this will be `src/styles.css`.
 
@@ -98,7 +108,7 @@ If you would like to import these styles to apply them to the rest of your proje
 @import "@ukic/web-components/dist/core/normalize.css";
 ```
 
-## Step seven
+## Step eight
 
 Declare the component in your `app.component.html` file.
 
