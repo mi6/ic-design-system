@@ -31,21 +31,33 @@ yarn add @ukic/web-components @ukic/fonts
 
 In the `app.modules.ts` file, import the `CUSTOM_ELEMENTS_SCHEMA`.
 
+Or for standalone components, import the `CUSTOM_ELEMENTS_SCHEMA` into the `.ts` file of any component using ICDS components.
+
 ```jsx
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 ```
 
 ## Step three
 
-Then include it in the `@NgModule` decorator object.
+Then include it in the `@NgModule` decorator object. Or for standalone components, include it in the `@Component` decorator object.
 
 ```jsx
+// Modules
 @NgModule({
-declarations: [AppComponent],
-imports: [BrowserModule],
-providers: [],
-bootstrap: [AppComponent],
-schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+// Standalone components
+@Component({
+  selector: 'app-foo',
+  standalone: true,
+  imports: [],
+  templateUrl: './foo.component.html',
+  styleUrl: './foo.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 ```
 
