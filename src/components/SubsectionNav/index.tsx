@@ -127,24 +127,33 @@ const WrappedListItem: React.FC<WrappedListItemProps> = ({
 };
 
 const ListItem: React.FC<ListItemProps> = ({ item, onClick, open }) => {
-  if (item.children.length > 0 && !item.data.frontmatter.tabs) {
+  const { children, data } = item;
+  const addComponentA11yLabel =
+    data.fields.navSection === "components" &&
+    data.frontmatter.title !== "Components";
+  if (children.length > 0 && !data.frontmatter.tabs) {
     return (
       <WrappedListItem
-        key={item.data.id}
-        text={item.data.frontmatter.title}
+        key={data.id}
+        text={data.frontmatter.title}
         onClick={onClick}
         open={open}
-        controls={item.data.id}
+        controls={data.id}
       />
     );
   }
   return (
     <WrappedListItem
-      key={item.data.id}
-      text={item.data.frontmatter.title}
-      url={item.data.fields.slug}
+      key={data.id}
+      text={data.frontmatter.title}
+      url={data.fields.slug}
       open={open}
-      tabs={item.data.frontmatter.tabs}
+      tabs={data.frontmatter.tabs}
+      label={
+        addComponentA11yLabel
+          ? `${data.frontmatter.title} component`
+          : undefined
+      }
     />
   );
 };
