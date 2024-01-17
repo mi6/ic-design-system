@@ -63,11 +63,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
           location={location}
         />
         <ic-section-container aligned="center" id="page-section-container">
-          <AnchorNav
-            currentPage={mdx.fields.slug}
-            allHeadings={mdx.headings}
-            section={mdx.fields.navSection}
-          />
+          <AnchorNav currentPage={mdx.fields.slug} allHeadings={mdx.headings} />
           <div className="content-container">
             <MDXRenderer>{children}</MDXRenderer>
           </div>

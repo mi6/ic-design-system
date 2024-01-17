@@ -258,6 +258,9 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
     }
   };
 
+  const accessibleLabel =
+    section.slice(-1).toLowerCase() === "s" ? section.slice(0, -1) : section;
+
   return (
     <>
       <ic-link id="skip-page-content-link" href="#page-contents">
@@ -286,7 +289,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       </ic-button>
       <nav
         id="icds-section-nav"
-        aria-label={`${section} section`}
+        aria-label={`${accessibleLabel} pages`}
         className={clsx(
           "scroll",
           "large-only",

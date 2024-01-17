@@ -37,9 +37,9 @@ const Header: React.FC<HeaderProps> = ({
     }
 
     const getActiveLinkEl = () => {
-      const el = document.querySelector(`#${tabId}`)!
-        .firstElementChild as HTMLElement;
-      el.classList.add("active");
+      const el = document.querySelector(`#${tabId}`)
+        ?.firstElementChild as HTMLElement;
+      el?.classList.add("active");
       return el;
     };
 
