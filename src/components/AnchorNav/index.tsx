@@ -10,14 +10,9 @@ const { slug } = require("github-slugger");
 interface AnchorNavProps {
   allHeadings: Heading[];
   currentPage: string;
-  section: string;
 }
 
-const AnchorNav: React.FC<AnchorNavProps> = ({
-  allHeadings,
-  currentPage,
-  section,
-}) => {
+const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage }) => {
   const headings = allHeadings.filter(({ depth }) => depth === 2);
 
   const headingIds = headings.map(({ value }) => slug(value));
@@ -70,8 +65,8 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
       const tabId = sessionStorage.getItem("currTab");
       if (tabId !== "") {
         document
-          .querySelector(`#${tabId}`)!
-          .firstElementChild!.classList.add("active");
+          .querySelector(`#${tabId}`)
+          ?.firstElementChild!.classList.add("active");
       }
     }, 300);
   };
@@ -96,18 +91,33 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
     );
   };
 
-  return headings.length > 0 ? (
-    <div className="side-nav">
-      <nav aria-label={`${section} section contents`} className="nav">
-        <div className="contents-header">
-          <ic-typography variant="subtitle-large">Contents</ic-typography>
-        </div>
-        <ul className="nav-item-list">
-          {headings.map(({ value }, index) => getNavListItem(value, index))}
-        </ul>
-      </nav>
-    </div>
-  ) : null;
+  let currentPageName = currentPage.substring(currentPage.lastIndexOf("/") + 1);
+  let currTab = "guidance";
+
+  if (currentPageName === "code" || currentPageName === "accessibility") {
+    currTab = currentPageName;
+    currentPageName = currentPage
+      .replace(`/${currentPageName}`, "")
+      .replace("/components/", "");
+  }
+
+  return (
+    headings.length > 0 && (
+      <div className="side-nav">
+        <nav
+          aria-label={`${currentPageName} ${currTab} page contents`}
+          className="nav"
+        >
+          <div className="contents-header">
+            <ic-typography variant="subtitle-large">Contents</ic-typography>
+          </div>
+          <ul className="nav-item-list">
+            {headings.map(({ value }, index) => getNavListItem(value, index))}
+          </ul>
+        </nav>
+      </div>
+    )
+  );
 };
 
 export default AnchorNav;
