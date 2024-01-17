@@ -1,0 +1,63 @@
+---
+path: "/get-started/install-components/nextJS"
+
+navPriority: 8
+
+date: "2024-01-17"
+
+title: "Next.js"
+
+subTitle: "How to use the components in a Next.js project."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/nextJS.mdx"
+---
+
+## Transpile react package
+
+The `@ukic/react` package will need to be transpiled for use with Next.js. The steps required will depend on the version of Next.js you are using.
+
+### Next.js 13
+
+Set the following in the `next.config.js` file.
+
+```jsx
+const nextConfig = {
+  //other configuration
+  transpilePackages: ["@ukic/react"],
+};
+
+module.exports = nextConfig;
+```
+
+### Next.js 12 and earlier
+
+#### Step one
+
+Install the `next-transpile-modules` package in the root of your project.
+
+```shell
+// using npm
+npm install next-transpile-modules
+
+// using yarn
+yarn add next-transpile-modules
+```
+
+#### Step two
+
+Set the following in the `next.config.js` file.
+
+```jsx
+const nextConfig = {
+  //other configuration
+};
+
+const withTM = require("next-transpile-modules")(["@ukic/react"]);
+module.exports = withTM(nextConfig);
+```
+
+## Web components limitations
+
+While our component library is built with web components, which offer numerous benefits, there may be limitations when using them with Next.js or other Server-Side Rendering (SSR) frameworks due to current limitations in web component support.
+
+This may result in slower performance and manual workarounds. We're actively working to provide more information and update on this topic as it evolves.
