@@ -1,7 +1,7 @@
 ---
 path: "/components/radio/code"
 
-date: "2023-10-25"
+date: "2024-01-18"
 
 title: "Radio button"
 
@@ -164,21 +164,26 @@ export const conditionalDynamic = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "24px" }} snippets={conditionalDynamic}>
-  <IcRadioGroup name="radio-group-3" label="Do you have any special requests?">
-    <IcRadioOption
-      additionalFieldDisplay="dynamic"
-      value="request"
-      label="Yes, I want to modify my order"
+<ComponentPreview snippets={conditionalDynamic}>
+  <div style={{ width: "300px" }}>
+    <IcRadioGroup
+      name="radio-group-3"
+      label="Do you have any special requests?"
     >
-      <IcTextField
-        slot="additional-field"
-        label="Please provide some additional information"
-        placeholder="i.e Soya milk please"
-      />
-    </IcRadioOption>
-    <IcRadioOption value="none" label="No, standard please" />
-  </IcRadioGroup>
+      <IcRadioOption
+        additionalFieldDisplay="dynamic"
+        value="request"
+        label="Yes, I want to modify my order"
+      >
+        <IcTextField
+          slot="additional-field"
+          label="Please provide some additional information"
+          placeholder="i.e Soya milk please"
+        />
+      </IcRadioOption>
+      <IcRadioOption value="none" label="No, standard please" />
+    </IcRadioGroup>
+  </div>
 </ComponentPreview>
 
 ### With helper text
