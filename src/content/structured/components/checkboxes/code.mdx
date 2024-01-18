@@ -1,7 +1,7 @@
 ---
 path: "/components/checkbox/code"
 
-date: "2023-08-07"
+date: "2024-01-18"
 
 title: "Checkbox"
 
@@ -305,18 +305,20 @@ export const snippetsConditionalDynamic = [
 
 <ComponentPreview
   snippets={snippetsConditionalDynamic}
-  style={{ marginTop: "24px" }}
+  style={{ marginRight: "16px" }}
 >
-  <IcCheckboxGroup label="Which coffee do you like best?" name="dynamic">
-    <IcCheckbox value="americano" label="Americano" />
-    <IcCheckbox value="espresso" label="Espresso" />
-    <IcCheckbox value="flatwhite" label="Flat white" />
-    <IcCheckbox value="latte" label="Latte" />
-    <IcCheckbox value="cappuccino" label="Cappuccino" />
-    <IcCheckbox additionalFieldDisplay="dynamic" value="other" label="Other">
-      <IcTextField slot="additional-field" label="Please let us know..." />
-    </IcCheckbox>
-  </IcCheckboxGroup>
+  <div style={{ width: "350px" }}>
+    <IcCheckboxGroup label="Which coffee do you like best?" name="dynamic">
+      <IcCheckbox value="americano" label="Americano" />
+      <IcCheckbox value="espresso" label="Espresso" />
+      <IcCheckbox value="flatwhite" label="Flat white" />
+      <IcCheckbox value="latte" label="Latte" />
+      <IcCheckbox value="cappuccino" label="Cappuccino" />
+      <IcCheckbox additionalFieldDisplay="dynamic" value="other" label="Other">
+        <IcTextField slot="additional-field" label="Please let us know..." />
+      </IcCheckbox>
+    </IcCheckboxGroup>
+  </div>
 </ComponentPreview>
 
 ### Validation
