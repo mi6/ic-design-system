@@ -1,0 +1,33 @@
+@import "@ukic/fonts/dist/fonts.css";
+@import "@ukic/react/dist/core/core.css";
+@import "@ukic/react/dist/core/normalize.css";
+
+.input-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ic-space-md);
+}
+
+/* Remove the .main-content-div styling */
+.main-content-div {
+  border: var(--ic-border-width) dashed var(--ic-architectural-400);
+  padding: var(--ic-space-md);
+  height: 800px;
+}
+
+ic-text-field {
+  --input-width: 21.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  ic-text-field {
+    --input-width: 100%;
+    flex: 1 1 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .input-area {
+    gap: var(--ic-space-xs);
+  }
+}
