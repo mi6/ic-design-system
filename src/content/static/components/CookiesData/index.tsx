@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { debounce } from "../../../../utils/helpers";
 
 import CookiesCards from "./CookiesCards";
@@ -31,14 +31,18 @@ const CookiesData = ({ headers, data, caption }: CookiesDataProps) => {
 
   const [viewportWidth, setViewportWidth] = useState(defaultViewportWidth);
 
-  React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      debounce(() => setViewportWidth(window.innerWidth))
-    );
+  useEffect(() => {
+    const handleResize = debounce(() => setViewportWidth(window.innerWidth));
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
-  if (viewportWidth > 991) {
+  if (viewportWidth > 992) {
     return <CookiesTable {...props} />;
   }
 
