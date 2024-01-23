@@ -37,6 +37,10 @@
   flex-wrap: wrap;
 }
 
+.comp-zone.pattern {
+  container-type: inline-size;
+}
+
 .comp-zone.centered {
   justify-content: center;
 }
@@ -69,12 +73,11 @@
   display: flex;
   justify-content: flex-end;
   background-color: var(--ic-architectural-40) !important;
+  padding: var(--ic-space-xxs);
 }
 
-.snippet-container ic-button {
-  margin-top: var(--ic-space-xxs);
-  margin-right: var(--ic-space-xs);
-  margin-bottom: var(--ic-space-xs);
+.snippet-container.pattern {
+  justify-content: space-between;
 }
 
 .snippet-container ic-button button.button {
