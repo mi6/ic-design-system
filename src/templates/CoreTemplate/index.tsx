@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import clsx from "clsx";
 
@@ -20,6 +20,7 @@ import WrappedH4 from "../../components/WrappedH4";
 import WrappedLi from "../../components/WrappedLi";
 import WrappedLink from "../../components/WrappedLink";
 import WrappedP from "../../components/WrappedP";
+import PageMetadataContext from "../../context/PageMetadata";
 
 const { MDXProvider } = require("@mdx-js/react");
 
@@ -52,6 +53,11 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
     DoubleDoDontCaution,
   };
 
+  const pageTitleValue = useMemo(
+    () => ({ pageTitle: mdx.frontmatter.title }),
+    []
+  );
+
   return (
     <MDXProvider components={shortcodes}>
       <div className={clsx("force", "page-container")}>
@@ -65,7 +71,9 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
         <ic-section-container aligned="center" id="page-section-container">
           <AnchorNav currentPage={mdx.fields.slug} allHeadings={mdx.headings} />
           <div className="content-container">
-            <MDXRenderer>{children}</MDXRenderer>
+            <PageMetadataContext.Provider value={pageTitleValue}>
+              <MDXRenderer>{children}</MDXRenderer>
+            </PageMetadataContext.Provider>
           </div>
           {mdx.fields.navSection === "components" && (
             <ic-toast

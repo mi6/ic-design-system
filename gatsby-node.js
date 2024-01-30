@@ -1,4 +1,5 @@
 const path = require(`path`);
+const fs = require("fs");
 // eslint-disable-next-line import/no-extraneous-dependencies
 const webpack = require("webpack");
 const pagesConfig = require("./src/config");
@@ -236,6 +237,11 @@ exports.createResolvers = ({ createResolvers }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        fs: false,
+      },
+    },
     plugins: [
       /**
        * See line 203 of:
@@ -275,5 +281,54 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         path.resolve(__dirname, "./gatsby-overrides.js")
       ),
     ],
+  });
+};
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const { createNode } = actions;
+
+  // Read all files in the sub-directories of the patterns folder
+  function getFilePaths(dirPath) {
+    let filePaths = [];
+    const files = fs.readdirSync(dirPath);
+
+    files.forEach((file) => {
+      const absolutePath = path.join(dirPath, file);
+      if (fs.statSync(absolutePath).isDirectory()) {
+        filePaths = filePaths.concat(getFilePaths(absolutePath));
+      } else {
+        filePaths.push(absolutePath);
+      }
+    });
+
+    return filePaths;
+  }
+
+  // Read all files in the patterns folder
+  const patternsDir = path.resolve(
+    __dirname,
+    "src/content/structured/patterns/templates"
+  );
+  const filePaths = getFilePaths(patternsDir);
+
+  // For each file in the patterns folder, read the contents of the file and create a data node
+  filePaths.forEach((filePath) => {
+    const content = fs.readFileSync(filePath, "utf8");
+    const regex = /(?:\\|\/)patterns(?:\\|\/)templates((?:\\|\/).*)$/;
+    const regexMatchedFilePath = filePath.match(regex)[0];
+
+    const nodeMeta = {
+      id: createNodeId(`${regexMatchedFilePath}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: `PatternsTemplates`,
+        contentFilePath: regexMatchedFilePath,
+        content,
+        contentDigest: createContentDigest(content),
+      },
+    };
+
+    createNode(nodeMeta);
   });
 };

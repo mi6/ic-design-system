@@ -72,9 +72,7 @@
 }
 
 .snippet-container ic-button {
-  margin-top: var(--ic-space-xxs);
-  margin-right: var(--ic-space-xs);
-  margin-bottom: var(--ic-space-xs);
+  margin: var(--ic-space-xxs) var(--ic-space-xxs) var(--ic-space-xxs) 0;
 }
 
 .snippet-container ic-button button.button {
