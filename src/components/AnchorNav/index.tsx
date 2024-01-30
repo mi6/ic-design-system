@@ -101,23 +101,21 @@ const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage }) => {
       .replace("/components/", "");
   }
 
-  return (
-    headings.length > 0 && (
-      <div className="side-nav">
-        <nav
-          aria-label={`${currentPageName} ${currTab} page contents`}
-          className="nav"
-        >
-          <div className="contents-header">
-            <ic-typography variant="subtitle-large">Contents</ic-typography>
-          </div>
-          <ul className="nav-item-list">
-            {headings.map(({ value }, index) => getNavListItem(value, index))}
-          </ul>
-        </nav>
-      </div>
-    )
-  );
+  return headings.length > 0 ? (
+    <div className="side-nav">
+      <nav
+        aria-label={`${currentPageName} ${currTab} page contents`}
+        className="nav"
+      >
+        <div className="contents-header">
+          <ic-typography variant="subtitle-large">Contents</ic-typography>
+        </div>
+        <ul className="nav-item-list">
+          {headings.map(({ value }, index) => getNavListItem(value, index))}
+        </ul>
+      </nav>
+    </div>
+  ) : null;
 };
 
 export default AnchorNav;
