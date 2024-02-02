@@ -1,7 +1,7 @@
 ---
 path: "/components/card/code"
 
-date: "2023-10-24"
+date: "2024-02-02"
 
 title: "Card"
 
@@ -118,12 +118,12 @@ export const snippets = [
       slot="interaction-controls" 
       style={{ display: "flex", gap: "16px" 
       }}>
-      <IcButton variant="primary">Accept</IcButton>
-      <IcButton variant="secondary">Cancel</IcButton>
+      <ic-button variant="primary">Accept</ic-button>
+      <ic-button variant="secondary">Cancel</ic-button>
     </div>
-    <IcTypography slot="expanded-content" variant="body">
+    <ic-typography slot="expanded-content" variant="body">
       To cancel your order click cancel.
-    </IcTypography>
+    </ic-typography>
 </ic-card>`,
   },
   {
@@ -697,7 +697,7 @@ export const topImage = [
       <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
       <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </SlottedSVG>
-    <SlottedSVG>
+    <SlottedSVG
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
@@ -707,8 +707,8 @@ export const topImage = [
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
     </SlottedSVG>
-    <icButton variant="icon" title="More information" slot="interaction-button">
-      <SlottedSVG>
+    <IcButton variant="icon" title="More information" slot="interaction-button">
+      <SlottedSVG
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -1393,6 +1393,7 @@ export const fullWidth = [
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
+  fullWidth="true"
   clickable="true"> 
  <svg
     slot="icon"
@@ -1412,6 +1413,7 @@ export const fullWidth = [
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
+  fullWidth
   clickable>
  <SlottedSVG
     slot="icon"
@@ -1453,7 +1455,7 @@ export const fullWidth = [
 export const wrapped = [
   {
     language: "Web component",
-    snippet: `<a href="">
+    snippet: `<a href="/">
   <ic-card 
     heading="Americano order"
     subheading="Name: Michael"
@@ -1473,7 +1475,7 @@ export const wrapped = [
   },
   {
     language: "React",
-    snippet: `<a href="">
+    snippet: `<a href="/">
   <IcCard 
     heading="Americano order"
     subheading="Name: Michael"
