@@ -1,7 +1,7 @@
 ---
 path: "/components/search-bar/code"
 
-date: "2023-10-25"
+date: "2024-02-02"
 
 title: "Search bar"
 
@@ -429,12 +429,16 @@ const changeHandler = (event) =>{
     setResults([]);
   }
 }
-<IcSearchBar placeholder="Start typing to search…" label="What is your favourite coffee?"
-  debounce="300"
-  disableFilter
-  options={results}
-  onIcChange={changeHandler}
-/>`,
+return(
+<>
+  <IcSearchBar placeholder="Start typing to search…" label="What is your favourite coffee?"
+    debounce="300"
+    disableFilter
+    options={results}
+    onIcChange={changeHandler}
+  />
+</>
+);`,
   },
 ];
 

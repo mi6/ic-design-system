@@ -1,7 +1,7 @@
 ---
 path: "/components/tabs/code"
 
-date: "2023-04-20"
+date: "2024-02-02"
 
 title: "Tabs"
 
@@ -357,28 +357,29 @@ export const compact = [
   },
   {
     language: "React",
-    snippet: `<IcTabContext class="tabs">
-    <IcTabGroup label="Example tab group">
-      <IcTab>Ingredients</IcTab>
-      <IcTab>Method</IcTab>
-      <IcTab>History</IcTab>
-      <IcTab>Drinks</IcTab>
-      <IcTab>Recipes</IcTab>
-    </IcTabGroup>
-    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
-    <IcTabPanel>Tab Two - Method</IcTabPanel>
-    <IcTabPanel>Tab Three - History</IcTabPanel>
-    <IcTabPanel>Tab Four - Drinks</IcTabPanel>
-    <IcTabPanel>Tab Five - Recipes</IcTabPanel>
-  <style>
-    .tabs ic-tab-group,
-    .tabs ic-tab-panel {
-      width: 60%;
-      margin-left: auto;
-      margin-right: auto;
+    snippet: `const compactStyle = {
+      width: "60%",
+      marginLeft: "auto",
+      marginRight: "auto",
     }
-  </style>
-</IcTabContext>`,
+return (
+  <>
+    <IcTabContext style={compactStyle}>
+        <IcTabGroup label="Example tab group">
+          <IcTab>Ingredients</IcTab>
+          <IcTab>Method</IcTab>
+          <IcTab>History</IcTab>
+          <IcTab>Drinks</IcTab>
+          <IcTab>Recipes</IcTab>
+        </IcTabGroup>
+        <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+        <IcTabPanel>Tab Two - Method</IcTabPanel>
+        <IcTabPanel>Tab Three - History</IcTabPanel>
+        <IcTabPanel>Tab Four - Drinks</IcTabPanel>
+        <IcTabPanel>Tab Five - Recipes</IcTabPanel>
+    </IcTabContext>
+  </>
+);`,
   },
 ];
 

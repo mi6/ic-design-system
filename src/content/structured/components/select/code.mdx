@@ -1,7 +1,7 @@
 ---
 path: "/components/select/code"
 
-date: "2023-10-25"
+date: "2024-02-02"
 
 title: "Select"
 
@@ -1047,8 +1047,7 @@ const changeHandler = (event) => {
     if (newValue && newValue.length > 1) {
       const mockAPI = (query) => {
         const filteredResults = mockData.filter((item) => 
-          item.label.toLowerCase().includes(query.toLowerCase());
-        );
+          item.label.toLowerCase().includes(query.toLowerCase()));
         return new Promise(resolve => { 
           setTimeout(() => resolve(filteredResults), 1000)
         });
@@ -1059,16 +1058,20 @@ const changeHandler = (event) => {
     }
   }  
 }
-<IcSelect placeholder="Select an option…" label="What is your favourite coffee?" 
-  debounce="300"
-  searchable
-  disableFilter
-  charactersUntilSuggestions="2"
-  options={results} 
-  onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
-  onIcClear={() => setResults([])}
-  onIcChange={changeHandler}
-/>`,
+return(
+  <>
+    <IcSelect placeholder="Select an option…" label="What is your favourite coffee?" 
+      debounce="300"
+      searchable
+      disableFilter
+      charactersUntilSuggestions="2"
+      options={results} 
+      onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
+      onIcClear={() => setResults([])}
+      onIcChange={changeHandler}
+    />
+  </>
+);`,
   },
 ];
 
