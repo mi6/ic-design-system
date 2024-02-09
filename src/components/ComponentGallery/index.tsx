@@ -32,12 +32,15 @@ const ComponentGallery: React.FC = () => {
         uniqueComponentDetails.map((item: ComponentDetails) => (
           <li>
             <GatsbyLink to={`${item.path}`}>
-              <ic-card
-                heading={item.title}
-                message={item.subTitle}
-                full-width
-                clickable
-              />
+              <ic-card message={item.subTitle} full-width clickable>
+                <ic-typography
+                  slot="heading"
+                  variant="h4"
+                  aria-label={`${item.title} component.`}
+                >
+                  <h4>{item.title}</h4>
+                </ic-typography>
+              </ic-card>
             </GatsbyLink>
           </li>
         ))}
