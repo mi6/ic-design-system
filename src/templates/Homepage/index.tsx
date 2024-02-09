@@ -82,11 +82,14 @@ const Homepage: React.FC = () => {
               homepage.cards.content.map((item: homepageCardItem) => (
                 <li>
                   <GatsbyLink to={item.path}>
-                    <ic-card
-                      heading={item.title}
-                      message={item.description}
-                      full-width
-                    >
+                    <ic-card message={item.description} full-width>
+                      <ic-typography
+                        slot="heading"
+                        variant="h4"
+                        aria-label={`${item.title}.`}
+                      >
+                        <h4>{item.title}</h4>
+                      </ic-typography>
                       {renderIcon(item.icon)}
                     </ic-card>
                   </GatsbyLink>
