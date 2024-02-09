@@ -48,7 +48,7 @@ export const snippets = [
 <script>
   var icPopover = document.querySelector("#popover-menu");
   function handleClick() {
-    icPopover.open = true;
+    icPopover.open = !icPopover.open;
   }
 </script>
 <div>
@@ -71,7 +71,7 @@ export const snippets = [
     language: "React",
     snippet: `const popoverEl = useRef(null);
 const handleClick = () => {
-  popoverEl.current.open = true;
+  popoverEl.current.open = !popoverEl.current.open;
 };
 return (
   <>
@@ -111,7 +111,7 @@ return (
 export const DemoPopover = () => {
   const popoverEl = useRef(null);
   const handleClick = () => {
-    popoverEl.current.open = true;
+    popoverEl.current.open = !popoverEl.current.open;
   };
   return (
     <>
@@ -197,7 +197,7 @@ export const snippetsButtons = [
 <script>
   var icPopover = document.querySelector("#popover-menu-2");
   function handleClick() {
-    icPopover.open = true;
+    icPopover.open = !icPopover.open;
   }
 </script>
 <div>
@@ -229,7 +229,7 @@ export const snippetsButtons = [
     language: "React",
     snippet: `const popoverEl = useRef(null);
 const handleClick = () => {
-  popoverEl.current.open = true;
+  popoverEl.current.open = !popoverEl.current.open;
 };
 return (
   <>
@@ -281,7 +281,7 @@ return (
 export const ButtonsPopover = () => {
   const popoverEl = useRef(null);
   const handleClick = () => {
-    popoverEl.current.open = true;
+    popoverEl.current.open = !popoverEl.current.open;
   };
   return (
     <>
@@ -366,7 +366,7 @@ export const snippetsGroups = [
 <script>
   var icPopover = document.querySelector("#popover-menu-3");
   function handleClick() {
-    icPopover.open = true;
+    icPopover.open = !icPopover.open;
   }
 </script>
 <div>
@@ -386,7 +386,7 @@ export const snippetsGroups = [
     language: "React",
     snippet: `const popoverEl = useRef(null);
 const handleClick = () => {
-  popoverEl.current.open = true;
+  popoverEl.current.open = !popoverEl.current.open;
 };
 return (
   <>
@@ -426,7 +426,7 @@ return (
 export const GroupsPopover = () => {
   const popoverEl = useRef(null);
   const handleClick = () => {
-    popoverEl.current.open = true;
+    popoverEl.current.open = !popoverEl.current.open;
   };
   return (
     <>

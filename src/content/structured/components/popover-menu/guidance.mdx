@@ -41,7 +41,7 @@ Click on the 'More Information' button below to view an example of the popover m
 export const IntroPopover = () => {
   const popoverEl = useRef(null);
   const handleClick = () => {
-    popoverEl.current.open = true;
+    popoverEl.current.open = !popoverEl.current.open;
   };
   return (
     <>
