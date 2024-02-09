@@ -1,0 +1,117 @@
+---
+path: "/patterns/navigation-patterns/top-navigation-layout"
+
+navPriority: 1
+
+date: "2024-02-09"
+
+title: "Top navigation layout"
+
+subTitle: "Use the top navigation layout to quickly set up a page where the top navigation menu is the primary form of navigation."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/navigation-patterns/top-navigation-layout.mdx"
+---
+
+import { IcAlert } from "@ukic/react";
+import topNavigationPatternFig1 from "./images/fig-1-example-of-theming-applied-to-top-navigation-layout@2x.png";
+
+## Introduction
+
+<ComponentPreview>
+  <IcAlert heading="Pattern code preview to go here." variant="info" />
+</ComponentPreview>
+
+This pattern includes the components:
+
+- [Top navigation](/components/top-navigation)
+- [Section container](/components/section-container)
+- [Footer](/components/footer)
+- [Classification banner](/components/classification-banner)
+
+With options for:
+
+- [Page header](/components/page-header)
+- [Mega-menu](/components/top-navigation)
+- [Back to top](/components/back-to-top)
+
+## When to use
+
+When choosing a layout pattern, make sure it works for all pages within your app and avoid switching layouts on different pages.
+
+Use the top navigation layout for article pages or content heavy apps with lots of text.
+
+Use the top navigation layout with a mega-menu for access to a large range of navigation items.
+
+Use a mega-menu for apps with complex page structures where every page should be accessible from any other page through the mega-menu. For example, department stores or supermarkets use a top navigation with mega-menu to provide access to their large number of product categories.
+
+## When not to use
+
+For apps that require constant access to switch between pages, use side navigation as it's better suited for providing quick access and maximising the screen space for page content.
+
+Use either the top navigation layout or the side navigation layout. Don't use both at the same time.
+
+## Implementation
+
+Make sure the pattern always fits the entire viewport and is never within another page container. The pattern content will adapt responsively when the viewport changes.
+
+Always place the footer at the bottom of the page and below the fold meaning users should
+scroll to see it.
+
+## Variants
+
+Use the top navigation layout with additional components including page header to create other common layouts.
+
+### Page header
+
+Use a page header to display an introduction to the content of the page. Add additional elements to provide actions, navigation or inputs at the page level.
+
+For more information, see the [page header component](/components/page-header).
+
+<ComponentPreview>
+  <IcAlert heading="Pattern code preview to go here." variant="info" />
+</ComponentPreview>
+
+### Mega-menu
+
+Use a top navigation with a mega-menu for apps with more than eight navigation options or options that can be grouped into categories. The main link groups are displayed in the top navigation and open a mega-menu when hovered over or focused.
+
+For more information, see the [mega-menu component](/components/top-navigation#mega-menu).
+
+<ComponentPreview>
+  <IcAlert heading="Pattern code preview to go here." variant="info" />
+</ComponentPreview>
+
+### Back to top
+
+Use the back to top component to help people quickly return to the top of a long page.
+
+Consider using it on all apps to improve usability for everyone, including keyboard-only and some assistive technology users.
+
+Don't use back to top when the page is designed to fill the viewport without scrolling.
+
+For more information, see the [back to top component](/components/back-to-top).
+
+<ComponentPreview>
+  <IcAlert heading="Pattern code preview to go here." variant="info" />
+</ComponentPreview>
+
+## Customisation
+
+This pattern can be themed to change the look and feel of the app. Use the [custom theme](/get-started/install-components/custom-theme) guidance to change your app's theme. Make sure to select your theme in line with the accessibility requirements around colour contrast.
+
+<DoDontCaution
+  imageSrc={topNavigationPatternFig1}
+  imageAlt="An example page showing the layout with an alternatively themed look."
+  state="none"
+  caption="An example of the top navigation layout themed to an alternative colour."
+/>
+
+## Accessibility considerations
+
+When configuring a page make sure to follow all [accessibility guidance](/accessibility). Most accessibility requirements are covered by the individual components. For further accessibility information see the individual component pages.
+
+We’ve tested this pattern against WCAG 2.1 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.
+
+## Related patterns
+
+- [Side navigation layout](/patterns/navigation-patterns/side-navigation-layout)
