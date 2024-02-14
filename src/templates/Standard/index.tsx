@@ -53,6 +53,11 @@ const Template: React.FC<TemplateProps> = ({
           </div>
         </div>
         <div className="page-content">
+          <a
+            id="page-content"
+            aria-label={`${mdx.frontmatter.title} page content`}
+            tabIndex={-1}
+          ></a>
           <CoreMDXLayout mdx={mdx} location={location}>
             {mdx.body}
           </CoreMDXLayout>
