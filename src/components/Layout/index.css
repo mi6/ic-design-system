@@ -1,13 +1,13 @@
-#skip-content-link {
+#skip-main-content-link {
   position: absolute;
   left: -9999px;
 }
 
-#skip-content-link:hover {
+#skip-main-content-link:hover {
   text-decoration: none;
 }
 
-#skip-content-link:focus {
+#skip-main-content-link:focus {
   background: var(--ic-architectural-white);
   position: absolute;
   z-index: 100;

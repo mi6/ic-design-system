@@ -54,7 +54,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
 
   return (
     <MDXProvider components={shortcodes}>
-      <div className={clsx("force", "page-container")} id="page-contents">
+      <div className={clsx("force", "page-container")}>
         <Header
           heading={mdx.frontmatter.title}
           subheading={mdx.frontmatter.subTitle}
