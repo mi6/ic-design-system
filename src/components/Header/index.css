@@ -38,6 +38,10 @@ ic-page-header ic-navigation-item.navigation-item-selected a:focus::before {
   display: none;
 }
 
+#page-content:focus-visible {
+  outline: none;
+}
+
 @media screen and (max-width: 576px) {
   ic-page-header[data-class="page-header"] {
     margin: var(--ic-space-xs) calc(-1 * var(--ic-space-xs)) var(--ic-space-lg);
