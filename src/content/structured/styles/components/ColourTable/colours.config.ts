@@ -190,7 +190,7 @@ export const ColoursStatus = [
       {
         name: "Error dark",
         token: "--ic-status-error-dark",
-        hex: "610A05",
+        hex: "#610A05",
       },
       { name: "Information", token: "--ic-status-info", hex: "#124DB3" },
       {
