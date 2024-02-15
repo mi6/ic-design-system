@@ -239,7 +239,7 @@ const Layout: React.FC<LayoutProps> = ({
           )}
         </ClientOnly>
         <div className="main-page-container">
-          <ic-link href="#main" id="skip-content-link">
+          <ic-link href="#main-content" id="skip-main-content-link">
             Skip to main content
           </ic-link>
           <TopNavWrapper
@@ -249,6 +249,8 @@ const Layout: React.FC<LayoutProps> = ({
             shortTitle={SHORT_TITLE}
           />
           <main id="main" className="homepage-wrapper">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a id="main-content" tabIndex={-1}> </a> 
             {cloneElement(children, { location: location.pathname })}
             <ic-back-to-top target="main" />
           </main>

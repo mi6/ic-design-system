@@ -78,6 +78,9 @@ const Header: React.FC<HeaderProps> = ({
       data-class="page-header"
       sticky-desktop-only
     >
+      <ic-typography slot="heading" variant="h2">
+        <h2 id="page-content" tabIndex={-1}>{heading}</h2>
+      </ic-typography>
       {adornment && (
         <ic-status-tag
           slot="heading-adornment"
