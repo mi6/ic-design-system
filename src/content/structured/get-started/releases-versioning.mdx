@@ -1,7 +1,7 @@
 ---
 path: "/get-started/releases-versions"
 
-date: "2024-02-14"
+date: "2024-02-15"
 
 title: "Releases and versions"
 
@@ -71,6 +71,48 @@ It is important to be aware of a few points when working with Beta components:
 We consider Beta components acceptable for use in production-ready applications, as long as customers are happy with the issues mentioned previously.
 
 We regularly review the stability and reliability of Beta components. When the component meets the criteria it can be transitioned to a stable release.
+
+## Canary components
+
+Canary components are unstable components that are released for testing purposes.
+
+These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
+
+We consider a canary component to be acceptable for moving to Beta once customers have tested its usage and provided enough feedback suggesting they're happy with it.
+
+Canary components can be installed in the same way as our core `@ukic/` packages, but prefixed with canary, e.g. `@ukic/canary-react` or `@ukic/canary-web-components`.
+
+```shell
+// Canary Web Components
+npm i @ukic/canary-web-components @ukic/fonts
+
+// Canary React
+npm i @ukic/canary-react @ukic/fonts
+```
+
+A difference between our canary packages and our core `@ukic/` packages is that canary package versions will follow a `<version>-canary.<build-number>` pattern.
+
+<p>
+  Another difference is that docs for canary components won't appear in the
+  Components guidance section of this site. Instead, docs can be viewed in our
+  Storybook instance for either{" "}
+  <ic-link
+    target="_blank"
+    href="https://mi6.github.io/ic-ui-kit/branches/canary/main/react/?path=/docs/getting-started--docs"
+    rel="noreferer noopener nofollow"
+  >
+    React
+  </ic-link>{" "}
+  or{" "}
+  <ic-link
+    target="_blank"
+    href="https://mi6.github.io/ic-ui-kit/branches/canary/main/web-components/?path=/docs/getting-started--docs"
+    rel="noreferer noopener nofollow"
+  >
+    web components
+  </ic-link>
+  .
+</p>
 
 ## Supporting previous versions
 
