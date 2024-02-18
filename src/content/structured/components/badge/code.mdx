@@ -200,7 +200,7 @@ export const snippetsInformation = [
   Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
-<ic-badge type="icon" slot="badge" variant="info"></ic-badge>
+<ic-badge type="icon" slot="badge" variant="info">
   <svg
     slot="badge-icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +212,8 @@ export const snippetsInformation = [
     <path
       d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
     />
-  </svg> 
+  </svg>
+</ic-badge> 
   Coffee orders
 </ic-button>`,
   },
@@ -327,13 +328,7 @@ export const snippetsNear = [
     language: "Web component",
     snippet: `<div style="padding:16px;">
   <ic-chip label="Americano" style="margin-right:16px;">
-    <ic-badge 
-      type="icon" 
-      slot="badge" 
-      position="near" 
-      variant="success"
-    >
-    </ic-badge>
+    <ic-badge type="icon" slot="badge" position="near" variant="success">
       <svg
         slot="badge-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -343,15 +338,10 @@ export const snippetsNear = [
       >
         <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
       </svg> 
+    </ic-badge>
   </ic-chip>
     <ic-chip label="Americano" style="margin-right:16px;">
-    <ic-badge 
-      type="icon" 
-      slot="badge" 
-      position="far" 
-      variant="success"
-    >
-    </ic-badge>
+    <ic-badge type="icon" slot="badge" position="far" variant="success">
       <svg
         slot="badge-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -361,6 +351,7 @@ export const snippetsNear = [
       >
         <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
       </svg> 
+    </ic-badge>
   </ic-chip>
 </div>`,
   },
@@ -368,12 +359,7 @@ export const snippetsNear = [
     language: "React",
     snippet: `<div style={{padding:"16px"}}>
   <IcChip label="Americano" style={{marginRight:"16px"}}>
-    <IcBadge
-      type="icon"
-      slot="badge"
-      position="near"
-      variant="success"
-    />
+    <IcBadge type="icon" slot="badge" position="near" variant="success">
       <svg
         slot="badge-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -383,14 +369,10 @@ export const snippetsNear = [
       >
         <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
       </svg> 
+    </IcBadge>
   </IcChip>
     <IcChip label="Americano" style={{marginRight:"16px"}}>
-    <IcBadge
-      type="icon"
-      slot="badge"
-      position="far"
-      variant="success"
-    />
+    <IcBadge type="icon" slot="badge" position="far" variant="success">
       <svg
         slot="badge-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -399,7 +381,8 @@ export const snippetsNear = [
         width="24px"
       >
         <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
-      </svg> 
+      </svg>
+    </IcBadge> 
   </IcChip>
 </div>`,
   },
