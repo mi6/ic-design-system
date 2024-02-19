@@ -271,15 +271,15 @@ const Layout: React.FC<LayoutProps> = ({
             ))}
             <div slot="logo" className="logo-wrapper">
               <ic-footer-link href="https://sis.gov.uk">
-                <SISLogo aria-labelledby="SIS Logo" />
-                <span className="link-text">Go to SIS website</span>
+                <SISLogo aria-hidden="true" />
+                <span className="link-text">Go to S.I.S. website</span>
               </ic-footer-link>
               <ic-footer-link href="https://www.mi5.gov.uk">
-                <MI5Logo aria-labelledby="MI5 Logo" />
+                <MI5Logo aria-hidden="true" />
                 <span className="link-text">Go to MI5 website</span>
               </ic-footer-link>
               <ic-footer-link href="https://gchq.gov.uk">
-                <GCHQLogo aria-labelledby="GCHQ Logo" />
+                <GCHQLogo aria-hidden="true" />
                 <span className="link-text">Go to GCHQ website</span>
               </ic-footer-link>
             </div>
