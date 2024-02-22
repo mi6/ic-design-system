@@ -250,7 +250,9 @@ const Layout: React.FC<LayoutProps> = ({
           />
           <main id="main" className="homepage-wrapper">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a id="main-content" tabIndex={-1}> </a> 
+            <a id="main-content" tabIndex={-1}>
+              {" "}
+            </a>
             {cloneElement(children, { location: location.pathname })}
             <ic-back-to-top target="main" />
           </main>
