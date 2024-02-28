@@ -1,7 +1,7 @@
 ---
 path: "/components/chip/accessibility"
 
-date: "2023-02-03"
+date: "2024-02-28"
 
 title: "Chip"
 
@@ -26,6 +26,8 @@ Chips can have `aria-labelledby` or `aria-label` tags that provide additional co
 When an interactive chip is disabled, the `aria-disabled` tag is set to `true`.
 
 Make sure that focus is moved to an intuitive element of the page after a chip is dismissed.
+
+When an icon is slotted into a chip, ensure it either has an accessible label provided through alt text on an `<img>`, a title element within an `<svg>`, or an `aria-label`. If the icon is purely decorative, use `aria-hidden=true` to hide it from assistive technology.
 
 ## For Assistive Technology
 
