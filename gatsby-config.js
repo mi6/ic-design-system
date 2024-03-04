@@ -122,5 +122,31 @@ module.exports = {
       },
     },
     `gatsby-plugin-no-sourcemaps`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: pagesConfig.siteUrl,
+        sitemap: `${pagesConfig.siteUrl}sitemap-index.xml`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/",
+        query: `
+        {
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }`,
+        resolveSiteUrl: () => pagesConfig.siteUrl,
+        resolvePages: (data) => data.allSitePage.edges.map((edge) => edge.node),
+      },
+    },
   ],
 };
