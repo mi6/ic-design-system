@@ -1,7 +1,7 @@
 ---
 path: "/components/toggle-button/code"
 
-date: "2024-02-08"
+date: "2024-03-08"
 
 title: "Toggle button"
 
@@ -53,6 +53,10 @@ export const snippetsDefault = [
 ## Toggle button details
 
 <ComponentDetails component="ic-toggle-button" />
+
+## Toggle button group details
+
+<ComponentDetails component="ic-toggle-button-group" />
 
 ## Variants
 
@@ -233,16 +237,31 @@ export const snippetsLight = [
 export const snippetsFullWidth = [
   {
     language: "Web component",
-    snippet: `<ic-toggle-button label="Switch to oat milk" full-width="true"></ic-toggle-button>`,
+    snippet: `<ic-toggle-button-group label="Milk selection" full-width="true" select-type="single">
+  <ic-toggle-button label="Switch to oat milk" ></ic-toggle-button>
+  <ic-toggle-button label="Switch to almond milk" ></ic-toggle-button>
+  <ic-toggle-button label="Switch to coconut milk" ></ic-toggle-button>
+  <ic-toggle-button label="Switch to rice milk" ></ic-toggle-button>
+</ic-toggle-button-group>`,
   },
   {
     language: "React",
-    snippet: `<IcToggleButton label="Switch to oat milk" fullWidth />`,
+    snippet: `<IcToggleButtonGroup fullWidth selectType="single">
+  <IcToggleButton label="Switch to oat milk"/>
+  <IcToggleButton label="Switch to almond milk"/>
+  <IcToggleButton label="Switch to coconut milk"/>
+  <IcToggleButton label="Switch to rice milk"/>
+</IcToggleButtonGroup>`,
   },
 ];
 
 <ComponentPreview style={{ display: "block" }} snippets={snippetsFullWidth}>
-  <IcToggleButton label="Switch to oat milk" fullWidth="true" />
+  <IcToggleButtonGroup fullWidth selectType="single">
+    <IcToggleButton label="Switch to oat milk" />
+    <IcToggleButton label="Switch to almond milk" />
+    <IcToggleButton label="Switch to coconut milk" />
+    <IcToggleButton label="Switch to rice milk" />
+  </IcToggleButtonGroup>
 </ComponentPreview>
 
 ### Icon only
@@ -250,123 +269,118 @@ export const snippetsFullWidth = [
 export const snippetsIconOnly = [
   {
     language: "Web component",
-    snippet: `<ic-toggle-button
-    variant="icon"
-    accessible-label="Switch to oat milk"
->
-    <svg
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
+    snippet: `<ic-toggle-button-group label="Coffee icon variants" variant="icon">
+    <ic-toggle-button accessibleLabel="Coffee icon" variant="icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
         <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </svg>
-</ic-toggle-button>
-<ic-toggle-button
-    variant="icon"
-    accessible-label="Switch to oat milk"
-    loading="true"
->
-    <svg
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </svg>
-</ic-toggle-button>
-<ic-toggle-button
-    variant="icon"
-    accessible-label="Switch to oat milk"
-    disabled="true"
->
-    <svg
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </svg>
-</ic-toggle-button>`,
+      </svg>
+      </ic-toggle-button>
+      <ic-toggle-button accessibleLabel="Loading coffee" variant="icon" loading="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+        </svg>
+      </ic-toggle-button>
+      <ic-toggle-button accessibleLabel="Disabled coffee" variant="icon"  disabled="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+        </svg>
+      </ic-toggle-button>
+    </ic-toggle-button-group>`,
   },
   {
     language: "React",
-    snippet: `<IcToggleButton variant="icon" accessibleLabel="Switch to oat milk">
-    <SlottedSVG
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-</IcToggleButton>
-<IcToggleButton variant="icon" accessibleLabel="Switch to oat milk" loading>
-    <SlottedSVG
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-</IcToggleButton>
-<IcToggleButton variant="icon" accessibleLabel="Switch to oat milk" disabled>
-    <SlottedSVG
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-</IcToggleButton>`,
+    snippet: `<IcToggleButtonGroup label="Coffee icon variants" variant="icon">
+      <IcToggleButton variant="icon" accessibleLabel="Coffee icon">
+        <SlottedSVG
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+        </SlottedSVG>
+      </IcToggleButton>
+      <IcToggleButton variant="icon" accessibleLabel="Loading coffee" loading>
+        <SlottedSVG
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+        </SlottedSVG>
+      </IcToggleButton>
+      <IcToggleButton variant="icon" accessibleLabel="Disabled coffee" disabled>
+        <SlottedSVG
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+        </SlottedSVG>
+      </IcToggleButton>
+  </IcToggleButtonGroup>`,
   },
 ];
 
 <ComponentPreview snippets={snippetsIconOnly}>
-  <IcToggleButton variant="icon" accessibleLabel="Switch to oat milk">
-    <SlottedSVG
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-  </IcToggleButton>
-  <IcToggleButton variant="icon" accessibleLabel="Switch to oat milk" loading>
-    <SlottedSVG
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-  </IcToggleButton>
-  <IcToggleButton variant="icon" accessibleLabel="Switch to oat milk" disabled>
-    <SlottedSVG
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-  </IcToggleButton>
+  <IcToggleButtonGroup label="Coffee icon variants" variant="icon">
+    <IcToggleButton variant="icon" accessibleLabel="Coffee icon">
+      <SlottedSVG
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+    <IcToggleButton variant="icon" accessibleLabel="Loading coffee" loading>
+      <SlottedSVG
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+    <IcToggleButton variant="icon" accessibleLabel="Disabled coffee" disabled>
+      <SlottedSVG
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+  </IcToggleButtonGroup>
 </ComponentPreview>
 
 ### Icon right
@@ -374,8 +388,9 @@ export const snippetsIconOnly = [
 export const snippetsIconRight = [
   {
     language: "Web component",
-    snippet: `<ic-toggle-button label="Switch to oat milk" icon-placement="right">
-    <svg
+    snippet: ` <ic-toggle-button-group label="Milk selection" icon-placement="right">
+  <ic-toggle-button label="Switch to oat milk">
+     <svg
      slot="icon"
      xmlns="http://www.w3.org/2000/svg"
      height="24px"
@@ -385,11 +400,25 @@ export const snippetsIconRight = [
     >
         <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-</ic-toggle-button>`,
+  </ic-toggle-button>
+  <ic-toggle-button label="Switch to almond milk">
+     <svg
+     slot="icon"
+     xmlns="http://www.w3.org/2000/svg"
+     height="24px"
+     viewBox="0 0 24 24"
+     width="24px"
+     fill="#000000"
+    >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </svg>
+  </ic-toggle-button>
+</ic-toggle-button-group>`,
   },
   {
     language: "React",
-    snippet: `<IcToggleButton label="Switch to oat milk" iconPlacement="right">
+    snippet: `<IcToggleButtonGroup label="Milk selection" iconPlacement="right">  
+  <IcToggleButton label="Switch to oat milk" iconPlacement="right">
     <SlottedSVG
      slot="icon"
      xmlns="http://www.w3.org/2000/svg"
@@ -400,71 +429,144 @@ export const snippetsIconRight = [
     >
         <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </SlottedSVG>
-</IcToggleButton>`,
+</IcToggleButton>
+ <IcToggleButton label="Switch to almond milk" iconPlacement="right">
+    <SlottedSVG
+     slot="icon"
+     xmlns="http://www.w3.org/2000/svg"
+     height="24px"
+     viewBox="0 0 24 24"
+     width="24px"
+     fill="#000000"
+    >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </SlottedSVG>
+  </IcToggleButton>
+</IcToggleButtonGroup>
+`,
   },
 ];
 
 <ComponentPreview snippets={snippetsIconRight}>
-  <IcToggleButton label="Switch to oat milk" iconPlacement="right">
-    <SlottedSVG
-      slot="icon"
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-  </IcToggleButton>
+  <IcToggleButtonGroup label="Milk selection" iconPlacement="right">
+    <IcToggleButton label="Switch to oat milk" iconPlacement="right">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+    <IcToggleButton label="Switch to almond milk" iconPlacement="right">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+  </IcToggleButtonGroup>
 </ComponentPreview>
 
 ### Icon top
 
-export const snippetsIconTop = [
+export const snippetsIconTopGroup = [
   {
     language: "Web component",
-    snippet: `<ic-toggle-button label="Switch to oat milk" icon-placement="top">
-    <svg
-     slot="icon"
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </svg>
-</ic-toggle-button>`,
+    snippet: ` <ic-toggle-button-group label="milk selection" icon-placement="top">
+    <ic-toggle-button label="Switch to oat milk" >
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+        >
+            <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </svg>
+    </ic-toggle-button>
+    <ic-toggle-button label="Switch to almond milk" >
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+        >
+            <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </svg>
+    </ic-toggle-button>s
+    </ic-toggle-button-group>
+`,
   },
   {
     language: "React",
-    snippet: `<IcToggleButton label="Switch to oat milk" iconPlacement="top">
-    <SlottedSVG
-     slot="icon"
-     xmlns="http://www.w3.org/2000/svg"
-     height="24px"
-     viewBox="0 0 24 24"
-     width="24px"
-     fill="#000000"
-    >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-</IcToggleButton>`,
+    snippet: ` <IcToggleButtonGroup label="Milk selection" iconPlacement="top">
+    <IcToggleButton label="First toggle" iconPlacement="top">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+      </SlottedSVG>
+    </IcToggleButton>
+    <IcToggleButton label="Second toggle" iconPlacement="top">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+      </SlottedSVG>
+    </IcToggleButton>
+  </IcToggleButtonGroup>`,
   },
 ];
 
-<ComponentPreview snippets={snippetsIconTop}>
-  <IcToggleButton label="Switch to oat milk" iconPlacement="top">
-    <SlottedSVG
-      slot="icon"
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-    </SlottedSVG>
-  </IcToggleButton>
+<ComponentPreview snippets={snippetsIconTopGroup}>
+  <IcToggleButtonGroup label="Milk selection" iconPlacement="top">
+    <IcToggleButton label="Switch to oat milk" iconPlacement="top">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+    <IcToggleButton label="Switch to almond milk" iconPlacement="top">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 0 24 24"
+        width="24px"
+        fill="#000000"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+  </IcToggleButtonGroup>
 </ComponentPreview>
