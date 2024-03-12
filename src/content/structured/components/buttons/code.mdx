@@ -1,7 +1,7 @@
 ---
 path: "/components/button/code"
 
-date: "2023-10-03"
+date: "2024-03-13"
 
 title: "Button"
 
@@ -67,12 +67,14 @@ export const snippetsOtherStates = [
   {
     language: "Web component",
     snippet: `<ic-button variant="primary" disabled="true">Add to order</ic-button>
-<ic-button variant="secondary" loading="true">Loading button</ic-button>`,
+<ic-button variant="secondary" loading="true">Loading button</ic-button>
+<ic-button variant="primary" dropdown="true">Add to order</ic-button>`,
   },
   {
     language: "React",
     snippet: `<IcButton variant="primary" disabled>Add to order</IcButton>
-<IcButton variant="secondary" loading>Loading button</IcButton>`,
+<IcButton variant="secondary" loading>Loading button</IcButton>
+<IcButton variant="primary" dropdown>Add to order</IcButton>`,
   },
 ];
 
@@ -82,6 +84,9 @@ export const snippetsOtherStates = [
   </IcButton>
   <IcButton variant="secondary" loading>
     Loading button
+  </IcButton>
+  <IcButton variant="primary" dropdown>
+    Add to order
   </IcButton>
 </ComponentPreview>
 
@@ -246,4 +251,87 @@ export const snippetsColour = [
   <IcButton variant="primary" appearance="light">
     Add to order
   </IcButton>
+</ComponentPreview>
+
+### File upload
+
+export const FileUpload = () => {
+  function updateFileList(fileArray) {
+    const fileList = [];
+    Array.from(fileArray).forEach((file) => {
+      fileList.push(file.name);
+    });
+    return fileList.join(", ");
+  }
+  return (
+    <IcButton
+      variant="primary"
+      fileUpload
+      accept=".doc, text/plain, .json, .png"
+      onClick={() =>
+        document.addEventListener("icFileSelection", (event) =>
+          console.log(updateFileList(event.detail))
+        )
+      }
+    >
+      Upload File
+    </IcButton>
+  );
+};
+
+export const snippetsFileUpload = [
+  {
+    language: "Web component",
+    snippet: `<ic-button
+  variant="primary"
+  id="file-button"
+  file-upload="true"
+  accept=".doc, text/plain, .json, .png"
+>
+  Upload File
+</ic-button>
+<script>
+  var file;
+  onclick = document
+    .querySelector("#file-button")
+    .addEventListener("icFileSelection", (ev) => {
+      const fileArray = ev.detail;
+      const fileList = [];
+      Array.from(fileArray).forEach((file) => {
+        fileList.push(file.name);
+      });
+      console.log(fileList.join(", "));
+    });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `export const FileUpload = () => {
+  function updateFileList(fileArray) {
+    const fileList = [];
+    Array.from(fileArray).forEach((file) => {
+      fileList.push(file.name);
+    });
+    return fileList.join(", ");
+  }
+  return (
+    <IcButton
+      variant="primary"
+      fileUpload
+      accept=".doc, text/plain, .json, .png"
+      onClick={(event) =>
+        document.addEventListener("icFileSelection", (event) =>
+          console.log(updateFileList(event.detail))
+        )
+      }
+    >
+      Upload File
+    </IcButton>
+  ); 
+};`,
+  },
+];
+
+<ComponentPreview snippets={snippetsFileUpload}>
+  <FileUpload />
 </ComponentPreview>
