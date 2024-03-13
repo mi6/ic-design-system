@@ -148,5 +148,6 @@ module.exports = {
         resolvePages: (data) => data.allSitePage.edges.map((edge) => edge.node),
       },
     },
+    `gatsby-plugin-fix-fouc`,
   ],
 };
