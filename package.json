@@ -23,6 +23,7 @@
     "fs-extra": "^11.1.1",
     "gatsby": "^4.2.0",
     "gatsby-plugin-catch-links": "^4.2.0",
+    "gatsby-plugin-fix-fouc": "^1.0.5",
     "gatsby-plugin-local-search": "^2.0.1",
     "gatsby-plugin-manifest": "^4.2.0",
     "gatsby-plugin-mdx": "^3.20.0",
