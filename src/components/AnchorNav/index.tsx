@@ -29,7 +29,7 @@ const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage }) => {
           }
         });
       },
-      { rootMargin: `10% 0% -80% 0%` }
+      { rootMargin: `20% 0% -70% 0%` }
     );
 
     headingIds.forEach((id) => {
