@@ -6,3 +6,9 @@ ic-typography[data-class="h2"] h4 {
   display: inline-flex;
   align-items: center;
 }
+
+@media screen and (min-width: 1201px) {
+  ic-typography[data-class="h2"] h3 {
+    scroll-margin-top: 12rem;
+  }
+}
