@@ -54,6 +54,13 @@ const EventTable: React.FC<EventTableProps> = ({ eventData }) => {
       <ic-typography variant="h3" apply-vertical-margins>
         <h4>Events</h4>
       </ic-typography>
+      <ic-typography apply-vertical-margins>
+        <p>
+          All components also accept native events supported by the DOM, such as{" "}
+          <code className="language-text">onClick</code> and{" "}
+          <code className="language-text">onKeyDown</code>.
+        </p>
+      </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />
     </>
