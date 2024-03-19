@@ -78,6 +78,13 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
       <ic-typography variant="h3" apply-vertical-margins>
         <h4>Props</h4>
       </ic-typography>
+      <ic-typography apply-vertical-margins>
+        <p>
+          All components also accept native properties supported by the DOM,
+          such as <code className="language-text">className</code> and{" "}
+          <code className="language-text">style</code>.
+        </p>
+      </ic-typography>
       <AttributeTable columns={columns} data={data} />
       <AttributeCards data={data} />
     </>
