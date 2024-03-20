@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://design.sis.gov.uk/sitemap-index.xml
+Host: https://design.sis.gov.uk
