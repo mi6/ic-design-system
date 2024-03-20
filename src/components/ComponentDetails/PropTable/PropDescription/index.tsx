@@ -1,6 +1,7 @@
 import React from "react";
 import CodeAttribute from "../../../CodeAttribute";
 import "./index.css";
+import { backtickToCodeBlock } from "../../../../utils/helpers";
 
 const PropDescription: React.FC<{
   description: string;
@@ -9,7 +10,9 @@ const PropDescription: React.FC<{
   deprecation: string | undefined;
 }> = ({ description, type, required, deprecation }) => (
   <div className="prop-description">
-    {!!description && <ic-typography>{description}</ic-typography>}
+    {!!description && (
+      <ic-typography>{backtickToCodeBlock(description)}</ic-typography>
+    )}
     {required && (
       <ic-typography variant="subtitle-small">Required</ic-typography>
     )}
