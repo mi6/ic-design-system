@@ -8,6 +8,7 @@
 
 #nav-section-button {
   display: none;
+  z-index: 1;
 }
 
 .small-only-open {
@@ -24,6 +25,10 @@
   position: static;
   left: 0;
   padding: var(--ic-space-md);
+}
+
+#icds-section-nav {
+  background-color: var(--ic-architectural-white);
 }
 
 .large-only {
