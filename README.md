@@ -77,3 +77,5 @@ Visit our websites to learn more about:
 Unless stated otherwise, the codebase is released under the [MIT License](https://opensource.org/licenses/MIT). This covers both the codebase and any sample code in the documentation. The documentation is and available under the terms of the [Open Government License v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 
 © Crown copyright 2022
+
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/mi6/ic-design-system/badge)](https://securityscorecards.dev/viewer/?uri=github.com/mi6/ic-design-system)
