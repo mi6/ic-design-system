@@ -29,12 +29,10 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   useEffect(() => {
-    let tabId = "guidance";
-    if (location.indexOf("/accessibility") > 0) {
-      tabId = "accessibility";
-    } else if (location.indexOf("/code") > 0) {
-      tabId = "code";
-    }
+    const tabId =
+      tabs && tabs.findIndex(({ path }) => location === path) !== 0
+        ? location.substring(location.lastIndexOf("/") + 1)
+        : "guidance";
 
     const getActiveLinkEl = () => {
       const el = document.querySelector(`#${tabId}`)
@@ -93,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({
       {tabs?.map(({ title, path }) => (
         <ic-navigation-item
           key={title}
-          id={title.toLowerCase()}
+          id={title.toLowerCase().replace(" ", "-")}
           slot="tabs"
           onClick={tabSwitch}
         >
