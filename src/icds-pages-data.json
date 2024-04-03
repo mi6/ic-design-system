@@ -26,15 +26,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/alt-text.mdx",
       "meta": {
         "relativePath": "accessibility/coding/alt-text.mdx",
-        "createdAt": "2024-04-18T12:40:06.001Z",
-        "lastModified": "2024-04-18T12:40:06.001Z",
+        "createdAt": "2024-04-29T08:57:52.530Z",
+        "lastModified": "2024-04-29T08:57:52.530Z",
         "size": 1744,
         "formattedSize": "1.7 KB"
       }
     },
     {
       "id": "accessibility__coding__ariax",
-      "contents": "\n## Introduction\n\nFavour native HTML over ARIA.\n\nThe Web Accessibility Initiative's [accessible rich internet applications specification](https://www.w3.org/TR/wai-aria/) (WAI-ARIA, or just ARIA) is good for bridging areas with accessibility issues that can't be managed with native HTML.\n\nARIA does not affect how a page is visually presented. It only changes the information used by assistive technologies.\n\n### The first rule or ARIA\n\nThe first rule of [using ARIA](https://www.w3.org/TR/using-aria/) is to favour using native HTML instead of re-purposing an element by adding an ARIA role, state or property to make it accessible.\n\nBy using the semantic HTML you not only get an implicit ARIA role, so the browser knows how to interpret the element, but also other standard functionality such as focus, keyboard and mouse support.\n\n### Time to use ARIA\n\nThe main situation where ARIA can improve the usability even when semantic HTML has been used is with [live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions).\n\nLive regions mean that any dynamic changes within it will be read out to assistive technologies useful to identify errors or of a status change, for example.\n\nTo make an element a live region, use the `aria-live` attribute or a specialised live region `role` such as `role=”alert”`.\n\nIf you have to do add ARIA to unsemantic HTML remember it’s not just about applying the right `role`, you also need to ensure all the other standard functionality is also applied including focus, keyboard and mouse support.\n\n### Learn more about ARIA\n\nTo learn more about ARIA:\n\n<ul>\n  <li>\n    Deque has an easily digestible 3 part blog post for the{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://www.deque.com/?s=ARIA%20Spec%20for%20the%20Uninitiated&post_type=post\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      ARIA spec for the uninitiated\n    </ic-link>\n    .\n  </li>\n  <li>\n    Mozilla also covers{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      ARIA\n    </ic-link>{\" \"}\n    extensively with tutorials and a range of documentation.\n  </li>\n  <li>\n    Google's Web Fundamentals gives a thorough{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://developers.google.com/web/fundamentals/accessibility/semantics-aria\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      introduction to ARIA\n    </ic-link>\n    .\n  </li>\n  <li>\n    W3’s{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://www.w3.org/TR/using-aria/\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      using ARIA\n    </ic-link>{\" \"}\n    gives more guidance on how to use ARIA properly including the all five rules\n    of ARIA.\n  </li>\n</ul>\n\n## When it goes wrong\n\nUnderstanding when and how to use ARIA is key to improving the experience to assistive technology users. Even using ARIA where it’s not needed on semantic HTML can cause undesired effects on assistive technology.\n\n<p>\n  Deque’s{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.deque.com/blog/wai-aria-top-6-mistakes-to-avoid/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    WAI-ARIA: Top 6 Mistakes to avoid\n  </ic-link>{\" \"}\n  states that “misuse of ARIA creates a more inaccessible experience than one\n  without ARIA”.\n</p>",
+      "contents": "\n## Introduction\n\nFavour native HTML over ARIA.\n\nThe Web Accessibility Initiative's [accessible rich internet applications specification](https://www.w3.org/TR/wai-aria/) (WAI-ARIA, or just ARIA) is good for bridging areas with accessibility issues that can't be managed with native HTML.\n\nARIA does not affect how a page is visually presented. It only changes the information used by assistive technologies.\n\n### The first rule or ARIA\n\nThe first rule of [using ARIA](https://www.w3.org/TR/using-aria/) is to favour using native HTML instead of re-purposing an element by adding an ARIA role, state or property to make it accessible.\n\nBy using the semantic HTML you not only get an implicit ARIA role, so the browser knows how to interpret the element, but also other standard functionality such as focus, keyboard and mouse support.\n\n### Time to use ARIA\n\nThe main situation where ARIA can improve the usability even when semantic HTML has been used is with [live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions).\n\nLive regions mean that any dynamic changes within it will be read out to assistive technologies useful to identify errors or of a status change, for example.\n\nTo make an element a live region, use the `aria-live` attribute or a specialised live region `role` such as `role=”alert”`.\n\nIf you have to do add ARIA to unsemantic HTML remember it’s not just about applying the right `role`, you also need to ensure all the other standard functionality is also applied including focus, keyboard and mouse support.\n\n### Learn more about ARIA\n\nTo learn more about ARIA:\n\n<ul>\n  <li>\n    Deque has an easily digestible 3 part blog post for the{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://www.deque.com/?s=ARIA%20Spec%20for%20the%20Uninitiated&post_type=post\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      ARIA spec for the uninitiated\n    </ic-link>\n    .\n  </li>\n  <li>\n    Mozilla also covers{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      ARIA\n    </ic-link>{\" \"}\n    extensively with tutorials and a range of documentation.\n  </li>\n  <li>\n    Google's Web Fundamentals gives a thorough{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://developers.google.com/web/fundamentals/accessibility/semantics-aria\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      introduction to ARIA\n    </ic-link>\n    .\n  </li>\n  <li>\n    W3’s{\" \"}\n    <ic-link\n      target=\"_blank\"\n      href=\"https://www.w3.org/TR/using-aria/\"\n      rel=\"noreferer noopener nofollow\"\n    >\n      using ARIA\n    </ic-link>{\" \"}\n    gives more guidance on how to use ARIA properly including the all five rules\n    of ARIA.\n  </li>\n</ul>\n\n## When it goes wrong\n\nUnderstanding when and how to use ARIA is key to improving the experience to assistive technology users. Even using ARIA where it’s not needed on semantic HTML can cause undesired effects on assistive technology.\n\n<p>\n  Deque’s{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.deque.com/blog/wai-aria-top-6-mistakes-to-avoid/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    WAI-ARIA: Top 6 Mistakes to avoid\n  </ic-link>{\" \"}\n  states that “misuse of ARIA creates a more inaccessible experience than one\n  without ARIA”.\n</p>\n",
       "path": "/accessibility/coding/aria",
       "navPriority": 10,
       "date": "2024-04-18",
@@ -43,15 +43,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/aria.mdx",
       "meta": {
         "relativePath": "accessibility/coding/aria.mdx",
-        "createdAt": "2024-04-18T12:40:15.993Z",
-        "lastModified": "2024-04-18T12:40:15.993Z",
-        "size": 3649,
+        "createdAt": "2024-04-29T08:57:52.530Z",
+        "lastModified": "2024-04-29T08:57:52.530Z",
+        "size": 3650,
         "formattedSize": "3.6 KB"
       }
     },
     {
       "id": "accessibility__coding__cssx",
-      "contents": "\n## Introduction\n\nWrite CSS in a way that can be overridden by the user via their browser.\n\nDon't use inline styles; keep CSS separate to the HTML. This can be a separate CSS stylesheet or via other techniques like CSS-in-JS.\n\nDecoupling the styling will create more flexibility as the visual styling can be updated without touching the HTML.\n\n<p>\n  Don't use <code style={{ backgroundColor: \"#EEEFF0\" }}>!important</code> on a\n  style declaration as this overrides any other declarations. You can read more\n  information from Mozilla on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#The_!important_exception\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    importance exception\n  </ic-link>\n  .\n</p>\n\n## When it goes wrong\n\nBoth inline styles and `!important` will override user-defined styles that can be set using browsers and assistive technologies.\n\nAssistive technologies and users may change browser default styles to improve accessibility. For example users with visual impairments or dyslexia may increase the font size or override colours.",
+      "contents": "\n## Introduction\n\nWrite CSS in a way that can be overridden by the user via their browser.\n\nDon't use inline styles; keep CSS separate to the HTML. This can be a separate CSS stylesheet or via other techniques like CSS-in-JS.\n\nDecoupling the styling will create more flexibility as the visual styling can be updated without touching the HTML.\n\n<p>\n  Don't use <code style={{ backgroundColor: \"#EEEFF0\" }}>!important</code> on a\n  style declaration as this overrides any other declarations. You can read more\n  information from Mozilla on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#The_!important_exception\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    importance exception\n  </ic-link>\n  .\n</p>\n\n## When it goes wrong\n\nBoth inline styles and `!important` will override user-defined styles that can be set using browsers and assistive technologies.\n\nAssistive technologies and users may change browser default styles to improve accessibility. For example users with visual impairments or dyslexia may increase the font size or override colours.\n",
       "path": "/accessibility/coding/css",
       "navPriority": 9,
       "date": "2024-04-18",
@@ -60,15 +60,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/css.mdx",
       "meta": {
         "relativePath": "accessibility/coding/css.mdx",
-        "createdAt": "2024-04-18T12:40:28.477Z",
-        "lastModified": "2024-04-18T12:40:28.477Z",
-        "size": 1387,
+        "createdAt": "2024-04-29T08:57:52.530Z",
+        "lastModified": "2024-04-29T08:57:52.530Z",
+        "size": 1388,
         "formattedSize": "1.4 KB"
       }
     },
     {
       "id": "accessibility__coding__doctypex",
-      "contents": "\n## Introduction\n\nAll HTML documents must start with a `<!DOCTYPE>` declaration above the `<html>` tag.\n\nThis tells the browser how to render the HTML, as in this example:\n\n```html\n<!DOCTYPE html>\n```\n\n<p>\n  This is the HTML5 doctype but W3C provides information on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.w3.org/wiki/Doctypes_and_markup_styles\"\n    rel=\"noreferer noopener nofollow\"\n    id=\"fn-1\"\n  >\n    choosing the right doctype\n  </ic-link>\n  .\n</p>\n\n## When it goes wrong\n\n<p>\n  If no valid{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;!DOCTYPE&gt;</code> is\n  declared, the browser switches to{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    quirks mode\n  </ic-link>\n  . This means it emulates non-standard behaviour of deprecated browsers.\n</p>\n\nIn this case, elements from the HTML5 specification may not parse or render properly. This can cause issues for people who use assistive technologies.",
+      "contents": "\n## Introduction\n\nAll HTML documents must start with a `<!DOCTYPE>` declaration above the `<html>` tag.\n\nThis tells the browser how to render the HTML, as in this example:\n\n```html\n<!DOCTYPE html>\n```\n\n<p>\n  This is the HTML5 doctype but W3C provides information on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.w3.org/wiki/Doctypes_and_markup_styles\"\n    rel=\"noreferer noopener nofollow\"\n    id=\"fn-1\"\n  >\n    choosing the right doctype\n  </ic-link>\n  .\n</p>\n\n## When it goes wrong\n\n<p>\n  If no valid{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;!DOCTYPE&gt;</code> is\n  declared, the browser switches to{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    quirks mode\n  </ic-link>\n  . This means it emulates non-standard behaviour of deprecated browsers.\n</p>\n\nIn this case, elements from the HTML5 specification may not parse or render properly. This can cause issues for people who use assistive technologies.\n",
       "path": "/accessibility/coding/doctype",
       "navPriority": 1,
       "date": "2024-04-18",
@@ -77,15 +77,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/index.mdx",
       "meta": {
         "relativePath": "accessibility/coding/doctype.mdx",
-        "createdAt": "2024-04-18T12:40:36.757Z",
-        "lastModified": "2024-04-18T12:40:36.757Z",
-        "size": 1341,
+        "createdAt": "2024-04-29T08:57:52.530Z",
+        "lastModified": "2024-04-29T08:57:52.530Z",
+        "size": 1342,
         "formattedSize": "1.3 KB"
       }
     },
     {
       "id": "accessibility__coding__document-structurex",
-      "contents": "\n## Introduction\n\nUse semantic HTML Elements for document structure. Three semantic elements are used to give overall document structure:\n\n- `<html>` is the root of an HTML document and contains all elements except the `<!DOCTYPE>` declaration.\n- `<head>` is the container for metadata such as document title, styles and scripts. The `<head>` element is the first element in the `<html>` element before the `<body>`.\n- `<body>` defines the body or content of the HTML document. There can only be one `<body>` in the document.\n\nThese elements ensure consistency for how a page is displayed on every browser.\n\nThe following example shows the semantic elements for document structure:\n\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>Example accurate and meaningful title</title>\n  </head>\n  <body>\n    <h1>Example content heading</h1>\n    <p>Example content paragraph</p>\n  </body>\n</html>\n```\n\n## When it goes wrong\n\nNot using the document structure elements accordingly may mean the page is not correctly rendered in every browser.\n\n<p>\n  Omitting the <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;html&gt;</code>,{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;head&gt;</code> and{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;body&gt;</code> is allowed\n  under certain conditions in the{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.w3.org/TR/2011/WD-html5-20110525/syntax.html#optional-tags\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    HTML spec\n  </ic-link>\n  .\n</p>",
+      "contents": "\n## Introduction\n\nUse semantic HTML Elements for document structure. Three semantic elements are used to give overall document structure:\n\n- `<html>` is the root of an HTML document and contains all elements except the `<!DOCTYPE>` declaration.\n- `<head>` is the container for metadata such as document title, styles and scripts. The `<head>` element is the first element in the `<html>` element before the `<body>`.\n- `<body>` defines the body or content of the HTML document. There can only be one `<body>` in the document.\n\nThese elements ensure consistency for how a page is displayed on every browser.\n\nThe following example shows the semantic elements for document structure:\n\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>Example accurate and meaningful title</title>\n  </head>\n  <body>\n    <h1>Example content heading</h1>\n    <p>Example content paragraph</p>\n  </body>\n</html>\n```\n\n## When it goes wrong\n\nNot using the document structure elements accordingly may mean the page is not correctly rendered in every browser.\n\n<p>\n  Omitting the <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;html&gt;</code>,{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;head&gt;</code> and{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;body&gt;</code> is allowed\n  under certain conditions in the{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.w3.org/TR/2011/WD-html5-20110525/syntax.html#optional-tags\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    HTML spec\n  </ic-link>\n  .\n</p>\n",
       "path": "/accessibility/coding/document-structure",
       "navPriority": 5,
       "date": "2024-04-18",
@@ -94,15 +94,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/document-structure.mdx",
       "meta": {
         "relativePath": "accessibility/coding/document-structure.mdx",
-        "createdAt": "2024-04-18T12:40:45.545Z",
-        "lastModified": "2024-04-18T12:40:45.545Z",
-        "size": 1830,
+        "createdAt": "2024-04-29T08:57:52.530Z",
+        "lastModified": "2024-04-29T08:57:52.530Z",
+        "size": 1831,
         "formattedSize": "1.8 KB"
       }
     },
     {
       "id": "accessibility__coding__headingsx",
-      "contents": "\n## Introduction\n\nUse HTML headings `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>` and `<h6>` properly.\n\nHeadings are hierarchical so `<h1>` is the most important then `<h2>` through to `<h6>` being the least important. Use one `<h1>` per page.\n\nHeadings at the same level or higher start a new section, whilst headings at a lower level start a subsection. Don't skip heading levels.\n\nIf the styling of a heading doesn't look right visually, for example too big or bold, style it with CSS but always use the correct semantic heading.\n\nThe text for a heading should be descriptive, meaningful and unique on the page.\n\n## When it goes wrong\n\nWhen semantic HTML elements for headings aren't used, the page has no structure or definition available to assistive technologies.\n\nHeadings provide navigation landmarks which assistive technologies can navigate over to find the area they want on the page.\n\nScreen readers can navigate and jump to a heading, in the same way as a sighted user would scan for the heading they need.",
+      "contents": "\n## Introduction\n\nUse HTML headings `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>` and `<h6>` properly.\n\nHeadings are hierarchical so `<h1>` is the most important then `<h2>` through to `<h6>` being the least important. Use one `<h1>` per page.\n\nHeadings at the same level or higher start a new section, whilst headings at a lower level start a subsection. Don't skip heading levels.\n\nIf the styling of a heading doesn't look right visually, for example too big or bold, style it with CSS but always use the correct semantic heading.\n\nThe text for a heading should be descriptive, meaningful and unique on the page.\n\n## When it goes wrong\n\nWhen semantic HTML elements for headings aren't used, the page has no structure or definition available to assistive technologies.\n\nHeadings provide navigation landmarks which assistive technologies can navigate over to find the area they want on the page.\n\nScreen readers can navigate and jump to a heading, in the same way as a sighted user would scan for the heading they need.\n",
       "path": "/accessibility/coding/headings",
       "navPriority": 7,
       "date": "2024-04-18",
@@ -111,9 +111,9 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/headings.mdx",
       "meta": {
         "relativePath": "accessibility/coding/headings.mdx",
-        "createdAt": "2024-04-18T12:41:02.357Z",
-        "lastModified": "2024-04-18T12:41:02.357Z",
-        "size": 1293,
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
+        "size": 1294,
         "formattedSize": "1.3 KB"
       }
     },
@@ -128,15 +128,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/index.mdx",
       "meta": {
         "relativePath": "accessibility/coding/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.837Z",
+        "lastModified": "2023-10-10T13:12:01.837Z",
         "size": 5238,
         "formattedSize": "5.1 KB"
       }
     },
     {
       "id": "accessibility__coding__semantic-htmlx",
-      "contents": "\n## Introduction\n\nUse semantic HTML elements.\n\nMost elements are semantic such as `<form>` and `<table>` which clearly define its content. However, non-semantic elements such as `<div>` and `<span>` are often overused. These don't tell us about the meaning of the content.\n\nUsing correct semantic HTML elements to make web content more accessible.\n\n<p>\n  Learn more about{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    HTML elements\n  </ic-link>\n  , particularly <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;nav&gt;</code>,{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;section&gt;</code> and <code\n    style={{ backgroundColor: \"#EEEFF0\" }}\n  >\n    &lt;role&gt;\n  </code>. They're mentioned in <ic-link\n    target=\"\"\n    href=\"/accessibility/coding/document-structure\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Document structure\n  </ic-link> and <ic-link\n    target=\"\"\n    href=\"/accessibility/coding/semantic-layout\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Semantic layout\n  </ic-link>.\n</p>\n\n## When it goes wrong\n\nWhen semantic elements aren't used, the page has no structure or definition available to assistive technologies.\n\nWithout structure or definition, to assistive technologies it's like viewing all the words on a page together in a single paragraph with the same styling, creating a wall of text.\n\nWith semantic elements assistive technologies can navigate over a page using these semantic elements, for example screen readers can jump through headings to find the section they want to read.",
+      "contents": "\n## Introduction\n\nUse semantic HTML elements.\n\nMost elements are semantic such as `<form>` and `<table>` which clearly define its content. However, non-semantic elements such as `<div>` and `<span>` are often overused. These don't tell us about the meaning of the content.\n\nUsing correct semantic HTML elements to make web content more accessible.\n\n<p>\n  Learn more about{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    HTML elements\n  </ic-link>\n  , particularly <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;nav&gt;</code>,{\" \"}\n  <code style={{ backgroundColor: \"#EEEFF0\" }}>&lt;section&gt;</code> and <code\n    style={{ backgroundColor: \"#EEEFF0\" }}\n  >\n    &lt;role&gt;\n  </code>. They're mentioned in <ic-link\n    target=\"\"\n    href=\"/accessibility/coding/document-structure\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Document structure\n  </ic-link> and <ic-link\n    target=\"\"\n    href=\"/accessibility/coding/semantic-layout\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Semantic layout\n  </ic-link>.\n</p>\n\n## When it goes wrong\n\nWhen semantic elements aren't used, the page has no structure or definition available to assistive technologies.\n\nWithout structure or definition, to assistive technologies it's like viewing all the words on a page together in a single paragraph with the same styling, creating a wall of text.\n\nWith semantic elements assistive technologies can navigate over a page using these semantic elements, for example screen readers can jump through headings to find the section they want to read.\n",
       "path": "/accessibility/coding/semantic-html",
       "navPriority": 4,
       "date": "2024-04-18",
@@ -145,15 +145,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/semantic-html.mdx",
       "meta": {
         "relativePath": "accessibility/coding/semantic-html.mdx",
-        "createdAt": "2024-04-18T12:41:10.081Z",
-        "lastModified": "2024-04-18T12:41:10.081Z",
-        "size": 1936,
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
+        "size": 1937,
         "formattedSize": "1.9 KB"
       }
     },
     {
       "id": "accessibility__coding__semantic-layoutx",
-      "contents": "\n## Introduction\n\nUse semantic HTML elements over non-semantic elements for layouts, such as `<header>` instead of `<div id=\"header\">`.\n\n<p>\n  HTML5 introduced{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.w3.org/TR/html5-diff/#new-elements\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    new elements\n  </ic-link>{\" \"}\n  to improve structure, including:\n</p>\n\n- `<main>` represents the main content of the body of a document or app.\n- `<header>` represents a group of introductory or navigational aids.\n- `<footer>` represents a footer for a section and can contain information about the author, copyright information, etc.\n- `<nav>` represents a section of the document intended for navigation.\n\n## When it goes wrong\n\nWhen semantic HTML elements for layout aren't used, the page has no structure or definition available to assistive technologies.\n\nThese layout elements provide navigation landmarks which assistive technologies can navigate over to find the area they want on the page. These elements also section content into their defined elements.",
+      "contents": "\n## Introduction\n\nUse semantic HTML elements over non-semantic elements for layouts, such as `<header>` instead of `<div id=\"header\">`.\n\n<p>\n  HTML5 introduced{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.w3.org/TR/html5-diff/#new-elements\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    new elements\n  </ic-link>{\" \"}\n  to improve structure, including:\n</p>\n\n- `<main>` represents the main content of the body of a document or app.\n- `<header>` represents a group of introductory or navigational aids.\n- `<footer>` represents a footer for a section and can contain information about the author, copyright information, etc.\n- `<nav>` represents a section of the document intended for navigation.\n\n## When it goes wrong\n\nWhen semantic HTML elements for layout aren't used, the page has no structure or definition available to assistive technologies.\n\nThese layout elements provide navigation landmarks which assistive technologies can navigate over to find the area they want on the page. These elements also section content into their defined elements.\n",
       "path": "/accessibility/coding/semantic-layout",
       "navPriority": 6,
       "date": "2024-04-18",
@@ -162,15 +162,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/semantic-layout.mdx",
       "meta": {
         "relativePath": "accessibility/coding/semantic-layout.mdx",
-        "createdAt": "2024-04-18T12:41:19.361Z",
-        "lastModified": "2024-04-18T12:41:19.361Z",
-        "size": 1364,
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
+        "size": 1365,
         "formattedSize": "1.3 KB"
       }
     },
     {
       "id": "accessibility__coding__tablesx",
-      "contents": "\n## Introduction\n\nUse HTML table elements only for tabular data.\n\nFor ambiguous data or when there are multiple columns, the `scope` attribute can be included in the `<th>` and set to `row` or `col` to denote that a header applies to the entire row or column, respectively.\n\nUse a `<caption>` element to describe, in text, what the table shows. Some apps and services may auto-generate a summary description of data. You can hide this using CSS if you don't want it visible to sighted users.\n\nThe HTML example for a table with header cells in the top row and first column:\n\n```html\n<table>\n  <caption>\n    Example table with four columns and three rows\n  </caption>\n  <tr>\n    <th>Table</th>\n    <th scope=\"col\">Column Header A</th>\n    <th scope=\"col\">Column Header B</th>\n    <th scope=\"col\">Column Header C</th>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 1</th>\n    <td>data cell A1</td>\n    <td>data cell A2</td>\n    <td>data cell A3</td>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 2</th>\n    <td>data cell B1</td>\n    <td>data cell B2</td>\n    <td>data cell B3</td>\n  </tr>\n</table>\n```\n\n### Example\n\n<table>\n  <caption>Example table with four columns and three rows</caption>\n  <tr>\n    <th>Table</th>\n    <th scope=\"col\">Column Header A</th>\n    <th scope=\"col\">Column Header B</th>\n    <th scope=\"col\">Column Header C</th>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 1</th>\n    <td>data cell A1</td>\n    <td>data cell A2</td>\n    <td>data cell A3</td>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 2</th>\n    <td>data cell B1</td>\n    <td>data cell B2</td>\n    <td>data cell B3</td>\n  </tr>\n</table>\n\n## When it goes wrong\n\nIf no table HTML elements were used, then there would be no structure or definition of the table available to assistive technologies.\n\nEven missing table headers in a `<table>` means assistive technologies can't associate data cells with the headers. Visual cues aren't enough to make a table inclusive.\n\nHistorically tables were incorrectly used for layouts which would give assistive technology users a confusing experience. Don't use tables for any layout needs.\n\nMany screen readers will summarise the size of the table when it arrives at one, so our table example would say “Table with 4 columns and 3 rows”.",
+      "contents": "\n## Introduction\n\nUse HTML table elements only for tabular data.\n\nFor ambiguous data or when there are multiple columns, the `scope` attribute can be included in the `<th>` and set to `row` or `col` to denote that a header applies to the entire row or column, respectively.\n\nUse a `<caption>` element to describe, in text, what the table shows. Some apps and services may auto-generate a summary description of data. You can hide this using CSS if you don't want it visible to sighted users.\n\nThe HTML example for a table with header cells in the top row and first column:\n\n```html\n<table>\n  <caption>\n    Example table with four columns and three rows\n  </caption>\n  <tr>\n    <th>Table</th>\n    <th scope=\"col\">Column Header A</th>\n    <th scope=\"col\">Column Header B</th>\n    <th scope=\"col\">Column Header C</th>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 1</th>\n    <td>data cell A1</td>\n    <td>data cell A2</td>\n    <td>data cell A3</td>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 2</th>\n    <td>data cell B1</td>\n    <td>data cell B2</td>\n    <td>data cell B3</td>\n  </tr>\n</table>\n```\n\n### Example\n\n<table>\n  <caption>Example table with four columns and three rows</caption>\n  <tr>\n    <th>Table</th>\n    <th scope=\"col\">Column Header A</th>\n    <th scope=\"col\">Column Header B</th>\n    <th scope=\"col\">Column Header C</th>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 1</th>\n    <td>data cell A1</td>\n    <td>data cell A2</td>\n    <td>data cell A3</td>\n  </tr>\n  <tr>\n    <th scope=\"row\">Row Header 2</th>\n    <td>data cell B1</td>\n    <td>data cell B2</td>\n    <td>data cell B3</td>\n  </tr>\n</table>\n\n## When it goes wrong\n\nIf no table HTML elements were used, then there would be no structure or definition of the table available to assistive technologies.\n\nEven missing table headers in a `<table>` means assistive technologies can't associate data cells with the headers. Visual cues aren't enough to make a table inclusive.\n\nHistorically tables were incorrectly used for layouts which would give assistive technology users a confusing experience. Don't use tables for any layout needs.\n\nMany screen readers will summarise the size of the table when it arrives at one, so our table example would say “Table with 4 columns and 3 rows”.\n",
       "path": "/accessibility/coding/tables",
       "navPriority": 8,
       "date": "2024-04-18",
@@ -179,15 +179,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/tables.mdx",
       "meta": {
         "relativePath": "accessibility/coding/tables.mdx",
-        "createdAt": "2024-04-18T12:41:27.745Z",
-        "lastModified": "2024-04-18T12:41:27.745Z",
-        "size": 2530,
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
+        "size": 2531,
         "formattedSize": "2.5 KB"
       }
     },
     {
       "id": "accessibility__coding__titlex",
-      "contents": "\nimport { IcAlert } from \"@ukic/react\";\n\n## Introduction\n\nEach page in a website should have a unique title. Make the `<title>` element as accurate and meaningful as possible.\n\nThe title appears in the browser toolbar, search-engine results and default bookmark/favourites name.\n\nThis example shows two different titles from different Design System pages:\n\n```html\n<!-- https://design.sis.gov.uk/accessibility/coding -->\n<title>Coding for accessibility - Intelligence Community Design System</title>\n\n<!-- https://design.sis.gov.uk/accessibility/coding/title -->\n<title>Titles - Intelligence Community Design System</title>\n```\n\n<IcAlert\n  heading=\"Single Page Apps (SPAs)\"\n  variant=\"warning\"\n  message=\"In single-page apps, make sure you dynamically update the page title.\"\n/>\n\n## When it goes wrong\n\nIf titles aren't unique and descriptive users must read the content to understand where they are. This makes your app less usable for those using assistive technologies like screen readers.",
+      "contents": "\nimport { IcAlert } from \"@ukic/react\";\n\n## Introduction\n\nEach page in a website should have a unique title. Make the `<title>` element as accurate and meaningful as possible.\n\nThe title appears in the browser toolbar, search-engine results and default bookmark/favourites name.\n\nThis example shows two different titles from different Design System pages:\n\n```html\n<!-- https://design.sis.gov.uk/accessibility/coding -->\n<title>Coding for accessibility - Intelligence Community Design System</title>\n\n<!-- https://design.sis.gov.uk/accessibility/coding/title -->\n<title>Titles - Intelligence Community Design System</title>\n```\n\n<IcAlert\n  heading=\"Single Page Apps (SPAs)\"\n  variant=\"warning\"\n  message=\"In single-page apps, make sure you dynamically update the page title.\"\n/>\n\n## When it goes wrong\n\nIf titles aren't unique and descriptive users must read the content to understand where they are. This makes your app less usable for those using assistive technologies like screen readers.\n",
       "path": "/accessibility/coding/title",
       "navPriority": 2,
       "date": "2024-04-18",
@@ -196,9 +196,9 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/coding/title.mdx",
       "meta": {
         "relativePath": "accessibility/coding/title.mdx",
-        "createdAt": "2024-04-18T12:41:36.481Z",
-        "lastModified": "2024-04-18T12:41:36.481Z",
-        "size": 1263,
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
+        "size": 1264,
         "formattedSize": "1.2 KB"
       }
     },
@@ -213,8 +213,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/definition.mdx",
       "meta": {
         "relativePath": "accessibility/definition.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.837Z",
+        "lastModified": "2023-10-10T13:12:01.837Z",
         "size": 3199,
         "formattedSize": "3.1 KB"
       }
@@ -230,8 +230,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/discussing.mdx",
       "meta": {
         "relativePath": "accessibility/discussing.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-07-19T12:02:14.921Z",
+        "lastModified": "2023-07-19T12:02:14.921Z",
         "size": 2005,
         "formattedSize": "2.0 KB"
       }
@@ -247,8 +247,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/accessibility-statements-guidance.mdx",
       "meta": {
         "relativePath": "accessibility/documenting/accessibility-statements-guidance.mdx",
-        "createdAt": "2024-04-18T12:46:11.845Z",
-        "lastModified": "2024-04-18T12:46:11.845Z",
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
         "size": 10681,
         "formattedSize": "10.4 KB"
       }
@@ -264,8 +264,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/accessibility-statements.mdx",
       "meta": {
         "relativePath": "accessibility/documenting/accessibility-statements.mdx",
-        "createdAt": "2024-04-18T12:43:13.213Z",
-        "lastModified": "2024-04-18T12:43:13.213Z",
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
         "size": 2193,
         "formattedSize": "2.1 KB"
       }
@@ -281,8 +281,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/conformance-reports.mdx",
       "meta": {
         "relativePath": "accessibility/documenting/conformance-report.mdx",
-        "createdAt": "2024-04-18T12:43:22.861Z",
-        "lastModified": "2024-04-18T12:43:22.861Z",
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
         "size": 4050,
         "formattedSize": "4.0 KB"
       }
@@ -298,8 +298,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/index.mdx",
       "meta": {
         "relativePath": "accessibility/documenting/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2022-11-21T17:26:30.450Z",
+        "lastModified": "2022-11-21T17:26:30.450Z",
         "size": 1912,
         "formattedSize": "1.9 KB"
       }
@@ -315,8 +315,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/documenting/when-to-create-and-update.mdx",
       "meta": {
         "relativePath": "accessibility/documenting/when-to-create-and-update.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2022-11-21T17:26:30.450Z",
+        "lastModified": "2022-11-21T17:26:30.450Z",
         "size": 1691,
         "formattedSize": "1.7 KB"
       }
@@ -332,8 +332,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/index.mdx",
       "meta": {
         "relativePath": "accessibility/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 2220,
         "formattedSize": "2.2 KB"
       }
@@ -349,8 +349,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/introduction.mdx",
       "meta": {
         "relativePath": "accessibility/introduction.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 2279,
         "formattedSize": "2.2 KB"
       }
@@ -366,8 +366,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/auditory.mdx",
       "meta": {
         "relativePath": "accessibility/needs/auditory.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 3701,
         "formattedSize": "3.6 KB"
       }
@@ -383,8 +383,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/index.mdx",
       "meta": {
         "relativePath": "accessibility/needs/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 3389,
         "formattedSize": "3.3 KB"
       }
@@ -400,8 +400,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/invisible.mdx",
       "meta": {
         "relativePath": "accessibility/needs/invisible.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 5151,
         "formattedSize": "5.0 KB"
       }
@@ -417,8 +417,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/motor.mdx",
       "meta": {
         "relativePath": "accessibility/needs/motor.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 4148,
         "formattedSize": "4.1 KB"
       }
@@ -434,8 +434,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/neurodiversity.mdx",
       "meta": {
         "relativePath": "accessibility/needs/neurodiversity.mdx",
-        "createdAt": "2024-04-18T12:36:44.357Z",
-        "lastModified": "2024-04-18T12:36:44.357Z",
+        "createdAt": "2024-04-29T08:57:52.534Z",
+        "lastModified": "2024-04-29T08:57:52.534Z",
         "size": 9804,
         "formattedSize": "9.6 KB"
       }
@@ -451,8 +451,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/visual.mdx",
       "meta": {
         "relativePath": "accessibility/needs/visual.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 4461,
         "formattedSize": "4.4 KB"
       }
@@ -469,8 +469,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/requirement/index.mdx",
       "meta": {
         "relativePath": "accessibility/requirement/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.023Z",
+        "lastModified": "2024-04-17T15:07:22.023Z",
         "size": 3656,
         "formattedSize": "3.6 KB"
       }
@@ -487,8 +487,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/requirement/meeting-the-policy.mdx",
       "meta": {
         "relativePath": "accessibility/requirement/meeting-the-policy.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.023Z",
+        "lastModified": "2024-04-17T15:07:22.023Z",
         "size": 4127,
         "formattedSize": "4.0 KB"
       }
@@ -504,8 +504,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/requirement/subtitles-transcripts-captions.mdx",
       "meta": {
         "relativePath": "accessibility/requirement/subtitles-transcripts-captions.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.023Z",
+        "lastModified": "2024-04-17T15:07:22.023Z",
         "size": 4591,
         "formattedSize": "4.5 KB"
       }
@@ -521,8 +521,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/requirement/wcag.mdx",
       "meta": {
         "relativePath": "accessibility/requirement/wcag.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.023Z",
+        "lastModified": "2024-04-17T15:07:22.023Z",
         "size": 3858,
         "formattedSize": "3.8 KB"
       }
@@ -538,8 +538,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/assistive-tech-testing.mdx",
       "meta": {
         "relativePath": "accessibility/testing/assistive-tech-testing.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 8617,
         "formattedSize": "8.4 KB"
       }
@@ -555,8 +555,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/automated-testing-limitation.mdx",
       "meta": {
         "relativePath": "accessibility/testing/automated-testing-limitation.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.023Z",
+        "lastModified": "2024-04-17T15:07:22.023Z",
         "size": 3682,
         "formattedSize": "3.6 KB"
       }
@@ -572,8 +572,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/automated-testing.mdx",
       "meta": {
         "relativePath": "accessibility/testing/automated-testing.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 7080,
         "formattedSize": "6.9 KB"
       }
@@ -589,8 +589,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/index.mdx",
       "meta": {
         "relativePath": "accessibility/testing/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-10-10T13:12:01.841Z",
+        "lastModified": "2023-10-10T13:12:01.841Z",
         "size": 3094,
         "formattedSize": "3.0 KB"
       }
@@ -606,8 +606,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/testing/manual-testing.mdx",
       "meta": {
         "relativePath": "accessibility/testing/manual-testing.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.023Z",
+        "lastModified": "2024-04-17T15:07:22.023Z",
         "size": 4604,
         "formattedSize": "4.5 KB"
       }
@@ -623,8 +623,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/community/contribute-criteria.mdx?at=develop",
       "meta": {
         "relativePath": "community/contribute-criteria.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.027Z",
+        "lastModified": "2024-04-17T15:07:22.027Z",
         "size": 2845,
         "formattedSize": "2.8 KB"
       }
@@ -640,8 +640,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/community/contribute.mdx?at=develop",
       "meta": {
         "relativePath": "community/contribute.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-03T10:19:46.438Z",
+        "lastModified": "2024-04-03T10:19:46.438Z",
         "size": 3870,
         "formattedSize": "3.8 KB"
       }
@@ -657,8 +657,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/community/glossary-of-terms.mdx?at=develop",
       "meta": {
         "relativePath": "community/glossary-of-terms.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-03T10:19:46.438Z",
+        "lastModified": "2024-04-03T10:19:46.438Z",
         "size": 11629,
         "formattedSize": "11.4 KB"
       }
@@ -673,8 +673,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/community/index.mdx",
       "meta": {
         "relativePath": "community/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2023-07-19T12:02:14.921Z",
+        "lastModified": "2023-07-19T12:02:14.921Z",
         "size": 1596,
         "formattedSize": "1.6 KB"
       }
@@ -690,8 +690,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/community/roadmap.mdx",
       "meta": {
         "relativePath": "community/roadmap.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-02-21T11:02:47.877Z",
+        "lastModified": "2024-02-21T11:02:47.877Z",
         "size": 1615,
         "formattedSize": "1.6 KB"
       }
@@ -721,8 +721,8 @@
       ],
       "meta": {
         "relativePath": "components/accordion/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-17T15:07:22.027Z",
+        "lastModified": "2024-04-17T15:07:22.027Z",
         "size": 3259,
         "formattedSize": "3.2 KB"
       }
@@ -752,8 +752,8 @@
       ],
       "meta": {
         "relativePath": "components/accordion/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-03T10:34:27.994Z",
+        "lastModified": "2024-04-03T10:34:27.994Z",
         "size": 9273,
         "formattedSize": "9.1 KB"
       }
@@ -784,8 +784,8 @@
       ],
       "meta": {
         "relativePath": "components/accordion/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.289Z",
+        "createdAt": "2024-04-03T10:34:27.994Z",
+        "lastModified": "2024-04-03T10:34:27.994Z",
         "size": 9856,
         "formattedSize": "9.6 KB"
       }
@@ -815,8 +815,8 @@
       ],
       "meta": {
         "relativePath": "components/alerts/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.293Z",
+        "createdAt": "2024-04-17T15:07:22.027Z",
+        "lastModified": "2024-04-17T15:07:22.027Z",
         "size": 2232,
         "formattedSize": "2.2 KB"
       }
@@ -846,8 +846,8 @@
       ],
       "meta": {
         "relativePath": "components/alerts/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.293Z",
+        "createdAt": "2024-04-03T10:34:27.994Z",
+        "lastModified": "2024-04-03T10:34:27.994Z",
         "size": 7969,
         "formattedSize": "7.8 KB"
       }
@@ -878,8 +878,8 @@
       ],
       "meta": {
         "relativePath": "components/alerts/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.293Z",
+        "createdAt": "2023-10-17T14:40:35.332Z",
+        "lastModified": "2023-10-17T14:40:35.332Z",
         "size": 4625,
         "formattedSize": "4.5 KB"
       }
@@ -909,8 +909,8 @@
       ],
       "meta": {
         "relativePath": "components/back-to-top/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.293Z",
+        "createdAt": "2024-04-17T15:07:22.027Z",
+        "lastModified": "2024-04-17T15:07:22.027Z",
         "size": 2848,
         "formattedSize": "2.8 KB"
       }
@@ -940,8 +940,8 @@
       ],
       "meta": {
         "relativePath": "components/back-to-top/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.293Z",
+        "createdAt": "2024-02-21T13:38:52.632Z",
+        "lastModified": "2024-02-21T13:38:52.632Z",
         "size": 1070,
         "formattedSize": "1.0 KB"
       }
@@ -972,8 +972,8 @@
       ],
       "meta": {
         "relativePath": "components/back-to-top/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.293Z",
+        "createdAt": "2023-10-17T14:40:35.332Z",
+        "lastModified": "2023-10-17T14:40:35.332Z",
         "size": 4247,
         "formattedSize": "4.1 KB"
       }
@@ -1003,8 +1003,8 @@
       ],
       "meta": {
         "relativePath": "components/badge/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.297Z",
+        "createdAt": "2024-04-17T15:07:22.027Z",
+        "lastModified": "2024-04-17T15:07:22.027Z",
         "size": 2448,
         "formattedSize": "2.4 KB"
       }
@@ -1034,8 +1034,8 @@
       ],
       "meta": {
         "relativePath": "components/badge/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.297Z",
+        "createdAt": "2024-04-09T08:58:58.518Z",
+        "lastModified": "2024-04-09T08:58:58.518Z",
         "size": 17078,
         "formattedSize": "16.7 KB"
       }
@@ -1066,8 +1066,8 @@
       ],
       "meta": {
         "relativePath": "components/badge/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.297Z",
+        "createdAt": "2024-04-09T08:58:58.518Z",
+        "lastModified": "2024-04-09T08:58:58.518Z",
         "size": 12706,
         "formattedSize": "12.4 KB"
       }
@@ -1097,8 +1097,8 @@
       ],
       "meta": {
         "relativePath": "components/breadcrumbs/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.309Z",
+        "createdAt": "2024-04-17T15:07:22.027Z",
+        "lastModified": "2024-04-17T15:07:22.027Z",
         "size": 2389,
         "formattedSize": "2.3 KB"
       }
@@ -1128,8 +1128,8 @@
       ],
       "meta": {
         "relativePath": "components/breadcrumbs/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.309Z",
+        "createdAt": "2024-04-03T10:34:27.998Z",
+        "lastModified": "2024-04-03T10:34:27.998Z",
         "size": 10210,
         "formattedSize": "10.0 KB"
       }
@@ -1160,8 +1160,8 @@
       ],
       "meta": {
         "relativePath": "components/breadcrumbs/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.309Z",
+        "createdAt": "2023-12-05T10:57:08.973Z",
+        "lastModified": "2023-12-05T10:57:08.973Z",
         "size": 5529,
         "formattedSize": "5.4 KB"
       }
@@ -1191,8 +1191,8 @@
       ],
       "meta": {
         "relativePath": "components/buttons/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.325Z",
+        "createdAt": "2024-04-17T15:07:22.027Z",
+        "lastModified": "2024-04-17T15:07:22.027Z",
         "size": 1688,
         "formattedSize": "1.6 KB"
       }
@@ -1222,8 +1222,8 @@
       ],
       "meta": {
         "relativePath": "components/buttons/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.325Z",
+        "createdAt": "2024-04-03T10:34:28.006Z",
+        "lastModified": "2024-04-03T10:34:28.006Z",
         "size": 9561,
         "formattedSize": "9.3 KB"
       }
@@ -1254,10 +1254,80 @@
       ],
       "meta": {
         "relativePath": "components/buttons/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.325Z",
+        "createdAt": "2023-12-05T10:57:08.973Z",
+        "lastModified": "2023-12-05T10:57:08.973Z",
         "size": 14817,
         "formattedSize": "14.5 KB"
+      }
+    },
+    {
+      "id": "components__canary__date-input__codex",
+      "contents": "\nCode\n",
+      "path": "/components/canary/date-input/code",
+      "date": "2024-04-03",
+      "title": "Date Input",
+      "status": "CANARY",
+      "subTitle": "Code",
+      "tabs": [
+        {
+          "title": "Guidance",
+          "path": "/components/canary/date-input"
+        },
+        {
+          "title": "Code",
+          "path": "/components/canary/date-input/code"
+        }
+      ],
+      "meta": {
+        "relativePath": "components/canary/date-input/code.mdx",
+        "createdAt": "2024-04-29T08:57:52.654Z",
+        "lastModified": "2024-04-29T08:57:52.654Z",
+        "size": 282,
+        "formattedSize": "282 Bytes"
+      }
+    },
+    {
+      "id": "components__canary__date-input__guidancex",
+      "contents": "\nDate Input\n",
+      "path": "/components/canary/date-input",
+      "navPriority": 2,
+      "date": "2024-04-03",
+      "title": "Date Input",
+      "status": "CANARY",
+      "subTitle": "Guidance",
+      "tabs": [
+        {
+          "title": "Guidance",
+          "path": "/components/canary/date-input"
+        },
+        {
+          "title": "Code",
+          "path": "/components/canary/date-input/code"
+        }
+      ],
+      "meta": {
+        "relativePath": "components/canary/date-input/guidance.mdx",
+        "createdAt": "2024-04-29T08:57:52.654Z",
+        "lastModified": "2024-04-29T08:57:52.654Z",
+        "size": 303,
+        "formattedSize": "303 Bytes"
+      }
+    },
+    {
+      "id": "components__canary__indexx",
+      "contents": "\nIndex\n",
+      "path": "/components/canary",
+      "navPriority": 6,
+      "date": "2024-04-03",
+      "title": "Canary",
+      "status": "CANARY",
+      "subTitle": "canary",
+      "meta": {
+        "relativePath": "components/canary/index.mdx",
+        "createdAt": "2024-04-29T08:57:52.654Z",
+        "lastModified": "2024-04-29T08:57:52.654Z",
+        "size": 133,
+        "formattedSize": "133 Bytes"
       }
     },
     {
@@ -1285,8 +1355,8 @@
       ],
       "meta": {
         "relativePath": "components/cards/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.325Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 3439,
         "formattedSize": "3.4 KB"
       }
@@ -1316,8 +1386,8 @@
       ],
       "meta": {
         "relativePath": "components/cards/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.325Z",
+        "createdAt": "2024-04-09T08:58:58.522Z",
+        "lastModified": "2024-04-09T08:58:58.522Z",
         "size": 48132,
         "formattedSize": "47.0 KB"
       }
@@ -1348,8 +1418,8 @@
       ],
       "meta": {
         "relativePath": "components/cards/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.329Z",
+        "createdAt": "2023-12-05T10:57:08.977Z",
+        "lastModified": "2023-12-05T10:57:08.977Z",
         "size": 10600,
         "formattedSize": "10.4 KB"
       }
@@ -1379,8 +1449,8 @@
       ],
       "meta": {
         "relativePath": "components/checkboxes/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.333Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 2745,
         "formattedSize": "2.7 KB"
       }
@@ -1410,8 +1480,8 @@
       ],
       "meta": {
         "relativePath": "components/checkboxes/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.333Z",
+        "createdAt": "2024-04-03T10:34:28.006Z",
+        "lastModified": "2024-04-03T10:34:28.006Z",
         "size": 15524,
         "formattedSize": "15.2 KB"
       }
@@ -1442,8 +1512,8 @@
       ],
       "meta": {
         "relativePath": "components/checkboxes/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.333Z",
+        "createdAt": "2023-12-05T10:57:08.977Z",
+        "lastModified": "2023-12-05T10:57:08.977Z",
         "size": 8654,
         "formattedSize": "8.5 KB"
       }
@@ -1473,8 +1543,8 @@
       ],
       "meta": {
         "relativePath": "components/chips/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.337Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 2777,
         "formattedSize": "2.7 KB"
       }
@@ -1504,8 +1574,8 @@
       ],
       "meta": {
         "relativePath": "components/chips/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.337Z",
+        "createdAt": "2024-04-03T10:34:28.006Z",
+        "lastModified": "2024-04-03T10:34:28.006Z",
         "size": 8993,
         "formattedSize": "8.8 KB"
       }
@@ -1536,8 +1606,8 @@
       ],
       "meta": {
         "relativePath": "components/chips/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.337Z",
+        "createdAt": "2024-04-03T10:19:46.442Z",
+        "lastModified": "2024-04-03T10:19:46.442Z",
         "size": 6622,
         "formattedSize": "6.5 KB"
       }
@@ -1567,8 +1637,8 @@
       ],
       "meta": {
         "relativePath": "components/classification-banner/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.345Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 1188,
         "formattedSize": "1.2 KB"
       }
@@ -1598,8 +1668,8 @@
       ],
       "meta": {
         "relativePath": "components/classification-banner/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.345Z",
+        "createdAt": "2024-04-03T10:34:28.010Z",
+        "lastModified": "2024-04-03T10:34:28.010Z",
         "size": 2608,
         "formattedSize": "2.5 KB"
       }
@@ -1630,8 +1700,8 @@
       ],
       "meta": {
         "relativePath": "components/classification-banner/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.345Z",
+        "createdAt": "2024-02-21T11:02:47.885Z",
+        "lastModified": "2024-02-21T11:02:47.885Z",
         "size": 2018,
         "formattedSize": "2.0 KB"
       }
@@ -1661,8 +1731,8 @@
       ],
       "meta": {
         "relativePath": "components/data-entity/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.345Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 2202,
         "formattedSize": "2.2 KB"
       }
@@ -1692,8 +1762,8 @@
       ],
       "meta": {
         "relativePath": "components/data-entity/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.345Z",
+        "createdAt": "2024-04-03T10:34:28.010Z",
+        "lastModified": "2024-04-03T10:34:28.010Z",
         "size": 16312,
         "formattedSize": "15.9 KB"
       }
@@ -1724,8 +1794,8 @@
       ],
       "meta": {
         "relativePath": "components/data-entity/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.345Z",
+        "createdAt": "2023-10-17T14:40:35.356Z",
+        "lastModified": "2023-10-17T14:40:35.356Z",
         "size": 4763,
         "formattedSize": "4.7 KB"
       }
@@ -1755,8 +1825,8 @@
       ],
       "meta": {
         "relativePath": "components/dialog/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.349Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 4110,
         "formattedSize": "4.0 KB"
       }
@@ -1786,8 +1856,8 @@
       ],
       "meta": {
         "relativePath": "components/dialog/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.349Z",
+        "createdAt": "2024-04-03T10:34:28.010Z",
+        "lastModified": "2024-04-03T10:34:28.010Z",
         "size": 41011,
         "formattedSize": "40.0 KB"
       }
@@ -1818,8 +1888,8 @@
       ],
       "meta": {
         "relativePath": "components/dialog/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.349Z",
+        "createdAt": "2024-01-02T15:32:54.799Z",
+        "lastModified": "2024-01-02T15:32:54.799Z",
         "size": 8607,
         "formattedSize": "8.4 KB"
       }
@@ -1849,8 +1919,8 @@
       ],
       "meta": {
         "relativePath": "components/empty-state/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.349Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 1537,
         "formattedSize": "1.5 KB"
       }
@@ -1880,8 +1950,8 @@
       ],
       "meta": {
         "relativePath": "components/empty-state/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.353Z",
+        "createdAt": "2024-04-03T10:34:28.010Z",
+        "lastModified": "2024-04-03T10:34:28.010Z",
         "size": 19759,
         "formattedSize": "19.3 KB"
       }
@@ -1912,8 +1982,8 @@
       ],
       "meta": {
         "relativePath": "components/empty-state/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.353Z",
+        "createdAt": "2023-12-05T10:57:08.977Z",
+        "lastModified": "2023-12-05T10:57:08.977Z",
         "size": 10939,
         "formattedSize": "10.7 KB"
       }
@@ -1943,8 +2013,8 @@
       ],
       "meta": {
         "relativePath": "components/footer/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.361Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 2011,
         "formattedSize": "2.0 KB"
       }
@@ -1974,8 +2044,8 @@
       ],
       "meta": {
         "relativePath": "components/footer/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.361Z",
+        "createdAt": "2024-04-03T10:34:28.014Z",
+        "lastModified": "2024-04-03T10:34:28.014Z",
         "size": 17352,
         "formattedSize": "16.9 KB"
       }
@@ -2006,8 +2076,8 @@
       ],
       "meta": {
         "relativePath": "components/footer/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.361Z",
+        "createdAt": "2023-10-17T14:40:35.360Z",
+        "lastModified": "2023-10-17T14:40:35.360Z",
         "size": 7784,
         "formattedSize": "7.6 KB"
       }
@@ -2037,8 +2107,8 @@
       ],
       "meta": {
         "relativePath": "components/hero/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.373Z",
+        "createdAt": "2024-04-17T15:07:22.031Z",
+        "lastModified": "2024-04-17T15:07:22.031Z",
         "size": 2024,
         "formattedSize": "2.0 KB"
       }
@@ -2068,8 +2138,8 @@
       ],
       "meta": {
         "relativePath": "components/hero/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.373Z",
+        "createdAt": "2024-04-03T10:34:28.014Z",
+        "lastModified": "2024-04-03T10:34:28.014Z",
         "size": 12993,
         "formattedSize": "12.7 KB"
       }
@@ -2100,8 +2170,8 @@
       ],
       "meta": {
         "relativePath": "components/hero/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.373Z",
+        "createdAt": "2023-12-05T10:57:08.981Z",
+        "lastModified": "2023-12-05T10:57:08.981Z",
         "size": 8372,
         "formattedSize": "8.2 KB"
       }
@@ -2116,8 +2186,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/index.mdx",
       "meta": {
         "relativePath": "components/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.385Z",
+        "createdAt": "2023-11-21T13:45:15.402Z",
+        "lastModified": "2023-11-21T13:45:15.402Z",
         "size": 598,
         "formattedSize": "598 Bytes"
       }
@@ -2147,8 +2217,8 @@
       ],
       "meta": {
         "relativePath": "components/links/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.385Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 1852,
         "formattedSize": "1.8 KB"
       }
@@ -2178,8 +2248,8 @@
       ],
       "meta": {
         "relativePath": "components/links/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.385Z",
+        "createdAt": "2024-04-03T10:34:28.014Z",
+        "lastModified": "2024-04-03T10:34:28.014Z",
         "size": 3608,
         "formattedSize": "3.5 KB"
       }
@@ -2210,8 +2280,8 @@
       ],
       "meta": {
         "relativePath": "components/links/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.385Z",
+        "createdAt": "2023-12-05T10:57:08.981Z",
+        "lastModified": "2023-12-05T10:57:08.981Z",
         "size": 7199,
         "formattedSize": "7.0 KB"
       }
@@ -2241,8 +2311,8 @@
       ],
       "meta": {
         "relativePath": "components/loading-indicators/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.385Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 2465,
         "formattedSize": "2.4 KB"
       }
@@ -2272,8 +2342,8 @@
       ],
       "meta": {
         "relativePath": "components/loading-indicators/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.385Z",
+        "createdAt": "2024-04-03T10:34:28.014Z",
+        "lastModified": "2024-04-03T10:34:28.014Z",
         "size": 5056,
         "formattedSize": "4.9 KB"
       }
@@ -2304,8 +2374,8 @@
       ],
       "meta": {
         "relativePath": "components/loading-indicators/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.389Z",
+        "createdAt": "2023-10-17T14:40:35.360Z",
+        "lastModified": "2023-10-17T14:40:35.360Z",
         "size": 6945,
         "formattedSize": "6.8 KB"
       }
@@ -2335,8 +2405,8 @@
       ],
       "meta": {
         "relativePath": "components/page-header/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.389Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 2399,
         "formattedSize": "2.3 KB"
       }
@@ -2366,8 +2436,8 @@
       ],
       "meta": {
         "relativePath": "components/page-header/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.389Z",
+        "createdAt": "2024-04-03T10:19:46.442Z",
+        "lastModified": "2024-04-03T10:19:46.442Z",
         "size": 16912,
         "formattedSize": "16.5 KB"
       }
@@ -2398,8 +2468,8 @@
       ],
       "meta": {
         "relativePath": "components/page-header/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.389Z",
+        "createdAt": "2023-12-05T10:57:08.981Z",
+        "lastModified": "2023-12-05T10:57:08.981Z",
         "size": 9062,
         "formattedSize": "8.8 KB"
       }
@@ -2429,8 +2499,8 @@
       ],
       "meta": {
         "relativePath": "components/pagination/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.393Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 3216,
         "formattedSize": "3.1 KB"
       }
@@ -2460,8 +2530,8 @@
       ],
       "meta": {
         "relativePath": "components/pagination/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.393Z",
+        "createdAt": "2023-10-03T09:06:39.792Z",
+        "lastModified": "2023-10-03T09:06:39.792Z",
         "size": 4638,
         "formattedSize": "4.5 KB"
       }
@@ -2492,8 +2562,8 @@
       ],
       "meta": {
         "relativePath": "components/pagination/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.393Z",
+        "createdAt": "2023-10-17T14:40:35.360Z",
+        "lastModified": "2023-10-17T14:40:35.360Z",
         "size": 11142,
         "formattedSize": "10.9 KB"
       }
@@ -2523,8 +2593,8 @@
       ],
       "meta": {
         "relativePath": "components/popover-menu/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.405Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 3358,
         "formattedSize": "3.3 KB"
       }
@@ -2554,8 +2624,8 @@
       ],
       "meta": {
         "relativePath": "components/popover-menu/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.405Z",
+        "createdAt": "2024-02-21T11:02:47.893Z",
+        "lastModified": "2024-02-21T11:02:47.893Z",
         "size": 13771,
         "formattedSize": "13.4 KB"
       }
@@ -2586,8 +2656,8 @@
       ],
       "meta": {
         "relativePath": "components/popover-menu/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.405Z",
+        "createdAt": "2024-02-21T11:02:47.893Z",
+        "lastModified": "2024-02-21T11:02:47.893Z",
         "size": 11284,
         "formattedSize": "11.0 KB"
       }
@@ -2617,8 +2687,8 @@
       ],
       "meta": {
         "relativePath": "components/radio/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.417Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 3538,
         "formattedSize": "3.5 KB"
       }
@@ -2648,8 +2718,8 @@
       ],
       "meta": {
         "relativePath": "components/radio/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.417Z",
+        "createdAt": "2024-01-25T14:47:52.255Z",
+        "lastModified": "2024-01-25T14:47:52.255Z",
         "size": 9346,
         "formattedSize": "9.1 KB"
       }
@@ -2680,8 +2750,8 @@
       ],
       "meta": {
         "relativePath": "components/radio/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.417Z",
+        "createdAt": "2023-12-05T10:57:08.981Z",
+        "lastModified": "2023-12-05T10:57:08.981Z",
         "size": 8265,
         "formattedSize": "8.1 KB"
       }
@@ -2711,8 +2781,8 @@
       ],
       "meta": {
         "relativePath": "components/search-bar/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.417Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 3997,
         "formattedSize": "3.9 KB"
       }
@@ -2742,8 +2812,8 @@
       ],
       "meta": {
         "relativePath": "components/search-bar/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.417Z",
+        "createdAt": "2024-02-21T11:02:47.893Z",
+        "lastModified": "2024-02-21T11:02:47.893Z",
         "size": 14707,
         "formattedSize": "14.4 KB"
       }
@@ -2774,8 +2844,8 @@
       ],
       "meta": {
         "relativePath": "components/search-bar/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.417Z",
+        "createdAt": "2023-12-05T10:57:08.985Z",
+        "lastModified": "2023-12-05T10:57:08.985Z",
         "size": 5837,
         "formattedSize": "5.7 KB"
       }
@@ -2805,8 +2875,8 @@
       ],
       "meta": {
         "relativePath": "components/section-container/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.421Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 1919,
         "formattedSize": "1.9 KB"
       }
@@ -2836,8 +2906,8 @@
       ],
       "meta": {
         "relativePath": "components/section-container/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.421Z",
+        "createdAt": "2024-02-21T11:02:47.897Z",
+        "lastModified": "2024-02-21T11:02:47.897Z",
         "size": 5598,
         "formattedSize": "5.5 KB"
       }
@@ -2868,8 +2938,8 @@
       ],
       "meta": {
         "relativePath": "components/section-container/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.421Z",
+        "createdAt": "2023-12-05T10:57:08.985Z",
+        "lastModified": "2023-12-05T10:57:08.985Z",
         "size": 5569,
         "formattedSize": "5.4 KB"
       }
@@ -2899,8 +2969,8 @@
       ],
       "meta": {
         "relativePath": "components/select/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.421Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 2737,
         "formattedSize": "2.7 KB"
       }
@@ -2930,8 +3000,8 @@
       ],
       "meta": {
         "relativePath": "components/select/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.425Z",
+        "createdAt": "2024-02-21T11:02:47.897Z",
+        "lastModified": "2024-02-21T11:02:47.897Z",
         "size": 35528,
         "formattedSize": "34.7 KB"
       }
@@ -2962,8 +3032,8 @@
       ],
       "meta": {
         "relativePath": "components/select/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.425Z",
+        "createdAt": "2023-12-05T10:57:08.985Z",
+        "lastModified": "2023-12-05T10:57:08.985Z",
         "size": 7367,
         "formattedSize": "7.2 KB"
       }
@@ -2993,8 +3063,8 @@
       ],
       "meta": {
         "relativePath": "components/side-nav/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.425Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 2967,
         "formattedSize": "2.9 KB"
       }
@@ -3024,8 +3094,8 @@
       ],
       "meta": {
         "relativePath": "components/side-nav/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.425Z",
+        "createdAt": "2023-10-17T14:40:35.364Z",
+        "lastModified": "2023-10-17T14:40:35.364Z",
         "size": 75440,
         "formattedSize": "73.7 KB"
       }
@@ -3056,8 +3126,8 @@
       ],
       "meta": {
         "relativePath": "components/side-nav/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.425Z",
+        "createdAt": "2023-10-17T14:40:35.364Z",
+        "lastModified": "2023-10-17T14:40:35.364Z",
         "size": 12176,
         "formattedSize": "11.9 KB"
       }
@@ -3087,8 +3157,8 @@
       ],
       "meta": {
         "relativePath": "components/skeleton/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.429Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 2797,
         "formattedSize": "2.7 KB"
       }
@@ -3118,8 +3188,8 @@
       ],
       "meta": {
         "relativePath": "components/skeleton/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.429Z",
+        "createdAt": "2023-12-05T10:57:08.985Z",
+        "lastModified": "2023-12-05T10:57:08.985Z",
         "size": 13492,
         "formattedSize": "13.2 KB"
       }
@@ -3150,8 +3220,8 @@
       ],
       "meta": {
         "relativePath": "components/skeleton/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.429Z",
+        "createdAt": "2023-10-17T14:40:35.364Z",
+        "lastModified": "2023-10-17T14:40:35.364Z",
         "size": 4677,
         "formattedSize": "4.6 KB"
       }
@@ -3181,8 +3251,8 @@
       ],
       "meta": {
         "relativePath": "components/status-tags/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.433Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 1948,
         "formattedSize": "1.9 KB"
       }
@@ -3212,8 +3282,8 @@
       ],
       "meta": {
         "relativePath": "components/status-tags/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.433Z",
+        "createdAt": "2023-12-05T10:57:08.985Z",
+        "lastModified": "2023-12-05T10:57:08.985Z",
         "size": 3729,
         "formattedSize": "3.6 KB"
       }
@@ -3244,8 +3314,8 @@
       ],
       "meta": {
         "relativePath": "components/status-tags/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.433Z",
+        "createdAt": "2023-10-17T14:40:35.364Z",
+        "lastModified": "2023-10-17T14:40:35.364Z",
         "size": 6863,
         "formattedSize": "6.7 KB"
       }
@@ -3275,8 +3345,8 @@
       ],
       "meta": {
         "relativePath": "components/stepper/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.433Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 1730,
         "formattedSize": "1.7 KB"
       }
@@ -3306,8 +3376,8 @@
       ],
       "meta": {
         "relativePath": "components/stepper/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.433Z",
+        "createdAt": "2023-07-19T12:02:15.041Z",
+        "lastModified": "2023-07-19T12:02:15.041Z",
         "size": 6694,
         "formattedSize": "6.5 KB"
       }
@@ -3338,8 +3408,8 @@
       ],
       "meta": {
         "relativePath": "components/stepper/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.433Z",
+        "createdAt": "2023-10-17T14:40:35.364Z",
+        "lastModified": "2023-10-17T14:40:35.364Z",
         "size": 7478,
         "formattedSize": "7.3 KB"
       }
@@ -3369,8 +3439,8 @@
       ],
       "meta": {
         "relativePath": "components/switch/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.437Z",
+        "createdAt": "2024-04-17T15:07:22.035Z",
+        "lastModified": "2024-04-17T15:07:22.035Z",
         "size": 3163,
         "formattedSize": "3.1 KB"
       }
@@ -3400,8 +3470,8 @@
       ],
       "meta": {
         "relativePath": "components/switch/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.437Z",
+        "createdAt": "2023-12-05T10:57:08.989Z",
+        "lastModified": "2023-12-05T10:57:08.989Z",
         "size": 4428,
         "formattedSize": "4.3 KB"
       }
@@ -3432,8 +3502,8 @@
       ],
       "meta": {
         "relativePath": "components/switch/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.437Z",
+        "createdAt": "2023-12-05T10:57:08.989Z",
+        "lastModified": "2023-12-05T10:57:08.989Z",
         "size": 6214,
         "formattedSize": "6.1 KB"
       }
@@ -3463,8 +3533,8 @@
       ],
       "meta": {
         "relativePath": "components/tabs/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.441Z",
+        "createdAt": "2024-04-17T15:07:22.039Z",
+        "lastModified": "2024-04-17T15:07:22.039Z",
         "size": 3352,
         "formattedSize": "3.3 KB"
       }
@@ -3494,8 +3564,8 @@
       ],
       "meta": {
         "relativePath": "components/tabs/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.441Z",
+        "createdAt": "2024-04-18T10:00:34.419Z",
+        "lastModified": "2024-04-18T10:00:34.419Z",
         "size": 14510,
         "formattedSize": "14.2 KB"
       }
@@ -3526,8 +3596,8 @@
       ],
       "meta": {
         "relativePath": "components/tabs/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.893Z",
-        "lastModified": "2024-04-18T12:16:01.441Z",
+        "createdAt": "2023-12-05T10:57:08.989Z",
+        "lastModified": "2023-12-05T10:57:08.989Z",
         "size": 7072,
         "formattedSize": "6.9 KB"
       }
@@ -3557,8 +3627,8 @@
       ],
       "meta": {
         "relativePath": "components/text-field/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.445Z",
+        "createdAt": "2024-04-17T15:07:22.039Z",
+        "lastModified": "2024-04-17T15:07:22.039Z",
         "size": 2300,
         "formattedSize": "2.2 KB"
       }
@@ -3588,8 +3658,8 @@
       ],
       "meta": {
         "relativePath": "components/text-field/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.445Z",
+        "createdAt": "2023-12-05T10:57:08.989Z",
+        "lastModified": "2023-12-05T10:57:08.989Z",
         "size": 11660,
         "formattedSize": "11.4 KB"
       }
@@ -3620,8 +3690,8 @@
       ],
       "meta": {
         "relativePath": "components/text-field/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.445Z",
+        "createdAt": "2023-12-05T10:57:08.989Z",
+        "lastModified": "2023-12-05T10:57:08.989Z",
         "size": 6758,
         "formattedSize": "6.6 KB"
       }
@@ -3651,8 +3721,8 @@
       ],
       "meta": {
         "relativePath": "components/toasts/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.445Z",
+        "createdAt": "2024-04-17T15:07:22.039Z",
+        "lastModified": "2024-04-17T15:07:22.039Z",
         "size": 3386,
         "formattedSize": "3.3 KB"
       }
@@ -3682,8 +3752,8 @@
       ],
       "meta": {
         "relativePath": "components/toasts/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.445Z",
+        "createdAt": "2023-12-05T10:57:08.989Z",
+        "lastModified": "2023-12-05T10:57:08.989Z",
         "size": 18111,
         "formattedSize": "17.7 KB"
       }
@@ -3714,8 +3784,8 @@
       ],
       "meta": {
         "relativePath": "components/toasts/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.445Z",
+        "createdAt": "2024-04-17T15:07:22.039Z",
+        "lastModified": "2024-04-17T15:07:22.039Z",
         "size": 7215,
         "formattedSize": "7.0 KB"
       }
@@ -3745,8 +3815,8 @@
       ],
       "meta": {
         "relativePath": "components/toggle-buttons/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.453Z",
+        "createdAt": "2024-04-17T15:07:22.039Z",
+        "lastModified": "2024-04-17T15:07:22.039Z",
         "size": 3716,
         "formattedSize": "3.6 KB"
       }
@@ -3776,8 +3846,8 @@
       ],
       "meta": {
         "relativePath": "components/toggle-buttons/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.453Z",
+        "createdAt": "2024-04-09T08:58:58.522Z",
+        "lastModified": "2024-04-09T08:58:58.522Z",
         "size": 20281,
         "formattedSize": "19.8 KB"
       }
@@ -3808,8 +3878,8 @@
       ],
       "meta": {
         "relativePath": "components/toggle-buttons/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.453Z",
+        "createdAt": "2024-04-03T10:19:46.442Z",
+        "lastModified": "2024-04-03T10:19:46.442Z",
         "size": 11033,
         "formattedSize": "10.8 KB"
       }
@@ -3839,8 +3909,8 @@
       ],
       "meta": {
         "relativePath": "components/tooltips/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.453Z",
+        "createdAt": "2024-04-17T15:07:22.039Z",
+        "lastModified": "2024-04-17T15:07:22.039Z",
         "size": 2053,
         "formattedSize": "2.0 KB"
       }
@@ -3870,8 +3940,8 @@
       ],
       "meta": {
         "relativePath": "components/tooltips/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.453Z",
+        "createdAt": "2024-02-21T11:02:47.909Z",
+        "lastModified": "2024-02-21T11:02:47.909Z",
         "size": 7782,
         "formattedSize": "7.6 KB"
       }
@@ -3902,8 +3972,8 @@
       ],
       "meta": {
         "relativePath": "components/tooltips/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.905Z",
-        "lastModified": "2024-04-18T12:16:01.453Z",
+        "createdAt": "2024-02-21T11:02:47.909Z",
+        "lastModified": "2024-02-21T11:02:47.909Z",
         "size": 5536,
         "formattedSize": "5.4 KB"
       }
@@ -3933,8 +4003,8 @@
       ],
       "meta": {
         "relativePath": "components/top-nav/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.457Z",
+        "createdAt": "2024-04-17T15:07:22.039Z",
+        "lastModified": "2024-04-17T15:07:22.039Z",
         "size": 3001,
         "formattedSize": "2.9 KB"
       }
@@ -3964,8 +4034,8 @@
       ],
       "meta": {
         "relativePath": "components/top-nav/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.457Z",
+        "createdAt": "2024-04-09T08:58:58.522Z",
+        "lastModified": "2024-04-09T08:58:58.522Z",
         "size": 34621,
         "formattedSize": "33.8 KB"
       }
@@ -3996,8 +4066,8 @@
       ],
       "meta": {
         "relativePath": "components/top-nav/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.889Z",
-        "lastModified": "2024-04-18T12:16:01.457Z",
+        "createdAt": "2024-02-21T11:02:47.909Z",
+        "lastModified": "2024-02-21T11:02:47.909Z",
         "size": 11248,
         "formattedSize": "11.0 KB"
       }
@@ -4028,8 +4098,8 @@
       ],
       "meta": {
         "relativePath": "components/typography/accessibility.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-04-17T15:07:22.043Z",
+        "lastModified": "2024-04-17T15:07:22.043Z",
         "size": 1497,
         "formattedSize": "1.5 KB"
       }
@@ -4060,8 +4130,8 @@
       ],
       "meta": {
         "relativePath": "components/typography/code.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-12-05T10:57:08.993Z",
+        "lastModified": "2023-12-05T10:57:08.993Z",
         "size": 8635,
         "formattedSize": "8.4 KB"
       }
@@ -4093,8 +4163,8 @@
       ],
       "meta": {
         "relativePath": "components/typography/guidance.mdx",
-        "createdAt": "2024-04-18T12:17:31.897Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-02-21T11:02:47.909Z",
+        "lastModified": "2024-02-21T11:02:47.909Z",
         "size": 2180,
         "formattedSize": "2.1 KB"
       }
@@ -4109,8 +4179,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/a-design-system.mdx",
       "meta": {
         "relativePath": "get-started/a-design-system.mdx",
-        "createdAt": "2024-04-18T12:33:25.745Z",
-        "lastModified": "2024-04-18T12:33:25.745Z",
+        "createdAt": "2024-04-29T08:57:52.538Z",
+        "lastModified": "2024-04-29T08:57:52.538Z",
         "size": 2805,
         "formattedSize": "2.7 KB"
       }
@@ -4120,15 +4190,15 @@
       "contents": "\nimport { IcAlert } from \"@ukic/react\";\n\n<IcAlert\n  variant=\"info\"\n  heading=\"Version check\"\n  message=\"These instructions were used with Angular version 13.2.5.\"\n/>\n\n## Step one\n\nIn the root of your project:\n\n```shell\n// using npm\nnpm install @ukic/web-components @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/web-components @ukic/fonts\n```\n\n## Step two\n\nIn the `app.modules.ts` file, import the `CUSTOM_ELEMENTS_SCHEMA`.\n\nOr for standalone components, import the `CUSTOM_ELEMENTS_SCHEMA` into the `.ts` file of any component using ICDS components.\n\n```jsx\nimport { CUSTOM_ELEMENTS_SCHEMA, NgModule } from \"@angular/core\";\n```\n\n## Step three\n\nThen include it in the `@NgModule` decorator object. Or for standalone components, include it in the `@Component` decorator object.\n\n```jsx\n// Modules\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  providers: [],\n  bootstrap: [AppComponent],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\n// Standalone components\n@Component({\n  selector: 'app-foo',\n  standalone: true,\n  imports: [],\n  templateUrl: './foo.component.html',\n  styleUrl: './foo.component.scss',\n  schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\n```\n\n## Step four\n\nSet skipLibCheck to `true` in your `tsconfig.json` file.\n\n```jsx\n\"compilerOptions\": {\n  \"skipLibCheck\": true,\n},\n```\n\n## Step five\n\nImport defineCustomElements in your `main.ts` file.\n\n```jsx\nimport { defineCustomElements } from \"@ukic/web-components/loader\";\n```\n\n## Step six\n\nCall defineCustomElements at the bottom of `main.ts`:\n\n```jsx\n//other configuration\n...\ndefineCustomElements();\n```\n\n## Step seven\n\nAdd the following into the top level CSS file for your project. For newly generated Angular projects this will be `src/styles.css`.\n\n```css\n@import \"@ukic/fonts/dist/fonts.css\";\n@import \"@ukic/web-components/dist/core/core.css\";\n```\n\n<br />\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.\n\n```css\n@import \"@ukic/web-components/dist/core/normalize.css\";\n```\n\n## Step eight\n\nDeclare the component in your `app.component.html` file.\n\n```html\n<ic-status-tag label=\"Neutral\"></ic-status-tag>\n```\n",
       "path": "/get-started/install-components/angular",
       "navPriority": 3,
-      "date": "2022-11-15",
+      "date": "2024-04-22",
       "title": "Angular",
-      "subTitle": "How to use the components in an Angular-based framework.",
+      "subTitle": "How to use the components in an Angular-based application.",
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/angular.mdx",
       "meta": {
         "relativePath": "get-started/angular.mdx",
-        "createdAt": "2024-04-18T12:22:37.369Z",
-        "lastModified": "2024-04-18T12:22:37.369Z",
-        "size": 2884,
+        "createdAt": "2024-04-29T08:57:52.538Z",
+        "lastModified": "2024-04-29T08:57:52.538Z",
+        "size": 2886,
         "formattedSize": "2.8 KB"
       }
     },
@@ -4143,8 +4213,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/custom-theme.mdx",
       "meta": {
         "relativePath": "get-started/custom-theme.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-02-21T11:02:47.909Z",
+        "lastModified": "2024-02-21T11:02:47.909Z",
         "size": 1247,
         "formattedSize": "1.2 KB"
       }
@@ -4161,8 +4231,8 @@
       "hidden": false,
       "meta": {
         "relativePath": "get-started/design-principles.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-10-10T13:12:02.029Z",
+        "lastModified": "2023-10-10T13:12:02.029Z",
         "size": 1682,
         "formattedSize": "1.6 KB"
       }
@@ -4178,27 +4248,27 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/figma.mdx",
       "meta": {
         "relativePath": "get-started/figma.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-02-21T11:02:47.913Z",
+        "lastModified": "2024-02-21T11:02:47.913Z",
         "size": 3416,
         "formattedSize": "3.3 KB"
       }
     },
     {
       "id": "get-started__gatsbyx",
-      "contents": "\n## Step one\n\nIn the root of your project, run:\n\n```shell\n// using npm\nnpm install @ukic/react @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/react @ukic/fonts\n```\n\n## Step Two\n\nInstall the `gatsby-plugin-stencil` package to allow Gatsby to render the components server-side.\n\n```shell\n// using npm\nnpm install --save gatsby-plugin-stencil\n```\n\n## Step three\n\nIn your `gatsby-config.js` file (at the root of the project), add the following:\n\n```js\nplugins: [\n  {\n    resolve: `gatsby-plugin-stencil`,\n\n    options: {\n      module: \"@ukic/web-components\",\n      renderToStringOptions: {\n        prettyHtml: true,\n      },\n    },\n  },\n];\n```\n\n## Step four\n\nAdd the following to the top level index file of your project.\n\n```jsx\nimport \"@ukic/fonts/dist/fonts.css\";\nimport \"@ukic/react/dist/core/core.css\";\n```\n\n<br />\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project\nand slotted elements used within any of the ICDS components, add the following into\nthe top level index file as well.\n\n```jsx\nimport \"@ukic/react/dist/core/normalize.css\";\n```\n\n## Step five\n\nImport the component(s) in your Gatsby pages.\n\n```jsx\nimport { IcComponent } from \"@ukic/react\";\n```\n\n## Helpful links\n\n<p>\n  The Gatsby documentation contains more information on the{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.gatsbyjs.com/plugins/gatsby-plugin-stencil/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    gatsby-plugin-stencil\n  </ic-link>{\" \"}\n  plugin. Further information can be found on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://dev.to/brunnerlivio/use-stencil-with-gatsbyjs-1omo\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    using Stencil web components in Gatsby\n  </ic-link>\n  .\n</p>\n",
+      "contents": "\nimport { IcAlert } from \"@ukic/react\";\n\n<IcAlert\n  heading=\"Locking packages\"\n  variant=\"info\"\n  message=\"If you lock the React components to a particular version, you should also install and lock the corresponding web components package.\"\n  dismissible\n/>\n\n## Step one\n\nIn the root of your project, run:\n\n```shell\n// using npm\nnpm install @ukic/react @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/react @ukic/fonts\n```\n\n## Step Two\n\nInstall the `gatsby-plugin-stencil` package to allow Gatsby to render the components server-side.\n\n```shell\n// using npm\nnpm install --save gatsby-plugin-stencil\n```\n\n## Step three\n\nIn your `gatsby-config.js` file (at the root of the project), add the following:\n\n```js\nplugins: [\n  {\n    resolve: `gatsby-plugin-stencil`,\n\n    options: {\n      module: \"@ukic/web-components\",\n      renderToStringOptions: {\n        prettyHtml: true,\n      },\n    },\n  },\n];\n```\n\n## Step four\n\nAdd the following to the top level index file of your project.\n\n```jsx\nimport \"@ukic/fonts/dist/fonts.css\";\nimport \"@ukic/react/dist/core/core.css\";\n```\n\n<br />\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project\nand slotted elements used within any of the ICDS components, add the following into\nthe top level index file as well.\n\n```jsx\nimport \"@ukic/react/dist/core/normalize.css\";\n```\n\n## Step five\n\nImport the component(s) in your Gatsby pages.\n\n```jsx\nimport { IcComponent } from \"@ukic/react\";\n```\n\n## Helpful links\n\n<p>\n  The Gatsby documentation contains more information on the{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.gatsbyjs.com/plugins/gatsby-plugin-stencil/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    gatsby-plugin-stencil\n  </ic-link>{\" \"}\n  plugin. Further information can be found on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://dev.to/brunnerlivio/use-stencil-with-gatsbyjs-1omo\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    using Stencil web components in Gatsby\n  </ic-link>\n  .\n</p>\n",
       "path": "/get-started/install-components/gatsby",
       "navPriority": 7,
-      "date": "2023-01-19",
+      "date": "2024-04-24",
       "title": "Gatsby",
       "subTitle": "How to use the components in a Gatsby project.",
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/gatsby.mdx",
       "meta": {
         "relativePath": "get-started/gatsby.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
-        "size": 2359,
-        "formattedSize": "2.3 KB"
+        "createdAt": "2024-04-29T08:57:52.538Z",
+        "lastModified": "2024-04-29T08:57:52.538Z",
+        "size": 2617,
+        "formattedSize": "2.6 KB"
       }
     },
     {
@@ -4212,8 +4282,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/index.mdx",
       "meta": {
         "relativePath": "get-started/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-07-19T12:02:15.049Z",
+        "lastModified": "2023-07-19T12:02:15.049Z",
         "size": 1645,
         "formattedSize": "1.6 KB"
       }
@@ -4229,8 +4299,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/install-components.mdx",
       "meta": {
         "relativePath": "get-started/install-components.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-04-03T10:19:46.442Z",
+        "lastModified": "2024-04-03T10:19:46.442Z",
         "size": 2042,
         "formattedSize": "2.0 KB"
       }
@@ -4246,27 +4316,27 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/nextJS.mdx",
       "meta": {
         "relativePath": "get-started/nextjs.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-01-25T14:47:52.259Z",
+        "lastModified": "2024-01-25T14:47:52.259Z",
         "size": 1536,
         "formattedSize": "1.5 KB"
       }
     },
     {
       "id": "get-started__reactx",
-      "contents": "\n## Step one\n\nIn the root of your project:\n\n```shell\n// using npm\nnpm install @ukic/react @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/react @ukic/fonts\n```\n\n## Step two\n\nAdd the following into the top level CSS file for your project.\n\n```css\n@import \"@ukic/fonts/dist/fonts.css\";\n@import \"@ukic/react/dist/core/core.css\";\n```\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.\n\n```css\n@import \"@ukic/react/dist/core/normalize.css\";\n```\n\n## Step three\n\nImport the component(s) in your React files.\n\n```jsx\nimport { IcComponent } from \"@ukic/react\";\n```\n\n## Working with slotted SVGs\n\n### Step one\n\nTo slot an SVG into one of our React components, import the `SlottedSVG` component from `@ukic/react` into your React files. This will prevent an error stating that property 'slot' doesn't exist.\n\n<p>\n  To scale the icons, use the{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://css-tricks.com/scale-svg/#aa-the-viewbox-attribute\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    <code style={{ backgroundColor: \"#EEEFF0\", color: \"black\" }}>viewBox</code>{\" \"}\n    attribute\n  </ic-link>\n  .\n</p>\n\n```jsx\nimport { SlottedSVG } from \"@ukic/react\";\n```\n\n### Step two\n\nReplace any instances of `<svg>` with `<SlottedSVG>`.\n\n```jsx\n//Before\n<IcTopNavigation appTitle=\"App title\">\n  <svg slot=\"app-icon\" path={path} />\n  <svg slot=\"app-icon\">\n    <path d=\"...\" />\n  </svg>\n</IcTopNavigation>\n\n//After\n<IcTopNavigation appTitle=\"App title\">\n  {/* Can be implemented either way */}\n  <SlottedSVG slot=\"app-icon\" path={path} viewBox=\"0 0 24 24\" />\n  <SlottedSVG slot=\"app-icon\" viewBox=\"0 0 24 24\">\n    <path d=\"...\" />\n\n  </SlottedSVG>\n</IcTopNavigation>\n```\n\n### Using Material Design Icons (MDI) with SlottedSVG\n\nTo use `<SlottedSVG>` with MDI Icons, install and import the `@mdi/js` package.\n\n```bash\nnpm i @mdi/js\n```\n\n```jsx\nimport { mdiHome } from \"@mdi/js\";\n\n<IcTopNavigation appTitle=\"App title\">\n  <SlottedSVG slot=\"app-icon\" path={mdiHome} viewBox=\"0 0 24 24\" />\n</IcTopNavigation>;\n```\n",
+      "contents": "\nimport { IcAlert } from \"@ukic/react\";\n\n<IcAlert\n  heading=\"Locking packages\"\n  variant=\"info\"\n  message=\"If you lock the React components to a particular version, you should also install and lock the corresponding web components package.\"\n  dismissible\n/>\n\n## Step one\n\nIn the root of your project:\n\n```shell\n// using npm\nnpm install @ukic/react @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/react @ukic/fonts\n```\n\n## Step two\n\nAdd the following into the top level CSS file for your project.\n\n```css\n@import \"@ukic/fonts/dist/fonts.css\";\n@import \"@ukic/react/dist/core/core.css\";\n```\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.\n\n```css\n@import \"@ukic/react/dist/core/normalize.css\";\n```\n\n## Step three\n\nImport the component(s) in your React files.\n\n```jsx\nimport { IcComponent } from \"@ukic/react\";\n```\n\n## Working with slotted SVGs\n\n### Step one\n\nTo slot an SVG into one of our React components, import the `SlottedSVG` component from `@ukic/react` into your React files. This will prevent an error stating that property 'slot' doesn't exist.\n\n<p>\n  To scale the icons, use the{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://css-tricks.com/scale-svg/#aa-the-viewbox-attribute\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    <code style={{ backgroundColor: \"#EEEFF0\", color: \"black\" }}>viewBox</code>{\" \"}\n    attribute\n  </ic-link>\n  .\n</p>\n\n```jsx\nimport { SlottedSVG } from \"@ukic/react\";\n```\n\n### Step two\n\nReplace any instances of `<svg>` with `<SlottedSVG>`.\n\n```jsx\n//Before\n<IcTopNavigation appTitle=\"App title\">\n  <svg slot=\"app-icon\" path={path} />\n  <svg slot=\"app-icon\">\n    <path d=\"...\" />\n  </svg>\n</IcTopNavigation>\n\n//After\n<IcTopNavigation appTitle=\"App title\">\n  {/* Can be implemented either way */}\n  <SlottedSVG slot=\"app-icon\" path={path} viewBox=\"0 0 24 24\" />\n  <SlottedSVG slot=\"app-icon\" viewBox=\"0 0 24 24\">\n    <path d=\"...\" />\n\n  </SlottedSVG>\n</IcTopNavigation>\n```\n\n### Using Material Design Icons (MDI) with SlottedSVG\n\nTo use `<SlottedSVG>` with MDI Icons, install and import the `@mdi/js` package.\n\n```bash\nnpm i @mdi/js\n```\n\n```jsx\nimport { mdiHome } from \"@mdi/js\";\n\n<IcTopNavigation appTitle=\"App title\">\n  <SlottedSVG slot=\"app-icon\" path={mdiHome} viewBox=\"0 0 24 24\" />\n</IcTopNavigation>;\n```\n",
       "path": "/get-started/install-components/react",
       "navPriority": 2,
-      "date": "2024-01-17",
+      "date": "2024-04-24",
       "title": "React",
       "subTitle": "How to use the components in a React-based framework.",
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/react.mdx",
       "meta": {
         "relativePath": "get-started/react.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
-        "size": 2782,
-        "formattedSize": "2.7 KB"
+        "createdAt": "2024-04-29T08:57:52.538Z",
+        "lastModified": "2024-04-29T08:57:52.538Z",
+        "size": 3040,
+        "formattedSize": "3.0 KB"
       }
     },
     {
@@ -4279,8 +4349,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/releases-versioning.mdx",
       "meta": {
         "relativePath": "get-started/releases-versioning.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-04-03T10:19:16.116Z",
+        "lastModified": "2024-04-03T10:19:16.116Z",
         "size": 5414,
         "formattedSize": "5.3 KB"
       }
@@ -4290,15 +4360,15 @@
       "contents": "\nimport { IcAlert } from \"@ukic/react\";\n\n<IcAlert\n  variant=\"info\"\n  heading=\"Version check\"\n  message=\"These instructions were used with Svelte version 3.50.1.\"\n/>\n\n## Step one\n\nIn the root of your project:\n\n```shell\n// using npm\nnpm install @ukic/web-components @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/web-components @ukic/fonts\n```\n\n## Step two\n\nImport defineCustomElements in your `main.ts` file.\n\n```jsx\nimport { defineCustomElements } from \"@ukic/web-components/loader\";\n```\n\n## Step three\n\nCall defineCustomElements in your `main.ts` file:\n\n```jsx\n//other configuration\n...\ndefineCustomElements();\n```\n\n## Step four\n\nAdd the following into the top level CSS file for your project. For newly generated Svelte projects this will be `src/global.css`.\n\n```css\n@import \"@ukic/fonts/dist/fonts.css\";\n@import \"@ukic/web-components/dist/core/core.css\";\n```\n\n<br />\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.\n\n```css\n@import \"@ukic/web-components/dist/core/normalize.css\";\n```\n\n## Step five\n\nIn your HTML, you can now declare a component as follows:\n\n```html\n<ic-status-tag label=\"Neutral\"></ic-status-tag>\n```\n",
       "path": "/get-started/install-components/svelte",
       "navPriority": 6,
-      "date": "2022-11-15",
+      "date": "2024-04-22",
       "title": "Svelte",
-      "subTitle": "How to use the components in a Svelte-based framework.",
+      "subTitle": "How to use the components in an Svelte-based application.",
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/svelte.mdx",
       "meta": {
         "relativePath": "get-started/svelte.mdx",
-        "createdAt": "2024-04-18T12:24:23.277Z",
-        "lastModified": "2024-04-18T12:24:23.277Z",
-        "size": 1917,
+        "createdAt": "2024-04-29T08:57:52.538Z",
+        "lastModified": "2024-04-29T08:57:52.538Z",
+        "size": 1920,
         "formattedSize": "1.9 KB"
       }
     },
@@ -4313,8 +4383,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/test-components.mdx",
       "meta": {
         "relativePath": "get-started/test-components.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 1980,
         "formattedSize": "1.9 KB"
       }
@@ -4330,8 +4400,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing-with-cypress.mdx",
       "meta": {
         "relativePath": "get-started/testing-with-cypress.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 5397,
         "formattedSize": "5.3 KB"
       }
@@ -4347,8 +4417,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing-with-jest.mdx",
       "meta": {
         "relativePath": "get-started/testing-with-jest.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-12-18T12:48:18.992Z",
+        "lastModified": "2023-12-18T12:48:18.992Z",
         "size": 4829,
         "formattedSize": "4.7 KB"
       }
@@ -4364,8 +4434,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing-with-react-testing-library.mdx",
       "meta": {
         "relativePath": "get-started/testing-with-react-testing-library.mdx",
-        "createdAt": "2024-04-18T12:17:31.885Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 8265,
         "formattedSize": "8.1 KB"
       }
@@ -4375,15 +4445,15 @@
       "contents": "\nimport { IcAlert } from \"@ukic/react\";\n\n<IcAlert\n  variant=\"info\"\n  heading=\"Version check\"\n  message=\"These instructions were used with Vue version 3.2.31.\"\n/>\n\n## Step one\n\nIn the root of your project:\n\n```shell\n// using npm\nnpm install @ukic/web-components @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/web-components @ukic/fonts\n```\n\n## Step two\n\nAdd options into your relevant config.\n\n### In-Browser config\n\n```jsx\n// Only works if using in-browser compilation.\napp.config.compilerOptions.isCustomElement = (tag) => tag.includes(\"-\");\n```\n\n### Vite config\n\n```jsx\n// vite.config.js\nimport vue from \"@vitejs/plugin-vue\";\n\nexport default {\n  plugins: [\n    vue({\n      template: {\n        compilerOptions: {\n          // treat all tags with a dash as custom elements\n          isCustomElement: (tag) => tag.includes(\"-\"),\n        },\n      },\n    }),\n  ],\n};\n```\n\n### Vue CLI config\n\n```jsx\n// vue.config.js\nmodule.exports = {\n  chainWebpack: (config) => {\n    config.module\n      .rule(\"vue\")\n      .use(\"vue-loader\")\n      .tap((options) => ({\n        ...options,\n        compilerOptions: {\n          // treat any tag that starts with ic- as custom elements\n          isCustomElement: (tag) => tag.startsWith(\"ic-\"),\n        },\n      }));\n  },\n};\n```\n\n## Step three\n\nImport defineCustomElements in your `main.js` file.\n\n```jsx\nimport { defineCustomElements } from \"@ukic/web-components/loader\";\n```\n\n## Step four\n\nCall defineCustomElements at the bottom of `main.js`.\n\n```jsx\n//other configuration\n...\ndefineCustomElements();\n```\n\n## Step five\n\nAdd the following into the top level CSS file for your project.\n\n```css\n@import \"@ukic/fonts/dist/fonts.css\";\n@import \"@ukic/web-components/dist/core/core.css\";\n```\n\n<br />\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.\n\n```css\n@import \"@ukic/web-components/dist/core/normalize.css\";\n```\n\n## Step six\n\nDeclare and use components in your file.\n\n```html\n<ic-status-tag label=\"Neutral\"></ic-status-tag>\n```\n",
       "path": "/get-started/install-components/vue",
       "navPriority": 4,
-      "date": "2022-11-15",
+      "date": "2024-04-22",
       "title": "Vue",
-      "subTitle": "How to use the components in a Vue-based framework.",
+      "subTitle": "How to use the components in a Vue-based application.",
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/vue.mdx",
       "meta": {
         "relativePath": "get-started/vue.mdx",
-        "createdAt": "2024-04-18T12:23:08.177Z",
-        "lastModified": "2024-04-18T12:23:08.177Z",
-        "size": 2741,
+        "createdAt": "2024-04-29T08:57:52.538Z",
+        "lastModified": "2024-04-29T08:57:52.538Z",
+        "size": 2743,
         "formattedSize": "2.7 KB"
       }
     },
@@ -4392,14 +4462,14 @@
       "contents": "\n## Step one\n\nIn the root of your project:\n\n```shell\n// using npm\nnpm install @ukic/web-components @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/web-components @ukic/fonts\n```\n\n## Step two\n\nImport `defineCustomElements` in your file. Where you do this will depend on your framework or build tool, but the format is as follows:\n\n```jsx\nimport { defineCustomElements } from \"@ukic/web-components/loader\";\n```\n\n## Step three\n\nCall `defineCustomElements` in your file. Again, the file you edit will depend on your framework or build tool, but the format is as follows:\n\n```jsx\n//other code\n...\ndefineCustomElements();\n```\n\n## Step four\n\nDepending on your framework or build tool, this can be included in either a CSS file or Javascript\\Typescript file.\n\nAdd the following into the top level CSS file for your project.\n\n```css\n@import \"@ukic/fonts/dist/fonts.css\";\n@import \"@ukic/web-components/dist/core/core.css\";\n```\n\n<br />\n\n<p>\n  In order to be rendered consistently across browsers and in line with modern\n  standards, each of the ICDS components uses styles from a global CSS file\n  based on{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://necolas.github.io/normalize.css/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Normalize.css\n  </ic-link>\n  .\n</p>\n\nIf you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.\n\n```css\n@import \"@ukic/web-components/dist/core/normalize.css\";\n```\n\n## Step five\n\nIn your HTML, you can now declare a component as follows:\n\n```jsx\n<ic-status-tag label=\"Neutral\"></ic-status-tag>\n```\n\n## Webpack example\n\nWebpack is a tool for bundling web applications. This example assumes the following config in `webpack.config.js`. For more detailed information on Webpack configuration, please refer to the Webpack documentation.\n\n```jsx\nconst path = require(\"path\");\n\nmodule.exports = {\n  entry: \"./src/index.js\",\n  output: {\n    filename: \"main.js\",\n    path: path.resolve(__dirname, \"dist\"),\n  },\n  devServer: {\n    static: \"./dist\",\n  },\n  mode: \"development\",\n  module: {\n    rules: [\n      {\n        test: /\\.css$/i,\n        use: [\"style-loader\", \"css-loader\"],\n      },\n    ],\n  },\n};\n```\n\n### Step one\n\n```shell\n// using npm\nnpm install @ukic/web-components @ukic/fonts\n\n// using yarn\nrm package-lock.json\nyarn add @ukic/web-components @ukic/fonts\n\n```\n\n### Step two\n\nIn the file defined as the `entry` in the `webpack.config.js`, add the following:\n\n```jsx\n//src/index.js\nimport \"@ukic/fonts/dist/fonts.css\";\nimport \"@ukic/web-components/dist/core/core.css\";\n\nimport { defineCustomElements } from \"@ukic/web-components/loader\";\ndefineCustomElements();\n```\n\n### Step three\n\nYou can now use any of the ICDS components so long as your HTML page includes the output file defined in your `webpack.config.js`. For example, including an [ic-status-tag](/components/status-tag) below:\n\n```html\n<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\" />\n    <title>Getting Started with ICDS</title>\n  </head>\n  <body>\n    <script src=\"dist/main.js\"></script>\n    <ic-status-tag label=\"Neutral\"></ic-status-tag>\n  </body>\n</html>\n```\n",
       "path": "/get-started/install-components/web-components",
       "navPriority": 5,
-      "date": "2022-11-15",
+      "date": "2024-04-22",
       "title": "Web components",
       "subTitle": "How to use the web components.",
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/web-components.mdx",
       "meta": {
         "relativePath": "get-started/web-components.mdx",
-        "createdAt": "2024-04-18T12:24:04.125Z",
-        "lastModified": "2024-04-18T12:24:04.125Z",
+        "createdAt": "2024-04-29T08:57:52.538Z",
+        "lastModified": "2024-04-29T08:57:52.538Z",
         "size": 3509,
         "formattedSize": "3.4 KB"
       }
@@ -4413,8 +4483,8 @@
       "subTitle": "Accessibility Statement for the Intelligence Community Design System.",
       "meta": {
         "relativePath": "icds/accessibility-statement.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2024-04-17T15:07:22.043Z",
+        "lastModified": "2024-04-17T15:07:22.043Z",
         "size": 5615,
         "formattedSize": "5.5 KB"
       }
@@ -4428,8 +4498,8 @@
       "subTitle": "Cookies Policy for the Intelligence Community Design System.",
       "meta": {
         "relativePath": "icds/cookies-policy.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 5478,
         "formattedSize": "5.3 KB"
       }
@@ -4444,8 +4514,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/icds/index.mdx",
       "meta": {
         "relativePath": "icds/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.461Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 653,
         "formattedSize": "653 Bytes"
       }
@@ -4459,8 +4529,8 @@
       "subTitle": "Privacy Policy for the Intelligence Community Design System.",
       "meta": {
         "relativePath": "icds/privacy-policy.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 3753,
         "formattedSize": "3.7 KB"
       }
@@ -4476,8 +4546,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/deprecated-patterns/app-errors.mdx",
       "meta": {
         "relativePath": "patterns/app-errors.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2024-04-17T15:07:22.043Z",
+        "lastModified": "2024-04-17T15:07:22.043Z",
         "size": 3915,
         "formattedSize": "3.8 KB"
       }
@@ -4493,8 +4563,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/deprecated-pattern/form-layout.mdx",
       "meta": {
         "relativePath": "patterns/form-layout.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2024-04-17T15:07:22.047Z",
+        "lastModified": "2024-04-17T15:07:22.047Z",
         "size": 3191,
         "formattedSize": "3.1 KB"
       }
@@ -4510,8 +4580,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/deprecated-patterns/form-validation.mdx",
       "meta": {
         "relativePath": "patterns/form-validation.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2024-04-17T15:07:22.047Z",
+        "lastModified": "2024-04-17T15:07:22.047Z",
         "size": 2283,
         "formattedSize": "2.2 KB"
       }
@@ -4527,8 +4597,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/index.mdx",
       "meta": {
         "relativePath": "patterns/index.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2024-04-17T15:07:22.047Z",
+        "lastModified": "2024-04-17T15:07:22.047Z",
         "size": 955,
         "formattedSize": "955 Bytes"
       }
@@ -4544,8 +4614,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/navigation-patterns.mdx",
       "meta": {
         "relativePath": "patterns/navigation-patterns.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2024-04-17T15:07:22.051Z",
+        "lastModified": "2024-04-17T15:07:22.051Z",
         "size": 931,
         "formattedSize": "931 Bytes"
       }
@@ -4561,8 +4631,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/navigation-patterns/side-navigation-layout.mdx",
       "meta": {
         "relativePath": "patterns/side-navigation-layout.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2024-04-17T15:07:22.051Z",
+        "lastModified": "2024-04-17T15:07:22.051Z",
         "size": 62900,
         "formattedSize": "61.4 KB"
       }
@@ -4578,8 +4648,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/deprecated-patterns/success.mdx",
       "meta": {
         "relativePath": "patterns/success.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.465Z",
+        "createdAt": "2024-04-17T15:07:22.051Z",
+        "lastModified": "2024-04-17T15:07:22.051Z",
         "size": 2985,
         "formattedSize": "2.9 KB"
       }
@@ -4595,8 +4665,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/navigation-patterns/top-navigation-layout.mdx",
       "meta": {
         "relativePath": "patterns/top-navigation-layout.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.469Z",
+        "createdAt": "2024-04-17T15:07:22.051Z",
+        "lastModified": "2024-04-17T15:07:22.051Z",
         "size": 52244,
         "formattedSize": "51.0 KB"
       }
@@ -4611,15 +4681,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/colour.mdx",
       "meta": {
         "relativePath": "styles/colour.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.469Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 4366,
         "formattedSize": "4.3 KB"
       }
     },
     {
       "id": "styles__content-stylex",
-      "contents": "\n## Introduction\n\nThe way we write, and [how we present it](/styles), can make or break an experience. Use this content style guide to support readability and engagement of your written content and apps.\n\n<p>\n  We've created this guide with inspiration from{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://mozilla.design/firefox/personality/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Mozilla\n  </ic-link>\n  , the <ic-link\n    target=\"_blank\"\n    href=\"https://www.gov.uk/guidance/content-design/writing-for-gov-uk\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    UK Government Digital Service (GDS)\n  </ic-link> and some of the best commercial design systems.\n</p>\n\nThis guide applies to content you write in apps (like error messages) through to user guides and corporate comms.\n\nOur goal is to create informative, helpful and clear content. This isn't about 'dumbing content down' - our job is to 'open it up'. We want as many people as possible to understand and engage with what we write.\n\n<p>\n  Have a look at\n{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.gov.uk/government/publications/govuk-content-principles-conventions-and-research-background\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    research commissioned by GDS on the impact of style guides.\n  </ic-link>\n  This will tell you more about why we recommend speaking in an 'active voice', using short sentences, subheadings, simple vocabulary and always writing in plain English.\n</p>\n\nThe more readable text is the more easily users can understand its content. Text with poor readability turns off readers and can make it challenging for them to stay focused.\n\n",
+      "contents": "\n## Introduction\n\nThe way we write, and [how we present it](/styles), can make or break an experience. Use this content style guide to support readability and engagement of your written content and apps.\n\n<p>\n  We've created this guide with inspiration from{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://mozilla.design/firefox/personality/\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    Mozilla\n  </ic-link>\n  , the <ic-link\n    target=\"_blank\"\n    href=\"https://www.gov.uk/guidance/content-design/writing-for-gov-uk\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    UK Government Digital Service (GDS)\n  </ic-link> and some of the best commercial design systems.\n</p>\n\nThis guide applies to content you write in apps (like error messages) through to user guides and corporate comms.\n\nOur goal is to create informative, helpful and clear content. This isn't about 'dumbing content down' - our job is to 'open it up'. We want as many people as possible to understand and engage with what we write.\n\n<p>\n  Have a look at{\" \"}\n  <ic-link\n    target=\"_blank\"\n    href=\"https://www.gov.uk/government/publications/govuk-content-principles-conventions-and-research-background\"\n    rel=\"noreferer noopener nofollow\"\n  >\n    research commissioned by GDS on the impact of style guides.\n  </ic-link>\n  This will tell you more about why we recommend speaking in an 'active voice', using\n  short sentences, subheadings, simple vocabulary and always writing in plain English.\n</p>\n\nThe more readable text is the more easily users can understand its content. Text with poor readability turns off readers and can make it challenging for them to stay focused.\n",
       "path": "/styles/content-style",
       "date": "2024-04-19",
       "title": "Content style",
@@ -4627,8 +4697,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/content-style.mdx",
       "meta": {
         "relativePath": "styles/content-style.mdx",
-        "createdAt": "2024-04-19T12:23:12.559Z",
-        "lastModified": "2024-04-19T12:23:12.559Z",
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
         "size": 2014,
         "formattedSize": "2.0 KB"
       }
@@ -4643,8 +4713,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/elevation.mdx",
       "meta": {
         "relativePath": "styles/elevation.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.469Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 7068,
         "formattedSize": "6.9 KB"
       }
@@ -4659,15 +4729,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/focus-indicator.mdx",
       "meta": {
         "relativePath": "styles/focus-indicator.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.469Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 3036,
         "formattedSize": "3.0 KB"
       }
     },
     {
       "id": "styles__grammarx",
-      "contents": "\n## Abbreviations and acronyms\n\nWe regularly use abbreviations and acronyms, especially in technology. Write out the words the first time you mention it, then use the short version next time.\n\nFor example, write 'Intelligence Community Design System (ICDS)' the first time you mention it. Then 'ICDS' the second time.\n\n## Ampersands\n\nDon’t use ampersands in body text. “And” should be spelled out in sentences and paragraphs.  Spelling out “and” improves readability and makes scanning easier. Use ampersands only if they are part of a logo or in a brand name.\n\n## Paragraphs\n\nA paragraph should be made up of 2 to 3 sentences if possible.\n\n## Capitalisation\n\nWe don't use block capitals as they're difficult for people to read.\n\nCapitalise proper nouns and write everything else in sentence case. A proper noun is often a specific place, person or thing.\n\nSentence case is where only the first letter of the first word in a sentence or phrase is capitalised. Using capital letters for special or important words can be highly subjective and can result in inconsistencies across an organisation.\n\n| **Like this...**       | **Not like this...**   |\n| ---------------------- | ---------------------- |\n| Date and time          | Date and Time          |\n| Text fields            | Text Fields            |\n| Intelligence Community | Intelligence community |\n\n## Bold\n\nOnly use bold to refer to text from interfaces in technical documentation or instructions - use bold to explain what field a user needs to fill in on a form, or which button they need to select. For example: “Select **Continue** to open the certificate window.”\n\n## Italics\n\nDo not use italics. Use ‘single quotation marks’ if referring to a document, scheme or initiative.\n\n## Underline\n\nNever use underline to emphasise your text because underline is used to indicate hyperlinks.\n\n## Full stops\n\nDon't use full stops in headings, list items (which are not full sentences), buttons or action links.\n\n## Lists\n\n- Consistent lists are easier to read and will be read properly by assistive technology. List items should end with a full stop if they are complete sentences.\n- Begin list items with a capital letter.\n\n## Footnotes\nDo not use footnotes on web pages. They’re designed for reference in print, not web pages. Always consider the user need first. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.\n\n## Exceptions\n\nNot all scenarios will be covered by this guidance - do what makes sense. For example, writing the number in words in the example below.\n\n| **Like this...**                                  | **Not like this...**                           |\n| ------------------------------------------------- | ---------------------------------------------- |\n| This API is built by a third-party.               | This API is built by a 3rd party.              |\n| Children's toys are sold at the second-hand shop. | Children's toys are sold at the 2nd-hand shop. |\n",
+      "contents": "\n## Abbreviations and acronyms\n\nWe regularly use abbreviations and acronyms, especially in technology. Write out the words the first time you mention it, then use the short version next time.\n\nFor example, write 'Intelligence Community Design System (ICDS)' the first time you mention it. Then 'ICDS' the second time.\n\n## Ampersands\n\nDon’t use ampersands in body text. “And” should be spelled out in sentences and paragraphs. Spelling out “and” improves readability and makes scanning easier. Use ampersands only if they are part of a logo or in a brand name.\n\n## Paragraphs\n\nA paragraph should be made up of 2 to 3 sentences if possible.\n\n## Capitalisation\n\nWe don't use block capitals as they're difficult for people to read.\n\nCapitalise proper nouns and write everything else in sentence case. A proper noun is often a specific place, person or thing.\n\nSentence case is where only the first letter of the first word in a sentence or phrase is capitalised. Using capital letters for special or important words can be highly subjective and can result in inconsistencies across an organisation.\n\n| **Like this...**       | **Not like this...**   |\n| ---------------------- | ---------------------- |\n| Date and time          | Date and Time          |\n| Text fields            | Text Fields            |\n| Intelligence Community | Intelligence community |\n\n## Bold\n\nOnly use bold to refer to text from interfaces in technical documentation or instructions - use bold to explain what field a user needs to fill in on a form, or which button they need to select. For example: “Select **Continue** to open the certificate window.”\n\n## Italics\n\nDo not use italics. Use ‘single quotation marks’ if referring to a document, scheme or initiative.\n\n## Underline\n\nNever use underline to emphasise your text because underline is used to indicate hyperlinks.\n\n## Full stops\n\nDon't use full stops in headings, list items (which are not full sentences), buttons or action links.\n\n## Lists\n\n- Consistent lists are easier to read and will be read properly by assistive technology. List items should end with a full stop if they are complete sentences.\n- Begin list items with a capital letter.\n\n## Footnotes\n\nDo not use footnotes on web pages. They’re designed for reference in print, not web pages. Always consider the user need first. If the information in the footnotes is important, include it in the body text. If it’s not, leave it out.\n\n## Exceptions\n\nNot all scenarios will be covered by this guidance - do what makes sense. For example, writing the number in words in the example below.\n\n| **Like this...**                                  | **Not like this...**                           |\n| ------------------------------------------------- | ---------------------------------------------- |\n| This API is built by a third-party.               | This API is built by a 3rd party.              |\n| Children's toys are sold at the second-hand shop. | Children's toys are sold at the 2nd-hand shop. |\n",
       "path": "/styles/content-style/grammar",
       "navPriority": 3,
       "date": "2024-04-19",
@@ -4676,8 +4746,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/grammar.mdx",
       "meta": {
         "relativePath": "styles/grammar.mdx",
-        "createdAt": "2024-04-19T12:36:41.640Z",
-        "lastModified": "2024-04-19T12:36:41.640Z",
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
         "size": 3317,
         "formattedSize": "3.2 KB"
       }
@@ -4692,8 +4762,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/icons.mdx",
       "meta": {
         "relativePath": "styles/icons.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.469Z",
+        "createdAt": "2023-10-10T13:12:02.033Z",
+        "lastModified": "2023-10-10T13:12:02.033Z",
         "size": 1720,
         "formattedSize": "1.7 KB"
       }
@@ -4709,8 +4779,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/inclusive-language.mdx",
       "meta": {
         "relativePath": "styles/inclusive-language.mdx",
-        "createdAt": "2024-04-19T12:28:16.931Z",
-        "lastModified": "2024-04-19T12:28:16.931Z",
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
         "size": 5768,
         "formattedSize": "5.6 KB"
       }
@@ -4726,8 +4796,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/index.mdx",
       "meta": {
         "relativePath": "styles/index.mdx",
-        "createdAt": "2024-04-18T13:19:29.817Z",
-        "lastModified": "2024-04-18T13:19:29.817Z",
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
         "size": 926,
         "formattedSize": "926 Bytes"
       }
@@ -4743,15 +4813,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/layout-spacing.mdx",
       "meta": {
         "relativePath": "styles/layout-spacing.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.485Z",
+        "createdAt": "2023-07-19T12:02:15.053Z",
+        "lastModified": "2023-07-19T12:02:15.053Z",
         "size": 10040,
         "formattedSize": "9.8 KB"
       }
     },
     {
       "id": "styles__linksx",
-      "contents": "\n## Make links clear\n\nIt's important to make sure link text tells users where they are going and why. This is because link text should make sense without context (the words around the link).\n\nAvoid writing 'click here' or 'read more'.\n\n| **Like this...**                                                   | **Not like this...**                                                           |\n| ------------------------------------------------------------------ | ------------------------------------------------------------------------------ |\n| Find out about the <a href=\"#0\">changes to the expense policy.</a> | Find out about changes to the expense policy. <a href=\"#0\">Read more here.</a> |\n\nStart with a verb when telling people to do something.\n\n| **Like this...**                          | **Not like this...**                 |\n| ----------------------------------------- | ------------------------------------ |\n| <a href=\"#0\">Read new expense policy.</a> | <a href=\"#0\">New expense policy.</a> |\n",
+      "contents": "\n## Introduction\n\nIt's important to make sure link text tells users where they are going and why. This is because link text should make sense without context (the words around the link).\n\nAvoid writing 'click here' or 'read more'.\n\n| **Like this...**                                                   | **Not like this...**                                                           |\n| ------------------------------------------------------------------ | ------------------------------------------------------------------------------ |\n| Find out about the <a href=\"#0\">changes to the expense policy.</a> | Find out about changes to the expense policy. <a href=\"#0\">Read more here.</a> |\n\nStart with a verb when telling people to do something.\n\n| **Like this...**                          | **Not like this...**                 |\n| ----------------------------------------- | ------------------------------------ |\n| <a href=\"#0\">Read new expense policy.</a> | <a href=\"#0\">New expense policy.</a> |\n",
       "path": "/styles/content-style/links",
       "navPriority": 5,
       "date": "2024-04-19",
@@ -4760,9 +4830,9 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/links.mdx",
       "meta": {
         "relativePath": "styles/links.mdx",
-        "createdAt": "2024-04-19T12:37:29.000Z",
-        "lastModified": "2024-04-19T12:37:29.000Z",
-        "size": 1264,
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
+        "size": 1260,
         "formattedSize": "1.2 KB"
       }
     },
@@ -4776,8 +4846,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/motion.mdx",
       "meta": {
         "relativePath": "styles/motion.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.485Z",
+        "createdAt": "2023-07-19T12:02:15.053Z",
+        "lastModified": "2023-07-19T12:02:15.053Z",
         "size": 5938,
         "formattedSize": "5.8 KB"
       }
@@ -4793,8 +4863,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/numbers-dates-time.mdx",
       "meta": {
         "relativePath": "styles/numbers-dates-time.mdx",
-        "createdAt": "2024-04-19T12:37:02.156Z",
-        "lastModified": "2024-04-19T12:37:02.156Z",
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
         "size": 2593,
         "formattedSize": "2.5 KB"
       }
@@ -4810,8 +4880,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/principles.mdx",
       "meta": {
         "relativePath": "styles/principles.mdx",
-        "createdAt": "2024-04-19T12:25:34.203Z",
-        "lastModified": "2024-04-19T12:25:34.203Z",
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
         "size": 1456,
         "formattedSize": "1.4 KB"
       }
@@ -4827,8 +4897,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/templates.mdx",
       "meta": {
         "relativePath": "styles/templates.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.485Z",
+        "createdAt": "2023-10-10T13:12:02.037Z",
+        "lastModified": "2023-10-10T13:12:02.037Z",
         "size": 4079,
         "formattedSize": "4.0 KB"
       }
@@ -4843,15 +4913,15 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/typography.mdx",
       "meta": {
         "relativePath": "styles/typography.mdx",
-        "createdAt": "2024-04-18T12:17:31.909Z",
-        "lastModified": "2024-04-18T12:16:01.485Z",
+        "createdAt": "2023-10-10T13:12:02.037Z",
+        "lastModified": "2023-10-10T13:12:02.037Z",
         "size": 1852,
         "formattedSize": "1.8 KB"
       }
     },
     {
       "id": "styles__voice-and-tonex",
-      "contents": "\n## Voice\n\nVoice is like our personality. When we write, we want to appear that the 'user interface is talking to the user' and remember that everyone needs to understand what we're trying to say.\nTherefore our voice is personal, inclusive and plain-spoken.\n\nWe:\n- Address the user as 'you'.\n- Avoid using 'should' as it can sound patronising.\n- Use ‘can’ and ‘may’ appropriately -‘can’ implies ability and ‘may’ implies permission and even uncertainty.\n- Use the language our users want us to use.\n- Open and inclusive to all.\n\n## Tone\n\nTone is like our mood. We adapt our tone depending on the context.\n\nFor example, we may use a direct, serious and reassuring tone when writing about a new government legislation or data handling policy.\n\n## Tips\n\n### Active not passive voice\n\nActive voice is easier to read because it identifies the 'thing' that's doing the action.\n\nWords like 'was' or 'by' may indicate that you're writing in a passive voice.\n\n| **Like this...**                               | **Not like this...**                                  |\n| ---------------------------------------------- | ----------------------------------------------------- |\n| Matt checked out the 'Content Style' document. | The 'Content Style' document was checked out by Matt. |\n| The app encountered a problem.                 | A problem was encountered by the app.                 |\n\n### Be direct\n\nWriting 'to the point' will help you write simple content.\n\nThe simple principle is about getting readers the information they want as quickly as possible.\n\n| **Like this...**                                  | **Not like this...**                                                      |\n| ------------------------------------------------- | ------------------------------------------------------------------------- |\n| Read the instructions that came with your laptop. | Consult the guidance that came with your laptop for further instructions. |\n\n### Swap formal words for normal ones\n\nUse language you would use if you were talking with the person you’re writing to.\n\n| **This...**      | **Instead of...** |\n| ---------------- | ----------------- |\n| Person           | User              |\n| About            | Approximate       |\n| App              | Application       |\n| Ask              | Request           |\n| Buy              | Purchase          |\n| Cancel           | Discard, Abort    |\n| Complete         | Successful        |\n| Confirm          | Validate          |\n| Divide           | Allocate          |\n| Fix              | Resolve           |\n| Get              | Obtain            |\n| Give             | Provide           |\n| Go with          | Accompany         |\n| Help             | Assistance        |\n| Maintain         | Support, Keep     |\n| Make sure        | Ensure            |\n| More information | More guidance     |\n| Never            | Not               |\n| Next             | Adjacent          |\n| Own              | Possess           |\n| Question         | Query             |\n| Remove           | Delete, Trash     |\n| Send             | Forward           |\n| Stay             | Remain            |\n| Stop             | Discontinue       |\n| Take part        | Participate       |\n| Tell             | Notify, Recommend |\n| Try              | Attempt           |\n| Use              | Utilise           |\n| A or b or both   | A and/or b        |\n| For example      | e.g.              |\n",
+      "contents": "\n## Voice\n\nVoice is like our personality. When we write, we want to appear that the 'user interface is talking to the user' and remember that everyone needs to understand what we're trying to say.\nTherefore our voice is personal, inclusive and plain-spoken.\n\nWe:\n\n- Address the user as 'you'.\n- Avoid using 'should' as it can sound patronising.\n- Use ‘can’ and ‘may’ appropriately -‘can’ implies ability and ‘may’ implies permission and even uncertainty.\n- Use the language our users want us to use.\n- Open and inclusive to all.\n\n## Tone\n\nTone is like our mood. We adapt our tone depending on the context.\n\nFor example, we may use a direct, serious and reassuring tone when writing about a new government legislation or data handling policy.\n\n## Tips\n\n### Active not passive voice\n\nActive voice is easier to read because it identifies the 'thing' that's doing the action.\n\nWords like 'was' or 'by' may indicate that you're writing in a passive voice.\n\n| **Like this...**                               | **Not like this...**                                  |\n| ---------------------------------------------- | ----------------------------------------------------- |\n| Matt checked out the 'Content Style' document. | The 'Content Style' document was checked out by Matt. |\n| The app encountered a problem.                 | A problem was encountered by the app.                 |\n\n### Be direct\n\nWriting 'to the point' will help you write simple content.\n\nThe simple principle is about getting readers the information they want as quickly as possible.\n\n| **Like this...**                                  | **Not like this...**                                                      |\n| ------------------------------------------------- | ------------------------------------------------------------------------- |\n| Read the instructions that came with your laptop. | Consult the guidance that came with your laptop for further instructions. |\n\n### Swap formal words for normal ones\n\nUse language you would use if you were talking with the person you’re writing to.\n\n| **This...**      | **Instead of...** |\n| ---------------- | ----------------- |\n| Person           | User              |\n| About            | Approximate       |\n| App              | Application       |\n| Ask              | Request           |\n| Buy              | Purchase          |\n| Cancel           | Discard, Abort    |\n| Complete         | Successful        |\n| Confirm          | Validate          |\n| Divide           | Allocate          |\n| Fix              | Resolve           |\n| Get              | Obtain            |\n| Give             | Provide           |\n| Go with          | Accompany         |\n| Help             | Assistance        |\n| Maintain         | Support, Keep     |\n| Make sure        | Ensure            |\n| More information | More guidance     |\n| Never            | Not               |\n| Next             | Adjacent          |\n| Own              | Possess           |\n| Question         | Query             |\n| Remove           | Delete, Trash     |\n| Send             | Forward           |\n| Stay             | Remain            |\n| Stop             | Discontinue       |\n| Take part        | Participate       |\n| Tell             | Notify, Recommend |\n| Try              | Attempt           |\n| Use              | Utilise           |\n| A or b or both   | A and/or b        |\n| For example      | e.g.              |\n",
       "path": "/styles/content-style/voice-and-tone",
       "navPriority": 1,
       "date": "2024-04-19",
@@ -4860,9 +4930,9 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/voice-and-tone.mdx",
       "meta": {
         "relativePath": "styles/voice-and-tone.mdx",
-        "createdAt": "2024-04-19T12:26:49.751Z",
-        "lastModified": "2024-04-19T12:26:49.751Z",
-        "size": 3750,
+        "createdAt": "2024-04-29T08:57:52.542Z",
+        "lastModified": "2024-04-29T08:57:52.542Z",
+        "size": 3751,
         "formattedSize": "3.7 KB"
       }
     }

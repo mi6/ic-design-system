@@ -83,17 +83,19 @@ interface ComponentDetails {
   title: string;
   subTitle: string;
   path: string;
+  status?: string;
 }
 
 const ComponentGallery: React.FC = () => {
   const componentDetails: ComponentDetails[] = [];
 
-  pagesData.data.forEach((page) => {
-    if (page.tabs) {
+  pagesData.data.forEach(({ path, subTitle, status, tabs, title }) => {
+    if (tabs) {
       componentDetails.push({
-        title: page.title,
-        subTitle: page.subTitle,
-        path: page.path,
+        title,
+        subTitle,
+        path,
+        status,
       });
     }
   });
@@ -104,33 +106,35 @@ const ComponentGallery: React.FC = () => {
 
   return (
     <ul className="card-container">
-      {uniqueComponentDetails &&
-        uniqueComponentDetails.map((item: ComponentDetails) => (
-          <li>
-            <GatsbyLink to={`${item.path}`}>
-              <ic-card message={item.subTitle} full-width clickable>
-                <img
-                  src={
-                    ComponentImages[item.title.replace(/ /g, "")] == null
-                      ? PlaceHolder
-                      : ComponentImages[item.title.replace(/ /g, "")]
-                  }
-                  slot="image-top"
-                  alt={item.title}
-                  width="100%"
-                  height="100%"
-                />
-                <ic-typography
-                  slot="heading"
-                  variant="h4"
-                  aria-label={`${item.title} component.`}
-                >
-                  <h4>{item.title}</h4>
-                </ic-typography>
-              </ic-card>
-            </GatsbyLink>
-          </li>
-        ))}
+      {uniqueComponentDetails?.map(({ path, subTitle, status, title }) => (
+        <li>
+          <GatsbyLink to={path}>
+            <ic-card message={subTitle} full-width clickable>
+              <img
+                src={ComponentImages[title.replace(/ /g, "")] || PlaceHolder}
+                slot="image-top"
+                alt={title}
+                width="100%"
+                height="100%"
+              />
+              <ic-typography
+                slot="heading"
+                variant="h4"
+                aria-label={`${title} component.`}
+              >
+                <h4>{title}</h4>
+              </ic-typography>
+              {status === "CANARY" && (
+                <ic-status-tag
+                  slot="adornment"
+                  label={status}
+                  size="small"
+                ></ic-status-tag>
+              )}
+            </ic-card>
+          </GatsbyLink>
+        </li>
+      ))}
     </ul>
   );
 };
