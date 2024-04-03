@@ -53,9 +53,8 @@ jobs:
       - name: Build
         run: |
           BRANCH=${{ steps.extract_branch.outputs.branch }}
-          export ICDS_PREFIX=/branches/$BRANCH
+          export ICDS_PREFIX=/ic-design-system-githubpages/branches/$BRANCH
           npm ci --legacy-peer-deps
-          echo GATSBY_ICDS_PREFIX=${{ vars.ICDS_PREFIX_DEV }} >> .env.production
           echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_DEV }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
           npm run build:prefixed
