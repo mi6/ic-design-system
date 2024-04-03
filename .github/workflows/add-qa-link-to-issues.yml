@@ -19,4 +19,4 @@ jobs:
       - uses: mshick/add-pr-comment@v2
         with:
           message: |
-            View your branch deployment here: https://animated-fiesta-gvyom1k.pages.github.io/branches/${{ steps.extract_branch.outputs.branch }}
+            View your branch deployment here: https://mi6.github.io/ic-design-system-githubpages/branches/${{ steps.extract_branch.outputs.branch }}
