@@ -27,10 +27,10 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
   shortTitle,
 }) => (
   <ic-top-navigation version={version}>
-    <GatsbyLink id="icds-link" slot="app-title" to={withPrefix("/")}>
+    <GatsbyLink id="icds-link" slot="app-title" to="/">
       {appTitle}
     </GatsbyLink>
-    <GatsbyLink slot="short-app-title" to={withPrefix("/")}>
+    <GatsbyLink slot="short-app-title" to="/">
       {shortTitle}
     </GatsbyLink>
     <a slot="app-icon" href={withPrefix("/")}>
