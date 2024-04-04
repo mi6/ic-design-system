@@ -1,0 +1,419 @@
+---
+path: "/components/canary/date-picker/code"
+
+date: "2024-04-03"
+
+title: "Date Picker"
+
+status: "CANARY"
+
+subTitle: "Code"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/canary/date-picker" },
+    { title: "Code", path: "/components/canary/date-picker/code" },
+    { title: "Accessibility", path: "/components/date-picker/accessibility" },
+  ]
+---
+
+import { IcDatePicker } from "@ukic/canary-react";
+
+## Component demo
+
+export const snippets = [
+  {
+    language: "Web Component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" />`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" />`,
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcDatePicker label="When would you like to collect your coffee?" />
+</ComponentPreview>
+
+## Date picker details
+
+<ComponentDetails component="ic-date-picker" />
+
+## Variants
+
+### Sizes
+
+Set the size of the date picker by using the `size` prop. This prop takes the values `small`, `default` or `large`. Depending on the chosen size, the prop will apply styling to increase or decrease the amount of spacing within the component.
+
+export const sizes = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" size="small"></ic-date-picker>
+<ic-date-picker label="When would you like to collect your coffee?" size="default"></ic-date-picker>
+<ic-date-picker label="When would you like to collect your coffee?" size="large"></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" size="small" />
+<IcDatePicker label="When would you like to collect your coffee?" />
+<IcDatePicker label="When would you like to collect your coffee?" size="large" />`,
+  },
+];
+
+<ComponentPreview snippets={sizes} style={{ flexDirection: "column" }}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "16px",
+    }}
+  >
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      size="small"
+    />
+    <IcDatePicker label="When would you like to collect your coffee?" />
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      size="large"
+    />
+  </div>
+</ComponentPreview>
+
+### Max width
+
+Set the size of the input field by using the `--input-width` CSS custom property. The picker will grow, but not exceed its maximum supported width.
+
+export const maxWidth = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker style="--input-width: 500px" label="When would you like to collect your coffee?" size="small"></ic-date-picker>
+<ic-date-picker style="--input-width: 500px" label="When would you like to collect your coffee?" size="default"></ic-date-picker>
+<ic-date-picker style="--input-width: 500px" label="When would you like to collect your coffee?" size="large"></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker style={{ "--input-width": "500px" }} label="When would you like to collect your coffee?" size="small" />
+<IcDatePicker style={{ "--input-width": "500px" }} label="When would you like to collect your coffee?" />
+<IcDatePicker style={{ "--input-width": "500px" }} label="When would you like to collect your coffee?" size="large" />`,
+  },
+];
+
+<ComponentPreview snippets={maxWidth} style={{ flexDirection: "column" }}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "16px",
+    }}
+  >
+    <IcDatePicker
+      style={{ "--input-width": "500px" }}
+      label="When would you like to collect your coffee?"
+      size="small"
+    />
+    <IcDatePicker
+      style={{ "--input-width": "500px" }}
+      label="When would you like to collect your coffee?"
+    />
+    <IcDatePicker
+      style={{ "--input-width": "500px" }}
+      label="When would you like to collect your coffee?"
+      size="large"
+    />
+  </div>
+</ComponentPreview>
+
+### Disabled
+
+export const disabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" disabled></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" disabled />`,
+  },
+];
+
+<ComponentPreview snippets={disabled} style={{ flexDirection: "column" }}>
+  <IcDatePicker label="When would you like to collect your coffee?" disabled />
+</ComponentPreview>
+
+### Date formats
+
+The `dateFormat` prop determines how dates are displayed. The supported formats are `DD/MM/YYYY`, `MM/DD/YYYY` or `YYYY/MM/DD`.
+The default format is `DD/MM/YYYY`.
+
+export const dateFormats = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" ></ic-date-picker>
+<ic-date-picker label="When would you like to collect your coffee?" date-format="MM/DD/YYYY" ></ic-date-picker>
+<ic-date-picker label="When would you like to collect your coffee?" date-format="YYYY/MM/DD" ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" />
+<IcDatePicker label="When would you like to collect your coffee?" dateFormat="MM/DD/YYYY" />
+<IcDatePicker label="When would you like to collect your coffee?" dateFormat="YYYY/MM/DD" />`,
+  },
+];
+
+<ComponentPreview snippets={dateFormats} style={{ flexDirection: "column" }}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+    <IcDatePicker label="When would you like to collect your coffee?" />
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      dateFormat="MM/DD/YYYY"
+    />
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      dateFormat="YYYY/MM/DD"
+    />
+  </div>
+</ComponentPreview>
+
+### Value
+
+The `value` prop sets the date in the input field. The value can be in any format supported by the `dateFormat` prop, in ISO 8601 date string format (yyyy-mm-dd) or as a JavaScript Date object.
+
+export const value = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" value="01/01/2024" ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" value="01/01/2024" />`,
+  },
+];
+
+<ComponentPreview snippets={value} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    value="01/01/2024"
+  />
+</ComponentPreview>
+
+### Open at date
+
+If no `value` is set, the `openAtDate` prop can be used to specify the date in view when the calendar view is opened. If not set to a value, the calendar will default to showing the current date.
+
+The supported formats are the same as for the `value` prop.
+
+export const openDate = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" helper-text="The calendar will open showing 25th December 2024, if no date selected" open-at-date="2024-12-25" ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" helperText="The calendar will open showing 25th December 2024, if no date selected" openAtDate="2024-12-25" />`,
+  },
+];
+
+<ComponentPreview snippets={openDate} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    helperText="The calendar will open showing 25th December 2024, if no date selected"
+    openAtDate="2024-12-25"
+  />
+</ComponentPreview>
+
+### Start of week
+
+The first day of the week can be changed by setting the `startOfWeek` prop. This is a numeric value where 0 = Sunday, 1 = Monday, etc up to 6 = Saturday.
+
+export const startWeek = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" start-of-week="0"></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" startOfWeek="0" />`,
+  },
+];
+
+<ComponentPreview snippets={startWeek} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    startOfWeek="0"
+  />
+</ComponentPreview>
+
+### Disable days of week
+
+Specific days of the week can be disabled from selection by setting the `disableDays` prop. The value can be set as an array of numeric values where where 0 = Sunday, 1 = Monday, etc up to 6 = Saturday.
+
+export const disabledDaysOfWeek = [0, 6];
+
+export const disableDays = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker id="weekday-picker" label="When would you like to collect your coffee?" ></ic-date-picker>
+<script>
+  document.querySelector("#weekday-picker").disableDays = [0, 6];
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const disabledDaysOfWeek = [0, 6 <IcDatePicker label="When would you like to collect your coffee?" disableDays={disabledDaysOfWeek} />;`,
+  },
+];
+
+<ComponentPreview snippets={disableDays} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    disableDays={disabledDaysOfWeek}
+  />
+</ComponentPreview>
+
+### Max and min
+
+The `max` and `min` props can be used to limit the range of dates available for selection. Values can be in any format supported by the `dateFormat` prop, in ISO 8601 date string format (yyyy-mm-dd) or as a JavaScript Date object.
+
+export const maxMin = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" helper-text="Choose a date between the 1st and 31st of July" min="2024-07-01" max="2024-07-31" show-picker-today-button="false" ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" helperText="Choose a date between the 1st and 31st of July" min="2024-07-01" max="2024-07-31" showPickerTodayButton="false" />`,
+  },
+];
+
+<ComponentPreview snippets={maxMin} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    helperText="Choose a date between the 1st and 31st of July"
+    min="2024-07-01"
+    max="2024-07-31"
+    showPickerTodayButton="false"
+  />
+</ComponentPreview>
+
+### Disable dates in past
+
+Dates before today can be disabled with the `disablePast` prop.
+
+export const disablePast = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" disable-past ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" disablePast />`,
+  },
+];
+
+<ComponentPreview snippets={disablePast} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    disablePast
+  />
+</ComponentPreview>
+
+### Disable dates in future
+
+Dates after today can be disabled with the `disableFuture` prop.
+
+export const disableFuture = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" disable-future ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" disableFuture />`,
+  },
+];
+
+<ComponentPreview snippets={disableFuture} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    disableFuture
+  />
+</ComponentPreview>
+
+### Days outside month hidden
+
+Days outside of the current month in view can be hidden by setting the `showDaysOutsideMonth` prop to `false`.
+
+export const dayHidden = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" show-days-outside-month="false" ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" showDaysOutsideMonth="false" />`,
+  },
+];
+
+<ComponentPreview snippets={dayHidden} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    showDaysOutsideMonth="false"
+  />
+</ComponentPreview>
+
+### Today and clear buttons hidden
+
+The "Go to today" and "Clear" buttons can be hidden from the calendar view by setting the `showPickerTodayButton` and `showPickerClearButton` props to `false`.
+
+export const btnHidden = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker label="When would you like to collect your coffee?" show-picker-today-button="false" show-picker-clear-button="false" ></ic-date-picker>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" showPickerTodayButton="false" showPickerClearButton="false" />`,
+  },
+];
+
+<ComponentPreview snippets={btnHidden} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    showPickerTodayButton="false"
+    showPickerClearButton="false"
+  />
+</ComponentPreview>
+
+### Javascript dates
+
+Any prop that accepts a date value can be set to a Javascript Date object. The following example sets the `value`, `max` and `min` props.
+
+export const jsDates = [
+  {
+    language: "Web component",
+    snippet: `<ic-date-picker id="js-date-picker" label="When would you like to collect your coffee?" helper-text="Choose a date between the 1st and 31st of July" show-picker-today-button="false" ></ic-date-picker>
+<script>
+  const datePicker = document.querySelector("#js-date-picker");
+  datePicker.min = new Date(2024, 6, 1);
+  datePicker.max = new Date(2024, 6, 31);
+  datePicker.value = new Date(2024, 6, 15);
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDatePicker label="When would you like to collect your coffee?" min={new Date(2024, 6, 1)} max={new Date(2024, 6, 31)} value={new Date(2024, 6, 15)} helperText="Choose a date between the 1st and 31st of July" showPickerTodayButton="false" />`,
+  },
+];
+
+<ComponentPreview snippets={jsDates} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    min={new Date(2024, 6, 1)}
+    max={new Date(2024, 6, 31)}
+    value={new Date(2024, 6, 15)}
+    helperText="Choose a date between the 1st and 31st of July"
+    showPickerTodayButton="false"
+  />
+</ComponentPreview>

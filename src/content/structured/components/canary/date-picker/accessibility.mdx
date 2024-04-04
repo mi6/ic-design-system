@@ -1,0 +1,91 @@
+---
+path: "/components/date-picker/accessibility"
+
+date: "2023-10-11"
+
+title: "Date picker"
+
+status: "BETA"
+
+subTitle: "Date pickers are used to select a date or range of dates."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/date-picker"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/date-picker" },
+    { title: "Code", path: "/components/date-picker/code" },
+    { title: "Accessibility", path: "/components/date-picker/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+A [date input] (../components/date-input ) is contained within the date picker.
+
+Focus is managed in three sections within the date picker. The top section is managed left to right, through month and year selectors. The middle section contains the calendar view or month / year list, with focus depending on navigation method used. The bottom section contains the ‘go to today’ and ‘clear’ buttons, with focus managed left to right.
+
+The date picker should act as a focus trap so the user only cycles through the date picker dropdown when the date picker is open.
+
+Use the clear icon in a [date input] (../components/date-input ) or clear button in a date picker to clear an input.
+
+The date picker can be navigated with keyboard only input.
+
+## For Assistive Technology
+
+When moving to a date selection, screen readers will announce in the format “Monday 06 October 2023”.
+
+When focussing the date picker calendar dates, screen readers will announce the date as weekday, date, month, and year sequentially, for example “Choose Wednesday, 8 November 2023”.
+
+When focus is trapped in the date picker dropdown screen, reader should announce route to exit focus. For example, “ic-date-picker, 03 July 2024, press ESC to exit”.
+
+The date picker will only open when users select the date picker icon from within date input.
+
+## Based on
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/ "
+      rel="noreferer noopener nofollow"
+    >
+      Web Content Accessibility Guidelines (WCAG) 2.1, World Wide Web Consortium
+    </ic-link>
+    , published 24 July 2023, accessed August 2023.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-datepicker/ "
+      rel="noreferer noopener nofollow"
+    >
+      Web Content Accessibility Guidelines (WCAG) 2.1, World Wide Web Consortium
+    </ic-link>
+    , published 05 June 2018, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.nngroup.com/articles/date-input/"
+      rel="noreferer noopener nofollow"
+    >
+      Date picker UX design guidelines, Nielson Norman Group
+    </ic-link>
+    , published 22 January 2017.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.aditus.io/patterns/accordion/"
+      rel="noreferer noopener nofollow"
+    >
+      Web Content Accessibility Guidelines (WCAG) 2.1, World Wide Web Consortium
+    </ic-link>
+    , published 20 June 2023, accessed February 2024.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.1 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

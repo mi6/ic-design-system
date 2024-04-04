@@ -1,0 +1,134 @@
+---
+path: "/components/canary/date-picker"
+
+navPriority: 3
+
+date: "2024-04-03"
+
+title: "Date Picker"
+
+status: "CANARY"
+
+subTitle: "Guidance"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/canary/date-picker" },
+    { title: "Code", path: "/components/canary/date-picker/code" },
+    { title: "Accessibility", path: "/components/date-picker/accessibility" },
+  ]
+---
+
+import { IcDatePicker } from "@ukic/canary-react";
+
+## Introduction
+
+A date picker is a type of drop-down control that allows people to easily view and select dates within the context of a week and month.
+
+## Component Demo
+
+<ComponentPreview>
+  <IcDatePicker label="When would you like to collect your coffee?" />
+</ComponentPreview>
+
+## When to use
+
+Use a date picker to select an event that is near to the present time.
+
+{" "}
+
+<DoDontCaution
+  imageAlt="A date picker being used to select a nearby date"
+  state="good"
+  caption="Use date picker to visualise and select nearby dates."
+/>
+
+Use a date picker to select a date that is known or desired, such as an appointment.
+
+Use a date picker to select a single date where visualising that date could be useful.
+
+Use a date picker to select a single date that is not commonly known, such as a meeting date.
+
+## When not to use
+
+Avoid using a date picker for well-known dates, such as dates of birth, because it is often easier to type this into a field. For example, if selecting 30/07/1966, consider using [date input] (../date-input/) as a date picker would require many clicks to arrive at the same date.
+
+{" "}
+
+<DoDontCaution
+  imageAlt="A date picker being used to select a very distant date"
+  state="caution"
+  caption="Avoid using a date picker when dealing with distant dates."
+/>
+
+## Sizing
+
+Use the date picker size properties to change its vertical size and achieve compact or spacious layouts.
+
+### width
+
+Use the resizing options to increase or decrease width to match other elements in a form.
+
+Use the [date input] (/components/canary/date-input) resizing options to change size of the input and calendar between minimum and maximum widths. For example, to create a larger date picker, resize width of [date input] (../components/date-input).
+
+{" "}
+
+<DoDontCaution
+  imageAlt="Two date picker examples at their maximum and minimum width"
+  state="good"
+  caption="Change the width of the [date input] (../date-input) to adjust the date picker width."
+/>
+
+## Content
+
+### Labels and helper text
+
+{" "}
+
+<DoDontCaution
+  imageAlt="A date picker field with label, helper and placeholder text highlighted."
+  caption="Labels, helper text and placeholder text make up the instructional elements of an input."
+/>
+
+Refer to [typography styling] (/styles/typography#text) for correct label, error text and helper text styles.
+
+Use text for the date picker month selection buttons.
+
+Use numerical values within the date picker year selection buttons.
+
+Use helper text to indicate restrictions in the date picker. Such as not allowing future dates within a date of birth collection.
+
+## Interaction
+
+Use [date input] (../components/date-input) instead of a date picker, if navigating a date picker would take considerably longer.
+
+Use a date picker when there is a need to visualise a date and the exact date is not known, such as ‘Monday two weeks from now’.
+
+## Validation
+
+### Standard
+
+Use the ‘error’ errored state when a date selection would be invalid, such as a future date selection for date of birth.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    state="good"
+    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
+    caption="Make sure to be clear and instructive when writing error messages. 
+Avoid ambiguity or terms like please when writing error messages. "
+  />
+  <DoDontCaution
+    state="bad"
+    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
+    caption="Make sure to be clear and instructive when writing error messages. 
+Avoid ambiguity or terms like please when writing error messages. "
+  />
+</DoubleDoDontCaution>
+
+Use the ‘error’ errored state when a date is valid, but outside of acceptable range. For example, selecting a date that would make you too young.
+
+Use the ‘error’ errored state for selections you deem invalid. For example, for if weekends are an invalid selection date, show the error state and supporting message upon user selection.
+
+For additional errors, see [date input] (../components/date-input#validation#)
+
+## Accessibility considerations

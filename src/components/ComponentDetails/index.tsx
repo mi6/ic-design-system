@@ -1,5 +1,6 @@
 import React from "react";
 import componentJson from "@ukic/docs";
+import canaryComponentJson from "@ukic/canary-docs";
 import EventTable from "./EventTable";
 import MethodTable from "./MethodTable";
 import PropTable from "./PropTable";
@@ -7,10 +8,16 @@ import SlotTable from "./SlotTable";
 import StyleTable from "./StyleTable";
 
 const ComponentDetails: React.FC<{ component: string }> = ({ component }) => {
-  const componentDetails = componentJson.components.find(
+  let componentDetails = componentJson.components.find(
     (currentComponent) => currentComponent.tag === component
   )!;
 
+  // If the component is not found in the main component JSON, check the canary component JSON
+  if (componentDetails === undefined) {
+    componentDetails = canaryComponentJson.components.find(
+      (currentComponent) => currentComponent.tag === component
+    )!;
+  }
   const { props, slots, events, methods, styles } = componentDetails;
 
   return (
