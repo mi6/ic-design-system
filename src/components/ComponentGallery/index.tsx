@@ -79,29 +79,13 @@ const ComponentImages: { [key: string]: any } = {
   Typography,
 };
 
-interface ComponentDetails {
-  title: string;
-  subTitle: string;
-  path: string;
-  status?: string;
-}
-
 const ComponentGallery: React.FC = () => {
-  const componentDetails: ComponentDetails[] = [];
-
-  pagesData.data.forEach(({ path, subTitle, status, tabs, title }) => {
-    if (tabs) {
-      componentDetails.push({
-        title,
-        subTitle,
-        path,
-        status,
-      });
-    }
-  });
-
   const uniqueComponentDetails = [
-    ...new Map(componentDetails.map((item) => [item.title, item])).values(),
+    ...new Map(
+      pagesData.data
+        .filter(({ tabs }) => tabs)
+        .map((item) => [item.title, item])
+    ).values(),
   ];
 
   return (
@@ -129,7 +113,8 @@ const ComponentGallery: React.FC = () => {
                   slot="adornment"
                   label={status}
                   size="small"
-                ></ic-status-tag>
+                  status="warning"
+                />
               )}
             </ic-card>
           </GatsbyLink>
