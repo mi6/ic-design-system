@@ -8,7 +8,7 @@ import StyleTable from "./StyleTable";
 
 const ComponentDetails: React.FC<{ component: string }> = ({ component }) => {
   const componentDetails = componentJson.components.find(
-    (currentComponent) => currentComponent.tag === component
+    ({ tag }) => tag === component
   )!;
 
   const { props, slots, events, methods, styles } = componentDetails;
