@@ -5,11 +5,72 @@ navPriority: 6
 
 date: "2024-04-03"
 
-title: "Canary"
+title: "Canary components"
 
-status: "CANARY"
-
-subTitle: "canary"
+subTitle: "Canary components offer users the opportunity to try our larger components in earlier stages of development."
 ---
 
-Index
+import { IcLink } from "@ukic/react";
+
+These pages give examples and guidance for our canary components. These components are likely to change in the future.
+
+Our storybook gives further details on our canary components and how they can be used in your applications:
+
+- <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/canary/date-input/canary-react/?path=/story/react-components-date-input--docs"
+    target="_blank"
+  >
+    Date input
+  </IcLink>
+
+## Installing the components
+
+### Step one
+
+In the root of your project:
+
+```shell
+// using npm
+npm install @ukic/canary-react @ukic/fonts
+
+// using yarn
+rm package-lock.json
+yarn add @ukic/canary-react @ukic/fonts
+```
+
+### Step two
+
+Add the following into the top level CSS file for your project.
+
+```css
+@import "@ukic/fonts/dist/fonts.css";
+@import "@ukic/canary-react/dist/core/core.css";
+```
+
+<p>
+  In order to be rendered consistently across browsers and in line with modern
+  standards, each of the ICDS components uses styles from a global CSS file
+  based on{" "}
+  <ic-link
+    target="_blank"
+    href="https://necolas.github.io/normalize.css/"
+    rel="noreferer noopener nofollow"
+  >
+    Normalize.css
+  </ic-link>
+  .
+</p>
+
+If you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.
+
+```css
+@import "@ukic/canary-react/dist/core/normalize.css";
+```
+
+### Step three
+
+Import the component(s) in your files.
+
+```jsx
+import { IcComponent } from "@ukic/canary-react";
+```

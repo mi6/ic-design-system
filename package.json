@@ -10,6 +10,7 @@
     "@mdi/react": "^1.5.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@ukic/canary-react": "^2.0.0-canary.10",
     "@ukic/docs": "^2.10.1",
     "@ukic/fonts": "^2.6.0",
     "@ukic/react": "^2.17.0",
