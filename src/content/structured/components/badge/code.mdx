@@ -51,8 +51,8 @@ export const snippetsDefault = [
     language: "React",
     snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
   <IcBadge
-    text-label="1000"
-    max-number="99"
+    textLabel="1000"
+    maxNumber="99"
     slot="badge"
     variant="info"
   />
@@ -63,7 +63,7 @@ export const snippetsDefault = [
 
 <ComponentPreview snippets={snippetsDefault}>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge text-label="1000" max-number="99" slot="badge" variant="info" />
+    <IcBadge textLabel="1000" maxNumber="99" slot="badge" variant="info" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -80,7 +80,7 @@ export const snippetsSizes = [
   {
     language: "Web component",
     snippet: `<ic-button size="small" variant="secondary" style="margin-right:16px">
-  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  <ic-badge size="small" text-label="8" slot="badge" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
 <ic-button variant="secondary" style="margin-right:16px">
@@ -88,22 +88,22 @@ export const snippetsSizes = [
   Coffee orders
 </ic-button>
 <ic-button size="large" variant="secondary" style="margin-right:16px">
-  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  <ic-badge size="large" text-label="8" slot="badge" variant="info"></ic-badge>
   Coffee orders
 </ic-button>`,
   },
   {
     language: "React",
     snippet: `<IcButton size="small" variant="secondary">
-  <IcBadge size="small" text-label="8" slot="badge" variant="info"/>
+  <IcBadge size="small" textLabel="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary">
-  <IcBadge text-label="8" slot="badge" variant="info"/>
+  <IcBadge textLabel="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton size="large" variant="secondary">
-  <IcBadge size="large" text-label="8" slot="badge" variant="info"/>
+  <IcBadge size="large" textLabel="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>`,
   },
@@ -111,15 +111,15 @@ export const snippetsSizes = [
 
 <ComponentPreview snippets={snippetsSizes}>
   <IcButton size="small" variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge text-label="8" slot="badge" variant="info" size="small" />
+    <IcBadge textLabel="8" slot="badge" variant="info" size="small" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge text-label="8" slot="badge" variant="info" size="default" />
+    <IcBadge textLabel="8" slot="badge" variant="info" size="default" />
     Coffee orders
   </IcButton>
   <IcButton size="large" variant="secondary">
-    <IcBadge text-label="8" slot="badge" variant="info" size="large" />
+    <IcBadge textLabel="8" slot="badge" variant="info" size="large" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -149,19 +149,19 @@ export const snippetsStatus = [
   {
     language: "React",
     snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" text-label="8" variant="neutral"/>
+  <IcBadge slot="badge" textLabel="8" variant="neutral"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" text-label="New" variant="info"/>
+  <IcBadge slot="badge" textLabel="New" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" text-label="Unavailable" variant="error"/>
+  <IcBadge slot="badge" textLabel="Unavailable" variant="error"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" text-label="Available" variant="success"/>
+  <IcBadge slot="badge" textLabel="Available" variant="success"/>
   Coffee orders
 </IcButton>`,
   },
@@ -169,19 +169,19 @@ export const snippetsStatus = [
 
 <ComponentPreview snippets={snippetsStatus}>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" text-label="8" variant="neutral" />
+    <IcBadge slot="badge" textLabel="8" variant="neutral" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" text-label="New" variant="info" />
+    <IcBadge slot="badge" textLabel="New" variant="info" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" text-label="Unavailable" variant="error" />
+    <IcBadge slot="badge" textLabel="Unavailable" variant="error" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge slot="badge" text-label="Available" variant="success" />
+    <IcBadge slot="badge" textLabel="Available" variant="success" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -221,7 +221,7 @@ export const snippetsInformation = [
   {
     language: "React",
     snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge slot="badge" type="text" text-label="8" variant="info"/>
+  <IcBadge slot="badge" type="text" textLabel="8" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
@@ -252,7 +252,7 @@ export const snippetsInformation = [
 <ComponentPreview snippets={snippetsInformation}>
   <div style={{ padding: "16px" }}>
     <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge text-label="8" slot="badge" type="text" variant="info" />
+      <IcBadge textLabel="8" slot="badge" type="text" variant="info" />
       Coffee orders
     </IcButton>
   </div>
@@ -304,8 +304,8 @@ export const snippetsMaxNumber = [
     snippet: `<div style={{padding:"16px"}}>
   <IcButton variant="secondary" style={{marginRight:"16px"}}>
     <IcBadge
-      text-label="1000"
-      max-number="99"
+      textLabel="1000"
+      maxNumber="99"
       slot="badge"
       variant="info"
     />
@@ -318,7 +318,7 @@ export const snippetsMaxNumber = [
 <ComponentPreview snippets={snippetsMaxNumber}>
   <div style={{ padding: "16px" }}>
     <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge text-label="1000" max-number="99" slot="badge" variant="info" />
+      <IcBadge textLabel="1000" maxNumber="99" slot="badge" variant="info" />
       Coffee orders
     </IcButton>
   </div>
@@ -471,7 +471,7 @@ export const snippetsInline = [
     <IcTab>
     Orders
       <IcBadge
-        text-label="8"
+        textLabel="8"
         slot="badge"
         position="inline"
         size="large"
@@ -495,7 +495,7 @@ export const snippetsInline = [
       <IcTab>
         Orders
         <IcBadge
-          text-label="8"
+          textLabel="8"
           slot="badge"
           position="inline"
           size="large"
@@ -612,11 +612,11 @@ export const snippetsAccessibleLabel = [
     snippet: `<div style={{padding:"16px"}}>
   <IcButton variant="secondary" style={{marginRight:"16px"}}>
     <IcBadge
-      text-label="8"
+      textLabel="8"
       slot="badge"
       size="large"
       variant="info"
-      accessible-label="8 coffee orders found"
+      accessibleLabel="8 coffee orders found"
     />
     Coffee orders
   </IcButton>
@@ -628,10 +628,10 @@ export const snippetsAccessibleLabel = [
   <div style={{ padding: "16px" }}>
     <IcButton variant="secondary" style={{ marginRight: "16px" }}>
       <IcBadge
-        text-label="8"
+        textLabel="8"
         slot="badge"
         size="large"
-        accessible-label="8 coffee orders found"
+        accessibleLabel="8 coffee orders found"
         variant="info"
       />
       Coffee orders
