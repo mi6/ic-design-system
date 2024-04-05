@@ -1,4 +1,5 @@
 name: Welcome new contributors to the repo
+permissions: read-all
 
 on:
   issues:
@@ -14,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.head.repo.full_name != 'mi6/ic-design-system'
     steps:
-      - uses: actions/first-interaction@v1
+      - uses: actions/first-interaction@3c71ce730280171fd1cfb57c00c774f8998586f7 #v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: |

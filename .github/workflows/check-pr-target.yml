@@ -1,4 +1,5 @@
 name: Prevent PRs to main
+permissions: read-all
 
 on:
   pull_request_target:
@@ -8,7 +9,7 @@ jobs:
   check-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: Vankka/pr-target-branch-action@v2.1
+      - uses: Vankka/pr-target-branch-action@def32ec9d93514138d6ac0132ee62e120a72aed5 #v2.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
