@@ -1,4 +1,5 @@
 name: Delete build folder on branch deletion
+permissions: read-all
 
 on: delete
 
@@ -21,13 +22,13 @@ jobs:
           private_key: ${{ secrets.DELETE_GH_PAGES_FOLDER_APP_PEM }}
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 #v3
         with:
           repository: mi6/ic-design-system-githubpages
           token: ${{ steps.generate_token.outputs.token }}
 
       - name: Remove and commit
-        uses: EndBug/add-and-commit@v9.1.1
+        uses: EndBug/add-and-commit@61a88be553afe4206585b31aa72387c64295d08b #v9.1.1
         if: steps.extract_branch.outputs.branch != ''
         with:
           add: ""

@@ -1,4 +1,5 @@
 name: Add new issues to project
+permissions: read-all
 
 on:
   issues:

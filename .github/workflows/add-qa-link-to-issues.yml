@@ -1,4 +1,5 @@
 name: Add QA link to issues on successful build
+permissions: read-all
 
 on:
   pull_request:
@@ -16,7 +17,7 @@ jobs:
         run: echo "branch=${GITHUB_HEAD_REF#refs/heads/}" >> $GITHUB_OUTPUT
         id: extract_branch
 
-      - uses: mshick/add-pr-comment@v2
+      - uses: mshick/add-pr-comment@b8f338c590a895d50bcbfa6c5859251edc8952fc #v2
         with:
           message: |
             View your branch deployment here: https://mi6.github.io/ic-design-system-githubpages/branches/${{ steps.extract_branch.outputs.branch }}
