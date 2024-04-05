@@ -1,0 +1,41 @@
+---
+path: "/components/canary/select-with-multi"
+
+navPriority: 4
+
+date: "2024-04-05"
+
+title: "Multi Select"
+
+status: "CANARY"
+
+subTitle: "Use the multi-select component to allow users to select one or more values from a list of options."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/canary/select-with-multi" },
+    { title: "Code", path: "/components/canary/select-with-multi/code" },
+    {
+      title: "Accessibility",
+      path: "/components/canary/select-with-multi/accessibility",
+    },
+  ]
+---
+
+import { IcSelectWithMulti } from "@ukic/canary-react";
+
+import { OPTIONS } from "./story-data";
+
+## Introduction
+
+An example of the multi-select component.
+
+## Component Demo
+
+<ComponentPreview>
+  <IcSelectWithMulti
+    label="What are your favourite types of coffee?"
+    options={OPTIONS}
+    multiple
+  />
+</ComponentPreview>

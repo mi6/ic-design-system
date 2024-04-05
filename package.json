@@ -10,7 +10,7 @@
     "@mdi/react": "^1.5.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@ukic/canary-docs": "../ic-ui-kit/packages/canary-docs/ukic-canary-docs-1.0.0.tgz",
+    "@ukic/canary-docs": "^1.0.0",
     "@ukic/canary-react": "^2.0.0-canary.10",
     "@ukic/canary-web-components": "^2.0.0-canary.10",
     "@ukic/docs": "^2.10.1",
