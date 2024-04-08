@@ -64,6 +64,7 @@ const Header: React.FC<HeaderProps> = ({
       status = "success";
       break;
     case "IN DEVELOPMENT":
+    case "CANARY":
       status = "warning";
       break;
     default:
