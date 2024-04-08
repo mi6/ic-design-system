@@ -1,0 +1,136 @@
+---
+path: "/components/canary/date-picker"
+
+navPriority: 3
+
+date: "2024-04-17"
+
+title: "Date Picker"
+
+status: "CANARY"
+
+subTitle: "A date picker is a type of drop-down control that allows people to easily view and select dates."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/canary/date-picker" },
+    { title: "Code", path: "/components/canary/date-picker/code" },
+    {
+      title: "Accessibility",
+      path: "/components/canary/date-picker/accessibility",
+    },
+  ]
+---
+
+import { IcDatePicker } from "@ukic/canary-react";
+import figure1 from "./images/fig1-use-date-picker-to-visualise-dates.png";
+import figure2 from "./images/fig2-avoid-using-for-distant-dates.png";
+import figure3 from "./images/fig3-custom-width.png";
+import figure4 from "./images/fig4-labels-helper-text-placeholder-text.png";
+import figure5 from "./images/fig5-month-year-picker.png";
+import figure6 from "./images/fig6-clear-error-message.png";
+import figure7 from "./images/fig7-unclear-error-message.png";
+
+## Component Demo
+
+<ComponentPreview>
+  <IcDatePicker label="When would you like to collect your coffee?" />
+</ComponentPreview>
+
+## When to use
+
+Use a date picker to select an event that is near to the present time.
+
+<DoDontCaution
+  imageSrc={figure1}
+  imageAlt="A date picker being used to select a nearby date"
+  caption="Use date picker to visualise and select dates"
+/>
+
+Use a date picker to select a date that is known or desired, such as an appointment.
+
+Use a date picker to select a single date where visualising that date could be useful.
+
+Use a date picker to select a single date that is not commonly known, such as a meeting date.
+
+Use a date picker when there is a need to view a date in context. For example, if there is a need to see which day of the week a future event occurs.
+
+## When not to use
+
+Avoid using a date picker for well-known dates, such as dates of birth, because it is often easier to type this into a field. For example, if selecting 30/07/1966, consider using [date input](/components/canary/date-input) as a date picker would require many clicks to arrive at the same date.
+
+<DoDontCaution
+  imageSrc={figure2}
+  imageAlt="A date picker being used to select a very distant date"
+  caption="Avoid using a date picker when dealing with distant dates."
+/>
+
+## Sizing
+
+Use the date picker size properties to change its vertical size and achieve compact or spacious layouts.
+
+### Width
+
+Use the resizing options to increase or decrease width to match other elements in a form.
+
+Use the [date input](/components/canary/date-input) resizing options to change size of the input and calendar between minimum and maximum widths. For example, to create a larger date picker, resize width of [date input](/components/canary/date-input).
+
+<DoDontCaution
+  imageSrc={figure3}
+  imageAlt="Two date picker examples at their maximum and minimum width"
+  caption="Change the width of the date input to adjust the date picker width."
+/>
+
+## Content
+
+### Labels and helper text
+
+<DoDontCaution
+  imageSrc={figure4}
+  imageAlt="A date picker field with label, helper and placeholder text highlighted."
+  caption="Labels, helper text and placeholder text make up the instructional elements of an input."
+/>
+
+Refer to [typography styling](/styles/typography#text) for correct label, error text and helper text styles.
+
+### Labels
+
+Use [content styling](/styles/content-style/principles) for help with building effective labels for people using date input.
+
+### Helper text
+
+Use helper text to indicate restrictions in your date input such as not allowing weekends.
+
+### Placeholder
+
+Use a placeholder to demonstrate an example of the desired input. Do not add essential information into the placeholder as it will be hidden when a date is entered into the field.
+
+## Interaction
+
+Set `open-at-date` to specify the date in view when the date picker is opened. If no date is set, the date picker will default to showing the current date.
+
+The [date input](/components/canary/date-input) and the date picker update according to any input made. For example, if 10/10/2100 is entered in the [date input](/components/canary/date-input), the date picker will open to display the selection.
+
+<DoDontCaution
+  imageSrc={figure5}
+  imageAlt="Three date pickers displaying the differing content views of day, month and year."
+  caption="Use the date picker month/year navigation buttons to display individual views of that type of selection."
+/>
+
+## Validation
+
+### Standard
+
+See [date input](/components/canary/date-input#validation) for detailed guidance on how to display errors within the date picker.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={figure6}
+    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
+    caption="Make sure to be clear and instructive when writing error messages. Avoid ambiguity or terms like please when writing error messages."
+  />
+  <DoDontCaution
+    imageSrc={figure7}
+    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
+  />
+</DoubleDoDontCaution>
