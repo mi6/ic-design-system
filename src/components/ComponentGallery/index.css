@@ -27,14 +27,6 @@ ic-page-header[heading="Components"] + ic-section-container .content-container {
     margin-right: calc(var(--ic-space-xs) * -1);
     grid-gap: var(--ic-space-xs);
   }
-
-  ic-page-header[heading="Components"]
-    + ic-section-container
-    .content-container
-    ic-typography {
-    margin-left: calc(var(--ic-space-xs) * -1);
-    margin-right: calc(var(--ic-space-xs) * -1);
-  }
 }
 
 @media screen and (min-width: 577px) and (max-width: 993px) {
@@ -44,14 +36,6 @@ ic-page-header[heading="Components"] + ic-section-container .content-container {
 }
 
 @media screen and (min-width: 577px) and (max-width: 768px) {
-  ic-page-header[heading="Components"]
-    + ic-section-container
-    .content-container
-    ic-typography {
-    margin-left: calc(var(--ic-space-sm) * -1);
-    margin-right: calc(var(--ic-space-sm) * -1);
-  }
-
   .card-container {
     margin: var(--ic-space-xs) calc(var(--ic-space-sm) * -1) var(--ic-space-xl);
   }
