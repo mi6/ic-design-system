@@ -1,7 +1,7 @@
 ---
 path: "/components/tabs/code"
 
-date: "2024-02-02"
+date: "2024-04-17"
 
 title: "Tabs"
 
@@ -38,12 +38,24 @@ export const snippets = [
 </ic-tab-context>
 <script>
   const tabContext = document.querySelector('ic-tab-context');
-  tabContext.addEventListener('icTabSelect', (ev) => console.log(ev.detail.tabIndex))
+  tabContext.addEventListener('icTabSelect', (ev) => 
+    console.log({
+      tabIndex: ev.detail.tabIndex,
+      tabLabel: ev.detail.tabLabel,
+    })
+  )
 </script>`,
   },
   {
     language: "React",
-    snippet: `<IcTabContext onIcTabSelect={(ev) => console.log(ev.detail.tabIndex)}>
+    snippet: `<IcTabContext
+  onIcTabSelect={(ev) =>
+    console.log({
+      tabIndex: ev.detail.tabIndex,
+      tabLabel: ev.detail.tabLabel,
+    })
+  }
+>
   <IcTabGroup label="Example tab group">
     <IcTab>Ingredients</IcTab>
     <IcTab>Method</IcTab>
@@ -57,7 +69,14 @@ export const snippets = [
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcTabContext onIcTabSelect={(ev) => console.log(ev.detail.tabIndex)}>
+  <IcTabContext
+    onIcTabSelect={(ev) =>
+      console.log({
+        tabIndex: ev.detail.tabIndex,
+        tabLabel: ev.detail.tabLabel,
+      })
+    }
+  >
     <IcTabGroup label="Example tab group">
       <IcTab>Ingredients</IcTab>
       <IcTab>Method</IcTab>
