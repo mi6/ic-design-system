@@ -100,7 +100,7 @@ Pull requests must have the approval of 2 reviewers before they can be merged in
 
 ### Accessibility
 
-All changes must meet the criteria for [WCAG 2.1 AA](https://design.sis.gov.uk/accessibility/requirement/wcag). Find out more about the importance of [accessibility](https://design.sis.gov.uk/accessibility).
+All changes must meet the criteria for [WCAG 2.2 AA](https://design.sis.gov.uk/accessibility/requirement/wcag). Find out more about the importance of [accessibility](https://design.sis.gov.uk/accessibility).
 
 ### Style guide
 
