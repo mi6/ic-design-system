@@ -188,14 +188,28 @@ export const createWebComponentsIndexHTML = (codeSnippet: string) => {
     <title>Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@ukic/fonts/dist/fonts.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@ukic/web-components/dist/core/core.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@ukic/web-components/dist/core/normalize.css"
+      crossorigin="anonymous"
+    />
   </head>
-  <style>
-    @import url("https://unpkg.com/@ukic/fonts/dist/fonts.css");
-    @import url("https://unpkg.com/@ukic/web-components/dist/core/core.css");
-    @import url("https://unpkg.com/@ukic/web-components/dist/core/normalize.css");${addStyling(
-      codeSnippet
-    )}${/<\/style/.test(codeSnippet) ? "" : `\n  </style>\n  <body>`}
+  <style>\t${addStyling(codeSnippet)}${
+    /<\/style/.test(codeSnippet) ? "" : `\n  </style>\n  <body>`
+  }
     ${codeSnippet}
     <script defer>
       import('https://unpkg.com/@ukic/web-components/loader').then((module) => {
