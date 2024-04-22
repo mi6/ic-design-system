@@ -3,7 +3,7 @@ path: "/accessibility/coding/tables"
 
 navPriority: 8
 
-date: "2024-04-15"
+date: "2024-04-18"
 
 title: "Tables"
 
@@ -81,91 +81,3 @@ Even missing table headers in a `<table>` means assistive technologies can't ass
 Historically tables were incorrectly used for layouts which would give assistive technology users a confusing experience. Don't use tables for any layout needs.
 
 Many screen readers will summarise the size of the table when it arrives at one, so our table example would say “Table with 4 columns and 3 rows”.
-
-## Best practice and WCAG
-
-Follow these WCAG criteria for tables:
-
-<ul>
-  <li>
-    <ic-link
-      target="_blank"
-      href="https://www.w3.org/WAI/WCAG22/Techniques/failures/F46.html"
-      rel="noreferer noopener nofollow"
-    >
-      F46: failure of success criterion 1.3.1 due to using{" "}
-      <code style={{ backgroundColor: "#EEEFF0" }}>&lt;th&gt;</code> elements,
-      layout tables
-    </ic-link>
-    .
-  </li>
-</ul>
-
-Tables are mentioned in a couple of the HMTL best practice articles:
-
-<ul>
-  <li>
-    <ic-link
-      target="_blank"
-      href="https://www.w3.org/WAI/WCAG22/quickref/#info-and-relationships"
-      rel="noreferer noopener nofollow"
-    >
-      1.3.1 info and relationships
-    </ic-link>
-    .
-  </li>
-  <li>
-    <ic-link
-      target="_blank"
-      href="https://www.w3.org/WAI/WCAG22/Techniques/html/H51.html"
-      rel="noreferer noopener nofollow"
-    >
-      H51: using table markup to present tabular information
-    </ic-link>
-    .
-  </li>
-  <li>
-    <ic-link
-      target="_blank"
-      href="https://www.w3.org/WAI/WCAG22/Techniques/html/H73.html"
-      rel="noreferer noopener nofollow"
-    >
-      H73: using the summary attribute of the table element to give an overview
-      of data tables
-    </ic-link>
-    .
-  </li>
-  <li>
-    <ic-link
-      target="_blank"
-      href="https://www.w3.org/WAI/WCAG22/Techniques/failures/F90.html"
-      rel="noreferer noopener nofollow"
-    >
-      F90: failure of success criterion 1.3.1 for incorrectly associating table
-      headers and content via the headers and id attributes
-    </ic-link>
-    .
-  </li>
-  <li>
-    <ic-link
-      target="_blank"
-      href="https://www.w3.org/WAI/WCAG22/Techniques/failures/F91.html"
-      rel="noreferer noopener nofollow"
-    >
-      F91: failure of success criterion 1.3.1 for not correctly marking up table
-      headers
-    </ic-link>
-    .
-  </li>
-  <li>
-    <ic-link
-      target="_blank"
-      href="https://www.w3.org/WAI/WCAG22/Techniques/failures/F49.html"
-      rel="noreferer noopener nofollow"
-    >
-      F49: failure of success criterion 1.3.2 due to using an HTML layout table
-      that does not make sense when linearised
-    </ic-link>{" "}
-    - which covers using tables for layouts.
-  </li>
-</ul>

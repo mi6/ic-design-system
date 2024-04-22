@@ -57,8 +57,8 @@ ic-alert {
 }
 
 video.half-width {
-    width: 48.5%;
-  }
+  width: 48.5%;
+}
 
 @media screen and (max-width: 768px) {
   .page-container {
