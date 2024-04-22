@@ -12,7 +12,8 @@
   min-width: 12.5rem;
   background: var(--ic-architectural-20);
   border-right: 1px solid var(--ic-architectural-200);
-  padding: calc(var(--ic-space-md) + var(--ic-space-sm)) var(--ic-space-sm) var(--ic-space-md) var(--ic-space-lg);
+  padding: calc(var(--ic-space-md) + var(--ic-space-sm)) var(--ic-space-sm)
+    var(--ic-space-md) var(--ic-space-lg);
   display: flex;
   flex-direction: column;
   gap: var(--ic-space-md);
