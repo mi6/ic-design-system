@@ -304,3 +304,121 @@ export const snippetsNested = [
     </IcAccordion>
   </IcAccordionGroup>
 </ComponentPreview>
+
+### With single expansion
+
+export const snippetsSingleExpansion = [
+  {
+    language: "Web component",
+    snippet: `<ic-accordion-group group-title="Coffee" single-expansion='true'>
+  <ic-accordion heading="Cappuccino">
+    <ic-typography variant="body">
+      An espresso-based drink that is traditionally prepared with steamed milk foam.
+    </ic-typography>
+  </ic-accordion>
+  <ic-accordion heading="Americano">
+    <ic-typography variant="body">
+      An espresso-based drink that is diluted with hot water.
+    </ic-typography>
+  </ic-accordion>
+</ic-accordion-group>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAccordionGroup group-title="Coffee" single-expansion="true">
+  <IcAccordion heading="Cappuccino">
+    <IcTypography variant="body">
+      An espresso-based drink that is traditionally prepared with steamed
+      milk foam.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Americano">
+    <IcTypography variant="body">
+      An espresso-based drink that is diluted with hot water.
+    </IcTypography>
+  </IcAccordion>
+</IcAccordionGroup>`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsSingleExpansion}
+  style={{ flexDirection: "column" }}
+>
+  <IcAccordionGroup group-title="Coffee" single-expansion="true">
+    <IcAccordion heading="Cappuccino">
+      <IcTypography variant="body">
+        An espresso-based drink that is traditionally prepared with steamed milk
+        foam.
+      </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Americano">
+      <IcTypography variant="body">
+        An espresso-based drink that is diluted with hot water.
+      </IcTypography>
+    </IcAccordion>
+  </IcAccordionGroup>
+</ComponentPreview>
+
+### With disabled
+
+export const snippetsDisabled = [
+  {
+    language: "Web component",
+    snippet: `<ic-accordion heading="Americano">
+  <ic-typography variant="body">
+    An espresso-based drink that is diluted with hot water.
+  </ic-typography>
+</ic-accordion>
+<ic-accordion heading="Cappuccino" disabled="true">
+  <ic-typography variant="body">
+    An espresso-based drink that is traditionally prepared with steamed milk foam.
+  </ic-typography>
+</ic-accordion>
+<ic-accordion heading="Latte" disabled="true">
+  <ic-typography variant="body">
+    A milkier coffee than a cappuccino.
+  </ic-typography>
+</ic-accordion>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcAccordion heading="Americano">
+  <IcTypography variant="body">
+    An espresso-based drink that is diluted with hot water.
+  </IcTypography>
+</IcAccordion>
+<IcAccordion heading="Cappuccino" disabled="true">
+  <IcTypography variant="body">
+    An espresso-based drink that is traditionally prepared with steamed milk foam.
+  </IcTypography>
+</IcAccordion>
+<IcAccordion heading="Latte" disabled="true">
+  <IcTypography variant="body">
+    A milkier coffee than a cappuccino.
+  </IcTypography>
+</IcAccordion>`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsDisabled}
+  style={{ flexDirection: "column" }}
+>
+  <IcAccordion heading="Americano">
+    <IcTypography variant="body">
+      An espresso-based drink that is diluted with hot water.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Cappuccino" disabled="true">
+    <IcTypography variant="body">
+      An espresso-based drink that is traditionally prepared with steamed milk
+      foam.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Latte" disabled="true">
+    <IcTypography variant="body">
+      A milkier coffee than a cappuccino.
+    </IcTypography>
+  </IcAccordion>
+</ComponentPreview>

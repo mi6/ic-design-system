@@ -144,6 +144,14 @@ export const snippetsStatus = [
 <ic-button variant="secondary" style="margin-right:16px">
   <ic-badge slot="badge" text-label="Available" variant="success"></ic-badge>
   Coffee orders
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge slot="badge" text-label="Warning" variant="warning"></ic-badge>
+  Coffee orders
+</ic-button>
+<ic-button variant="secondary" style="margin-right:16px">
+  <ic-badge slot="badge" text-label="Notification" variant="light"></ic-badge>
+  Coffee orders
 </ic-button>`,
   },
   {
@@ -162,6 +170,14 @@ export const snippetsStatus = [
 </IcButton>
 <IcButton variant="secondary" style={{marginRight:"16px"}}>
   <IcBadge slot="badge" text-label="Available" variant="success"/>
+  Coffee orders
+</IcButton>
+<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge slot="badge" text-label="Warning" variant="warning" />
+  Coffee orders
+</IcButton>
+<IcButton variant="secondary" style={{marginRight:"16px"}}>
+  <IcBadge slot="badge" text-label="Notification" variant="light" />
   Coffee orders
 </IcButton>`,
   },
@@ -182,6 +198,14 @@ export const snippetsStatus = [
   </IcButton>
   <IcButton variant="secondary" style={{ marginRight: "16px" }}>
     <IcBadge slot="badge" text-label="Available" variant="success" />
+    Coffee orders
+  </IcButton>
+  <IcButton variant="secondary">
+    <IcBadge slot="badge" text-label="Warning" variant="warning" />
+    Coffee orders
+  </IcButton>
+  <IcButton variant="secondary" style={{ marginTop: "16px" }}>
+    <IcBadge slot="badge" text-label="Notification" variant="light" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -638,3 +662,49 @@ export const snippetsAccessibleLabel = [
     </IcButton>
   </div>
 </ComponentPreview>
+
+### Custom Colour
+
+export const snippetsCustomColour = [
+  {
+    language: "Web component",
+    snippet: `<div style="padding:16px;">
+  <ic-button variant="secondary" style="margin-right:16px"> 
+    <ic-badge
+      text-label="8"
+      slot="badge"
+      size="large"
+      variant="custom"
+      custom-color={"rgb(255,192,203)"}
+    >
+    </ic-badge>
+    Coffee orders
+  </ic-button>
+</div>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcButton variant="secondary" style={{ marginTop: '16px' }}>
+  <IcBadge
+    slot="badge"
+    text-label="Notification"
+    variant="custom"
+    customColor={"rgb(255,192,203)"}
+  />
+  Coffee orders
+</IcButton>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsCustomColour}>
+  <IcButton variant="secondary" style={{ marginTop: "16px" }}>
+    <IcBadge
+      slot="badge"
+      text-label="Notification"
+      variant="custom"
+      customColor="rgb(255,192,203)"
+    />
+    Coffee orders
+  </IcButton>
+</ComponentPreview>
+
