@@ -110,7 +110,11 @@ const ComponentGallery: React.FC = () => {
             <GatsbyLink to={`${item.path}`}>
               <ic-card message={item.subTitle} full-width clickable>
                 <img
-                  src={ComponentImages[item.title.replace(/ /g, "")] == null ? PlaceHolder : ComponentImages[item.title.replace(/ /g, "")]}
+                  src={
+                    ComponentImages[item.title.replace(/ /g, "")] == null
+                      ? PlaceHolder
+                      : ComponentImages[item.title.replace(/ /g, "")]
+                  }
                   slot="image-top"
                   alt={item.title}
                   width="100%"
