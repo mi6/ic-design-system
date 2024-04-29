@@ -2,7 +2,7 @@
 
 Welcome and thank you for contributing to the [Intelligence Community Design System guidance site](https://design.sis.gov.uk/). This guide will take you through the technical considerations for contributing.
 
-**Table of contents**
+## Table of contents
 
 - [Code of conduct](#code-of-conduct)
 
@@ -16,7 +16,7 @@ Welcome and thank you for contributing to the [Intelligence Community Design Sys
 - [Coding standards and practices](#coding-standards-and-practices)
 
   - [Accessibility](#accessibility)
-  - [Style guide](#styleguide)
+  - [Style guide](#style-guide)
   - [Git commit](#git-commit)
   - [Styling](#styling)
 
@@ -52,26 +52,25 @@ If you would like to contribute code, please complete the following steps:
 1. Fork the [Design System guidance site repository](https://github.com/mi6/ic-design-system) and clone your forked repo onto your device.
 2. Make sure to add the `mi6/ic-design-system` repo as your upstream remote branch, by running:
 
-```
+```bash
 git remote add upstream git@github.com:mi6/ic-design-system.git
 ```
 
 3. Create a new branch in your forked repo, named after the issue number of your contribution (e.g. feature/123-new-feature).
-
 4. Run the following:
 
 **NPM**
 
-```
-npm install --legacy-peer-deps
+```bash
+npm install
 npm start
 ```
 
 **Yarn**
 
-```
+```bash
 rm package-lock.json
-yarn install --legacy-peer-deps
+yarn install
 yarn run start
 ```
 

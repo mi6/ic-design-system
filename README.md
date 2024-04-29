@@ -39,7 +39,7 @@ If you still want to host a local version of the `ic-design-system` website, it'
 
 ```
 // dev mode
-npm i --legacy-peer-deps
+npm i
 npm run start
 
 // production build outputs to ./dist
