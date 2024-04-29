@@ -139,5 +139,24 @@
       "limit": "3200 kB",
       "path": "public/**/*.js"
     }
-  ]
+  ],
+  "overrides": {
+    "gatsby-plugin-stencil": {
+      "gatsby": "$gatsby"
+    },
+    "gatsby-plugin-no-sourcemaps": {
+      "gatsby": "$gatsby"
+    },
+    "gatsby-plugin-robots-txt": {
+      "gatsby": "$gatsby"
+    },
+    "gatsby-plugin-sitemap": {
+      "gatsby": "$gatsby",
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "gatsby-transformer-remark": {
+      "gatsby": "$gatsby"
+    }
+  }
 }
