@@ -1,0 +1,64 @@
+---
+path: "/components/data-table"
+
+navPriority: 12
+
+date: "2024-04-30"
+
+title: "Data table"
+
+status: "CANARY"
+
+subTitle: "Use a data table to organise and display large quantities of related data."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/data-table" },
+    { title: "Code", path: "/components/data-table/code" },
+  ]
+---
+
+import { IcAlert, IcLink } from "@ukic/react";
+import { IcDataTable } from "@ukic/canary-react";
+import { COLUMNS, DATA } from "./story-data";
+
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and it's guidance will be updated over time."
+/>
+
+## Canary components
+
+Canary components are unstable components that are released for testing purposes.
+
+We value any feedback from users willing to try them in their applications.
+
+These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
+
+For more information on canary components, read our approach to [releases and versions](/get-started/releases-versions).
+
+<p>
+  Additional details on the props and events for this component can be found in
+  the ICDS{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-web-components/?path=/docs/web-components-data-table--docs"
+    target="_blank"
+  >
+    Canary Web Components
+  </IcLink>{" "}
+  and{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-react/?path=/docs/react-components-data-table--docs"
+    target="_blank"
+  >
+    Canary React
+  </IcLink>{" "}
+  storybooks.
+</p>
+
+## Component demo
+
+<ComponentPreview>
+  <IcDataTable caption="Basic" columns={COLUMNS} data={DATA} />
+</ComponentPreview>

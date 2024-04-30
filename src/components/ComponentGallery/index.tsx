@@ -12,13 +12,17 @@ import Card from "./ComponentImages/card-comp-gallery.png";
 import Checkbox from "./ComponentImages/checkbox-comp-gallery.png";
 import Chip from "./ComponentImages/chip-comp-gallery.png";
 import Classificationbanner from "./ComponentImages/classification-banner-comp-gallery.png";
+import Datatable from "./ComponentImages/data-table-comp-gallery.png";
 import Dataentity from "./ComponentImages/date-entity-comp-gallery.png";
+import Dateinput from "./ComponentImages/date-input-comp-gallery.png";
+import Datepicker from "./ComponentImages/date-picker-comp-gallery.png";
 import Dialog from "./ComponentImages/dialog-comp-gallery.png";
 import Emptystate from "./ComponentImages/empty-state-comp-gallery.png";
 import Footer from "./ComponentImages/footer-comp-gallery.png";
 import Hero from "./ComponentImages/hero-comp-gallery.png";
 import Link from "./ComponentImages/link-comp-gallery.png";
 import Loadingindicator from "./ComponentImages/loading-indicator-comp-gallery.png";
+import Multiselect from "./ComponentImages/multiselect-comp-gallery.png";
 import Pageheader from "./ComponentImages/page-header-comp-gallery.png";
 import Pagination from "./ComponentImages/pagination-comp-gallery.png";
 import Popovermenu from "./ComponentImages/popover-menu-comp-gallery.png";
@@ -51,13 +55,17 @@ const ComponentImages: { [key: string]: any } = {
   Checkbox,
   Chip,
   Classificationbanner,
+  Datatable,
   Dataentity,
+  Dateinput,
+  Datepicker,
   Dialog,
   Emptystate,
   Footer,
   Hero,
   Link,
   Loadingindicator,
+  Multiselect,
   Pageheader,
   Pagination,
   Popovermenu,
