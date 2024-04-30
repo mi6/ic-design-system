@@ -1,0 +1,478 @@
+---
+path: "/components/date-input/code"
+
+date: "2024-04-30"
+
+title: "Date input"
+
+status: "CANARY"
+
+subTitle: "A date input is used when gathering a specific date in a text-based format."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/date-input" },
+    { title: "Code", path: "/components/date-input/code" },
+    { title: "Accessibility", path: "/components/date-input/accessibility" },
+  ]
+---
+
+import { IcButton } from "@ukic/react";
+import { IcDateInput } from "@ukic/canary-react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+<script>
+  const dateInput = document.querySelector("ic-date-input");
+  dateInput.addEventListener("icChange", function ({ detail }) {
+    console.log(detail.value);
+  });
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  onChange={({ detail }) => console.log(detail.value)}
+/>`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsDefault}
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+    alignItems: "center",
+  }}
+>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    onChange={({ detail }) => console.log(detail.value)}
+  />
+</ComponentPreview>
+
+## Date input details
+
+<ComponentDetails component="ic-date-input" canary />
+
+## Variants
+
+### With values
+
+#### String
+
+export const snippetsStringValue = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?" value="21/01/2001"></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput label="When would you like to collect your coffee?" value="21/01/2001" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsStringValue}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    value="21/01/2001"
+  />
+</ComponentPreview>
+
+#### Date object
+
+export const snippetsDateObject = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+<script>
+  const dateInputDate = document.querySelector("ic-date-input");
+  dateInputDate.value = new Date("28 November 2021");
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  value={new Date("28 November 2021")}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDateObject}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    value={new Date("28 November 2021")}
+  />
+</ComponentPreview>
+
+#### Zulu datetime
+
+export const snippetsZulu = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+<script>
+  const dateInputDate = document.querySelector("ic-date-input");
+  dateInputDate.value = new Date("1 May 1990").toISOString();
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  value={new Date("1 May 1990").toISOString()}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsZulu}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    value={new Date("1 May 1990").toISOString()}
+  />
+</ComponentPreview>
+
+#### String with hyphens
+
+export const snippetsHyphens = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+<script>
+  const dateInputDate = document.querySelector("ic-date-input");
+  dateInputDate.value = "25-05-2005";
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput label="When would you like to collect your coffee?" value="25-05-2005" />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsHyphens}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    value="25-05-2005"
+  />
+</ComponentPreview>
+
+#### Epoch date
+
+export const snippetsEpoch = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+<script>
+  const dateInputDate = document.querySelector("ic-date-input");
+  dateInputString.value = Date.now();
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  value={Date.now()}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsEpoch}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    value={Date.now()}
+  />
+</ComponentPreview>
+
+### Required
+
+export const snippetsRequired = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?" required="true"></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput label="When would you like to collect your coffee?" required />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsRequired}>
+  <IcDateInput label="When would you like to collect your coffee?" required />
+</ComponentPreview>
+
+### Disabled
+
+export const snippetsDisabled = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?" disabled="true"></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput label="When would you like to collect your coffee?" disabled />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabled}>
+  <IcDateInput label="When would you like to collect your coffee?" disabled />
+</ComponentPreview>
+
+### Sizes
+
+export const snippetsSizes = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?" size="small"></ic-date-input>
+<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+<ic-date-input label="When would you like to collect your coffee?" size="large"></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput label="When would you like to collect your coffee?" size="small" />
+<IcDateInput label="When would you like to collect your coffee?" />
+<IcDateInput label="When would you like to collect your coffee?" size="large" />`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsSizes}
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+    alignItems: "center",
+  }}
+>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    size="small"
+  />
+  <IcDateInput label="When would you like to collect your coffee?" />
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    size="large"
+  />
+</ComponentPreview>
+
+### Custom helper text
+
+export const snippetsCustomHelperText = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input
+  label="When would you like to collect your coffee?"
+  helper-text="We will have your order ready for you on this date"
+></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  helperText="We will have your order ready for you on this date"
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsCustomHelperText}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    helperText="We will have your order ready for you on this date"
+  />
+</ComponentPreview>
+
+### Custom validation
+
+export const snippetsValidation = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input
+  label="When would you like to collect your coffee?"
+  validation-status="error"
+  validation-text="There is a coffee shortage forecast for that day. Please choose a different date."
+></ic-date-input>
+<ic-date-input
+  label="When would you like to collect your coffee?"
+  validation-status="warning"
+  validation-text="Please be aware that there may be a coffee shortage on that day."
+></ic-date-input>
+<ic-date-input
+  label="When would you like to collect your coffee?"
+  validation-status="success"
+  validation-text="Your coffee will be available for you to collect on this day."
+></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  validationStatus="error"
+  validationText="There is a coffee shortage forecast for that day. Please choose a different date."
+/>
+<IcDateInput
+  label="When would you like to collect your coffee?"
+  validationStatus="warning"
+  validationText="Please be aware that there may be a coffee shortage on that day."
+/>
+<IcDateInput
+  label="When would you like to collect your coffee?"
+  validationStatus="success"
+  validationText="Your coffee will be available for you to collect on this day."
+/>`,
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsValidation}
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+    alignItems: "center",
+  }}
+>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    validationStatus="error"
+    validationText="There is a coffee shortage forecast for that day. Please choose a different date."
+  />
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    validationStatus="warning"
+    validationText="Please be aware that there may be a coffee shortage on that day."
+  />
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    validationStatus="success"
+    validationText="Your coffee will be available for you to collect on this day."
+  />
+</ComponentPreview>
+
+### Disabled past dates
+
+export const snippetsDisabledPastDates = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?" disable-past="true"></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput label="When would you like to collect your coffee?" disablePast />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabledPastDates}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    disablePast
+  />
+</ComponentPreview>
+
+### Disabled future dates
+
+export const snippetsDisabledFutureDates = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input label="When would you like to collect your coffee?" disable-future="true"></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput label="When would you like to collect your coffee?" disableFuture />`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabledFutureDates}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    disableFuture
+  />
+</ComponentPreview>
+
+### Min and max
+
+export const snippetsMinMax = [
+  {
+    language: "Web components",
+    snippet: `<ic-date-input
+  label="When would you like to collect your coffee?"
+  min="02/01/2023"
+  max="20-07-2023"
+></ic-date-input>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  min="02/01/2023"
+  max="20-07-2023"
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsMinMax}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    min="02/01/2023"
+    max="20-07-2023"
+  />
+</ComponentPreview>
+
+### Form
+
+export const snippetsForm = [
+  {
+    language: "Web components",
+    snippet: `<form>
+  <ic-date-input label="When would you like to collect your coffee?" value="13/03/1951"></ic-date-input>
+  <ic-button type="submit" value="Submit"></ic-button>
+  <ic-button type="reset" value="Reset"></ic-button>
+  <script>
+    document.querySelector("form").addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      console.log(ev);
+    });
+  </script>
+</form>`,
+  },
+  {
+    language: "React",
+    snippet: `const formSubmit = (ev) => {
+  ev.preventDefault();
+  console.log(ev);
+};
+return (
+  <form onSubmit={formSubmit}>
+    <IcDateInput label="When would you like to collect your coffee?" value="13/03/1951" />
+    <IcButton type="submit">Submit</IcButton>
+    <IcButton type="reset">Reset</IcButton>
+  </form>
+);`,
+  },
+];
+
+export const FormDateInput = () => {
+  const formSubmit = (ev) => {
+    ev.preventDefault();
+    console.log(ev);
+  };
+  return (
+    <form onSubmit={formSubmit}>
+      <IcDateInput
+        label="When would you like to collect your coffee?"
+        value="13/03/1951"
+      />
+      <IcButton type="submit">Submit</IcButton>
+      <IcButton type="reset">Reset</IcButton>
+    </form>
+  );
+};
+
+<ComponentPreview snippets={snippetsForm}>
+  <FormDateInput />
+</ComponentPreview>

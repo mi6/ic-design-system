@@ -1,0 +1,153 @@
+---
+path: "/components/date-picker"
+
+navPriority: 14
+
+date: "2024-05-01"
+
+title: "Date picker"
+
+status: "CANARY"
+
+subTitle: "A date picker is a type of drop-down control that allows people to easily view and select dates."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/date-picker" },
+    { title: "Code", path: "/components/date-picker/code" },
+    { title: "Accessibility", path: "/components/date-picker/accessibility" },
+  ]
+---
+
+import { IcAlert, IcLink } from "@ukic/react";
+import { IcDatePicker } from "@ukic/canary-react";
+import figure1 from "./images/fig1-use-date-picker-to-visualise-dates.png";
+import figure2 from "./images/fig2-avoid-using-for-distant-dates.png";
+import figure3 from "./images/fig3-custom-width.png";
+import figure4 from "./images/fig4-clear-error-message.png";
+import figure5 from "./images/fig5-unclear-error-message.png";
+
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and it's guidance will be updated over time."
+/>
+
+## Canary components
+
+Canary components are unstable components that are released for testing purposes.
+
+We value any feedback from users willing to try them in their applications.
+
+These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
+
+For more information on canary components, read our approach to [releases and versions](/get-started/releases-versions).
+
+<p>
+  Additional details on the props and events for this component can be found in
+  the ICDS{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-web-components/?path=/docs/web-components-date-picker--docs"
+    target="_blank"
+  >
+    Canary Web Components
+  </IcLink>{" "}
+  and{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-react/?path=/docs/react-components-date-picker--docs"
+    target="_blank"
+  >
+    Canary React
+  </IcLink>{" "}
+  storybooks.
+</p>
+
+## Component demo
+
+<ComponentPreview>
+  <IcDatePicker label="When would you like to collect your coffee?" />
+</ComponentPreview>
+
+## When to use
+
+Use a date picker to select an event that is near to the present time.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={figure1}
+    imageAlt="A date picker being used to select a nearby date"
+    caption="Use date picker to visualise and select dates."
+  />
+</DoubleDoDontCaution>
+
+Use a date picker to select a date that is known or desired, such as an appointment.
+
+Use a date picker to select a single date where visualising that date could be useful.
+
+Use a date picker when there is a need to view a date in context. For example, if there is a need to see which day of the week a future event occurs.
+
+## When not to use
+
+Avoid using a date picker for well-known dates, such as dates of birth, because it is often easier to type this into a field. For example, if selecting 30/07/1966, consider using [date input](/components/date-input) as a date picker would require many clicks to arrive at the same date.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={figure2}
+    imageAlt="A date picker being used to select a very distant date"
+    caption="Avoid using a date picker when dealing with distant dates."
+  />
+</DoubleDoDontCaution>
+
+## Sizing
+
+Use the date picker size properties to change its vertical size and achieve compact or spacious layouts.
+
+### Width
+
+Use the resizing options to increase or decrease width to match other elements in a form.
+
+Use the [date input](/components/date-input) resizing options to change size of the input and calendar between minimum and maximum widths. For example, to create a larger date picker, resize width of [date input](/components/date-input).
+
+<DoDontCaution
+  imageSrc={figure3}
+  imageAlt="Two date picker examples at their maximum and minimum width"
+  caption="Change the width of the date input to adjust the date picker width."
+/>
+
+## Content
+
+### Labels
+
+Use [content styling](/styles/content-style/principles) for help with building effective labels for people using date input.
+
+### Helper text
+
+Use helper text to indicate restrictions in your date input such as not allowing weekends.
+
+### Placeholder
+
+Use a placeholder to demonstrate an example of the desired input. Do not add essential information into the placeholder as it will be hidden when a date is entered into the field.
+
+## Interaction
+
+Set `open-at-date` to specify the date in view when the date picker is opened. If no date is set, the date picker will default to showing the current date.
+
+The [date input](/components/date-input) and the date picker update according to any input made. For example, if 10/10/2100 is entered in the [date input](/components/date-input), the date picker will open to display the selection.
+
+## Validation
+
+### Standard
+
+See [date input](/components/date-input#validation) for detailed guidance on how to display errors within the date picker.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={figure4}
+    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
+    caption="Make sure to be clear and instructive when writing error messages. Avoid ambiguity or terms like please when writing error messages."
+  />
+  <DoDontCaution
+    imageSrc={figure5}
+    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
+  />
+</DoubleDoDontCaution>
