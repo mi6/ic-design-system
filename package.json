@@ -28,6 +28,7 @@
     "gatsby": "^4.2.0",
     "gatsby-plugin-catch-links": "^4.2.0",
     "gatsby-plugin-fix-fouc": "^1.0.5",
+    "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-local-search": "^2.0.1",
     "gatsby-plugin-manifest": "^4.2.0",
     "gatsby-plugin-mdx": "^3.20.0",
@@ -38,7 +39,7 @@
     "gatsby-plugin-react-helmet": "^5.2.0",
     "gatsby-plugin-react-svg": "^3.1.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
-    "gatsby-plugin-sharp": "^4.2.0",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-plugin-stencil": "^0.2.0",
     "gatsby-remark-copy-linked-files": "^5.2.0",
@@ -47,7 +48,7 @@
     "gatsby-remark-prismjs": "^6.2.0",
     "gatsby-source-filesystem": "^4.25.0",
     "gatsby-transformer-remark": "^6.12.0",
-    "gatsby-transformer-sharp": "^4.2.0",
+    "gatsby-transformer-sharp": "^4.25.0",
     "github-slugger": "^1.4.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.startcase": "^4.4.0",
@@ -157,6 +158,13 @@
     },
     "gatsby-transformer-remark": {
       "gatsby": "$gatsby"
+    },
+    "gatsby-plugin-image": {
+      "gatsby": "$gatsby",
+      "gatsby-plugin-sharp": "$gatsby-plugin-sharp",
+      "gatsby-source-filesystem": "$gatsby-source-filesystem",
+      "react": "$react",
+      "react-dom": "$react-dom"
     }
   }
 }
