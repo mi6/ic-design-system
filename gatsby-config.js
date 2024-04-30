@@ -149,5 +149,24 @@ module.exports = {
       },
     },
     `gatsby-plugin-fix-fouc`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+        ignore: [`\.(tsx|ts|jsx|js|css|md|mdx)$`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `static`,
+        path: `${__dirname}/static/`,
+        ignore: [`\.(doc|doc|html)$`],
+      },
+    },
   ],
 };
