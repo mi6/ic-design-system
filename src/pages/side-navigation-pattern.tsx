@@ -60,9 +60,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
         >
           <SlottedSVG
             slot="app-icon"
-            height="24px"
+            height="24"
             viewBox="0 0 24 24"
-            width="24px"
+            width="24"
             path={mdiCompassOutline}
           />
           <IcNavigationItem
@@ -73,9 +73,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiHomeOutline}
             />
           </IcNavigationItem>
@@ -86,9 +86,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiMagnify}
             />
           </IcNavigationItem>
@@ -99,9 +99,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiChartTimelineVariant}
             />
           </IcNavigationItem>
@@ -112,9 +112,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiCommentTextOutline}
             />
           </IcNavigationItem>
@@ -126,9 +126,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiNumeric1BoxOutline}
             />
           </IcNavigationItem>
@@ -139,9 +139,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiNumeric2BoxOutline}
             />
           </IcNavigationItem>
@@ -152,9 +152,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiNumeric3BoxOutline}
             />
           </IcNavigationItem>
@@ -165,9 +165,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiNumeric4BoxOutline}
             />
           </IcNavigationItem>
@@ -178,9 +178,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiCogOutline}
             />
           </IcNavigationItem>
@@ -191,9 +191,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiHuman}
             />
           </IcNavigationItem>
@@ -204,9 +204,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           >
             <SlottedSVG
               slot="icon"
-              height="24px"
+              height="24"
               viewBox="0 0 24 24"
-              width="24px"
+              width="24"
               path={mdiWeb}
             />
           </IcNavigationItem>
@@ -257,9 +257,9 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
             <IcFooterLink slot="logo" href="/">
               <SlottedSVG
                 xmlns="http://www.w3.org/2000/svg"
-                height="48px"
+                height="48"
                 viewBox="0 0 24 24"
-                width="48px"
+                width="48"
                 fill="#FFFFFF"
               >
                 <path

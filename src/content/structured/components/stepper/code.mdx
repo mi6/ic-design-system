@@ -1,7 +1,7 @@
 ---
 path: "/components/stepper/code"
 
-date: "2023-02-03"
+date: "2024-05-31"
 
 title: "Stepper"
 
@@ -25,20 +25,35 @@ import { IcStepper, IcStep } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-stepper>
-    <ic-step step-title="Order coffee" step-type="completed"></ic-step>
-    <ic-step step-title="Pay for order" step-type="current"></ic-step>
-    <ic-step step-title="Collect" step-type="disabled"></ic-step>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper>
+  <ic-step step-title="Order coffee" step-type="completed"></ic-step>
+  <ic-step step-title="Pay for order" step-type="current"></ic-step>
+  <ic-step step-title="Collect" step-type="disabled"></ic-step>
 </ic-stepper>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStepper>
-    <IcStep stepTitle="Order coffee" stepType="completed" />
-    <IcStep stepTitle="Pay for order" stepType="current" />
-    <IcStep stepTitle="Collect" stepType="disabled" />
+    technology: "React",
+    snippets: {
+      short: `<IcStepper>
+  <IcStep stepTitle="Order coffee" stepType="completed" />
+  <IcStep stepTitle="Pay for order" stepType="current" />
+  <IcStep stepTitle="Collect" stepType="disabled" />
 </IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -64,20 +79,35 @@ export const snippets = [
 
 export const compactStepper = [
   {
-    language: "Web component",
-    snippet: `<ic-stepper variant="compact">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper variant="compact">
   <ic-step step-title="Order coffee" step-type="completed"></ic-step>
   <ic-step step-title="Pay for order" step-type="current"></ic-step>
   <ic-step step-title="Collect" step-type="disabled"></ic-step>
 </ic-stepper>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStepper variant="compact">
+    technology: "React",
+    snippets: {
+      short: `<IcStepper variant="compact">
   <IcStep stepTitle="Order coffee" stepType="completed" />
   <IcStep stepTitle="Pay for order" stepType="current" />
   <IcStep stepTitle="Collect" stepType="disabled" />
 </IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -93,20 +123,35 @@ export const compactStepper = [
 
 export const leftAligned = [
   {
-    language: "Web component",
-    snippet: `<ic-stepper aligned="left">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper aligned="left">
   <ic-step step-title="Order coffee" step-type="completed"></ic-step>
   <ic-step step-title="Pay for order" step-type="current"></ic-step>
   <ic-step step-title="Collect" step-type="disabled"></ic-step>
 </ic-stepper>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStepper aligned="left">
+    technology: "React",
+    snippets: {
+      short: `<IcStepper aligned="left">
   <IcStep stepTitle="Order coffee" stepType="completed" />
   <IcStep stepTitle="Pay for order" stepType="current" />
   <IcStep stepTitle="Collect" stepType="disabled" />
 </IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -122,20 +167,35 @@ export const leftAligned = [
 
 export const hiddenStepInfo = [
   {
-    language: "Web component",
-    snippet: `<ic-stepper hide-step-info="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper hide-step-info="true">
   <ic-step step-title="Order coffee" step-type="completed"></ic-step>
   <ic-step step-title="Pay for order" step-type="current"></ic-step>
   <ic-step step-title="Collect" step-type="disabled"></ic-step>
 </ic-stepper>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStepper hideStepInfo>
+    technology: "React",
+    snippets: {
+      short: `<IcStepper hideStepInfo>
   <IcStep stepTitle="Order coffee" stepType="completed" />
   <IcStep stepTitle="Pay for order" stepType="current" />
   <IcStep stepTitle="Collect" stepType="disabled" />
 </IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -151,8 +211,9 @@ export const hiddenStepInfo = [
 
 export const withSubtitles = [
   {
-    language: "Web component",
-    snippet: `<ic-stepper>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper>
   <ic-step step-title="Order coffee" step-type="completed"></ic-step>
   <ic-step 
     step-title="Customise your order" 
@@ -168,16 +229,19 @@ export const withSubtitles = [
   </ic-step>
   <ic-step step-title="Collect" step-type="disabled"></ic-step>
 </ic-stepper>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStepper>
+    technology: "React",
+    snippets: {
+      short: `<IcStepper>
   <IcStep stepTitle="Order coffee" stepType="completed" />
   <IcStep 
     stepTitle="Customise your order" 
     stepSubtitle="Optional" 
     stepType="completed" 
-    />
+  />
   <IcStep 
     stepTitle="Pay for order" 
     stepSubtitle="We accept all major debit/credit cards" 
@@ -185,6 +249,17 @@ export const withSubtitles = [
   />
   <IcStep stepTitle="Collect" stepType="disabled"/>
 </IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -209,20 +284,35 @@ export const withSubtitles = [
 
 export const customConnectorWidth = [
   {
-    language: "Web component",
-    snippet: `<ic-stepper connector-width="150">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper connector-width="150">
   <ic-step step-title="Order coffee" step-type="completed"></ic-step>
   <ic-step step-title="Pay for order" step-type="current"></ic-step>
   <ic-step step-title="Collect" step-type="disabled"></ic-step>
 </ic-stepper>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStepper aligned="left" connectorWidth={150}>
+    technology: "React",
+    snippets: {
+      short: `<IcStepper aligned="left" connectorWidth={150}>
   <IcStep stepTitle="Order coffee" stepType="completed" />
   <IcStep stepTitle="Pay for order" stepType="current" />
   <IcStep stepTitle="Collect" stepType="disabled" />
 </IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

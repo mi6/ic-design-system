@@ -1,7 +1,7 @@
 ---
 path: "/components/button/code"
 
-date: "2024-03-13"
+date: "2024-05-31"
 
 title: "Button"
 
@@ -25,28 +25,81 @@ import { IcButton } from "@ukic/react";
 
 export const snippetsDefault = [
   {
-    language: "Web component",
-    snippet: `<ic-button id='my-button' variant="primary">Add to order</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button id='my-button' variant="primary">Add to order</ic-button>
 <ic-button variant="secondary">View coffees</ic-button>
 <ic-button variant="tertiary">Find out more</ic-button>
-<ic-button variant="destructive">Cancel order</ic-button>
-<script>
-  const btn = document.querySelector('#my-button');
-  btn.addEventListener('click', (ev) => {
-    console.log(ev);
-  })
-</script>`,
+<ic-button variant="destructive">Cancel order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const btn = document.querySelector('#my-button');
+    btn.addEventListener('click', (ev) => {
+      console.log(ev);
+    })
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="primary" onClick={(ev) => console.log(ev)}>Add to order</IcButton>
-  <IcButton variant="secondary">View coffees</IcButton>
-  <IcButton variant="tertiary">Find out more</IcButton>
-  <IcButton variant="destructive">Cancel order</IcButton>`,
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" onClick={(ev) => console.log(ev)}>
+  Add to order
+</IcButton>
+<IcButton variant="secondary">View coffees</IcButton>
+<IcButton variant="tertiary">Find out more</IcButton>
+<IcButton variant="destructive">Cancel order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsDefault}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsDefault}>
   <IcButton variant="primary" onClick={(ev) => console.log(ev)}>
     Add to order
   </IcButton>
@@ -65,20 +118,71 @@ export const snippetsDefault = [
 
 export const snippetsOtherStates = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="primary" disabled="true">Add to order</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary" disabled="true">Add to order</ic-button>
 <ic-button variant="secondary" loading="true">Loading button</ic-button>
 <ic-button variant="primary" dropdown="true">Add to order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="primary" disabled>Add to order</IcButton>
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" disabled>Add to order</IcButton>
 <IcButton variant="secondary" loading>Loading button</IcButton>
 <IcButton variant="primary" dropdown>Add to order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsOtherStates}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsOtherStates}>
   <IcButton variant="primary" disabled>
     Add to order
   </IcButton>
@@ -94,30 +198,42 @@ export const snippetsOtherStates = [
 
 export const snippetsWithIcon = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="primary">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary">
   <svg
     slot="left-icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
+    width="24"
     fill="#000000"
     >
     <path d="M0 0h24v24H0V0z" fill="none"></path>
     <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
-  </svg>Refresh order status
+  </svg>
+  Refresh order status
 </ic-button>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="primary">
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary">
   <SlottedSVG
     slot="left-icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
+    width="24"
     fill="#000000"
     >
     <path d="M0 0h24v24H0V0z" fill="none"></path>
@@ -125,18 +241,49 @@ export const snippetsWithIcon = [
   </SlottedSVG>
   Refresh order status
 </IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsWithIcon}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsWithIcon}>
   <IcButton variant="primary">
     Refresh order status
     <svg
       slot="left-icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
@@ -151,13 +298,14 @@ When using an icon button, refer to the guidance of using [tooltips](/components
 
 export const snippetsIcon = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="icon" aria-label="refresh">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="icon" aria-label="refresh">
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
     >
     <path d="M0 0h24v24H0V0z" fill="none"></path>
@@ -171,9 +319,9 @@ export const snippetsIcon = [
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M0 0h24v24H0V0z" fill="none" />
@@ -182,15 +330,28 @@ export const snippetsIcon = [
     />
   </svg>
 </ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="icon" aria-label="refresh">
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="icon" aria-label="refresh">
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
+    width="24"
     fill="#000000"
     >
     <path d="M0 0h24v24H0V0z" fill="none"></path>
@@ -204,9 +365,9 @@ export const snippetsIcon = [
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M0 0h24v24H0V0z" fill="none" />
@@ -215,16 +376,53 @@ export const snippetsIcon = [
     />
   </svg>
 </IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsIcon}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsIcon}>
   <IcButton variant="icon" aria-label="refresh">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
@@ -238,9 +436,9 @@ export const snippetsIcon = [
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
       fill="#000000"
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
@@ -253,8 +451,9 @@ export const snippetsIcon = [
 
 export const snippetsTooltip = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="primary" title="We can add tooltips to text buttons">Button With Title</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary" title="We can add tooltips to text buttons">Button With Title</ic-button>
 <ic-button
   variant="primary"
   title="the tooltipPlacement prop allows us to change the location of the tooltip"
@@ -262,10 +461,23 @@ export const snippetsTooltip = [
 >
   Different positions
 </ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="primary" title="We can add tooltips to text buttons">
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" title="We can add tooltips to text buttons">
   Button With Title
 </IcButton>
 <IcButton
@@ -275,10 +487,50 @@ export const snippetsTooltip = [
 >
   Different positions
 </IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsTooltip}>
+<ComponentPreview
+  style={{ gap: "var(--ic-space-xs)" }}
+  snippets={snippetsTooltip}
+>
   <IcButton variant="primary" title="We can add tooltips to text buttons">
     Button With Title
   </IcButton>
@@ -295,20 +547,71 @@ export const snippetsTooltip = [
 
 export const snippetsSizing = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="primary" size="small">Add to order</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary" size="small">Add to order</ic-button>
 <ic-button variant="primary">Add to order</ic-button>
 <ic-button variant="primary" size="large">Add to order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="primary" size="small">Add to order</IcButton>
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" size="small">Add to order</IcButton>
 <IcButton variant="primary">Add to order</IcButton>
 <IcButton variant="primary" size="large">Add to order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsSizing}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsSizing}>
   <IcButton variant="primary" size="small">
     Add to order
   </IcButton>
@@ -322,24 +625,71 @@ export const snippetsSizing = [
 
 export const snippetsColour = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="primary">
-    Add to order
-    </ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary">Add to order</ic-button>
 <ic-button variant="primary" appearance="dark">Add to order</ic-button>
 <ic-button variant="primary" appearance="light">Add to order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="primary">
-    Add to order
-    </IcButton>
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary">Add to order</IcButton>
 <IcButton variant="primary" appearance="dark">Add to order</IcButton>
 <IcButton variant="primary" appearance="light">Add to order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsColour}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsColour}>
   <IcButton variant="primary">Add to order</IcButton>
   <IcButton variant="primary" appearance="dark">
     Add to order
@@ -351,83 +701,136 @@ export const snippetsColour = [
 
 ### File upload
 
-export const FileUpload = () => {
-  function updateFileList(fileArray) {
-    const fileList = [];
-    Array.from(fileArray).forEach((file) => {
-      fileList.push(file.name);
-    });
-    return fileList.join(", ");
-  }
-  return (
-    <IcButton
-      variant="primary"
-      fileUpload
-      accept=".doc, text/plain, .json, .png"
-      onClick={() =>
-        document.addEventListener("icFileSelection", (event) =>
-          console.log(updateFileList(event.detail))
-        )
-      }
-    >
-      Upload File
-    </IcButton>
-  );
-};
-
 export const snippetsFileUpload = [
   {
-    language: "Web component",
-    snippet: `<ic-button
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button
   variant="primary"
-  id="file-button"
+  id="file-button-single"
   file-upload="true"
   accept=".doc, text/plain, .json, .png"
 >
-  Upload File
+  Upload a file
 </ic-button>
-<script>
-  var file;
-  onclick = document
-    .querySelector("#file-button")
-    .addEventListener("icFileSelection", (ev) => {
-      const fileArray = ev.detail;
-      const fileList = [];
-      Array.from(fileArray).forEach((file) => {
-        fileList.push(file.name);
+<ic-button
+  variant="primary"
+  id="file-button-multiple"
+  file-upload="true"
+  multiple="true"
+  accept=".doc, text/plain, .json, .png"
+>
+  Upload multiple files
+</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    document
+      .querySelector("#file-button-single")
+      .addEventListener("icFileSelection", (ev) => {
+        console.log("Single file upload", ev.detail);
       });
-      console.log(fileList.join(", "));
-    });
-</script>`,
+    document
+      .querySelector("#file-button-multiple")
+      .addEventListener("icFileSelection", (ev) => {
+        console.log("Multiple files upload", ev.detail);
+      });
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `export const FileUpload = () => {
-  function updateFileList(fileArray) {
-    const fileList = [];
-    Array.from(fileArray).forEach((file) => {
-      fileList.push(file.name);
-    });
-    return fileList.join(", ");
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  variant="primary"
+  fileUpload
+  accept=".doc, text/plain, .json, .png"
+  onIcFileSelection={(event) =>
+    console.log("Single file upload", event.detail)
   }
-  return (
-    <IcButton
-      variant="primary"
-      fileUpload
-      accept=".doc, text/plain, .json, .png"
-      onClick={(event) =>
-        document.addEventListener("icFileSelection", (event) =>
-          console.log(updateFileList(event.detail))
-        )
-      }
-    >
-      Upload File
-    </IcButton>
-  ); 
-};`,
+>
+  Upload a file
+</IcButton>
+<IcButton
+  variant="primary"
+  fileUpload
+  multiple
+  accept=".doc, text/plain, .json, .png"
+  onIcFileSelection={(event) =>
+    console.log("Multiple files upload", event.detail)
+  }
+>
+  Upload multiple files
+</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview snippets={snippetsFileUpload}>
-  <FileUpload />
+<ComponentPreview snippets={snippetsFileUpload} style={{ gap: "0.5rem" }}>
+  <IcButton
+    variant="primary"
+    fileUpload
+    accept=".doc, text/plain, .json, .png"
+    onIcFileSelection={(event) =>
+      console.log("Single file upload", event.detail)
+    }
+  >
+    Upload a file
+  </IcButton>
+  <IcButton
+    variant="primary"
+    fileUpload
+    multiple
+    accept=".doc, text/plain, .json, .png"
+    onIcFileSelection={(event) =>
+      console.log("Multiple files upload", event.detail)
+    }
+  >
+    Upload multiple files
+  </IcButton>
 </ComponentPreview>

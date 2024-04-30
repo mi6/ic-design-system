@@ -1,7 +1,7 @@
 ---
 path: "/components/status-tag/code"
 
-date: "2023-10-24"
+date: "2024-05-31"
 
 title: "Status tag"
 
@@ -21,26 +21,75 @@ tabs:
 
 import { IcStatusTag } from "@ukic/react";
 
-## Component demo
-
 export const snippetsDefault = [
   {
-    language: "Web component",
-    snippet: `<ic-status-tag label="Neutral" status="neutral"></ic-status-tag>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-status-tag label="Neutral" status="neutral"></ic-status-tag>
 <ic-status-tag label="Success" status="success"></ic-status-tag>
 <ic-status-tag label="Warning" status="warning"></ic-status-tag>
 <ic-status-tag label="Error" status="danger"></ic-status-tag>`,
+      long: `.parent-container {
+      display: flex;
+      gap: var(--ic-space-xs);
+      flex-wrap: wrap;
+      padding: var(--ic-space-md);
+    }
+  </style>
+  <body>
+    <div class="parent-container">
+      {shortCode}
+    </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStatusTag label="Neutral" status="neutral"/>
+    technology: "React",
+    snippets: {
+      short: `<IcStatusTag label="Neutral" status="neutral"/>
 <IcStatusTag label="Success" status="success"/>
 <IcStatusTag label="Warning" status="warning"/>
 <IcStatusTag label="Error" status="danger"/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsDefault}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsDefault}>
   <IcStatusTag label="Neutral" status="neutral" />
   <IcStatusTag label="Success" status="success" />
   <IcStatusTag label="Warning" status="warning" />
@@ -57,22 +106,89 @@ export const snippetsDefault = [
 
 export const snippetsEmphasis = [
   {
-    language: "Web component",
-    snippet: `<ic-status-tag label="Neutral" status="neutral" variant="outlined"></ic-status-tag>
-<ic-status-tag label="Success" status="success" variant="outlined"></ic-status-tag>
-<ic-status-tag label="Warning" status="warning" variant="outlined"></ic-status-tag>
-<ic-status-tag label="Error" status="danger" variant="outlined"></ic-status-tag>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-status-tag
+  label="Neutral"
+  status="neutral"
+  variant="outlined"
+></ic-status-tag>
+<ic-status-tag
+  label="Success"
+  status="success"
+  variant="outlined"
+></ic-status-tag>
+<ic-status-tag
+  label="Warning"
+  status="warning"
+  variant="outlined"
+></ic-status-tag>
+<ic-status-tag
+  label="Error"
+  status="danger"
+  variant="outlined"
+></ic-status-tag>`,
+      long: `.parent-container {
+      display: flex;
+      gap: var(--ic-space-xs);
+      flex-wrap: wrap;
+      padding: var(--ic-space-md);
+    }
+  </style>
+  <body>
+    <div class="parent-container">
+      {shortCode}
+    </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStatusTag label="Neutral" status="neutral" variant="outlined" />
+    technology: "React",
+    snippets: {
+      short: `<IcStatusTag label="Neutral" status="neutral" variant="outlined" />
 <IcStatusTag label="Success" status="success" variant="outlined" />
 <IcStatusTag label="Warning" status="warning" variant="outlined" />
 <IcStatusTag label="Error" status="danger" variant="outlined" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsEmphasis}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsEmphasis}>
   <IcStatusTag label="Neutral" status="neutral" variant="outlined" />
   <IcStatusTag label="Success" status="success" variant="outlined" />
   <IcStatusTag label="Warning" status="warning" variant="outlined" />
@@ -83,22 +199,89 @@ export const snippetsEmphasis = [
 
 export const snippetsSmall = [
   {
-    language: "Web component",
-    snippet: `<ic-status-tag label="Neutral" status="neutral" size="small"></ic-status-tag>
-<ic-status-tag label="Success" status="success" size="small"></ic-status-tag>
-<ic-status-tag label="Warning" status="warning" size="small"></ic-status-tag>
-<ic-status-tag label="Error" status="danger" size="small"></ic-status-tag>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-status-tag
+  label="Neutral"
+  status="neutral"
+  size="small"
+></ic-status-tag>
+<ic-status-tag
+  label="Success"
+  status="success"
+  size="small"
+></ic-status-tag>
+<ic-status-tag
+  label="Warning"
+  status="warning"
+  size="small"
+></ic-status-tag>
+<ic-status-tag
+  label="Error" 
+  status="danger" 
+  size="small"
+></ic-status-tag>`,
+      long: `.parent-container {
+      display: flex;
+      gap: var(--ic-space-xs);
+      flex-wrap: wrap;
+      padding: var(--ic-space-md);
+    }
+  </style>
+  <body>
+    <div class="parent-container">
+      {shortCode}
+    </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcStatusTag label="Neutral" status="neutral" size="small" />
+    technology: "React",
+    snippets: {
+      short: `<IcStatusTag label="Neutral" status="neutral" size="small" />
 <IcStatusTag label="Success" status="success" size="small" />
 <IcStatusTag label="Warning" status="warning" size="small" />
 <IcStatusTag label="Error" status="danger" size="small" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview style={{ gap: "8px" }} snippets={snippetsSmall}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsSmall}>
   <IcStatusTag label="Neutral" status="neutral" size="small" />
   <IcStatusTag label="Success" status="success" size="small" />
   <IcStatusTag label="Warning" status="warning" size="small" />
