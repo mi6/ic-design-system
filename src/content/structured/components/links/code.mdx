@@ -1,7 +1,7 @@
 ---
 path: "/components/link/code"
 
-date: "2023-07-27"
+date: "2024-05-31"
 
 title: "Link"
 
@@ -25,12 +25,27 @@ import { MemoryRouter, NavLink } from "react-router-dom";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-link href="/components/link/code">About our coffees</ic-link>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-link href="/components/link/code">About our coffees</ic-link>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcLink href="/components/link/code">About our coffees</IcLink>`,
+    technology: "React",
+    snippets: {
+      short: `<IcLink href="/components/link/code">About our coffees</IcLink>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -52,12 +67,27 @@ export const snippets = [
 
 export const snippetsIcon = [
   {
-    language: "Web component",
-    snippet: `<ic-link href="/" target="_blank">About our coffees</ic-link>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-link href="#" target="_blank">About our coffees</ic-link>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcLink href="/" target="_blank">About our coffees</IcLink>`,
+    technology: "React",
+    snippets: {
+      short: `<IcLink href="#" target="_blank">About our coffees</IcLink>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -67,25 +97,118 @@ export const snippetsIcon = [
   </IcLink>
 </ComponentPreview>
 
-### Light and dark
+### Appearance
 
 export const snippetsLightDark = [
   {
-    language: "Web component",
-    snippet: `<ic-link href="/" appearance="dark" target="_blank">About our coffees</ic-link>
-<ic-link href="/" appearance="light" target="_blank">About our coffees</ic-link>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-link href="#" appearance="dark" target="_blank">About our coffees</ic-link>
+<ic-link href="#" appearance="light" target="_blank">About our coffees</ic-link>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .light-background {
+    padding: var(--ic-space-xs);
+  }
+  .dark-background {
+    background: #333333;
+    padding: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    <div class="light-background">
+      <ic-link href="#" appearance="dark" target="_blank">
+        About our coffees
+      </ic-link>
+    </div>
+    <div class="dark-background">
+      <ic-link href="#" appearance="light" target="_blank">
+        About our coffees
+      </ic-link>
+    </div>
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcLink href="/" appearance="dark" target="_blank">About our coffees</IcLink>
-<IcLink href="/" appearance="light" target="_blank">About our coffees</IcLink>`,
+    technology: "React",
+    snippets: {
+      short: `<IcLink href="#" appearance="dark" target="_blank">About our coffees</IcLink>
+<IcLink href="#" appearance="light" target="_blank">About our coffees</IcLink>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  lightBackground: {
+    padding: 'var(--ic-space-xs)',
+  },
+  darkBackground: {
+    background: '#333333',
+    padding: 'var(--ic-space-xs)',
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    <div className={classes.lightBackground}>
+      <IcLink href="/" appearance="dark" target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+    <div className={classes.darkBackground}>
+      <IcLink href="#" appearance="light" target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  lightBackground: {
+    padding: 'var(--ic-space-xs)',
+  },
+  darkBackground: {
+    background: '#333333',
+    padding: 'var(--ic-space-xs)',
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    <div className={classes.lightBackground}>
+      <IcLink href="/" appearance="dark" target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+    <div className={classes.darkBackground}>
+      <IcLink href="#" appearance="light" target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippetsLightDark}>
   <div
     style={{
-      padding: "8px",
+      padding: "0.5rem",
     }}
   >
     <IcLink href="/" appearance="dark" target="_blank">
@@ -95,7 +218,7 @@ export const snippetsLightDark = [
   <div
     style={{
       background: "#333333",
-      padding: "8px",
+      padding: "0.5rem",
     }}
   >
     <IcLink href="/" appearance="light" target="_blank">
@@ -108,9 +231,10 @@ export const snippetsLightDark = [
 
 export const withReactRouter = [
   {
-    language: "React",
-    snippet: `<MemoryRouter initialEntries={["/"]}>
-  <div style={{display: "flex", flexDirection: "row", gap: "8px"}}>
+    technology: "React",
+    snippets: {
+      short: `<MemoryRouter initialEntries={["/"]}>
+  <div className={classes.linkContainer}>
     <IcLink>
       <NavLink to="/" slot="router-item">Home</NavLink>
     </IcLink>
@@ -120,12 +244,40 @@ export const withReactRouter = [
   </div>
   <IcSectionContainer>
     <Routes>
-      <Route path="/" element={() => <IcTypography>This is the home page</IcTypography>} />
-      <Route path="/daily-tippers" element={() => <IcTypography>This page is about beverages</IcTypography>} />
+      <Route path="/" element={<IcTypography>This is the home page</IcTypography>} />
+      <Route path="/daily-tippers" element={<IcTypography>This page is about beverages</IcTypography>} />
     </Routes>
   </IcSectionContainer>
-</MemoryRouter>
-    `,
+</MemoryRouter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  linkContainer: {
+    display: "flex",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  linkContainer: {
+    display: "flex",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -138,7 +290,7 @@ export const withReactRouter = [
       style={{
         display: "flex",
         flexDirection: "row",
-        gap: "8px",
+        gap: "0.5rem",
       }}
     >
       <IcLink>

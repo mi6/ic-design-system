@@ -1,7 +1,7 @@
 ---
 path: "/components/back-to-top/code"
 
-date: "2023-02-03"
+date: "2024-05-31"
 
 title: "Back to top"
 
@@ -23,18 +23,35 @@ import { IcButton } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-back-to-top target="main" />`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-back-to-top target="main"></ic-back-to-top>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcBackToTop target="main" />`,
+    technology: "React",
+    snippets: {
+      short: `<IcBackToTop target="main" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
 ## Component demo
 
-<ComponentPreview snippets={snippets}>
+A StackBlitz example of how the back to top component works in the context of other components can be seen in the [Top Navigation with Back to Top layout example](/patterns/navigation-patterns/top-navigation-layout#back-to-top).
+
+<ComponentPreview snippets={snippets} showStackblitzBtn={false}>
   <IcButton
     variant="secondary"
     onClick={() => {

@@ -1,7 +1,7 @@
 ---
 path: "/components/breadcrumb/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Breadcrumb"
 
@@ -27,8 +27,9 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-breadcrumb-group>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group>
   <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
   <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
   <ic-breadcrumb 
@@ -38,10 +39,13 @@ export const snippets = [
   >
   </ic-breadcrumb>
 </ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcBreadcrumbGroup>
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup>
   <IcBreadcrumb pageTitle="Home" href="#" />
   <IcBreadcrumb pageTitle="Beverages" href="#" />
   <IcBreadcrumb 
@@ -50,6 +54,17 @@ export const snippets = [
     href="#"
   />
 </IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -88,8 +103,9 @@ export const snippets = [
 
 export const back = [
   {
-    language: "Web component",
-    snippet: `<ic-breadcrumb-group back-breadcrumb-only="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group back-breadcrumb-only="true">
   <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
   <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
   <ic-breadcrumb 
@@ -99,10 +115,13 @@ export const back = [
   >
   </ic-breadcrumb>
 </ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcBreadcrumbGroup backBreadcrumbOnly>
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup backBreadcrumbOnly>
   <IcBreadcrumb pageTitle="Home" href="#" />
   <IcBreadcrumb pageTitle="Beverages" href="#" />
   <IcBreadcrumb 
@@ -111,6 +130,17 @@ export const back = [
     href="#"
   />
 </IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -139,8 +169,9 @@ export const back = [
 
 export const withIcons = [
   {
-    language: "Web component",
-    snippet: `<ic-breadcrumb-group>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group>
   <ic-breadcrumb page-title="Home" href="#">
     <svg
       slot="icon"
@@ -191,10 +222,13 @@ export const withIcons = [
     </svg>
   </ic-breadcrumb>
 </ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcBreadcrumbGroup>
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup>
   <IcBreadcrumb pageTitle="Home" href="#">
     <SlottedSVG
       slot="icon"
@@ -245,6 +279,17 @@ export const withIcons = [
     </SlottedSVG>
   </IcBreadcrumb>
 </IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -311,29 +356,44 @@ export const withIcons = [
 
 export const collapsed = [
   {
-    language: "Web component",
-    snippet: ` <ic-breadcrumb-group collapsed="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group collapsed="true">
   <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
   <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
   <ic-breadcrumb 
-      current="true" 
-      page-title="Coffee" 
-      href="#"
-    >
-    </ic-breadcrumb>
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
 </ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcBreadcrumbGroup collapsed>
-    <IcBreadcrumb pageTitle="Home" href="#" />
-    <IcBreadcrumb pageTitle="Beverages" href="#" />
-    <IcBreadcrumb 
-      pageTitle="Coffee" 
-      current
-      href="#"
-    />
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup collapsed>
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="#" />
+  <IcBreadcrumb 
+    pageTitle="Coffee" 
+    current
+    href="#"
+  />
 </IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -362,8 +422,9 @@ export const collapsed = [
 
 export const withReactRouter = [
   {
-    language: "React",
-    snippet: `<MemoryRouter initialEntries={["/"]}>
+    technology: "React",
+    snippets: {
+      short: `<MemoryRouter initialEntries={["/"]}>
   <IcBreadcrumbGroup>
     <IcBreadcrumb pageTitle="Home">
       <IcLink>
@@ -381,8 +442,18 @@ export const withReactRouter = [
       </IcLink>
     </IcBreadcrumb>
   </IcBreadcrumbGroup>
-</MemoryRouter>
-`,
+</MemoryRouter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
