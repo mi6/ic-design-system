@@ -1,7 +1,7 @@
 ---
 path: "/components/checkbox/code"
 
-date: "2024-01-18"
+date: "2024-05-31"
 
 title: "Checkbox"
 
@@ -25,12 +25,14 @@ import { IcCheckboxGroup, IcCheckbox, IcTextField } from "@ukic/react";
 
 export const snippetsDefault = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Select your extras" name="default">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Select your extras" name="default">
   <ic-checkbox value="extra" label="Extra shot (50p)"></ic-checkbox>
   <ic-checkbox value="Soya milk" label="Soya milk" checked ></ic-checkbox>
   <ic-checkbox value="keep cup" label="Takeaway cup" disabled="true" ></ic-checkbox>
-</ic-checkbox-group>
+</ic-checkbox-group>`,
+      long: `{shortCode}
 <script>
   const checkboxGroup = document.querySelector('ic-checkbox-group');
   checkboxGroup.addEventListener('icChange', (ev) => console.log('icChange', ev.detail.value));
@@ -40,16 +42,28 @@ export const snippetsDefault = [
       console.log('icCheck', ev);
     })
   })
-</script>
-`,
+</script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Select your extras" name="default" onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}>
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Select your extras" name="default" onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}>
   <IcCheckbox value="extra" label="Extra shot (50p)" onIcCheck={(ev) => console.log("onIcCheck", ev)} />
   <IcCheckbox value="Soya milk" label="Soya milk" checked />
   <IcCheckbox value="keep cup" label="Takeaway cup" disabled />
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -83,18 +97,33 @@ export const snippetsDefault = [
 
 export const snippetsHiddenLabel = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Select your extras" hide-label="true" name="1">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Select your extras" hide-label="true" name="1">
   <ic-checkbox value="valueName1" label="Extra shot (50p)"></ic-checkbox>
   <ic-checkbox value="valueName2" label="Soya milk" checked="true"></ic-checkbox>
 </ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Select your extras" hideLabel name="1">
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Select your extras" hideLabel name="1">
   <IcCheckbox value="valueName1" label="Extra shot (50p)" />
   <IcCheckbox value="valueName2" label="Soya milk" checked />
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -109,18 +138,33 @@ export const snippetsHiddenLabel = [
 
 export const snippetsHelperText = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Select your extras" name="1" helper-text="Additional charges may apply.">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Select your extras" name="1" helper-text="Additional charges may apply.">
   <ic-checkbox value="valueName1" label="Extra shot (50p)"></ic-checkbox>
   <ic-checkbox value="valueName2" label="Soya milk" checked="true"></ic-checkbox>
 </ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Select your extras" name="1" helperText="Additional charges may apply.">
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Select your extras" name="1" helperText="Additional charges may apply.">
   <IcCheckbox value="valueName1" label="Extra shot (50p)" />
   <IcCheckbox value="valueName2" label="Soya milk" checked />
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -139,8 +183,9 @@ export const snippetsHelperText = [
 
 export const snippetsSizes = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Select your extras" name="1" size="small">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Select your extras" name="1" size="small">
   <ic-checkbox value="valueName1" label="Extra shot (50p)"></ic-checkbox>
   <ic-checkbox value="valueName2" label="Soya milk" checked="true"></ic-checkbox>
 </ic-checkbox-group>
@@ -152,10 +197,13 @@ export const snippetsSizes = [
   <ic-checkbox value="valueName1" label="Extra shot (50p)"></ic-checkbox>
   <ic-checkbox value="valueName2" label="Soya milk" checked="true"></ic-checkbox>
 </ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Select your extras" name="1" size="small">
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Select your extras" name="1" size="small">
   <IcCheckbox value="valueName1" label="Extra shot (50p)" />
   <IcCheckbox value="valueName2" label="Soya milk" checked />
 </IcCheckboxGroup>
@@ -167,6 +215,21 @@ export const snippetsSizes = [
   <IcCheckbox value="valueName1" label="Extra shot (50p)" />
   <IcCheckbox value="valueName2" label="Soya milk" checked />
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -189,16 +252,35 @@ export const snippetsSizes = [
 
 export const snippetsSettingEachCheckboxSize = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox value="valueName1" label="Extra shot (50p)" size="small" />
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox value="valueName1" label="Extra shot (50p)" size="small" />
 <ic-checkbox value="valueName2" label="Extra shot (50p)" />
 <ic-checkbox value="valueName3" label="Extra shot (50p)" size="large" />`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckbox value="valueName1" label="Extra shot (50p)" size="small" />
+    technology: "React",
+    snippets: {
+      short: `<IcCheckbox value="valueName1" label="Extra shot (50p)" size="small" />
 <IcCheckbox value="valueName2" label="Extra shot (50p)" />
 <IcCheckbox value="valueName3" label="Extra shot (50p)" size="large" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -220,8 +302,9 @@ export const snippetsSettingEachCheckboxSize = [
 
 export const snippetsConditional = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Which coffee do you like best?" name="conditional">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Which coffee do you like best?" name="conditional">
   <ic-checkbox value="americano" label="Americano"></ic-checkbox>
   <ic-checkbox value="espresso" label="Espresso"></ic-checkbox>
   <ic-checkbox value="flatwhite" label="Flat white"></ic-checkbox>
@@ -234,10 +317,13 @@ export const snippetsConditional = [
     ></ic-text-field>
   </ic-checkbox>
 </ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Which coffee do you like best?" name="conditional">
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Which coffee do you like best?" name="conditional">
   <IcCheckbox value="americano" label="Americano" />
   <IcCheckbox value="espresso" label="Espresso" />
   <IcCheckbox value="flatwhite" label="Flat white" />
@@ -250,6 +336,17 @@ export const snippetsConditional = [
     />
   </IcCheckbox>
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -270,8 +367,9 @@ export const snippetsConditional = [
 
 export const snippetsConditionalDynamic = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Which coffee do you like best?" name="dynamic">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Which coffee do you like best?" name="dynamic">
   <ic-checkbox value="americano" label="Americano"></ic-checkbox>
   <ic-checkbox value="espresso" label="Espresso"></ic-checkbox>
   <ic-checkbox value="flatwhite" label="Flat white"></ic-checkbox>
@@ -284,10 +382,13 @@ export const snippetsConditionalDynamic = [
     ></ic-text-field>
   </ic-checkbox>
 </ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Which coffee do you like best?" name="dynamic">
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Which coffee do you like best?" name="dynamic">
   <IcCheckbox value="americano" label="Americano" />
   <IcCheckbox value="espresso" label="Espresso" />
   <IcCheckbox value="flatwhite" label="Flat white" />
@@ -300,6 +401,17 @@ export const snippetsConditionalDynamic = [
     />
   </IcCheckbox>
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -325,18 +437,33 @@ export const snippetsConditionalDynamic = [
 
 export const snippetsValidation = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Select your extras" name="1" validation-status="error" validation-text="Sorry, this is currently unavailable.">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Select your extras" name="1" validation-status="error" validation-text="Sorry, this is currently unavailable.">
   <ic-checkbox value="valueName1" label="Extra shot (50p)"></ic-checkbox>
   <ic-checkbox value="valueName2" label="Soya milk" checked="true"></ic-checkbox>
 </ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Select your extras" name="1" validationStatus="error" validationText="Sorry, this is currently unavailable.">
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Select your extras" name="1" validationStatus="error" validationText="Sorry, this is currently unavailable.">
   <IcCheckbox value="valueName1" label="Extra shot (50p)" />
   <IcCheckbox value="valueName2" label="Soya milk" checked />
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -356,8 +483,9 @@ export const snippetsValidation = [
 
 export const snippetsIndeterminate = [
   {
-    language: "Web component",
-    snippet: `<ic-checkbox-group label="Select your preferred drinks" name="1">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Select your preferred drinks" name="1">
   <ic-checkbox value="drinks" label="Drinks" checked="true" indeterminate="true">
     <ic-checkbox-group label="Coffee" hide-label="true" slot="additional-field" name="2">
       <ic-checkbox value="tea" label="Tea"></ic-checkbox>
@@ -372,10 +500,13 @@ export const snippetsIndeterminate = [
     </ic-checkbox-group>
   </ic-checkbox>
 </ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCheckboxGroup label="Select your preferred drinks" name="1">
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Select your preferred drinks" name="1">
   <IcCheckbox value="drinks" label="Drinks" checked indeterminate>
     <IcCheckboxGroup name="2" label="Coffee" hideLabel slot="additional-field">
       <IcCheckbox value="tea" label="Tea" />
@@ -390,6 +521,17 @@ export const snippetsIndeterminate = [
     </IcCheckboxGroup>
   </IcCheckbox>
 </IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

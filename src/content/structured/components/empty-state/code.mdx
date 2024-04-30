@@ -1,7 +1,7 @@
 ---
 path: "/components/empty-state/code"
 
-date: "2023-08-09"
+date: "2024-05-31"
 
 title: "Empty state"
 
@@ -25,59 +25,75 @@ import { IcEmptyState, IcButton, IcLink } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those.">
-    <svg slot="image" viewBox="0 0 1600 1600">
-      <rect fill="#ff7700" width="1600" height="1600" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </svg>
-    <ic-button slot="actions">Go to favourite coffees</ic-button>
-    <ic-link slot="actions" href="/">
-      Customer support
-    </ic-link>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those."
+>
+  <svg slot="image" viewBox="0 0 1600 1600">
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
+  <ic-button slot="actions">Go to favourite coffees</ic-button>
+  <ic-link slot="actions" href="/">
+    Customer support
+  </ic-link>
 </ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those." 
-    >
-    <SlottedSVG slot="image" viewBox="0 0 1600 1600">
-      <rect fill="#ff7700" width="1600" height="1600" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </SlottedSVG>
-    <IcButton slot="actions">Go to favourite coffees</IcButton>
-    <IcLink slot="actions" href="/">
-      Customer support
-    </IcLink>
-  </IcEmptyState>`,
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those." 
+>
+  <SlottedSVG slot="image" viewBox="0 0 1600 1600">
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
+  <IcButton slot="actions">Go to favourite coffees</IcButton>
+  <IcLink slot="actions" href="/">
+    Customer support
+  </IcLink>
+</IcEmptyState>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -119,26 +135,41 @@ export const snippets = [
 
 export const actionsSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
-    <ic-button slot="actions">Go to favourite coffees</ic-button>
-    <ic-link slot="actions" href="/">Customer support</ic-link>
+  <ic-button slot="actions">Go to favourite coffees</ic-button>
+  <ic-link slot="actions" href="/">Customer support</ic-link>
 </ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
-    <IcButton slot="actions">Go to favourite coffees</IcButton>
-    <IcLink slot="actions" href="/">Customer support</IcLink>
+  <IcButton slot="actions">Go to favourite coffees</IcButton>
+  <IcLink slot="actions" href="/">Customer support</IcLink>
 </IcEmptyState>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -159,58 +190,73 @@ export const actionsSnippets = [
 
 export const imageSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
-    <svg
-      slot="image"
-      viewBox="0 0 1600 1600"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </svg>
+  <svg
+    slot="image"
+    viewBox="0 0 1600 1600"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
 </ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
-    <SlottedSVG
-      slot="image"
-      viewBox="0 0 1600 1600"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </SlottedSVG>
+  <SlottedSVG
+    slot="image"
+    viewBox="0 0 1600 1600"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
 </IcEmptyState>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -242,60 +288,75 @@ export const imageSnippets = [
 
 export const imageLargeSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
-    image-size="large" 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  image-size="large" 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
-    <svg
-      slot="image"
-      viewBox="0 0 1600 1600"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </svg>
+  <svg
+    slot="image"
+    viewBox="0 0 1600 1600"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
 </ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
-    imageSize="large" 
-    heading="Hmm...there's nothing here" 
-    subheading="We don't currently have any favourite teas, probably because coffee is much better." 
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  imageSize="large" 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
-    <SlottedSVG
-      slot="image"
-      viewBox="0 0 1600 1600"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </SlottedSVG>
+  <SlottedSVG
+    slot="image"
+    viewBox="0 0 1600 1600"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
 </IcEmptyState>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -328,11 +389,12 @@ export const imageLargeSnippets = [
 
 export const iconSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
-    heading="Hmm...there's nothing here"
-    subheading="We don't currently have any favourite teas, probably because coffee is much better."
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  heading="Hmm...there's nothing here"
+  subheading="We don't currently have any favourite teas, probably because coffee is much better."
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
   <svg
     slot="image"
@@ -345,13 +407,16 @@ export const iconSnippets = [
     <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
   </svg>
 </ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
-    heading="Hmm...there's nothing here"
-    subheading="We don't currently have any favourite teas, probably because coffee is much better."
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  heading="Hmm...there's nothing here"
+  subheading="We don't currently have any favourite teas, probably because coffee is much better."
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 >
   <SlottedSVG
     slot="image"
@@ -364,6 +429,17 @@ export const iconSnippets = [
     <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
   </SlottedSVG>
 </IcEmptyState>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -390,22 +466,37 @@ export const iconSnippets = [
 
 export const rightSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
-    aligned="right" 
-    heading="Hmm...there's nothing here"
-    subheading="We don't currently have any favourite teas, probably because coffee is much better."
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again.">
-</ic-empty-state>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  aligned="right" 
+  heading="Hmm...there's nothing here"
+  subheading="We don't currently have any favourite teas, probably because coffee is much better."
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+></ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
-    aligned="right" 
-    heading="Hmm...there's nothing here"
-    subheading="We don't currently have any favourite teas, probably because coffee is much better."
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again." 
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  aligned="right" 
+  heading="Hmm...there's nothing here"
+  subheading="We don't currently have any favourite teas, probably because coffee is much better."
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again." 
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -422,22 +513,37 @@ export const rightSnippets = [
 
 export const centreSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
     aligned="center" 
     heading="Hmm...there's nothing here"
     subheading="We don't currently have any favourite teas, probably because coffee is much better."
-    body="Take a look at our favourite coffees instead, there's much more of those, or try again.">
-</ic-empty-state>`,
+    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+></ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
     aligned="center" 
     heading="Hmm...there's nothing here"
     subheading="We don't currently have any favourite teas, probably because coffee is much better."
     body="Take a look at our favourite coffees instead, there's much more of those, or try again."
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -454,22 +560,37 @@ export const centreSnippets = [
 
 export const maxLinesSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-empty-state 
-    body-max-lines="1" 
-    heading="Hmm...there's nothing here"
-    subheading="We don't currently have any favourite teas, probably because coffee is much better."
-    body="Take a look at our favourite coffees instead, there's much more of those. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you.">
-</ic-empty-state>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  body-max-lines="1" 
+  heading="Hmm...there's nothing here"
+  subheading="We don't currently have any favourite teas, probably because coffee is much better."
+  body="Take a look at our favourite coffees instead, there's much more of those. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you."
+></ic-empty-state>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcEmptyState 
-    bodyMaxLines="1" 
-    heading="Hmm...there's nothing here"
-    subheading="We don't currently have any favourite teas, probably because coffee is much better."
-    body="Take a look at our favourite coffees instead, there's much more of those. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you."
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  bodyMaxLines="1" 
+  heading="Hmm...there's nothing here"
+  subheading="We don't currently have any favourite teas, probably because coffee is much better."
+  body="Take a look at our favourite coffees instead, there's much more of those. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you."
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

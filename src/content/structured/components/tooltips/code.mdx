@@ -1,7 +1,7 @@
 ---
 path: "/components/tooltip/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Tooltip"
 
@@ -20,28 +20,109 @@ tabs:
 ---
 
 import { IcTooltip, IcButton, IcChip } from "@ukic/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 ## Component demo
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-tooltip target="test-button-0" label="Add Americano to favourites" placement="top">
-  <ic-button id="test-button-0" aria-describedby="ic-tooltip-test-button-0">Add</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tooltip
+  target="test-button-0"
+  label="Add Americano to favourites"
+  placement="top"
+>
+  <ic-button id="test-button-0" aria-describedby="ic-tooltip-test-button-0">
+    Add
+  </ic-button>
 </ic-tooltip>
-<ic-tooltip target="test-button-1" label="Remove Americano from favourites" placement="bottom">
-  <ic-button id="test-button-1" aria-describedby="ic-tooltip-test-button-1">Remove</ic-button>
+<ic-tooltip
+  target="test-button-1"
+  label="Remove Americano from favourites"
+  placement="bottom"
+>
+  <ic-button id="test-button-1" aria-describedby="ic-tooltip-test-button-1">
+    Remove
+  </ic-button>
 </ic-tooltip>`,
+      long: `.tooltip-container {
+      display: flex; 
+      flex-direction: column;
+      gap: 8px; 
+      padding: 16px;
+    }
+  </style>
+  <body>
+    <div class="tooltip-container">
+      {shortCode}
+    </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTooltip target="test-button-0" label="Add Americano to favourites" placement="top">
-  <IcButton id="test-button-0" aria-describedby="ic-tooltip-test-button-0">Add</IcButton>
+    technology: "React",
+    snippets: {
+      short: `<IcTooltip
+  target="test-button-0"
+  label="Add Americano to favourites"
+  placement="top"
+>
+  <IcButton
+    id="test-button-0"
+    aria-describedby="ic-tooltip-test-button-0"
+  >
+    Add
+  </IcButton>
 </IcTooltip>
-<IcTooltip target="test-button-1" label="Remove Americano from favourites" placement="bottom">
-  <IcButton id="test-button-1" aria-describedby="ic-tooltip-test-button-1">Remove</IcButton>
+<IcTooltip
+  target="test-button-1"
+  label="Remove Americano from favourites"
+  placement="bottom"
+>
+  <IcButton
+    id="test-button-1"
+    aria-describedby="ic-tooltip-test-button-1"
+  >
+    Remove
+  </IcButton>
 </IcTooltip>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  tooltipContainer: {
+    display: "flex", 
+    flexDirection: "column",
+    gap: "8px", 
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.tooltipContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  tooltipContainer: {
+    display: "flex", 
+    flexDirection: "column",
+    gap: "8px", 
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.tooltipContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -78,16 +159,73 @@ export const snippets = [
 
 export const snippetsLeft = [
   {
-    language: "Web component",
-    snippet: `<ic-tooltip target="test-button" label="Add Americano to favourites" placement="left">
-  <ic-button id="test-button" aria-describedby="ic-tooltip-test-button">Add</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tooltip
+  target="test-button"
+  label="Add Americano to favourites"
+  placement="left"
+>
+  <ic-button id="test-button" aria-describedby="ic-tooltip-test-button">
+    Add
+  </ic-button>
 </ic-tooltip>`,
+      long: `.tooltip-container {
+      display: flex; 
+      justify-content: flex-end;
+    }
+  </style>
+  <body>
+    <div class="tooltip-container">
+      {shortCode}
+    </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTooltip target="test-button" label="Add Americano to favourites" placement="left">
-  <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">Add</IcButton>
+    technology: "React",
+    snippets: {
+      short: `<IcTooltip
+  target="test-button"
+  label="Add Americano to favourites"
+  placement="left"
+>
+  <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+    Add
+  </IcButton>
 </IcTooltip>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  tooltipContainer: {
+    display: "flex",
+    justifyContent: "flex-end"
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.tooltipContainer}>
+    {shortCode}
+  </div>
+)}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  tooltipContainer: {
+    display: "flex",
+    justifyContent: "flex-end"
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.tooltipContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -113,16 +251,67 @@ export const snippetsLeft = [
 
 export const snippetsRight = [
   {
-    language: "Web component",
-    snippet: `<ic-tooltip target="test-button" label="Add Americano to favourites" placement="right">  
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tooltip target="test-button" label="Add Americano to favourites" placement="right">  
   <ic-button id="test-button" aria-describedby="ic-tooltip-test-button">Add</ic-button>
 </ic-tooltip>`,
+      long: `.tooltip-container {
+      display: flex; 
+      justify-content: flex-start;
+    }
+  </style>
+  <body>
+    <div class="tooltip-container">
+      {shortCode}
+    </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTooltip target="test-button" label="Add Americano to favourites" placement="right">
-  <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">Add</IcButton>
+    technology: "React",
+    snippets: {
+      short: `<IcTooltip
+  target="test-button"
+  label="Add Americano to favourites"
+  placement="right"
+>
+  <IcButton id="test-button" aria-describedby="ic-tooltip-test-button">
+    Add
+  </IcButton>
 </IcTooltip>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  tooltipContainer: {
+    display: "flex",
+    justifyContent: "flex-start"
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.tooltipContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  tooltipContainer: {
+    display: "flex",
+    justifyContent: "flex-start"
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.tooltipContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -146,26 +335,57 @@ export const snippetsRight = [
 
 ### Chip
 
-export const snippetsDefault = [
+export const snippetsChip = [
   {
-    language: "Web component",
-    snippet: `<ic-tooltip target="small-chip" label="An espresso-based drink"> 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tooltip target="small-chip" label="An espresso-based drink">
   <ic-chip id="small-chip" label="Americano" size="small">
-    <svg slot="icon" width="26" height="26" viewBox="0 0 26 26" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    <svg
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"
+      />
     </svg>
   </ic-chip>
 </ic-tooltip>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTooltip target="small-chip" label="An espresso-based drink">
+    technology: "React",
+    snippets: {
+      short: `<IcTooltip target="small-chip" label="An espresso-based drink">
   <IcChip id="small-chip" label="Americano" size="small">
-    <SlottedSVG slot="icon" width="26" height="26" viewBox="0 0 26 26" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <SlottedSVG
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </SlottedSVG>
-    </IcChip>
+  </IcChip>
 </IcTooltip>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -176,15 +396,15 @@ export const snippetsDefault = [
     justifyContent: "center",
     alignItems: "center",
   }}
-  snippets={snippetsDefault}
+  snippets={snippetsChip}
 >
   <IcTooltip target="small-chip" label="An espresso-based drink">
     <IcChip id="small-chip" label="Americano" size="small">
       <svg
         slot="icon"
-        width="26"
-        height="26"
-        viewBox="0 0 26 26"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -198,52 +418,101 @@ export const snippetsDefault = [
 
 export const snippetsProgrammatic = [
   {
-    language: "Web component",
-    snippet: `<script>
-  let display = true;
-  document
-    .querySelector("#clickMe")
-    .addEventListener("click", handleDisplay);
-  const tooltip = document.querySelector("#targetTooltip");
-  function handleDisplay() {
-    tooltip.displayTooltip(display, display);
-    display = !display;
-  }
-</script>
-<ic-button id="clickMe">Show tooltip</ic-button>
-<ic-tooltip id="targetTooltip" label="Add Americano to favourites" target="test-button">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button id="clickMe">Show tooltip</ic-button>
+<ic-tooltip
+  id="targetTooltip"
+  label="Add Americano to favourites"
+  target="test-button"
+>
   <ic-button id="test-button" aria-describedby="ic-tooltip-test-button">
     Add
   </ic-button>
 </ic-tooltip>`,
+      long: `{shortCode}
+  <script>
+    let display = true;
+    document
+      .querySelector("#clickMe")
+      .addEventListener("click", handleDisplay);
+    const tooltip = document.querySelector("#targetTooltip");
+    function handleDisplay() {
+      tooltip.displayTooltip(display, display);
+      display = !display;
+    }
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `let display = true;
-const tooltipEl = useRef(null);
-const handleDisplay = () => {
-  tooltipEl.current.displayTooltip(display, display);
-  display = !display;
-}
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleDisplay}>Show tooltip</IcButton>
+<IcTooltip
+  ref={tooltipEl}
+  label="Add Americano to favourites"
+  target="test-button"
+>
+  <IcButton aria-describedby="ic-tooltip-test-button" id="test-button">
+    Add
+  </IcButton>
+</IcTooltip>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [display, setDisplay] = useState<boolean>(true);
+const tooltipEl = useRef<HTMLIcTooltipElement | null>(null);
+const handleDisplay =  () => {
+  tooltipEl.current?.displayTooltip(display, display);
+  setDisplay(!display);
+};
+const useStyles = createUseStyles({
+  btnContainer: {
+    display: 'flex',
+    gap: '8px',
+    padding: '16px',
+  },
+});
+const classes = useStyles();
 return (
-  <>
-    <IcButton onClick={handleDisplay}>Show tooltip</IcButton>
-    <IcTooltip ref={tooltipEl} label="Add Americano to favourites" target="test-button">
-      <IcButton aria-describedby="ic-tooltip-test-button" id="test-button">
-        Add
-      </IcButton>
-    </IcTooltip>
-  </>
-);`,
+  <div className={classes.btnContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [display, setDisplay] = useState(true);
+const tooltipEl = useRef(null);
+const handleDisplay =  () => {
+  tooltipEl.current?.displayTooltip(display, display);
+  setDisplay(!display);
+};
+const useStyles = createUseStyles({
+  btnContainer: {
+    display: 'flex',
+    gap: '8px',
+    padding: '16px',
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.btnContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
 export const TriggerExample = () => {
-  let display = true;
+  const [display, setDisplay] = useState(true);
   const tooltipEl = useRef(null);
-  const handleDisplay = () => {
-    tooltipEl.current.displayTooltip(display, display);
-    display = !display;
+  const handleDisplay = async () => {
+    await tooltipEl.current?.displayTooltip(display, display);
+    setDisplay(!display);
   };
   return (
     <>

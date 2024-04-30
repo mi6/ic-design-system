@@ -1,7 +1,7 @@
 ---
 path: "/components/page-header/code"
 
-date: "2023-10-25"
+date: "2024-05-31"
 
 title: "Page header"
 
@@ -40,63 +40,80 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-page-header heading="Latte recipe"
-    subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam. "
-    reverseOrder >
-    <ic-chip slot="heading-adornment" label="BETA" size="large" />
-    <ic-button slot="actions" variant="primary">
-      Create coffee
-    </ic-button>
-    <ic-button slot="actions" variant="tertiary">
-      Filter coffee
-    </ic-button>
-    <ic-stepper slot="stepper">
-      <ic-step stepTitle="Warm kettle" stepType="completed" />
-      <ic-step
-        stepTitle="Warm milk"
-        stepSubtitle="Optional"
-        stepType="completed"
-      />
-      <ic-step stepTitle="Pour milk" stepType="current" />
-    </ic-stepper>
-    <ic-text-field
-      slot="input"
-      placeholder="Search for ingredients…"
-      label="Input"
-      hideLabel
-    />
-    </ic-page-header>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-page-header
+    heading="Latte recipe"
+    subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam."
+    reverse-order="true"
+>
+  <ic-chip slot="heading-adornment" label="BETA" size="large"></ic-chip>
+  <ic-button slot="actions" variant="primary">
+    Create coffee
+  </ic-button>
+  <ic-button slot="actions" variant="tertiary">
+    Filter coffee
+  </ic-button>
+  <ic-stepper slot="stepper">
+    <ic-step step-title="Warm kettle" step-type="completed"></ic-step>
+    <ic-step
+      step-title="Warm milk"
+      step-subtitle="Optional"
+      step-type="completed"
+    ></ic-step>
+    <ic-step step-title="Pour milk" step-type="current" ></ic-step>
+  </ic-stepper>
+  <ic-text-field
+    slot="input"
+    placeholder="Search for ingredients…"
+    label="Input"
+    hide-label="true"
+  ></ic-text-field>
+</ic-page-header>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPageHeader heading="Latte recipe"
-    subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam. "
-    reverseOrder 
-  >
-    <IcChip slot="heading-adornment" label="BETA" size="large" />
-    <IcButton slot="actions" variant="primary">
-      Create coffee
-    </IcButton>
-    <IcButton slot="actions" variant="tertiary">
-      Filter coffee
-    </IcButton>
-    <IcStepper slot="stepper">
-      <IcStep stepTitle="Warm kettle" stepType="completed" />
-      <IcStep
-        stepTitle="Warm milk"
-        stepSubtitle="Optional"
-        stepType="completed"
-      />
-      <IcStep stepTitle="Pour milk" stepType="current" />
-    </IcStepper>
-    <IcTextField
-      slot="input"
-      placeholder="Search for ingredients…"
-      label="Input"
-      hideLabel
+    technology: "React",
+    snippets: {
+      short: `<IcPageHeader heading="Latte recipe"
+  subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam."
+  reverseOrder 
+>
+  <IcChip slot="heading-adornment" label="BETA" size="large" />
+  <IcButton slot="actions" variant="primary">
+    Create coffee
+  </IcButton>
+  <IcButton slot="actions" variant="tertiary">
+    Filter coffee
+  </IcButton>
+  <IcStepper slot="stepper">
+    <IcStep stepTitle="Warm kettle" stepType="completed" />
+    <IcStep
+      stepTitle="Warm milk"
+      stepSubtitle="Optional"
+      stepType="completed"
     />
-  </IcPageHeader>`,
+    <IcStep stepTitle="Pour milk" stepType="current" />
+  </IcStepper>
+  <IcTextField
+    slot="input"
+    placeholder="Search for ingredients…"
+    label="Input"
+    hideLabel
+  />
+</IcPageHeader>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -141,12 +158,35 @@ export const snippets = [
 
 export const snippetsSmall = [
   {
-    language: "Web component",
-    snippet: `<ic-page-header size="small" heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam."></ic-page-header>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-page-header
+  size="small"
+  heading="Latte recipe"
+  subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam."
+></ic-page-header>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPageHeader size="small" heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam." />`,
+    technology: "React",
+    snippets: {
+      short: `<IcPageHeader
+  size="small"
+  heading="Latte recipe"
+  subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam."
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -162,8 +202,9 @@ export const snippetsSmall = [
 
 export const withBreadcrumbNavigation = [
   {
-    language: "Web component",
-    snippet: `<ic-page-header heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam.">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-page-header heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam.">
   <ic-chip slot="heading-adornment" label="BETA" size="large"></ic-chip>
   <ic-breadcrumb-group slot="breadcrumbs">
     <ic-breadcrumb current="true" page-title="Drinks" href="#"></ic-breadcrumb>
@@ -176,10 +217,13 @@ export const withBreadcrumbNavigation = [
   </ic-breadcrumb-group>
 </ic-page-header>
     `,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPageHeader heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam.">
+    technology: "React",
+    snippets: {
+      short: `<IcPageHeader heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam.">
   <IcChip slot="heading-adornment" label="BETA" size="large" />
   <IcBreadcrumbGroup slot="breadcrumbs">
     <IcBreadcrumb pageTitle="Drinks" href="#" />
@@ -191,6 +235,17 @@ export const withBreadcrumbNavigation = [
   </IcBreadcrumbGroup>
 </IcPageHeader>
     `,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -215,8 +270,9 @@ export const withBreadcrumbNavigation = [
 
 export const withActionsInputStepper = [
   {
-    language: "Web component",
-    snippet: `<ic-page-header heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam." reverse-order="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-page-header heading="Latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam." reverse-order="true">
   <ic-chip slot="heading-adornment" label="BETA" size="large"></ic-chip>
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
@@ -228,10 +284,17 @@ export const withActionsInputStepper = [
   <ic-text-field slot="input" placeholder="Search for ingredients…" label="Input" hide-label="true" />
 </ic-page-header>
     `,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPageHeader heading="latte recipe" subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam." reverseOrder>
+    technology: "React",
+    snippets: {
+      short: `<IcPageHeader 
+  heading="latte recipe" 
+  subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam." 
+  reverseOrder
+>
   <IcChip slot="heading-adornment" label="BETA" size="large" />
   <IcButton slot="actions" variant="primary">
     Create coffee
@@ -247,6 +310,17 @@ export const withActionsInputStepper = [
   <IcTextField slot="input" placeholder="Search for ingredients…" label="Input" hideLabel />
 </IcPageHeader>
     `,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -288,8 +362,9 @@ export const withActionsInputStepper = [
 
 export const withActionsInputTabs = [
   {
-    language: "Web component",
-    snippet: `<ic-page-header 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-page-header 
   heading="Latte recipe" 
   subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam." 
   reverse-order="true"
@@ -313,13 +388,17 @@ export const withActionsInputTabs = [
   </ic-navigation-item>
 </ic-page-header>
     `,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPageHeader 
+    technology: "React",
+    snippets: {
+      short: `<IcPageHeader 
   heading="Latte recipe" 
   subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam." 
-  reverseOrder>
+  reverseOrder
+>
   <IcChip slot="heading-adornment" label="BETA" size="large" />
   <IcButton slot="actions" variant="primary">
     Create coffee
@@ -346,6 +425,17 @@ export const withActionsInputTabs = [
   />
 </IcPageHeader>
     `,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -380,8 +470,9 @@ export const withActionsInputTabs = [
 
 export const withReactRouter = [
   {
-    language: "React",
-    snippet: `<MemoryRouter initialEntries={["/"]}>
+    technology: "React",
+    snippets: {
+      short: `<MemoryRouter initialEntries={["/"]}>
   <IcPageHeader
     heading="Latte recipe"
     subheading="A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam."
@@ -416,17 +507,48 @@ export const withReactRouter = [
       placeholder="Search for ingredients…"
       label="Input" 
       hideLabel 
-      style={{'@media (maxWidth: 576px)':{width: "280px"}}}
+      class={classes.textField}
     />
   </IcPageHeader>
   <IcSectionContainer>
-      <Routes>
-        <Route path="/" element={() => <IcTypography>This page is about our Latte making methods</IcTypography>}/>
-        <Route path="/favourites" element={() => <IcTypography>This page is about the ingredients used in our Latte</IcTypography>}/>
-      </Routes>
+    <Routes>
+      <Route path="/" element={<IcTypography>This page is about our Latte making methods</IcTypography>}/>
+      <Route path="/favourites" element={<IcTypography>This page is about the ingredients used in our Latte</IcTypography>}/>
+    </Routes>
   </IcSectionContainer>
 </MemoryRouter>
     `,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+            textField: {
+              '@media (max-width: 576px)': {
+              width: '280px;'
+              }
+            }
+            })
+            const classes = useStyles();
+            return(
+          {shortCode}
+          )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+            text: {
+              '@media (max-width: 576px)': {
+              width: '280px;'
+              }
+            }
+            })
+            const classes = useStyles();
+            return(
+          {shortCode}
+          )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -486,8 +608,9 @@ export const withReactRouter = [
 
 export const withSlots = [
   {
-    language: "Web component",
-    snippet: `<ic-page-header>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-page-header>
   <ic-typography variant="h1" slot="heading">Latte recipe</ic-typography>
   <ic-typography slot="subheading">A Latte is a popular Italian coffee, made with espresso, steamed milk and a thin layer of foam.</ic-typography>
   <ic-chip slot="heading-adornment" label="BETA" size="large"></ic-chip>
@@ -498,10 +621,13 @@ export const withSlots = [
   </ic-breadcrumb-group>
   <ic-text-field slot="input" placeholder="Search for ingredients…" label="Input" hide-label="true" />
 </ic-page-header>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPageHeader>
+    technology: "React",
+    snippets: {
+      short: `<IcPageHeader>
   <IcTypography variant="h1" slot="heading">
     Latte recipe
   </IcTypography>
@@ -522,6 +648,17 @@ export const withSlots = [
     hideLabel
   />
 </IcPageHeader>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

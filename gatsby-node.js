@@ -1,4 +1,7 @@
-const path = require(`path`);
+const path = require("path");
+const fs = require("fs");
+// eslint-disable-next-line import/no-extraneous-dependencies
+const prettier = require("prettier");
 // eslint-disable-next-line import/no-extraneous-dependencies
 const webpack = require("webpack");
 const pagesConfig = require("./src/config");
@@ -236,6 +239,11 @@ exports.createResolvers = ({ createResolvers }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        fs: false,
+      },
+    },
     plugins: [
       /**
        * See line 203 of:
@@ -276,4 +284,104 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       ),
     ],
   });
+};
+
+exports.sourceNodes = () => {
+  // Find the name of the components in the @ukic* folders
+  const canaryReact = path.resolve(
+    __dirname,
+    "node_modules/@ukic/canary-react/dist/components.d.ts"
+  );
+  const canaryWebComponents = path.resolve(
+    __dirname,
+    "node_modules/@ukic/canary-web-components/dist/types/components"
+  );
+  const react = path.resolve(
+    __dirname,
+    "node_modules/@ukic/react/dist/components.d.ts"
+  );
+
+  // Get the names of components in the canary-web-components package
+  const canaryWebComponentsNames = fs
+    .readdirSync(canaryWebComponents, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
+
+  const getComponentNames = (filePath, regex) => {
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const componentNames = [];
+    let match = regex.exec(fileContent);
+    while (match !== null) {
+      componentNames.push(match[1]);
+      match = regex.exec(fileContent);
+    }
+    return componentNames;
+  };
+
+  const regex = /export declare const (\w+):/g;
+  // Read the contents of the canaryReact and react file
+  const canaryReactComponentNames = getComponentNames(canaryReact, regex);
+  const reactComponentNames = getComponentNames(react, regex);
+
+  // Get the types of the components in the canary-web-components package
+  const getCanaryWebComponentTypes = (directory, componentNames) => {
+    const typesRegex = /export\s+type\s+(\w+)\s+=/g;
+    let canaryTypes = [];
+
+    if (!directory || typeof directory !== "string") {
+      throw new Error("Invalid directory");
+    }
+
+    if (!Array.isArray(componentNames)) {
+      throw new Error("Invalid componentNames");
+    }
+
+    componentNames.forEach((componentName) => {
+      const componentDirectory = path.join(directory, componentName);
+
+      const filesInDirectory = fs.readdirSync(componentDirectory);
+
+      filesInDirectory.forEach((fileName) => {
+        if (fileName.endsWith(".types.d.ts")) {
+          const fileContent = fs.readFileSync(
+            path.join(componentDirectory, fileName),
+            "utf8"
+          );
+
+          let typesMatch = typesRegex.exec(fileContent);
+          while (typesMatch !== null) {
+            const exports = typesMatch[1]
+              .trim()
+              .split(",")
+              .map((item) => item.trim());
+            canaryTypes = [...canaryTypes, ...exports];
+            typesMatch = typesRegex.exec(fileContent);
+          }
+        }
+      });
+    });
+    return [...new Set(canaryTypes)];
+  };
+
+  const data = {
+    canaryReactComponentNames,
+    canaryWebComponentsNames,
+    canaryTypes: getCanaryWebComponentTypes(
+      canaryWebComponents,
+      canaryWebComponentsNames
+    ),
+    reactComponentNames,
+  };
+  const outputFilePath = path.resolve(
+    __dirname,
+    "./src/data/canary-component-names.json"
+  );
+  if (!outputFilePath.startsWith(__dirname)) {
+    throw new Error("Invalid file path");
+  }
+
+  fs.writeFileSync(
+    outputFilePath,
+    prettier.format(JSON.stringify(data), { parser: "json" })
+  );
 };

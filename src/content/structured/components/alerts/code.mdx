@@ -1,7 +1,7 @@
 ---
 path: "/components/alert/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Alert"
 
@@ -25,20 +25,77 @@ import { IcAlert, IcButton, IcLink } from "@ukic/react";
 
 export const snippetsDefault = [
   {
-    language: "Web component",
-    snippet: `<ic-alert heading="Americano order" message="Preparation status is unavailable."></ic-alert>
-<ic-alert variant="info" heading="Did you know?" message="Coffee is a brewed drink prepared from roasted coffee beans."></ic-alert>
-<ic-alert variant="error" heading="Americano order error" message="Americano couldn't be made, we ran out of beans."></ic-alert>
-<ic-alert variant="warning" heading="Hot drink" message="Please be careful the drink is hot."></ic-alert>
-<ic-alert variant="success" heading="Americano order complete" message="Success, your coffee is good to go."></ic-alert>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+></ic-alert>
+<ic-alert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+></ic-alert>
+<ic-alert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+></ic-alert>
+<ic-alert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful the drink is hot."
+></ic-alert>
+<ic-alert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAlert heading="Americano order" message="Preparation status is unavailable."/>
-<IcAlert variant="info" heading="Did you know?" message="Coffee is a brewed drink prepared from roasted coffee beans."/>
-<IcAlert variant="error" heading="Americano order error" message="Americano couldn't be made, we ran out of beans." />
-<IcAlert variant="warning" heading="Hot drink" message="Please be careful the drink is hot."/>
-<IcAlert variant="success" heading="Americano order complete" message="Success, your coffee is good to go." />`,
+    technology: "React",
+    snippets: {
+      short: `<IcAlert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+/>
+<IcAlert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+/>
+<IcAlert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+/>
+<IcAlert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful the drink is hot."
+/>
+<IcAlert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -84,12 +141,35 @@ export const snippetsDefault = [
 
 export const snippetsDismissible = [
   {
-    language: "Web component",
-    snippet: `<ic-alert heading="Americano order nearly ready" message="Your coffee is nearly ready. We'll send you another alert once it is complete." dismissible="true"></ic-alert>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert
+  heading="Americano order nearly ready"
+  message="Your coffee is nearly ready. We'll send you another alert once it is complete."
+  dismissible="true"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAlert heading="Americano order nearly ready" message="Your coffee is nearly ready. We'll send you another alert once it is complete." dismissible />`,
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  heading="Americano order nearly ready" 
+  message="Your coffee is nearly ready. We'll send you another alert once it is complete." 
+  dismissible
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -105,22 +185,47 @@ export const snippetsDismissible = [
 
 export const snippetsWithAction = [
   {
-    language: "Web component",
-    snippet: `<ic-alert variant="info" heading="Did you know?" message="There is a new range of coffees to try.">
-      <ic-button slot="action" variant="secondary" appearance="dark">View Drinks</ic-button>
-</ic-alert>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert variant="info" heading="Did you know?" message="There is a new range of coffees to try.">
+  <ic-button slot="action" variant="secondary" appearance="dark">View Drinks</ic-button></ic-alert>`,
+      long: `{shortCode}
 <script>
   const btn = document.querySelector('ic-button');
   btn.addEventListener('click', (ev) => {
     console.log(ev)
   })
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAlert variant="info" heading="Did you know?" message="There is a new range of coffees to try.">
-    <IcButton slot="action" variant="secondary" appearance="dark" onClick={(ev) => console.log(ev)}>View Drinks</IcButton>
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  variant="info" 
+  heading="Did you know?" 
+  message="There is a new range of coffees to try."
+>
+  <IcButton 
+    slot="action" 
+    variant="secondary" 
+    appearance="dark" 
+    onClick={(ev) => console.log(ev)}
+  >
+    View Drinks
+  </IcButton>
 </IcAlert>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -145,21 +250,37 @@ export const snippetsWithAction = [
 
 export const snippetsTitleAbove = [
   {
-    language: "Web component",
-    snippet: `<ic-alert 
-    heading="What is Coffee?" 
-    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
-    title-above="true" 
-    variant="info">
-  </ic-alert>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert 
+  heading="What is Coffee?" 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
+  title-above="true" 
+  variant="info"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAlert 
-    heading="What is Coffee?" 
-    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
-    titleAbove 
-    variant="info"/>`,
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  heading="What is Coffee?" 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
+  titleAbove 
+  variant="info"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -176,19 +297,35 @@ export const snippetsTitleAbove = [
 
 export const snippetsResponsiveTitle = [
   {
-    language: "Web component",
-    snippet: `<ic-alert 
-    heading="Here you can find out lots more information about the world's favourite hot drink." 
-    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee."
-    variant="info">
-    </ic-alert>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert 
+  heading="Here you can find out lots more information about the world's favourite hot drink." 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee."
+  variant="info"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAlert 
-    heading="Here you can find out lots more information about the world's favourite hot drink." 
-    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee." 
-    variant="info"/>`,
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  heading="Here you can find out lots more information about the world's favourite hot drink." 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee." 
+  variant="info"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -204,16 +341,30 @@ export const snippetsResponsiveTitle = [
 
 export const snippetsCustomMessage = [
   {
-    language: "Web component",
-    snippet: `<ic-alert variant="info" heading="Want to know more about our coffee?">
-  <span slot="message"> Go to our <ic-link href="/">coffee page</ic-link> to learn more.</span>
-</ic-alert>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert variant="info" heading="Want to know more about our coffee?">
+  <span slot="message"> Go to our <ic-link href="/">coffee page</ic-link> to learn more.</span></ic-alert>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAlert variant="info" heading="Want to know more about our coffee?">
+    technology: "React",
+    snippets: {
+      short: `<IcAlert variant="info" heading="Want to know more about our coffee?">
   <span slot="message"> Go to our <IcLink href="/">coffee page</IcLink> to learn more.</span>
 </IcAlert>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
