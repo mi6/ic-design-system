@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import sdk from "@stackblitz/sdk";
 import {
   createIndexTsx,
@@ -16,13 +16,15 @@ export type StackblitzProps = {
   isWebComponents?: boolean;
   projectTitle: string;
   projectDescription?: string;
+  isJSX?: boolean;
 };
 
-const StackblitzButton: React.FC<StackblitzProps> = ({
+const StackblitzButton: FC<StackblitzProps> = ({
   codeSnippet,
   isWebComponents,
   projectTitle,
   projectDescription,
+  isJSX = true,
 }) => {
   const viewportWidth = useViewportWidth();
   const isLargeViewport: boolean = viewportWidth > 992;
@@ -31,7 +33,6 @@ const StackblitzButton: React.FC<StackblitzProps> = ({
     const files: { [key: string]: string } = {};
     const isWebComponentsInternal: boolean =
       isWebComponents !== undefined ? isWebComponents : true;
-    const isJSX: boolean = true;
     // Add functionality to manage whether Stackblitz project should use TypeScript or JavaScript
     const ext = isJSX ? "jsx" : "tsx";
 
@@ -46,7 +47,7 @@ const StackblitzButton: React.FC<StackblitzProps> = ({
     }
 
     // Define the index.tsx content for a React app
-    const indexTsx = createIndexTsx(projectTitle, true);
+    const indexTsx = createIndexTsx(projectTitle, true, codeSnippet);
 
     // Change file structure for React code examples
     if (
@@ -63,7 +64,7 @@ const StackblitzButton: React.FC<StackblitzProps> = ({
     }
 
     files["package.json"] = JSON.stringify(
-      packageJson(projectTitle, isWebComponentsInternal, ext),
+      packageJson(projectTitle, isWebComponentsInternal, ext, codeSnippet),
       null,
       2
     );
@@ -82,13 +83,14 @@ const StackblitzButton: React.FC<StackblitzProps> = ({
       },
       {
         openFile: isWebComponentsInternal ? [`index.html`] : [`src/app.${ext}`],
+        hideExplorer: true,
       }
     );
   };
 
   return (
     <ic-button
-      aria-label="Open code example in Stackblitz"
+      aria-label="Open code example in StackBlitz"
       size={isLargeViewport ? "small" : "default"}
       variant={isLargeViewport ? "tertiary" : "icon"}
       appearance="dark"

@@ -6,6 +6,10 @@
   justify-content: space-between;
 }
 
+.toggle-button-container {
+  margin: auto var(--ic-space-xs) auto 0;
+}
+
 .comp-preview {
   position: relative;
   border: 1px solid var(--ic-architectural-300);
@@ -71,12 +75,8 @@
 
 .snippet-container {
   display: flex;
-  justify-content: flex-end;
   background-color: var(--ic-architectural-40) !important;
   padding: var(--ic-space-xxs);
-}
-
-.snippet-container.pattern {
   justify-content: space-between;
 }
 

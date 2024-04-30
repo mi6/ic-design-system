@@ -1,7 +1,7 @@
 ---
 path: "/components/skeleton/code"
 
-date: "2023-10-24"
+date: "2024-05-31"
 
 title: "Skeleton"
 
@@ -31,25 +31,73 @@ import {
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-skeleton variant="circle"></ic-skeleton>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skeleton variant="circle"></ic-skeleton>
 <ic-typography variant="caption">
   <ic-skeleton variant="text"></ic-skeleton>
 </ic-typography>
 <ic-skeleton></ic-skeleton>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSkeleton variant="circle" />
+    technology: "React",
+    snippets: {
+      short: `<IcSkeleton variant="circle" />
 <IcTypography variant="caption">
   <IcSkeleton variant="text" />
 </IcTypography>
 <IcSkeleton />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippets}>
-  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
     <IcSkeleton variant="circle" />
     <IcTypography variant="caption">
       <IcSkeleton variant="text" />
@@ -68,17 +116,53 @@ export const snippets = [
 
 export const snippetsInherited = [
   {
-    language: "Web component",
-    snippet: `<ic-skeleton><div style="height:200px;width:450px;">Test text</div></ic-skeleton>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skeleton><div class="child">Test text</div></ic-skeleton>`,
+      long: `.child {
+    height: 12.5rem;
+    width: 28.125rem;
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSkeleton>
-  <div style={{
-  height: "200px",
-  width: "450px"
-  }}>Test text</div>
+    technology: "React",
+    snippets: {
+      short: `<IcSkeleton>
+  <div className={classes.child}>Test text</div>
 </IcSkeleton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  child: {
+    height: "12.5rem",
+    width: "28.125rem"
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  child: {
+    height: "12.5rem",
+    width: "28.125rem"
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -86,8 +170,8 @@ export const snippetsInherited = [
   <IcSkeleton>
     <div
       style={{
-        height: "200px",
-        width: "450px",
+        height: "12.5rem",
+        width: "28.125rem",
       }}
     >
       Test text
@@ -97,53 +181,107 @@ export const snippetsInherited = [
 
 ### Set width and height
 
+CSS changes directly to `Skeleton` must be applied with inline styling.
+
 export const snippetsSetWidthAndHeight = [
   {
-    language: "Web component",
-    snippet: `<ic-typography variant="h4">Height and width set with styles</ic-typography>
-<ic-skeleton style="height:200px;width:200px;"></ic-skeleton>
-<ic-typography variant="h4">Height set with styles</ic-typography>
-<ic-skeleton style="height:75px;"></ic-skeleton>
-<ic-typography variant="h4">Width set with styles</ic-typography>
-<ic-skeleton style="width:450px;"></ic-skeleton>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h4">
+  <h4>Height and width set with styles</h4>
+</ic-typography>
+<ic-skeleton style="height: 12.5rem; width: 28.125rem"></ic-skeleton>
+<ic-typography variant="h4">
+  <h4>Height set with styles</h4>
+</ic-typography>
+<ic-skeleton style="height: 5rem"></ic-skeleton>
+<ic-typography variant="h4">
+  <h4>Width set with styles</h4>
+</ic-typography>
+<ic-skeleton style="width: 28.125rem"></ic-skeleton>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTypography variant="h4">Height and width set with styles</IcTypography>
-<IcSkeleton style={{
-height: "200px",
-width: "200px"
-}} />
-<IcTypography variant="h4">Height set with styles</IcTypography>
-<IcSkeleton style={{
-  height: "75px"
-}} />
-<IcTypography variant="h4">Width set with styles</IcTypography>
-<IcSkeleton style={{
-  width: "450px"
-}} />`,
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h4">
+  <h4>Height and width set with styles</h4>
+</IcTypography>
+<IcSkeleton
+  style={{
+    height: "12.5rem",
+    width: "12.5rem",
+  }}
+/>
+<IcTypography variant="h4">
+  <h4>Height set with styles</h4>
+</IcTypography>
+<IcSkeleton
+  style={{
+    height: "5rem",
+  }}
+/>
+<IcTypography variant="h4">
+  <h4>Width set with styles</h4>
+</IcTypography>
+<IcSkeleton
+  style={{
+    width: "28.125rem",
+  }}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippetsSetWidthAndHeight}>
-  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-    <IcTypography variant="h4">Height and width set with styles</IcTypography>
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+    <IcTypography variant="h4">
+      <h4>Height and width set with styles</h4>
+    </IcTypography>
     <IcSkeleton
       style={{
-        height: "200px",
-        width: "200px",
+        height: "12.5rem",
+        width: "12.5rem",
       }}
     />
-    <IcTypography variant="h4">Height set with styles</IcTypography>
+    <IcTypography variant="h4">
+      <h4>Height set with styles</h4>
+    </IcTypography>
     <IcSkeleton
       style={{
-        height: "75px",
+        height: "5rem",
       }}
     />
-    <IcTypography variant="h4">Width set with styles</IcTypography>
+    <IcTypography variant="h4">
+      <h4>Width set with styles</h4>
+    </IcTypography>
     <IcSkeleton
       style={{
-        width: "450px",
+        width: "28.125rem",
       }}
     />
   </div>
@@ -153,25 +291,73 @@ width: "200px"
 
 export const snippetsLight = [
   {
-    language: "Web component",
-    snippet: `<ic-skeleton variant="circle" appearance="light"></ic-skeleton>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skeleton variant="circle" appearance="light"></ic-skeleton>
 <ic-typography variant="caption">
   <ic-skeleton variant="text" appearance="light"></ic-skeleton>
 </ic-typography>
 <ic-skeleton appearance="light"></ic-skeleton>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSkeleton variant="circle" appearance="light" />
+    technology: "React",
+    snippets: {
+      short: `<IcSkeleton variant="circle" appearance="light" />
 <IcTypography variant="caption">
   <IcSkeleton variant="text" appearance="light" />
 </IcTypography>
 <IcSkeleton appearance="light" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippetsLight}>
-  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
     <IcSkeleton variant="circle" appearance="light" />
     <IcTypography variant="caption">
       <IcSkeleton variant="text" appearance="light" />
@@ -184,223 +370,107 @@ export const snippetsLight = [
 
 export const snippetsInCard = [
   {
-    language: "Web component",
-    snippet: `<div>
-      <div id="content-container"></div>
-      <br />
-      <ic-button variant="primary" id="reload">
-        <svg
-          slot="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
-          fill="#000000"
-        >
-          <path d="M0 0h24v24H0V0z" fill="none"></path>
-          <path
-            d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
-          ></path>
-        </svg>
-        Reload
-      </ic-button>
-    </div>
-    <script>
-     window.onload = function () {
-        document.getElementById("content-container").innerHTML = loading();
-      };
-   const loading = () => {
-        return (
-          <ic-card
-            heading="Coffee"
-            subheading="What is coffee?"
-            message="Coffee is a brewed drink."
-          >
-            <ic-skeleton
-              slot="icon"
-              variant="circle"
-              style="height: 32px; width: 32px;"
-            />
-            <ic-skeleton
-              slot="heading"
-              variant="rectangle"
-              style="height: 32px; width: 130px;"
-            />
-            <ic-skeleton
-              slot="subheading"
-              variant="text"
-              style="height: 18px;  width: 150px;"
-            />
-            <ic-skeleton
-              slot="message"
-              variant="rectangle"
-              style="height: 24px; width: 500px;"
-            />
-            <ic-skeleton
-              slot="interaction-controls"
-              variant="rectangle"
-              style="height: 40px; width: 110px;"
-            />
-            <ic-skeleton
-              slot="interaction-controls"
-              variant="rectangle"
-              style="height: 40px; width: 110px;"
-            />
-          </ic-card>
-        );
-      };
-const loaded = () => {
-        return (
-          <ic-card
-            heading="Coffee"
-            subheading="What is coffee?"
-            message="Coffee is a brewed drink."
-          >
-            <svg
-              slot="icon"
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 0 24 24"
-              width="24px"
-              fill="#000000"
-            >
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
-            </svg>
-            <div slot="interaction-controls" style="display: flex; gap: 16px;">
-              <ic-button variant="primary">Learn more</ic-button>
-              <ic-button variant="secondary">Hide</ic-button>
-            </div>
-          </ic-card>
-        );
-      };
-  const btn = document.querySelector("#reload");
-      btn.addEventListener("click", (ev) => {
-        setTimeout(() => {
-          document.getElementById("content-container").innerHTML = loaded();
-        }, 3000);
-      });
-</script>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card heading="Americano Order" subheading="Name: Michael">
+  <ic-skeleton
+    slot="icon"
+    variant="circle"
+    style="height: var(--ic-space-xl); width: var(--ic-space-xl);"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="heading"
+    variant="rectangle"
+    style="height: var(--ic-space-xl); width: 10.625rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="subheading"
+    variant="text"
+    style="height: 1.125rem; width: 6.25rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="message"
+    variant="rectangle"
+    style="height: var(--ic-space-lg); width: 18.75rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style="height: 2.5rem; width: 6.25rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style="height: 2.5rem; width: 6.25rem;"
+  ></ic-skeleton>
+</ic-card>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `const loading = () => {
-  return (
-    <IcCard
-      heading="Coffee"
-      subheading="What is coffee?"
-      message="Coffee is a brewed drink."
-    >
-      <IcSkeleton
-        slot="icon"
-        variant="circle"
-        style={{
-          height: "32px",
-          width: "32px",
-        }}
-      />
-      <IcSkeleton
-        slot="heading"
-        variant="rectangle"
-        style={{
-          height: "32px",
-          width: "130px",
-        }}
-      />
-      <IcSkeleton
-        slot="subheading"
-        variant="text"
-        style={{
-          height: "18px",
-          width: "150px",
-        }}
-      />
-      <IcSkeleton
-        slot="message"
-        variant="rectangle"
-        style={{
-          height: "24px",
-          width: "500px",
-        }}
-      />
-      <IcSkeleton
-        slot="interaction-controls"
-        variant="rectangle"
-        style={{
-          height: "40px",
-          width: "110px",
-        }}
-      />
-      <IcSkeleton
-        slot="interaction-controls"
-        variant="rectangle"
-        style={{
-          height: "40px",
-          width: "110px",
-        }}
-      />
-    </IcCard>
-  );
-};
-const loaded = () => {
-  return (
-    <IcCard
-      heading="Coffee"
-      subheading="What is coffee?"
-      message="Coffee is a brewed drink."
-    >
-      <SlottedSVG
-        slot="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        height="24px"
-        viewBox="0 0 24 24"
-        width="24px"
-        fill="#000000"
-      >
-        <path d="M0 0h24v24H0V0z" fill="none" />
-        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
-      </SlottedSVG>
-      <div slot="interaction-controls" style={{ display: "flex", gap: "16px" }}>
-        <IcButton variant="primary">Learn more</IcButton>
-        <IcButton variant="secondary">Hide</IcButton>
-      </div>
-    </IcCard>
-  );
-};
- const ContentFunction = () => {
-  const [content, setContent] = React.useState(loading);
-  const loadFunc = () => {
-    setContent(loading);
-    setTimeout(() => {
-      setContent(loaded);
-    }, 3000);
-  };
-  return (
-    <div>
-      {content}
-      <br />
-      <IcButton
-        variant="primary"
-        onClick={() => {
-          loadFunc();
-        }}
-      >
-        <SlottedSVG
-          slot="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          height="24px"
-          viewBox="0 0 24 24"
-          width="24px"
-          fill="#000000"
-        >
-          <path d="M0 0h24v24H0V0z" fill="none"></path>
-          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
-        </SlottedSVG>
-        Refresh
-      </IcButton>
-    </div>
-  );
-};`,
+    technology: "React",
+    snippets: {
+      short: `<IcCard heading="Americano Order" subheading="Name: Michael">
+  <IcSkeleton
+    slot="icon"
+    variant="circle"
+    style={{
+      height: "var(--ic-space-xl)",
+      width: "var(--ic-space-xl)",
+    }}
+  />
+  <IcSkeleton
+    slot="heading"
+    variant="rectangle"
+    style={{
+      height: "var(--ic-space-xl)",
+      width: "10.625rem",
+    }}
+  />
+  <IcSkeleton
+    slot="subheading"
+    variant="text"
+    style={{
+      height: "1.125rem",
+      width: "6.25rem",
+    }}
+  />
+  <IcSkeleton
+    slot="message"
+    variant="rectangle"
+    style={{
+      height: "var(--ic-space-lg)",
+      width: "18.75rem",
+    }}
+  />
+  <IcSkeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style={{
+      height: "2.5rem",
+      width: "6.25rem",
+    }}
+  />
+  <IcSkeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style={{
+      height: "2.5rem",
+      width: "6.25rem",
+    }}
+  />
+</IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -410,48 +480,48 @@ export const loading = () => (
       slot="icon"
       variant="circle"
       style={{
-        height: "32px",
-        width: "32px",
+        height: "2rem",
+        width: "2rem",
       }}
     />
     <IcSkeleton
       slot="heading"
       variant="rectangle"
       style={{
-        height: "32px",
-        width: "130px",
+        height: "2rem",
+        width: "10.625rem",
       }}
     />
     <IcSkeleton
       slot="subheading"
       variant="text"
       style={{
-        height: "18px",
-        width: "150px",
+        height: "1.125rem",
+        width: "6.25rem",
       }}
     />
     <IcSkeleton
       slot="message"
       variant="rectangle"
       style={{
-        height: "24px",
-        width: "500px",
+        height: "1.5rem",
+        width: "18.75rem",
       }}
     />
     <IcSkeleton
       slot="interaction-controls"
       variant="rectangle"
       style={{
-        height: "40px",
-        width: "110px",
+        height: "2.5rem",
+        width: "6.25rem",
       }}
     />
     <IcSkeleton
       slot="interaction-controls"
       variant="rectangle"
       style={{
-        height: "40px",
-        width: "110px",
+        height: "2.5rem",
+        width: "6.25rem",
       }}
     />
   </IcCard>
@@ -466,14 +536,14 @@ export const loaded = () => (
     <SlottedSVG
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </SlottedSVG>
-    <div slot="interaction-controls" style={{ display: "flex", gap: "16px" }}>
+    <div slot="interaction-controls" style={{ display: "flex", gap: "1rem" }}>
       <IcButton variant="primary">Accept</IcButton>
       <IcButton variant="secondary">Cancel</IcButton>
     </div>
@@ -501,9 +571,9 @@ export const ContentFunction = () => {
         <SlottedSVG
           slot="icon"
           xmlns="http://www.w3.org/2000/svg"
-          height="24px"
+          height="24"
           viewBox="0 0 24 24"
-          width="24px"
+          width="24"
           fill="#000000"
         >
           <path d="M0 0h24v24H0V0z" fill="none" />

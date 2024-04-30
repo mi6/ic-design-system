@@ -52,7 +52,7 @@ There are five variants of button:
 - Destructive buttons
 - Icon buttons
 
-<ComponentPreview style={{ gap: "8px" }}>
+<ComponentPreview style={{ gap: "0.5rem" }}>
   <IcButton variant="primary">Add to order</IcButton>
   <IcButton variant="secondary">View coffees</IcButton>
   <IcButton variant="tertiary">Find out more</IcButton>
@@ -60,9 +60,9 @@ There are five variants of button:
   <IcButton variant="icon" aria-label="Coffee cup">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
@@ -125,7 +125,7 @@ Buttons should trigger actions and affect content on the current page or contain
 
 When an action triggers a background task, use the button loading state to provide feedback to the user that something is happening.
 
-<ComponentPreview style={{ gap: "8px" }}>
+<ComponentPreview style={{ gap: "0.5rem" }}>
   <IcButton variant="secondary" loading>
     Loading
   </IcButton>

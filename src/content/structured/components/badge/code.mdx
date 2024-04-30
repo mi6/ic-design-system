@@ -1,7 +1,7 @@
 ---
 path: "/components/badge/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Badge"
 
@@ -35,35 +35,71 @@ import { useState } from "react";
 
 export const snippetsDefault = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="secondary" style="margin-right:16px">
-  <ic-badge       
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="secondary">
+  <ic-badge
     text-label="1000"
     max-number="99"
     slot="badge"
     variant="info"
-  >
-  </ic-badge>
+  ></ic-badge>
   Coffee orders
 </ic-button>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
-  <IcBadge
-    textLabel="1000"
-    maxNumber="99"
-    slot="badge"
-    variant="info"
-  />
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="secondary">
+  <IcBadge textLabel="1000" maxNumber={99} slot="badge" variant="info"/>
   Coffee orders
 </IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippetsDefault}>
-  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-    <IcBadge textLabel="1000" maxNumber="99" slot="badge" variant="info" />
+  <IcButton variant="secondary">
+    <IcBadge textLabel="1000" maxNumber={99} slot="badge" variant="info" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -78,23 +114,37 @@ export const snippetsDefault = [
 
 export const snippetsSizes = [
   {
-    language: "Web component",
-    snippet: `<ic-button size="small" variant="secondary" style="margin-right:16px">
-  <ic-badge size="small" text-label="8" slot="badge" variant="info"></ic-badge>
-  Coffee orders
-</ic-button>
-<ic-button variant="secondary" style="margin-right:16px">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button size="small" variant="secondary">
   <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
-<ic-button size="large" variant="secondary" style="margin-right:16px">
+<ic-button variant="secondary">
+  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  Coffee orders
+</ic-button>
+<ic-button size="large" variant="secondary">
   <ic-badge size="large" text-label="8" slot="badge" variant="info"></ic-badge>
   Coffee orders
 </ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--ic-space-md);
+    gap: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton size="small" variant="secondary">
+    technology: "React",
+    snippets: {
+      short: `<IcButton size="small" variant="secondary">
   <IcBadge size="small" textLabel="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>
@@ -106,15 +156,52 @@ export const snippetsSizes = [
   <IcBadge size="large" textLabel="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({ 
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({ 
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview snippets={snippetsSizes}>
-  <IcButton size="small" variant="secondary" style={{ marginRight: "16px" }}>
+<ComponentPreview snippets={snippetsSizes} style={{ gap: "1rem" }}>
+  <IcButton size="small" variant="secondary">
     <IcBadge textLabel="8" slot="badge" variant="info" size="small" />
     Coffee orders
   </IcButton>
-  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+  <IcButton variant="secondary">
     <IcBadge textLabel="8" slot="badge" variant="info" size="default" />
     Coffee orders
   </IcButton>
@@ -128,59 +215,110 @@ export const snippetsSizes = [
 
 export const snippetsStatus = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="secondary" style="margin-right:16px">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="secondary">
   <ic-badge slot="badge" text-label="8" variant="neutral"></ic-badge>
   Coffee orders
 </ic-button>
-<ic-button variant="secondary" style="margin-right:16px">
+<ic-button variant="secondary">
   <ic-badge slot="badge" text-label="New" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
-<ic-button variant="secondary" style="margin-right:16px">
+<ic-button variant="secondary">
   <ic-badge slot="badge" text-label="Unavailable" variant="error"></ic-badge>
   Coffee orders
 </ic-button>
-<ic-button variant="secondary" style="margin-right:16px">
+<ic-button variant="secondary">
   <ic-badge slot="badge" text-label="Available" variant="success"></ic-badge>
   Coffee orders
 </ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--ic-space-md);
+    gap: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="secondary">
   <IcBadge slot="badge" textLabel="8" variant="neutral"/>
   Coffee orders
 </IcButton>
-<IcButton variant="secondary" style={{marginRight:"16px"}}>
+<IcButton variant="secondary">
   <IcBadge slot="badge" textLabel="New" variant="info"/>
   Coffee orders
 </IcButton>
-<IcButton variant="secondary" style={{marginRight:"16px"}}>
+<IcButton variant="secondary">
   <IcBadge slot="badge" textLabel="Unavailable" variant="error"/>
   Coffee orders
 </IcButton>
-<IcButton variant="secondary" style={{marginRight:"16px"}}>
+<IcButton variant="secondary">
   <IcBadge slot="badge" textLabel="Available" variant="success"/>
   Coffee orders
 </IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview snippets={snippetsStatus}>
-  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+<ComponentPreview snippets={snippetsStatus} style={{ gap: "1rem" }}>
+  <IcButton variant="secondary">
     <IcBadge slot="badge" textLabel="8" variant="neutral" />
     Coffee orders
   </IcButton>
-  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+  <IcButton variant="secondary">
     <IcBadge slot="badge" textLabel="New" variant="info" />
     Coffee orders
   </IcButton>
-  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+  <IcButton variant="secondary">
     <IcBadge slot="badge" textLabel="Unavailable" variant="error" />
     Coffee orders
   </IcButton>
-  <IcButton variant="secondary" style={{ marginRight: "16px" }}>
+  <IcButton variant="secondary">
     <IcBadge slot="badge" textLabel="Available" variant="success" />
     Coffee orders
   </IcButton>
@@ -190,23 +328,24 @@ export const snippetsStatus = [
 
 export const snippetsInformation = [
   {
-    language: "Web component",
-    snippet: `<ic-button variant="secondary" style="margin-right:16px">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="secondary">
   <ic-badge slot="badge" type="text" text-label="8" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
-<ic-button variant="secondary" style="margin-right:16px">
+<ic-button variant="secondary">
   <ic-badge slot="badge" type="dot" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
-<ic-button variant="secondary" style="margin-right:16px">
+<ic-button variant="secondary">
 <ic-badge type="icon" slot="badge" variant="info">
   <svg
     slot="badge-icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
+    width="24"
     aria-label="retry"
   >
     <path d="M0 0h24v24H0V0z" fill="none" />
@@ -217,231 +356,354 @@ export const snippetsInformation = [
 </ic-badge> 
   Coffee orders
 </ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--ic-space-md);
+    gap: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcButton variant="secondary" style={{marginRight:"16px"}}>
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="secondary">
   <IcBadge slot="badge" type="text" textLabel="8" variant="info"/>
   Coffee orders
 </IcButton>
-<IcButton variant="secondary" style={{marginRight:"16px"}}>
+<IcButton variant="secondary">
   <IcBadge slot="badge" type="dot" variant="info"/>
   Coffee orders
 </IcButton>
-<IcButton variant="secondary" style={{marginRight:"16px"}}>
+<IcButton variant="secondary">
   <IcBadge type="icon" slot="badge" variant="info">
-    <svg
+    <SlottedSVG
       slot="badge-icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       aria-label="retry"
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path
         d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
       />
-    </svg>
+    </SlottedSVG>
   </IcBadge>
   Coffee orders
 </IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview snippets={snippetsInformation}>
-  <div style={{ padding: "16px" }}>
-    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge textLabel="8" slot="badge" type="text" variant="info" />
-      Coffee orders
-    </IcButton>
-  </div>
-  <div style={{ padding: "16px" }}>
-    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge type="dot" slot="badge" variant="info" />
-      Coffee orders
-    </IcButton>
-  </div>
-  <div style={{ padding: "16px" }}>
-    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge type="icon" slot="badge" variant="info">
-        <SlottedSVG
-          width="24px"
-          height="24px"
-          slot="badge-icon"
-          viewBox="0 0 24 24"
-          aria-label="retry"
-        >
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
-        </SlottedSVG>
-      </IcBadge>
-      Coffee orders
-    </IcButton>
-  </div>
+<ComponentPreview snippets={snippetsInformation} style={{ gap: "1rem" }}>
+  <IcButton variant="secondary">
+    <IcBadge textLabel="8" slot="badge" type="text" variant="info" />
+    Coffee orders
+  </IcButton>
+  <IcButton variant="secondary">
+    <IcBadge type="dot" slot="badge" variant="info" />
+    Coffee orders
+  </IcButton>
+  <IcButton variant="secondary">
+    <IcBadge type="icon" slot="badge" variant="info">
+      <SlottedSVG
+        width="24"
+        height="24"
+        slot="badge-icon"
+        viewBox="0 0 24 24"
+        aria-label="retry"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+      </SlottedSVG>
+    </IcBadge>
+    Coffee orders
+  </IcButton>
 </ComponentPreview>
 
 ### Max number
 
 export const snippetsMaxNumber = [
   {
-    language: "Web component",
-    snippet: `<div style="padding:16px;">
-  <ic-button variant="secondary" style="margin-right:16px">
-    <ic-badge 
-      text-label="1000" 
-      max-number="99" 
-      slot="badge" 
-      variant="info"
-    >
-    </ic-badge>
-    Coffee orders
-  </ic-button>
-</div>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="secondary">
+  <ic-badge
+    text-label="1000" 
+    max-number="99" 
+    slot="badge" 
+    variant="info"
+  ></ic-badge>
+  Coffee orders
+</ic-button>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<div style={{padding:"16px"}}>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
-    <IcBadge
-      textLabel="1000"
-      maxNumber="99"
-      slot="badge"
-      variant="info"
-    />
-    Coffee orders
-  </IcButton>
-</div>`,
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="secondary">
+  <IcBadge
+    textLabel="1000"
+    maxNumber={99}
+    slot="badge"
+    variant="info"
+  />
+  Coffee orders
+</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippetsMaxNumber}>
-  <div style={{ padding: "16px" }}>
-    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge textLabel="1000" maxNumber="99" slot="badge" variant="info" />
-      Coffee orders
-    </IcButton>
-  </div>
+  <IcButton variant="secondary">
+    <IcBadge textLabel="1000" maxNumber={99} slot="badge" variant="info" />
+    Coffee orders
+  </IcButton>
 </ComponentPreview>
 
 ### Positioning
 
 export const snippetsNear = [
   {
-    language: "Web component",
-    snippet: `<div style="padding:16px;">
-  <ic-chip label="Americano" style="margin-right:16px;">
-    <ic-badge type="icon" slot="badge" position="near" variant="success">
-      <svg
-        slot="badge-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        height="24px"
-        viewBox="0 0 24 24"
-        width="24px"
-        aria-label="success"
-      >
-        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
-      </svg> 
-    </ic-badge>
-  </ic-chip>
-    <ic-chip label="Americano" style="margin-right:16px;">
-    <ic-badge type="icon" slot="badge" position="far" variant="success">
-      <svg
-        slot="badge-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        height="24px"
-        viewBox="0 0 24 24"
-        width="24px"
-        aria-label="success"
-      >
-        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
-      </svg> 
-    </ic-badge>
-  </ic-chip>
-</div>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-chip label="Americano">
+  <ic-badge type="icon" slot="badge" position="near" variant="success">
+    <svg
+      slot="badge-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      aria-label="success"
+    >
+      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+    </svg> 
+  </ic-badge>
+</ic-chip>
+<ic-chip label="Americano">
+  <ic-badge type="icon" slot="badge" position="far" variant="success">
+    <svg
+      slot="badge-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      aria-label="success"
+    >
+      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+    </svg> 
+  </ic-badge>
+</ic-chip>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--ic-space-md);
+    gap: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<div style={{padding:"16px"}}>
-  <IcChip label="Americano" style={{marginRight:"16px"}}>
-    <IcBadge type="icon" slot="badge" position="near" variant="success">
-      <svg
-        slot="badge-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        height="24px"
-        viewBox="0 0 24 24"
-        width="24px"
-        aria-label="success"
-      >
-        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
-      </svg> 
-    </IcBadge>
-  </IcChip>
-    <IcChip label="Americano" style={{marginRight:"16px"}}>
-    <IcBadge type="icon" slot="badge" position="far" variant="success">
-      <svg
-        slot="badge-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        height="24px"
-        viewBox="0 0 24 24"
-        width="24px"
-        aria-label="success"
-      >
-        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
-      </svg>
-    </IcBadge> 
-  </IcChip>
-</div>`,
+    technology: "React",
+    snippets: {
+      short: `<IcChip label="Americano">
+  <IcBadge type="icon" slot="badge" position="near" variant="success">
+    <SlottedSVG
+      slot="badge-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      aria-label="success"
+    >
+      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+    </SlottedSVG> 
+  </IcBadge>
+</IcChip>
+  <IcChip label="Americano">
+  <IcBadge type="icon" slot="badge" position="far" variant="success">
+    <svg
+      slot="badge-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      aria-label="success"
+    >
+      <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+    </svg>
+  </IcBadge> 
+</IcChip>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "var(--ic-space-md)",
+    gap: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
-<ComponentPreview snippets={snippetsNear}>
-  <div style={{ display: "grid" }}>
-    <div style={{ padding: "16px" }}>
-      <IcChip label="Americano" style={{ marginRight: "16px" }}>
-        <IcBadge type="icon" slot="badge" position="near" variant="success">
-          <SlottedSVG
-            width="24px"
-            height="24px"
-            slot="badge-icon"
-            viewBox="0 0 24 24"
-            aria-label="success"
-          >
-            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-          </SlottedSVG>
-        </IcBadge>
-      </IcChip>
-      <IcChip label="Americano" style={{ marginRight: "16px" }}>
-        <IcBadge type="icon" slot="badge" position="far" variant="success">
-          <SlottedSVG
-            width="24px"
-            height="24px"
-            slot="badge-icon"
-            viewBox="0 0 24 24"
-            aria-label="success"
-          >
-            <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-          </SlottedSVG>
-        </IcBadge>
-      </IcChip>
-    </div>
-  </div>
+<ComponentPreview snippets={snippetsNear} style={{ gap: "1rem" }}>
+  <IcChip label="Americano">
+    <IcBadge type="icon" slot="badge" position="near" variant="success">
+      <SlottedSVG
+        width="24"
+        height="24"
+        slot="badge-icon"
+        viewBox="0 0 24 24"
+        aria-label="success"
+      >
+        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+      </SlottedSVG>
+    </IcBadge>
+  </IcChip>
+  <IcChip label="Americano">
+    <IcBadge type="icon" slot="badge" position="far" variant="success">
+      <SlottedSVG
+        width="24"
+        height="24"
+        slot="badge-icon"
+        viewBox="0 0 24 24"
+        aria-label="success"
+      >
+        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+      </SlottedSVG>
+    </IcBadge>
+  </IcChip>
 </ComponentPreview>
 
 ### Position inline
 
 export const snippetsInline = [
   {
-    language: "Web component",
-    snippet: `<ic-tab-context>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tab-context>
   <ic-tab-group label="Example tab group">
-    <ic-tab> About
+    <ic-tab>
+      About
     </ic-tab>
     <ic-tab>
-    Ingredients
+      Ingredients
     </ic-tab>
     <ic-tab>
-    Orders
       <ic-badge
         text-label="8"
         slot="badge"
@@ -449,27 +711,29 @@ export const snippetsInline = [
         size="large"
         accessible-label="1 notification found"
         variant="info"
-      >
-      </ic-badge>
+      ></ic-badge>
+      Orders
     </ic-tab>
   </ic-tab-group>
   <ic-tab-panel>About page</ic-tab-panel>
   <ic-tab-panel>Ingredients page</ic-tab-panel>
   <ic-tab-panel>Orders page</ic-tab-panel>
 </ic-tab-context>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTabContext>
+    technology: "React",
+    snippets: {
+      short: `<IcTabContext>
   <IcTabGroup label="Example tab group">
     <IcTab>
-    About
+      About
     </IcTab>
     <IcTab>
-    Ingredients
+      Ingredients
     </IcTab>
     <IcTab>
-    Orders
       <IcBadge
         textLabel="8"
         slot="badge"
@@ -478,12 +742,24 @@ export const snippetsInline = [
         accessibleLabel="1 notification found"
         variant="info"
       />
+      Orders
     </IcTab>
   </IcTabGroup>
   <IcTabPanel>About page</IcTabPanel>
   <IcTabPanel>Ingredients page</IcTabPanel>
   <IcTabPanel>Orders page</IcTabPanel>
 </IcTabContext>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -516,45 +792,83 @@ Click the button to hide and show the badge.
 
 export const snippetsHideBadge = [
   {
-    language: "Web component",
-    snippet: `<script>
-  function showHideBadge() {
-    badge = document.querySelector("ic-badge");
-    if (badge.classList.contains("show")) {
-      badge.visible = false;
-    } else {
-      badge.visible = true;
-    }
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="secondary" onclick="showHideBadge()">
+  <ic-badge text-label="8" slot="badge"></ic-badge>
+  Coffee orders
+</ic-button>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
   }
-</script>
-<div style="padding:16px;">
-  <ic-button variant="secondary" onclick="showHideBadge()">
-    <ic-badge text-label="8" slot="badge"></ic-badge>
-    Coffee orders
-  </ic-button>
-</div> `,
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>    
+  <script>
+    function showHideBadge() {
+      badge = document.querySelector("ic-badge");
+      if (badge.classList.contains("show")) {
+        badge.visible = false;
+      } else {
+        badge.visible = true;
+      }
+    }
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `export const ToggleBadge = () => {
-  const [showBadge, setShowBadge] = useState(false);
-  const handleShowHideBadge = () => {
-    setShowBadge(!showBadge);
-  };
-  return (
-    <div style={{ padding: '16px' }}>
-      <IcButton variant="secondary" onClick={handleShowHideBadge}>
-        <IcBadge
-          variant="info"
-          textLabel="8"
-          slot="badge"
-          visible={showBadge}
-        />
-        Coffee orders
-      </IcButton>
-    </div>
-  );
-};`,
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="secondary" onClick={handleShowHideBadge}>
+  <IcBadge
+    variant="info"
+    textLabel="8"
+    slot="badge"
+    visible={showBadge}
+  />
+  Coffee orders
+</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [showBadge, setShowBadge] = useState<boolean>(false);
+const handleShowHideBadge = () => {
+  setShowBadge(!showBadge);
+};
+const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [showBadge, setShowBadge] = useState(false);
+const handleShowHideBadge = () => {
+  setShowBadge(!showBadge);
+};
+const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -564,7 +878,7 @@ export const ToggleBadge = () => {
     setShowBadge(!showBadge);
   };
   return (
-    <div style={{ padding: "16px" }}>
+    <div style={{ padding: "1rem" }}>
       <IcButton variant="secondary" onClick={handleShowHideBadge}>
         <IcBadge
           variant="info"
@@ -592,49 +906,85 @@ export const ToggleBadge = () => {
 
 export const snippetsAccessibleLabel = [
   {
-    language: "Web component",
-    snippet: `<div style="padding:16px;">
-  <ic-button variant="secondary" style="margin-right:16px"> 
-    <ic-badge
-      text-label="8"
-      slot="badge"
-      size="large"
-      variant="info"
-      accessible-label="8 coffee orders found"
-    >
-    </ic-badge>
-    Coffee orders
-  </ic-button>
-</div>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="secondary"> 
+  <ic-badge
+    text-label="8"
+    slot="badge"
+    size="large"
+    variant="info"
+    accessible-label="8 coffee orders found"
+  >
+  </ic-badge>
+  Coffee orders
+</ic-button>`,
+      long: `.parent-container {
+  padding: var(--ic-space-md);
+}
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<div style={{padding:"16px"}}>
-  <IcButton variant="secondary" style={{marginRight:"16px"}}>
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="secondary">
+  <IcBadge
+    textLabel="8"
+    slot="badge"
+    size="large"
+    variant="info"
+    accessibleLabel="8 coffee orders found"
+  />
+  Coffee orders
+</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsAccessibleLabel} style={{ gap: "1rem" }}>
+  <IcButton variant="secondary">
     <IcBadge
       textLabel="8"
       slot="badge"
       size="large"
-      variant="info"
       accessibleLabel="8 coffee orders found"
+      variant="info"
     />
     Coffee orders
   </IcButton>
-</div>`,
-  },
-];
-
-<ComponentPreview snippets={snippetsAccessibleLabel}>
-  <div style={{ padding: "16px" }}>
-    <IcButton variant="secondary" style={{ marginRight: "16px" }}>
-      <IcBadge
-        textLabel="8"
-        slot="badge"
-        size="large"
-        accessibleLabel="8 coffee orders found"
-        variant="info"
-      />
-      Coffee orders
-    </IcButton>
-  </div>
 </ComponentPreview>

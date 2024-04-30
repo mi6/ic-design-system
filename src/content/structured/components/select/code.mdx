@@ -1,7 +1,7 @@
 ---
 path: "/components/select/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Select"
 
@@ -25,8 +25,13 @@ import { IcSelect } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option..." label="What is your favourite coffee?"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option..." 
+  label="What is your favourite coffee?"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -42,20 +47,48 @@ export const snippets = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option..." label="What is your favourite coffee?"
-  options={[
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso" },
-    { label: "Flat White", value: "flatwhite" },
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano" },
-    { label: "Mocha", value: "mocha" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option..." 
+  label="What is your favourite coffee?"
+  options={options}
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -89,8 +122,16 @@ export const SelectExample = () => (
 
 export const snippetsWithExtras = [
   {
-    language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?" placeholder="Select an option..." helper-text="Select one option from the list" show-clear-button="true" searchable="true"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  label="What is your favourite coffee?" 
+  placeholder="Select an option..." 
+  helper-text="Select one option from the list" 
+  show-clear-button="true" 
+  searchable="true"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -103,21 +144,51 @@ export const snippetsWithExtras = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
-  options={[
-    { label: "Cappuccino", value: "cappuccino", description: "Coffee frothed up with pressurised steam" },
-    { label: "Americano", value: "americano", description: "Espresso coffee diluted with hot water" },
-    { label: "Mocha", value: "mocha", description: "Coffee with chocolate" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  label="What is your favourite coffee?"
+  options={options}
   placeholder="Select an option…"
   helperText="Select one option from the list"
   showClearButton
   searchable
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -157,8 +228,14 @@ export const SelectExampleWithExtras = () => (
 
 export const snippetsDisabled = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" disabled="true"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?" 
+  disabled="true"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -171,18 +248,49 @@ export const snippetsDisabled = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
-  options={[
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano" },
-    { label: "Mocha", value: "mocha" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+  options={options}
   disabled
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -208,8 +316,13 @@ export const SelectExampleDisabled = () => (
 
 export const snippetsOptionDisabled = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -222,17 +335,48 @@ export const snippetsOptionDisabled = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
-  options={[
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano", disabled: true },
-    { label: "Mocha", value: "mocha" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+  options={options}
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso", disabled: true },
+   { label: "Flat White", value: "flatwhite", disabled: true },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso", disabled: true },
+   { label: "Flat White", value: "flatwhite", disabled: true },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -257,8 +401,13 @@ export const SelectExampleOptionsDisabled = () => (
 
 export const snippetsSmall = [
   {
-    language: "Web component",
-    snippet: `<ic-select label="What is your favourite coffee?" size="small"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  label="What is your favourite coffee?" 
+  size="small"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -274,21 +423,48 @@ export const snippetsSmall = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect label="What is your favourite coffee?"
-  options={[
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso" },
-    { label: "Flat White", value: "flatwhite" },
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano" },
-    { label: "Mocha", value: "mocha" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  label="What is your favourite coffee?"
+  options={options}
   onIcChange={(event) => console.log(event.detail.value)}
   size="small"
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -316,8 +492,14 @@ export const SelectExampleSmall = () => (
 
 export const snippetsHideLabel = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" hide-label="true"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?" 
+  hide-label="true"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -330,18 +512,49 @@ export const snippetsHideLabel = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
-  options={[
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso" },
-    { label: "Flat White", value: "flatwhite" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+  options={options}
   hideLabel
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+   { label: "Espresso", value: "espresso" },
+   { label: "Double Espresso", value: "doubleespresso" },
+   { label: "Flat White", value: "flatwhite" },
+   { label: "Cappuccino", value: "cappuccino" },
+   { label: "Americano", value: "americano" },
+   { label: "Mocha", value: "mocha" },
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -367,36 +580,17 @@ export const SelectExampleHideLabel = () => (
 
 export const snippetsGroups = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
   select.options = [
-            {
-              label: "Fancy",
-              children: [
-                { label: "Cappuccino", value: "Cap" },
-                { label: "Flat white", value: "Flat" },
-              ],
-            },
-            {
-              label: "Boring",
-              children: [
-                { label: "Filter", value: "Fil" },
-                { label: "Latte", value: "Lat" },
-              ],
-            },
-          ];
-  select.addEventListener("icChange", function (event) {
-    console.log(event.detail.value);
-  });
-</script>`,
-  },
-  {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
-  options={[
     {
       label: "Fancy",
       children: [
@@ -411,9 +605,69 @@ export const snippetsGroups = [
         { label: "Latte", value: "Lat" },
       ],
     },
-  ]}
+  ];
+  select.addEventListener("icChange", function (event) {
+    console.log(event.detail.value);
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+  options={options}
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+  {
+    label: "Fancy",
+    children: [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Flat white", value: "Flat" },
+    ],
+  },
+  {
+    label: "Boring",
+    children: [
+      { label: "Filter", value: "Fil" },
+      { label: "Latte", value: "Lat" },
+    ],
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+  {
+    label: "Fancy",
+    children: [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Flat white", value: "Flat" },
+    ],
+  },
+  {
+    label: "Boring",
+    children: [
+      { label: "Filter", value: "Fil" },
+      { label: "Latte", value: "Lat" },
+    ],
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -449,8 +703,13 @@ export const SelectExampleGroups = () => (
 
 export const snippetsRecommended = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -466,20 +725,48 @@ export const snippetsRecommended = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
-  options={[
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso", recommended: true },
-    { label: "Flat White", value: "flatwhite" },
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano", recommended: true },
-    { label: "Mocha", value: "mocha" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+  options={options}
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso", recommended: true },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano", recommended: true },
+  { label: "Mocha", value: "mocha" },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso", recommended: true },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano", recommended: true },
+  { label: "Mocha", value: "mocha" },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -511,15 +798,38 @@ export const SelectExampleRecommended = () => (
 
 export const snippetsValidation = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" 
-    validation-status="success" 
-    validation-text="Coffee available"
-    value="americano"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?" 
+  validation-status="success" 
+  validation-text="Coffee available"
+  value="americano"
+  id="1"
+></ic-select>
+<ic-select
+  placeholder="Select an option…"
+  label="What is your favourite coffee?"
+  validation-status="warning" 
+  validation-text="Only a few left"
+  value="cappuccino"
+  id="2"
+></ic-select>
+<ic-select 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?" 
+  validation-status="error" 
+  validation-text="Coffee unavailable"
+  value="mocha"
+  id="3"
+></ic-select>`,
+      long: `{shortCode}
 <script>
-  const select = document.querySelector("ic-select");
-  let option = "Cappuccino";
-  select.options = [
+  const select1 = document.querySelector("#1");
+  const select2 = document.querySelector("#2");
+  const select3 = document.querySelector("#3");
+  select1.options = [
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso" },
     { label: "Flat White", value: "flatwhite" },
@@ -527,18 +837,7 @@ export const snippetsValidation = [
     { label: "Americano", value: "americano" },
     { label: "Mocha", value: "mocha" },
   ];
-  select.addEventListener("icChange", function (event) {
-    console.log(event.detail.value);
-  });
-</script>
-<ic-select placeholder="Select an option…" label="What is your favourite coffee?" 
-    validation-status="warning" 
-    validation-text="Only a few left"
-    value="cappuccino"></ic-select>
-<script>
-  const select = document.querySelector("ic-select");
-  let option = "Cappuccino";
-  select.options = [
+  select2.options = [
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso" },
     { label: "Flat White", value: "flatwhite" },
@@ -546,18 +845,7 @@ export const snippetsValidation = [
     { label: "Americano", value: "americano" },
     { label: "Mocha", value: "mocha" },
   ];
-  select.addEventListener("icChange", function (event) {
-    console.log(event.detail.value);
-  });
-</script>
-<ic-select placeholder="Select an option…" label="What is your favourite coffee?" 
-    validation-status="error" 
-    validation-text="Coffee unavailable"
-    value="mocha"></ic-select>
-<script>
-  const select = document.querySelector("ic-select");
-  let option = "Cappuccino";
-  select.options = [
+  select3.options = [
     { label: "Espresso", value: "espresso" },
     { label: "Double Espresso", value: "doubleespresso" },
     { label: "Flat White", value: "flatwhite" },
@@ -565,55 +853,74 @@ export const snippetsValidation = [
     { label: "Americano", value: "americano" },
     { label: "Mocha", value: "mocha" },
   ];
-  select.addEventListener("icChange", function (event) {
-    console.log(event.detail.value);
-  });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
-    value="americano"
-  options={[
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso" },
-    { label: "Flat White", value: "flatwhite" },
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano" },
-    { label: "Mocha", value: "mocha" },
-  ]}
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
+  value="americano"
+  options={options}
   validationStatus="success"
   validationText="Coffee available"
   onIcChange={(event) => console.log(event.detail.value)}
 />
-  <IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
+<IcSelect 
+  placeholder="Select an option…" l
+  abel="What is your favourite coffee?"
   value="cappuccino"
-  options={[
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso" },
-    { label: "Flat White", value: "flatwhite" },
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano" },
-    { label: "Mocha", value: "mocha" },
-  ]}
+  options={options}
   validationStatus="warning" 
   validationText="Only a few left"
   onIcChange={(event) => console.log(event.detail.value)}
 />
-  <IcSelect placeholder="Select an option…" label="What is your favourite coffee?"
+<IcSelect 
+  placeholder="Select an option…" 
+  label="What is your favourite coffee?"
   value="mocha"
-  options={[
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso" },
-    { label: "Flat White", value: "flatwhite" },
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano" },
-    { label: "Mocha", value: "mocha" },
-  ]}
+  options={options}
   validationStatus="error" 
   validationText="Coffee unavailable"
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -678,8 +985,14 @@ export const SelectExampleValidation = () => (
 
 export const snippetsSearchable = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…" label="What is your favourite coffee?" searchable="true"></ic-select>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select 
+  placeholder="Select an option…"
+  label="What is your favourite coffee?" 
+  searchable="true"
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -699,26 +1012,49 @@ export const snippetsSearchable = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…"
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…"
   label="What is your favourite coffee?"
-  options={[
-    { label: "Cappuccino", value: "Cap" },
-    { label: "Latte", value: "Lat" },
-    { label: "Americano", value: "Ame" },
-    { label: "Flat white", value: "Fla" },
-    { label: "Mocha", value: "Moc" },
-    { label: "Macchiato", value: "Mac" },
-    { label: "Café au lait", value: "Caf" },
-    { label: "Espresso", value: "Esp" },
-    { label: "Cortado", value: "Cor" },
-    { label: "Latte macchiato", value: "Lam" },
-  ]}
+  options={options}
   searchable
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -751,12 +1087,15 @@ export const SearchableSelectExample = () => (
 
 export const snippetsSearchableWithDescriptions = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…"
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  placeholder="Select an option…"
   label="What is your favourite coffee?" 
   searchable="true" 
   include-description-in-search="true"
-></ic-select>
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -776,12 +1115,23 @@ export const snippetsSearchableWithDescriptions = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…"
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…"
   label="What is your favourite coffee?"
-  options={[
+  options={options}
+  searchable
+  includeDescriptionsInSearch
+  onIcChange={(event) => console.log(event.detail.value)}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
     { label: "Cappuccino", value: "Cap", description: "Coffee frothed up with pressurised steam" },
     { label: "Americano", value: "Ame", description: "Espresso coffee diluted with hot water" },
     { label: "Mocha", value: "Moc", description: "Coffee with chocolate" },
@@ -792,11 +1142,31 @@ export const snippetsSearchableWithDescriptions = [
     { label: "Espresso", value: "Esp", description: "Concentrated form of coffee" },
     { label: "Cortado", value: "Cor", description: "Coffee cut with milk" },
     { label: "Latte macchiato", value: "Lam", description: "Espresso coffee with milk and a spoonful of foamed milk" },
-  ]}
-  searchable
-  includeDescriptionsInSearch
-  onIcChange={(event) => console.log(event.detail.value)}
-/>`,
+ ];
+ return (
+   {shortCode}
+ )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+  { label: "Cappuccino", value: "Cap", description: "Coffee frothed up with pressurised steam" },
+  { label: "Americano", value: "Ame", description: "Espresso coffee diluted with hot water" },
+  { label: "Mocha", value: "Moc", description: "Coffee with chocolate" },
+  { label: "Latte", value: "Lat", description: "Milky coffee with one or two shots of espresso" },
+  { label: "Flat white", value: "Fla", description: "Coffee with frothed milk poured over espresso" },
+  { label: "Macchiato", value: "Mac", description: "Espresso coffee topped with steamed milk" },
+  { label: "Café au lait", value: "Caf", description: "Brewed coffee with steamed milk" },
+  { label: "Espresso", value: "Esp", description: "Concentrated form of coffee" },
+  { label: "Cortado", value: "Cor", description: "Coffee cut with milk" },
+  { label: "Latte macchiato", value: "Lam", description: "Espresso coffee with milk and a spoonful of foamed milk" },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -862,12 +1232,15 @@ export const SearchableSelectWithDescriptionsExample = () => (
 
 export const snippetsSearchableWithGroups = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…"
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  placeholder="Select an option…"
   label="What is your favourite coffee?" 
   searchable="true" 
   include-group-titles-in-search="true"
-></ic-select>
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const select = document.querySelector("ic-select");
   let option = "Cappuccino";
@@ -897,37 +1270,78 @@ export const snippetsSearchableWithGroups = [
     console.log(event.detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSelect placeholder="Select an option…"
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+  placeholder="Select an option…"
   label="What is your favourite coffee?"
-  options={[
-    {
-      label: "Fancy",
-      children: [
-        { label: "Cappuccino", value: "Cap" },
-        { label: "Flat white", value: "Flat" },
-        { label: "Mocha", value: "Moc" },
-        { label: "Macchiato", value: "Mac" },
-        { label: "Cortado", value: "Cor" },
-        { label: "Latte macchiato", value: "Lam" },
-      ],
-    },
-    {
-      label: "Boring",
-      children: [
-        { label: "Filter", value: "Fil" },
-        { label: "Latte", value: "Lat" },
-        { label: "Americano", value: "Ame" },
-        { label: "Espresso", value: "Esp" },
-      ],
-    },
-  ]}
+  options={options}
   searchable
   includeGroupTitlesInSearch
   onIcChange={(event) => console.log(event.detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+  {
+    label: "Fancy",
+    children: [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Flat white", value: "Flat" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+      { label: "Cortado", value: "Cor" },
+      { label: "Latte macchiato", value: "Lam" },
+    ],
+  },
+  {
+    label: "Boring",
+    children: [
+      { label: "Filter", value: "Fil" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Espresso", value: "Esp" },
+    ],
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+  {
+    label: "Fancy",
+    children: [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Flat white", value: "Flat" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+      { label: "Cortado", value: "Cor" },
+      { label: "Latte macchiato", value: "Lam" },
+    ],
+  },
+  {
+    label: "Boring",
+    children: [
+      { label: "Filter", value: "Fil" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Espresso", value: "Esp" },
+    ],
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -973,15 +1387,18 @@ This example shows how to filter data asynchronously when the value in the selec
 
 export const customFiltering = [
   {
-    language: "Web component",
-    snippet: `<ic-select placeholder="Select an option…"
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  placeholder="Select an option…"
   label="What is your favourite coffee?"
   searchable="true"
   debounce="300"
   disable-filter="true"
   id="external-filter-select"
   characters-until-suggestions="2"
-></ic-select>
+></ic-select>`,
+      long: `{shortCode}
 <script>
   const mockData = [
     { label: "Espresso", value: "Esp" },
@@ -1024,10 +1441,26 @@ export const customFiltering = [
     }
   });            
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const mockData = [
+    technology: "React",
+    snippets: {
+      short: `<IcSelect 
+   placeholder="Select an option…"
+   label="What is your favourite coffee?"
+   debounce={300}
+   searchable
+   disableFilter
+   options={results} 
+   onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
+   onIcClear={() => setResults([])}
+   onIcChange={changeHandler}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const mockData = [
   { label: "Espresso", value: "Esp" },
   { label: "Double Espresso", value: "Dou" },
   { label: "Cappuccino", value: "Cap" },
@@ -1060,18 +1493,51 @@ const changeHandler = (event) => {
 }
 return(
   <>
-    <IcSelect placeholder="Select an option…" label="What is your favourite coffee?" 
-      debounce="300"
-      searchable
-      disableFilter
-      charactersUntilSuggestions="2"
-      options={results} 
-      onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
-      onIcClear={() => setResults([])}
-      onIcChange={changeHandler}
-    />
+    {shortCode}
   </>
-);`,
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const mockData = [
+  { label: "Espresso", value: "Esp" },
+  { label: "Double Espresso", value: "Dou" },
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat" },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil" },
+  { label: "Flat white", value: "Fla" },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+const [results, setResults] = useState([]);
+const [selectedValue, setSelectedValue] = useState("");
+const changeHandler = (event) => {
+  const newValue = event.detail.value;
+  console.log(newValue);
+  if (newValue !== selectedValue) {
+    if (newValue && newValue.length > 1) {
+      const mockAPI = (query) => {
+        const filteredResults = mockData.filter((item) => 
+          item.label.toLowerCase().includes(query.toLowerCase()));
+        return new Promise(resolve => { 
+          setTimeout(() => resolve(filteredResults), 1000)
+        });
+      };
+      mockAPI(newValue).then((results) => setResults(results));
+    } else {
+      setResults([]);
+    }
+  }  
+}
+return(
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 
