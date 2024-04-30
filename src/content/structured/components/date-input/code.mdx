@@ -1,7 +1,7 @@
 ---
 path: "/components/date-input/code"
 
-date: "2024-04-30"
+date: "2024-05-31"
 
 title: "Date input"
 
@@ -24,21 +24,36 @@ import { IcDateInput } from "@ukic/canary-react";
 
 export const snippetsDefault = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>`,
+      long: `{shortCode}
 <script>
   const dateInput = document.querySelector("ic-date-input");
   dateInput.addEventListener("icChange", function ({ detail }) {
     console.log(detail.value);
   });
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
   label="When would you like to collect your coffee?"
   onChange={({ detail }) => console.log(detail.value)}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -69,12 +84,27 @@ export const snippetsDefault = [
 
 export const snippetsStringValue = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?" value="21/01/2001"></ic-date-input>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?" value="21/01/2001"></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput label="When would you like to collect your coffee?" value="21/01/2001" />`,
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" value="21/01/2001" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -89,19 +119,34 @@ export const snippetsStringValue = [
 
 export const snippetsDateObject = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>`,
+      long: `{shortCode}
 <script>
   const dateInputDate = document.querySelector("ic-date-input");
   dateInputDate.value = new Date("28 November 2021");
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
   label="When would you like to collect your coffee?"
   value={new Date("28 November 2021")}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -116,19 +161,34 @@ export const snippetsDateObject = [
 
 export const snippetsZulu = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>`,
+      long: `{shortCode}
 <script>
   const dateInputDate = document.querySelector("ic-date-input");
   dateInputDate.value = new Date("1 May 1990").toISOString();
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
   label="When would you like to collect your coffee?"
   value={new Date("1 May 1990").toISOString()}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -143,16 +203,31 @@ export const snippetsZulu = [
 
 export const snippetsHyphens = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>`,
+      long: `{shortCode}
 <script>
   const dateInputDate = document.querySelector("ic-date-input");
   dateInputDate.value = "25-05-2005";
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput label="When would you like to collect your coffee?" value="25-05-2005" />`,
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" value="25-05-2005" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -167,19 +242,34 @@ export const snippetsHyphens = [
 
 export const snippetsEpoch = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?"></ic-date-input>`,
+      long: `{shortCode}
 <script>
   const dateInputDate = document.querySelector("ic-date-input");
   dateInputString.value = Date.now();
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
   label="When would you like to collect your coffee?"
   value={Date.now()}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -194,12 +284,27 @@ export const snippetsEpoch = [
 
 export const snippetsRequired = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?" required="true"></ic-date-input>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?" required="true"></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput label="When would you like to collect your coffee?" required />`,
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" required />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -211,12 +316,27 @@ export const snippetsRequired = [
 
 export const snippetsDisabled = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?" disabled="true"></ic-date-input>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?" disabled="true"></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput label="When would you like to collect your coffee?" disabled />`,
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" disabled />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -228,16 +348,66 @@ export const snippetsDisabled = [
 
 export const snippetsSizes = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?" size="small"></ic-date-input>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?" size="small"></ic-date-input>
 <ic-date-input label="When would you like to collect your coffee?"></ic-date-input>
 <ic-date-input label="When would you like to collect your coffee?" size="large"></ic-date-input>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput label="When would you like to collect your coffee?" size="small" />
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" size="small" />
 <IcDateInput label="When would you like to collect your coffee?" />
 <IcDateInput label="When would you like to collect your coffee?" size="large" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -265,18 +435,33 @@ export const snippetsSizes = [
 
 export const snippetsCustomHelperText = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input
   label="When would you like to collect your coffee?"
   helper-text="We will have your order ready for you on this date"
 ></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
   label="When would you like to collect your coffee?"
   helperText="We will have your order ready for you on this date"
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -291,8 +476,9 @@ export const snippetsCustomHelperText = [
 
 export const snippetsValidation = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input
   label="When would you like to collect your coffee?"
   validation-status="error"
   validation-text="There is a coffee shortage forecast for that day. Please choose a different date."
@@ -307,10 +493,13 @@ export const snippetsValidation = [
   validation-status="success"
   validation-text="Your coffee will be available for you to collect on this day."
 ></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
   label="When would you like to collect your coffee?"
   validationStatus="error"
   validationText="There is a coffee shortage forecast for that day. Please choose a different date."
@@ -325,6 +514,17 @@ export const snippetsValidation = [
   validationStatus="success"
   validationText="Your coffee will be available for you to collect on this day."
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -358,12 +558,27 @@ export const snippetsValidation = [
 
 export const snippetsDisabledPastDates = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?" disable-past="true"></ic-date-input>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?" disable-past="true"></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput label="When would you like to collect your coffee?" disablePast />`,
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" disablePast />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -378,12 +593,27 @@ export const snippetsDisabledPastDates = [
 
 export const snippetsDisabledFutureDates = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input label="When would you like to collect your coffee?" disable-future="true"></ic-date-input>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?" disable-future="true"></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput label="When would you like to collect your coffee?" disableFuture />`,
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" disableFuture />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -398,20 +628,35 @@ export const snippetsDisabledFutureDates = [
 
 export const snippetsMinMax = [
   {
-    language: "Web components",
-    snippet: `<ic-date-input
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input
   label="When would you like to collect your coffee?"
   min="02/01/2023"
   max="20-07-2023"
 ></ic-date-input>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDateInput
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
   label="When would you like to collect your coffee?"
   min="02/01/2023"
   max="20-07-2023"
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -427,22 +672,26 @@ export const snippetsMinMax = [
 
 export const snippetsForm = [
   {
-    language: "Web components",
-    snippet: `<form>
+    technology: "Web component",
+    snippets: {
+      short: `<form>
   <ic-date-input label="When would you like to collect your coffee?" value="13/03/1951"></ic-date-input>
   <ic-button type="submit" value="Submit"></ic-button>
   <ic-button type="reset" value="Reset"></ic-button>
-  <script>
-    document.querySelector("form").addEventListener("submit", (ev) => {
-      ev.preventDefault();
-      console.log(ev);
-    });
-  </script>
 </form>`,
+      long: `{shortCode}
+<script>
+  document.querySelector("form").addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    console.log(ev);
+  });
+</script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const formSubmit = (ev) => {
+    technology: "React",
+    snippets: {
+      short: `const formSubmit = (ev) => {
   ev.preventDefault();
   console.log(ev);
 };
@@ -453,6 +702,17 @@ return (
     <IcButton type="reset">Reset</IcButton>
   </form>
 );`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

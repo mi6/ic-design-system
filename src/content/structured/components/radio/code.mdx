@@ -1,7 +1,7 @@
 ---
 path: "/components/radio/code"
 
-date: "2024-01-18"
+date: "2024-05-31"
 
 title: "Radio button"
 
@@ -25,37 +25,56 @@ import { IcRadioGroup, IcRadioOption, IcTextField } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-radio-group name='radio-group-1' label="Add a free purchase with any hot drink">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-radio-group
+  name="radio-group-1"
+  label="Add a free purchase with any hot drink"
+>
   <ic-radio-option value="crisps" label="Crisps"></ic-radio-option>
   <ic-radio-option
     value="cookie"
     label="Deluxe chocolate chip cookie (sold out)"
     disabled="true"
-    inactive="true" 
   >
   </ic-radio-option>
   <ic-radio-option value="fruit" label="Banana"></ic-radio-option>
-  <ic-radio-option value="No item" label="No thanks, just my coffee"></ic-radio-option>
-</ic-radio-group>
+  <ic-radio-option
+    value="No item"
+    label="No thanks, just my coffee"
+  ></ic-radio-option>
+</ic-radio-group>`,
+      long: `{shortCode}   
 <script>
   const radioGroup = document.querySelector("[name='radio-group-1']");
   radioGroup.addEventListener('icChange', (ev) => console.log(ev.detail.value));
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcRadioGroup name='radio-group-1' label="Add a free purchase with any hot drink" onIcChange={(ev) => console.log(ev.detail.value)}>
+    technology: "React",
+    snippets: {
+      short: `<IcRadioGroup name='radio-group-1' label="Add a free purchase with any hot drink" onIcChange={(ev) => console.log(ev.detail.value)}>
   <IcRadioOption value="crisps" label="Crisps" />
   <IcRadioOption
     value="cookie"
     label="Deluxe chocolate chip cookie (sold out)"
     disabled
-    inactive
   />
   <IcRadioOption value="fruit" label="Banana" />
   <IcRadioOption value="No item" label="No thanks, just my coffee" />
 </IcRadioGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -70,7 +89,6 @@ export const snippets = [
       value="cookie"
       label="Deluxe chocolate chip cookie (sold out)"
       disabled
-      inactive
     />
     <IcRadioOption value="fruit" label="Banana" />
     <IcRadioOption value="No item" label="No thanks, just my coffee" />
@@ -91,31 +109,56 @@ export const snippets = [
 
 export const conditional = [
   {
-    language: "Web component",
-    snippet: `<ic-radio-group name='radio-group-2' label="Do you have any special requests?">
-    <ic-radio-option value="request" label="Yes, I want to modify my order">
-      <ic-text-field
-        slot="additional-field"
-        label="Please provide some additional information"
-        placeholder="i.e Soya milk please"
-      >
-      </ic-text-field>
-    </ic-radio-option>
-    <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-radio-group
+  name="radio-group-2"
+  label="Do you have any special requests?"
+>
+  <ic-radio-option value="request" label="Yes, I want to modify my order">
+    <ic-text-field
+      slot="additional-field"
+      label="Please provide some additional information"
+      placeholder="i.e Soya milk please"
+    >
+    </ic-text-field>
+  </ic-radio-option>
+  <ic-radio-option
+    value="none"
+    label="No, standard please"
+  ></ic-radio-option>
 </ic-radio-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcRadioGroup name='radio-group-2' label="Do you have any special requests?">
-    <IcRadioOption value="request" label="Yes, I want to modify my order">
-      <IcTextField
-        slot="additional-field"
-        label="Please provide some additional information"
-        placeholder="i.e Soya milk please"
-      />
-    </IcRadioOption>
-    <IcRadioOption value="none" label="No, standard please" />
+    technology: "React",
+    snippets: {
+      short: `<IcRadioGroup
+  name="radio-group-1"
+  label="Add a free purchase with any hot drink"
+  onIcChange={(ev) => console.log(ev.detail.value)}
+>
+  <IcRadioOption value="crisps" label="Crisps" />
+  <IcRadioOption
+    value="cookie"
+    label="Deluxe chocolate chip cookie (sold out)"
+    disabled
+  />
+  <IcRadioOption value="fruit" label="Banana" />
+  <IcRadioOption value="No item" label="No thanks, just my coffee" />
 </IcRadioGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -136,31 +179,55 @@ export const conditional = [
 
 export const conditionalDynamic = [
   {
-    language: "Web component",
-    snippet: `<ic-radio-group name='radio-group-3' label="Do you have any special requests?">
-    <ic-radio-option value="request" label="Yes, I want to modify my order">
-      <ic-text-field
-        slot="additional-field"
-        label="Please provide some additional information"
-        placeholder="i.e Soya milk please"
-      >
+    technology: "Web component",
+    snippets: {
+      short: `<ic-radio-group
+  name="radio-group-3"
+  label="Do you have any special requests?"
+>
+  <ic-radio-option value="request" label="Yes, I want to modify my order">
+    <ic-text-field
+      slot="additional-field"
+      label="Please provide some additional information"
+      placeholder="i.e Soya milk please"
+    >
     </ic-text-field>
-    </ic-radio-option>
-    <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
+  </ic-radio-option>
+  <ic-radio-option
+    value="none"
+    label="No, standard please"
+  ></ic-radio-option>
 </ic-radio-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcRadioGroup name='radio-group-3' label="Do you have any special requests?">
-    <IcRadioOption value="request" label="Yes, I want to modify my order">
-      <IcTextField
-        slot="additional-field"
-        label="Please provide some additional information"
-        placeholder="i.e Soya milk please"
-      />
-    </IcRadioOption>
-    <IcRadioOption value="none" label="No, standard please" />
+    technology: "React",
+    snippets: {
+      short: `<IcRadioGroup
+  name="radio-group-3"
+  label="Do you have any special requests?"
+>
+  <IcRadioOption value="request" label="Yes, I want to modify my order">
+    <IcTextField
+      slot="additional-field"
+      label="Please provide some additional information"
+      placeholder="i.e Soya milk please"
+    />
+  </IcRadioOption>
+  <IcRadioOption value="none" label="No, standard please" />
 </IcRadioGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -190,26 +257,47 @@ export const conditionalDynamic = [
 
 export const withHelperText = [
   {
-    language: "Web component",
-    snippet: `<ic-radio-group 
-  label="Do you have any special requests?" 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-radio-group
+  label="Do you have any special requests?"
   helper-text="Let us know if you'd like an alternative to dairy milk."
-  name='radio-group-4'
+  name="radio-group-4"
 >
-  <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
-  <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
+  <ic-radio-option
+    value="request"
+    label="Yes, I want to modify my order"
+  ></ic-radio-option>
+  <ic-radio-option
+    value="none"
+    label="No, standard please"
+  ></ic-radio-option>
 </ic-radio-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcRadioGroup 
-    label="Do you have any special requests?" 
-    helperText="Let us know if you'd like an alternative to dairy milk."
-    name='radio-group-4'
+    technology: "React",
+    snippets: {
+      short: `<IcRadioGroup 
+  label="Do you have any special requests?" 
+  helperText="Let us know if you'd like an alternative to dairy milk."
+  name='radio-group-4'
 >
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
   <IcRadioOption value="none" label="No, standard please" />
 </IcRadioGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -228,26 +316,47 @@ export const withHelperText = [
 
 export const smallSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-radio-group 
-  label="Do you have any special requests?" 
-  name='radio-group-5'
+    technology: "Web component",
+    snippets: {
+      short: `<ic-radio-group
+  label="Do you have any special requests?"
+  name="radio-group-5"
   size="small"
 >
-  <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
-  <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
+  <ic-radio-option
+    value="request"
+    label="Yes, I want to modify my order"
+  ></ic-radio-option>
+  <ic-radio-option
+    value="none"
+    label="No, standard please"
+  ></ic-radio-option>
 </ic-radio-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcRadioGroup 
-    label="Do you have any special requests?" 
-    name='radio-group-5'
-    size="small"
+    technology: "React",
+    snippets: {
+      short: `<IcRadioGroup
+  label="Do you have any special requests?"
+  name="radio-group-5"
+  size="small"
 >
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
   <IcRadioOption value="none" label="No, standard please" />
 </IcRadioGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -266,18 +375,51 @@ export const smallSnippet = [
 
 export const withValidation = [
   {
-    language: "Web component",
-    snippet: `<ic-radio-group name='radio-group-6' label="Do you have any special requests?" validation-status="error" validation-text="An answer to this question is required" required="true">
-  <ic-radio-option value="request" label="Yes, I want to modify my order"></ic-radio-option>
-  <ic-radio-option value="none" label="No, standard please"></ic-radio-option>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-radio-group
+  name="radio-group-6"
+  label="Do you have any special requests?"
+  validation-status="error"
+  validation-text="An answer to this question is required"
+  required="true"
+>
+  <ic-radio-option
+    value="request"
+    label="Yes, I want to modify my order"
+  ></ic-radio-option>
+  <ic-radio-option
+    value="none"
+    label="No, standard please"
+  ></ic-radio-option>
 </ic-radio-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcRadioGroup name='radio-group-6' label="Do you have any special requests?" validationStatus="error" validationText="An answer to this question is required" required>
+    technology: "React",
+    snippets: {
+      short: `<IcRadioGroup
+  name="radio-group-6"
+  label="Do you have any special requests?"
+  validationStatus="error"
+  validationText="An answer to this question is required"
+  required
+>
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
   <IcRadioOption value="none" label="No, standard please" />
 </IcRadioGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

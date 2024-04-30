@@ -1,7 +1,7 @@
 ---
 path: "/components/card/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Card"
 
@@ -32,9 +32,9 @@ export const CardIcon = () => (
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M0 0h24v24H0V0z" fill="none" />
@@ -49,7 +49,6 @@ export const InteractionIcon = () => (
     width="16"
     height="16"
     fill="currentColor"
-    class="bi bi-three-dots-vertical"
     viewBox="0 0 16 16"
   >
     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -60,138 +59,192 @@ export const InteractionIcon = () => (
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
-    heading="Americano order" 
-    subheading="Name: Michael" 
-    message="Extras: Double espresso shot and oat milk."
-    style="width:360px;">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
+  heading="Americano order" 
+  subheading="Name: Michael" 
+  message="Extras: Double espresso shot and oat milk."
+>
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
-      <svg
-        slot="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-three-dots-vertical"
-        viewBox="0 0 16 16"
-      >
-        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-      </svg>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+    </svg>
   </ic-button>
   <ic-status-tag slot="adornment" label="In Progress" small="true"></ic-status-tag>
-    <svg
-        slot="image-mid"
-        style={{
-        height: "100%",
-        width: "100%",
-        maxHeight: "20.375rem",
-        maxWidth: "20.375rem",
-      }}
-        viewBox="0 0 1600 1250"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </svg>
-    <div 
-      slot="interaction-controls" 
-      style={{ display: "flex", gap: "16px" 
-      }}>
-      <ic-button variant="primary">Accept</ic-button>
-      <ic-button variant="secondary">Cancel</ic-button>
-    </div>
-    <ic-typography slot="expanded-content" variant="body">
-      To cancel your order click cancel.
-    </ic-typography>
+  <svg
+    slot="image-mid"
+    class="card-image"
+    viewBox="0 0 1600 1250"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
+  <div 
+    slot="interaction-controls" 
+    class="interaction-area"
+  >
+    <ic-button variant="primary">Accept</ic-button>
+    <ic-button variant="secondary">Cancel</ic-button>
+  </div>
+  <ic-typography slot="expanded-content" variant="body">
+    To cancel your order click cancel.
+  </ic-typography>
 </ic-card>`,
+      long: `ic-card {
+    width: 360px;
+  }
+  .interaction-area {
+    display: flex;
+    gap: 16px;
+  }
+  .card-image {
+    height: 100%;
+    width: 100%;
+    max-height: 20.375rem;
+    max-width: 20.375rem;
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
-    heading="Americano order" 
-    subheading="Name: Michael" 
-    message="Extras: Double espresso shot and oat milk."
-    style={{width: "360px"}}>
-      <SlottedSVG
-        slot="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        height="24px"
-        viewBox="0 0 24 24"
-        width="24px"
-        fill="#000000"
-      >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-      </SlottedSVG>
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
+  heading="Americano order" 
+  subheading="Name: Michael" 
+  message="Extras: Double espresso shot and oat milk."
+  className={classes.card}
+>
+  <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+  </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
-      <SlottedSVG
-        slot="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-three-dots-vertical"
-        viewBox="0 0 16 16"
-      >
-        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-      </SlottedSVG>
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+    </SlottedSVG>
   </IcButton> 
   <IcStatusTag slot="adornment" label="In Progress" small />
-    <SlottedSVG
-      slot="image-mid"
-      style={{
-      height: "100%",
-      width: "100%",
-      maxHeight: "20.375rem",
-      maxWidth: "20.375rem",
-      }}
-      viewBox="0 0 1600 1250"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </SlottedSVG>
+  <SlottedSVG
+    slot="image-mid"
+    viewBox="0 0 1600 1250"
+    className={classes.cardImage}
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
   <div 
-      slot="interaction-controls" 
-      style={{ display: "flex", gap: "16px" 
-      }}>
-      <IcButton variant="primary">Accept</IcButton>
-      <IcButton variant="secondary">Cancel</IcButton>
-    </div>
-    <IcTypography slot="expanded-content" variant="body">
-      To cancel your order click cancel.
-    </IcTypography>
+    slot="interaction-controls" 
+    className={classes.interactionArea}>
+    <IcButton variant="primary">Accept</IcButton>
+    <IcButton variant="secondary">Cancel</IcButton>
+  </div>
+  <IcTypography slot="expanded-content" variant="body">
+    To cancel your order click cancel.
+  </IcTypography>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "360px",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+  interactionArea: {
+    display: "flex",
+    gap: "16px",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "360px",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+  interactionArea: {
+    display: "flex",
+    gap: "16px",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -244,9 +297,9 @@ export const snippets = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -271,12 +324,27 @@ export const snippets = [
 
 export const headingOnly = [
   {
-    language: "Web component",
-    snippet: `<ic-card heading="Americano order"></ic-card>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card heading="Americano order"></ic-card>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard heading="Americano order"></IcCard>`,
+    technology: "React",
+    snippets: {
+      short: `<IcCard heading="Americano order"></IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -288,35 +356,49 @@ export const headingOnly = [
 
 export const withIcon = [
   {
-    language: "Web component",
-    snippet: `<ic-card heading="Americano order">
-  
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card heading="Americano order">
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </ic-card>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard heading="Americano order">
+    technology: "React",
+    snippets: {
+      short: `<IcCard heading="Americano order">
   <SlottedSVG     
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -325,9 +407,9 @@ export const withIcon = [
     <SlottedSVG
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -339,34 +421,49 @@ export const withIcon = [
 
 export const withMessage = [
   {
-    language: "Web component",
-    snippet: `<ic-card heading="Americano order" message="Extras: Double espresso shot and oat milk.">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card heading="Americano order" message="Extras: Double espresso shot and oat milk.">
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </ic-card>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard heading="Americano order" message="Extras: Double espresso shot and oat milk.">
+    technology: "React",
+    snippets: {
+      short: `<IcCard heading="Americano order" message="Extras: Double espresso shot and oat milk.">
   <SlottedSVG     
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -378,9 +475,9 @@ export const withMessage = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -392,40 +489,57 @@ export const withMessage = [
 
 export const withSubHeading = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
+  message="Extras: Double espresso shot and oat milk."
+>
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </ic-card>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
+  message="Extras: Double espresso shot and oat milk."
+>
   <SlottedSVG     
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
     </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -438,9 +552,9 @@ export const withSubHeading = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -452,21 +566,23 @@ export const withSubHeading = [
 
 export const interactionButton = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
-    <svg
-      slot="icon"
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
-    </svg>
+  message="Extras: Double espresso shot and oat milk."
+>
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
       slot="icon"
@@ -474,43 +590,56 @@ export const interactionButton = [
       width="16"
       height="16"
       fill="currentColor"
-      class="bi bi-three-dots-vertical"
       viewBox="0 0 16 16"
     >
       <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </svg>
   </ic-button>
 </ic-card>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
-    <SlottedSVG     
-      slot="icon"
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
-    </SlottedSVG>
+  message="Extras: Double espresso shot and oat milk."
+>
+  <SlottedSVG     
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
     <SlottedSVG slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
       fill="currentColor"
-      class="bi bi-three-dots-vertical"
       viewBox="0 0 16 16"
     >
       <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </SlottedSVG>
   </IcButton>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -523,9 +652,9 @@ export const interactionButton = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -540,42 +669,59 @@ export const interactionButton = [
 
 export const adornment = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
-    <svg
-      slot="icon"
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
-    </svg>
+  message="Extras: Double espresso shot and oat milk."
+>
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </svg>
   <ic-status-tag slot="adornment" status="warning" label="In Progress" size="small"></ic-status-tag>
 </ic-card>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
-    <SlottedSVG 
-      slot="icon"   
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
-    </SlottedSVG>
+  message="Extras: Double espresso shot and oat milk."
+>
+  <SlottedSVG 
+    slot="icon"   
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </SlottedSVG>
   <IcStatusTag slot="adornment" status="warning" label="In Progress" size="small" />
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -588,9 +734,9 @@ export const adornment = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -608,120 +754,149 @@ export const adornment = [
 
 export const topImage = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  style="width:360px;">
-    <svg
-      slot="image-top"
-      style={{
-        height: "100%",
-        width: "100%",
-        maxHeight: "20.375rem",
-        maxWidth: "20.375rem",
-      }}
-      viewBox="0 0 1600 1250"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </svg>
+>
+  <svg
+    slot="image-top"
+    class="card-image"
+    viewBox="0 0 1600 1250"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </svg>
+  <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
     >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </svg>
-    <ic-button variant="icon" title="More information" slot="interaction-button">
-      <svg
-        slot="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-three-dots-vertical"
-        viewBox="0 0 16 16"
-      >
-        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-      </svg>
-    </ic-button>
+  </ic-button>
   <ic-status-tag slot="adornment" status="warning" label="In Progress" size="small"></ic-status-tag>
 </ic-card>`,
+      long: `ic-card {
+        width: 360px;
+    }
+    .card-image {
+      height: 100%;
+      width: 100%;
+      maxHeight: 20.375rem;
+      maxWidth: 20.375rem;
+    }
+    </style>
+    <body>
+      {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  style={{width: "360px"}}>
-    <SlottedSVG
-      slot="image-top"
-      style={{
-        height: "100%",
-        width: "100%",
-        maxHeight: "20.375rem",
-        maxWidth: "20.375rem",
-      }}
-      viewBox="0 0 1600 1250"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </SlottedSVG>
+  className={classes.card}
+>
+  <SlottedSVG
+    slot="image-top"
+    className={classes.cardImage}
+    viewBox="0 0 1600 1250"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
+  <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </SlottedSVG>
+  <IcButton variant="icon" title="More information" slot="interaction-button">
     <SlottedSVG
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
     >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </SlottedSVG>
-    <IcButton variant="icon" title="More information" slot="interaction-button">
-      <SlottedSVG
-        slot="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-three-dots-vertical"
-        viewBox="0 0 16 16"
-      >
-        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-      </SlottedSVG>
   </IcButton> 
   <IcStatusTag slot="adornment" status="warning" label="In Progress" size="small" />
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "360px",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -730,14 +905,13 @@ export const topImage = [
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
-    style={{ width: "360px" }}
   >
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -783,79 +957,89 @@ export const topImage = [
 
 export const midImage = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  style="width:360px;">
- <svg
+>
+  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
-        slot="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-three-dots-vertical"
-        viewBox="0 0 16 16"
-      >
-        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-      </svg>
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+    </svg>
   </ic-button>
   <ic-status-tag slot="adornment" status="warning" label="In Progress" size="small"></ic-status-tag>
-    <svg
-      slot="image-mid"
-      style={{
-        height: "100%",
-        width: "100%",
-        maxHeight: "20.375rem",
-        maxWidth: "20.375rem",
-      }}
-      viewBox="0 0 1600 1250"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </svg>
+  <svg
+    slot="image-mid"
+    class="card-image"
+    viewBox="0 0 1600 1250"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
 </ic-card>`,
+      long: `ic-card {
+        width:360px;
+    }
+    .card-image {
+      height: 100%;
+      width: 100%;
+      maxHeight: 20.375rem;
+      maxWidth: 20.375rem;
+    }
+    </style>
+    <body>
+    {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  style={{width: "360px"}}>
-    <SlottedSVG
-      slot="icon"
-      xmlns="http://www.w3.org/2000/svg"
-      height="24px"
-      viewBox="0 0 24 24"
-      width="24px"
-      fill="#000000"
-    >
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
-    </SlottedSVG>
+  className={classes.card}
+>
+  <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
     <SlottedSVG
         slot="icon"
@@ -863,38 +1047,71 @@ export const midImage = [
         width="16"
         height="16"
         fill="currentColor"
-        class="bi bi-three-dots-vertical"
         viewBox="0 0 16 16"
       >
         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
       </SlottedSVG>
   </IcButton> 
   <IcStatusTag slot="adornment" status="warning" label="In Progress" size="small" />
-    <SlottedSVG
-      slot="image-mid"
-      style={{
-        height: "100%",
-        width: "100%",
-        maxHeight: "20.375rem",
-        maxWidth: "20.375rem",
-      }}
-      viewBox="0 0 1600 1250"
-    >
-      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
-      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
-      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
-      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
-      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
-      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
-      <polygon fill="#b80066" points="641 695 886 900 367 900" />
-      <polygon fill="#960052" points="587 900 641 695 886 900" />
-      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
-      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
-      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
-      <polygon fill="#880088" points="943 900 1210 900 971 687" />
-    </SlottedSVG>
+  <SlottedSVG
+    slot="image-mid"
+    viewBox="0 0 1600 1250"
+    className={classes.cardImage}
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "360px",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "360px",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -903,14 +1120,13 @@ export const midImage = [
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
-    style={{ width: "360px" }}
   >
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -955,50 +1171,91 @@ export const midImage = [
 
 export const interactionControls = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
+  message="Extras: Double espresso shot and oat milk."
+>
  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
   </svg>
-  <div slot="interaction-controls" style="display:flex;gap:16px;">
+  <div slot="interaction-controls" class="interaction-area">
     <ic-button variant="primary">Accept</ic-button>
     <ic-button variant="secondary">Cancel</ic-button>
   </div>
 </ic-card>`,
+      long: `.interaction-area {
+      display: flex;
+      gap: 16px;
+    }
+  </style>
+  <body>
+    {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
-  message="Extras: Double espresso shot and oat milk.">
+  message="Extras: Double espresso shot and oat milk."
+>
  <SlottedSVG
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M0 0h24v24H0V0z" fill="none" />
-    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
   </SlottedSVG>
-  <div slot="interaction-controls" style={{display: "flex", gap: "16px"}}>
+  <div slot="interaction-controls" className={classes.interactionArea}>
     <IcButton variant="primary">Accept</IcButton>
     <IcButton variant="secondary">Cancel</IcButton>
   </div>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  interactionArea: {
+    display: "flex",
+    gap: "16px",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  interactionArea: {
+    display: "flex",
+    gap: "16px",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1011,9 +1268,9 @@ export const interactionControls = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -1029,23 +1286,25 @@ export const interactionControls = [
 
 export const expandable = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  expandable="true">
+  expandable="true"
+>
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-  <div slot="interaction-controls" style="display:flex;gap:16px;">
+  <div slot="interaction-controls" class="interaction-area">
     <ic-button variant="primary">Accept</ic-button>
     <ic-button variant="secondary">Cancel</ic-button>
   </div>
@@ -1053,25 +1312,35 @@ export const expandable = [
     To cancel your order click cancel.
   </ic-typography>
 </ic-card>`,
+      long: `.interaction-area {
+    display: flex;
+    gap: 16px;
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  expandable>
+  expandable
+>
   <SlottedSVG
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
-  <div slot="interaction-controls" style={{display: "flex", gap: "16px"}}>
+  <div slot="interaction-controls" className={classes.interactionArea}>
     <IcButton variant="primary">Accept</IcButton>
     <IcButton variant="secondary">Cancel</IcButton>
   </div>
@@ -1079,6 +1348,35 @@ export const expandable = [
     To cancel your order click cancel.
   </IcTypography>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+    interactionArea: {
+      display: "flex",
+      gap: "16px",
+    },
+  });
+  const classes = useStyles();
+  return (
+    {shortCode}
+  )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+    interactionArea: {
+      display: "flex",
+      gap: "16px",
+    },
+  });
+  const classes = useStyles();
+  return (
+    {shortCode}
+  )`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1092,9 +1390,9 @@ export const expandable = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -1113,44 +1411,88 @@ export const expandable = [
 
 export const clickableLink = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
   clickable="true"
-  href="#">
+  href="#"
+>
  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </ic-card>`,
+      long: `.parent-container {
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
   clickable
-  href="#">
+  href="#"
+>
  <SlottedSVG
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1166,9 +1508,9 @@ export const clickableLink = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -1180,50 +1522,94 @@ export const clickableLink = [
 
 export const clickableBtn = [
   {
-    language: "Web component",
-    snippet: `<ic-card
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card
   id="clickable-card"
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  clickable="true">
+  clickable="true"
+>
  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>
-<script>
-  const card = document.querySelector('#clickable-card');
-  card.addEventListener('click', (ev) => {
-    console.log(ev);
-  })
-</script>`,
+</ic-card>`,
+      long: `.parent-container {
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const card = document.querySelector('#clickable-card');
+    card.addEventListener('click', (ev) => {
+      console.log(ev);
+    })
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk." 
   clickable
-  onClick={(ev) => console.log(ev)}>
+  onClick={(ev) => console.log(ev)}
+>
  <SlottedSVG
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1238,9 +1624,9 @@ export const clickableBtn = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -1252,46 +1638,95 @@ export const clickableBtn = [
 
 export const withBadge = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
   clickable="true"
-  href="#">
- <ic-badge text-label="New" slot="badge" variant="info" size="large"></ic-badge>
- <svg
+  href="#"
+>
+ <ic-badge
+    text-label="New"
+    slot="badge"
+    variant="info"
+    size="large"
+  ></ic-badge>
+  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </ic-card>`,
+      long: `.parent-container {
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk." 
   clickable
-  href="#">
+  href="#"
+>
  <IcBadge size="large" textLabel="New" slot="badge" variant="info"/>
  <SlottedSVG
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1308,9 +1743,9 @@ export const withBadge = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -1322,44 +1757,88 @@ export const withBadge = [
 
 export const disabled = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
   clickable="true" 
-  disabled="true">
+  disabled="true"
+>
  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </ic-card>`,
+      long: `.parent-container {
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk." 
   clickable
-  disabled>
+  disabled
+>
  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1374,9 +1853,9 @@ export const disabled = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -1388,44 +1867,88 @@ export const disabled = [
 
 export const fullWidth = [
   {
-    language: "Web component",
-    snippet: `<ic-card 
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
-  fullWidth="true"
-  clickable="true"> 
+  full-width="true"
+  clickable="true"
+>
  <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
 </ic-card>`,
+      long: `.parent-container {
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcCard 
+    technology: "React",
+    snippets: {
+      short: `<IcCard 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
   fullWidth
-  clickable>
+  clickable
+>
  <SlottedSVG
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
-    height="24px"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    width="24px"
     fill="#000000"
   >
      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
 </IcCard>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1434,15 +1957,15 @@ export const fullWidth = [
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
-    clickable="true"
-    fullWidth="true"
+    fullWidth
+    clickable
   >
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -1454,8 +1977,9 @@ export const fullWidth = [
 
 export const wrapped = [
   {
-    language: "Web component",
-    snippet: `<a href="/">
+    technology: "Web component",
+    snippets: {
+      short: `<a href="/">
   <ic-card 
     heading="Americano order"
     subheading="Name: Michael"
@@ -1463,19 +1987,29 @@ export const wrapped = [
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
     </svg>
   </ic-card>
 </a>`,
+      long: `.parent-container {
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<a href="/">
+    technology: "React",
+    snippets: {
+      short: `<a href="/">
   <IcCard 
     heading="Americano order"
     subheading="Name: Michael"
@@ -1483,15 +2017,46 @@ export const wrapped = [
   <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
     </svg>
   </IcCard>
 </a>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1510,9 +2075,9 @@ export const wrapped = [
       <svg
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
-        height="24px"
+        height="24"
         viewBox="0 0 24 24"
-        width="24px"
+        width="24"
         fill="#000000"
       >
         <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />

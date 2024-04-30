@@ -1,7 +1,7 @@
 ---
 path: "/components/data-entity/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Data entity"
 
@@ -33,90 +33,105 @@ import {
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-data-entity heading="Order details">
-    <ic-data-row label="Order name" value="Michael">
-      <ic-link href="#" slot="end-component">
-        Edit
-      </ic-link>
-    </ic-data-row>
-    <ic-data-row label="Drink" value="Americano">
-      <ic-link href="#" slot="end-component">
-        Edit
-      </ic-link>
-    </ic-data-row>
-    <ic-data-row label="Milk option" value="Soya milk">
-      <ic-link href="#" slot="end-component">
-        Edit
-      </ic-link>
-    </ic-data-row>
-    <ic-data-row label="Price" value="£3.25">
-      <ic-link href="#" slot="end-component">
-        Edit
-      </ic-link>
-    </ic-data-row>
-    <ic-data-row label="Payment method">
-      <ic-typography variant="body" slot="value">
-        VISA ending 5896
-      </ic-typography>
-      <ic-link href="#" slot="end-component">
-        Edit
-      </ic-link>
-    </ic-data-row>
-    <ic-data-row label="Download receipt" value="CoffeeOrder_X46w32.pdf">
-      <ic-button variant="icon" aria-label="Download" slot="end-component">
-        <svg viewBox="0 0 24 24" height="24px" width="24px">
-          <path
-            d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
-            fill="currentColor"
-          />
-        </svg>
-      </ic-button>
-    </ic-data-row>
-  </ic-data-entity>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-entity heading="Order details">
+  <ic-data-row label="Order name" value="Michael">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Drink" value="Americano">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Milk option" value="Soya milk">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Price" value="£3.25">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Payment method">
+    <ic-typography variant="body" slot="value">
+      VISA ending 5896
+    </ic-typography>
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <ic-button variant="icon" aria-label="Download" slot="end-component">
+      <svg viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </svg>
+    </ic-button>
+  </ic-data-row>
+</ic-data-entity>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `  <IcDataEntity heading="Order details">
-    <IcDataRow label="Order name" value="Michael">
-      <IcLink href="#" slot="end-component">
-        Edit
-      </IcLink>
-    </IcDataRow>
-    <IcDataRow label="Drink" value="Americano">
-      <IcLink href="#" slot="end-component">
-        Edit
-      </IcLink>
-    </IcDataRow>
-    <IcDataRow label="Milk option" value="Soya milk">
-      <IcLink href="#" slot="end-component">
-        Edit
-      </IcLink>
-    </IcDataRow>
-    <IcDataRow label="Price" value="£3.25">
-      <IcLink href="#" slot="end-component">
-        Edit
-      </IcLink>
-    </IcDataRow>
-    <IcDataRow label="Payment method">
-      <IcTypography variant="body" slot="value">
-        VISA ending 5896
-      </IcTypography>
-      <IcLink href="#" slot="end-component">
-        Edit
-      </IcLink>
-    </IcDataRow>
-    <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
-      <IcButton variant="icon" aria-label="Download" slot="end-component">
-        <SlottedSVG viewBox="0 0 24 24" height="24px" width="24px">
-          <path
-            d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
-            fill="currentColor"
-          />
-        </SlottedSVG>
-      </IcButton>
-    </IcDataRow>
-  </IcDataEntity>`,
+    technology: "React",
+    snippets: {
+      short: `<IcDataEntity heading="Order details">
+  <IcDataRow label="Order name" value="Michael">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Drink" value="Americano">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Milk option" value="Soya milk">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Price" value="£3.25">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Payment method">
+    <IcTypography variant="body" slot="value">
+      VISA ending 5896
+    </IcTypography>
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <IcButton variant="icon" aria-label="Download" slot="end-component">
+      <SlottedSVG viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </SlottedSVG>
+    </IcButton>
+  </IcDataRow>
+</IcDataEntity>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -152,7 +167,7 @@ export const snippets = [
     </IcDataRow>
     <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
       <IcButton variant="icon" aria-label="Download" slot="end-component">
-        <svg viewBox="0 0 24 24" height="24px" width="24px">
+        <svg viewBox="0 0 24 24" height="24" width="24">
           <path
             d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
             fill="currentColor"
@@ -177,62 +192,74 @@ export const snippets = [
 
 export const withStatusTags = [
   {
-    language: "Web component",
-    snippet: `<ic-data-entity heading="Order details">
-    <ic-data-row label="Order name" value="Michael">
-    </ic-data-row>
-    <ic-data-row label="Drink" value="Americano">
-      <ic-status-tag
-        status="warning"
-        label="In Progress"
-        variant="filled"
-        slot="end-component"
-      />
-    </ic-data-row>
-    <ic-data-row label="Milk option" value="Soya milk">
-    </ic-data-row>
-    <ic-data-row label="Price" value="£3.25">
-    </ic-data-row>
-    <ic-data-row label="Payment method">
-      <ic-typography variant="body" slot="value">
-        VISA ending 5896
-      </ic-typography>
-      <ic-status-tag
-        label="Not Confirmed"
-        variant="filled"
-        slot="end-component"
-      />
-    </ic-data-row>
-  </ic-data-entity>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-entity heading="Order details">
+  <ic-data-row label="Order name" value="Michael">
+  </ic-data-row>
+  <ic-data-row label="Drink" value="Americano">
+    <ic-status-tag
+      status="warning"
+      label="In Progress"
+      variant="filled"
+      slot="end-component"
+    />
+  </ic-data-row>
+  <ic-data-row label="Milk option" value="Soya milk">
+  </ic-data-row>
+  <ic-data-row label="Price" value="£3.25">
+  </ic-data-row>
+  <ic-data-row label="Payment method">
+    <ic-typography variant="body" slot="value">
+      VISA ending 5896
+    </ic-typography>
+    <ic-status-tag
+      label="Not Confirmed"
+      variant="filled"
+      slot="end-component"
+    />
+  </ic-data-row>
+</ic-data-entity>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDataEntity heading="Order details">
-    <IcDataRow label="Order name" value="Michael">
-    </IcDataRow>
-    <IcDataRow label="Drink" value="Americano">
-      <IcStatusTag
-        status="warning"
-        label="In Progress"
-        variant="filled"
-        slot="end-component"
-      />
-    </IcDataRow>
-    <IcDataRow label="Milk option" value="Soya milk">
-    </IcDataRow>
-    <IcDataRow label="Price" value="£3.25">
-    </IcDataRow>
-    <IcDataRow label="Payment method">
-      <IcTypography variant="body" slot="value">
-        VISA ending 5896
-      </IcTypography>
-      <IcStatusTag
-        label="Not Confirmed"
-        variant="filled"
-        slot="end-component"
-      />
-    </IcDataRow>
-  </IcDataEntity>`,
+    technology: "React",
+    snippets: {
+      short: `<IcDataEntity heading="Order details">
+  <IcDataRow label="Order name" value="Michael" />
+  <IcDataRow label="Drink" value="Americano">
+    <IcStatusTag
+      status="warning"
+      label="In Progress"
+      variant="filled"
+      slot="end-component"
+    />
+  </IcDataRow>
+  <IcDataRow label="Milk option" value="Soya milk" />
+  <IcDataRow label="Price" value="£3.25" />
+  <IcDataRow label="Payment method">
+    <IcTypography variant="body" slot="value">
+      VISA ending 5896
+    </IcTypography>
+    <IcStatusTag
+      label="Not Confirmed"
+      variant="filled"
+      slot="end-component"
+    />
+  </IcDataRow>
+</IcDataEntity>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -266,8 +293,9 @@ export const withStatusTags = [
 
 export const smallSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-data-entity heading="Personal details" size="small">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-entity heading="Personal details" size="small">
   <ic-data-row label="Name" value="Michael Johnson">
     <ic-status-tag
       status="success"
@@ -322,10 +350,13 @@ export const smallSnippet = [
     ></ic-status-tag>
   </ic-data-row>
 </ic-data-entity>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDataEntity heading="Personal details" size="small">
+    technology: "React",
+    snippets: {
+      short: `<IcDataEntity heading="Personal details" size="small">
   <IcDataRow label="Name" value="Michael Johnson">
     <IcStatusTag
       status="success"
@@ -380,6 +411,17 @@ export const smallSnippet = [
     />
   </IcDataRow>
 </IcDataEntity>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -411,92 +453,110 @@ export const smallSnippet = [
 
 export const editableExample = [
   {
-    language: "Web component",
-    snippet: `<ic-data-entity heading="Order details">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-entity heading="Order details">
   <ic-data-row label="Order name"> 
     <ic-text-field 
       slot="value" 
       label="Order name" 
-      value="Michael" 
-      readonly 
-      hide-label 
-      full-width
+      value="Michael"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
     />
   </ic-data-row>
   <ic-data-row label="Drink">
     <ic-text-field 
       slot="value" 
       label="Drink" 
-      value="Americano" 
-      readonly 
-      hide-label 
-      full-width
+      value="Americano"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
     />
   </ic-data-row>
   <ic-data-row label="Milk option">
     <ic-text-field 
       slot="value" 
       label="Milk option" 
-      value="Soya milk" 
-      readonly 
-      hide-label 
-      full-width
+      value="Soya milk"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
     />
   </ic-data-row>
   <ic-data-row label="Price">
     <ic-text-field 
       slot="value" 
       label="Price" 
-      value="£3.25" 
-      readonly 
-      hide-label 
-      full-width
+      value="£3.25"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
     />
   </ic-data-row>
   <ic-data-row label="Payment method">
     <ic-text-field 
       slot="value" 
       label="Payment method" 
-      value="VISA ending 5896"  
-      readonly 
-      hide-label 
-      full-width
+      value="VISA ending 5896"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
     />
   </ic-data-row>
 </ic-data-entity>
-<ic-button id='confirm-button' style="margin-right: var(--ic-space-md);margin-top: var(--ic-space-lg);">
-  Confirm
-</ic-button>
-<ic-button id='edit-button' variant="secondary" style="margin-top: var(--ic-space-lg);">
-  Edit
-</ic-button>
-<script>
-  const textFields = document.querySelectorAll('ic-text-field');
-  const confirmBtn = document.querySelector('#confirm-button');
-  confirmBtn.addEventListener('click', () => {
-    textFields.forEach((textField) => {
-      textField.setAttribute('readonly', '');
+<div class="btn-container">
+  <ic-button id="confirm-button">
+    Confirm
+  </ic-button>
+  <ic-button id="edit-button" variant="secondary">
+    Edit
+  </ic-button>
+</div>`,
+      long: `.btn-container {
+    display: flex;
+    gap: 16px;
+    padding-top: 16px;
+  }
+  .parent-container {
+    padding: 16px;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const textFields = document.querySelectorAll('ic-text-field');
+    const confirmBtn = document.querySelector('#confirm-button');
+    confirmBtn.addEventListener('click', () => {
+      textFields.forEach((textField) => {
+        textField.setAttribute('readonly', '');
+      });
     });
-  });
-  const editBtn = document.querySelector('#edit-button');
-  editBtn.addEventListener('click', () => {
-    textFields.forEach((textField) => {
-      textField.removeAttribute('readonly');
+    const editBtn = document.querySelector('#edit-button');
+    editBtn.addEventListener('click', () => {
+      textFields.forEach((textField) => {
+        textField.removeAttribute('readonly');
+      });
     });
-  });
-</script>`,
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcDataEntity heading="Order details">
+    technology: "React",
+    snippets: {
+      short: `<IcDataEntity heading="Order details">
   <IcDataRow label="Order name">
     <IcTextField
       slot="value"
       label="Order name"
       value="Michael"
       readonly
-      hide-label
-      full-width
+      hideLabel
+      fullWidth
     />
   </IcDataRow>
   <IcDataRow label="Drink" value="Americano">
@@ -505,8 +565,8 @@ export const editableExample = [
       label="Drink"
       value="Americano"
       readonly
-      hide-label
-      full-width
+      hideLabel
+      fullWidth
     />
   </IcDataRow>
   <IcDataRow label="Milk option" value="Soya milk">
@@ -515,8 +575,8 @@ export const editableExample = [
       label="Milk option"
       value="Soya milk"
       readonly
-      hide-label
-      full-width
+      hideLabel
+      fullWidth
     />
   </IcDataRow>
   <IcDataRow label="Price" value="£3.25">
@@ -525,8 +585,8 @@ export const editableExample = [
       label="Price"
       value="£3.25"
       readonly
-      hide-label
-      full-width
+      hideLabel
+      fullWidth
     />
   </IcDataRow>
   <IcDataRow label="Payment method">
@@ -535,37 +595,75 @@ export const editableExample = [
       label="Payment method"
       value="VISA ending 5896"
       readonly
-      hide-label
-      full-width
+      hideLabel
+      fullWidth
     />
   </IcDataRow>
 </IcDataEntity>
-<IcButton
-  onClick={() => {
-    const textFields = document.querySelectorAll('ic-text-field');
-    textFields.forEach((textField) => {
-      textField.setAttribute('readonly', '');
-    })
-  }}
-  style={{
-    marginRight: "var(--ic-space-md)",
-    marginTop: "var(--ic-space-lg)",
-  }}
->
-  Confirm
-</IcButton>
-<IcButton
-  onClick={() => {
-    const textFields = document.querySelectorAll('ic-text-field');
-    textFields.forEach((textField) => {
-      textField.removeAttribute('readonly');
-    })
-  }}
-  variant="secondary"
-  style={{ marginTop: "var(--ic-space-lg)" }}
->
-  Edit
-</IcButton>`,
+<div className={classes.btnContainer}>
+  <IcButton
+    onClick={() => {
+      const textFields = document.querySelectorAll('ic-text-field');
+      textFields.forEach((textField) => {
+        textField.setAttribute('readonly', '');
+      });
+    }}
+  >
+    Confirm
+  </IcButton>
+  <IcButton
+    onClick={() => {
+      const textFields = document.querySelectorAll('ic-text-field');
+      textFields.forEach((textField) => {
+        textField.removeAttribute('readonly');
+      });
+    }}
+    variant="secondary"
+  >
+    Edit
+  </IcButton>
+</div>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    gap: "16px",
+    paddingTop: "16px",
+  },
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    gap: "16px",
+    paddingTop: "16px",
+  },
+  parentContainer: {
+    padding: "16px",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -577,8 +675,8 @@ export const editableExample = [
         label="Order name"
         value="Michael"
         readonly
-        hide-label
-        full-width
+        hideLabel
+        fullWidth
       />
     </IcDataRow>
     <IcDataRow label="Drink" value="Americano">
@@ -587,8 +685,8 @@ export const editableExample = [
         label="Drink"
         value="Americano"
         readonly
-        hide-label
-        full-width
+        hideLabel
+        fullWidth
       />
     </IcDataRow>
     <IcDataRow label="Milk option" value="Soya milk">
@@ -597,8 +695,8 @@ export const editableExample = [
         label="Milk option"
         value="Soya milk"
         readonly
-        hide-label
-        full-width
+        hideLabel
+        fullWidth
       />
     </IcDataRow>
     <IcDataRow label="Price" value="£3.25">
@@ -607,8 +705,8 @@ export const editableExample = [
         label="Price"
         value="£3.25"
         readonly
-        hide-label
-        full-width
+        hideLabel
+        fullWidth
       />
     </IcDataRow>
     <IcDataRow label="Payment method">
@@ -617,8 +715,8 @@ export const editableExample = [
         label="Payment method"
         value="VISA ending 5896"
         readonly
-        hide-label
-        full-width
+        hideLabel
+        fullWidth
       />
     </IcDataRow>
   </IcDataEntity>

@@ -1,7 +1,7 @@
 ---
 path: "/components/accordion/code"
 
-date: "2023-10-11"
+date: "2024-05-31"
 
 title: "Accordion"
 
@@ -30,8 +30,9 @@ import {
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-accordion heading="English Breakfast">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-accordion heading="English Breakfast">
   <ic-typography variant="body">
     A blend of different black teas.
   </ic-typography>
@@ -40,12 +41,14 @@ export const snippets = [
   <ic-typography variant="body">
     A tea blend that has been flavoured with oil of bergamot.
   </ic-typography>
-</ic-accordion>
-`,
+</ic-accordion>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAccordion heading="English Breakfast">
+    technology: "React",
+    snippets: {
+      short: `<IcAccordion heading="English Breakfast">
   <IcTypography variant="body">
     A blend of different black teas.
   </IcTypography>
@@ -54,8 +57,22 @@ export const snippets = [
   <IcTypography variant="body">
     A tea blend that has been flavoured with oil of bergamot.
   </IcTypography>
-</IcAccordion>
-`,
+</IcAccordion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -84,70 +101,89 @@ export const snippets = [
 
 export const withIcon = [
   {
-    language: "Web component",
-    snippet: `<ic-accordion heading="English Breakfast">
-      <svg
-        slot="icon"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-      </svg>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-accordion heading="English Breakfast">
+  <svg
+    slot="icon"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+  </svg>
   <ic-typography variant="body">
     A blend of different black teas.
   </ic-typography>
   </ic-accordion>
   <ic-accordion heading="Earl Grey">
     <svg
-        slot="icon"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-      </svg>
-    <ic-typography variant="body">
-      A tea blend that has been flavoured with oil of bergamot.
-    </ic-typography>
-  </ic-accordion>`,
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </svg>
+  <ic-typography variant="body">
+    A tea blend that has been flavoured with oil of bergamot.
+  </ic-typography>
+</ic-accordion>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAccordion heading="English Breakfast">
+    technology: "React",
+    snippets: {
+      short: `<IcAccordion heading="English Breakfast">
   <SlottedSVG
-        slot="icon"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-      </SlottedSVG>
+    slot="icon"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+  </SlottedSVG>
   <IcTypography variant="body">
     A blend of different black teas.
   </IcTypography>
   </IcAccordion>
   <IcAccordion heading="Earl Grey">
     <SlottedSVG
-        slot="icon"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-      </SlottedSVG>
-    <IcTypography variant="body">
-      A tea blend that has been flavoured with oil of bergamot.
-    </IcTypography>
-  </IcAccordion>`,
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </SlottedSVG>
+  <IcTypography variant="body">
+    A tea blend that has been flavoured with oil of bergamot.
+  </IcTypography>
+</IcAccordion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -202,8 +238,9 @@ export const withIcon = [
 
 export const groupTitle = [
   {
-    language: "Web component",
-    snippet: `<ic-accordion-group group-title="Coffee">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-accordion-group group-title="Coffee">
   <ic-accordion heading="Cappuccino">
     <ic-typography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -215,10 +252,13 @@ export const groupTitle = [
     </ic-typography>
   </ic-accordion>
 </ic-accordion-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAccordionGroup groupTitle="Coffee">
+    technology: "React",
+    snippets: {
+      short: `<IcAccordionGroup groupTitle="Coffee">
   <IcAccordion heading="Cappucino">
     <IcTypography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -230,6 +270,17 @@ export const groupTitle = [
     </IcTypography>
   </IcAccordion>
 </IcAccordionGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -237,8 +288,9 @@ export const groupTitle = [
 
 export const snippetsNested = [
   {
-    language: "Web component",
-    snippet: `<ic-accordion-group group-title="Coffee">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-accordion-group group-title="Coffee">
   <ic-accordion heading="Cappuccino">
     <ic-typography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -257,10 +309,13 @@ export const snippetsNested = [
     </ic-accordion>
   </ic-accordion>
 </ic-accordion-group>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcAccordionGroup groupTitle="Coffee">
+    technology: "React",
+    snippets: {
+      short: `<IcAccordionGroup groupTitle="Coffee">
   <IcAccordion heading="Cappucino">
     <IcTypography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -279,6 +334,17 @@ export const snippetsNested = [
     </IcAccordion>
   </IcAccordion>
 </IcAccordionGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

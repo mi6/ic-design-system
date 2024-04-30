@@ -1,7 +1,7 @@
 ---
 path: "/components/side-navigation/code"
 
-date: "2023-10-11"
+date: "2024-05-31"
 
 title: "Side navigation"
 
@@ -47,8 +47,9 @@ import { MemoryRouter, NavLink } from "react-router-dom";
 
 export const snippetsDefault = [
   {
-    language: "Web component",
-    snippet: `<ic-side-navigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-side-navigation app-title="ACME coffee shop" version="v0.0.7" status="Alpha">
   <svg slot="app-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -85,10 +86,13 @@ export const snippetsDefault = [
     </svg>
   </ic-navigation-item>
 </ic-side-navigation>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha">
+    technology: "React",
+    snippets: {
+      short: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha">
   <SlottedSVG slot="app-icon" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -125,6 +129,17 @@ export const snippetsDefault = [
     </SlottedSVG>
   </IcNavigationItem>
 </IcSideNavigation>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -202,8 +217,9 @@ export const snippetsDefault = [
 
 export const snippetsStatic = [
   {
-    language: "Web component",
-    snippet: `<ic-side-navigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha" static="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-side-navigation app-title="ACME coffee shop" version="v0.0.7" status="Alpha" static="true">
   <svg slot="app-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -240,10 +256,13 @@ export const snippetsStatic = [
     </svg>
   </ic-navigation-item>
 </ic-side-navigation>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha" static>
+    technology: "React",
+    snippets: {
+      short: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha" static>
   <SlottedSVG slot="app-icon" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -280,6 +299,17 @@ export const snippetsStatic = [
     </SlottedSVG>
   </IcNavigationItem>
 </IcSideNavigation>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -340,12 +370,13 @@ export const snippetsStatic = [
   </IcSideNavigation>
 </ComponentPreview>
 
-### Expanded on default
+### Expanded by default
 
 export const snippetsExpanded = [
   {
-    language: "Web component",
-    snippet: `<ic-side-navigation
+    technology: "Web component",
+    snippets: {
+      short: `<ic-side-navigation
   app-title="ACME coffee shop"
   version="v0.0.7"
   status="Alpha"
@@ -386,10 +417,13 @@ export const snippetsExpanded = [
     </svg>
   </ic-navigation-item>
 </ic-side-navigation>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSideNavigation
+    technology: "React",
+    snippets: {
+      short: `<IcSideNavigation
   appTitle="ACME coffee shop"
   version="v0.0.7"
   status="Alpha"
@@ -429,6 +463,17 @@ export const snippetsExpanded = [
     </SlottedSVG>
   </IcNavigationItem>
 </IcSideNavigation>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -492,8 +537,9 @@ export const snippetsExpanded = [
 
 export const snippetsCollapsed = [
   {
-    language: "Web component",
-    snippet: `<ic-side-navigation app-title="ACME coffee shop" version="v0.0.0" status="Alpha" collapsed-icon-labels="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-side-navigation app-title="ACME coffee shop" version="v0.0.0" status="Alpha" collapsed-icon-labels="true">
   <svg slot="app-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -529,10 +575,13 @@ export const snippetsCollapsed = [
     </svg>
   </ic-navigation-item>
 </ic-side-navigation>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha" collapsedIconLabels>
+    technology: "React",
+    snippets: {
+      short: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha" collapsedIconLabels>
   <SlottedSVG slot="app-icon" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -568,6 +617,17 @@ export const snippetsCollapsed = [
     </SlottedSVG>
   </IcNavigationItem>
 </IcSideNavigation>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -630,8 +690,9 @@ export const snippetsCollapsed = [
 
 export const snippetsBadge = [
   {
-    language: "Web component",
-    snippet: `<ic-side-navigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-side-navigation app-title="ACME coffee shop" version="v0.0.7" status="Alpha">
   <svg slot="app-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -670,10 +731,13 @@ export const snippetsBadge = [
     </svg>
   </ic-navigation-item>
 </ic-side-navigation>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha">
+    technology: "React",
+    snippets: {
+      short: `<IcSideNavigation appTitle="ACME coffee shop" version="v0.0.7" status="Alpha">
   <SlottedSVG slot="app-icon" viewBox="0 0 24 24">
     <title>coffee-outline</title>
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
@@ -712,6 +776,17 @@ export const snippetsBadge = [
     </SlottedSVG>
   </IcNavigationItem>
 </IcSideNavigation>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -796,18 +871,9 @@ npm i @mdi/js
 
 export const withMDIicons = [
   {
-    language: "React",
-    snippet: `// importing Material Design icons
-import { 
-  mdiCoffeeOutline, 
-  mdiHome,
-  mdiMagnify,
-  mdiCoffeeMakerOutline,
-  mdiCogOutline,
-  mdiTeaOutline
-} from "@mdi/js";
-...
-<IcSideNavigation
+    technology: "React",
+    snippets: {
+      short: `<IcSideNavigation
   appTitle="ACME coffee Shop"
   version="v0.0.7"
   status="Alpha"
@@ -823,7 +889,7 @@ import {
   <IcNavigationGroup
     slot="primary-navigation"
     label="Teas"
-    expandable="true"
+    expandable
   >
     <IcNavigationItem label="English breakfast" href="/">
       <SlottedSVG slot="icon" path={mdiTeaOutline} viewBox="0 0 24 24" />
@@ -839,10 +905,28 @@ import {
   >
     <SlottedSVG slot="icon" path={mdiTeaOutline} viewBox="0 0 24 24" />
   </IcNavigationItem>
+  <IcNavigationItem slot="primary-navigation" href="/" label="Equipment">
+    <SlottedSVG
+      slot="icon"
+      path={mdiCoffeeMakerOutline}
+      viewBox="0 0 24 24"
+    />
+  </IcNavigationItem>
   <IcNavigationItem slot="secondary-navigation" href="/" label="Settings">
     <SlottedSVG slot="icon" path={mdiCogOutline} viewBox="0 0 24 24" />
   </IcNavigationItem>
 </IcSideNavigation>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -905,9 +989,10 @@ The following example also demonstrates using a slotted app title link.
 
 export const withReactRouter = [
   {
-    language: "React",
-    snippet: `<MemoryRouter initialEntries={["/"]}>
-  <div style={{ display: "flex", flexDirection: "row"}}>
+    technology: "React",
+    snippets: {
+      short: `<MemoryRouter initialEntries={["/"]}>
+  <div className={classes.divContainer}>
     <IcSideNavigation
     version="v0.0.7"
     status="Alpha"
@@ -951,16 +1036,43 @@ export const withReactRouter = [
     <main>
       <IcSectionContainer>
         <Routes>
-          <Route path="/" element={() => <IcTypography>This is the home page</IcTypography>} />
-          <Route path="/search" element={() => <IcTypography>Search</IcTypography>} />
-          <Route path="/drinks" element={() => <IcTypography>Drinks</IcTypography>} />
-          <Route path="/coffee-maker" element={() => <IcTypography>Coffee Maker</IcTypography>} />
-          <Route path="/settings" element={() => <IcTypography>Settings</IcTypography>} />
+          <Route path="/" element={<p>This is the Home page</p>} />
+          <Route path="/search" element={<p>Search</p>} />
+          <Route path="/drinks" element={<p>Drinks</p>} />
+          <Route path="/coffee-maker" element={<p>Coffee Maker</p>} />
+          <Route path="/settings" element={<p>Settings</p>} />
         </Routes>
       </IcSectionContainer>
     </main>
   </div>
 </MemoryRouter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  divContainer: {
+    display: "flex",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  divContainer: {
+    display: "flex",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -1066,9 +1178,9 @@ Fixed side navigation places the side navigation to the viewport.
 
 export const basicLayoutFixedViewport = [
   {
-    language: "Web component",
-    snippet: `// Inline styling added for verboseness
-<div style="display: flex; height:100%;">
+    technology: "Web component",
+    snippets: {
+      short: `<div class="parent-container">
   <ic-side-navigation
     app-title="Application Name"
     version="v0.0.0"
@@ -1077,9 +1189,9 @@ export const basicLayoutFixedViewport = [
     <svg
       slot="app-icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
@@ -1142,8 +1254,8 @@ export const basicLayoutFixedViewport = [
       </svg>
     </ic-navigation-item>
   </ic-side-navigation>
-  <div style="display:flex; flex-direction: column; flex-grow: 1;">
-    <main style="height: 100vh;">
+  <div class="content-container">
+    <main>
       <ic-section-container>
         <ic-typography>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum venenatis facilisis. Nam tortor felis, auctor vel ante quis, tempor interdum libero. In dictum sodales velit, eu egestas arcu dignissim ac. Aliquam facilisis eros dolor, id laoreet orci sagittis ut. Sed tempus, lacus in pretium molestie, lectus magna interdum risus, vel fringilla libero ex eu dui. Suspendisse ullamcorper vehicula lacinia. Phasellus congue velit nisl, vitae congue ligula rutrum id.</p>
@@ -1165,11 +1277,28 @@ export const basicLayoutFixedViewport = [
     <ic-classification-banner classification="official"></ic-classification-banner>
   </div>
 </div>`,
+      long: `parent-container {
+    display: flex;
+    height: 100%;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  main {
+    height: 100vh;
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `// Inline styling added for verboseness
-<div style={{display: 'flex', height: '100%'}}>
+    technology: "React",
+    snippets: {
+      short: `// Inline styling added for verboseness
+<div className={classes.parentContainer}>
   <IcSideNavigation
     appTitle="Application Name"
     version="v0.0.0"
@@ -1178,9 +1307,9 @@ export const basicLayoutFixedViewport = [
     <SlottedSVG
       slot="app-icon"
       xmlns="http://www.w3.org/2000/svg"
-      height="24px"
+      height="24"
       viewBox="0 0 24 24"
-      width="24px"
+      width="24"
       fill="#000000"
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
@@ -1243,8 +1372,8 @@ export const basicLayoutFixedViewport = [
       </SlottedSVG>
     </IcNavigationItem>
   </IcSideNavigation>
-  <div style={{display: 'flex', flexDirection: 'column', flexGrow: '1'}}>
-    <main style={{height: '100vh'}}>
+  <div className={classes.main}>
+    <main className={classes.main}>
       <IcSectionContainer>
         <IcTypography>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum venenatis facilisis. Nam tortor felis, auctor vel ante quis, tempor interdum libero. In dictum sodales velit, eu egestas arcu dignissim ac. Aliquam facilisis eros dolor, id laoreet orci sagittis ut. Sed tempus, lacus in pretium molestie, lectus magna interdum risus, vel fringilla libero ex eu dui. Suspendisse ullamcorper vehicula lacinia. Phasellus congue velit nisl, vitae congue ligula rutrum id.</p>
@@ -1266,6 +1395,51 @@ export const basicLayoutFixedViewport = [
     <IcClassificationBanner classification="official"></IcClassificationBanner>
   </div>
 </div>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: 'flex', 
+    height: '100%'
+  },
+  contentContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: '1'
+  },
+  main: {
+    height: '100vh',
+  }
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: 'flex', 
+    height: '100%'
+  },
+  contentContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: '1'
+  },
+  main: {
+    height: '100vh',
+  }
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 

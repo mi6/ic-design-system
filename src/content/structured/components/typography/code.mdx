@@ -1,7 +1,7 @@
 ---
 path: "/components/typography/code"
 
-date: "2023-11-27"
+date: "2024-05-31"
 
 title: "Typography"
 
@@ -27,11 +27,12 @@ import { IcTypography } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-typography variant="h1">H1</ic-typography>
-<ic-typography variant="h2">H2</ic-typography>
-<ic-typography variant="h3">H3</ic-typography>
-<ic-typography variant="h4">H4</ic-typography>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h1"><h1>H1</h1></ic-typography>
+<ic-typography variant="h2"><h2>H2</h2></ic-typography>
+<ic-typography variant="h3"><h3>H3</h3></ic-typography>
+<ic-typography variant="h4"><h4>H4</h4></ic-typography>
 <ic-typography>Body</ic-typography>
 <ic-typography variant="subtitle-large">Subtitle large</ic-typography>
 <ic-typography variant="subtitle-small">Subtitle small</ic-typography>
@@ -42,13 +43,16 @@ export const snippets = [
 <ic-typography variant="code-large">Code large</ic-typography>
 <ic-typography variant="code-small">Code small</ic-typography>
 <ic-typography variant="code-extra-small">Code extra small</ic-typography>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTypography variant="h1">H1</IcTypography>
-<IcTypography variant="h2">H2</IcTypography>
-<IcTypography variant="h3">H3</IcTypography>
-<IcTypography variant="h4">H4</IcTypography>
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h1">H1</IcTypography>
+<IcTypography variant="h2"><h2>H2</h2></IcTypography>
+<IcTypography variant="h3"><h3>H3</h3></IcTypography>
+<IcTypography variant="h4"><h4>H4</h4></IcTypography>
 <IcTypography>Body</IcTypography>
 <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
 <IcTypography variant="subtitle-small">Subtitle small</IcTypography>
@@ -59,15 +63,38 @@ export const snippets = [
 <IcTypography variant="code-large">Code large</IcTypography>
 <IcTypography variant="code-small">Code small</IcTypography>
 <IcTypography variant="code-extra-small">Code extra small</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippets}>
   <div>
-    <IcTypography variant="h1">H1</IcTypography>
-    <IcTypography variant="h2">H2</IcTypography>
-    <IcTypography variant="h3">H3</IcTypography>
-    <IcTypography variant="h4">H4</IcTypography>
+    <IcTypography variant="h1">
+      <h1>H1</h1>
+    </IcTypography>
+    <IcTypography variant="h2">
+      <h2>H2</h2>
+    </IcTypography>
+    <IcTypography variant="h3">
+      <h3>H3</h3>
+    </IcTypography>
+    <IcTypography variant="h4">
+      <h4>H4</h4>
+    </IcTypography>
     <IcTypography>Body</IcTypography>
     <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
     <IcTypography variant="subtitle-small">Subtitle small</IcTypography>
@@ -93,16 +120,31 @@ Add a variant to the typography element to change its style. This does not chang
 
 export const snippetsRestyled = [
   {
-    language: "Web component",
-    snippet: `<ic-typography variant="h2">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h2">
   <h5>H5 with H2 styling</h5>
 </ic-typography>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTypography variant="h2">
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h2">
   <h5>H5 with H2 styling</h5>
 </IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -116,16 +158,31 @@ export const snippetsRestyled = [
 
 export const spacingSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-typography apply-vertical-margins="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography apply-vertical-margins="true">
   <h5>H5 with margins applied</h5>
 </ic-typography>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTypography applyVerticalMargins>
+    technology: "React",
+    snippets: {
+      short: `<IcTypography applyVerticalMargins>
   <h5>H5 with margins applied</h5>
 </IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -139,16 +196,31 @@ export const spacingSnippets = [
 
 export const spacingRestyledSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-typography variant="h2" apply-vertical-margins="true">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h2" apply-vertical-margins="true">
   <h5>H5 with H2 styling and margins applied</h5>
 </ic-typography>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTypography variant="h2" applyVerticalMargins>
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h2" applyVerticalMargins>
   <h5>H5 with H2 styling and margins applied</h5>
 </IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -164,8 +236,9 @@ Text can be truncated to a maximum number of lines when using `variant="body"`.
 
 export const truncationSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-typography max-lines="3" variant="body">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography max-lines="3" variant="body">
   Body of text that is truncated to three lines. Click the 'See more' link
   to expand the text, then click 'See less' to truncate the text once
   more!
@@ -178,10 +251,13 @@ export const truncationSnippets = [
   dripper organic and foam id saucer, crema, black rich dark, grounds
   breve coffee steamed caramelization percolator.
 </ic-typography>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTypography maxLines="3" variant="body">
+    technology: "React",
+    snippets: {
+      short: `<IcTypography maxLines="3" variant="body">
   Body of text that is truncated to three lines. Click the 'See more' link
   to expand the text, then click 'See less' to truncate the text once
   more!
@@ -194,6 +270,17 @@ export const truncationSnippets = [
   dripper organic and foam id saucer, crema, black rich dark, grounds
   breve coffee steamed caramelization percolator.
 </IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -216,34 +303,53 @@ export const truncationSnippets = [
 
 export const additionalStylingSnippets = [
   {
-    language: "Web component",
-    snippet: `<ic-typography variant="h4" bold="true">Bold</ic-typography>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h4" bold="true">Bold</ic-typography>
 <ic-typography variant="h4" italic="true">Italic</ic-typography>
 <ic-typography variant="h4" underline="true">Underline</ic-typography>
 <ic-typography variant="h4" strikethrough="true">Strikethrough</ic-typography>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcTypography variant="h4" bold>Bold</IcTypography>
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h4" bold>Bold</IcTypography>
 <IcTypography variant="h4" italic>Italic</IcTypography>
 <IcTypography variant="h4" underline>Underline</IcTypography>
 <IcTypography variant="h4" strikethrough>Strikethrough</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={additionalStylingSnippets}>
   <div>
     <IcTypography variant="h4" bold>
-      Bold
+      <h4>Bold</h4>
     </IcTypography>
     <IcTypography variant="h4" italic>
-      Italic
+      <h4>Italic</h4>
     </IcTypography>
     <IcTypography variant="h4" underline>
-      Underline
+      <h4>Underline</h4>
     </IcTypography>
     <IcTypography variant="h4" strikethrough>
-      Strikethrough
+      <h4>Strikethrough</h4>
     </IcTypography>
   </div>
 </ComponentPreview>

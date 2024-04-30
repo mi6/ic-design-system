@@ -1,7 +1,7 @@
 ---
 path: "/components/classification-banner/code"
 
-date: "2023-02-03"
+date: "2024-05-31"
 
 title: "Classification banner"
 
@@ -26,20 +26,39 @@ import { IcClassificationBanner } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-classification-banner></ic-classification-banner>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-classification-banner></ic-classification-banner>
 <ic-classification-banner classification="official"></ic-classification-banner>
 <ic-classification-banner classification="official-sensitive"></ic-classification-banner>
 <ic-classification-banner classification="secret"></ic-classification-banner>
 <ic-classification-banner classification="top-secret"></ic-classification-banner>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcClassificationBanner inline />
+    technology: "React",
+    snippets: {
+      short: `<IcClassificationBanner inline />
 <IcClassificationBanner classification="official"/>
 <IcClassificationBanner classification="official-sensitive"/>
 <IcClassificationBanner classification="secret"/>
 <IcClassificationBanner classification="top-secret"/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -61,12 +80,36 @@ export const snippets = [
 
 export const snippetsVariants = [
   {
-    language: "Web component",
-    snippet: `<ic-classification-banner classification="official" up-to="true" country="us" additional-selectors="ukic"></ic-classification-banner>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-classification-banner 
+  classification="official" 
+  up-to="true" country="us" 
+  additional-selectors="ukic"
+></ic-classification-banner>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcClassificationBanner classification="official" upTo="true" country="us" additionalSelectors="ukic"/>`,
+    technology: "React",
+    snippets: {
+      short: `<IcClassificationBanner 
+  classification="official"
+  upTo="true"
+  country="us"
+  additionalSelectors="ukic"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 

@@ -1,7 +1,7 @@
 ---
 path: "/components/switch/code"
 
-date: "2023-10-24"
+date: "2024-05-31"
 
 title: "Switch"
 
@@ -25,8 +25,9 @@ import { IcSwitch } from "@ukic/react";
 
 export const snippetsDefault = [
   {
-    language: "Web component",
-    snippet: `<ic-switch label="Coffee preferences"></ic-switch>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-switch label="Coffee preferences"></ic-switch>
 <script>
   const switchEl = document.querySelector('ic-switch');
   switchEl.addEventListener('icChange', (ev) => {
@@ -36,16 +37,30 @@ export const snippetsDefault = [
     })
   })
 </script>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSwitch
+    technology: "React",
+    snippets: {
+      short: `<IcSwitch
   label="Coffee preferences"
   onIcChange={(ev) => console.log({ 
     checked: ev.detail.checked, 
     value: ev.detail.value
   })}
 />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -71,12 +86,27 @@ export const snippetsDefault = [
 
 export const snippetsState = [
   {
-    language: "Web component",
-    snippet: `<ic-switch label="Coffee preferences" show-state="true" ></ic-switch>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-switch label="Coffee preferences" show-state="true"></ic-switch>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSwitch label="Coffee preferences" showState/>`,
+    technology: "React",
+    snippets: {
+      short: `<IcSwitch label="Coffee preferences" showState />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -88,12 +118,31 @@ export const snippetsState = [
 
 export const snippetsSmall = [
   {
-    language: "Web component",
-    snippet: `<ic-switch label="Coffee preferences" show-state="true" size="small"></ic-switch>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-switch
+  label="Coffee preferences"
+  show-state="true"
+  size="small"
+></ic-switch>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSwitch label="Coffee preferences" showState size="small"/>`,
+    technology: "React",
+    snippets: {
+      short: `<IcSwitch label="Coffee preferences" showState size="small"/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -105,14 +154,42 @@ export const snippetsSmall = [
 
 export const snippetsDisabled = [
   {
-    language: "Web component",
-    snippet: `<ic-switch label="Coffee preferences" show-state="true" disabled="true"></ic-switch>
-<ic-switch label="Coffee preferences" show-state="true" disabled="true" checked="true"></ic-switch>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-switch
+  label="Coffee preferences"
+  show-state="true"
+  disabled="true"
+></ic-switch>
+<ic-switch
+  label="Coffee preferences"
+  show-state="true"
+  disabled="true"
+  checked="true"
+></ic-switch>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSwitch label="Coffee preferences" showState disabled/>
-<IcSwitch label="Coffee preferences" showState disabled checked/>`,
+    technology: "React",
+    snippets: {
+      short: `<IcSwitch label="Coffee preferences" showState disabled />
+      <IcSwitch label="Coffee preferences" showState disabled checked />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -127,8 +204,9 @@ export const snippetsDisabled = [
 
 export const snippetsHelperAndAdornment = [
   {
-    language: "Web component",
-    snippet: `<ic-switch label="Coffee preferences" helper-text="Choose your coffee preferences">
+    technology: "Web component",
+    snippets: {
+      short: `<ic-switch label="Coffee preferences" helper-text="Choose your coffee preferences">
   <svg
     slot="right-adornment"
     width="24"
@@ -140,10 +218,13 @@ export const snippetsHelperAndAdornment = [
      <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z"/>
   </svg>
 </ic-switch>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcSwitch label="Coffee preferences" helperText="Choose your coffee preferences">
+    technology: "React",
+    snippets: {
+      short: `<IcSwitch label="Coffee preferences" helperText="Choose your coffee preferences">
   <SlottedSVG
     slot="right-adornment"
     width="24"
@@ -155,6 +236,17 @@ export const snippetsHelperAndAdornment = [
     <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z"/>
   </SlottedSVG>
 </IcSwitch>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
