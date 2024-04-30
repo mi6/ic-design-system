@@ -1,7 +1,7 @@
 ---
 path: "/components/toast/code"
 
-date: "2023-11-09"
+date: "2024-05-31"
 
 title: "Toast"
 
@@ -30,11 +30,13 @@ import { useRef } from "react";
 
 export const defaultSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-button onclick="displayToast()">Display toast</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="displayToast()">Display toast</ic-button>
 <ic-toast-region>
   <ic-toast id="toast-01" heading="Your coffee is ready"></ic-toast>
-</ic-toast-region>
+</ic-toast-region>`,
+      long: `{shortCode}
 <script>
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
@@ -42,22 +44,48 @@ export const defaultSnippet = [
     toastRegion.openToast = toast;
   }
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const toastRegionEl = useRef(null);
-const toastEl = useRef(null);
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleClick}>Display toast component</IcButton>
+<IcToastRegion ref={toastRegionEl}>
+  <IcToast heading='Your coffee is ready' ref={toastEl} />
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+const toastEl = useRef<HTMLIcToastElement | null>(null);
 const handleClick = () => {
-  toastRegionEl.current.openToast = toastEl.current;
-}
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
 return (
   <>
-    <IcButton onClick={handleClick}>Display toast component</IcButton>
-    <IcToastRegion ref={toastRegionEl}>
-      <IcToast heading='Your coffee is ready' ref={toastEl} />
-    </IcToastRegion>
+    {shortCode}
   </>
 )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const toastRegionEl = useRef(null);
+const toastEl = useRef(null);
+const handleClick = () => {
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -103,60 +131,188 @@ To view the toasts queuing in the following example, click each button to open a
 
 export const queuingSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-button onclick="handleClick()">Display default toast</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="handleClick()">Display default toast</ic-button>
 <ic-button onclick="handleErrorClick()">Display error toast</ic-button>
 <ic-button onclick="handleAutoDismissClick()">Display auto dismiss toast</ic-button>
 <ic-toast-region>
   <ic-toast id="toast-01" heading="Your coffee is ready"></ic-toast>
   <ic-toast id="toast-02" heading="There is no coffee left" variant="error"></ic-toast>
   <ic-toast id="toast-03" heading="Your coffee is ready" dismiss-mode="automatic" auto-dismiss-timeout="10000"></ic-toast>
-</ic-toast-region>
-<script>
-  const toastRegion = document.querySelector("ic-toast-region");
-  function handleClick() {
-    var toast = document.querySelector("#toast-01");
-    toastRegion.openToast = toast;
+</ic-toast-region>`,
+      long: `.btn-container {
+    display: flex;
+    gap: var(--ic-space-xs);
+    flex-wrap: wrap;
+    padding: var(--ic-space-md);
   }
-  function handleErrorClick() {
-    var toast = document.querySelector("#toast-02");
-    toastRegion.openToast = toast;
-  }
-  function handleAutoDismissClick() {
-    var toast = document.querySelector("#toast-03");
-    toastRegion.openToast = toast;
-  }
-</script>`,
+</style>
+<body>
+  <div class="btn-container">
+    <ic-button onclick="handleClick()">Display default toast</ic-button>
+    <ic-button onclick="handleErrorClick()">Display error toast</ic-button>
+    <ic-button onclick="handleAutoDismissClick()">Display auto dismiss toast</ic-button>
+  </div>
+  <ic-toast-region>
+    <ic-toast id="toast-01" heading="Your coffee is ready"></ic-toast>
+    <ic-toast id="toast-02" heading="There is no coffee left" variant="error"></ic-toast>
+    <ic-toast id="toast-03" heading="Your coffee is ready" dismiss-mode="automatic" auto-dismiss-timeout="10000"></ic-toast>
+  </ic-toast-region>
+  <script>
+    const toastRegion = document.querySelector("ic-toast-region");
+    function handleClick() {
+      var toast = document.querySelector("#toast-01");
+      toastRegion.openToast = toast;
+    }
+    function handleErrorClick() {
+      var toast = document.querySelector("#toast-02");
+      toastRegion.openToast = toast;
+    }
+    function handleAutoDismissClick() {
+      var toast = document.querySelector("#toast-03");
+      toastRegion.openToast = toast;
+    }
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const toastRegionEl = useRef(null);
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleClick}>Display default toast</IcButton>
+<IcButton onClick={handleErrorClick}>Display error toast</IcButton>
+<IcButton onClick={handleAutoDismissClick}>
+  Display auto dismiss toast
+</IcButton>
+<IcToastRegion ref={toastRegionEl}>
+  <IcToast heading="Your coffee is ready" ref={toastEl} />
+  <IcToast
+    heading="There is no coffee left"
+    variant="error"
+    ref={errorToastEl}
+  />
+  <IcToast
+    heading="Your coffee is ready"
+    dismissMode="automatic"
+    autoDismissTimeout={10000}
+    ref={autoDismissToastEl}
+  />
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+const toastEl = useRef<HTMLIcToastElement | null>(null);
+const errorToastEl = useRef<HTMLIcToastElement | null>(null);
+const autoDismissToastEl = useRef<HTMLIcToastElement | null>(null);
+const handleClick = () => {
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
+const handleErrorClick = () => {
+  if (toastRegionEl.current && errorToastEl.current) {
+    toastRegionEl.current.openToast = errorToastEl.current;
+  }
+};
+const handleAutoDismissClick = () => {
+  if (toastRegionEl.current && autoDismissToastEl.current) {
+    toastRegionEl.current.openToast = autoDismissToastEl.current;
+  }
+};
+const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <>
+    <div className={classes.btnContainer}>
+      <IcButton onClick={handleClick}>Display default toast</IcButton>
+      <IcButton onClick={handleErrorClick}>Display error toast</IcButton>
+      <IcButton onClick={handleAutoDismissClick}>
+        Display auto dismiss toast
+      </IcButton>
+    </div>
+    <IcToastRegion ref={toastRegionEl}>
+      <IcToast heading="Your coffee is ready" ref={toastEl} />
+      <IcToast
+        heading="There is no coffee left"
+        variant="error"
+        ref={errorToastEl}
+      />
+      <IcToast
+        heading="Your coffee is ready"
+        dismissMode="automatic"
+        autoDismissTimeout={10000}
+        ref={autoDismissToastEl}
+      />
+    </IcToastRegion>
+  </>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const toastRegionEl = useRef(null);
 const toastEl = useRef(null);
 const errorToastEl = useRef(null);
 const autoDismissToastEl = useRef(null);
 const handleClick = () => {
-  toastRegionEl.current.openToast = toastEl.current;
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
 };
 const handleErrorClick = () => {
-  toastRegionEl.current.openToast = errorToastEl.current;
+  if (toastRegionEl.current && errorToastEl.current) {
+    toastRegionEl.current.openToast = errorToastEl.current;
+  }
 };
 const handleAutoDismissClick = () => {
-  toastRegionEl.current.openToast = autoDismissToastEl.current;
+  if (toastRegionEl.current && autoDismissToastEl.current) {
+    toastRegionEl.current.openToast = autoDismissToastEl.current;
+  }
 };
+const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
 return (
   <>
-    <div style={{ display: "flex", gap: "8px" }}>
-    <IcButton onClick={handleClick}>Display default toast</IcButton>
-    <IcButton onClick={handleErrorClick}>Display error toast</IcButton>
-    <IcButton onClick={handleAutoDismissClick}>Display auto dismiss toast</IcButton>
+    <div className={classes.btnContainer}>
+      <IcButton onClick={handleClick}>Display default toast</IcButton>
+      <IcButton onClick={handleErrorClick}>Display error toast</IcButton>
+      <IcButton onClick={handleAutoDismissClick}>
+        Display auto dismiss toast
+      </IcButton>
     </div>
     <IcToastRegion ref={toastRegionEl}>
       <IcToast heading="Your coffee is ready" ref={toastEl} />
-      <IcToast heading="There is no coffee left" variant="error" ref={errorToastEl} />
-      <IcToast heading="Your coffee is ready" dismissMode="automatic" autoDismissTimeout={10000} ref={autoDismissToastEl} />
+      <IcToast
+        heading="There is no coffee left"
+        variant="error"
+        ref={errorToastEl}
+      />
+      <IcToast
+        heading="Your coffee is ready"
+        dismissMode="automatic"
+        autoDismissTimeout={10000}
+        ref={autoDismissToastEl}
+      />
     </IcToastRegion>
   </>
-);`,
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -176,7 +332,7 @@ export const QueuingToast = () => {
   };
   return (
     <>
-      <div style={{ display: "flex", gap: "8px" }}>
+      <div style={{ display: "flex", gap: "0.5rem" }}>
         <IcButton onClick={handleClick}>Display default toast</IcButton>
         <IcButton onClick={handleErrorClick}>Display error toast</IcButton>
         <IcButton onClick={handleAutoDismissClick}>
@@ -209,11 +365,13 @@ export const QueuingToast = () => {
 
 export const withVariantSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-button onclick="displayToast()">Display success toast</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="displayToast()">Display success toast</ic-button>
 <ic-toast-region>
   <ic-toast variant="success" id="toast-02" heading="Your coffee is ready" message="Please dismiss and collect"></ic-toast>
-</ic-toast-region>
+</ic-toast-region>`,
+      long: `{shortCode}
 <script>
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
@@ -221,27 +379,53 @@ export const withVariantSnippet = [
     toastRegion.openToast = successToast;
   }
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const toastRegionEl = useRef(null);
-const toastEl = useRef(null);
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleClick}>Display success toast</IcButton>
+<IcToastRegion ref={toastRegionEl}>
+  <IcToast
+    heading='Your coffee is ready'
+    ref={toastEl}
+    message='Please dismiss and collect'
+    variant='success'
+  />
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+const toastEl = useRef<HTMLIcToastElement | null>(null);
 const handleClick = () => {
- toastRegionEl.current.openToast = toastEl.current;
-}
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
 return (
   <>
-    <IcButton onClick={handleClick}>Display success toast</IcButton>
-    <IcToastRegion ref={toastRegionEl}>
-      <IcToast
-        heading='Your coffee is ready'
-        ref={toastEl}
-        message='Please dismiss and collect'
-        variant='success'
-      />
-    </IcToastRegion>
+    {shortCode}
   </>
 )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const toastRegionEl = useRef(null);
+const toastEl = useRef(null);
+const handleClick = () => {
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -274,11 +458,13 @@ export const WithVariantToast = () => {
 
 export const withMultilineSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-button onclick="displayToast()">Display multi-line toast</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="displayToast()">Display multi-line toast</ic-button>
 <ic-toast-region>
   <ic-toast id="toast-03" heading="Your coffee is ready" message="Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold."></ic-toast>
-</ic-toast-region>
+</ic-toast-region>`,
+      long: `{shortCode}
 <script>
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
@@ -286,26 +472,52 @@ export const withMultilineSnippet = [
     toastRegion.openToast = multilineToast;
   }
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const toastRegionEl = useRef(null);
-const toastEl = useRef(null);
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleClick}>Display multi-line toast</IcButton>
+<IcToastRegion ref={toastRegionEl}>
+  <IcToast
+    heading='Your coffee is ready'
+    ref={toastEl}
+    message='Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold.'
+  />
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+const toastEl = useRef<HTMLIcToastElement | null>(null);
 const handleClick = () => {
-  toastRegionEl.current.openToast = toastEl.current;
-}
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
 return (
   <>
-    <IcButton onClick={handleClick}>Display multi-line toast</IcButton>
-    <IcToastRegion ref={toastRegionEl}>
-      <IcToast
-        heading='Your coffee is ready'
-        ref={toastEl}
-        message='Please dismiss and come to collect your delicious coffee from the barista right away before it gets cold.'
-      />
-    </IcToastRegion>
+    {shortCode}
   </>
 )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const toastRegionEl = useRef(null);
+const toastEl = useRef(null);
+const handleClick = () => {
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -337,8 +549,9 @@ export const MultilineToast = () => {
 
 export const slottedActionsSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-button onclick="displayButtonToast()">Display slotted buttons toast</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="displayButtonToast()">Display slotted buttons toast</ic-button>
 <ic-button onclick="displayLinkToast()">Display slotted buttons toast</ic-button>
 <ic-toast-region>
   <ic-toast id="toast-04" heading="Your order could not be placed" message="Please try again" variant='warning'>
@@ -347,56 +560,198 @@ export const slottedActionsSnippet = [
   <ic-toast id="toast-05" heading="Your order could not be placed" message="Please try again" variant='warning'>
     <ic-link slot='action' appearance='light'>Retry</ic-link>
   </ic-toast>
-</ic-toast-region>
-<script>
-  const toastRegion = document.querySelector("ic-toast-region");
-  function displayButtonToast() {
-    const slottedButtonToast = document.querySelector("#toast-04");
-    toastRegion.openToast = slottedButtonToast;
+</ic-toast-region>`,
+      long: `.btn-container {
+    display: flex;
+    gap: var(--ic-space-xs);
+    flex-wrap: wrap;
+    padding: var(--ic-space-md);
   }
-  function displayLinkToast() {
-    const slottedLinkToast = document.querySelector("#toast-05");
-    toastRegion.openToast = slottedLinkToast;
-  }
-</script>`,
+</style>
+<body>
+  <div class="btn-container">
+    <ic-button onclick="displayButtonToast()"
+      >Display slotted buttons toast</ic-button
+    >
+    <ic-button onclick="displayLinkToast()"
+      >Display slotted buttons toast</ic-button
+    >
+  </div>
+  <ic-toast-region>
+    <ic-toast
+      id="toast-04"
+      heading="Your order could not be placed"
+      message="Please try again"
+      variant="warning"
+    >
+      <ic-button slot="action" appearance="light">Retry</ic-button>
+    </ic-toast>
+    <ic-toast
+      id="toast-05"
+      heading="Your order could not be placed"
+      message="Please try again"
+      variant="warning"
+    >
+      <ic-link slot="action" appearance="light">Retry</ic-link>
+    </ic-toast>
+  </ic-toast-region>
+  <script>
+    const toastRegion = document.querySelector("ic-toast-region");
+    function displayButtonToast() {
+      const slottedButtonToast = document.querySelector("#toast-04");
+      toastRegion.openToast = slottedButtonToast;
+    }
+    function displayLinkToast() {
+      const slottedLinkToast = document.querySelector("#toast-05");
+      toastRegion.openToast = slottedLinkToast;
+    }
+  </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const toastRegionEl = useRef(null);
-const buttonToastEl = useRef(null);
-const linkToastEl = useRef(null);
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleButtonToastClick}>Display slotted button toast</IcButton>
+<IcButton onClick={handleLinkToastClick}>Display slotted link toast</IcButton>
+<IcToastRegion ref={toastRegionEl}>
+  <IcToast
+    heading='Your order could not be placed'
+    ref={buttonToastEl}
+    message='Please try again'
+    variant='warning'
+  >
+    <IcButton slot='action' appearance='light'>Retry</IcButton>
+  </IcToast>
+  <IcToast
+    heading='Your order could not be placed'
+    ref={linkToastEl}
+    message='Please try again'
+    variant='warning'
+  >
+    <IcLink href="#" slot="action" appearance="light">Retry</IcLink>
+  </IcToast>
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+const buttonToastEl = useRef<HTMLIcToastElement | null>(null);
+const linkToastEl = useRef<HTMLIcToastElement | null>(null);
 const handleButtonToastClick = () => {
-  toastRegionEl.current.openToast = buttonToastEl.current;
-}
+  if (toastRegionEl.current && buttonToastEl.current) {
+    toastRegionEl.current.openToast = buttonToastEl.current;
+  }
+};
 const handleLinkToastClick = () => {
-  toastRegionEl.current.openToast = linkToastEl.current;
-}
+  if (toastRegionEl.current && linkToastEl.current) {
+    toastRegionEl.current.openToast = linkToastEl.current;
+  }
+};
+const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
 return (
   <>
-    <div style={{'display': 'flex', 'gap': '8px'}}>
-      <IcButton onClick={handleButtonToastClick}>Display slotted button toast</IcButton>
-      <IcButton onClick={handleLinkToastClick}>Display slotted link toast</IcButton>
+    <div className={classes.btnContainer}>
+      <IcButton onClick={handleButtonToastClick}>
+        Display slotted button toast
+      </IcButton>
+      <IcButton onClick={handleLinkToastClick}>
+        Display slotted link toast
+      </IcButton>
     </div>
     <IcToastRegion ref={toastRegionEl}>
       <IcToast
-        heading='Your order could not be placed'
+        heading="Your order could not be placed"
         ref={buttonToastEl}
-        message='Please try again'
-        variant='warning'
+        message="Please try again"
+        variant="warning"
       >
-        <IcButton slot='action' appearance='light'>Retry</IcButton>
+        <IcButton slot="action" appearance="light">
+          Retry
+        </IcButton>
       </IcToast>
       <IcToast
-        heading='Your order could not be placed'
+        heading="Your order could not be placed"
         ref={linkToastEl}
-        message='Please try again'
-        variant='warning'
+        message="Please try again"
+        variant="warning"
       >
-        <IcLink href="#" slot="action" appearance="light">Retry</IcLink>
+        <IcLink href="#" slot="action" appearance="light">
+          Retry
+        </IcLink>
       </IcToast>
     </IcToastRegion>
   </>
 )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const toastRegionEl = useRef(null);
+const buttonToastEl = useRef(null);
+const linkToastEl = useRef(null);
+const handleButtonToastClick = () => {
+  if (toastRegionEl.current && buttonToastEl.current) {
+    toastRegionEl.current.openToast = buttonToastEl.current;
+  }
+};
+const handleLinkToastClick = () => {
+  if (toastRegionEl.current && linkToastEl.current) {
+    toastRegionEl.current.openToast = linkToastEl.current;
+  }
+};
+const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <>
+    <div className={classes.btnContainer}>
+      <IcButton onClick={handleButtonToastClick}>
+        Display slotted button toast
+      </IcButton>
+      <IcButton onClick={handleLinkToastClick}>
+        Display slotted link toast
+      </IcButton>
+    </div>
+    <IcToastRegion ref={toastRegionEl}>
+      <IcToast
+        heading="Your order could not be placed"
+        ref={buttonToastEl}
+        message="Please try again"
+        variant="warning"
+      >
+        <IcButton slot="action" appearance="light">
+          Retry
+        </IcButton>
+      </IcToast>
+      <IcToast
+        heading="Your order could not be placed"
+        ref={linkToastEl}
+        message="Please try again"
+        variant="warning"
+      >
+        <IcLink href="#" slot="action" appearance="light">
+          Retry
+        </IcLink>
+      </IcToast>
+    </IcToastRegion>
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -412,7 +767,7 @@ export const SlottedActionsToast = () => {
   };
   return (
     <>
-      <div style={{ display: "flex", gap: "8px" }}>
+      <div style={{ display: "flex", gap: "0.5rem" }}>
         <IcButton onClick={handleButtonToastClick}>
           Display slotted button toast
         </IcButton>
@@ -454,11 +809,19 @@ export const SlottedActionsToast = () => {
 
 export const autoDismissSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-button onclick="displayToast()">Display auto-dismiss toast</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="displayToast()">Display auto-dismiss toast</ic-button>
 <ic-toast-region>
-  <ic-toast id="toast-06" heading="Your coffee is ready" dismiss-mode="automatic" auto-dismiss-timeout="10000" variant='info'></ic-toast>
-</ic-toast-region>
+  <ic-toast
+    id="toast-06"
+    heading="Your coffee is ready"
+    dismiss-mode="automatic"
+    auto-dismiss-timeout="10000"
+    variant="info"
+  ></ic-toast>
+</ic-toast-region>`,
+      long: `{shortCode}
 <script>
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
@@ -466,22 +829,54 @@ export const autoDismissSnippet = [
     toastRegion.openToast = toast;
   }
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const toastRegionEl = useRef(null);
-const toastEl = useRef(null);
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleClick}>Display auto-dismiss toast</IcButton>
+<IcToastRegion ref={toastRegionEl}>
+  <IcToast
+    heading="Your coffee is ready"
+    ref={toastEl}
+    dismissMode="automatic"
+    autoDismissTimeout={10000}
+    variant="info"
+  />
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+const toastEl = useRef<HTMLIcToastElement | null>(null);
 const handleClick = () => {
-  toastRegionEl.current.openToast = toastEl.current;
-}
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
 return (
   <>
-    <IcButton onClick={handleClick}>Display auto-dismiss toast</IcButton>
-    <IcToastRegion ref={toastRegionEl}>
-      <IcToast heading='Your coffee is ready' ref={toastEl} dismissMode="automatic" autoDismissTimeout={10000} variant='info' />
-    </IcToastRegion>
+    {shortCode}
   </>
 )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const toastRegionEl = useRef(null);
+const toastEl = useRef(null);
+const handleClick = () => {
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -515,16 +910,30 @@ export const AutoDismissToast = () => {
 
 export const customIconAriaLabelsSnippet = [
   {
-    language: "Web component",
-    snippet: `<ic-button onclick="displayToast()">Display auto-dismiss toast</ic-button>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="displayToast()">Display auto-dismiss toast</ic-button>
 <ic-toast-region>
-  <ic-toast id="toast-07" heading="Your coffee is ready" variant='neutral' neutral-icon-aria-label="It is time to collect your coffee" dismiss-button-aria-label="Dismiss me">
-    <svg xmlns="http://www.w3.org/2000/svg" slot='neutral-icon' viewBox="0 0 24 24">
+  <ic-toast
+    id="toast-07"
+    heading="Your coffee is ready"
+    variant="neutral"
+    neutral-icon-aria-label="It is time to collect your coffee"
+    dismiss-button-aria-label="Dismiss me"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      slot="neutral-icon"
+      viewBox="0 0 24 24"
+    >
       <title>coffee-outline</title>
-      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      <path
+        d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"
+      />
     </svg>
   </ic-toast>
-</ic-toast-region>
+</ic-toast-region>`,
+      long: `{shortCode}
 <script>
   const toastRegion = document.querySelector("ic-toast-region");
   function displayToast() {
@@ -532,33 +941,61 @@ export const customIconAriaLabelsSnippet = [
     toastRegion.openToast = toast;
   }
 </script>`,
+    },
   },
   {
-    language: "React",
-    snippet: `const toastRegionEl = useRef(null);
-const toastEl = useRef(null);
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleClick}>
+  Display custom icon and aria-label toast
+</IcButton>
+<IcToastRegion ref={toastRegionEl}>
+  <IcToast
+    heading="Your coffee is ready"
+    ref={toastEl}
+    variant="neutral"
+    neutralIconAriaLabel="It is time to collect your coffee"
+    dismissButtonAriaLabel="Dismiss me"
+  >
+    <SlottedSVG slot="neutral-icon">
+      <title>coffee-outline</title>
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </SlottedSVG>
+  </IcToast>
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+const toastEl = useRef<HTMLIcToastElement | null>(null);
 const handleClick = () => {
-  toastRegionEl.current.openToast = toastEl.current;
-}
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
 return (
   <>
-    <IcButton onClick={handleClick}>Display custom icon and aria-label toast</IcButton>
-    <IcToastRegion ref={toastRegionEl}>
-      <IcToast
-        heading='Your coffee is ready'
-        ref={toastEl}
-        variant='neutral'
-        neutralIconAriaLabel="It is time to collect your coffee"
-        dismissButtonAriaLabel="Dismiss me"
-      >
-        <SlottedSVG slot='neutral-icon'>
-          <title>coffee-outline</title>
-          <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
-        </SlottedSVG>
-      </IcToast>
-    </IcToastRegion>
+    {shortCode}
   </>
 )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const toastRegionEl = useRef(null);
+const toastEl = useRef(null);
+const handleClick = () => {
+  if (toastRegionEl.current && toastEl.current) {
+    toastRegionEl.current.openToast = toastEl.current;
+  }
+};
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
   },
 ];
 

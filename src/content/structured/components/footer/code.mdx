@@ -1,7 +1,7 @@
 ---
 path: "/components/footer/code"
 
-date: "2024-02-02"
+date: "2024-05-31"
 
 title: "Footer"
 
@@ -27,42 +27,59 @@ import { NavLink, MemoryRouter } from "react-router-dom";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-footer
-    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
-    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
-    <ic-footer-link slot="link" href="/">
-      Accessibility
-    </ic-footer-link>
-    <ic-footer-link slot="link" href="/">
-      Styles
-    </ic-footer-link>
-    <ic-footer-link slot="link" href="/">
-      Components
-    </ic-footer-link>
-    <ic-footer-link slot="link" href="/">
-      Patterns
-    </ic-footer-link>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-footer
+  description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
+  caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence."
+>
+  <ic-footer-link slot="link" href="#">
+    Accessibility
+  </ic-footer-link>
+  <ic-footer-link slot="link" href="#">
+    Styles
+  </ic-footer-link>
+  <ic-footer-link slot="link" href="#">
+    Components
+  </ic-footer-link>
+  <ic-footer-link slot="link" href="#">
+    Patterns
+  </ic-footer-link>
 </ic-footer>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcFooter
-    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
-    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
-    <IcFooterLink slot="link" href="/">
-      Accessibility
-    </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
-      Styles
-    </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
-      Components
-    </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
-      Patterns
-    </IcFooterLink>
+    technology: "React",
+    snippets: {
+      short: `<IcFooter
+  description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
+  caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence."
+>
+  <IcFooterLink slot="link" href="#">
+    Accessibility
+  </IcFooterLink>
+  <IcFooterLink slot="link" href="#">
+    Styles
+  </IcFooterLink>
+  <IcFooterLink slot="link" href="#">
+    Components
+  </IcFooterLink>
+  <IcFooterLink slot="link" href="#">
+    Patterns
+  </IcFooterLink>
 </IcFooter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -71,16 +88,16 @@ export const snippets = [
     description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
     caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence."
   >
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Accessibility
     </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Styles
     </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Components
     </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Patterns
     </IcFooterLink>
   </IcFooter>
@@ -104,56 +121,71 @@ export const snippets = [
 
 export const snippetsGroupedLinks = [
   {
-    language: "Web component",
-    snippet: `<ic-footer
-    group-links="true"
-    description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
-          please get in touch.">
-    <ic-footer-link-group slot="link" group-title="Grouped heading">
-      <ic-footer-link href="/">Accessibility</ic-footer-link>
-      <ic-footer-link href="/">Styles</ic-footer-link>
-      <ic-footer-link href="/">Components</ic-footer-link>
-      <ic-footer-link href="/">Patterns</ic-footer-link>
-    </ic-footer-link-group>
-    <ic-footer-link-group slot="link" group-title="Grouped heading">
-      <ic-footer-link href="/">Accessibility</ic-footer-link>
-      <ic-footer-link href="/">Styles</ic-footer-link>
-      <ic-footer-link href="/">Components</ic-footer-link>
-      <ic-footer-link href="/">Patterns</ic-footer-link>
-    </ic-footer-link-group>
-    <ic-footer-link-group slot="link" group-title="Grouped heading">
-      <ic-footer-link href="/">Accessibility</ic-footer-link>
-      <ic-footer-link href="/">Styles</ic-footer-link>
-      <ic-footer-link href="/">Components</ic-footer-link>
-      <ic-footer-link href="/">Patterns</ic-footer-link>
-    </ic-footer-link-group>
-  </ic-footer>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-footer
+  group-links="true"
+  description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch."
+>
+  <ic-footer-link-group slot="link" group-title="Grouped heading">
+    <ic-footer-link href="#">Accessibility</ic-footer-link>
+    <ic-footer-link href="#">Styles</ic-footer-link>
+    <ic-footer-link href="#">Components</ic-footer-link>
+    <ic-footer-link href="#">Patterns</ic-footer-link>
+  </ic-footer-link-group>
+  <ic-footer-link-group slot="link" group-title="Grouped heading">
+    <ic-footer-link href="#">Accessibility</ic-footer-link>
+    <ic-footer-link href="#">Styles</ic-footer-link>
+    <ic-footer-link href="#">Components</ic-footer-link>
+    <ic-footer-link href="#">Patterns</ic-footer-link>
+  </ic-footer-link-group>
+  <ic-footer-link-group slot="link" group-title="Grouped heading">
+    <ic-footer-link href="#">Accessibility</ic-footer-link>
+    <ic-footer-link href="#">Styles</ic-footer-link>
+    <ic-footer-link href="#">Components</ic-footer-link>
+    <ic-footer-link href="#">Patterns</ic-footer-link>
+  </ic-footer-link-group>
+</ic-footer>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcFooter
-    groupLinks
-    description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, 
-          please get in touch.">
-    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
-      <IcFooterLink href="/">Accessibility</IcFooterLink>
-      <IcFooterLink href="/">Styles</IcFooterLink>
-      <IcFooterLink href="/">Components</IcFooterLink>
-      <IcFooterLink href="/">Patterns</IcFooterLink>
-    </IcFooterLinkGroup>
-    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
-      <IcFooterLink href="/">Accessibility</IcFooterLink>
-      <IcFooterLink href="/">Styles</IcFooterLink>
-      <IcFooterLink href="/">Components</IcFooterLink>
-      <IcFooterLink href="/">Patterns</IcFooterLink>
-    </IcFooterLinkGroup>
-    <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
-      <IcFooterLink href="/">Accessibility</IcFooterLink>
-      <IcFooterLink href="/">Styles</IcFooterLink>
-      <IcFooterLink href="/">Components</IcFooterLink>
-      <IcFooterLink href="/">Patterns</IcFooterLink>
-    </IcFooterLinkGroup>
-  </IcFooter>`,
+    technology: "React",
+    snippets: {
+      short: `<IcFooter
+  groupLinks
+  description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch."
+>
+  <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+    <IcFooterLink href="#">Accessibility</IcFooterLink>
+    <IcFooterLink href="#">Styles</IcFooterLink>
+    <IcFooterLink href="#">Components</IcFooterLink>
+    <IcFooterLink href="#">Patterns</IcFooterLink>
+  </IcFooterLinkGroup>
+  <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+    <IcFooterLink href="#">Accessibility</IcFooterLink>
+    <IcFooterLink href="#">Styles</IcFooterLink>
+    <IcFooterLink href="#">Components</IcFooterLink>
+    <IcFooterLink href="#">Patterns</IcFooterLink>
+  </IcFooterLinkGroup>
+  <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
+    <IcFooterLink href="#">Accessibility</IcFooterLink>
+    <IcFooterLink href="#">Styles</IcFooterLink>
+    <IcFooterLink href="#">Components</IcFooterLink>
+    <IcFooterLink href="#">Patterns</IcFooterLink>
+  </IcFooterLinkGroup>
+</IcFooter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -164,22 +196,22 @@ export const snippetsGroupedLinks = [
           please get in touch."
   >
     <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
-      <IcFooterLink href="/">Accessibility</IcFooterLink>
-      <IcFooterLink href="/">Styles</IcFooterLink>
-      <IcFooterLink href="/">Components</IcFooterLink>
-      <IcFooterLink href="/">Patterns</IcFooterLink>
+      <IcFooterLink href="#">Accessibility</IcFooterLink>
+      <IcFooterLink href="#">Styles</IcFooterLink>
+      <IcFooterLink href="#">Components</IcFooterLink>
+      <IcFooterLink href="#">Patterns</IcFooterLink>
     </IcFooterLinkGroup>
     <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
-      <IcFooterLink href="/">Accessibility</IcFooterLink>
-      <IcFooterLink href="/">Styles</IcFooterLink>
-      <IcFooterLink href="/">Components</IcFooterLink>
-      <IcFooterLink href="/">Patterns</IcFooterLink>
+      <IcFooterLink href="#">Accessibility</IcFooterLink>
+      <IcFooterLink href="#">Styles</IcFooterLink>
+      <IcFooterLink href="#">Components</IcFooterLink>
+      <IcFooterLink href="#">Patterns</IcFooterLink>
     </IcFooterLinkGroup>
     <IcFooterLinkGroup slot="link" groupTitle="Grouped heading">
-      <IcFooterLink href="/">Accessibility</IcFooterLink>
-      <IcFooterLink href="/">Styles</IcFooterLink>
-      <IcFooterLink href="/">Components</IcFooterLink>
-      <IcFooterLink href="/">Patterns</IcFooterLink>
+      <IcFooterLink href="#">Accessibility</IcFooterLink>
+      <IcFooterLink href="#">Styles</IcFooterLink>
+      <IcFooterLink href="#">Components</IcFooterLink>
+      <IcFooterLink href="#">Patterns</IcFooterLink>
     </IcFooterLinkGroup>
   </IcFooter>
 </ComponentPreview>
@@ -188,18 +220,19 @@ export const snippetsGroupedLinks = [
 
 export const snippetsLogoLinks = [
   {
-    language: "Web component",
-    snippet: `<ic-footer description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
-  <ic-footer-link slot="link" href="/">Accessibility</ic-footer-link>
-  <ic-footer-link slot="link" href="/">Styles</ic-footer-link>
-  <ic-footer-link slot="link" href="/">Components</ic-footer-link>
-  <ic-footer-link slot="link" href="/">Patterns</ic-footer-link>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-footer description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
+  <ic-footer-link slot="link" href="#">Accessibility</ic-footer-link>
+  <ic-footer-link slot="link" href="#">Styles</ic-footer-link>
+  <ic-footer-link slot="link" href="#">Components</ic-footer-link>
+  <ic-footer-link slot="link" href="#">Patterns</ic-footer-link>
     <div slot="logo">
-      <ic-footer-link href="/">
+      <ic-footer-link href="#">
         <svg xmlns="http://www.w3.org/2000/svg"
-          height="48px"
+          height="48"
           viewBox="0 0 24 24"
-          width="48px"
+          width="48"
           fill="#FFFFFF"
         >
           <path
@@ -208,12 +241,12 @@ export const snippetsLogoLinks = [
           />
       </svg>
       </ic-footer-link>
-      <ic-footer-link href="/">
+      <ic-footer-link href="#">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="48px"
+          height="48"
           viewBox="0 0 24 24"
-          width="48px"
+          width="48"
           fill="#FFFFFF"
         >
           <path
@@ -224,21 +257,24 @@ export const snippetsLogoLinks = [
       </ic-footer-link>
     </div>
 </ic-footer>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcFooter description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
-  <IcFooterLink slot="link" href="/">Accessibility</IcFooterLink>
-  <IcFooterLink slot="link" href="/">Styles</IcFooterLink>
-  <IcFooterLink slot="link" href="/">Components</IcFooterLink>
-  <IcFooterLink slot="link" href="/">Patterns</IcFooterLink>
+    technology: "React",
+    snippets: {
+      short: `<IcFooter description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
+  <IcFooterLink slot="link" href="#">Accessibility</IcFooterLink>
+  <IcFooterLink slot="link" href="#">Styles</IcFooterLink>
+  <IcFooterLink slot="link" href="#">Components</IcFooterLink>
+  <IcFooterLink slot="link" href="#">Patterns</IcFooterLink>
   <div slot="logo">
-    <IcFooterLink href="/">
+    <IcFooterLink href="#">
       <SlottedSVG
         xmlns="http://www.w3.org/2000/svg"
-        height="48px"
+        height="48"
         viewBox="0 0 24 24"
-        width="48px"
+        width="48"
         fill="#FFFFFF"
       >
         <path
@@ -247,12 +283,12 @@ export const snippetsLogoLinks = [
         />
       </SlottedSVG>
     </IcFooterLink>
-    <IcFooterLink href="/">
+    <IcFooterLink href="#">
       <SlottedSVG
         xmlns="http://www.w3.org/2000/svg"
-        height="48px"
+        height="48"
         viewBox="0 0 24 24"
-        width="48px"
+        width="48"
         fill="#FFFFFF"
       >
         <path
@@ -263,21 +299,32 @@ export const snippetsLogoLinks = [
     </IcFooterLink>
   </div>
 </IcFooter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
 <ComponentPreview snippets={snippetsLogoLinks}>
   <IcFooter description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch.">
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Accessibility
     </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Styles
     </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Components
     </IcFooterLink>
-    <IcFooterLink slot="link" href="/">
+    <IcFooterLink slot="link" href="#">
       Patterns
     </IcFooterLink>
     <div
@@ -287,12 +334,12 @@ export const snippetsLogoLinks = [
         gap: "var(--ic-space-lg)",
       }}
     >
-      <IcFooterLink href="/">
+      <IcFooterLink href="#">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="48px"
+          height="48"
           viewBox="0 0 24 24"
-          width="48px"
+          width="48"
           fill="#FFFFFF"
         >
           <path
@@ -301,12 +348,12 @@ export const snippetsLogoLinks = [
           />
         </svg>
       </IcFooterLink>
-      <IcFooterLink href="/">
+      <IcFooterLink href="#">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="48px"
+          height="48"
           viewBox="0 0 24 24"
-          width="48px"
+          width="48"
           fill="#FFFFFF"
         >
           <path
@@ -323,34 +370,64 @@ export const snippetsLogoLinks = [
 
 export const withReactRouter = [
   {
-    language: "React",
-    snippet: `<MemoryRouter initialEntries={["/"]}>
+    technology: "React",
+    snippets: {
+      short: `<MemoryRouter initialEntries={["/"]}>
   <Routes>
-      <Route path="/" element={() => <IcTypography>This is the accessibility page</IcTypography>} />
-      <Route path="/Styles" element={() => <IcTypography>This page is about styles</IcTypography>} />
+    <Route path="/" element={<IcTypography>This is the accessibility page</IcTypography>} />
+    <Route path="/Styles" element={<IcTypography>This page is about styles</IcTypography>} />
   </Routes>
   <IcFooter description="The ICDS is maintained by the Design Practice Team. If you've got a question or want to feedback, please get in touch." caption="This information is exempt under the Freedom of Information Act 2000 (FOIA) and may be exempt under other UK information legislation." 
   > 
     <IcFooterLink slot="link">
-      <NavLink to="/">Accessibility</NavLink>
+      <NavLink to="#">Accessibility</NavLink>
     </IcFooterLink>
     <IcFooterLink slot="link">
       <NavLink to="/Styles">Styles</NavLink>
     </IcFooterLink>
-    <div slot="logo" style={{
-    width: "100px",
-    height: "100px",
+    <div slot="logo" className={classes.logoContainer}>
+      Logo
+    </div>
+  </IcFooter>
+</MemoryRouter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  logoContainer: {
+    width: "6.25rem",
+    height: "6.25rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "var(--ic-theme-primary)",
     color: "var(--ic-theme-text)"
-  }}>
-      Logo
-    </div>
-  </IcFooter>
-</MemoryRouter>
-    `,
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  logoContainer: {
+    width: "6.25rem",
+    height: "6.25rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "var(--ic-theme-primary)",
+    color: "var(--ic-theme-text)"
+  },
+});
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 
@@ -364,7 +441,7 @@ export const withReactRouter = [
       caption="This information is exempt under the Freedom of Information Act 2000 (FOIA) and may be exempt under other UK information legislation."
     >
       <IcFooterLink slot="link">
-        <NavLink to="/">Accessibility</NavLink>
+        <NavLink to="#">Accessibility</NavLink>
       </IcFooterLink>
       <IcFooterLink slot="link">
         <NavLink to="/Styles">Styles</NavLink>
@@ -372,8 +449,8 @@ export const withReactRouter = [
       <div
         slot="logo"
         style={{
-          width: "100px",
-          height: "100px",
+          width: "6.25rem",
+          height: "25rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -393,16 +470,17 @@ Adding a `minHeight` of `100vh` ensures the footer appears below the page fold.
 
 export const footerLayoutExample = [
   {
-    language: "Web component",
-    snippet: `<div class='footer-layout-root'>
-  <div style="height: 100vh">  
+    technology: "Web component",
+    snippets: {
+      short: `<div class='footer-layout-root'>
+  <div class="div-container>  
     <ic-top-navigation appTitle="ICDS" status="alpha" version="v0.0.7">
       <svg
         slot="app-icon"
         xmlns="http://www.w3.org/2000/svg"
-        height="24px"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
-        width="24px"
         fill="#000000"
       >
         <path d="M0 0h24v24H0V0z" fill="none" />
@@ -427,25 +505,35 @@ export const footerLayoutExample = [
   <ic-footer
     description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
     caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
-    <ic-footer-link slot="link" href="/">Accessibility</ic-footer-link>
-    <ic-footer-link slot="link" href="/">Styles</ic-footer-link>
-    <ic-footer-link slot="link" href="/">Components</ic-footer-link>
-    <ic-footer-link slot="link" href="/">Patterns</ic-footer-link>
+    <ic-footer-link slot="link" href="#">Accessibility</ic-footer-link>
+    <ic-footer-link slot="link" href="#">Styles</ic-footer-link>
+    <ic-footer-link slot="link" href="#">Components</ic-footer-link>
+    <ic-footer-link slot="link" href="#">Patterns</ic-footer-link>
   </ic-footer>
 </div>
     `,
+      long: `.div-container {
+    min-height: 100vh;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
   },
   {
-    language: "React",
-    snippet: `<div className='footer-layout-root'>
-  <div style={{minHeight:"100vh"}}>  
+    technology: "React",
+    snippets: {
+      short: `<div className='footer-layout-root'>
+  <div className={classes.divContainer}>  
     <IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
       <SlottedSVG
         slot="app-icon"
         xmlns="http://www.w3.org/2000/svg"
-        height="24px"
+        height="24"
         viewBox="0 0 24 24"
-        width="24px"
+        width="24"
         fill="#000000"
       >
         <path d="M0 0h24v24H0V0z" fill="none" />
@@ -470,12 +558,39 @@ export const footerLayoutExample = [
   <IcFooter
     description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
     caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
-    <IcFooterLink slot="link" href="/">Accessibility</IcFooterLink>
-    <IcFooterLink slot="link" href="/">Styles</IcFooterLink>
-    <IcFooterLink slot="link" href="/">Components</IcFooterLink>
-    <IcFooterLink slot="link" href="/">Patterns</IcFooterLink>
+    <IcFooterLink slot="link" href="#">Accessibility</IcFooterLink>
+    <IcFooterLink slot="link" href="#">Styles</IcFooterLink>
+    <IcFooterLink slot="link" href="#">Components</IcFooterLink>
+    <IcFooterLink slot="link" href="#">Patterns</IcFooterLink>
   </IcFooter>
 </div>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  divContainer: {
+    minHeight: "100vh",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  divContainer: {
+    minHeight: "100vh",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
   },
 ];
 

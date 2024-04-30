@@ -1,7 +1,7 @@
 ---
 path: "/components/pagination/code"
 
-date: "2023-05-05"
+date: "2024-05-31"
 
 title: "Pagination"
 
@@ -25,14 +25,33 @@ import { IcPagination } from "@ukic/react";
 
 export const snippets = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination pages="15"></ic-pagination>
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination pages="15"></ic-pagination>
 <ic-pagination pages="15" type="complex"></ic-pagination>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination pages={15} />
+    technology: "React",
+    snippets: {
+      short: `<IcPagination pages={15} />
 <IcPagination pages={15} type="complex" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -56,12 +75,30 @@ export const snippets = [
 
 export const hideFirstLast = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination hide-first-and-last-page-button="true" pages="15"></ic-pagination>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination 
+  hide-first-and-last-page-button="true"
+  pages="15"
+></ic-pagination>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination hideFirstAndLastPageButton pages={15} />`,
+    technology: "React",
+    snippets: {
+      short: `<IcPagination hideFirstAndLastPageButton pages={15} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -76,12 +113,27 @@ export const hideFirstLast = [
 
 export const hideCurrent = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination hide-current-page="true" pages="15"></ic-pagination>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination hide-current-page="true" pages="15"></ic-pagination>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination hideCurrentPage pages={15} />`,
+    technology: "React",
+    snippets: {
+      short: `<IcPagination hideCurrentPage pages={15} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -96,14 +148,46 @@ export const hideCurrent = [
 
 export const appearance = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination appearance="dark" pages="15"></ic-pagination>
-<ic-pagination appearance="light" pages="15"></ic-pagination>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination appearance="dark" pages="15"></ic-pagination>
+<ic-pagination appearance="light" pages="15" class="dark-background"></ic-pagination>`,
+      long: `.dark-background {
+      background-color: #2c2f34;
+    }
+  </style>
+  <body>
+    {shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination appearance="dark" pages={15} />
-<IcPagination appearance="light" pages={15} />`,
+    technology: "React",
+    snippets: {
+      short: `<IcPagination appearance="dark" pages={15} />
+<IcPagination appearance="light" pages={15} class={classes.darkBackground} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  darkBackground: {
+    backgroundColor: "#2c2f34",
+  }
+});
+const classes = useStyles();
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
   },
 ];
 
@@ -121,12 +205,37 @@ export const appearance = [
 
 export const boundaryAdjacent = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination type="complex" adjacent-count="2" boundary-count="2" pages="15"></ic-pagination>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination
+  type="complex"
+  adjacent-count="2"
+  boundary-count="2"
+  pages="15"
+></ic-pagination>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination type="complex" adjacentCount={2} boundaryCount={2} pages={15} />`,
+    technology: "React",
+    snippets: {
+      short: `<IcPagination 
+  type="complex"
+  adjacentCount={2}
+  boundaryCount={2}
+  pages={15} 
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -141,12 +250,27 @@ export const boundaryAdjacent = [
 
 export const disabled = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination type="complex" disabled="true" pages="12"></ic-pagination>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination type="complex" disabled="true" pages="12"></ic-pagination>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination type="complex" disabled pages={12} />`,
+    technology: "React",
+    snippets: {
+      short: `<IcPagination type="complex" disabled pages={12} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -161,12 +285,27 @@ export const disabled = [
 
 export const label = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination label="Slide" pages="12"></ic-pagination>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination label="Slide" pages="12"></ic-pagination>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination label="Slide" pages={12} />`,
+    technology: "React",
+    snippets: {
+      short: `<IcPagination label="Slide" pages={12} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
@@ -178,12 +317,27 @@ export const label = [
 
 export const defaultPage = [
   {
-    language: "Web component",
-    snippet: `<ic-pagination pages="12" default-page="4"></ic-pagination>`,
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination pages="12" default-page="4"></ic-pagination>`,
+      long: `{shortCode}`,
+    },
   },
   {
-    language: "React",
-    snippet: `<IcPagination pages={12} defaultPage={4}/>`,
+    technology: "React",
+    snippets: {
+      short: `<IcPagination pages={12} defaultPage={4}/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
   },
 ];
 
