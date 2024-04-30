@@ -10,20 +10,17 @@ export const setCookie = (value: string) => {
   }
 };
 
-export const consentCookieActioned = () => {
-  if (typeof document !== "undefined") {
-    return document.cookie.indexOf("ICDSPREF") !== -1;
-  }
-  return false;
-};
+export const consentCookieActioned = () =>
+  typeof document !== "undefined"
+    ? document.cookie.indexOf("ICDSPREF") !== -1
+    : false;
 
 export const consentCookieApproved = () =>
   consentCookieActioned() && document.cookie.indexOf("ICDSPREF=true") !== -1;
 
 const deleteDomainCookies = () => {
   if (typeof window !== "undefined") {
-    const cookies = document.cookie.split("; ");
-    cookies.forEach((cookie) => {
+    document.cookie.split("; ").forEach((cookie) => {
       const d = window.location.hostname.split(".");
       while (d.length > 0) {
         const cookieBase = `${encodeURIComponent(
@@ -56,10 +53,7 @@ export const isBotOrDoNotTrack = () => {
 
   // Check if DoNotTrack is activated
   const dnt = navigator.doNotTrack; // || window.doNotTrack;
-  const isToTrack =
-    dnt !== null && dnt !== undefined
-      ? dnt && dnt !== "yes" && dnt !== "1"
-      : true;
+  const isToTrack = dnt ? dnt !== "yes" && dnt !== "1" : true;
 
   return isBot || !isToTrack;
 };

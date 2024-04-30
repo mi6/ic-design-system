@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { createRef, useState, useEffect, useContext } from "react";
 
 import "./cookies.css";
 import {
@@ -12,8 +12,8 @@ import CookieConsentContext from "../../context/CookieConsentContext";
 const CookieBanner: React.FC = () => {
   const [visible, setVisible] = useState(!consentCookieActioned());
   const [submitted, setSubmitted] = useState(false);
-  const banner: React.RefObject<HTMLDivElement> = React.createRef();
-  const { handleCookieConsent } = React.useContext(CookieConsentContext);
+  const banner: React.RefObject<HTMLDivElement> = createRef();
+  const { handleCookieConsent } = useContext(CookieConsentContext);
 
   const handleConsent = (consent: boolean) => {
     setConsent(consent);
@@ -22,10 +22,7 @@ const CookieBanner: React.FC = () => {
   };
 
   useEffect(() => {
-    // set focus to cookies banner when submitted, to focus on message
-    if (banner.current) {
-      banner.current.focus();
-    }
+    banner.current?.focus(); // set focus to cookies banner when submitted, to focus on message
   }, [submitted]);
 
   if (!visible || isBotOrDoNotTrack()) {
@@ -39,12 +36,12 @@ const CookieBanner: React.FC = () => {
       role="region"
       ref={banner}
     >
-      {(submitted && (
+      {submitted ? (
         <ic-section-container full-height aligned="full-width" tab-index="-1">
           <ic-typography role="alert" variant="body">
             You’ve {consentCookieApproved() ? "accepted" : "rejected"} analytics
             cookies. You can{" "}
-            <ic-link href="icds/cookies-policy">
+            <ic-link href="/icds/cookies-policy">
               change your cookie settings
             </ic-link>{" "}
             at any time.
@@ -55,7 +52,7 @@ const CookieBanner: React.FC = () => {
             </ic-button>
           </div>
         </ic-section-container>
-      )) || (
+      ) : (
         <ic-section-container full-height aligned="full-width">
           <ic-typography variant="h2">Cookies on this site</ic-typography>
           <ic-typography variant="body">
@@ -69,7 +66,7 @@ const CookieBanner: React.FC = () => {
             <ic-button variant="secondary" onClick={() => handleConsent(false)}>
               Decline
             </ic-button>
-            <ic-link href="icds/cookies-policy">Manage cookies</ic-link>
+            <ic-link href="/icds/cookies-policy">Manage cookies</ic-link>
           </div>
         </ic-section-container>
       )}
