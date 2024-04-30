@@ -1,0 +1,28 @@
+---
+path: "/components/canary/data-table"
+
+navPriority: 2
+
+date: "2024-04-04"
+
+title: "Data Table"
+
+status: "CANARY"
+
+subTitle: "Use a data table to organise and display large quantities of related data."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/canary/data-table" },
+    { title: "Code", path: "/components/canary/data-table/code" },
+  ]
+---
+
+import { IcDataTable } from "@ukic/canary-react";
+import { COLUMNS, DATA } from "./story-data";
+
+## Component demo
+
+<ComponentPreview>
+  <IcDataTable caption="Basic" columns={COLUMNS} data={DATA} />
+</ComponentPreview>

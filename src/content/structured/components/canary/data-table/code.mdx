@@ -1,0 +1,842 @@
+---
+path: "/components/canary/data-table/code"
+
+date: "2024-04-04"
+
+title: "Data Table"
+
+status: "CANARY"
+
+subTitle: "Use a data table to organise and display large quantities of related data."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/canary/data-table" },
+    { title: "Code", path: "/components/canary/data-table/code" },
+  ]
+---
+
+import { IcDataTable } from "@ukic/canary-react";
+import { IcButton } from "@ukic/react";
+import { useRef } from "react";
+import {
+  COLUMNS,
+  DATA,
+  LONG_COLUMNS,
+  LONG_DATA,
+  ROW_HEADER_COLUMNS,
+  ROW_HEADER_DATA,
+  COLUMN_OVERRIDES,
+  ROW_OVERRIDES_DATA,
+  CELL_OVERRIDES_DATA,
+} from "./story-data";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Basic Table"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "firstName",
+      title: "First name",
+      // dataType types: "string" | "number" | "address" | "element" | "date";
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "age",
+      title: "Age",
+      dataType: "number",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+    },
+    {
+      key: "address",
+      title: "Address",
+      dataType: "address",
+    },
+  ];
+  const data = [
+    {
+      firstName: "Joe",
+      lastName: "Bloggs",
+      age: 30,
+      jobTitle: "Developer",
+      address: "1 Main Street, Town, County, Postcode",
+    },
+    {
+      firstName: "Sarah",
+      lastName: "Smith",
+      age: 28,
+      jobTitle: "Analyst",
+      address: "2 Main Street, Town, Country, Postcode",
+    },
+    {
+      firstName: "Mark",
+      lastName: "Owens",
+      age: 45,
+      jobTitle: "Team Lead",
+      address: "12 Key Street, Town, Country, Postcode",
+    },
+    {
+      firstName: "Naomi",
+      lastName: "Thomas",
+      age: 32,
+      jobTitle: "Developer",
+      address: "8 Side Street, Town, Country, Postcode",
+    },
+    {
+      firstName: "Luke",
+      lastName: "Ashford",
+      age: 18,
+      jobTitle: "Junior Developer",
+      address: "5 New Street, Town, Country, Postcode",
+    },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  {
+    key: "address",
+    title: "Address",
+    dataType: "address",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Analyst",
+    address: "2 Main Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+    address: "12 Key Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Naomi",
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Developer",
+    address: "8 Side Street, Town, Country, Postcode",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: 18,
+    jobTitle: "Junior Developer",
+    address: "5 New Street, Town, Country, Postcode",
+  },
+];
+const DataTable = () => (
+  <IcDataTable caption="Basic" columns={columns} data={data} />
+);`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcDataTable caption="Basic" columns={COLUMNS} data={DATA} />
+</ComponentPreview>
+
+## Data table details
+
+<ComponentDetails component="ic-data-table" canary />
+
+## Variants
+
+### Embedded
+
+export const snippetsEmbedded = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Embedded Table" embedded="true"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  // Copy columns and data arrays for 'basic' example
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDataTable
+  caption="Embedded"
+  columns={columns} // Copy columns array for 'basic' example
+  data={data} // Copy data array for 'basic' example
+  embedded
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsEmbedded}>
+  <IcDataTable caption="Embedded" columns={COLUMNS} data={DATA} embedded />
+</ComponentPreview>
+
+### Dense
+
+export const snippetsDense = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Dense Table" density="dense"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  // Copy columns and data arrays for 'basic' example
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDataTable
+  caption="Dense"
+  columns={columns} // Copy columns array for 'basic' example
+  data={data} // Copy data array for 'basic' example
+  density="dense"
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsDense}>
+  <IcDataTable caption="Dense" columns={COLUMNS} data={DATA} density="dense" />
+</ComponentPreview>
+
+### Spacious
+
+export const snippetsSpacious = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Spacious Table" density="spacious"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  // Copy columns and data arrays for 'basic' example
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDataTable
+  caption="Spacious"
+  columns={columns} // Copy columns array for 'basic' example
+  data={data} // Copy data array for 'basic' example
+  density="spacious"
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSpacious}>
+  <IcDataTable
+    caption="Spacious"
+    columns={COLUMNS}
+    data={DATA}
+    density="spacious"
+  />
+</ComponentPreview>
+
+### Sticky column headers
+
+export const snippetsStickyColumnHeaders = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table
+  style="height: 150px"
+  caption="Sticky header Table"
+  sticky-column-headers="true"
+></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const long_columns = [
+    {
+      key: "employeeNumber",
+      title: "Employee number",
+      dataType: "number",
+      columnAlignment: { horizontal: "left" },
+    },
+    {
+      key: "name",
+      title: "Name",
+      dataType: "string",
+    },
+    ...
+  ];
+  const long_data = [
+    {
+      employeeNumber: 1,
+      name: "Joe Bloggs",
+      age: 30,
+      jobTitle: "Developer",
+      address: "1 Main Street, Town, County, Postcode",
+    },
+    ...
+  ];
+  dataTable.columns = long_columns;
+  dataTable.data = long_data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const long_columns = [
+  {
+    key: "employeeNumber",
+    title: "Employee number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  ...
+];
+const long_data = [
+  {
+    employeeNumber: 1,
+    name: "Joe Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  ...
+];
+return (
+  <IcDataTable
+    style={{ height: '300px' }}
+    caption="Sticky Column Headers"
+    columns={long_columns}
+    data={long_data}
+    stickyColumnHeaders
+  />
+);`,
+  },
+];
+
+export const StickyColumnHeaders = () => {
+  const dataTableEl = useRef(null);
+  const stickHeader = (sticky) => {
+    dataTableEl.current.stickyColumnHeaders = sticky;
+  };
+  return (
+    <>
+      <IcDataTable
+        style={{ height: "300px" }}
+        ref={dataTableEl}
+        caption="Sticky Column Headers"
+        columns={LONG_COLUMNS}
+        data={LONG_DATA}
+      />
+      <IcButton onClick={() => stickHeader(true)}>Stick Header</IcButton>
+      <IcButton onClick={() => stickHeader(false)}>Unstick Header</IcButton>
+    </>
+  );
+};
+
+<ComponentPreview snippets={snippetsStickyColumnHeaders}>
+  <StickyColumnHeaders />
+</ComponentPreview>
+
+### Row headers
+
+export const snippetsRowHeaders = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Row headers"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "header",
+      title: "Job type",
+      dataType: "string",
+    },
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+    },
+    ...
+  ];
+  const data = [
+    {
+      // Each data row requires a 'header' key/value pair like below
+      header: { title: 'Employee' },
+      firstName: "Joe",
+      lastName: "Bloggs",
+      age: 30,
+      jobTitle: "Developer",
+      address: "1 Main Street, Town, County, Postcode",
+    },
+    ...
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const columns = [
+  {
+    key: 'header',
+    title: 'Job Title',
+    dataType: 'string'
+  },
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  ...
+];
+const data = [
+  {
+    header: { title: 'Employee' },
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  ...
+];
+const DataTable = () => (
+  <IcDataTable
+    caption="Row Headers"
+    columns={columns}
+    data={data}
+  />
+);`,
+  },
+];
+
+<ComponentPreview snippets={snippetsRowHeaders}>
+  <IcDataTable
+    caption="Row Headers"
+    columns={ROW_HEADER_COLUMNS}
+    data={ROW_HEADER_DATA}
+  />
+</ComponentPreview>
+
+### Sortable
+
+export const snippetsSortable = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Sort" sortable="true"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  // Copy columns and data arrays for 'basic' example
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDataTable
+  caption="Sort"
+  columns={columns} // Copy columns array for 'basic' example
+  data={data} // Copy data array for 'basic' example
+  sortable
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSortable}>
+  <IcDataTable caption="Sortable" columns={COLUMNS} data={DATA} sortable />
+</ComponentPreview>
+
+### Sort options
+
+export const snippetsSortOptions = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Sort Options" sortable="true"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  dataTable.sortOptions = {
+    sortOrders: ['descending', 'unsorted'],
+    defaultColumn: 'firstName'
+  };
+  // Copy columns and data arrays for 'basic' example
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `<IcDataTable
+  caption="Sort Options"
+  columns={columns} // Copy columns array for 'basic' example
+  data={data} // Copy data array for 'basic' example
+  sortable
+  sortOptions={{
+    sortOrders: ["descending", "unsorted"],
+    defaultColumn: "firstName",
+  }}
+/>`,
+  },
+];
+
+<ComponentPreview snippets={snippetsSortOptions}>
+  <IcDataTable
+    caption="Sort Options"
+    columns={COLUMNS}
+    data={DATA}
+    sortable
+    sortOptions={{
+      sortOrders: ["descending", "unsorted"],
+      defaultColumn: "firstName",
+    }}
+  />
+</ComponentPreview>
+
+### Pagination
+
+export const snippetsPagination = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Pagination" show-pagination="true"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  dataTable.paginationOptions = {
+    itemsPerPage: [
+      { label: "5", value: "5" },
+      { label: "10", value: "10" },
+      { label: "15", value: "15" },
+    ],
+    itemsPerPageControl: true,
+  };
+  const long_columns = [
+    {
+      key: "employeeNumber",
+      title: "Employee number",
+      dataType: "number",
+      columnAlignment: { horizontal: "left" },
+    },
+    {
+      key: "name",
+      title: "Name",
+      dataType: "string",
+    },
+    ...
+  ];
+  const long_data = [
+    {
+      employeeNumber: 1,
+      name: "Joe Bloggs",
+      age: 30,
+      jobTitle: "Developer",
+      address: "1 Main Street, Town, County, Postcode",
+    },
+    ...
+  ];
+  dataTable.columns = long_columns;
+  dataTable.data = long_data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const long_columns = [
+  {
+    key: "employeeNumber",
+    title: "Employee number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  ...
+];
+const long_data = [
+  {
+    employeeNumber: 1,
+    name: "Joe Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  ...
+];
+return (
+  <IcDataTable
+    caption="Pagination"
+    columns={long_columns}
+    data={long_data}
+    showPagination
+    paginationOptions={{
+      itemsPerPage: [
+        { label: "5", value: "5" },
+        { label: "10", value: "10" },
+        { label: "15", value: "15" },
+      ],
+      itemsPerPageControl: true,
+    }}
+  />
+);`,
+  },
+];
+
+<ComponentPreview snippets={snippetsPagination}>
+  <IcDataTable
+    caption="Pagination"
+    columns={LONG_COLUMNS}
+    data={LONG_DATA}
+    showPagination
+    paginationOptions={{
+      itemsPerPage: [
+        { label: "5", value: "5" },
+        { label: "10", value: "10" },
+        { label: "15", value: "15" },
+      ],
+      itemsPerPageControl: true,
+    }}
+  />
+</ComponentPreview>
+
+### Column overrides
+
+export const snippetsColumnOverrides = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Column Overrides"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+      columnAlignment: { horizontal: 'center', vertical: 'middle'},
+      emphasis: 'high',
+    },
+    ...
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data; // Copy data array for 'basic' example
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnAlignment: { horizontal: 'center', vertical: 'middle'},
+    emphasis: 'high',
+  },
+  ...
+];
+return (
+  <IcDataTable
+    caption="Column overrides"
+    columns={columns}
+    data={data} // Copy data array for 'basic' example
+  />
+);`,
+  },
+];
+
+<ComponentPreview snippets={snippetsColumnOverrides}>
+  <IcDataTable
+    caption="Column overrides"
+    columns={COLUMN_OVERRIDES}
+    data={DATA}
+  />
+</ComponentPreview>
+
+### Row overrides
+
+export const snippetsRowOverrides = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Row Overrides"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "header",
+      title: "Job type",
+      dataType: "string",
+    },
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+    },
+    ...
+  ];
+  const data = [
+    {
+      header: {
+        title: 'Employee',
+        rowAlignment: 'middle',
+        emphasis: 'high'
+      }
+      firstName: "Joe",
+      lastName: "Bloggs",
+      age: 30,
+      jobTitle: "Developer",
+      address: "1 Main Street, Town, County, Postcode",
+    },
+    ...
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const columns = [
+  {
+    key: "header",
+    title: "Job type",
+    dataType: "string",
+  },
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  ...
+];
+const data = [
+  {
+    header: {
+      title: 'Employee',
+      rowAlignment: 'middle',
+      emphasis: 'high'
+    }
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  ...
+];
+return (
+  <IcDataTable
+    caption="Column overrides"
+    columns={columns}
+    data={data}
+  />
+);`,
+  },
+];
+
+<ComponentPreview snippets={snippetsRowOverrides}>
+  <IcDataTable
+    caption="Row overrides"
+    columns={ROW_HEADER_COLUMNS}
+    data={ROW_OVERRIDES_DATA}
+  />
+</ComponentPreview>
+
+### Cell overrides
+
+export const snippetsCellOverrides = [
+  {
+    language: "Web components",
+    snippet: `<ic-data-table caption="Cell Overrides"></ic-data-table>
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const data = [
+    {
+      firstName: {
+        data: "Joe",
+        cellAlignment: { horizontal: "center", vertical: "middle" },
+        emphasis: "high",
+      },
+      lastName: "Bloggs",
+      age: 30,
+      jobTitle: "Developer",
+      address: "1 Main Street, Town, County, Postcode",
+    },
+    ...
+  ];
+  dataTable.columns = columns; // Copy columns array for 'basic' example
+  dataTable.data = data;
+</script>`,
+  },
+  {
+    language: "React",
+    snippet: `const data = [
+  {
+    firstName: {
+      data: "Joe",
+      cellAlignment: { horizontal: "center", vertical: "middle" },
+      emphasis: "high",
+    },
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+    address: "1 Main Street, Town, County, Postcode",
+  },
+  ...
+];
+return (
+  <IcDataTable
+    caption="Column overrides"
+    columns={columns} // Copy columns array for 'basic' example
+    data={data}
+  />
+);`,
+  },
+];
+
+<ComponentPreview snippets={snippetsCellOverrides}>
+  <IcDataTable
+    caption="Cell overrides"
+    columns={COLUMNS}
+    data={CELL_OVERRIDES_DATA}
+  />
+</ComponentPreview>
