@@ -22,8 +22,8 @@ tabs:
 ---
 
 import { IcSelect, IcAlert } from "@ukic/react";
-import selectFig1 from "./images/fig-1-use-radio-or-checkbox-groups-when-less-than-four-options-are-available.png";
-import selectFig2 from "./images/fig-2-dont-use-dropdowns-when-displaying-a-limited-number-of-options.png";
+import selectFig1 from "./images/fig-1-use-radio-or-checkbox-groups-when-less-than-four-options-are-available2x.png";
+import selectFig2 from "./images/fig-2-dont-use-dropdowns-when-displaying-a-limited-number-of-options2x.png";
 import selectFig3 from "./images/fig-3-use-labels-to-indicate-the-title-of-the-field.png";
 import selectFig4 from "./images/fig-4-dont-replace-labels-with-placeholder-text.png";
 import selectFig5 from "./images/fig-5-use-a-standard-select-when-providing-less-than-ten-options.png";
@@ -70,20 +70,20 @@ export const SelectExample = () => (
 ## When to use
 
 Use the select component to allow the user to choose one or more options from four or more items. For less than four, use a [radio group](/components/radio) or a [checkbox group](/components/checkbox).
-When more than ten options are available, consider using the [Searchable variant](/components/select#searchable-single-select) of select to allow users to search the options, rather than scroll through the dropdown list.
+When more than ten options are available, consider using the [searchable variant](/components/select#searchable-single-select) of select to allow users to search the options, rather than scroll through the dropdown list.
 
 <DoubleDoDontCaution>
-  <DoDontCaution
-    imageSrc={selectFig2}
-    imageAlt="A graphic of a select component labelled 'Single or double shot?' with two options 'Single' and 'Double' in the dropdown list."
-    state="bad"
-    caption="Don’t use select when displaying a limited number of options."
-  />
   <DoDontCaution
     imageSrc={selectFig1}
     imageAlt="A graphic of a radio group labelled 'Single or double shot?' with two radio buttons labelled 'Single' and 'Double'."
     state="good"
     caption="Use radio or checkbox groups when less than four options are available."
+  />
+  <DoDontCaution
+    imageSrc={selectFig2}
+    imageAlt="A graphic of a select component labelled 'Single or double shot?' with two options 'Single' and 'Double' in the dropdown list."
+    state="bad"
+    caption="Don’t use select when displaying a limited number of options."
   />
 </DoubleDoDontCaution>
 
