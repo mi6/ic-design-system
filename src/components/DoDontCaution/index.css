@@ -36,6 +36,7 @@
   border-radius: 50%;
   box-shadow: var(--ic-elevation-overlay);
   text-align: center;
+  z-index: 1;
 }
 
 .do-dont-caution-containers > svg {
