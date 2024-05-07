@@ -6,6 +6,9 @@ on: delete
 jobs:
   delete-folder:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     if: github.event.ref_type == 'branch'
     env:
       FULL_BRANCH_NAME: ${{ github.event.ref }}
