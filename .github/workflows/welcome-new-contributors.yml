@@ -13,6 +13,8 @@ on:
 jobs:
   welcome-message:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     if: github.event.pull_request.head.repo.full_name != 'mi6/ic-design-system'
     steps:
       - uses: actions/first-interaction@3c71ce730280171fd1cfb57c00c774f8998586f7 #v1
