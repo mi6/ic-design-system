@@ -8,6 +8,8 @@ on:
 jobs:
   check-branch:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: Vankka/pr-target-branch-action@def32ec9d93514138d6ac0132ee62e120a72aed5 #v2.1
         env:
