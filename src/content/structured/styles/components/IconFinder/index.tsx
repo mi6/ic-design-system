@@ -67,6 +67,7 @@ const IconFinder: React.FC = () => {
           <IconGroupLink
             title={grp.title}
             id={grp.id}
+            key={grp.id}
             setCurrentPanel={setCurrentPanel}
             currentPanel={currentPanel}
           />
@@ -78,6 +79,7 @@ const IconFinder: React.FC = () => {
             title={grp.title}
             icons={grp.icons}
             id={grp.id}
+            key={grp.id}
             visible={currentPanel === grp.id}
           />
         ))}

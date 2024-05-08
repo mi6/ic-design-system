@@ -40,6 +40,7 @@ const EventTable: React.FC<MethodTableProps> = ({ methodData }) => {
           />
         ),
         signature: <CodeAttribute label={method.signature} />,
+        key: method.name,
       })),
     []
   );

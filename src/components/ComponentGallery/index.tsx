@@ -99,7 +99,7 @@ const ComponentGallery: React.FC = () => {
   return (
     <ul className="card-container">
       {uniqueComponentDetails?.map(({ path, subTitle, status, title }) => (
-        <li>
+        <li key={title}>
           <GatsbyLink to={path}>
             <ic-card message={subTitle} full-width clickable>
               <img
