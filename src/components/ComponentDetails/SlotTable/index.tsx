@@ -26,7 +26,9 @@ const PropTable: React.FC<PropTableProps> = ({ slotData }) => {
   const data = useMemo(
     () =>
       slotData.map((slot) => ({
-        name: <AttributeName name={["Slot"]} value={[slot.name]} />,
+        name: (
+          <AttributeName name={["Slot"]} value={[slot.name]} key={slot.name} />
+        ),
         description: slot.docs,
       })),
     []

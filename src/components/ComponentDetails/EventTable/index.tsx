@@ -45,6 +45,7 @@ const EventTable: React.FC<EventTableProps> = ({ eventData }) => {
           <TableDescription description={docs} deprecation={deprecation} />
         ),
         signature: <CodeAttribute label={detail} />,
+        key: event,
       })),
     []
   );

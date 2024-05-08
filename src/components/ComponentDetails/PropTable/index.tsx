@@ -65,6 +65,7 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
               />
             ),
             default: defaultValue,
+            key: name,
           })
         )
         .sort(

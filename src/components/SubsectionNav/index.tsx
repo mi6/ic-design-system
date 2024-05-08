@@ -178,8 +178,9 @@ const ListChildren: React.FC<ListChildenProps> = ({ item }) => {
             open={open}
           />
         </li>
-        {item.children.map((child: TreeItem) => (
-          <ListChildren item={child} />
+        {item.children.map((child: TreeItem, index: number) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <ListChildren item={child} key={index} />
         ))}
       </>
     );
@@ -205,8 +206,9 @@ const ListChildren: React.FC<ListChildenProps> = ({ item }) => {
               open={false}
             />
           </li>
-          {item.children.map((child: TreeItem) => (
-            <ListChildren item={child} />
+          {item.children.map((child: TreeItem, index: number) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <ListChildren item={child} key={index} />
           ))}
         </ul>
       </li>
