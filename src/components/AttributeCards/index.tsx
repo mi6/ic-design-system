@@ -10,7 +10,7 @@ const AttributeCards: React.FC<AttributeCardsProps> = ({ data }) => (
   <table className="attribute-cards">
     <tbody>
       {data.map((cell) => (
-        <tr key={cell.name} className="attribute-cards-row">
+        <tr key={cell.key || cell.name.key} className="attribute-cards-row">
           <td className="attribute-cards-cell">
             {cell.name}
             {cell.description}

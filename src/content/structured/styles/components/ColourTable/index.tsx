@@ -78,11 +78,6 @@ const PaletteSection: React.FC<PaletteSectionProps> = ({ colors }) => (
 );
 
 const ColorTable: React.FC<ColorTableProps> = ({ config }) => (
-  <>
-    {config.map((section) => (
-      <PaletteSection key={section.title} colors={section.colors} />
-    ))}
-  </>
+  <PaletteSection colors={config[0].colors} />
 );
-
 export default ColorTable;

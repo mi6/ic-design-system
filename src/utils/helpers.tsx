@@ -21,7 +21,12 @@ export const backtickToCodeBlock = (description: string) => {
 
   newDesc.forEach((block, index) => {
     if (codeBlocks.includes(block)) {
-      newDesc[index] = <code className="language-text">{block}</code>;
+      newDesc[index] = (
+        // eslint-disable-next-line react/no-array-index-key
+        <code className="language-text" key={`${block}-${index}`}>
+          {block}
+        </code>
+      );
     }
   });
 

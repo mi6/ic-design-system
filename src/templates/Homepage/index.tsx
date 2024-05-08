@@ -80,7 +80,7 @@ const Homepage: React.FC = () => {
           <ul className={clsx("cards-container", "explore-cards")}>
             {homepage.cards.content &&
               homepage.cards.content.map((item: homepageCardItem) => (
-                <li>
+                <li key={item.title}>
                   <GatsbyLink to={item.path}>
                     <ic-card message={item.description} full-width>
                       <ic-typography
@@ -99,14 +99,16 @@ const Homepage: React.FC = () => {
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <ic-typography variant="h2" apply-vertical-margins>
+          <ic-typography variant="h2" apply-vertical-margins="true">
             {homepage.about.title}
           </ic-typography>
-          {homepage.about.content.map((text: string) => (
+          {homepage.about.content.map((text: string, index: number) => (
             <ic-typography
               variant="body"
               data-class="text-content"
-              apply-vertical-margins
+              apply-vertical-margins="true"
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
             >
               {text}
             </ic-typography>
@@ -119,14 +121,16 @@ const Homepage: React.FC = () => {
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <ic-typography variant="h2" apply-vertical-margins>
+          <ic-typography variant="h2" apply-vertical-margins="true">
             <h2>{homepage.contribute.title}</h2>
           </ic-typography>
-          {homepage.contribute.content.map((text: string) => (
+          {homepage.contribute.content.map((text: string, index: number) => (
             <ic-typography
               variant="body"
               data-class="text-content"
-              apply-vertical-margins
+              apply-vertical-margins="true"
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
             >
               {text}
             </ic-typography>
@@ -139,14 +143,16 @@ const Homepage: React.FC = () => {
         </div>
         <hr aria-hidden="true" className="divider" />
         <div className="section">
-          <ic-typography variant="h2" apply-vertical-margins>
+          <ic-typography variant="h2" apply-vertical-margins="true">
             {homepage.resources.title}
           </ic-typography>
-          {homepage.resources.content.map((text: string[]) => (
+          {homepage.resources.content.map((text: string[], index: number) => (
             <ic-typography
               variant="body"
               data-class="text-content"
-              apply-vertical-margins
+              apply-vertical-margins="true"
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
             >
               {text}
             </ic-typography>
@@ -154,7 +160,7 @@ const Homepage: React.FC = () => {
           <ul className={clsx("cards-container", "resources-cards")}>
             {homepage.resources.cards &&
               homepage.resources.cards.map((item: homepageCardItem) => (
-                <li>
+                <li key={item.title}>
                   <GatsbyLink to={item.path}>
                     <ic-card
                       heading={item.title}

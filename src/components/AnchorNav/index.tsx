@@ -76,7 +76,10 @@ const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage }) => {
     const isActive = headingId === activeId;
 
     return (
-      <li className={clsx("nav-list-item", isActive && "active-nav-list-item")}>
+      <li
+        className={clsx("nav-list-item", isActive && "active-nav-list-item")}
+        key={value}
+      >
         <Link
           className={clsx("nav-link", isActive && "active-nav-link")}
           to={`#${headingId}`}
