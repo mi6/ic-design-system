@@ -286,13 +286,8 @@ export const ColoursClassification = [
     colors: [
       { name: "Not set", token: "--ic-classification-not-set", hex: "#616161" },
       {
-        name: "Official",
+        name: "Official/Official sensitive",
         token: "--ic-classification-official",
-        hex: "#2B71C7",
-      },
-      {
-        name: "Official sensitive",
-        token: "--ic-classification-official-sensitive",
         hex: "#2B71C7",
       },
       { name: "Secret", token: "--ic-classification-secret", hex: "#F39C2C" },
