@@ -127,7 +127,7 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({
             <SlottedSVG
               path={mdiContentCopy}
               slot={isLargeViewport ? "left-icon" : undefined}
-              viewBow="0 0 24 24"
+              viewBox="0 0 24 24"
               width="24"
               height="24"
             />
