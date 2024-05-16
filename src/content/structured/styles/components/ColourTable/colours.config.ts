@@ -18,7 +18,7 @@ export const ColoursText = [
       },
       {
         name: "White text",
-        token: "--ic-colour-white-text",
+        token: "--ic-color-white-text",
         hex: "#FFFFFF",
         border: true,
       },
