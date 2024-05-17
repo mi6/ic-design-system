@@ -28,10 +28,10 @@ import { IcTypography } from "@ukic/react";
 export const snippets = [
   {
     language: "Web component",
-    snippet: `<ic-typography variant="h1">H1</ic-typography>
-<ic-typography variant="h2">H2</ic-typography>
-<ic-typography variant="h3">H3</ic-typography>
-<ic-typography variant="h4">H4</ic-typography>
+    snippet: `<ic-typography variant="h1"><h1>H1</h1></ic-typography>
+<ic-typography variant="h2"><h2>H2</h2></ic-typography>
+<ic-typography variant="h3"><h3>H3</h3></ic-typography>
+<ic-typography variant="h4"><h4>H4</h4></ic-typography>
 <ic-typography>Body</ic-typography>
 <ic-typography variant="subtitle-large">Subtitle large</ic-typography>
 <ic-typography variant="subtitle-small">Subtitle small</ic-typography>
@@ -45,10 +45,10 @@ export const snippets = [
   },
   {
     language: "React",
-    snippet: `<IcTypography variant="h1">H1</IcTypography>
-<IcTypography variant="h2">H2</IcTypography>
-<IcTypography variant="h3">H3</IcTypography>
-<IcTypography variant="h4">H4</IcTypography>
+    snippet: `<IcTypography variant="h1"><h1>H1</h1></IcTypography>
+<IcTypography variant="h2"><h2>H2</h2></IcTypography>
+<IcTypography variant="h3"><h3>H3</h3></IcTypography>
+<IcTypography variant="h4"><h4>H4</h4></IcTypography>
 <IcTypography>Body</IcTypography>
 <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
 <IcTypography variant="subtitle-small">Subtitle small</IcTypography>
@@ -64,10 +64,18 @@ export const snippets = [
 
 <ComponentPreview snippets={snippets}>
   <div>
-    <IcTypography variant="h1">H1</IcTypography>
-    <IcTypography variant="h2">H2</IcTypography>
-    <IcTypography variant="h3">H3</IcTypography>
-    <IcTypography variant="h4">H4</IcTypography>
+    <IcTypography variant="h1">
+      <h1>H1</h1>
+    </IcTypography>
+    <IcTypography variant="h2">
+      <h2>H2</h2>
+    </IcTypography>
+    <IcTypography variant="h3">
+      <h3>H3</h3>
+    </IcTypography>
+    <IcTypography variant="h4">
+      <h4>H4</h4>
+    </IcTypography>
     <IcTypography>Body</IcTypography>
     <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
     <IcTypography variant="subtitle-small">Subtitle small</IcTypography>
