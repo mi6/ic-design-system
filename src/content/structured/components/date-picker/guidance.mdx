@@ -25,7 +25,6 @@ import figure1 from "./images/fig1-use-date-picker-to-visualise-dates.png";
 import figure2 from "./images/fig2-avoid-using-for-distant-dates.png";
 import figure3 from "./images/fig3-custom-width.png";
 import figure4 from "./images/fig4-clear-error-message.png";
-import figure5 from "./images/fig5-unclear-error-message.png";
 
 <IcAlert
   heading="Canary component"
@@ -77,6 +76,7 @@ Use a date picker to select an event that is near to the present time.
     imageSrc={figure1}
     imageAlt="A date picker being used to select a nearby date"
     caption="Use a date picker to visualise and select dates."
+    state="good"
   />
 </DoubleDoDontCaution>
 
@@ -95,6 +95,7 @@ Avoid using a date picker for well-known dates, such as dates of birth, because 
     imageSrc={figure2}
     imageAlt="A date picker being used to select a very distant date"
     caption="Avoid using a date picker when dealing with distant dates."
+    state="caution"
   />
 </DoubleDoDontCaution>
 
@@ -112,6 +113,7 @@ Use the [date input](/components/date-input) resizing options to change size of 
   imageSrc={figure3}
   imageAlt="Two date picker examples at their maximum and minimum width"
   caption="Change the width of the date input to adjust the date picker width."
+  state="good"
 />
 
 ## Content
@@ -140,14 +142,11 @@ The [date input](/components/date-input) and the date picker update according to
 
 See [date input](/components/date-input#validation) for detailed guidance on how to display errors within the date picker.
 
-<DoubleDoDontCaution>
-  <DoDontCaution
-    imageSrc={figure4}
-    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
-    caption="Make sure to be clear and instructive when writing error messages. Avoid ambiguity or terms like please when writing error messages."
-  />
-  <DoDontCaution
-    imageSrc={figure5}
-    imageAlt="A date picker with error caused by choosing a date outside of allowed range."
-  />
-</DoubleDoDontCaution>
+{" "}
+
+<DoDontCaution
+  imageSrc={figure4}
+  imageAlt="A date picker with error caused by choosing a date outside of allowed range."
+  caption="Make sure to be clear and instructive when writing error messages. Avoid ambiguity or terms like please when writing error messages."
+  state="good"
+/>
