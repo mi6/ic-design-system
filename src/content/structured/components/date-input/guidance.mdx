@@ -3,7 +3,7 @@ path: "/components/date-input"
 
 navPriority: 13
 
-date: "2024-04-30"
+date: "2024-05-20"
 
 title: "Date input"
 
@@ -32,7 +32,6 @@ import fig8 from "./images/fig-8-matched-date-input-width.png";
 import fig9 from "./images/fig-9-excessive-matched-date-input-width.png";
 import fig10 from "./images/fig-10-success-validation.png";
 import fig11 from "./images/fig-11-error-validation-correct.png";
-import fig12 from "./images/fig-12-error-validation-incorrect.png";
 
 <IcAlert
   heading="Canary component"
@@ -86,6 +85,7 @@ Use a date input to select a past, present or future date. For example, use a da
     imageSrc={fig1}
     imageAlt="A date input being used to select a birthday"
     caption="Use a date input to collect distant dates."
+    state="good"
   />
 </DoubleDoDontCaution>
 
@@ -98,6 +98,7 @@ Do not use a date input when asking for parts of a date where some elements may 
     imageSrc={fig2}
     imageAlt="Three separate date inputs being used to capture day month and year independently."
     caption="Three separate input fields can be used when capturing partial dates."
+    state="good"
   />
 </DoubleDoDontCaution>
 
@@ -109,18 +110,20 @@ Use [content styling](/styles/content-style/principles) for help with building e
 
 ### Helper text
 
-Use helper text to indicate restrictions in your date input such as not allowing weekends.
+Use helper text to provide additional information.
 
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={fig3}
     imageAlt="An example of the benefits of using helper text in a date input."
     caption="Use helper text to give context to the current required input."
+    state="good"
   />
   <DoDontCaution
     imageSrc={fig4}
     imageAlt="An example of a date input with no helper text included."
     caption="Avoiding helper text removes people’s context."
+    state="bad"
   />
 </DoubleDoDontCaution>
 
@@ -153,11 +156,13 @@ Use the date input size properties to change its vertical size and achieve compa
     imageSrc={fig5}
     imageAlt="A date input matching the height of the button component next to it."
     caption="Adjust a date input’s size properties to help it match the rest of your form."
+    state="good"
   />
   <DoDontCaution
     imageSrc={fig6}
     imageAlt="A date input that is larger than the button component it is next to."
     caption="Don’t mix different sized components."
+    state="bad"
   />
 </DoubleDoDontCaution>
 
@@ -170,10 +175,12 @@ Ensure the width of the date input allows enough space for the full length of a 
     imageSrc={fig7}
     imageAlt="A date input matching the width of its expected input."
     caption="Where appropriate to form size, adjust the width of a date input to match other elements."
+    state="good"
   />
   <DoDontCaution
     imageSrc={fig8}
     imageAlt="A date input matching the width of other elements in a form."
+    state="bad"
   />
 </DoubleDoDontCaution>
 
@@ -181,6 +188,7 @@ Ensure the width of the date input allows enough space for the full length of a 
   imageSrc={fig9}
   imageAlt="A date input matching the width of a much longer form element."
   caption="Avoid matching a date input to considerably wider form elements."
+  state="caution"
 />
 
 ## Validation
@@ -198,18 +206,12 @@ Use error messaging when the person can’t proceed without fixing their input, 
     imageSrc={fig10}
     imageAlt="A date input showing the successful validation of an input."
     caption="Use success validation when checking input against limited availability."
+    state="good"
   />
-</DoubleDoDontCaution>
-
-<DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={fig11}
     imageAlt="A date input correctly displaying an invalid entry errored state."
     caption="Use the correct validation message with each validation state."
-  />
-  <DoDontCaution
-    imageSrc={fig12}
-    imageAlt="A date input using poor wording when displaying an errored state."
-    caption="Be clear in your message. Clearly state the issue in the case of an error."
+    state="good"
   />
 </DoubleDoDontCaution>
