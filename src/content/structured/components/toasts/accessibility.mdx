@@ -27,13 +27,13 @@ Our guidance highlights the importance of making sure that the content of toast 
 
 If more time is needed to read the toast's content, then a longer timeout duration can be set. A user can also hover over the toast with their mouse to pause the timer. Auto-dismiss toasts also include a visual timer, to show how long remains until it disappears.
 
-If any actions are included within a toast then it can’t be set to auto-dismiss. This gives a user extra time to locate and trigger the action.
+If any actions are included within a toast, then it can’t be set to auto-dismiss. This gives a user extra time to locate and trigger the action.
 
 ## For Assistive Technology
 
-Auto-dismissible toasts use a role of alert which uses an `aria-live` region to announce the contents immediately to users of assistive technology.
+Auto-dismissible toasts use a role of alert, which uses an `aria-live` region to announce the contents immediately to users of assistive technology.
 
-Toasts that don't auto-dismiss use a role of dialog and focus is moved to the toast when displayed. After dismissing the toast, focus is returned to the same position on the page before the toast was displayed. Focus is also trapped between the toast's interactive elements, so that users can complete the action quickly and easily.
+Toasts that don't auto-dismiss use a role of dialog and focus is moved to the toast when displayed. After dismissing the toast, focus is returned to the same position on the page that was focused before the toast was displayed. Focus is also trapped between the toast's interactive elements, so that users can complete the action quickly and easily.
 
 Pressing `Escape` on the keyboard will dismiss manual toasts immediately.
 
