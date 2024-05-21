@@ -12,11 +12,11 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 ## How we release and version
 
-This page provides details on how the `@ukic/` packages and website will be released and versioned.
+This page provides details on how the `@ukic/` packages and website are released and versioned.
 
 <p>
-  Releases will be triggered once the `develop` branch pull request is merged
-  into the `main` branch. The package versions will follow the{" "}
+  Releases are triggered once the <code class="language-text">develop</code> branch pull request is merged
+  into the <code class="language-text">main</code> branch. The package versions follow the{" "}
   <ic-link
     target="_blank"
     href="https://semver.org/"
@@ -33,15 +33,15 @@ major.minor.patch;
 
 <br />
 
-**Major releases** will contain breaking changes to the component libraries. Breaking changes will be communicated to the community as early as possible to allow teams to plan when to integrate the new packages into their projects. Major releases will be very infrequent with at least a year between them.
+**Major releases** contain breaking changes to the component libraries. Breaking changes are communicated to the community as early as possible to allow teams to plan when to integrate the new packages into their projects. Major releases are very infrequent, with at least a year between them.
 
-**Minor releases** will contain new component features. Minor releases will be backwards-compatible with no requirement for the developer to make updates to their existing implementation. However, to use the new feature, the implementation will require a small update (such as adding a new prop) in order to use the new component API.
+**Minor releases** contain new component features. Minor releases are backwards-compatible with no requirement for the developer to make updates to their existing implementation. However, to use the new feature, the implementation will require a small update (such as adding a new prop) in order to use the new component application programming interface (API).
 
-**Patch releases** will contain bug fixes.
+**Patch releases** contain bug fixes.
 
 <p>
-  Minor and/or patch releases will be scheduled after every two weeks. All
-  changes to the component library will be recorded in the{" "}
+  Minor and/or patch releases are scheduled every two weeks. All
+  changes to the component library are recorded in the{" "}
   <ic-link
     target="_blank"
     href="https://github.com/mi6/ic-ui-kit/blob/main/packages/web-components/CHANGELOG.md"
@@ -52,7 +52,7 @@ major.minor.patch;
   .
 </p>
 
-All packages will be published with identical version numbers.
+All packages are published with identical version numbers.
 
 ## How we manage Beta components
 
@@ -64,7 +64,7 @@ Beta components are integrated into our normal `@ukic/` packages and can be inst
 
 It is important to be aware of a few points when working with Beta components:
 
-1. **Potential API changes:** As Beta components are still in development, there may be changes to their application programming interface (API) between major version updates. This could require manual adjustments in the codebase to accommodate the changes.
+1. **Potential API changes:** As Beta components are still in development, there may be changes to their API between major version updates. This could require manual adjustments in the codebase to accommodate the changes.
 2. **Presence of bugs:** Beta components may contain bugs or missing features.
 3. **Potential future major changes:** Since Beta components are actively evolving, there may be major behind-the-scenes changes planned for the future.
 
@@ -78,9 +78,9 @@ Canary components are unstable components that are released for testing purposes
 
 These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
 
-We consider a canary component to be acceptable for moving to Beta once customers have tested its usage and provided enough feedback suggesting they're happy with it.
+We consider a canary component to be acceptable for moving to Beta once customers have tested its usage and provided enough feedback to suggest they're happy with it.
 
-Canary components can be installed in the same way as our core `@ukic/` packages, but prefixed with canary, e.g. `@ukic/canary-react` or `@ukic/canary-web-components`.
+Canary components can be installed in the same way as our core `@ukic/` packages, but prefixed with canary, for example `@ukic/canary-react` or `@ukic/canary-web-components`.
 
 ```shell
 // Canary Web Components
@@ -90,7 +90,7 @@ npm i @ukic/canary-web-components @ukic/fonts
 npm i @ukic/canary-react @ukic/fonts
 ```
 
-A difference between our canary packages and our core `@ukic/` packages is that canary package versions will follow a `<version>-canary.<build-number>` pattern.
+A difference between our canary packages and our core `@ukic/` packages is that canary package versions follow a `<version>-canary.<build-number>` pattern.
 
 <p>
   Another difference is that docs for canary components won't appear in the

@@ -5,7 +5,7 @@ date: "2023-02-16"
 
 title: "Testing with React Testing Library"
 
-subTitle: "How to test components with React Testing Library."
+subTitle: "How to test our components with React Testing Library."
 
 navPriority: 3
 
@@ -22,7 +22,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
   >
     React Testing Library (RTL)
   </ic-link>{" "}
-  provides a set of utility functions which interrogate the DOM tree in order to
+  provides a set of utility functions, which interrogate the DOM tree, in order to
   build maintainable React tests. The recommended approach with React Testing
   Library is to test React components based on how the users view the components
   rather than the implementation of the component. For example, a user would
@@ -35,8 +35,8 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 <p>
   It is not possible to exclusively use RTL to test{" "}
-  <code style={{ backgroundColor: "#EEEFF0" }}>@ukic/react</code> components, as
-  they are React-wrapped web components which use the{" "}
+  <code style={{ backgroundColor: "#EEEFF0" }}>@ukic/react</code> components as
+  they are React-wrapped web components, which use the{" "}
   <ic-link
     target="_blank"
     href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"
@@ -45,7 +45,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
     shadow DOM
   </ic-link>{" "}
   (<code style={{ backgroundColor: "#EEEFF0" }}>&lt;ShadowRoot&gt;</code>). RTL
-  does not provide utility functions which traverse beyond the shadow DOM. With
+  does not provide utility functions that traverse beyond the shadow DOM. With
   the addition of{" "}
   <ic-link
     target="_blank"
@@ -56,7 +56,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
   </ic-link>
   , elements within the shadow DOM can be selected and then interacted with by using
   methods provided by RTL. Shadow DOM Testing Library provides functions with 'Shadow'
-  prefixed to the query type (e.g. <code style={{ backgroundColor: "#EEEFF0" }}>
+  prefixed to the query type (for example, <code style={{ backgroundColor: "#EEEFF0" }}>
     getByShadowText()
   </code>
   ).
@@ -100,7 +100,7 @@ it("renders IcAlert", async () => {
 
 ## Examples with IcSelect and IcTextField
 
-Below are additional examples on testing `@ukic/react` components using RTL and Shadow DOM Testing Library with `IcSelect` and `IcTextField`.
+Below are examples on testing `@ukic/react` components using RTL and Shadow DOM Testing Library with `IcSelect` and `IcTextField`.
 
 ### IcSelect
 

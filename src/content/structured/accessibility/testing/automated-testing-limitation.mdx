@@ -14,13 +14,13 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 ## False positives and false assurance
 
-Passing automated accessibility tests doesn't mean you app is accessible, it just means that no common issues were found.
+Passing automated accessibility tests doesn't mean your app is accessible, it just means that no common issues were found.
 
 A limitation with automated accessibility testing is that results often need someone to ensure the result is correct. This includes checking for false positives and false negatives.
 
 ## WCAG and context
 
-Checks in automated accessibility testing tools have a yes or no outcome. The biggest limitation of these automated tools is because they can't test for context.
+Checks in automated accessibility testing tools have a yes or no outcome. The biggest limitation of these automated tools is that they can't test for context.
 
 <p>
   Deque’s{" "}
@@ -48,13 +48,13 @@ Of the 66 success criteria needed to meet WCAG AA, there are none that can be me
 
 It's possible for an app to be WCAG 2.2 Level AA compliant but still have usability issues. Some of these usability issues may also be accessibility issues.
 
-Usability and context matters to everyone, including those with accessibility needs. Usability includes user experience, covering whether the tool is effective and efficient.
+Usability and context matter to everyone, including those with accessibility needs. Usability includes user experience, covering whether the tool is effective and efficient.
 
-Manual accessibility testing, and other functional testing, is needed to make sure your app or services is usable.
+Manual accessibility testing, and other functional testing, is needed to make sure your apps or services are usable.
 
 ## Example: colour contrast
 
-For some success criteria such as those around colour contrast, automated testing tools are vital.
+For some success criteria, such as those around colour contrast, automated testing tools are vital.
 
 <p>
   <ic-link
@@ -68,7 +68,7 @@ For some success criteria such as those around colour contrast, automated testin
   ratio of at least 4.5:1 (with exceptions).
 </p>
 
-An automated testing tool can't test for context so can't tell you if the failing contrast ratio was one of the permitted exceptions, so is actually meeting the success criteria (a false positive).
+An automated testing tool can't test for context. For example, it can't tell you if the failing contrast ratio was one of the permitted exceptions, which does actually meet the success criteria, and so returns a false positive.
 
 ## Example: alt text
 
@@ -85,7 +85,7 @@ An automated testing tool can't test for context so can't tell you if the failin
   speech, symbols or simpler language.
 </p>
 
-Most automated accessibility checking tools will warn you if alternative text does not on images. However, automated tools can't tell whether the alternative text provided is useful and providing enough context of the image.
+Most automated accessibility checking tools will warn you if alternative text does not exist on images. However, automated tools can't tell whether the alternative text provided is useful and providing enough context of the image.
 
 If the alternative text was a file name, such as `alt="picture1234.jpg"`, this would make no sense to the reader.
 
