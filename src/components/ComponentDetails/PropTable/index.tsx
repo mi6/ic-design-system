@@ -8,7 +8,10 @@ interface StencilProp {
   name: string;
   attr?: string | undefined;
   docs: string;
-  type: string;
+  complexType: {
+    original: string;
+    resolved: string;
+  };
   default?: string;
   required: boolean;
   deprecation?: string | undefined;
@@ -45,7 +48,7 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
             name,
             attr,
             docs,
-            type,
+            complexType,
             required,
             default: defaultValue,
             deprecation,
@@ -59,7 +62,8 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
             description: (
               <PropDescription
                 description={docs}
-                type={type}
+                typeName={complexType.original}
+                type={complexType.resolved}
                 required={required}
                 deprecation={deprecation}
               />
