@@ -1,4 +1,4 @@
-.banner {
+#cookie-banner {
   background: var(--ic-architectural-60);
   box-shadow: var(--ic-elevation-modal);
   z-index: var(--ic-z-index-overlay);
