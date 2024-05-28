@@ -230,11 +230,33 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   const [responsiveNavOpen, setResponsiveNavOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
+
   const toggleResponsiveNavOpen = () =>
     setResponsiveNavOpen(!responsiveNavOpen);
 
+  const updateNavigationHeight = () => {
+    const cookieBanner = document.querySelector("#cookie-banner");
+    const cookieBannerHeight = cookieBanner?.clientHeight || 0;
+    const topNav = document.querySelector("#site-top-nav");
+    const topNavHeight = topNav?.clientHeight || 0;
+    const classificationBanner = document.querySelector("#site-banner");
+    const classificationBannerHeight = classificationBanner?.clientHeight || 0;
+
+    if (window.scrollY > cookieBannerHeight + topNavHeight) {
+      setNavHeight(window.innerHeight - classificationBannerHeight);
+    } else {
+      const size =
+        window.innerHeight -
+        (cookieBannerHeight + topNavHeight - window.scrollY) -
+        classificationBannerHeight;
+      setNavHeight(size);
+    }
+  };
+
   useEffect(() => {
     setHasMounted(true);
+    checkAllLoaded();
     const linkClick = sessionStorage.getItem("navlinkclick");
     sessionStorage.setItem("navlinkclick", "false");
     if (linkClick === "true") {
@@ -245,7 +267,30 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
         if (currentEl) currentEl.focus();
       }, 300);
     }
+
+    window.addEventListener("scroll", updateNavigationHeight);
+    window.addEventListener("resize", updateNavigationHeight);
+    return () => {
+      window.removeEventListener("scroll", updateNavigationHeight);
+      window.removeEventListener("resize", updateNavigationHeight);
+    };
   }, []);
+
+  const checkAllLoaded = () => {
+    const cookieBanner = document.querySelector("#cookie-banner");
+    const topNav = document.querySelector("#site-top-nav");
+    const classificationBanner = document.querySelector("#site-banner");
+    const cookieBannerOK = !cookieBanner || cookieBanner.clientHeight;
+    const topNavOK = !topNav || topNav.clientHeight;
+    const classificationBannerOK =
+      !classificationBanner || classificationBanner.clientHeight;
+
+    if (cookieBannerOK && topNavOK && classificationBannerOK) {
+      setTimeout(updateNavigationHeight, 300);
+    } else {
+      setTimeout(checkAllLoaded, 300);
+    }
+  };
 
   const handleBlur = (e: FocusEvent<HTMLElement>) => {
     // If not clicking on the elements of the Side Nav
@@ -292,6 +337,11 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       <nav
         id="icds-section-nav"
         aria-label={`${accessibleLabel} pages`}
+        style={
+          (!responsiveNavOpen &&
+            navHeight > 0 && { height: `${navHeight}px` }) ||
+          {}
+        }
         className={clsx(
           "scroll",
           "large-only",

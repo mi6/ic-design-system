@@ -26,7 +26,7 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
   version,
   shortTitle,
 }) => (
-  <ic-top-navigation version={version}>
+  <ic-top-navigation id="site-top-nav" version={version}>
     <GatsbyLink id="icds-link" slot="app-title" to="/">
       {appTitle}
     </GatsbyLink>
