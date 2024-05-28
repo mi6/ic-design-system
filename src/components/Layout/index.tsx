@@ -230,7 +230,7 @@ const Layout: React.FC<LayoutProps> = ({
         />
       </Helmet>
       {!GATSBY_GA_TRACKING_ID && (
-        <ic-classification-banner classification="official" />
+        <ic-classification-banner id="site-banner" classification="official" />
       )}
       <CookieConsentContext.Provider value={value}>
         <ClientOnly>

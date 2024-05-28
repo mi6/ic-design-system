@@ -25,13 +25,19 @@ const CookieBanner: React.FC = () => {
     banner.current?.focus(); // set focus to cookies banner when submitted, to focus on message
   }, [submitted]);
 
+  useEffect(() => {
+    if (submitted || !visible) {
+      window.dispatchEvent(new Event("resize"));
+    }
+  }, [visible, submitted]);
+
   if (!visible || isBotOrDoNotTrack()) {
     return null;
   }
 
   return (
     <div
-      className="banner"
+      id="cookie-banner"
       aria-label="cookies banner"
       role="region"
       ref={banner}
