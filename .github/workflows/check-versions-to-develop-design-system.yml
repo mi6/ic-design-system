@@ -26,7 +26,10 @@ jobs:
           FONTS_VERSION=$(npm view @ukic/fonts verion)
           REACT_VERSION=$(npm view @ukic/react version)
           WEB_COMPS_VERSION=$(npm view @ukic/web-components version)
-          npm install @ukic/docs@$DOCS_VERSION @ukic/fonts@$FONTS_VERSION @ukic/react@$REACT_VERSION @ukic/web-components@$WEB_COMPS_VERSION
+          CANARY_DOCS_VERSION=$(npm view @ukic/canary-docs version)
+          CANARY_WEB_COMPS_VERSION=$(npm view @ukic/canary-web-components version)
+          CANARY_REACT_VERSION=$(npm view @ukic/canary-react version)
+          npm install @ukic/docs@$DOCS_VERSION @ukic/fonts@$FONTS_VERSION @ukic/react@$REACT_VERSION @ukic/web-components@$WEB_COMPS_VERSION @ukic/canary-docs@$CANARY_DOCS_VERSION @ukic/canary-react@$CANARY_REACT_VERSION @ukic/canary-web-components@$CANARY_WEB_COMPS_VERSION
       - name: Create check-versions Pull Request
         uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5 #v5
         with:
