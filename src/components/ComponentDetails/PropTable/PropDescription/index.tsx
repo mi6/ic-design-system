@@ -5,12 +5,15 @@ import { backtickToCodeBlock } from "../../../../utils/helpers";
 
 const PropDescription: React.FC<{
   description: string;
-  typeName: string;
-  type: string;
+  typeName?: string;
+  type?: string;
   required: boolean;
   deprecation: string | undefined;
 }> = ({ description, type, typeName, required, deprecation }) => {
-  const displayedType = typeName !== type ? `${typeName} - ${type}` : type;
+  let displayedType: string | null = null;
+  if(type) {
+    displayedType = (typeName && (typeName !== type)) ? `${typeName} - ${type}` : type;
+  }
   return (
     <div className="prop-description">
       {!!description && (
@@ -19,7 +22,7 @@ const PropDescription: React.FC<{
       {required && (
         <ic-typography variant="subtitle-small">Required</ic-typography>
       )}
-      {!deprecation && <CodeAttribute label={`type: ${displayedType}`} />}
+      {(!deprecation && displayedType) && <CodeAttribute label={`type: ${displayedType}`} />}
       {deprecation && (
         <>
           <ic-typography>{deprecation}</ic-typography>
