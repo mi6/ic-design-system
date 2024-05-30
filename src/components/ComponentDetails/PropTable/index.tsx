@@ -1,24 +1,12 @@
 import React, { useMemo } from "react";
+import { JsonDocsProp } from "@ukic/docs";
 import AttributeTable from "../../AttributeTable";
 import AttributeCards from "../../AttributeCards";
 import AttributeName from "../AttributeName";
 import PropDescription from "./PropDescription";
 
-interface StencilProp {
-  name: string;
-  attr?: string | undefined;
-  docs: string;
-  complexType: {
-    original: string;
-    resolved: string;
-  };
-  default?: string;
-  required: boolean;
-  deprecation?: string | undefined;
-}
-
 interface PropTableProps {
-  propData: StencilProp[];
+  propData: JsonDocsProp[];
 }
 
 const PropTable: React.FC<PropTableProps> = ({ propData }) => {
@@ -62,8 +50,8 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
             description: (
               <PropDescription
                 description={docs}
-                typeName={complexType.original}
-                type={complexType.resolved}
+                typeName={complexType?.original}
+                type={complexType?.resolved}
                 required={required}
                 deprecation={deprecation}
               />
