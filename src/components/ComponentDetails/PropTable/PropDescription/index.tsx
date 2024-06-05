@@ -11,8 +11,9 @@ const PropDescription: React.FC<{
   deprecation: string | undefined;
 }> = ({ description, type, typeName, required, deprecation }) => {
   let displayedType: string | null = null;
-  if(type) {
-    displayedType = (typeName && (typeName !== type)) ? `${typeName} - ${type}` : type;
+  if (type) {
+    displayedType =
+      typeName && typeName !== type ? `${typeName} - ${type}` : type;
   }
   return (
     <div className="prop-description">
@@ -22,7 +23,9 @@ const PropDescription: React.FC<{
       {required && (
         <ic-typography variant="subtitle-small">Required</ic-typography>
       )}
-      {(!deprecation && displayedType) && <CodeAttribute label={`type: ${displayedType}`} />}
+      {!deprecation && displayedType && (
+        <CodeAttribute label={`type: ${displayedType}`} />
+      )}
       {deprecation && (
         <>
           <ic-typography>{deprecation}</ic-typography>
