@@ -1,7 +1,17 @@
 const PizZip = require("pizzip");
+var piexif = require("piexifjs");
 const { DOMParser, XMLSerializer } = require("@xmldom/xmldom");
 const fs = require("fs");
 const path = require("path");
+
+/**
+ * Given the pathname of a JPG file, this function returns the data contained in that file converted into a Base64 string.
+ * @param {*} filename path of the jpg
+ * @returns {string} the data as a Base64 string
+ */
+function getBase64DataFromJpgFile(filename) {
+  return fs.readFileSync(filename).toString("binary");
+}
 
 /**
  * Recursively search for files in the provided directory
@@ -33,7 +43,7 @@ function removeAuthorFromWordDoc(fileName) {
   // Unzip the content of the file
   const zip = new PizZip(content);
 
-  //get the docprops core.xml file where the exif data is
+  // Get the docprops core.xml file where the exif data is
   const core = zip.file("docProps/core.xml").asText();
   const coreDOM = new DOMParser().parseFromString(core);
 
@@ -47,7 +57,7 @@ function removeAuthorFromWordDoc(fileName) {
     return;
   }
 
-  //Set the author-related exif fields to empty
+  // Set the author-related exif fields to empty
   coreDOM.documentElement.getElementsByTagName("dc:creator")[0].textContent =
     "";
   coreDOM.documentElement.getElementsByTagName(
@@ -56,10 +66,10 @@ function removeAuthorFromWordDoc(fileName) {
 
   const newCore = new XMLSerializer().serializeToString(coreDOM);
 
-  //Insert modified core.xml back into the docx
+  // Insert modified core.xml back into the docx
   zip.file("docProps/core.xml", newCore);
 
-  //wrap the docx back into its original file
+  // Wrap the docx back into its original file
   const updatedDoc = zip.generate({
     type: "nodebuffer",
     mimeType:
@@ -75,13 +85,33 @@ function removeAuthorFromWordDoc(fileName) {
   console.log("Removed author from " + fileName);
 }
 
+function removeExifFromJPG(fileName) {
+  // Get the data from the file
+  const imageData = getBase64DataFromJpgFile(fileName);
+  // Remove exif data with piexif
+  const scrubbedImageData = piexif.remove(imageData);
+  fileBuffer = Buffer.from(scrubbedImageData, "binary");
+  // Replace the image
+  fs.writeFileSync(fileName, fileBuffer);
+  console.log("Removed EXIF data from " + fileName);
+}
+
 let wordDocs = [];
 wordDocs.push(...searchFile(`${__dirname}/../src`, ".docx"));
 wordDocs.push(...searchFile(`${__dirname}/../static`, ".docx"));
 
+let jpgs = [];
+jpgs.push(...searchFile(`${__dirname}/../src`, ".jpg"));
+jpgs.push(...searchFile(`${__dirname}/../static`, ".jpg"));
+
 console.log("Checking all word docs for author");
 wordDocs.forEach((file) => {
   removeAuthorFromWordDoc(file);
+});
+
+console.log("Removing EXIF from JPGs");
+jpgs.forEach((file) => {
+  removeExifFromJPG(file);
 });
 
 return 0;
