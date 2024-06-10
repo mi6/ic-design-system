@@ -174,4 +174,8 @@ ic-top-navigation form.not-loaded {
   .logo-wrapper > ic-footer-link:nth-child(3) {
     width: 2.875rem;
   }
+
+  .logo-wrapper > ic-footer-link:nth-child(3) svg {
+    transform: translate(0, -1px);
+  }
 }
