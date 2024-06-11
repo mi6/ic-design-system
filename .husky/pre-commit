@@ -3,7 +3,7 @@
 
 bash "$(dirname "$0")/email-check.sh"
 
-print Removing Exif data from static files
+echo Removing Exif data from static files
 node $(dirname "$0")/./removeAuthorExif.js
 
 npm run test
