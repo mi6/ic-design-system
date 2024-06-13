@@ -98,7 +98,7 @@ const ComponentGallery: React.FC = () => {
 
   return (
     <ul className="card-container">
-      {uniqueComponentDetails?.map(({ path, subTitle, status, title }) => (
+      {uniqueComponentDetails?.map(({ path, subTitle, title }) => (
         <li key={title}>
           <GatsbyLink to={path}>
             <ic-card message={subTitle} full-width clickable>
@@ -116,14 +116,6 @@ const ComponentGallery: React.FC = () => {
               >
                 <h4>{title}</h4>
               </ic-typography>
-              {status === "CANARY" && (
-                <ic-status-tag
-                  slot="adornment"
-                  label={status}
-                  size="small"
-                  status="warning"
-                />
-              )}
             </ic-card>
           </GatsbyLink>
         </li>
