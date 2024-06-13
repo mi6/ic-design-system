@@ -813,13 +813,9 @@ const termsDialogConfirmed = (ev) => {
 return (
   <>
     <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
-    <IcDialog
-      open={openDialog}
-      label="Coffee order"
+    <IcDialog ref={dialogEl} label="Coffee order"
       heading="Please agree to our terms and conditions"
-      onIcDialogClosed={openDialog && handleDialogClose}
       onIcDialogConfirmed={termsDialogConfirmed}
-      onIcDialogCancelled={handleDialogClose}
     >
       <IcTypography>
         Before continuing, please agree to our terms and conditions.
