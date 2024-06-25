@@ -3,7 +3,7 @@ path: "/get-started/test-components"
 
 navPriority: 2
 
-date: "2023-02-16"
+date: "2024-06-25"
 
 title: "Testing the components"
 
@@ -11,6 +11,15 @@ subTitle: "Test the UI Kit components within the shadow DOM using a testing fram
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/test-components.mdx"
 ---
+
+import { IcAlert } from "@ukic/react";
+
+<IcAlert
+  variant="info"
+  heading="Issues with Mocha"
+  message="We're aware of some issues around testing ICDS components with Mocha. For the time being, we advise using one of the testing frameworks we provide guidance on."
+  dismissible
+/>
 
 ## How we've built the components
 
