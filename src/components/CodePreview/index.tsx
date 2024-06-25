@@ -1,13 +1,5 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
-import React, {
-  CSSProperties,
-  ReactNode,
-  useState,
-  Dispatch,
-  SetStateAction,
-  useRef,
-  useEffect,
-} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import startCase from "lodash.startcase";
 import {
   mdiCheckboxMarkedCircle,
@@ -29,9 +21,7 @@ import {
   SlottedSVG,
 } from "@ukic/react";
 import { IcToggleButtonCustomEvent } from "@ukic/web-components";
-import StackblitzButton, {
-  StackblitzProps,
-} from "../../content/structured/patterns/components/StackblitzButton";
+import StackblitzButton from "../../content/structured/patterns/components/StackblitzButton";
 import { useViewportWidth } from "../../utils/helpers";
 import PageMetadataContext from "../../context/PageMetadata";
 import "./index.css";
@@ -39,156 +29,178 @@ import {
   createReactAppTsx,
   createWebComponentsIndexHTML,
 } from "../../content/structured/patterns/components/StackblitzButton/stackblitz-helpers";
+import {
+  Snippet,
+  ComponentPreviewProps,
+  CodeSnippetProps,
+  CodeWindowProps,
+  ToggleShowProps,
+  ToggleLanguageProps,
+  FrameworkTabProps,
+} from "./types";
 
-interface LongCodeSnippet {
-  language: "jsx" | "tsx";
-  snippet: string;
-}
-
-interface Snippet {
-  technology: string;
-  snippets: {
-    short?: string | undefined;
-    long: string | LongCodeSnippet[];
-  };
-}
-
-interface ComponentPreviewProps extends Partial<StackblitzProps> {
-  snippets?: Snippet[];
-  left?: boolean;
-  noPadding?: boolean;
-  centered?: boolean;
-  children: ReactNode;
-  style: CSSProperties;
-  state: "none" | "good" | "bad";
-  showStackblitzBtn: boolean;
-  type?: string;
-}
-
-interface CodeSnippetProps extends Partial<StackblitzProps> {
-  code: string;
-  longCode: string;
-  type?: string;
-  show: boolean;
-  setShow: Dispatch<SetStateAction<boolean>>;
-  showMore: boolean;
-  setShowMore: Dispatch<SetStateAction<boolean>>;
-  showStackblitzBtn?: boolean;
-  selectedLanguage: "Typescript" | "Javascript";
-}
-
-const CodeSnippet: React.FC<CodeSnippetProps> = ({
+const ActionButtons: React.FC<CodeSnippetProps> = ({
   code,
   longCode,
   isWebComponents,
+  showStackblitzBtn,
+  projectTitle,
+  projectDescription,
+  selectedLanguage,
+  isLargeViewport,
+}) => (
+  <div className="button-container">
+    {showStackblitzBtn && projectTitle !== undefined && (
+      <StackblitzButton
+        codeSnippet={longCode}
+        isWebComponents={isWebComponents}
+        projectTitle={projectTitle}
+        projectDescription={projectDescription}
+        isJSX={selectedLanguage === "Javascript"}
+      />
+    )}
+    <IcButton
+      aria-label={isLargeViewport ? "" : "Copy code"}
+      variant={isLargeViewport ? "tertiary" : "icon"}
+      size={isLargeViewport ? "small" : "default"}
+      appearance="dark"
+      onClick={() => {
+        navigator.clipboard.writeText(code);
+        document
+          .querySelector<HTMLIcToastElement>("#copy-to-clipboard-toast")
+          ?.setVisible();
+      }}
+    >
+      <SlottedSVG
+        path={mdiContentCopy}
+        slot={isLargeViewport ? "left-icon" : undefined}
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      />
+      {isLargeViewport && "Copy code"}
+    </IcButton>
+  </div>
+);
+
+const ToggleShowButton: React.FC<ToggleShowProps> = ({
   type,
   show,
   setShow,
   showMore,
   setShowMore,
-  showStackblitzBtn,
-  projectTitle,
-  projectDescription,
-  selectedLanguage,
-}) => {
-  const viewportWidth = useViewportWidth();
-  const isLargeViewport: boolean = viewportWidth > 992;
+}) => (
+  <div className="button-container">
+    {type === "pattern" && (
+      <IcButton
+        variant="tertiary"
+        size="small"
+        onClick={() => setShow(!show)}
+        appearance="dark"
+      >
+        {!show ? "Show" : "Hide"} code
+        <SlottedSVG
+          slot="right-icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          path={!show ? mdiMenuDown : mdiMenuUp}
+        />
+      </IcButton>
+    )}
+    {type !== "pattern" && (
+      <IcButton
+        variant="tertiary"
+        size="small"
+        onClick={() => setShowMore(!showMore)}
+        appearance="dark"
+      >
+        Show {showMore ? "less" : "full "} code
+        <SlottedSVG
+          slot="right-icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          path={showMore ? mdiMenuUp : mdiMenuDown}
+        />
+      </IcButton>
+    )}
+  </div>
+);
 
-  return (
-    <>
-      {show && (
-        <Highlight
-          {...defaultProps}
-          code={code}
-          language="jsx"
-          theme={undefined}
-        >
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre className={clsx(className, "snippet")} style={style}>
-              <code>
-                {tokens.map((line, i) => (
-                  <div {...getLineProps({ line, key: i })}>
-                    {line.map((token, key) => (
-                      <span {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                ))}
-              </code>
-            </pre>
-          )}
-        </Highlight>
-      )}
-      <div className="snippet-container">
-        {type === "pattern" && (
-          <IcButton
-            variant="tertiary"
-            size={isLargeViewport ? "small" : "default"}
-            appearance="dark"
-            onClick={() => setShow(!show)}
-          >
-            {!show ? "Show" : "Hide"} code
-            <SlottedSVG
-              slot="right-icon"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              path={!show ? mdiMenuDown : mdiMenuUp}
-            />
-          </IcButton>
+const CodeWindow: React.FC<CodeWindowProps> = ({ code, show }) => (
+  <div>
+    {show && (
+      <Highlight {...defaultProps} code={code} language="jsx" theme={undefined}>
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className={clsx(className, "snippet")} style={style}>
+            <code>
+              {tokens.map((line, i) => (
+                <div {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </code>
+          </pre>
         )}
-        {type !== "pattern" && (
-          <IcButton
-            variant="tertiary"
-            size={isLargeViewport ? "small" : "default"}
-            appearance="dark"
-            onClick={() => setShowMore(!showMore)}
-          >
-            Show {showMore ? "less" : "full"} code
-            <SlottedSVG
-              slot="right-icon"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              path={showMore ? mdiMenuUp : mdiMenuDown}
-            />
-          </IcButton>
-        )}
-        <div className="code-actions">
-          {showStackblitzBtn && projectTitle !== undefined && (
-            <StackblitzButton
-              codeSnippet={longCode}
-              isWebComponents={isWebComponents}
-              projectTitle={projectTitle}
-              projectDescription={projectDescription}
-              isJSX={selectedLanguage === "Javascript"}
-            />
-          )}
-          <IcButton
-            aria-label={isLargeViewport ? "" : "Copy code"}
-            variant={isLargeViewport ? "tertiary" : "icon"}
-            size={isLargeViewport ? "small" : "default"}
-            appearance="dark"
-            onClick={() => {
-              navigator.clipboard.writeText(code);
-              document
-                .querySelector<HTMLIcToastElement>("#copy-to-clipboard-toast")
-                ?.setVisible();
-            }}
-          >
-            <SlottedSVG
-              path={mdiContentCopy}
-              slot={isLargeViewport ? "left-icon" : undefined}
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-            />
-            {isLargeViewport && "Copy code"}
-          </IcButton>
-        </div>
-      </div>
-    </>
-  );
-};
+      </Highlight>
+    )}
+  </div>
+);
+
+const ToggleLanguageButton: React.FC<ToggleLanguageProps> = ({
+  handleToggle,
+  selectedLanguage,
+  typescriptToggleBtnRef,
+  javascriptToggleBtnRef,
+  isLargeViewport,
+}) => (
+  <IcToggleButtonGroup
+    size="small"
+    selectMethod="auto"
+    selectType="single"
+    variant={isLargeViewport ? "default" : "icon"}
+  >
+    <IcToggleButton
+      label="TypeScript"
+      accessibleLabel={isLargeViewport ? "" : "TypeScript"}
+      size="small"
+      variant={isLargeViewport ? "default" : "icon"}
+      toggleChecked={selectedLanguage !== "Javascript"}
+      onIcToggleChecked={(ev) => handleToggle(ev, "Typescript")}
+      ref={typescriptToggleBtnRef}
+    >
+      <SlottedSVG slot="icon" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M3,3H21V21H3V3M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86M13,11.25H8V12.75H9.5V20H11.25V12.75H13V11.25Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+    <IcToggleButton
+      size="small"
+      label="JavaScript"
+      accessibleLabel={isLargeViewport ? "" : "JavaScript"}
+      variant={isLargeViewport ? "default" : "icon"}
+      toggleChecked={selectedLanguage !== "Typescript"}
+      onIcToggleChecked={(ev) => handleToggle(ev, "Javascript")}
+      ref={javascriptToggleBtnRef}
+    >
+      <SlottedSVG slot="icon" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M3,3H21V21H3V3M7.73,18.04C8.13,18.89 8.92,19.59 10.27,19.59C11.77,19.59 12.8,18.79 12.8,17.04V11.26H11.1V17C11.1,17.86 10.75,18.08 10.2,18.08C9.62,18.08 9.38,17.68 9.11,17.21L7.73,18.04M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86Z" />
+      </SlottedSVG>
+    </IcToggleButton>
+  </IcToggleButtonGroup>
+);
+
+const FrameworkTab: React.FC<FrameworkTabProps> = ({ snippets }) => (
+  <IcTabGroup inline label="Framework code snippets">
+    {snippets.map((snippet, index) => (
+      <IcTab key={snippet.technology} tab-position={index}>
+        {snippet.technology}
+      </IcTab>
+    ))}
+  </IcTabGroup>
+);
 
 const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   snippets,
@@ -205,6 +217,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 }) => {
   const viewportWidth = useViewportWidth();
   const isLargeViewport: boolean = viewportWidth > 992;
+  console.log(isLargeViewport);
 
   const [tabCount, setTabCount] = useState<number>(2);
   const tabContextRef = useRef<HTMLIcTabContextElement | null>(null);
@@ -458,77 +471,73 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
           ref={tabContextRef}
         >
           <div className="link-zone">
-            <IcTabGroup inline label="Framework code snippets">
-              {snippets.map((snippet, index) => (
-                <IcTab key={snippet.technology} tab-position={index}>
-                  {snippet.technology}
-                </IcTab>
-              ))}
-            </IcTabGroup>
-            <div className="toggle-button-container">
+            <FrameworkTab snippets={snippets} />
+            <div className="toggle-container">
               {(selectedTab === "React" || tabCount === 1) && (
-                <IcToggleButtonGroup size="small">
-                  <IcToggleButton
-                    label="TypeScript"
-                    accessibleLabel={isLargeViewport ? "" : "TypeScript"}
-                    size="small"
-                    variant={isLargeViewport ? "default" : "icon"}
-                    toggleChecked={selectedLanguage !== "Javascript"}
-                    onIcToggleChecked={(ev) => handleToggle(ev, "Typescript")}
-                    ref={typescriptToggleBtnRef}
-                  >
-                    <SlottedSVG
-                      slot="icon"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                    >
-                      <path d="M3,3H21V21H3V3M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86M13,11.25H8V12.75H9.5V20H11.25V12.75H13V11.25Z" />
-                    </SlottedSVG>
-                  </IcToggleButton>
-                  <IcToggleButton
-                    size="small"
-                    label="JavaScript"
-                    accessibleLabel={isLargeViewport ? "" : "JavaScript"}
-                    variant={isLargeViewport ? "default" : "icon"}
-                    toggleChecked={selectedLanguage !== "Typescript"}
-                    onIcToggleChecked={(ev) => handleToggle(ev, "Javascript")}
-                    ref={javascriptToggleBtnRef}
-                  >
-                    <SlottedSVG
-                      slot="icon"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                    >
-                      <path d="M3,3H21V21H3V3M7.73,18.04C8.13,18.89 8.92,19.59 10.27,19.59C11.77,19.59 12.8,18.79 12.8,17.04V11.26H11.1V17C11.1,17.86 10.75,18.08 10.2,18.08C9.62,18.08 9.38,17.68 9.11,17.21L7.73,18.04M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86Z" />
-                    </SlottedSVG>
-                  </IcToggleButton>
-                </IcToggleButtonGroup>
+                <ToggleLanguageButton
+                  handleToggle={handleToggle}
+                  selectedLanguage={selectedLanguage}
+                  typescriptToggleBtnRef={typescriptToggleBtnRef}
+                  javascriptToggleBtnRef={javascriptToggleBtnRef}
+                  isLargeViewport={isLargeViewport}
+                />
               )}
             </div>
           </div>
+          <div className="link-zone snippet-container">
+            <ActionButtons
+              type={type}
+              code={
+                getCodeSnippet(
+                  selectedTab === "Web component" ? snippets[0] : snippets[1]
+                )?.codeSnippet || ""
+              }
+              longCode={
+                getCodeSnippet(
+                  selectedTab === "Web component" ? snippets[0] : snippets[1]
+                )?.longCode || ""
+              }
+              show={show}
+              setShow={setShow}
+              showMore={showMore}
+              setShowMore={setShowMore}
+              showStackblitzBtn={showStackblitzBtn}
+              isWebComponents={
+                (selectedTab === "Web component"
+                  ? snippets[0].technology
+                  : snippets[1].technology) === "Web component"
+              }
+              projectTitle={`${
+                projectTitle || startCase(pageMetadata.pageTitle)
+              } (${
+                selectedTab === "Web component"
+                  ? snippets[0].technology
+                  : snippets[1].technology
+              }${getTypeOfProject(
+                selectedTab === "Web component" ? snippets[0] : snippets[1]
+              )})`}
+              projectDescription={
+                projectDescription === undefined || projectDescription === ""
+                  ? undefined
+                  : projectDescription
+              }
+              selectedLanguage={selectedLanguage}
+              isLargeViewport={isLargeViewport}
+            />
+            <ToggleShowButton
+              type={type}
+              show={show}
+              setShow={setShow}
+              showMore={showMore}
+              setShowMore={setShowMore}
+              isLargeViewport={isLargeViewport}
+            />
+          </div>
           {snippets.map((snippet, index) => (
             <IcTabPanel key={snippet.technology} tab-position={index}>
-              <CodeSnippet
-                type={type}
+              <CodeWindow
                 code={getCodeSnippet(snippet)?.codeSnippet || ""}
-                longCode={getCodeSnippet(snippet)?.longCode || ""}
                 show={show}
-                setShow={setShow}
-                showMore={showMore}
-                setShowMore={setShowMore}
-                showStackblitzBtn={showStackblitzBtn}
-                isWebComponents={snippet.technology === "Web component"}
-                projectTitle={`${
-                  projectTitle || startCase(pageMetadata.pageTitle)
-                } (${snippet.technology}${getTypeOfProject(snippet)})`}
-                projectDescription={
-                  projectDescription === undefined || projectDescription === ""
-                    ? undefined
-                    : projectDescription
-                }
-                selectedLanguage={selectedLanguage}
               />
             </IcTabPanel>
           ))}
