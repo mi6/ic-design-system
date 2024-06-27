@@ -26,7 +26,7 @@ Welcome and thank you for contributing to the [Intelligence Community Design Sys
 
 ## Code of conduct
 
-The Intelligence Community Design System (ICDS) has adopted the [Contributor Covenant](https://www.contributor-covenant.org/). Please familiarise yourself with our full [conduct principles](/CODE_OF_CONDUCT).
+The Intelligence Community Design System (ICDS) has adopted the [Contributor Covenant](https://www.contributor-covenant.org/). Please familiarise yourself with our full [conduct principles](/CODE_OF_CONDUCT.md).
 
 ## How to contribute
 
