@@ -1,13 +1,23 @@
 .link-zone {
-  border-top: 1px solid var(--ic-architectural-300);
-  border-bottom: 1px solid var(--ic-architectural-300);
+  border-top: var(--ic-border-width) solid var(--ic-architectural-300);
+  border-bottom: var(--ic-border-width) solid var(--ic-architectural-300);
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
 }
 
-.toggle-button-container {
-  margin: auto var(--ic-space-xs) auto 0;
+.link-zone:nth-child(2) {
+  border-top: 0;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-right: var(--ic-space-xxs);
+} 
+
+.button-container {
+  margin: auto var(--ic-space-xxs) auto var(--ic-space-xxs);
 }
 
 .comp-preview {
@@ -74,10 +84,8 @@
 }
 
 .snippet-container {
-  display: flex;
   background-color: var(--ic-architectural-40) !important;
-  padding: var(--ic-space-xxs);
-  justify-content: space-between;
+  height: 46px;
 }
 
 .snippet-container ic-button button.button {
