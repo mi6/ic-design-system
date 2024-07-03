@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - "develop"
+      - "v3.0.0/develop"
   pull_request:
     types: [opened, reopened, edited, synchronize]
 
@@ -64,8 +65,18 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e #v4
+        if: ${{ steps.extract_branch.outputs.branch != 'v3.0.0/main' }}
         with:
           repository-name: mi6/ic-design-system-githubpages
           folder: ./public
           target-folder: ./branches/${{ steps.extract_branch.outputs.branch }}
+          token: ${{ secrets.IC_DESIGN_SYSTEM_QA }}
+
+      - name: Deploy v3
+        uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e #v4
+        if: ${{ steps.extract_branch.outputs.branch == 'v3.0.0/main' }}
+        with:
+          repository-name: mi6/ic-design-system-githubpages
+          folder: ./public
+          target-folder: ./v3
           token: ${{ secrets.IC_DESIGN_SYSTEM_QA }}
