@@ -5,6 +5,7 @@ import clsx from "clsx";
 import "./index.css";
 import AnchorNav from "../../components/AnchorNav";
 import ComponentPreview from "../../components/CodePreview";
+import ComponentTesting from "../../components/ComponentTesting";
 import ComponentGallery from "../../components/ComponentGallery";
 import ComponentDetails from "../../components/ComponentDetails";
 import DoDontCaution from "../../components/DoDontCaution";
@@ -47,6 +48,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
     inlineCode: WrappedCode,
     IcAlert: WrappedAlert,
     ComponentPreview,
+    ComponentTesting,
     ComponentGallery,
     blockquote: WrappedBlockquote,
     DoDontCaution,
