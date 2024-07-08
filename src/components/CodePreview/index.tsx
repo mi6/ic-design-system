@@ -1,5 +1,5 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, RefObject } from "react";
 import startCase from "lodash.startcase";
 import {
   mdiCheckboxMarkedCircle,
@@ -35,9 +35,21 @@ import {
   CodeSnippetProps,
   CodeWindowProps,
   ToggleShowProps,
-  ToggleLanguageProps,
   FrameworkTabProps,
 } from "./types";
+
+export interface ToggleLanguageProps {
+  handleToggle: (
+    // eslint-disable-next-line
+    ev: IcToggleButtonCustomEvent<{ checked: boolean }>,
+    // eslint-disable-next-line
+    intendedLanguage: "Typescript" | "Javascript"
+  ) => void;
+  selectedLanguage: "Typescript" | "Javascript";
+  typescriptToggleBtnRef: RefObject<HTMLIcToggleButtonElement>;
+  javascriptToggleBtnRef: RefObject<HTMLIcToggleButtonElement>;
+  isLargeViewport: boolean;
+}
 
 const ActionButtons: React.FC<CodeSnippetProps> = ({
   code,
@@ -217,12 +229,11 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 }) => {
   const viewportWidth = useViewportWidth();
   const isLargeViewport: boolean = viewportWidth > 992;
-  console.log(isLargeViewport);
 
   const [tabCount, setTabCount] = useState<number>(2);
   const tabContextRef = useRef<HTMLIcTabContextElement | null>(null);
-  const typescriptToggleBtnRef = useRef<HTMLIcToggleButtonElement | null>(null);
-  const javascriptToggleBtnRef = useRef<HTMLIcToggleButtonElement | null>(null);
+  const typescriptToggleBtnRef = useRef<HTMLIcToggleButtonElement>(null);
+  const javascriptToggleBtnRef = useRef<HTMLIcToggleButtonElement>(null);
 
   useEffect(() => {
     if (tabContextRef.current) {
