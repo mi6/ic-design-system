@@ -141,11 +141,16 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
 );
 
 const CodeWindow: React.FC<CodeWindowProps> = ({ code, show }) => (
-  <div>
+  <div className="code-window">
+    {/* eslint-disable jsx-a11y/no-noninteractive-tabindex */}
     {show && (
       <Highlight {...defaultProps} code={code} language="jsx" theme={undefined}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={clsx(className, "snippet")} style={style}>
+          <pre
+            className={clsx(className, "snippet")}
+            style={style}
+            tabIndex={0}
+          >
             <code>
               {tokens.map((line, i) => (
                 <div {...getLineProps({ line, key: i })}>
@@ -159,6 +164,7 @@ const CodeWindow: React.FC<CodeWindowProps> = ({ code, show }) => (
         )}
       </Highlight>
     )}
+    {/* eslint-enable jsx-a11y/no-noninteractive-tabindex */}
   </div>
 );
 
