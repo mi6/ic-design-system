@@ -1,10 +1,9 @@
-import React, {
+import {
   CSSProperties,
   ReactNode,
   Dispatch,
   SetStateAction,
 } from "react";
-import { IcToggleButtonCustomEvent } from "@ukic/web-components";
 import { StackblitzProps } from "../../content/structured/patterns/components/StackblitzButton";
 import "./index.css";
 
@@ -58,24 +57,6 @@ export interface ToggleShowProps {
 export interface CodeWindowProps {
   code: string;
   show: boolean;
-}
-
-// Needed to stop lint errors
-interface HTMLIcToggleButtonElement extends HTMLElement {
-  checked: boolean;
-}
-
-export interface ToggleLanguageProps {
-  handleToggle: (
-    // eslint-disable-next-line
-    ev: IcToggleButtonCustomEvent<{ checked: boolean }>,
-    // eslint-disable-next-line
-    intendedLanguage: "Typescript" | "Javascript"
-  ) => void;
-  selectedLanguage: "Typescript" | "Javascript";
-  typescriptToggleBtnRef: React.RefObject<HTMLIcToggleButtonElement>;
-  javascriptToggleBtnRef: React.RefObject<HTMLIcToggleButtonElement>;
-  isLargeViewport: boolean;
 }
 
 export interface FrameworkTabProps {
