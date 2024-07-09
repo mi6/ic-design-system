@@ -1,9 +1,4 @@
-import {
-  CSSProperties,
-  ReactNode,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { CSSProperties, ReactNode, Dispatch, SetStateAction } from "react";
 import { StackblitzProps } from "../../content/structured/patterns/components/StackblitzButton";
 import "./index.css";
 
