@@ -20,7 +20,16 @@ jobs:
         with:
           node-version: 18
       - uses: browser-actions/setup-chrome@latest
+      - name: Check check-versions exists
+        id: check-versions-exists
+        run: |
+          if [[ -n $(git ls-remote --heads origin check-versions) ]]; then
+              echo "exists=true" >> $GITHUB_OUTPUT
+          else
+              echo "exists=false" >> $GITHUB_OUTPUT          
+          fi
       - name: Delete check-versions
+        if: steps.check-versions-exists.outputs.exists == 'true'
         uses: SvanBoxel/delete-merged-branch@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
