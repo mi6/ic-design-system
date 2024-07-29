@@ -1,0 +1,89 @@
+---
+path: "/components/horizontal-card"
+
+navPriority: 7
+
+date: "2024-07-26"
+
+title: "Card Horizontal"
+
+status: "CANARY"
+
+subTitle: "Horizontal cards are containers used to display structured information or link to new information."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/horizontal-card" },
+    { title: "Code", path: "/components/horizontal-card/code" },
+  ]
+---
+
+import { IcAlert, IcLink } from "@ukic/react";
+import { IcCardHorizontal } from "@ukic/canary-react";
+
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and its guidance will be updated over time."
+/>
+
+## Canary components
+
+Canary components are unstable components that are released for testing purposes.
+
+We value any feedback from users willing to try them in their applications.
+
+These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
+
+For more information on canary components, read our approach to [releases and versions](/get-started/releases-versions).
+
+<p>
+  Additional details on the props and events for this component can be found in
+  the ICDS{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-web-components/?path=/docs/web-components-card-horizontal--docs"
+    target="_blank"
+  >
+    Canary Web Components
+  </IcLink>{" "}
+  and{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-react/?path=/docs/react-components-card-horizontal--docs"
+    target="_blank"
+  >
+    Canary React
+  </IcLink>{" "}
+  storybooks.
+</p>
+
+## Component demo
+
+<ComponentPreview>
+  <IcCardHorizontal heading="Card heading" message="Card message">
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </svg>
+    <svg slot="image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+  </IcCardHorizontal>
+</ComponentPreview>

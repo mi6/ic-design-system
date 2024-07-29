@@ -1,5 +1,6 @@
 {
   "canaryReactComponentNames": [
+    "IcCardHorizontal",
     "IcDataTable",
     "IcDataTableTitleBar",
     "IcDateInput",
@@ -9,6 +10,7 @@
     "IcSelectWithMulti"
   ],
   "canaryWebComponentsNames": [
+    "ic-card-horizontal",
     "ic-data-table",
     "ic-data-table-title-bar",
     "ic-date-input",
@@ -18,6 +20,7 @@
     "ic-select-with-multi"
   ],
   "canaryTypes": [
+    "IcCardSizes",
     "IcDataTableSortOrderOptions",
     "IcDataTableDensityOptions",
     "IcDataTableColumnDataTypes",
