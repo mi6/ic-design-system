@@ -1,7 +1,7 @@
 ---
 path: "/components/pagination"
 
-navPriority: 23
+navPriority: 24
 
 date: "2023-05-05"
 
@@ -21,17 +21,15 @@ tabs:
   ]
 ---
 
-import { IcPagination, IcAlert } from "@ukic/react";
+import { IcPagination } from "@ukic/react";
 import paginationFig1 from "./images/fig-1-use-pagination-to-split-content-across-pages.png";
-import paginationFig2 from "./images/fig-2-complex-simple-carousel-pagination.png";
+import paginationFig2 from "./images/fig-2-complex-simple-pagination.png";
 import paginationFig3 from "./images/fig-3-data-table-with-pagination-bar.png";
-import paginationFig4 from "./images/fig-4-dont-use-carousel-pagination-for-large-numbers-of-pages.png";
-import paginationFig5 from "./images/fig-5-use-colour-variants.png";
-import paginationFig6 from "./images/fig-6-place-pagination-at-bottom.png";
-import paginationFig7 from "./images/fig-7-place-pagination-at-top-and-bottom.png";
-import paginationFig8 from "./images/fig-8-overlaid-carousel-pagination.png";
-import paginationFig9 from "./images/fig-9-setting-adjacent-and-boundary-items.png";
-import paginationFig10 from "./images/fig-10-pagination-bars-with-different-elements.png";
+import paginationFig4 from "./images/fig-4-use-colour-variants.png";
+import paginationFig5 from "./images/fig-5-place-pagination-at-bottom.png";
+import paginationFig6 from "./images/fig-6-place-pagination-at-top-and-bottom.png";
+import paginationFig7 from "./images/fig-7-setting-adjacent-and-boundary-items.png";
+import paginationFig8 from "./images/fig-8-pagination-bars-with-different-elements.png";
 
 ## Introduction
 
@@ -43,17 +41,10 @@ Pagination enables large amounts of content to be split across multiple pages so
 
 ## Component variants
 
-<IcAlert
-  heading="Coming soon"
-  message="The carousel pagination variant is in development."
-  variant="info"
-/>
-
-There are three types of pagination that can be used to control pages of content:
+There are two types of pagination that can be used to control pages of content:
 
 - Complex pagination: Contains buttons for navigating to next, previous, first and last pages as well as individual page buttons for adjacent and boundary pages.
 - Simple pagination: Contains only buttons for navigating to next, previous, first and last pages. Displays the current page as a label.
-- Carousel pagination: Uses a dot button to indicate each page and shows all pages at the same time.
 
 Use the pagination components within a pagination bar to provide other navigation controls including:
 
@@ -84,14 +75,12 @@ Use complex pagination to allow people to easily navigate between pages without 
 
 Use simple pagination to navigate sequentially between pages using the ‘next’ and ‘previous’ buttons.
 
-Use carousel pagination for small numbers of pages where all pages can be shown as carousel items in the pagination component.
-
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={paginationFig2}
-    imageAlt="An image showing three pagination components. Complex pagination provides numbered buttons for each page. Simple pagination simply provides next, previous, first and last buttons. Carousel pagination shows pages as dots and does not show page numbers."
+    imageAlt="An image showing two pagination components. Complex pagination provides numbered buttons for each page. Simple pagination simply provides next, previous, first and last buttons."
     state="none"
-    caption="Use complex, simple or carousel pagination variants for different implementations."
+    caption="Use complex or simple pagination variants for different implementations."
   />
 </DoubleDoDontCaution>
 
@@ -114,15 +103,6 @@ Use an infinite scrolling pattern when navigating content should be explorative,
 
 Avoid using simple pagination when it is important to be able to move between specific pages; complex pagination is better for this as it shows more adjacent pages, allowing one click navigation.
 
-Don’t use carousel pagination for large numbers of pages. Carousel pagination shows a dot button for every page at the same time.
-
-<DoDontCaution
-  imageSrc={paginationFig4}
-  imageAlt="An example product grid with a carousel pagination component showing 17 page buttons."
-  state="bad"
-  caption="Don’t use carousel pagination for large numbers of pages, use complex pagination instead."
-/>
-
 ## Interaction behaviour
 
 Pagination components fire an event when a new page is selected. Use this to trigger the switch of pages in the app.
@@ -134,7 +114,7 @@ In a pagination bar, when the number of items per page is changed, then the pagi
 Use the default, dark and light appearance pagination components when placing them on different coloured backgrounds to ensure the correct contrast ratios are met.
 
 <DoDontCaution
-  imageSrc={paginationFig5}
+  imageSrc={paginationFig4}
   imageAlt="Three pagination examples on different coloured backgrounds. The default appearance pagination is used on a white background. The dark appearance pagination is used on a light yellow background. The light appearance pagination is used on a dark grey background."
   state="good"
   caption="Use colour contrast variants when placing pagination components on different coloured backgrounds."
@@ -147,7 +127,7 @@ Place the pagination component so that it is obvious what it controls. Match the
 Try to place pagination at the bottom of the page it controls, as this encourages the user to read through the page before moving to the next. However, placing pagination at the top of the page is still a valid option.
 
 <DoDontCaution
-  imageSrc={paginationFig6}
+  imageSrc={paginationFig5}
   imageAlt="An example product grid showing hot beverages. A pagination control appears below the drinks grid that it controls."
   state="good"
   caption="Try to place pagination at the bottom of the container it controls."
@@ -156,19 +136,10 @@ Try to place pagination at the bottom of the page it controls, as this encourage
 For large page containers that require scrolling, use two pagination components at the top and bottom of the page container to provide easy access to navigation when at either the top or bottom of the page.
 
 <DoDontCaution
-  imageSrc={paginationFig7}
+  imageSrc={paginationFig6}
   imageAlt="An example product grid showing hot beverages. A complex pagination control appears below the drinks grid that it controls. A simple pagination control is displayed in the top-right above the product grid."
   state="good"
   caption="Place pagination controls at the top and bottom of the page container to provide additional navigation functionality."
-/>
-
-Place carousel pagination on or around the carousel content. This can be overlaid, but take care to make sure that contrast requirements are met.
-
-<DoDontCaution
-  imageSrc={paginationFig8}
-  imageAlt="An example homepage for a coffee shop called ‘Drink coffee, be happy’. A hero banner sits at the top of the page with a carousel pagination control overlaid at its bottom."
-  state="good"
-  caption="Overlay carousel pagination on top of its content but take care to ensure colour contrast requirements are met."
 />
 
 ## Content
@@ -176,16 +147,16 @@ Place carousel pagination on or around the carousel content. This can be overlai
 When using complex pagination, specify the number of adjacent pages to display next to the current page. Also specify the number of boundary pages to display at the start and end of the page range.
 
 <DoDontCaution
-  imageSrc={paginationFig9}
+  imageSrc={paginationFig7}
   imageAlt="Three complex pagination components with different settings for adjacent and boundary items. Increasing boundary items shows more page buttons at the start and end of the range. Increasing the adjacent items shows more page buttons next to the current page."
   state="none"
   caption="Set the adjacent and boundary items to change which page buttons are displayed."
 />
 
-Select which elements within a pagination bar you want to display. Each element in the pagination bar can be toggled on or off except for the pagination component itself, which can be switched to use complex, simple or carousel pagination.
+Select which elements within a pagination bar you want to display. Each element in the pagination bar can be toggled on or off except for the pagination component itself, which can be switched to use complex or simple pagination.
 
 <DoDontCaution
-  imageSrc={paginationFig10}
+  imageSrc={paginationFig8}
   imageAlt="Three example pagination bars with different elements displaying. The top shows the ‘items per page selector’ and ‘go to page button’ displayed, whilst the other examples have these elements hidden."
   state="none"
   caption="Select which elements to show within a pagination bar."
