@@ -7,7 +7,9 @@
     "IcDatePicker",
     "IcMenuWithMulti",
     "IcPaginationBar",
-    "IcSelectWithMulti"
+    "IcSelectWithMulti",
+    "IcTreeItem",
+    "IcTreeView"
   ],
   "canaryWebComponentsNames": [
     "ic-card-horizontal",
@@ -17,7 +19,9 @@
     "ic-date-picker",
     "ic-menu-with-multi",
     "ic-pagination-bar",
-    "ic-select-with-multi"
+    "ic-select-with-multi",
+    "ic-tree-item",
+    "ic-tree-view"
   ],
   "canaryTypes": [
     "IcCardSizes",
@@ -25,7 +29,10 @@
     "IcDataTableDensityOptions",
     "IcDataTableColumnDataTypes",
     "IcDataTableColumnObject",
-    "IcDataTableRowHeights"
+    "IcDataTableRowOptions",
+    "IcDataTableRowHeights",
+    "IcDataTableTruncationTypes",
+    "truncWrapperDetailsTypes"
   ],
   "reactComponentNames": [
     "IcAccordion",

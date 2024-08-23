@@ -1,0 +1,1033 @@
+---
+path: "/components/tree-view/code"
+
+navPriority: 41
+
+date: "2024-08-23"
+
+title: "Tree view"
+
+status: "CANARY"
+
+subTitle: "Use the tree view component to display hierarchical data in a tree structure."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/tree-view" },
+    { title: "Code", path: "/components/tree-view/code" },
+  ]
+---
+
+import { IcTreeView, IcTreeItem } from "@ukic/canary-react";
+import { IcTypography, SlottedSVG } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu">
+  <ic-tree-item label="Coffee"></ic-tree-item>
+  <ic-tree-item label="Tea"></ic-tree-item>
+  <ic-tree-item label="Hot chocolate"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu">
+    <IcTreeItem label="Coffee" />
+    <IcTreeItem label="Tea" />
+    <IcTreeItem label="Hot chocolate" />
+  </IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu">
+      <IcTreeItem label="Coffee" />
+      <IcTreeItem label="Tea" />
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+## Tree view details
+
+<ComponentDetails component="ic-tree-view" canary />
+
+## Tree item details
+
+<ComponentDetails component="ic-tree-item" canary />
+
+## Variants
+
+### Nested levels
+
+export const snippetsNested = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu">
+  <ic-tree-item label="Coffee">
+    <ic-tree-item label="Americano"></ic-tree-item>
+    <ic-tree-item label="Latte"></ic-tree-item>
+    <ic-tree-item label="Espresso"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Tea">
+    <ic-tree-item label="Earl Grey"></ic-tree-item>
+    <ic-tree-item label="Chai"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Hot chocolate"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu">
+  <IcTreeItem label="Coffee">
+    <IcTreeItem label="Americano" />
+    <IcTreeItem label="Latte" />
+    <IcTreeItem label="Espresso" />
+  </IcTreeItem>
+  <IcTreeItem label="Tea">
+    <IcTreeItem label="Earl Grey" />
+    <IcTreeItem label="Chai" />
+  </IcTreeItem>
+  <IcTreeItem label="Hot chocolate" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsNested}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu">
+      <IcTreeItem label="Coffee">
+        <IcTreeItem label="Americano" />
+        <IcTreeItem label="Latte" />
+        <IcTreeItem label="Espresso" />
+      </IcTreeItem>
+      <IcTreeItem label="Tea">
+        <IcTreeItem label="Earl Grey" />
+        <IcTreeItem label="Chai" />
+      </IcTreeItem>
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Slotted icons
+
+export const snippetsIcons = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu">
+  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </svg>
+  <ic-tree-item label="Coffee">
+    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </svg>
+    <ic-tree-item label="Americano"></ic-tree-item>
+    <ic-tree-item label="Latte">
+      <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </ic-tree-item>
+    <ic-tree-item label="Espresso"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Tea">
+    <ic-tree-item label="Earl Grey"></ic-tree-item>
+    <ic-tree-item label="Chai"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Hot chocolate"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu">
+  <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </SlottedSVG>
+  <IcTreeItem label="Coffee">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </SlottedSVG>
+    <IcTreeItem label="Americano" />
+    <IcTreeItem label="Latte">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </IcTreeItem>
+    <IcTreeItem label="Espresso" />
+  </IcTreeItem>
+  <IcTreeItem label="Tea">
+    <IcTreeItem label="Earl Grey" />
+    <IcTreeItem label="Chai" />
+  </IcTreeItem>
+  <IcTreeItem label="Hot chocolate" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsIcons}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+      </SlottedSVG>
+      <IcTreeItem label="Coffee">
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+        </SlottedSVG>
+        <IcTreeItem label="Americano" />
+        <IcTreeItem label="Latte">
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+          </svg>
+        </IcTreeItem>
+        <IcTreeItem label="Espresso" />
+      </IcTreeItem>
+      <IcTreeItem label="Tea">
+        <IcTreeItem label="Earl Grey" />
+        <IcTreeItem label="Chai" />
+      </IcTreeItem>
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Small
+
+export const snippetsSmall = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu" size="small">
+  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </svg>
+  <ic-tree-item label="Coffee">
+    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </svg>
+    <ic-tree-item label="Americano"></ic-tree-item>
+    <ic-tree-item label="Latte">
+      <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </ic-tree-item>
+    <ic-tree-item label="Espresso"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Tea">
+    <ic-tree-item label="Earl Grey"></ic-tree-item>
+    <ic-tree-item label="Chai"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Hot chocolate"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu" size="small">
+  <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </SlottedSVG>
+  <IcTreeItem label="Coffee">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </SlottedSVG>
+    <IcTreeItem label="Americano" />
+    <IcTreeItem label="Latte">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </IcTreeItem>
+    <IcTreeItem label="Espresso" />
+  </IcTreeItem>
+  <IcTreeItem label="Tea">
+    <IcTreeItem label="Earl Grey" />
+    <IcTreeItem label="Chai" />
+  </IcTreeItem>
+  <IcTreeItem label="Hot chocolate" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsSmall}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu" size="small">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+      </SlottedSVG>
+      <IcTreeItem label="Coffee">
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+        </SlottedSVG>
+        <IcTreeItem label="Americano" />
+        <IcTreeItem label="Latte">
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+          </svg>
+        </IcTreeItem>
+        <IcTreeItem label="Espresso" />
+      </IcTreeItem>
+      <IcTreeItem label="Tea">
+        <IcTreeItem label="Earl Grey" />
+        <IcTreeItem label="Chai" />
+      </IcTreeItem>
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Large
+
+export const snippetsLarge = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu" size="large">
+  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </svg>
+  <ic-tree-item label="Coffee">
+    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </svg>
+    <ic-tree-item label="Americano"></ic-tree-item>
+    <ic-tree-item label="Latte">
+      <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </ic-tree-item>
+    <ic-tree-item label="Espresso"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Tea">
+    <ic-tree-item label="Earl Grey"></ic-tree-item>
+    <ic-tree-item label="Chai"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Hot chocolate"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu" size="large">
+  <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </SlottedSVG>
+  <IcTreeItem label="Coffee">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </SlottedSVG>
+    <IcTreeItem label="Americano" />
+    <IcTreeItem label="Latte">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </IcTreeItem>
+    <IcTreeItem label="Espresso" />
+  </IcTreeItem>
+  <IcTreeItem label="Tea">
+    <IcTreeItem label="Earl Grey" />
+    <IcTreeItem label="Chai" />
+  </IcTreeItem>
+  <IcTreeItem label="Hot chocolate" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLarge}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu" size="large">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+      </SlottedSVG>
+      <IcTreeItem label="Coffee">
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+        </SlottedSVG>
+        <IcTreeItem label="Americano" />
+        <IcTreeItem label="Latte">
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+          </svg>
+        </IcTreeItem>
+        <IcTreeItem label="Espresso" />
+      </IcTreeItem>
+      <IcTreeItem label="Tea">
+        <IcTreeItem label="Earl Grey" />
+        <IcTreeItem label="Chai" />
+      </IcTreeItem>
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Light
+
+export const snippetsLight = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu" appearance="light">
+  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </svg>
+  <ic-tree-item label="Coffee">
+    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </svg>
+    <ic-tree-item label="Americano"></ic-tree-item>
+    <ic-tree-item label="Latte">
+      <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </ic-tree-item>
+    <ic-tree-item label="Espresso"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Tea">
+    <ic-tree-item label="Earl Grey"></ic-tree-item>
+    <ic-tree-item label="Chai"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Hot chocolate"></ic-tree-item>
+</ic-tree-view>`,
+      long: `.dark-background {
+      flex-direction: column; 
+      gap: var(--ic-space-xs); 
+      background: #333333;
+    }
+  </style>
+    <body>
+      <div class="dark-background">
+        {shortCode}
+      </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu" appearance="light">
+  <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </SlottedSVG>
+  <IcTreeItem label="Coffee">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </SlottedSVG>
+    <IcTreeItem label="Americano" />
+    <IcTreeItem label="Latte">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </SlottedSVG>
+    </IcTreeItem>
+    <IcTreeItem label="Espresso" />
+  </IcTreeItem>
+  <IcTreeItem label="Tea">
+    <IcTreeItem label="Earl Grey" />
+    <IcTreeItem label="Chai" />
+  </IcTreeItem>
+  <IcTreeItem label="Hot chocolate" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  darkBackground: {
+    display: "flex",
+    flexDirection: "column", 
+    gap: "var(--ic-space-xs)", 
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.darkBackground}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  darkBackground: {
+    display: "flex",
+    flexDirection: "column", 
+    gap: "var(--ic-space-xs)", 
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.darkBackground}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLight} style={{ background: "#333333" }}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu" appearance="light">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+      </SlottedSVG>
+      <IcTreeItem label="Coffee">
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+        </SlottedSVG>
+        <IcTreeItem label="Americano" />
+        <IcTreeItem label="Latte">
+          <SlottedSVG
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+          </SlottedSVG>
+        </IcTreeItem>
+        <IcTreeItem label="Espresso" />
+      </IcTreeItem>
+      <IcTreeItem label="Tea">
+        <IcTreeItem label="Earl Grey" />
+        <IcTreeItem label="Chai" />
+      </IcTreeItem>
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Disabled tree items
+
+export const snippetsDisabled = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu">
+  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </svg>
+  <ic-tree-item label="Coffee">
+    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </svg>
+    <ic-tree-item label="Americano"></ic-tree-item>
+    <ic-tree-item label="Latte" disabled="true">
+      <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </svg>
+    </ic-tree-item>
+    <ic-tree-item label="Espresso"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Tea">
+    <ic-tree-item label="Earl Grey"></ic-tree-item>
+    <ic-tree-item label="Chai" disabled="true"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Hot chocolate" disabled="true"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu">
+  <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </SlottedSVG>
+  <IcTreeItem label="Coffee">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </SlottedSVG>
+    <IcTreeItem label="Americano" />
+    <IcTreeItem label="Latte" disabled>
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+        />
+      </SlottedSVG>
+    </IcTreeItem>
+    <IcTreeItem label="Espresso" />
+  </IcTreeItem>
+  <IcTreeItem label="Tea">
+    <IcTreeItem label="Earl Grey" />
+    <IcTreeItem label="Chai" disabled />
+  </IcTreeItem>
+  <IcTreeItem label="Hot chocolate" disabled />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabled}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+      </SlottedSVG>
+      <IcTreeItem label="Coffee">
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+        </SlottedSVG>
+        <IcTreeItem label="Americano" />
+        <IcTreeItem label="Latte" disabled>
+          <SlottedSVG
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+          </SlottedSVG>
+        </IcTreeItem>
+        <IcTreeItem label="Espresso" />
+      </IcTreeItem>
+      <IcTreeItem label="Tea">
+        <IcTreeItem label="Earl Grey" />
+        <IcTreeItem label="Chai" disabled />
+      </IcTreeItem>
+      <IcTreeItem label="Hot chocolate" disabled />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Slotted content
+
+export const snippetsSlotted = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view>
+  <ic-typography variant="subtitle-large" slot="heading">Menu</ic-typography>
+  <ic-tree-item>
+    <ic-typography slot="label">Coffee</ic-typography>
+  </ic-tree-item>
+  <ic-tree-item label="Tea"></ic-tree-item>
+  <ic-tree-item label="Hot chocolate"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView>
+  <IcTypography variant="subtitle-large" slot="heading">Menu</IcTypography>
+  <IcTreeItem>
+    <IcTypography slot="label">Coffee</IcTypography>
+  </IcTreeItem>
+  <IcTreeItem label="Tea" />
+  <IcTreeItem label="Hot chocolate" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsSlotted}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView>
+      <IcTypography variant="subtitle-large" slot="heading">
+        Menu
+      </IcTypography>
+      <IcTreeItem>
+        <IcTypography slot="label">Coffee</IcTypography>
+      </IcTreeItem>
+      <IcTreeItem label="Tea" />
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Truncated
+
+export const snippetsTruncated = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu with nested options">
+  <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </svg>
+  <ic-tree-item label="Coffee">
+    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </svg>
+    <ic-tree-item label="Americano"></ic-tree-item>
+    <ic-tree-item label="Latte with extra milk and sugar"></ic-tree-item>
+    <ic-tree-item label="Espresso"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Tea">
+    <ic-tree-item label="Earl Grey"></ic-tree-item>
+    <ic-tree-item label="Chai"></ic-tree-item>
+  </ic-tree-item>
+  <ic-tree-item label="Hot chocolate with marshmallows"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu with nested options">
+  <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
+    />
+  </SlottedSVG>
+  <IcTreeItem label="Coffee">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"
+      />
+    </SlottedSVG>
+    <IcTreeItem label="Americano" />
+    <IcTreeItem label="Latte with extra milk and sugar" />
+    <IcTreeItem label="Espresso" />
+  </IcTreeItem>
+  <IcTreeItem label="Tea">
+    <IcTreeItem label="Earl Grey" />
+    <IcTreeItem label="Chai" />
+  </IcTreeItem>
+  <IcTreeItem label="Hot chocolate with marshmallows" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTruncated}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu with nested options">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+      </SlottedSVG>
+      <IcTreeItem label="Coffee">
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z" />
+        </SlottedSVG>
+        <IcTreeItem label="Americano" />
+        <IcTreeItem label="Latte with extra milk and sugar" />
+        <IcTreeItem label="Espresso" />
+      </IcTreeItem>
+      <IcTreeItem label="Tea">
+        <IcTreeItem label="Earl Grey" />
+        <IcTreeItem label="Chai" />
+      </IcTreeItem>
+      <IcTreeItem label="Hot chocolate with marshmallows" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
+
+### Link
+
+export const snippetsLink = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tree-view heading="Menu">
+  <ic-tree-item label="Coffee" href="#"></ic-tree-item>
+  <ic-tree-item label="Tea" selected="true" href="#"></ic-tree-item>
+  <ic-tree-item label="Hot chocolate" disabled="true" href="#"></ic-tree-item>
+</ic-tree-view>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTreeView heading="Menu">
+  <IcTreeItem label="Coffee" href="#" />
+  <IcTreeItem label="Tea" selected href="#" />
+  <IcTreeItem label="Hot chocolate" disabled href="#" />
+</IcTreeView>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLink}>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu">
+      <IcTreeItem label="Coffee" href="#" />
+      <IcTreeItem label="Tea" selected href="#" />
+      <IcTreeItem label="Hot chocolate" disabled href="#" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>
