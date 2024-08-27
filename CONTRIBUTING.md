@@ -159,13 +159,16 @@ Follow these steps when making a commit:
 If you need to make changes to a commit (for example, after receiving comments on a PR), follow these steps:
 
 1. **If you're amending the most recent commit:**
+
    - Stage your changes using `git add` and include the files you want to update.
    - Run `git commit --amend --no-edit` to amend the most recent commit without changing the commit message.
    - The Commitizen prompt will still appear as if you are making a new commit. Exit the prompt (usually by pressing Ctrl+C).
    - Push the changes to the remote repository using: `git push --force`.
 
 2. **If you're amending an older commit:**
+
    - Use `git rebase` to modify an older commit. For example, to modify commit `a1312407`, run:
+
      ```sh
      git rebase --interactive a1312407
      ```
@@ -175,6 +178,7 @@ If you need to make changes to a commit (for example, after receiving comments o
    - Save the file and exit. Git will interpret and automatically execute the commands in the file, placing you in the state just after creating commit `a1312407`.
 
    - Amend the commit by making your changes and then running:
+
      ```sh
      git commit --all --amend --no-edit
      ```
@@ -182,6 +186,7 @@ If you need to make changes to a commit (for example, after receiving comments o
    - The Commitizen prompt will still appear as if you are making a new commit. Exit the prompt (usually by pressing Ctrl+C).
 
    - Continue the rebase process by running:
+
      ```sh
      git rebase --continue
      ```
