@@ -51,18 +51,7 @@ export const DialogExample = () => {
       <IcButton onclick={showDialog} aria-label="Launch dialog">
         Launch dialog
       </IcButton>
-      <IcDialog
-        heading="Are you sure?"
-        label="Coffee order"
-        ref={dialogEl}
-        buttonProps={[
-          { label: "Cancel", onclick: "this.cancelDialog()" },
-          {
-            label: "Confirm",
-            onclick: "alert('Confirmed!'); this.open = false;",
-          },
-        ]}
-      >
+      <IcDialog heading="Are you sure?" label="Coffee order" ref={dialogEl}>
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
           to continue?
