@@ -170,9 +170,9 @@ const Search: React.FC = () => {
         value={value}
         loading={loading}
         timeout={1000}
-        disableFilter
+        disableAutoFiltering
         fullWidth
-        hintText="When autocomplete results are available, use the up and down arrows to choose and press enter to go to that page."
+        assistiveHintText="When autocomplete results are available, use the up and down arrows to choose and press enter to go to that page."
       />
     </form>
   );
