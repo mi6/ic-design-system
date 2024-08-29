@@ -22,7 +22,7 @@ tabs:
 import {
   IcSkeleton,
   IcTypography,
-  IcCard,
+  IcCardVertical,
   IcButton,
   SlottedSVG,
 } from "@ukic/react";
@@ -366,13 +366,13 @@ return (
   </div>
 </ComponentPreview>
 
-### Within IcCard component
+### Within IcCardVertical component
 
 export const snippetsInCard = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card heading="Americano Order" subheading="Name: Michael">
+      short: `<ic-card-vertical heading="Americano Order" subheading="Name: Michael">
   <ic-skeleton
     slot="icon"
     variant="circle"
@@ -403,14 +403,14 @@ export const snippetsInCard = [
     variant="rectangle"
     style="height: 2.5rem; width: 6.25rem;"
   ></ic-skeleton>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard heading="Americano Order" subheading="Name: Michael">
+      short: `<IcCardVertical heading="Americano Order" subheading="Name: Michael">
   <IcSkeleton
     slot="icon"
     variant="circle"
@@ -459,7 +459,7 @@ export const snippetsInCard = [
       width: "6.25rem",
     }}
   />
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -475,7 +475,7 @@ export const snippetsInCard = [
 ];
 
 export const loading = () => (
-  <IcCard heading="Americano Order" subheading="Name: Michael">
+  <IcCardVertical heading="Americano Order" subheading="Name: Michael">
     <IcSkeleton
       slot="icon"
       variant="circle"
@@ -524,11 +524,11 @@ export const loading = () => (
         width: "6.25rem",
       }}
     />
-  </IcCard>
+  </IcCardVertical>
 );
 
 export const loaded = () => (
-  <IcCard
+  <IcCardVertical
     heading="Americano Order"
     subheading="Name: Michael"
     message="Extras: double espresso shot & oat milk"
@@ -547,7 +547,7 @@ export const loaded = () => (
       <IcButton variant="primary">Accept</IcButton>
       <IcButton variant="secondary">Cancel</IcButton>
     </div>
-  </IcCard>
+  </IcCardVertical>
 );
 
 export const ContentFunction = () => {
