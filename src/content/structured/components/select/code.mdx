@@ -1653,7 +1653,7 @@ export const customFiltering = [
   label="What is your favourite coffee?"
   searchable="true"
   debounce="300"
-  disable-filter="true"
+  disable-auto-filtering="true"
   id="external-filter-select"
   characters-until-suggestions="2"
 ></ic-select>`,
@@ -1710,7 +1710,7 @@ export const customFiltering = [
    label="What is your favourite coffee?"
    debounce={300}
    searchable
-   disableFilter
+   disableAutoFiltering
    options={results} 
    onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
    onIcClear={() => setResults([])}
@@ -1839,7 +1839,7 @@ export const CustomFilterExample = () => {
       label="What is your favourite coffee?"
       debounce="300"
       searchable
-      disableFilter
+      disableAutoFiltering
       charactersUntilSuggestions="2"
       options={results}
       onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
