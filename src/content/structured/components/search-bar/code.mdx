@@ -144,7 +144,7 @@ export const optionsNoFiltering = [
       short: `<ic-search-bar
   placeholder="Start typing to search…"
   label="What is your favourite coffee?"
-  disable-filter="true"
+  disable-auto-filtering="true"
 ></ic-search-bar>
 <br>
 <ic-typography>
@@ -176,7 +176,7 @@ export const optionsNoFiltering = [
       short: `<IcSearchBar
   placeholder="Start typing to search…"
   label="What is your favourite coffee?"
-  disableFilter
+  disableAutoFiltering
   options={options}
 />
 <br/>
@@ -240,7 +240,7 @@ return (
   <IcSearchBar
     placeholder="Start typing to search…"
     label="What is your favourite coffee?"
-    disableFilter
+    disableAutoFiltering
     options={[
       { label: "Espresso", value: "espresso" },
       { label: "Double Espresso", value: "doubleespresso" },
@@ -687,7 +687,7 @@ export const customFiltering = [
   placeholder="Start typing to search…"
   label="What is your favourite coffee?" 
   debounce="300" 
-  disable-filter="true"
+  disable-auto-filtering="true"
 ></ic-search-bar>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
@@ -733,7 +733,7 @@ export const customFiltering = [
   placeholder="Start typing to search…"
   label="What is your favourite coffee?"
   debounce={300}
-  disableFilter
+  disableAutoFiltering
   options={results}
   onIcChange={changeHandler}
 />`,
@@ -852,7 +852,7 @@ export const CustomFilterExample = () => {
       placeholder="Start typing to search…"
       label="What is your favourite coffee?"
       debounce="300"
-      disableFilter
+      disableAutoFiltering
       options={results}
       onIcChange={changeHandler}
     />
