@@ -1,26 +1,26 @@
 ---
-path: "/components/data-entity/code"
+path: "/components/data-list/code"
 
 date: "2024-05-31"
 
-title: "Data entity"
+title: "Data list"
 
 status: "BETA"
 
-subTitle: "The data entity component displays a group of related data in a consistent and easy to consume way."
+subTitle: "The data list component displays a group of related data in a consistent and easy to consume way."
 
-contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/data-entity"
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/data-list"
 
 tabs:
   [
-    { title: "Guidance", path: "/components/data-entity" },
-    { title: "Code", path: "/components/data-entity/code" },
-    { title: "Accessibility", path: "/components/data-entity/accessibility" },
+    { title: "Guidance", path: "/components/data-list" },
+    { title: "Code", path: "/components/data-list/code" },
+    { title: "Accessibility", path: "/components/data-list/accessibility" },
   ]
 ---
 
 import {
-  IcDataEntity,
+  IcDataList,
   IcDataRow,
   IcLink,
   IcTypography,
@@ -35,7 +35,7 @@ export const snippets = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-data-entity heading="Order details">
+      short: `<ic-data-list heading="Order details">
   <ic-data-row label="Order name" value="Michael">
     <ic-link href="#" slot="end-component">
       Edit
@@ -74,14 +74,14 @@ export const snippets = [
       </svg>
     </ic-button>
   </ic-data-row>
-</ic-data-entity>`,
+</ic-data-list>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcDataEntity heading="Order details">
+      short: `<IcDataList heading="Order details">
   <IcDataRow label="Order name" value="Michael">
     <IcLink href="#" slot="end-component">
       Edit
@@ -120,7 +120,7 @@ export const snippets = [
       </SlottedSVG>
     </IcButton>
   </IcDataRow>
-</IcDataEntity>`,
+</IcDataList>`,
       long: [
         {
           language: "Typescript",
@@ -136,7 +136,7 @@ export const snippets = [
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcDataEntity heading="Order details" style={{ width: "90%" }}>
+  <IcDataList heading="Order details" style={{ width: "90%" }}>
     <IcDataRow label="Order name" value="Michael">
       <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
         Edit
@@ -175,14 +175,14 @@ export const snippets = [
         </svg>
       </IcButton>
     </IcDataRow>
-  </IcDataEntity>
+  </IcDataList>
 </ComponentPreview>
 
 ## Data row details
 
 <ComponentDetails component="ic-data-row" />
 
-## Data entity details
+## Data list details
 
 <ComponentDetails component="ic-data-entity" />
 
@@ -194,7 +194,7 @@ export const withStatusTags = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-data-entity heading="Order details">
+      short: `<ic-data-list heading="Order details">
   <ic-data-row label="Order name" value="Michael">
   </ic-data-row>
   <ic-data-row label="Drink" value="Americano">
@@ -219,14 +219,14 @@ export const withStatusTags = [
       slot="end-component"
     />
   </ic-data-row>
-</ic-data-entity>`,
+</ic-data-list>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcDataEntity heading="Order details">
+      short: `<IcDataList heading="Order details">
   <IcDataRow label="Order name" value="Michael" />
   <IcDataRow label="Drink" value="Americano">
     <IcStatusTag
@@ -248,7 +248,7 @@ export const withStatusTags = [
       slot="end-component"
     />
   </IcDataRow>
-</IcDataEntity>`,
+</IcDataList>`,
       long: [
         {
           language: "Typescript",
@@ -264,7 +264,7 @@ export const withStatusTags = [
 ];
 
 <ComponentPreview snippets={withStatusTags}>
-  <IcDataEntity heading="Order details" style={{ width: "90%" }}>
+  <IcDataList heading="Order details" style={{ width: "90%" }}>
     <IcDataRow label="Order name" value="Michael" />
     <IcDataRow label="Drink" value="Americano">
       <IcStatusTag
@@ -286,7 +286,7 @@ export const withStatusTags = [
         slot="end-component"
       />
     </IcDataRow>
-  </IcDataEntity>
+  </IcDataList>
 </ComponentPreview>
 
 ### Size small
@@ -295,7 +295,7 @@ export const smallSnippet = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-data-entity heading="Personal details" size="small">
+      short: `<ic-data-list heading="Personal details" size="small">
   <ic-data-row label="Name" value="Michael Johnson">
     <ic-status-tag
       status="success"
@@ -349,14 +349,14 @@ export const smallSnippet = [
       size="small"
     ></ic-status-tag>
   </ic-data-row>
-</ic-data-entity>`,
+</ic-data-list>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcDataEntity heading="Personal details" size="small">
+      short: `<IcDataList heading="Personal details" size="small">
   <IcDataRow label="Name" value="Michael Johnson">
     <IcStatusTag
       status="success"
@@ -410,7 +410,7 @@ export const smallSnippet = [
       size="small"
     />
   </IcDataRow>
-</IcDataEntity>`,
+</IcDataList>`,
       long: [
         {
           language: "Typescript",
@@ -426,11 +426,7 @@ export const smallSnippet = [
 ];
 
 <ComponentPreview snippets={smallSnippet}>
-  <IcDataEntity
-    heading="Personal details"
-    size="small"
-    style={{ width: "90%" }}
-  >
+  <IcDataList heading="Personal details" size="small" style={{ width: "90%" }}>
     <IcDataRow label="Name" value="Michael Johnson" />
     <IcDataRow label="Date of birth" value="16 October 1995" />
     <IcDataRow label="Telephone" value="07449 7654873" />
@@ -446,7 +442,7 @@ export const smallSnippet = [
         United Kingdom
       </IcTypography>
     </IcDataRow>
-  </IcDataEntity>
+  </IcDataList>
 </ComponentPreview>
 
 ### Editable example
@@ -455,7 +451,7 @@ export const editableExample = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-data-entity heading="Order details">
+      short: `<ic-data-list heading="Order details">
   <ic-data-row label="Order name"> 
     <ic-text-field 
       slot="value" 
@@ -506,7 +502,7 @@ export const editableExample = [
       full-width="true"
     />
   </ic-data-row>
-</ic-data-entity>
+</ic-data-list>
 <div class="btn-container">
   <ic-button id="confirm-button">
     Confirm
@@ -548,7 +544,7 @@ export const editableExample = [
   {
     technology: "React",
     snippets: {
-      short: `<IcDataEntity heading="Order details">
+      short: `<IcDataList heading="Order details">
   <IcDataRow label="Order name">
     <IcTextField
       slot="value"
@@ -599,7 +595,7 @@ export const editableExample = [
       fullWidth
     />
   </IcDataRow>
-</IcDataEntity>
+</IcDataList>
 <div className={classes.btnContainer}>
   <IcButton
     onClick={() => {
@@ -668,7 +664,7 @@ return (
 ];
 
 <ComponentPreview snippets={editableExample} style={{ display: "block" }}>
-  <IcDataEntity heading="Order details" style={{ width: "90%" }}>
+  <IcDataList heading="Order details" style={{ width: "90%" }}>
     <IcDataRow label="Order name">
       <IcTextField
         slot="value"
@@ -719,7 +715,7 @@ return (
         fullWidth
       />
     </IcDataRow>
-  </IcDataEntity>
+  </IcDataList>
   <IcButton
     onClick={() => {
       const textFields = document.querySelectorAll("ic-text-field");

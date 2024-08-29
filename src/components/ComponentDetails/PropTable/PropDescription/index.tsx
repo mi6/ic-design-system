@@ -30,7 +30,7 @@ const PropDescription: React.FC<{
         <>
           <ic-typography>{deprecation}</ic-typography>
           <div className="deprecation-tag">
-            <ic-status-tag label="Deprecated" status="warning" small />
+            <ic-status-tag label="Deprecated" status="warning" size="small" />
           </div>
         </>
       )}

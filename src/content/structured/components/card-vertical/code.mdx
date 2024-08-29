@@ -1,26 +1,26 @@
 ---
-path: "/components/card/code"
+path: "/components/card-vertical/code"
 
 date: "2024-05-31"
 
-title: "Card"
+title: "Card (vertical)"
 
 status: "BETA"
 
 subTitle: "Cards are containers used to display structured information or interactive content."
 
-contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/card"
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/card-vertical"
 
 tabs:
   [
-    { title: "Guidance", path: "/components/card" },
-    { title: "Code", path: "/components/card/code" },
-    { title: "Accessibility", path: "/components/card/accessibility" },
+    { title: "Guidance", path: "/components/card-vertical" },
+    { title: "Code", path: "/components/card-vertical/code" },
+    { title: "Accessibility", path: "/components/card-vertical/accessibility" },
   ]
 ---
 
 import {
-  IcCard,
+  IcCardVertical,
   IcStatusTag,
   IcButton,
   IcTypography,
@@ -61,7 +61,7 @@ export const snippets = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -88,7 +88,7 @@ export const snippets = [
       <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </svg>
   </ic-button>
-  <ic-status-tag slot="adornment" label="In Progress" small="true"></ic-status-tag>
+  <ic-status-tag slot="adornment" label="In Progress" size="small"></ic-status-tag>
   <svg
     slot="image-mid"
     class="card-image"
@@ -118,8 +118,8 @@ export const snippets = [
   <ic-typography slot="expanded-content" variant="body">
     To cancel your order click cancel.
   </ic-typography>
-</ic-card>`,
-      long: `ic-card {
+</ic-card-vertical>`,
+      long: `ic-card-vertical {
     width: 22.5rem;
   }
   .interaction-area {
@@ -140,7 +140,7 @@ export const snippets = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -168,7 +168,7 @@ export const snippets = [
       <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </SlottedSVG>
   </IcButton> 
-  <IcStatusTag slot="adornment" label="In Progress" small />
+  <IcStatusTag slot="adornment" label="In Progress" size="small" />
   <SlottedSVG
     slot="image-mid"
     viewBox="0 0 1600 1250"
@@ -197,7 +197,7 @@ export const snippets = [
   <IcTypography slot="expanded-content" variant="body">
     To cancel your order click cancel.
   </IcTypography>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -249,14 +249,19 @@ return (
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
     expandable
     style={{ width: "22.5rem" }}
   >
-    <IcStatusTag slot="adornment" status="warning" label="In Progress" small />
+    <IcStatusTag
+      slot="adornment"
+      status="warning"
+      label="In Progress"
+      size="small"
+    />
     <IcButton variant="icon" title="More information" slot="interaction-button">
       <svg
         slot="icon"
@@ -311,12 +316,12 @@ return (
     <IcTypography slot="expanded-content" variant="body">
       To cancel your order click cancel.
     </IcTypography>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ## Card details
 
-<ComponentDetails component="ic-card" />
+<ComponentDetails component="ic-card-vertical" />
 
 ## Variants
 
@@ -326,14 +331,14 @@ export const headingOnly = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card heading="Americano order"></ic-card>`,
+      short: `<ic-card-vertical heading="Americano order"></ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard heading="Americano order"></IcCard>`,
+      short: `<IcCardVertical heading="Americano order"></IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -349,7 +354,7 @@ export const headingOnly = [
 ];
 
 <ComponentPreview snippets={headingOnly}>
-  <IcCard heading="Americano order" />
+  <IcCardVertical heading="Americano order" />
 </ComponentPreview>
 
 ### With icon
@@ -358,7 +363,7 @@ export const withIcon = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card heading="Americano order">
+      short: `<ic-card-vertical heading="Americano order">
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -369,14 +374,14 @@ export const withIcon = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard heading="Americano order">
+      short: `<IcCardVertical heading="Americano order">
   <SlottedSVG     
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -387,7 +392,7 @@ export const withIcon = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -403,7 +408,7 @@ export const withIcon = [
 ];
 
 <ComponentPreview snippets={withIcon}>
-  <IcCard heading="Americano order">
+  <IcCardVertical heading="Americano order">
     <SlottedSVG
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -414,7 +419,7 @@ export const withIcon = [
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </SlottedSVG>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Message
@@ -423,7 +428,7 @@ export const withMessage = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card heading="Americano order" message="Extras: Double espresso shot and oat milk.">
+      short: `<ic-card-vertical heading="Americano order" message="Extras: Double espresso shot and oat milk.">
   <svg
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -434,14 +439,14 @@ export const withMessage = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard heading="Americano order" message="Extras: Double espresso shot and oat milk.">
+      short: `<IcCardVertical heading="Americano order" message="Extras: Double espresso shot and oat milk.">
   <SlottedSVG     
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -452,7 +457,7 @@ export const withMessage = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -468,7 +473,7 @@ export const withMessage = [
 ];
 
 <ComponentPreview snippets={withMessage}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     message="Extras: Double espresso shot and oat milk."
   >
@@ -482,7 +487,7 @@ export const withMessage = [
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### With subheading
@@ -491,7 +496,7 @@ export const withSubHeading = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -506,14 +511,14 @@ export const withSubHeading = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -528,7 +533,7 @@ export const withSubHeading = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
     </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -544,7 +549,7 @@ export const withSubHeading = [
 ];
 
 <ComponentPreview snippets={withSubHeading}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -559,7 +564,7 @@ export const withSubHeading = [
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Interaction button
@@ -568,7 +573,7 @@ export const interactionButton = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -595,14 +600,14 @@ export const interactionButton = [
       <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </svg>
   </ic-button>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -628,7 +633,7 @@ export const interactionButton = [
       <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
     </SlottedSVG>
   </IcButton>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -644,7 +649,7 @@ export const interactionButton = [
 ];
 
 <ComponentPreview snippets={interactionButton}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -662,7 +667,7 @@ export const interactionButton = [
     <IcButton variant="icon" title="More information" slot="interaction-button">
       <InteractionIcon />
     </IcButton>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Adornment
@@ -671,7 +676,7 @@ export const adornment = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -687,14 +692,14 @@ export const adornment = [
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
   <ic-status-tag slot="adornment" status="warning" label="In Progress" size="small"></ic-status-tag>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -710,7 +715,7 @@ export const adornment = [
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
   <IcStatusTag slot="adornment" status="warning" label="In Progress" size="small" />
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -726,7 +731,7 @@ export const adornment = [
 ];
 
 <ComponentPreview snippets={adornment}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -747,7 +752,7 @@ export const adornment = [
       label="In Progress"
       size="small"
     />
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Top image
@@ -756,7 +761,7 @@ export const topImage = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -804,8 +809,8 @@ export const topImage = [
     </svg>
   </ic-button>
   <ic-status-tag slot="adornment" status="warning" label="In Progress" size="small"></ic-status-tag>
-</ic-card>`,
-      long: `ic-card {
+</ic-card-vertical>`,
+      long: `ic-card-vertical {
         width: 22.5rem;
     }
     .card-image {
@@ -822,7 +827,7 @@ export const topImage = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -871,7 +876,7 @@ export const topImage = [
     </SlottedSVG>
   </IcButton> 
   <IcStatusTag slot="adornment" status="warning" label="In Progress" size="small" />
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -901,7 +906,7 @@ return (
 ];
 
 <ComponentPreview snippets={topImage}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -950,7 +955,7 @@ return (
       <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
       <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Middle image
@@ -959,7 +964,7 @@ export const midImage = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1006,8 +1011,8 @@ export const midImage = [
     <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
     <polygon fill="#880088" points="943 900 1210 900 971 687" />
   </svg>
-</ic-card>`,
-      long: `ic-card {
+</ic-card-vertical>`,
+      long: `ic-card-vertical {
         width: 22.5rem;
     }
     .card-image {
@@ -1024,7 +1029,7 @@ export const midImage = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1072,7 +1077,7 @@ export const midImage = [
     <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
     <polygon fill="#880088" points="943 900 1210 900 971 687" />
   </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1116,7 +1121,7 @@ return (
 ];
 
 <ComponentPreview snippets={midImage}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1164,7 +1169,7 @@ return (
       <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
       <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Interaction controls
@@ -1173,7 +1178,7 @@ export const interactionControls = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1193,7 +1198,7 @@ export const interactionControls = [
     <ic-button variant="primary">Accept</ic-button>
     <ic-button variant="secondary">Cancel</ic-button>
   </div>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `.interaction-area {
       display: flex;
       gap: var(--ic-space-md);
@@ -1206,7 +1211,7 @@ export const interactionControls = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1226,7 +1231,7 @@ export const interactionControls = [
     <IcButton variant="primary">Accept</IcButton>
     <IcButton variant="secondary">Cancel</IcButton>
   </div>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1260,7 +1265,7 @@ return (
 ];
 
 <ComponentPreview snippets={interactionControls}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1279,7 +1284,7 @@ return (
       <IcButton variant="primary">Accept</IcButton>
       <IcButton variant="secondary">Cancel</IcButton>
     </div>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Expandable
@@ -1288,7 +1293,7 @@ export const expandable = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1311,7 +1316,7 @@ export const expandable = [
   <ic-typography slot="expanded-content" variant="body">
     To cancel your order click cancel.
   </ic-typography>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `.interaction-area {
     display: flex;
     gap: var(--ic-space-md);
@@ -1324,7 +1329,7 @@ export const expandable = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1347,7 +1352,7 @@ export const expandable = [
   <IcTypography slot="expanded-content" variant="body">
     To cancel your order click cancel.
   </IcTypography>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1381,7 +1386,7 @@ export const expandable = [
 ];
 
 <ComponentPreview snippets={expandable}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1404,7 +1409,7 @@ export const expandable = [
     <IcTypography slot="expanded-content" variant="body">
       To cancel your order click cancel.
     </IcTypography>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Clickable link
@@ -1413,7 +1418,7 @@ export const clickableLink = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1430,7 +1435,7 @@ export const clickableLink = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1444,7 +1449,7 @@ export const clickableLink = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1461,7 +1466,7 @@ export const clickableLink = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1497,7 +1502,7 @@ return (
 ];
 
 <ComponentPreview snippets={clickableLink}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1515,7 +1520,7 @@ return (
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Clickable button
@@ -1524,7 +1529,7 @@ export const clickableBtn = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card
+      short: `<ic-card-vertical
   id="clickable-card"
   heading="Americano order" 
   subheading="Name: Michael" 
@@ -1541,7 +1546,7 @@ export const clickableBtn = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1561,7 +1566,7 @@ export const clickableBtn = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk." 
@@ -1578,7 +1583,7 @@ export const clickableBtn = [
   >
    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1614,7 +1619,7 @@ return (
 ];
 
 <ComponentPreview snippets={clickableBtn}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1631,7 +1636,7 @@ return (
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### With badge
@@ -1640,7 +1645,7 @@ export const withBadge = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1648,7 +1653,7 @@ export const withBadge = [
   href="#"
 >
  <ic-badge
-    text-label="New"
+    label="New"
     slot="badge"
     variant="info"
     size="large"
@@ -1663,7 +1668,7 @@ export const withBadge = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1677,14 +1682,14 @@ export const withBadge = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk." 
   clickable
   href="#"
 >
- <IcBadge size="large" textLabel="New" slot="badge" variant="info"/>
+ <IcBadge size="large" label="New" slot="badge" variant="info"/>
  <SlottedSVG
     slot="icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -1695,7 +1700,7 @@ export const withBadge = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1731,7 +1736,7 @@ return (
 ];
 
 <ComponentPreview snippets={withBadge}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1739,7 +1744,7 @@ return (
     href="#"
     onClick={(e) => e.preventDefault()}
   >
-    <IcBadge size="large" textLabel="New" slot="badge" variant="info" />
+    <IcBadge size="large" label="New" slot="badge" variant="info" />
     <svg
       slot="icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -1750,7 +1755,7 @@ return (
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Disabled
@@ -1759,7 +1764,7 @@ export const disabled = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1776,7 +1781,7 @@ export const disabled = [
   >
      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1790,7 +1795,7 @@ export const disabled = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk." 
@@ -1807,7 +1812,7 @@ export const disabled = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1843,7 +1848,7 @@ return (
 ];
 
 <ComponentPreview snippets={disabled}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1860,7 +1865,7 @@ return (
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Full width
@@ -1869,7 +1874,7 @@ export const fullWidth = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card 
+      short: `<ic-card-vertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1886,7 +1891,7 @@ export const fullWidth = [
   >
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </svg>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1900,7 +1905,7 @@ export const fullWidth = [
   {
     technology: "React",
     snippets: {
-      short: `<IcCard 
+      short: `<IcCardVertical 
   heading="Americano order" 
   subheading="Name: Michael" 
   message="Extras: Double espresso shot and oat milk."
@@ -1917,7 +1922,7 @@ export const fullWidth = [
   >
      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -1953,7 +1958,7 @@ return (
 ];
 
 <ComponentPreview snippets={fullWidth}>
-  <IcCard
+  <IcCardVertical
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."
@@ -1970,7 +1975,7 @@ return (
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </ComponentPreview>
 
 ### Wrapped by link
@@ -1980,7 +1985,7 @@ export const wrapped = [
     technology: "Web component",
     snippets: {
       short: `<a href="/">
-  <ic-card 
+  <ic-card-vertical 
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."> 
@@ -1994,7 +1999,7 @@ export const wrapped = [
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
     </svg>
-  </ic-card>
+  </ic-card-vertical>
 </a>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
@@ -2010,7 +2015,7 @@ export const wrapped = [
     technology: "React",
     snippets: {
       short: `<a href="/">
-  <IcCard 
+  <IcCardVertical 
     heading="Americano order"
     subheading="Name: Michael"
     message="Extras: Double espresso shot and oat milk."> 
@@ -2024,7 +2029,7 @@ export const wrapped = [
     >
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
     </svg>
-  </IcCard>
+  </IcCardVertical>
 </a>`,
       long: [
         {
@@ -2067,7 +2072,7 @@ return (
     style={{ textDecoration: "none", color: "var(--ic-architechtural-black)" }}
     aria-label="Americano order card"
   >
-    <IcCard
+    <IcCardVertical
       heading="Americano order"
       subheading="Name: Michael"
       message="Extras: Double espresso shot and oat milk."
@@ -2082,6 +2087,6 @@ return (
       >
         <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
       </svg>
-    </IcCard>
+    </IcCardVertical>
   </a>
 </ComponentPreview>

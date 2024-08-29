@@ -39,7 +39,7 @@ export const snippetsDefault = [
     snippets: {
       short: `<ic-button variant="secondary">
   <ic-badge
-    text-label="1000"
+    label="1000"
     max-number="99"
     slot="badge"
     variant="info"
@@ -60,7 +60,7 @@ export const snippetsDefault = [
     technology: "React",
     snippets: {
       short: `<IcButton variant="secondary">
-  <IcBadge textLabel="1000" maxNumber={99} slot="badge" variant="info"/>
+  <IcBadge label="1000" maxNumber={99} slot="badge" variant="info"/>
   Coffee orders
 </IcButton>`,
       long: [
@@ -99,7 +99,7 @@ return (
 
 <ComponentPreview snippets={snippetsDefault}>
   <IcButton variant="secondary">
-    <IcBadge textLabel="1000" maxNumber={99} slot="badge" variant="info" />
+    <IcBadge label="1000" maxNumber={99} slot="badge" variant="info" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -117,15 +117,15 @@ export const snippetsSizes = [
     technology: "Web component",
     snippets: {
       short: `<ic-button size="small" variant="secondary">
-  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  <ic-badge label="8" slot="badge" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
 <ic-button variant="secondary">
-  <ic-badge text-label="8" slot="badge" variant="info"></ic-badge>
+  <ic-badge label="8" slot="badge" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
 <ic-button size="large" variant="secondary">
-  <ic-badge size="large" text-label="8" slot="badge" variant="info"></ic-badge>
+  <ic-badge size="large" label="8" slot="badge" variant="info"></ic-badge>
   Coffee orders
 </ic-button>`,
       long: `.parent-container {
@@ -145,15 +145,15 @@ export const snippetsSizes = [
     technology: "React",
     snippets: {
       short: `<IcButton size="small" variant="secondary">
-  <IcBadge size="small" textLabel="8" slot="badge" variant="info"/>
+  <IcBadge size="small" label="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary">
-  <IcBadge textLabel="8" slot="badge" variant="info"/>
+  <IcBadge label="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton size="large" variant="secondary">
-  <IcBadge size="large" textLabel="8" slot="badge" variant="info"/>
+  <IcBadge size="large" label="8" slot="badge" variant="info"/>
   Coffee orders
 </IcButton>`,
       long: [
@@ -198,15 +198,15 @@ return (
 
 <ComponentPreview snippets={snippetsSizes} style={{ gap: "1rem" }}>
   <IcButton size="small" variant="secondary">
-    <IcBadge textLabel="8" slot="badge" variant="info" size="small" />
+    <IcBadge label="8" slot="badge" variant="info" size="small" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary">
-    <IcBadge textLabel="8" slot="badge" variant="info" size="default" />
+    <IcBadge label="8" slot="badge" variant="info" size="default" />
     Coffee orders
   </IcButton>
   <IcButton size="large" variant="secondary">
-    <IcBadge textLabel="8" slot="badge" variant="info" size="large" />
+    <IcBadge label="8" slot="badge" variant="info" size="large" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -218,19 +218,19 @@ export const snippetsStatus = [
     technology: "Web component",
     snippets: {
       short: `<ic-button variant="secondary">
-  <ic-badge slot="badge" text-label="8" variant="neutral"></ic-badge>
+  <ic-badge slot="badge" label="8" variant="neutral"></ic-badge>
   Coffee orders
 </ic-button>
 <ic-button variant="secondary">
-  <ic-badge slot="badge" text-label="New" variant="info"></ic-badge>
+  <ic-badge slot="badge" label="New" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
 <ic-button variant="secondary">
-  <ic-badge slot="badge" text-label="Unavailable" variant="error"></ic-badge>
+  <ic-badge slot="badge" label="Unavailable" variant="error"></ic-badge>
   Coffee orders
 </ic-button>
 <ic-button variant="secondary">
-  <ic-badge slot="badge" text-label="Available" variant="success"></ic-badge>
+  <ic-badge slot="badge" label="Available" variant="success"></ic-badge>
   Coffee orders
 </ic-button>`,
       long: `.parent-container {
@@ -250,19 +250,19 @@ export const snippetsStatus = [
     technology: "React",
     snippets: {
       short: `<IcButton variant="secondary">
-  <IcBadge slot="badge" textLabel="8" variant="neutral"/>
+  <IcBadge slot="badge" label="8" variant="neutral"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary">
-  <IcBadge slot="badge" textLabel="New" variant="info"/>
+  <IcBadge slot="badge" label="New" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary">
-  <IcBadge slot="badge" textLabel="Unavailable" variant="error"/>
+  <IcBadge slot="badge" label="Unavailable" variant="error"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary">
-  <IcBadge slot="badge" textLabel="Available" variant="success"/>
+  <IcBadge slot="badge" label="Available" variant="success"/>
   Coffee orders
 </IcButton>`,
       long: [
@@ -307,19 +307,19 @@ return (
 
 <ComponentPreview snippets={snippetsStatus} style={{ gap: "1rem" }}>
   <IcButton variant="secondary">
-    <IcBadge slot="badge" textLabel="8" variant="neutral" />
+    <IcBadge slot="badge" label="8" variant="neutral" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary">
-    <IcBadge slot="badge" textLabel="New" variant="info" />
+    <IcBadge slot="badge" label="New" variant="info" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary">
-    <IcBadge slot="badge" textLabel="Unavailable" variant="error" />
+    <IcBadge slot="badge" label="Unavailable" variant="error" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary">
-    <IcBadge slot="badge" textLabel="Available" variant="success" />
+    <IcBadge slot="badge" label="Available" variant="success" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -331,7 +331,7 @@ export const snippetsInformation = [
     technology: "Web component",
     snippets: {
       short: `<ic-button variant="secondary">
-  <ic-badge slot="badge" type="text" text-label="8" variant="info"></ic-badge>
+  <ic-badge slot="badge" type="text" label="8" variant="info"></ic-badge>
   Coffee orders
 </ic-button>
 <ic-button variant="secondary">
@@ -373,7 +373,7 @@ export const snippetsInformation = [
     technology: "React",
     snippets: {
       short: `<IcButton variant="secondary">
-  <IcBadge slot="badge" type="text" textLabel="8" variant="info"/>
+  <IcBadge slot="badge" type="text" label="8" variant="info"/>
   Coffee orders
 </IcButton>
 <IcButton variant="secondary">
@@ -440,7 +440,7 @@ return (
 
 <ComponentPreview snippets={snippetsInformation} style={{ gap: "1rem" }}>
   <IcButton variant="secondary">
-    <IcBadge textLabel="8" slot="badge" type="text" variant="info" />
+    <IcBadge label="8" slot="badge" type="text" variant="info" />
     Coffee orders
   </IcButton>
   <IcButton variant="secondary">
@@ -472,7 +472,7 @@ export const snippetsMaxNumber = [
     snippets: {
       short: `<ic-button variant="secondary">
   <ic-badge
-    text-label="1000" 
+    label="1000" 
     max-number="99" 
     slot="badge" 
     variant="info"
@@ -494,7 +494,7 @@ export const snippetsMaxNumber = [
     snippets: {
       short: `<IcButton variant="secondary">
   <IcBadge
-    textLabel="1000"
+    label="1000"
     maxNumber={99}
     slot="badge"
     variant="info"
@@ -537,7 +537,7 @@ return (
 
 <ComponentPreview snippets={snippetsMaxNumber}>
   <IcButton variant="secondary">
-    <IcBadge textLabel="1000" maxNumber={99} slot="badge" variant="info" />
+    <IcBadge label="1000" maxNumber={99} slot="badge" variant="info" />
     Coffee orders
   </IcButton>
 </ComponentPreview>
@@ -705,7 +705,7 @@ export const snippetsInline = [
     </ic-tab>
     <ic-tab>
       <ic-badge
-        text-label="8"
+        label="8"
         slot="badge"
         position="inline"
         size="large"
@@ -735,7 +735,7 @@ export const snippetsInline = [
     </IcTab>
     <IcTab>
       <IcBadge
-        textLabel="8"
+        label="8"
         slot="badge"
         position="inline"
         size="large"
@@ -771,7 +771,7 @@ export const snippetsInline = [
       <IcTab>
         Orders
         <IcBadge
-          textLabel="8"
+          label="8"
           slot="badge"
           position="inline"
           size="large"
@@ -795,7 +795,7 @@ export const snippetsHideBadge = [
     technology: "Web component",
     snippets: {
       short: `<ic-button variant="secondary" onclick="showHideBadge()">
-  <ic-badge text-label="8" slot="badge"></ic-badge>
+  <ic-badge label="8" slot="badge"></ic-badge>
   Coffee orders
 </ic-button>`,
       long: `.parent-container {
@@ -824,7 +824,7 @@ export const snippetsHideBadge = [
       short: `<IcButton variant="secondary" onClick={handleShowHideBadge}>
   <IcBadge
     variant="info"
-    textLabel="8"
+    label="8"
     slot="badge"
     visible={showBadge}
   />
@@ -880,12 +880,7 @@ export const ToggleBadge = () => {
   return (
     <div style={{ padding: "1rem" }}>
       <IcButton variant="secondary" onClick={handleShowHideBadge}>
-        <IcBadge
-          variant="info"
-          textLabel="8"
-          slot="badge"
-          visible={showBadge}
-        />
+        <IcBadge variant="info" label="8" slot="badge" visible={showBadge} />
         Coffee orders
       </IcButton>
     </div>
@@ -910,7 +905,7 @@ export const snippetsAccessibleLabel = [
     snippets: {
       short: `<ic-button variant="secondary"> 
   <ic-badge
-    text-label="8"
+    label="8"
     slot="badge"
     size="large"
     variant="info"
@@ -934,7 +929,7 @@ export const snippetsAccessibleLabel = [
     snippets: {
       short: `<IcButton variant="secondary">
   <IcBadge
-    textLabel="8"
+    label="8"
     slot="badge"
     size="large"
     variant="info"
@@ -979,7 +974,7 @@ return (
 <ComponentPreview snippets={snippetsAccessibleLabel} style={{ gap: "1rem" }}>
   <IcButton variant="secondary">
     <IcBadge
-      textLabel="8"
+      label="8"
       slot="badge"
       size="large"
       accessibleLabel="8 coffee orders found"

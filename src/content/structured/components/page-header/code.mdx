@@ -55,13 +55,13 @@ export const snippets = [
     Filter coffee
   </ic-button>
   <ic-stepper slot="stepper">
-    <ic-step step-title="Warm kettle" step-type="completed"></ic-step>
+    <ic-step heading="Warm kettle" type="completed"></ic-step>
     <ic-step
-      step-title="Warm milk"
-      step-subtitle="Optional"
-      step-type="completed"
+      heading="Warm milk"
+      subheading="Optional"
+      type="completed"
     ></ic-step>
-    <ic-step step-title="Pour milk" step-type="current" ></ic-step>
+    <ic-step heading="Pour milk" type="current" ></ic-step>
   </ic-stepper>
   <ic-text-field
     slot="input"
@@ -88,13 +88,13 @@ export const snippets = [
     Filter coffee
   </IcButton>
   <IcStepper slot="stepper">
-    <IcStep stepTitle="Warm kettle" stepType="completed" />
+    <IcStep heading="Warm kettle" type="completed" />
     <IcStep
-      stepTitle="Warm milk"
-      stepSubtitle="Optional"
-      stepType="completed"
+      heading="Warm milk"
+      subheading="Optional"
+      type="completed"
     />
-    <IcStep stepTitle="Pour milk" stepType="current" />
+    <IcStep heading="Pour milk" type="current" />
   </IcStepper>
   <IcTextField
     slot="input"
@@ -131,13 +131,9 @@ export const snippets = [
       Filter coffee
     </IcButton>
     <IcStepper slot="stepper">
-      <IcStep stepTitle="Warm kettle" stepType="completed" />
-      <IcStep
-        stepTitle="Warm milk"
-        stepSubtitle="Optional"
-        stepType="completed"
-      />
-      <IcStep stepTitle="Pour milk" stepType="current" />
+      <IcStep heading="Warm kettle" type="completed" />
+      <IcStep heading="Warm milk" subheading="Optional" type="completed" />
+      <IcStep heading="Pour milk" type="current" />
     </IcStepper>
     <IcTextField
       slot="input"
@@ -277,9 +273,9 @@ export const withActionsInputStepper = [
   <ic-button slot="actions" variant="primary">Create coffee</ic-button>
   <ic-button slot="actions" variant="tertiary">Filter coffee</ic-button>
   <ic-stepper slot="stepper">
-    <ic-step step-title="Warm kettle" step-type="completed"></ic-step>
-    <ic-step step-title="Warm milk" step-subtitle="Optional" step-type="completed"></ic-step>
-    <ic-step step-title="Pour milk" step-type="current"></ic-step>
+    <ic-step heading="Warm kettle" type="completed"></ic-step>
+    <ic-step heading="Warm milk" subheading="Optional" type="completed"></ic-step>
+    <ic-step heading="Pour milk" type="current"></ic-step>
   </ic-stepper>
   <ic-text-field slot="input" placeholder="Search for ingredients…" label="Input" hide-label="true" />
 </ic-page-header>
@@ -303,9 +299,9 @@ export const withActionsInputStepper = [
     Filter coffee
   </IcButton>
   <IcStepper slot="stepper">
-    <IcStep stepTitle="Warm kettle" stepType="completed" />
-    <IcStep stepTitle="Warm milk" stepSubtitle="Optional" stepType="completed" />
-      <IcStep stepTitle="Pour milk" stepType="current" />
+    <IcStep heading="Warm kettle" type="completed" />
+    <IcStep heading="Warm milk" subheading="Optional" type="completed" />
+      <IcStep heading="Pour milk" type="current" />
   </IcStepper>
   <IcTextField slot="input" placeholder="Search for ingredients…" label="Input" hideLabel />
 </IcPageHeader>
@@ -341,13 +337,9 @@ export const withActionsInputStepper = [
       Filter coffee
     </IcButton>
     <IcStepper slot="stepper">
-      <IcStep stepTitle="Warm kettle" stepType="completed" />
-      <IcStep
-        stepTitle="Warm milk"
-        stepSubtitle="Optional"
-        stepType="completed"
-      />
-      <IcStep stepTitle="Pour milk" stepType="current" />
+      <IcStep heading="Warm kettle" type="completed" />
+      <IcStep heading="Warm milk" subheading="Optional" type="completed" />
+      <IcStep heading="Pour milk" type="current" />
     </IcStepper>
     <IcTextField
       slot="input"
