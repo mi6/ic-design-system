@@ -186,7 +186,7 @@ const ToggleLanguageButton: React.FC<ToggleLanguageProps> = ({
       accessibleLabel={isLargeViewport ? "" : "TypeScript"}
       size="small"
       variant={isLargeViewport ? "default" : "icon"}
-      toggleChecked={selectedLanguage !== "Javascript"}
+      checked={selectedLanguage !== "Javascript"}
       onIcToggleChecked={(ev) => handleToggle(ev, "Typescript")}
       ref={typescriptToggleBtnRef}
     >
@@ -199,7 +199,7 @@ const ToggleLanguageButton: React.FC<ToggleLanguageProps> = ({
       label="JavaScript"
       accessibleLabel={isLargeViewport ? "" : "JavaScript"}
       variant={isLargeViewport ? "default" : "icon"}
-      toggleChecked={selectedLanguage !== "Typescript"}
+      checked={selectedLanguage !== "Typescript"}
       onIcToggleChecked={(ev) => handleToggle(ev, "Javascript")}
       ref={javascriptToggleBtnRef}
     >
@@ -439,11 +439,11 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     else if (
       !ev.detail.checked &&
       oppositeToggleBtnRef.current &&
-      !oppositeToggleBtnRef.current.toggleChecked
+      !oppositeToggleBtnRef.current.checked
     ) {
       setSelectedLanguage(intendedLanguage);
       if (!!currentToggleBtnRef && !!currentToggleBtnRef.current) {
-        currentToggleBtnRef.current.toggleChecked = true;
+        currentToggleBtnRef.current.checked = true;
       }
     }
   };
