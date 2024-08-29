@@ -209,8 +209,8 @@ export const boundaryAdjacent = [
     snippets: {
       short: `<ic-pagination
   type="complex"
-  adjacent-count="2"
-  boundary-count="2"
+  adjacent-page-count="2"
+  boundary-page-count="2"
   pages="15"
 ></ic-pagination>`,
       long: `{shortCode}`,
@@ -221,8 +221,8 @@ export const boundaryAdjacent = [
     snippets: {
       short: `<IcPagination 
   type="complex"
-  adjacentCount={2}
-  boundaryCount={2}
+  adjacentPageCount={2}
+  boundaryPageCount={2}
   pages={15} 
 />`,
       long: [
@@ -243,7 +243,12 @@ export const boundaryAdjacent = [
   style={{ display: "block", margin: "auto" }}
   snippets={boundaryAdjacent}
 >
-  <IcPagination type="complex" adjacentCount={2} boundaryCount={2} pages={15} />
+  <IcPagination
+    type="complex"
+    adjacentPageCount={2}
+    boundaryPageCount={2}
+    pages={15}
+  />
 </ComponentPreview>
 
 ### Disabled
