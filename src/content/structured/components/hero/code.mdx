@@ -19,7 +19,7 @@ tabs:
   ]
 ---
 
-import { IcHero, IcButton, IcSearchBar, IcCard } from "@ukic/react";
+import { IcHero, IcButton, IcSearchBar, IcCardVertical } from "@ukic/react";
 
 ## Component demo
 
@@ -442,12 +442,12 @@ export const snippetsCard = [
 >
   <ic-button variant="primary" slot="interaction">Explore</ic-button>
   <ic-button variant="secondary" slot="interaction">Check out our new drinks</ic-button>
-  <ic-card
+  <ic-card-vertical
     heading="Out now"
     message="Try our new strawberry infused tea."
     slot="secondary"
     class="hero-card"
-  ></ic-card>
+  ></ic-card-vertical>
 </ic-hero>
   `,
       long: `.hero-card {
@@ -475,7 +475,7 @@ export const snippetsCard = [
 >
   <IcButton variant="primary" slot="interaction">Explore</IcButton>
   <IcButton variant="secondary" slot="interaction">Check out our new drinks</IcButton>
-  <IcCard
+  <IcCardVertical
     heading="Out now"
     message="Try our new strawberry infused tea."
     slot="secondary"
@@ -534,7 +534,7 @@ return (
     <IcButton variant="secondary" slot="interaction">
       Check out our new drinks
     </IcButton>
-    <IcCard
+    <IcCardVertical
       heading="Out now"
       message="Try our new strawberry infused tea."
       slot="secondary"
