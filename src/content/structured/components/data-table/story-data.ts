@@ -425,3 +425,39 @@ export const LOADING_DATA = [
     age: 18,
   },
 ];
+
+export const TRUNCATION_COLUMNS = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+];
+
+export const TRUNCATION_DATA = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    jobTitle: "Junior developer",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    jobTitle: "Team lead",
+  },
+];
