@@ -1,0 +1,69 @@
+---
+path: "/components/tree-view"
+
+navPriority: 41
+
+date: "2024-08-23"
+
+title: "Tree view"
+
+status: "CANARY"
+
+subTitle: "Use the tree view component to display hierarchical data in a tree structure."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/tree-view" },
+    { title: "Code", path: "/components/tree-view/code" },
+  ]
+---
+
+import { IcAlert, IcLink } from "@ukic/react";
+import { IcTreeView, IcTreeItem } from "@ukic/canary-react";
+
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and its guidance will be updated over time."
+/>
+
+## Canary components
+
+Canary components are unstable components that are released for testing purposes.
+
+We value any feedback from users willing to try them in their applications.
+
+These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
+
+For more information on canary components, read our approach to [releases and versions](/get-started/releases-versions).
+
+<p>
+  Additional details on the props and events for this component can be found in
+  the{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-web-components/?path=/docs/web-components-tree-view--docs"
+    target="_blank"
+  >
+    Canary web components
+  </IcLink>{" "}
+  and{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/develop/canary-react/?path=/docs/react-components-tree-view--docs"
+    target="_blank"
+  >
+    Canary React
+  </IcLink>{" "}
+  storybooks.
+</p>
+
+## Component demo
+
+<ComponentPreview>
+  <div style={{ width: "250px" }}>
+    <IcTreeView heading="Menu">
+      <IcTreeItem label="Coffee" />
+      <IcTreeItem label="Tea" />
+      <IcTreeItem label="Hot chocolate" />
+    </IcTreeView>
+  </div>
+</ComponentPreview>

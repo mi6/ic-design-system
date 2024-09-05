@@ -1,7 +1,7 @@
 ---
 path: "/get-started/test-components/testing-with-react-testing-library"
 
-date: "2023-02-16"
+date: "2024-08-29"
 
 title: "Testing with React Testing Library"
 
@@ -25,8 +25,11 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
   provides a set of utility functions, which interrogate the DOM tree, in order
   to build maintainable React tests. The recommended approach with React Testing
   Library is to test React components based on how the users view the components
-  rather than the implementation of the component. For example, a user would
-  view a button by the label 'Add', so the library provides a method called{" "}
+  rather than the implementation of the component.
+</p>
+<p>
+  For example, a user would view a button by the label 'Add', so the library
+  provides a method called{" "}
   <code style={{ backgroundColor: "#EEEFF0" }}>getByText()</code> to facilitate
   that.
 </p>
@@ -55,12 +58,12 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
     Shadow DOM Testing Library
   </ic-link>
   , elements within the shadow DOM can be selected and then interacted with by using
-  methods provided by RTL. Shadow DOM Testing Library provides functions with 'Shadow'
-  prefixed to the query type (for example, <code
-    style={{ backgroundColor: "#EEEFF0" }}
-  >
-    getByShadowText()
-  </code>).
+  methods provided by RTL.
+</p>
+<p>
+  Shadow DOM Testing Library provides functions with 'Shadow' prefixed to the
+  query type (for example,{" "}
+  <code style={{ backgroundColor: "#EEEFF0" }}>getByShadowText()</code>).
 </p>
 
 ```tsx
