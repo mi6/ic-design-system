@@ -115,7 +115,7 @@ const Homepage: React.FC = () => {
           ))}
           <ic-typography variant="body">
             <ic-link href={withPrefix(homepage.about.link)}>
-              {homepage.about.linkText}.
+              {homepage.about.linkText}
             </ic-link>
           </ic-typography>
         </div>
@@ -137,7 +137,7 @@ const Homepage: React.FC = () => {
           ))}
           <ic-typography variant="body">
             <ic-link href={withPrefix(homepage.contribute.link)}>
-              {homepage.contribute.linkText}.
+              {homepage.contribute.linkText}
             </ic-link>
           </ic-typography>
         </div>
