@@ -41,6 +41,7 @@ import Toast from "./ComponentImages/toast-comp-gallery.png";
 import Togglebutton from "./ComponentImages/toggle-button-comp-gallery.png";
 import Tooltip from "./ComponentImages/tooltip-comp-gallery.png";
 import Topnavigation from "./ComponentImages/top-navigation-comp-gallery.png";
+import Treeview from "./ComponentImages/tree-view-comp-gallery.png";
 import Typography from "./ComponentImages/typography-comp-gallery.png";
 import PlaceHolder from "./ComponentImages/placeholder-comp-gallery.png";
 
@@ -84,6 +85,7 @@ const ComponentImages: { [key: string]: any } = {
   Togglebutton,
   Tooltip,
   Topnavigation,
+  Treeview,
   Typography,
 };
 
@@ -103,7 +105,7 @@ const ComponentGallery: React.FC = () => {
           <GatsbyLink to={path}>
             <ic-card message={subTitle} full-width clickable>
               <img
-                src={ComponentImages[title.replace(/ /g, "")] || PlaceHolder}
+                src={ComponentImages[title.replace(/[- ]/g, "")] || PlaceHolder}
                 slot="image-top"
                 alt={title}
                 width="100%"

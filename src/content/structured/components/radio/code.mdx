@@ -185,7 +185,11 @@ export const conditionalDynamic = [
   name="radio-group-3"
   label="Do you have any special requests?"
 >
-  <ic-radio-option value="request" label="Yes, I want to modify my order">
+  <ic-radio-option 
+    value="request" 
+    label="Yes, I want to modify my order"
+    additional-field-display="dynamic"
+  >
     <ic-text-field
       slot="additional-field"
       label="Please provide some additional information"
@@ -208,7 +212,11 @@ export const conditionalDynamic = [
   name="radio-group-3"
   label="Do you have any special requests?"
 >
-  <IcRadioOption value="request" label="Yes, I want to modify my order">
+  <IcRadioOption 
+    value="request" 
+    label="Yes, I want to modify my order" 
+    additionalFieldDisplay="dynamic"
+  >
     <IcTextField
       slot="additional-field"
       label="Please provide some additional information"
