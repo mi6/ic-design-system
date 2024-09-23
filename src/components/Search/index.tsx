@@ -8,6 +8,7 @@ interface SearchResult {
   path: string;
   label: string;
   value: string;
+  originalElement: any;
 }
 
 const tabNames = "code|accessibility";
@@ -71,11 +72,17 @@ const Search: React.FC = () => {
       const mappedResults = loaded
         .flatMap((id) => {
           const el = store[id];
-          if (el.title.toLowerCase().includes(newValue.toLowerCase())) {
+          const lowerCaseNewValue = newValue.toLowerCase();
+          if (
+            el.title?.toLowerCase().includes(lowerCaseNewValue) ||
+            el.body?.toLowerCase().includes(lowerCaseNewValue) ||
+            el.subTitle?.toLowerCase().includes(lowerCaseNewValue)
+          ) {
             const newEl: SearchResult = {
               path: el.path,
               label: el.title,
               value: el.id,
+              originalElement: el,
             };
             const { path } = newEl;
             const regex = new RegExp(componentsRegEx);
@@ -89,10 +96,31 @@ const Search: React.FC = () => {
           return [];
         })
         .sort((a, b) => {
-          if (a.label < b.label) {
+          const getPriority = (el: {
+            title: string;
+            subTitle: string;
+            body: string;
+          }) => {
+            const lowerCaseNewValue = newValue.toLowerCase();
+            if (el.title?.toLowerCase().includes(lowerCaseNewValue)) {
+              return 1;
+            }
+            if (el.subTitle?.toLowerCase().includes(lowerCaseNewValue)) {
+              return 2;
+            }
+            if (el.body?.toLowerCase().includes(lowerCaseNewValue)) {
+              return 3;
+            }
+            return 4;
+          };
+
+          const priorityA = getPriority(a.originalElement);
+          const priorityB = getPriority(b.originalElement);
+
+          if (priorityA < priorityB) {
             return -1;
           }
-          if (a.label > b.label) {
+          if (priorityA > priorityB) {
             return 1;
           }
           return 0;
