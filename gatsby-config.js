@@ -78,18 +78,22 @@ module.exports = {
               frontmatter {
                 path
                 title
+                subTitle
               }
+              body
             }
           }
         `,
         ref: "id",
-        index: ["title"],
-        store: ["id", "path", "title"],
+        index: ["title", "subTitle", "body"],
+        store: ["id", "path", "title", "subTitle", "body"],
         normalizer: ({ data }) =>
           data.allContent.map((node) => ({
             id: node.id,
             path: node.frontmatter.path,
             title: node.frontmatter.title,
+            subTitle: node.frontmatter.subTitle,
+            body: node.body,
           })),
       },
     },
