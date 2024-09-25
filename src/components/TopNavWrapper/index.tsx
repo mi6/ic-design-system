@@ -13,14 +13,6 @@ interface TopNavWrapperProps {
   version: string;
 }
 
-const TopNavItem: React.FC<any> = ({ props, text }) => (
-  <ic-navigation-item slot="navigation">
-    <GatsbyLink slot="navigation-item" {...props}>
-      {text}
-    </GatsbyLink>
-  </ic-navigation-item>
-);
-
 const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
   appTitle,
   version,
@@ -36,8 +28,12 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
     <a slot="app-icon" href={withPrefix("/")}>
       <ICDSLogo role="img" aria-labelledby="icds-link" className="icds-logo" />
     </a>
-    {textLinks.map(({ key, ...rest }) => (
-      <TopNavItem {...rest} key={key} />
+    {textLinks.map(({ key, text, ...rest }) => (
+      <ic-navigation-item slot="navigation" key={key}>
+        <GatsbyLink slot="navigation-item" {...rest}>
+          {text}
+        </GatsbyLink>
+      </ic-navigation-item>
     ))}
 
     <Search />
