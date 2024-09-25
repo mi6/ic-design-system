@@ -3,119 +3,132 @@ import { graphql, navigate, useStaticQuery } from "gatsby";
 import FlexSearch, { Index } from "flexsearch";
 import { IcSearchBar } from "@ukic/react";
 import clsx from "clsx";
+import {
+  IcOptionSelectEventDetail,
+  IcSearchBarCustomEvent,
+  IcValueEventDetail,
+} from "@ukic/web-components";
 
 interface SearchResult {
   path: string;
   label: string;
   value: string;
-  originalElement: any;
+  description: string;
+  isInBody: boolean;
+  isInTags: boolean;
 }
 
-const tabNames = "code|accessibility";
-const componentsRegEx = `/components/.*/?(${tabNames})`;
+interface QueryResult {
+  localSearchAll: {
+    index: string;
+    store: {
+      [key: string]: {
+        title: string;
+        body: string;
+        subTitle: string;
+        path: string;
+        id: string;
+        tags?: string[];
+      };
+    };
+  };
+}
+/** If it's accessibility or code page, then ignore */
+const componentsRegEx = "/components/.*/?(code|accessibility)";
 
 const Search: React.FC = () => {
-  const queryData = useStaticQuery(graphql`
+  const { index, store } = useStaticQuery<QueryResult>(graphql`
     query {
       localSearchAll {
         index
         store
       }
     }
-  `);
+  `).localSearchAll;
 
-  const [hasMounted, setHasMounted] = React.useState(false);
-  const { index, store } = queryData.localSearchAll;
-  const [value, setValue] = useState<string>("");
+  const [hasMounted, setHasMounted] = useState(false);
+  const [value, setValue] = useState("");
   const [loading, setLoading] = useState(false);
-  const [options, setOptions] = useState<SearchResult[]>();
-  const [idx, setIdx] = useState<Index<any>>();
+  const [options, setOptions] = useState<SearchResult[]>([]);
+  const [idx, setIdx] = useState<Index<string>>();
 
   useEffect(() => {
-    const importedIndex = FlexSearch.create();
+    const importedIndex = FlexSearch.create<string>();
     importedIndex.import(index);
     setIdx(importedIndex);
     setHasMounted(true);
   }, []);
 
-  const onIcOptionSelect = (event: CustomEvent) => {
-    const { value: selectedValue } = event.detail;
-    if (options) {
-      const match = options.find((option) => option.value === selectedValue);
-      if (match && match.path) {
-        navigate(match.path);
-        setValue("");
-      }
+  const onIcOptionSelect = (
+    event: IcSearchBarCustomEvent<IcOptionSelectEventDetail>
+  ) => {
+    const match = options.find((option) => option.value === event.detail.value);
+    if (match?.path) {
+      navigate(match.path);
+      setValue("");
     }
   };
 
-  // navigate to first item in suggestions when enter pressed or search icon clicked
-  const onIcSubmitSearch = (event: CustomEvent) => {
-    const { value: searchValue } = event.detail;
-    if (searchValue && options) {
+  /** Navigate to first item in suggestions when enter pressed or search icon clicked */
+  const onIcSubmitSearch = (
+    event: IcSearchBarCustomEvent<IcValueEventDetail>
+  ) => {
+    if (event.detail.value && options.length) {
       navigate(options[0].path);
     }
   };
 
-  const onIcInput = async (event: CustomEvent) => {
+  /**
+   * Process results to handle components pages where 3 different pages (tabs) have the same title (i.e. guidance, accessibility & code).
+   * Parse the path to determine if the result is a component and remove element if path contains "accessibility" or "code".
+   * Also sort entries to give closest "starts with" match first
+   */
+  const onIcInput = async (
+    event: IcSearchBarCustomEvent<IcValueEventDetail>
+  ) => {
     const newValue = event.detail.value;
+    const includesNewValue = (property?: string) =>
+      !!property?.toLowerCase().includes(newValue.toLowerCase());
+
     if (idx && value !== newValue) {
       setLoading(true);
-      const rawResults = idx.search(newValue, {});
-
-      // process results to handle components pages where 3 different pages (tabs) have the same title
-      // i.e. guidance, accessibility & code
-      // parse the path to determine if the result is a component and remove element if path contains "accessibility" or "code"
-      // also sort entries to give closest "starts with" match first
-
-      const loaded = await rawResults;
+      const loaded = await idx.search(newValue, {});
       const mappedResults = loaded
-        .flatMap((id) => {
-          const el = store[id];
-          const lowerCaseNewValue = newValue.toLowerCase();
-          if (
-            el.title?.toLowerCase().includes(lowerCaseNewValue) ||
-            el.body?.toLowerCase().includes(lowerCaseNewValue) ||
-            el.subTitle?.toLowerCase().includes(lowerCaseNewValue)
-          ) {
-            const newEl: SearchResult = {
-              path: el.path,
-              label: el.title,
-              value: el.id,
-              originalElement: el,
-            };
-            const { path } = newEl;
-            const regex = new RegExp(componentsRegEx);
-            const key = path.match(regex)?.pop();
-            // if it's accessibility or code page, then ignore
-            if (key) {
-              return [];
-            }
-            return newEl;
-          }
-          return [];
+        .flatMap((loadedId) => {
+          const { path, title, id, tags, body, subTitle } = store[loadedId];
+          const isInTags = !!tags?.some((tag) => includesNewValue(tag));
+          const isInBody = includesNewValue(body);
+          return !path.match(new RegExp(componentsRegEx)) &&
+            (includesNewValue(title) ||
+              includesNewValue(subTitle) ||
+              isInBody ||
+              isInTags)
+            ? {
+                label: title,
+                value: id,
+                description: subTitle,
+                path,
+                isInBody,
+                isInTags,
+              }
+            : [];
         })
         .sort((a, b) => {
-          const getPriority = (el: {
-            title: string;
-            subTitle: string;
-            body: string;
-          }) => {
-            const lowerCaseNewValue = newValue.toLowerCase();
-            if (el.title?.toLowerCase().includes(lowerCaseNewValue)) {
-              return 1;
-            }
-            if (el.subTitle?.toLowerCase().includes(lowerCaseNewValue)) {
-              return 2;
-            }
-            if (el.body?.toLowerCase().includes(lowerCaseNewValue)) {
-              return 3;
-            }
-            return 4;
+          const getPriority = ({
+            label,
+            description,
+            isInBody,
+            isInTags,
+          }: SearchResult) => {
+            if (includesNewValue(label)) return 1;
+            if (isInTags) return 2;
+            if (includesNewValue(description)) return 3;
+            if (isInBody) return 4;
+            return 5;
           };
 
-          const priorityA = getPriority(a.originalElement);
-          const priorityB = getPriority(b.originalElement);
+          const priorityA = getPriority(a);
+          const priorityB = getPriority(b);
 
           if (priorityA < priorityB) {
             return -1;
@@ -150,7 +163,7 @@ const Search: React.FC = () => {
         label="Search the Design System"
         hideLabel
         placeholder="Type to search"
-        options={options || []}
+        options={options}
         onIcInput={onIcInput}
         onIcOptionSelect={onIcOptionSelect}
         onIcSubmitSearch={onIcSubmitSearch}

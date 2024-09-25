@@ -79,14 +79,15 @@ module.exports = {
                 path
                 title
                 subTitle
+                tags
               }
               body
             }
           }
         `,
         ref: "id",
-        index: ["title", "subTitle", "body"],
-        store: ["id", "path", "title", "subTitle", "body"],
+        index: ["title", "subTitle", "body", "tags"],
+        store: ["id", "path", "title", "subTitle", "body", "tags"],
         normalizer: ({ data }) =>
           data.allContent.map((node) => ({
             id: node.id,
@@ -94,6 +95,7 @@ module.exports = {
             title: node.frontmatter.title,
             subTitle: node.frontmatter.subTitle,
             body: node.body,
+            tags: node.frontmatter.tags,
           })),
       },
     },
@@ -161,7 +163,7 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
-        ignore: [`\.(tsx|ts|jsx|js|css|md|mdx)$`],
+        ignore: [`.(tsx|ts|jsx|js|css|md|mdx)$`],
       },
     },
     {
@@ -169,7 +171,7 @@ module.exports = {
       options: {
         name: `static`,
         path: `${__dirname}/static/`,
-        ignore: [`\.(doc|doc|html)$`],
+        ignore: [`.(doc|doc|html)$`],
       },
     },
   ],
