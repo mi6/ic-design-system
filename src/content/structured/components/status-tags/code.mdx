@@ -195,9 +195,9 @@ return (
   <IcStatusTag label="Error" status="danger" variant="outlined" />
 </ComponentPreview>
 
-### Small
+### Sizes
 
-export const snippetsSmall = [
+export const snippetsSizes = [
   {
     technology: "Web component",
     snippets: {
@@ -209,17 +209,12 @@ export const snippetsSmall = [
 <ic-status-tag
   label="Success"
   status="success"
-  size="small"
+  size="default"
 ></ic-status-tag>
 <ic-status-tag
   label="Warning"
   status="warning"
-  size="small"
-></ic-status-tag>
-<ic-status-tag
-  label="Error" 
-  status="danger" 
-  size="small"
+  size="large"
 ></ic-status-tag>`,
       long: `.parent-container {
       display: flex;
@@ -238,9 +233,8 @@ export const snippetsSmall = [
     technology: "React",
     snippets: {
       short: `<IcStatusTag label="Neutral" status="neutral" size="small" />
-<IcStatusTag label="Success" status="success" size="small" />
-<IcStatusTag label="Warning" status="warning" size="small" />
-<IcStatusTag label="Error" status="danger" size="small" />`,
+<IcStatusTag label="Success" status="success" size="default" />
+<IcStatusTag label="Warning" status="warning" size="large" />`,
       long: [
         {
           language: "Typescript",
@@ -281,9 +275,8 @@ return (
   },
 ];
 
-<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsSmall}>
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsSizes}>
   <IcStatusTag label="Neutral" status="neutral" size="small" />
-  <IcStatusTag label="Success" status="success" size="small" />
-  <IcStatusTag label="Warning" status="warning" size="small" />
-  <IcStatusTag label="Error" status="danger" size="small" />
+  <IcStatusTag label="Success" status="success" />
+  <IcStatusTag label="Warning" status="warning" size="large" />
 </ComponentPreview>
