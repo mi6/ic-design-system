@@ -6,6 +6,15 @@
   justify-content: space-between;
 }
 
+.container {
+  border: 1px solid var(--ic-architectural-300);
+  border-radius: var(--ic-border-radius);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--ic-space-lg);
+  position: relative;
+}
+
 .link-zone:nth-child(2) {
   border-top: 0;
 }
@@ -77,19 +86,11 @@
   justify-content: flex-start !important;
 }
 
-.code-window:focus-within {
-  box-shadow: var(--ic-border-focus);
-  border-radius: var(--ic-border-radius) !important;
-}
-
 .snippet {
+  border-radius: 0;
   margin: 0 !important;
   border-radius: 0 !important;
   padding-bottom: var(--ic-space-sm);
-}
-
-.snippet:focus {
-  outline: none;
 }
 
 .snippet-container {

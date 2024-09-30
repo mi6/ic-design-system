@@ -12,6 +12,57 @@ navPriority: 4
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing-with-cypress.mdx"
 ---
 
+import testFiles from "./test-app/index";
+
+export const snippetArray = [
+  {
+    fileName: testFiles.cypress.fileName,
+    disableMoreButton: testFiles.cypress.disableMoreButton,
+    snippets: {
+      short: testFiles.cypress.snippets.short,
+      long: testFiles.cypress.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.component.fileName,
+    disableMoreButton: testFiles.component.disableMoreButton,
+    snippets: {
+      short: testFiles.component.snippets.short,
+      long: testFiles.component.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.types.fileName,
+    disableMoreButton: testFiles.types.disableMoreButton,
+    snippets: {
+      short: testFiles.types.snippets.short,
+      long: testFiles.types.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.constants.fileName,
+    disableMoreButton: testFiles.constants.disableMoreButton,
+    snippets: {
+      short: testFiles.constants.snippets.short,
+      long: testFiles.constants.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.methods.fileName,
+    disableMoreButton: testFiles.methods.disableMoreButton,
+    snippets: {
+      short: testFiles.methods.snippets.short,
+      long: testFiles.methods.snippets.long,
+    },
+  },
+];
+
+export const stackblitzProps = {
+  test: "develop",
+  title: "Testing with Cypress",
+  branch: "/tree/main",
+};
+
 ## About Cypress
 
 <p>
@@ -149,42 +200,10 @@ describe("<Textfield />", () => {
 
 ## Example: End-to-end testing
 
-Below is an additional example for end-to-end tests on the same component. End-to-end tests normally live within the Cypress test directory and are rendered as a complete site with live interaction.
+Below is an example of end-to-end tests written against a ‘test app’ that has been created using ICDS components.
 
-```jsx
-// cypress/e2e/App.cy.js
-describe("Textfield", () => {
-  beforeEach(() => {
-    cy.visit("http://localhost:3000/", {
-      onBeforeLoad(window) {
-        // Capture the log to check later
-        cy.stub(window.console, "log").as("consoleLog");
-      },
-    });
-  });
-
-  it("should have visited the correect URL", () => {
-    // Check that your App server is running
-    cy.url().should("eq", "http://localhost:3000/");
-  });
-
-  it("should check the label on the IcTextfield", () => {
-    // Checks the component has rendered fully
-    cy.get("ic-text-field").should("have.class", "hydrated");
-    cy.get("ic-button").should("have.class", "hydrated");
-    cy.get("ic-text-field").should(
-      "have.html",
-      '<input type="hidden" class="ic-input" name="ic-text-field-input-0" value="">'
-    );
-
-    // Interact with the components
-    cy.get("#ic-text-field-input-0").type("Frappucino");
-    cy.get("ic-button").click();
-    cy.get("@consoleLog").should(
-      "be.calledWith",
-      "This is the best coffee going:",
-      "Frappucino"
-    );
-  });
-});
-```
+<ComponentTesting
+      snippetArray={snippetArray}
+      showStackblitzBtn
+      stackblitzButtonTestAppProps={stackblitzProps}
+    />
