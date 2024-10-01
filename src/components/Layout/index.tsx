@@ -19,6 +19,8 @@ import { consentCookieApproved } from "../CookieBanner/cookies.helper";
 
 import { Heading, MdxFields, MdxFrontMatter } from "../../sharedTypes";
 
+import { IC_DEVICE_SIZES } from "../../utils/constants";
+
 const {
   STATUS,
   TITLE,
@@ -187,6 +189,41 @@ const Layout: React.FC<LayoutProps> = ({
     }
   };
 
+  const [backToTopIconVariant, setBackToTopIconVariant] = useState(false);
+
+  function calculateScreenResolution() {
+    let resolution = "XL";
+    if (screen.width > IC_DEVICE_SIZES.L) {
+      resolution = "L";
+    } else if (screen.width > IC_DEVICE_SIZES.M) {
+      resolution = "M";
+    } else if (screen.width > IC_DEVICE_SIZES.S) {
+      resolution = "S";
+    } else if (screen.width < IC_DEVICE_SIZES.S) {
+      resolution = "XS";
+    }
+    return resolution;
+  }
+
+  function calculateBackToTopVariant(screenWidth: number) {
+    let isIcon = false;
+    const screenResolution = calculateScreenResolution();
+    const iconWidthPercentageThreshold = 0.9;
+
+    if (
+      screenResolution &&
+      screenWidth <
+        IC_DEVICE_SIZES[screenResolution] * iconWidthPercentageThreshold
+    ) {
+      isIcon = true;
+    }
+    setBackToTopIconVariant(isIcon);
+  }
+
+  window.addEventListener("resize", () => {
+    calculateBackToTopVariant(window.innerWidth);
+  });
+
   return (
     <>
       <Helmet>
@@ -254,7 +291,11 @@ const Layout: React.FC<LayoutProps> = ({
               {" "}
             </a>
             {cloneElement(children, { location: location.pathname })}
-            <ic-back-to-top target="main" />
+            <ic-back-to-top
+              id="back-to-top"
+              target="main"
+              variant={backToTopIconVariant ? "icon" : "default"}
+            />
           </main>
         </div>
         <div className="footer">
