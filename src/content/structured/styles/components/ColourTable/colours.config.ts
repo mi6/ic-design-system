@@ -136,7 +136,6 @@ export const ColoursLinks = [
     colors: [
       { name: "Link", token: "--ic-hyperlink", hex: "#1759BC" },
       { name: "Link visited", token: "--ic-hyperlink-visited", hex: "#330072" },
-      { name: "Link hover", token: "--ic-hyperlink-hover", hex: "#7C2855" },
     ],
   },
 ];
