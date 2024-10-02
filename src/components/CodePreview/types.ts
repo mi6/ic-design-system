@@ -52,6 +52,7 @@ export interface ToggleShowProps {
 export interface CodeWindowProps {
   code: string;
   show: boolean;
+  language: string;
 }
 
 export interface FrameworkTabProps {
