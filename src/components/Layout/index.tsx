@@ -19,7 +19,7 @@ import { consentCookieApproved } from "../CookieBanner/cookies.helper";
 
 import { Heading, MdxFields, MdxFrontMatter } from "../../sharedTypes";
 
-import { IC_DEVICE_SIZES } from "../../utils/constants";
+import IC_DEVICE_SIZES from "../../utils/constants";
 
 const {
   STATUS,
@@ -194,13 +194,13 @@ const Layout: React.FC<LayoutProps> = ({
   function calculateScreenResolution() {
     let resolution = "XL";
 
-    if (screen.width > IC_DEVICE_SIZES.L) {
+    if (window.screen.width > IC_DEVICE_SIZES.L) {
       resolution = "L";
-    } else if (screen.width > IC_DEVICE_SIZES.M) {
+    } else if (window.screen.width > IC_DEVICE_SIZES.M) {
       resolution = "M";
-    } else if (screen.width > IC_DEVICE_SIZES.S) {
+    } else if (window.screen.width > IC_DEVICE_SIZES.S) {
       resolution = "S";
-    } else if (screen.width < IC_DEVICE_SIZES.S) {
+    } else if (window.screen.width < IC_DEVICE_SIZES.S) {
       resolution = "XS";
     }
     return resolution;
