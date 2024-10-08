@@ -3,7 +3,7 @@ path: "/accessibility/needs/neurodiversity"
 
 navPriority: 4
 
-date: "2024-08-29"
+date: "2024-10-21"
 
 title: "Neurodiversity"
 
@@ -11,6 +11,11 @@ subTitle: "People often think, communicate, understand or remember things in way
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/neurodiversity.mdx"
 ---
+
+import neurodiversityAccessibilityFig14 from "./images/fig-14-graphics-and-text-used-to-show-data.png";
+import neurodiversityAccessibilityFig15 from "./images/fig-15-only-text-is-used-to-show-data.png";
+import neurodiversityAccessibilityFig16 from "./images/fig-16-dyslexia-friendly-font.png";
+import neurodiversityAccessibilityFig17 from "./images/fig-17-no-dyslexia-friendly-font.png";
 
 ## Introduction
 
@@ -140,9 +145,9 @@ Around 700,000 people in the UK are on the autistic spectrum. Only 16% of people
   .
 </p>
 
-## Making things accessible
+## How to design for neurodiversity
 
-In addressing some of the design issues below, we make it easier for everyone to use our apps.
+In addressing some of the design tips below, we make it easier for everyone to use our apps.
 
 ### Use colour properly
 
@@ -156,18 +161,55 @@ Some people find it easier to look at images. Use graphs, icons and colour along
 
 All images and icons must use [accessible colour](/styles/colour) and have `alt` (alternate) text and captions.
 
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={neurodiversityAccessibilityFig14}
+    imageAlt="A graphic of a survey regarding eye colour. Results are conveyed by short lines of text and by a pie chart that displays the results in a more visible solution."
+    state="good"
+    caption="Using both images and text can make it easier to understand data."
+  />
+  <DoDontCaution
+    imageSrc={neurodiversityAccessibilityFig15}
+    imageAlt="A graphic of a survey regarding eye colour. Results are written in long sentences that do not show the information as clearly as possible."
+    state="bad"
+    caption="Using text only to present data can be complex and overwhelming."
+  />
+</DoubleDoDontCaution>
+
+<IcAlert
+  heading=""
+  message="The pie chart in the diagram above is not a component, but shows how images should be imported. 
+  Please make sure that any text in the diagram is accessible with a screen reader."
+  variant="info"
+/>
+
 ### Don't expect the user to remember
 
 If you use multiple input steps, make sure you remind users what they've entered before. Don't expect people to switch (or remember) between screens to see what they typed in previously.
 
-### Be flexible on spelling
+### Use simple words
 
-Where possible, your app should cope with different date formats.
-
-Use auto-complete suggestion where relevant so that people don't have to spell out the full text.
+Where possible, use [simple words](/styles/content-style/voice-and-tone) and aim for a maximum reading age of 9.
+People prefer to read pages with words they are already familiar with.
 
 ### Allow browser customisations
 
-Some people rely on Operating System or Browser settings to change the colours of their apps. Make sure what you build can be used with platform settings.
+Some people rely on Operating System or Browser settings to change the colours of their apps.
+Make sure what you build can be used with platform settings.
 
 These include Windows High Contrast mode, macOS increased contrast and browser extensions that modify CSS styles.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={neurodiversityAccessibilityFig16}
+    imageAlt="A graphic of a dialogue box to show open-dyslexic text font, which is easier for people with dyslexia to read."
+    state="good"
+    caption="Open-dyslexic font is used to make text more readable for those with dyslexia."
+  />
+  <DoDontCaution
+    imageSrc={neurodiversityAccessibilityFig17}
+    imageAlt="A graphic of a dialogue box to show default text font."
+    state="bad"
+    caption="Default fonts might not always benefit people with dyslexia."
+  />
+</DoubleDoDontCaution>

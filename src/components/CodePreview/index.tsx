@@ -144,7 +144,12 @@ const CodeWindow: React.FC<CodeWindowProps> = ({ code, show, language }) => (
   <div className="code-window">
     {/* eslint-disable jsx-a11y/no-noninteractive-tabindex */}
     {show && (
-      <Highlight {...defaultProps} code={code} language={language === "Javascript" ? 'jsx' : 'tsx'} theme={undefined}>
+      <Highlight
+        {...defaultProps}
+        code={code}
+        language={language === "Javascript" ? "jsx" : "tsx"}
+        theme={undefined}
+      >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
             className={clsx(className, "snippet")}
