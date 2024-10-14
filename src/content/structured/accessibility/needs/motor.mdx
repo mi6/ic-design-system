@@ -12,6 +12,11 @@ subTitle: "'Motor impairment' means a partial or total lack of function in a bod
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/motor.mdx"
 ---
 
+import motorAccessibilityFig8 from "./images/fig-8-large-clickable-areas.png";
+import motorAccessibilityFig9 from "./images/fig-9-clickable-areas-too-small.png";
+import motorAccessibilityFig10 from "./images/fig-10-dictate-function-on-text-fields.png";
+import motorAccessibilityFig11 from "./images/fig-11-no-dictate-function.png";
+
 ## Introduction
 
 Motor impairments can fundamentally affect the usage of your app or service. Some people that use walking frames can't hold a mobile phone, and some with muscle tremors may be unable to use dropdown menus with a mouse.
@@ -41,15 +46,28 @@ The following table lists examples of motor impairments in three columns (perman
 | Dyspraxia (co-ordination of movement)                      |             | General multi-tasking |
 | Muscle tremor (including Parkinson's)                      |             |                       |
 
-## Making things accessible
-
-In addressing some of the design issues below, we make it easier for everyone to use our apps.
+## How to design for motor needs
 
 ### Clear clickable actions
 
 Make sure any buttons are clear and easily clickable. Buttons should be easy enough to click and shouldn't be too close together.
 
 Avoid placing lots of actions next to each other as this could increase the risk of a user taking the wrong action.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig8}
+    imageAlt="A graphic of a yes or no option and a submit button. The clickable areas include the text of the ‘yes’ radio option and the whole button."
+    state="good"
+    caption="The cursors show the clickable areas include the text for the buttons."
+  />
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig9}
+    imageAlt="A graphic of a yes or no option and a submit button with outlines around only the circle of the radio button and the chevron of the submit button, showing a limited clickable area."
+    state="bad"
+    caption="The cursors show the smaller clickable areas for the buttons, which make it harder for people with motor needs."
+  />
+</DoubleDoDontCaution>
 
 ### Design for keyboard and speech
 
@@ -70,3 +88,18 @@ Consider alternate input means (mouthpieces, clickers and text to speech softwar
   allows users to navigate apps, browse desktops, open applications, type and
   more.
 </p>
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig10}
+    imageAlt="A graphic of a text field requiring user to enter a description with a dictate button for those who would prefer to use speech to text rather than typing."
+    state="good"
+    caption="Text field with an option to dictate what is written."
+  />
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig11}
+    imageAlt="A graphic of a text field requiring user to enter a description with only the option to type, which can be limiting for people with motor difficulties."
+    state="bad"
+    caption="Text field that only has an option to type, which limits accessibility."
+  />
+</DoubleDoDontCaution>
