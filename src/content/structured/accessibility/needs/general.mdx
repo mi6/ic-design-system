@@ -1,0 +1,84 @@
+---
+path: "/accessibility/needs/general"
+
+navPriority: 1
+
+date: "2024-10-14"
+
+title: "General accessibility"
+
+subTitle: "Every app and service you create must have a minimal baseline of accessible designs."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/general.mdx"
+---
+
+import generalAccessibilityFig1 from "./images/fig-1-linear-layout.png";
+import generalAccessibilityFig2 from "./images/fig-2-non-linear-layout.png";
+
+## Designing for accessibility
+
+Designing a page before development allows people to test features before a final design is selected. Creating multiple designs will give a good overview of the features that people want.
+
+People can interact with the accessible designs and provide feedback on what does and doesn’t work.
+
+<p>
+  The{" "}
+  <ic-link
+    target="_blank"
+    href="https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/"
+    rel="noreferer noopener nofollow"
+  >
+    Home Office
+  </ic-link>{" "}
+  has designed effective accessibility posters from which these pages have taken
+  inspiration.
+</p>
+
+This page displays the generic design implementations that can be included that benefit multiple forms of accessibility. The following suggestions are the required basics when designing a page or service.
+
+### Large font
+
+Writing in a large font size will put less writing on a page and make the words more readable.
+
+Our eyes are most often drawn to the larger text on a page. Less words on a page will feel like less effort to read.
+
+### Tabular formatted buttons
+
+Allowing people to tab between each button instead of using the mouse.
+
+Everything must be be accessible with this method for people who don’t like using the mouse to click into sections.
+
+### Descriptive buttons
+
+Ensure that buttons describe their feature. Having a button or link that says ‘Click here’ isn’t beneficial if ‘here’ isn’t specified.
+
+Using descriptions stating exactly what the button will do is more accessible.
+
+### Simple linear layouts
+
+Ensure data is displayed in a linear format that is readable for people. Don’t use confusing layouts.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={generalAccessibilityFig1}
+    imageAlt="A graphic of an information page currently at step 1 requiring an email address to be inputted and a ‘yes’ or ‘no’ as to whether you wish to be contacted. All of these options are aligned to the left and the ‘Next’ button to continue to next step is at the bottom."
+    state="good"
+    caption="Ensure all components are linear and aligned to the left."
+  />
+  <DoDontCaution
+    imageSrc={generalAccessibilityFig2}
+    imageAlt="A graphic of an information page currently at step 1 requiring an email address to be inputted and a ‘yes’ or ‘no’ as to whether you wish to be contacted. These options are not aligned to the left and the ‘Next’ button to move on to the next page is next to the email input, and not at the bottom of the page. This non linear layout can be confusing to people who don’t know the layout well."
+    state="bad"
+    caption="All components are not aligned to the left, showing what the layout should not look like."
+  />
+</DoubleDoDontCaution>
+
+## Additional accessibility resources
+
+Check out the specific accessibility needs pages for a more detail regarding the forms of accessibility designs that can be included.
+
+- [Auditory](/accessibility/needs/auditory)
+- [Invisible illness](/accessibility/needs/invisible)
+- [Motor](/accessibility/needs/motor)
+- [Neurodiversity](/accessibility/needs/neurodiversity)
+- [Visual](/accessibility/needs/visual)
