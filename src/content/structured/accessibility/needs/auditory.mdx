@@ -13,6 +13,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 ---
 
 import { IcAlert } from "@ukic/react";
+import auditoryAccessibilityFig3 from "./images/fig-3-closed-caption-and-transcripts.png";
 
 ## Introduction
 
@@ -43,11 +44,9 @@ The following table lists examples of hearing impairments in three columns (perm
 | Hard of hearing (mild to severe hearing loss) | Medicine side effects (such as for neonatal infections, malaria, cancer) | Noise-cancelling headphones (to counteract noise) |
 |                                               | Exposure to loud noises                                                  | Poor quality audio                                |
 
-## Making things accessible
+## How to design for auditory needs
 
-Make sure any audio has little to no background noise.
-
-### Subtitles and transcripts
+### Closed captions, subtitles and transcripts
 
 <IcAlert
   heading="Keep compliant"
@@ -62,3 +61,24 @@ Make sure any audio information is available in text.
 For all audio content (including videos with audio) you must provide [subtitles and a transcript](/accessibility/requirement/subtitles-transcripts-captions). Subtitles must not be embedded (rendered) into the video as they need to be readable using assistive technologies.
 
 Don't rely on automated subtitling and transcription because it might be inaccurate. Always check any automated subtitles and transcripts for accuracy.
+
+Including closed captions and transcripts on video or audio files will make the page accessible to those with hearing impairments.
+
+<DoDontCaution
+  imageSrc={auditoryAccessibilityFig3}
+  imageAlt="A graphic of a video player with a show transcript button. On the right hand side there is a transcript window displaying the audio of the video in text format."
+  state="good"
+  caption="Include transcripts for audio elements where possible."
+/>
+
+### Varying points of contact
+
+When planning meetings, people may request multiple points of contact. For people with hearing impairments, communication via phone may not be suitable.
+In these scenarios, providing multiple forms of contact will increase accessibility.
+
+This can include interpreters for in person meetings, speech to text for virtual meetings and communication via messaging services.
+
+### Split content
+
+Split larger chunks into smaller sections separated by headings.
+Smaller chunks are easier to read and less intensive compared to larger blocks of text.
