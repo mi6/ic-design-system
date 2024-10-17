@@ -40,10 +40,6 @@
   padding-bottom: 0px !important;
 }
 
-.footer {
-  justify-self: flex-end;
-}
-
 .footer svg * {
   fill: var(--ic-architectural-white) !important;
 }
