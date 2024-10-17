@@ -14,8 +14,8 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 import invisibleAccessibilityFig4 from "./images/fig-4-good-error-messages.png";
 import invisibleAccessibilityFig5 from "./images/fig-5-bad-error-messages.png";
+import toastAnimation from "./images/toast-example-ten-seconds.mp4";
 import invisibleAccessibilityFig6 from "./images/fig-6-good-toast-display-time.png";
-import invisibleAccessibilityFig7 from "./images/fig-7-bad-toast-display-time.png";
 
 ## Introduction
 
@@ -125,26 +125,16 @@ If an animation is required, ensure to add an option to close it quickly as the 
 ### Disappearing pop-ups/toasts
 
 Pop-ups and toasts need to ensure they are visible for a good amount of time, and they don’t flash up too quickly on the screen.
-Components like toasts which have timers on them can sometimes disappear too quickly before people have a chance to read it.
+Components like toasts can be auto dismissed, meaning they can sometimes disappear too quickly and not allow enough time to be read.
 
-<DoubleDoDontCaution>
-  <DoDontCaution
-    imageSrc={invisibleAccessibilityFig6}
-    imageAlt="A graphic of a toast showing a success message that will dismiss after 10 seconds."
-    state="good"
-    caption="Toast dismisses after three seconds, which is not a suitable length of time."
-  />
-  <DoDontCaution
-    imageSrc={invisibleAccessibilityFig7}
-    imageAlt="A graphic of a toast showing a success message that will dismiss after 3 seconds."
-    state="bad"
-    caption="Toast dismisses after 10 seconds, which allows plenty of time for the toast to be read."
-  />
-</DoubleDoDontCaution>
+The toast component displayed in the video below dismisses after 10 seconds, which allows plenty of time for the toast to be read.
 
-<IcAlert
-  heading=""
-  message="The toast components do not have the functionality to show the seconds remaining, 
-  this is just a visual representation to show the time a toast is displayed."
-  variant="warning"
-/>
+<video
+  width="100%"
+  muted
+  controls
+  loop
+  title="A graphic of a toast showing a success message that will dismiss after 10 seconds."
+>
+  <source src={toastAnimation} type="video/mp4" />
+</video>
