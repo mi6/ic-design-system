@@ -140,11 +140,11 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
   </div>
 );
 
-const CodeWindow: React.FC<CodeWindowProps> = ({ code, show }) => (
+const CodeWindow: React.FC<CodeWindowProps> = ({ code, show, language }) => (
   <div className="code-window">
     {/* eslint-disable jsx-a11y/no-noninteractive-tabindex */}
     {show && (
-      <Highlight {...defaultProps} code={code} language="jsx" theme={undefined}>
+      <Highlight {...defaultProps} code={code} language={language === "Javascript" ? 'jsx' : 'tsx'} theme={undefined}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
             className={clsx(className, "snippet")}
@@ -555,6 +555,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
               <CodeWindow
                 code={getCodeSnippet(snippet)?.codeSnippet || ""}
                 show={show}
+                language={selectedLanguage}
               />
             </IcTabPanel>
           ))}
