@@ -135,18 +135,20 @@ export const conditional = [
     technology: "React",
     snippets: {
       short: `<IcRadioGroup
-  name="radio-group-1"
-  label="Add a free purchase with any hot drink"
-  onIcChange={(ev) => console.log(ev.detail.value)}
+label="Do you have any special requests?"
+name="radio-group-2"
 >
-  <IcRadioOption value="crisps" label="Crisps" />
-  <IcRadioOption
-    value="cookie"
-    label="Deluxe chocolate chip cookie (sold out)"
-    disabled
+  <IcRadioOption value="request" label="Yes, I want to modify my order">
+    <IcTextField
+      slot="additional-field"
+      label="Please provide some additional information"
+      placeholder="i.e Soya milk please"
+    />
+  </IcRadioOption>
+  <IcRadioOption 
+    value="none" 
+    label="No, standard please" 
   />
-  <IcRadioOption value="fruit" label="Banana" />
-  <IcRadioOption value="No item" label="No thanks, just my coffee" />
 </IcRadioGroup>`,
       long: [
         {
