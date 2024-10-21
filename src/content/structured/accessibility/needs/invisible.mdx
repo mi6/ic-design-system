@@ -3,7 +3,7 @@ path: "/accessibility/needs/invisible"
 
 navPriority: 2
 
-date: "2024-08-29"
+date: "2024-10-21"
 
 title: "Invisible illness"
 
@@ -11,6 +11,10 @@ subTitle: "Invisible illness is an umbrella term for medical conditions that are
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/invisible.mdx"
 ---
+
+import invisibleAccessibilityFig4 from "./images/fig-4-good-error-messages.png";
+import invisibleAccessibilityFig5 from "./images/fig-5-bad-error-messages.png";
+import toastAnimation from "./images/toast-example-ten-seconds.mp4";
 
 ## Introduction
 
@@ -72,7 +76,7 @@ The main symptoms of ME/CFS are persistent mental and physical fatigue, although
 
 Fibromyalgia, also called Fibromyalgia Syndrome (FMS), is a long-term condition that causes pain all over the body.
 
-As well as widespread pain, people with FMS can also experience increased sensitivity to pain, extreme tiredness, muscle stiffness, difficulty sleeping, problems with mental processes (known as "fibro-fog") such as memory and concentration, headaches and irritable bowel syndrome (IBS.
+As well as widespread pain, people with FMS can also experience increased sensitivity to pain, extreme tiredness, muscle stiffness, difficulty sleeping, problems with mental processes (known as "fibro-fog") such as memory and concentration, headaches and irritable bowel syndrome (IBS).
 
 <p>
   <ic-link
@@ -86,17 +90,52 @@ As well as widespread pain, people with FMS can also experience increased sensit
   .
 </p>
 
-## Making things accessible
+## How to design for invisible illnesses
 
-In addressing some of the design issues below, we make it easier for everyone to use our apps. Thinking about the [design considerations for neurodiversity](/accessibility/needs/neurodiversity) can help people who have invisible illnesses.
+In addressing some of the design tips below, we make it easier for everyone to use our apps.
 
-### Anxiety and stress-free design
+Thinking about the [design considerations for neurodiversity](/accessibility/needs/neurodiversity) can help people who have invisible illnesses.
 
 Some things we include in apps increase anxiety and, for some people, the impact can be significant.
 
-Consider:
+### Error messages
 
-- Error messages should explain how to fix the problem and not blame the user.
-- [Motion/animation](/styles/motion) or information should only appear when the user expects it.
-- Popups that disappear too quickly before they can be read, like [toasts](/components/toast).
-- Use simple [layouts](/styles/layout-spacing) as complicated, dense layouts can overload users with information.
+Any error messages on a page should explain how to fix the problem without blaming the user. Being blamed can increase anxiety and stress which may affect other invisible needs.
+Make sure any error messages explain what needs to be done to fix the error.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={invisibleAccessibilityFig4}
+    imageAlt="A graphic of an error message and a submit button where the error asks the user to check data. The error states that the error is with the form, not with the user."
+    state="good"
+    caption="Error messages should advise people on how to fix the issue rather than blaming them."
+  />
+  <DoDontCaution
+    imageSrc={invisibleAccessibilityFig5}
+    imageAlt="A graphic of an error message and a submit button where the error blames the user for the submission failing."
+    state="bad"
+    caption="Error messages should not blame the person or fail to tell them how to fix the issue."
+  />
+</DoubleDoDontCaution>
+
+### Motions/Animations/GIFs
+
+The use of animations or motion on a webpage when people aren’t expecting it can increase stress.
+If an animation is required, ensure to add an option to close it quickly as the motion could also affect those with Epilepsy.
+
+### Disappearing pop-ups/toasts
+
+Make sure pop-ups and toasts are visible for a good amount of time, and that they don't flash up too quickly on the screen.
+Components like toasts can be auto dismissed, meaning they can sometimes disappear too quickly and not allow enough time to be read.
+
+The toast component displayed in the video below dismisses after 10 seconds, which allows plenty of time for the toast to be read.
+
+<video
+  width="50%"
+  muted
+  controls
+  loop
+  title="A graphic of a toast showing a success message that will dismiss after 10 seconds."
+>
+  <source src={toastAnimation} type="video/mp4" />
+</video>

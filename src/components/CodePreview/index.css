@@ -15,7 +15,7 @@
   align-items: center;
   margin-right: var(--ic-space-xxs);
   z-index: 1;
-} 
+}
 
 .button-container {
   margin: auto var(--ic-space-xxs) auto var(--ic-space-xxs);
