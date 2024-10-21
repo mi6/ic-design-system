@@ -60,6 +60,10 @@ video.half-width {
   width: 48.5%;
 }
 
+ic-page-header.temp-remove-sticky {
+  position: static;
+}
+
 @media screen and (max-width: 768px) {
   .page-container {
     margin-bottom: var(--ic-space-xxl);
