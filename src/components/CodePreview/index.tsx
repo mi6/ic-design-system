@@ -511,12 +511,16 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
               type={type}
               code={
                 getCodeSnippet(
-                  selectedTab === "Web component" ? snippets[0] : snippets[1]
+                  selectedTab === "Web component"
+                    ? snippets[0]
+                    : snippets[1] ?? snippets[0]
                 )?.codeSnippet || ""
               }
               longCode={
                 getCodeSnippet(
-                  selectedTab === "Web component" ? snippets[0] : snippets[1]
+                  selectedTab === "Web component"
+                    ? snippets[0]
+                    : snippets[1] ?? snippets[0]
                 )?.longCode || ""
               }
               show={show}
@@ -527,16 +531,18 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
               isWebComponents={
                 (selectedTab === "Web component"
                   ? snippets[0].technology
-                  : snippets[1].technology) === "Web component"
+                  : (snippets[1] ?? snippets[0]).technology) === "Web component"
               }
               projectTitle={`${
                 projectTitle || startCase(pageMetadata.pageTitle)
               } (${
                 selectedTab === "Web component"
                   ? snippets[0].technology
-                  : snippets[1].technology
+                  : (snippets[1] ?? snippets[0]).technology
               }${getTypeOfProject(
-                selectedTab === "Web component" ? snippets[0] : snippets[1]
+                selectedTab === "Web component"
+                  ? snippets[0]
+                  : snippets[1] ?? snippets[0]
               )})`}
               projectDescription={
                 projectDescription === undefined || projectDescription === ""
