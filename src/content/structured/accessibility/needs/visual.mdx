@@ -3,7 +3,7 @@ path: "/accessibility/needs/visual"
 
 navPriority: 5
 
-date: "2024-08-29"
+date: "2024-10-21"
 
 title: "Visual needs"
 
@@ -11,6 +11,9 @@ subTitle: "A visual impairment is a reduction in clarity or loss of vision that 
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/visual.mdx"
 ---
+
+import visualAccessibilityFig12 from "./images/fig-12-messages-using-colour-and-text.png";
+import visualAccessibilityFig13 from "./images/fig-13-messages-using-colour-only.png";
 
 ## Introduction
 
@@ -60,9 +63,9 @@ The following table lists examples of visual impairments in three columns (perma
 | Glaucoma (damaged optic nerve)                              | Refractive errors (long/short sight, double vision) | Distraction (visual complexity) |
 | Macular degeneration (effecting central part of the retina) |                                                     |                                 |
 
-## Making things accessible
+## How to design for visual needs
 
-In addressing some of the design issues below, we make it easier for everyone to use our apps.
+In addressing some of the design tips below, we make it easier for everyone to use our apps.
 
 ### Readability and contrast
 
@@ -91,4 +94,19 @@ A linear and logical layout can help users when navigating using a keyboard or w
 
 ### Help convey meanings
 
-Don’t rely on [colour](/styles/colour) only to convey a meaning. Use a combination of labels, icons and shapes to help people identify elements.
+Don’t rely on [colour](/styles/colour) only to convey a meaning. Use a combination of labels, icons and shapes to help people identify elements. Using colour alone can affect those with colour-blindness who will not understand the colours' meaning without any context.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={visualAccessibilityFig12}
+    imageAlt=" A graphic of text field validation showing an error, a warning and a success using colour, text and icons to differentiate meaning."
+    state="good"
+    caption="Colour and text are used to convey meaning to people."
+  />
+  <DoDontCaution
+    imageSrc={visualAccessibilityFig13}
+    imageAlt="A graphic of a dialogue box to show default text font."
+    state="bad"
+    caption="Only colour is used to convey meaning. This will not benefit people who are colour blind or who do not understand what the colours mean."
+  />
+</DoubleDoDontCaution>
