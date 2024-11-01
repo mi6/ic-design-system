@@ -5,9 +5,7 @@
     "IcDataTableTitleBar",
     "IcDateInput",
     "IcDatePicker",
-    "IcMenuWithMulti",
     "IcPaginationBar",
-    "IcSelectWithMulti",
     "IcTreeItem",
     "IcTreeView"
   ],
@@ -17,9 +15,7 @@
     "ic-data-table-title-bar",
     "ic-date-input",
     "ic-date-picker",
-    "ic-menu-with-multi",
     "ic-pagination-bar",
-    "ic-select-with-multi",
     "ic-tree-item",
     "ic-tree-view"
   ],

@@ -36,7 +36,7 @@ const StackblitzButtonTestApp: FC<StackblitzButtonTestAppProps> = ({
   return (
     <ic-button
       aria-label="Open code example in StackBlitz"
-      size={isLargeViewport ? "small" : "default"}
+      size={isLargeViewport ? "small" : "medium"}
       variant={isLargeViewport ? "tertiary" : "icon"}
       appearance="dark"
       onClick={() => createStackblitzProject()}

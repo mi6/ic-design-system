@@ -674,8 +674,8 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/community/glossary-of-terms.mdx?at=develop",
       "meta": {
         "relativePath": "community/glossary-of-terms.mdx",
-        "createdAt": "2024-11-06T10:27:49.412Z",
-        "lastModified": "2024-11-06T10:18:59.920Z",
+        "createdAt": "2024-11-06T16:14:57.591Z",
+        "lastModified": "2024-11-06T16:14:57.591Z",
         "size": 11629,
         "formattedSize": "11.4 KB"
       }
@@ -769,9 +769,9 @@
       ],
       "meta": {
         "relativePath": "components/accordion/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:18:59.920Z",
-        "size": 12314,
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
+        "size": 12280,
         "formattedSize": "12.0 KB"
       }
     },
@@ -811,9 +811,9 @@
       ],
       "meta": {
         "relativePath": "components/accordion/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:18:59.920Z",
-        "size": 10009,
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
+        "size": 10004,
         "formattedSize": "9.8 KB"
       }
     },
@@ -903,7 +903,13 @@
           "path": "/components/alert/accessibility"
         }
       ],
-      "tags": ["Notification", "Feedback", "Message", "Banner", "Callout"],
+      "tags": [
+        "Notification",
+        "Feedback",
+        "Message",
+        "Banner",
+        "Callout"
+      ],
       "meta": {
         "relativePath": "components/alerts/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.404Z",
@@ -998,7 +1004,11 @@
           "path": "/components/back-to-top/accessibility"
         }
       ],
-      "tags": ["Button", "Anchor", "Scroll to top"],
+      "tags": [
+        "Button",
+        "Anchor",
+        "Scroll to top"
+      ],
       "meta": {
         "relativePath": "components/back-to-top/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -1063,10 +1073,10 @@
       ],
       "meta": {
         "relativePath": "components/badge/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:18:59.924Z",
-        "size": 22485,
-        "formattedSize": "22.0 KB"
+        "createdAt": "2024-11-06T16:14:46.975Z",
+        "lastModified": "2024-11-06T16:14:46.975Z",
+        "size": 22295,
+        "formattedSize": "21.8 KB"
       }
     },
     {
@@ -1093,12 +1103,16 @@
           "path": "/components/badge/accessibility"
         }
       ],
-      "tags": ["Tab", "Label", "Chip"],
+      "tags": [
+        "Tab",
+        "Label",
+        "Chip"
+      ],
       "meta": {
         "relativePath": "components/badge/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:18:59.924Z",
-        "size": 12711,
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
+        "size": 12707,
         "formattedSize": "12.4 KB"
       }
     },
@@ -1188,7 +1202,9 @@
           "path": "/components/breadcrumb/accessibility"
         }
       ],
-      "tags": ["Breadcrumb trail"],
+      "tags": [
+        "Breadcrumb trail"
+      ],
       "meta": {
         "relativePath": "components/breadcrumbs/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.404Z",
@@ -1253,8 +1269,8 @@
       ],
       "meta": {
         "relativePath": "components/buttons/code.mdx",
-        "createdAt": "2024-11-06T14:48:03.255Z",
-        "lastModified": "2024-11-06T14:48:03.255Z",
+        "createdAt": "2024-11-06T16:08:25.327Z",
+        "lastModified": "2024-11-06T16:08:25.327Z",
         "size": 33585,
         "formattedSize": "32.8 KB"
       }
@@ -1312,8 +1328,8 @@
       ],
       "meta": {
         "relativePath": "components/card-horizontal/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:18:59.968Z",
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
         "size": 54141,
         "formattedSize": "52.9 KB"
       }
@@ -1321,7 +1337,7 @@
     {
       "id": "components\\card-horizontal\\guidancex",
       "contents": "\nimport { IcAlert, IcLink } from \"@ukic/react\";\nimport { IcCardHorizontal } from \"@ukic/canary-react\";\n\n<IcAlert\n  heading=\"Canary component\"\n  variant=\"info\"\n  message=\"This component is new and its guidance will be updated over time.\"\n/>\n\n## Canary components\n\nCanary components are unstable components that are released for testing purposes.\n\nWe value any feedback from users willing to try them in their applications.\n\nThese components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.\n\nFor more information on Canary components, read our approach to [releases and versions](/get-started/releases-versions).\n\n<p>\n  Additional details on the props and events for this component can be found in\n  the{\" \"}\n  <IcLink\n    href=\"https://mi6.github.io/ic-ui-kit/branches/develop/canary-web-components/?path=/docs/web-components-horizontal-card--docs\"\n    target=\"_blank\"\n  >\n    Canary web components\n  </IcLink>{\" \"}\n  and{\" \"}\n  <IcLink\n    href=\"https://mi6.github.io/ic-ui-kit/branches/develop/canary-react/?path=/docs/react-components-horizontal-card--docs\"\n    target=\"_blank\"\n  >\n    Canary React\n  </IcLink>{\" \"}\n  storybooks.\n</p>\n\n## Component demo\n\n<ComponentPreview>\n  <IcCardHorizontal heading=\"Card heading\" message=\"Card message\">\n    <svg\n      slot=\"icon\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      height=\"24\"\n      viewBox=\"0 0 24 24\"\n      width=\"24\"\n      fill=\"#000000\"\n    >\n      <path d=\"M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z\" />\n    </svg>\n    <svg slot=\"image\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1600 900\">\n      <rect fill=\"#ff7700\" width=\"1600\" height=\"1600\" y=\"-350\" />\n      <polygon fill=\"#cc0000\" points=\"957 450 539 900 1396 900\" />\n      <polygon fill=\"#aa0000\" points=\"957 450 872.9 900 1396 900\" />\n      <polygon fill=\"#c50022\" points=\"-60 900 398 662 816 900\" />\n      <polygon fill=\"#a3001b\" points=\"337 900 398 662 816 900\" />\n      <polygon fill=\"#be0044\" points=\"1203 546 1552 900 876 900\" />\n      <polygon fill=\"#9c0036\" points=\"1203 546 1552 900 1162 900\" />\n      <polygon fill=\"#b80066\" points=\"641 695 886 900 367 900\" />\n      <polygon fill=\"#960052\" points=\"587 900 641 695 886 900\" />\n      <polygon fill=\"#b10088\" points=\"1710 900 1401 632 1096 900\" />\n      <polygon fill=\"#8f006d\" points=\"1710 900 1401 632 1365 900\" />\n      <polygon fill=\"#aa00aa\" points=\"1210 900 971 687 725 900\" />\n      <polygon fill=\"#880088\" points=\"943 900 1210 900 971 687\" />\n    </svg>\n  </IcCardHorizontal>\n</ComponentPreview>\n",
-      "path": "/components/horizontal-card",
+      "path": "/components/card-horizontal",
       "navPriority": 7,
       "date": "2024-08-30",
       "title": "Card (horizontal)",
@@ -1339,8 +1355,8 @@
       ],
       "meta": {
         "relativePath": "components/card-horizontal/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:18:59.968Z",
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
         "size": 3071,
         "formattedSize": "3.0 KB"
       }
@@ -1369,10 +1385,10 @@
         }
       ],
       "meta": {
-        "relativePath": "components/cards/accessibility.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:18:59.968Z",
-        "size": 3439,
+        "relativePath": "components/card-vertical/accessibility.mdx",
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
+        "size": 3495,
         "formattedSize": "3.4 KB"
       }
     },
@@ -1400,11 +1416,11 @@
         }
       ],
       "meta": {
-        "relativePath": "components/cards/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:18:59.968Z",
-        "size": 56785,
-        "formattedSize": "55.5 KB"
+        "relativePath": "components/card-vertical/code.mdx",
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
+        "size": 57753,
+        "formattedSize": "56.4 KB"
       }
     },
     {
@@ -1432,11 +1448,11 @@
         }
       ],
       "meta": {
-        "relativePath": "components/cards/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:18:59.968Z",
-        "size": 10600,
-        "formattedSize": "10.4 KB"
+        "relativePath": "components/card-vertical/guidance.mdx",
+        "createdAt": "2024-11-06T16:08:52.479Z",
+        "lastModified": "2024-11-06T16:08:52.479Z",
+        "size": 10724,
+        "formattedSize": "10.5 KB"
       }
     },
     {
@@ -1619,7 +1635,9 @@
           "path": "/components/chip/accessibility"
         }
       ],
-      "tags": ["Tags"],
+      "tags": [
+        "Tags"
+      ],
       "meta": {
         "relativePath": "components/chips/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -1746,11 +1764,11 @@
         }
       ],
       "meta": {
-        "relativePath": "components/data-entity/accessibility.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.000Z",
-        "size": 2202,
-        "formattedSize": "2.2 KB"
+        "relativePath": "components/data-list/accessibility.mdx",
+        "createdAt": "2024-11-06T16:08:52.487Z",
+        "lastModified": "2024-11-06T16:08:52.487Z",
+        "size": 2180,
+        "formattedSize": "2.1 KB"
       }
     },
     {
@@ -1777,11 +1795,11 @@
         }
       ],
       "meta": {
-        "relativePath": "components/data-entity/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.000Z",
-        "size": 17951,
-        "formattedSize": "17.5 KB"
+        "relativePath": "components/data-list/code.mdx",
+        "createdAt": "2024-11-06T16:14:57.591Z",
+        "lastModified": "2024-11-06T16:14:57.591Z",
+        "size": 17868,
+        "formattedSize": "17.4 KB"
       }
     },
     {
@@ -1809,11 +1827,11 @@
         }
       ],
       "meta": {
-        "relativePath": "components/data-entity/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.000Z",
-        "size": 4762,
-        "formattedSize": "4.7 KB"
+        "relativePath": "components/data-list/guidance.mdx",
+        "createdAt": "2024-11-06T16:08:52.487Z",
+        "lastModified": "2024-11-06T16:08:52.487Z",
+        "size": 4684,
+        "formattedSize": "4.6 KB"
       }
     },
     {
@@ -1861,7 +1879,9 @@
           "path": "/components/data-table/code"
         }
       ],
-      "tags": ["Table"],
+      "tags": [
+        "Table"
+      ],
       "meta": {
         "relativePath": "components/data-table/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -2015,9 +2035,9 @@
       ],
       "meta": {
         "relativePath": "components/date-picker/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.008Z",
-        "size": 30548,
+        "createdAt": "2024-11-06T16:14:57.595Z",
+        "lastModified": "2024-11-06T16:14:57.595Z",
+        "size": 30545,
         "formattedSize": "29.8 KB"
       }
     },
@@ -2044,7 +2064,10 @@
           "path": "/components/date-picker/accessibility"
         }
       ],
-      "tags": ["Calendar", "Datetime picker"],
+      "tags": [
+        "Calendar",
+        "Datetime picker"
+      ],
       "meta": {
         "relativePath": "components/date-picker/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -2109,10 +2132,10 @@
       ],
       "meta": {
         "relativePath": "components/dialog/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.008Z",
-        "size": 46750,
-        "formattedSize": "45.7 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 34681,
+        "formattedSize": "33.9 KB"
       }
     },
     {
@@ -2139,13 +2162,16 @@
           "path": "/components/dialog/accessibility"
         }
       ],
-      "tags": ["Popup", "Modal window"],
+      "tags": [
+        "Popup",
+        "Modal window"
+      ],
       "meta": {
         "relativePath": "components/dialog/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.008Z",
-        "size": 8641,
-        "formattedSize": "8.4 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 8394,
+        "formattedSize": "8.2 KB"
       }
     },
     {
@@ -2204,9 +2230,9 @@
       ],
       "meta": {
         "relativePath": "components/empty-state/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.012Z",
-        "size": 21654,
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 21641,
         "formattedSize": "21.1 KB"
       }
     },
@@ -2298,9 +2324,9 @@
       ],
       "meta": {
         "relativePath": "components/footer/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.032Z",
-        "size": 18992,
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 18944,
         "formattedSize": "18.5 KB"
       }
     },
@@ -2392,10 +2418,10 @@
       ],
       "meta": {
         "relativePath": "components/hero/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.048Z",
-        "size": 17442,
-        "formattedSize": "17.0 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 17484,
+        "formattedSize": "17.1 KB"
       }
     },
     {
@@ -2422,7 +2448,9 @@
           "path": "/components/hero/accessibility"
         }
       ],
-      "tags": ["Banner"],
+      "tags": [
+        "Banner"
+      ],
       "meta": {
         "relativePath": "components/hero/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -2533,7 +2561,10 @@
           "path": "/components/link/accessibility"
         }
       ],
-      "tags": ["Anchor", "Hyperlink"],
+      "tags": [
+        "Anchor",
+        "Hyperlink"
+      ],
       "meta": {
         "relativePath": "components/links/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.404Z",
@@ -2628,7 +2659,11 @@
           "path": "/components/loading-indicator/accessibility"
         }
       ],
-      "tags": ["Progress bar", "Progress indicator", "Spinner"],
+      "tags": [
+        "Progress bar",
+        "Progress indicator",
+        "Spinner"
+      ],
       "meta": {
         "relativePath": "components/loading-indicators/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.404Z",
@@ -2657,10 +2692,10 @@
       ],
       "meta": {
         "relativePath": "components/multi-select/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.072Z",
-        "size": 44849,
-        "formattedSize": "43.8 KB"
+        "createdAt": "2024-11-06T16:14:57.595Z",
+        "lastModified": "2024-11-06T16:14:57.595Z",
+        "size": 44134,
+        "formattedSize": "43.1 KB"
       }
     },
     {
@@ -2682,12 +2717,15 @@
           "path": "/components/multi-select/code"
         }
       ],
-      "tags": ["Combobox", "Dropdown menu"],
+      "tags": [
+        "Combobox",
+        "Dropdown menu"
+      ],
       "meta": {
         "relativePath": "components/multi-select/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.076Z",
-        "size": 1982,
+        "createdAt": "2024-11-06T16:14:57.595Z",
+        "lastModified": "2024-11-06T16:14:57.595Z",
+        "size": 1927,
         "formattedSize": "1.9 KB"
       }
     },
@@ -2747,10 +2785,10 @@
       ],
       "meta": {
         "relativePath": "components/page-header/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.076Z",
-        "size": 19079,
-        "formattedSize": "18.6 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 18885,
+        "formattedSize": "18.4 KB"
       }
     },
     {
@@ -2779,9 +2817,9 @@
       ],
       "meta": {
         "relativePath": "components/page-header/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.076Z",
-        "size": 9062,
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 9012,
         "formattedSize": "8.8 KB"
       }
     },
@@ -2841,10 +2879,10 @@
       ],
       "meta": {
         "relativePath": "components/pagination/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.088Z",
-        "size": 7202,
-        "formattedSize": "7.0 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 7246,
+        "formattedSize": "7.1 KB"
       }
     },
     {
@@ -3029,8 +3067,8 @@
       ],
       "meta": {
         "relativePath": "components/radio/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.112Z",
+        "createdAt": "2024-11-06T16:08:25.339Z",
+        "lastModified": "2024-11-06T16:08:25.339Z",
         "size": 11155,
         "formattedSize": "10.9 KB"
       }
@@ -3123,10 +3161,10 @@
       ],
       "meta": {
         "relativePath": "components/search-bar/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.112Z",
-        "size": 23254,
-        "formattedSize": "22.7 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 23298,
+        "formattedSize": "22.8 KB"
       }
     },
     {
@@ -3153,12 +3191,14 @@
           "path": "/components/search-bar/accessibility"
         }
       ],
-      "tags": ["Search input"],
+      "tags": [
+        "Search input"
+      ],
       "meta": {
         "relativePath": "components/search-bar/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.112Z",
-        "size": 5859,
+        "createdAt": "2024-11-06T16:14:57.595Z",
+        "lastModified": "2024-11-06T16:14:57.595Z",
+        "size": 5858,
         "formattedSize": "5.7 KB"
       }
     },
@@ -3312,9 +3352,9 @@
       ],
       "meta": {
         "relativePath": "components/select/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.116Z",
-        "size": 51973,
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 51995,
         "formattedSize": "50.8 KB"
       }
     },
@@ -3443,7 +3483,9 @@
           "path": "/components/side-navigation/accessibility"
         }
       ],
-      "tags": ["Navigation bar"],
+      "tags": [
+        "Navigation bar"
+      ],
       "meta": {
         "relativePath": "components/side-nav/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.404Z",
@@ -3508,9 +3550,9 @@
       ],
       "meta": {
         "relativePath": "components/skeleton/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.128Z",
-        "size": 12649,
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 12731,
         "formattedSize": "12.4 KB"
       }
     },
@@ -3581,7 +3623,7 @@
       "id": "components\\status-tags\\codex",
       "contents": "\nimport { IcStatusTag } from \"@ukic/react\";\n\nexport const snippetsDefault = [\n  {\n    technology: \"Web component\",\n    snippets: {\n      short: `<ic-status-tag label=\"Neutral\" status=\"neutral\"></ic-status-tag>\n<ic-status-tag label=\"Success\" status=\"success\"></ic-status-tag>\n<ic-status-tag label=\"Warning\" status=\"warning\"></ic-status-tag>\n<ic-status-tag label=\"Error\" status=\"danger\"></ic-status-tag>`,\n      long: `.parent-container {\n      display: flex;\n      gap: var(--ic-space-xs);\n      flex-wrap: wrap;\n      padding: var(--ic-space-md);\n    }\n  </style>\n  <body>\n    <div class=\"parent-container\">\n      {shortCode}\n    </div>`,\n    },\n  },\n  {\n    technology: \"React\",\n    snippets: {\n      short: `<IcStatusTag label=\"Neutral\" status=\"neutral\"/>\n<IcStatusTag label=\"Success\" status=\"success\"/>\n<IcStatusTag label=\"Warning\" status=\"warning\"/>\n<IcStatusTag label=\"Error\" status=\"danger\"/>`,\n      long: [\n        {\n          language: \"Typescript\",\n          snippet: `const useStyles = createUseStyles({\n  parentContainer: {\n    display: \"flex\",\n    flexWrap: \"wrap\",\n    gap: \"var(--ic-space-xs)\",\n    padding: \"var(--ic-space-md)\",\n  },\n});\nconst classes = useStyles();\nreturn (\n  <div className={classes.parentContainer}>\n    {shortCode}\n  </div>\n)`,\n        },\n        {\n          language: \"Javascript\",\n          snippet: `const useStyles = createUseStyles({\n  parentContainer: {\n    display: \"flex\",\n    flexWrap: \"wrap\",\n    gap: \"var(--ic-space-xs)\",\n    padding: \"var(--ic-space-md)\",\n  },\n});\nconst classes = useStyles();\nreturn (\n  <div className={classes.parentContainer}>\n    {shortCode}\n  </div>\n)`,\n        },\n      ],\n    },\n  },\n];\n\n<ComponentPreview style={{ gap: \"0.5rem\" }} snippets={snippetsDefault}>\n  <IcStatusTag label=\"Neutral\" status=\"neutral\" />\n  <IcStatusTag label=\"Success\" status=\"success\" />\n  <IcStatusTag label=\"Warning\" status=\"warning\" />\n  <IcStatusTag label=\"Error\" status=\"danger\" />\n</ComponentPreview>\n\n## Status tag details\n\n<ComponentDetails component=\"ic-status-tag\" />\n\n## Variants\n\n### Emphasis\n\nexport const snippetsEmphasis = [\n  {\n    technology: \"Web component\",\n    snippets: {\n      short: `<ic-status-tag\n  label=\"Neutral\"\n  status=\"neutral\"\n  variant=\"outlined\"\n></ic-status-tag>\n<ic-status-tag\n  label=\"Success\"\n  status=\"success\"\n  variant=\"outlined\"\n></ic-status-tag>\n<ic-status-tag\n  label=\"Warning\"\n  status=\"warning\"\n  variant=\"outlined\"\n></ic-status-tag>\n<ic-status-tag\n  label=\"Error\"\n  status=\"danger\"\n  variant=\"outlined\"\n></ic-status-tag>`,\n      long: `.parent-container {\n      display: flex;\n      gap: var(--ic-space-xs);\n      flex-wrap: wrap;\n      padding: var(--ic-space-md);\n    }\n  </style>\n  <body>\n    <div class=\"parent-container\">\n      {shortCode}\n    </div>`,\n    },\n  },\n  {\n    technology: \"React\",\n    snippets: {\n      short: `<IcStatusTag label=\"Neutral\" status=\"neutral\" variant=\"outlined\" />\n<IcStatusTag label=\"Success\" status=\"success\" variant=\"outlined\" />\n<IcStatusTag label=\"Warning\" status=\"warning\" variant=\"outlined\" />\n<IcStatusTag label=\"Error\" status=\"danger\" variant=\"outlined\" />`,\n      long: [\n        {\n          language: \"Typescript\",\n          snippet: `const useStyles = createUseStyles({\n  parentContainer: {\n    display: \"flex\",\n    flexWrap: \"wrap\",\n    gap: \"var(--ic-space-xs)\",\n    padding: \"var(--ic-space-md)\",\n  },\n});\nconst classes = useStyles();\nreturn (\n  <div className={classes.parentContainer}>\n    {shortCode}\n  </div>\n)`,\n        },\n        {\n          language: \"Javascript\",\n          snippet: `const useStyles = createUseStyles({\n  parentContainer: {\n    display: \"flex\",\n    flexWrap: \"wrap\",\n    gap: \"var(--ic-space-xs)\",\n    padding: \"var(--ic-space-md)\",\n  },\n});\nconst classes = useStyles();\nreturn (\n  <div className={classes.parentContainer}>\n    {shortCode}\n  </div>\n)`,\n        },\n      ],\n    },\n  },\n];\n\n<ComponentPreview style={{ gap: \"0.5rem\" }} snippets={snippetsEmphasis}>\n  <IcStatusTag label=\"Neutral\" status=\"neutral\" variant=\"outlined\" />\n  <IcStatusTag label=\"Success\" status=\"success\" variant=\"outlined\" />\n  <IcStatusTag label=\"Warning\" status=\"warning\" variant=\"outlined\" />\n  <IcStatusTag label=\"Error\" status=\"danger\" variant=\"outlined\" />\n</ComponentPreview>\n\n### Sizes\n\nexport const snippetsSizes = [\n  {\n    technology: \"Web component\",\n    snippets: {\n      short: `<ic-status-tag\n  label=\"Neutral\"\n  status=\"neutral\"\n  size=\"small\"\n></ic-status-tag>\n<ic-status-tag\n  label=\"Success\"\n  status=\"success\"\n  size=\"default\"\n></ic-status-tag>\n<ic-status-tag\n  label=\"Warning\"\n  status=\"warning\"\n  size=\"large\"\n></ic-status-tag>`,\n      long: `.parent-container {\n      display: flex;\n      gap: var(--ic-space-xs);\n      flex-wrap: wrap;\n      padding: var(--ic-space-md);\n    }\n  </style>\n  <body>\n    <div class=\"parent-container\">\n      {shortCode}\n    </div>`,\n    },\n  },\n  {\n    technology: \"React\",\n    snippets: {\n      short: `<IcStatusTag label=\"Neutral\" status=\"neutral\" size=\"small\" />\n<IcStatusTag label=\"Success\" status=\"success\" size=\"default\" />\n<IcStatusTag label=\"Warning\" status=\"warning\" size=\"large\" />`,\n      long: [\n        {\n          language: \"Typescript\",\n          snippet: `const useStyles = createUseStyles({\n  parentContainer: {\n    display: \"flex\",\n    flexWrap: \"wrap\",\n    gap: \"var(--ic-space-xs)\",\n    padding: \"var(--ic-space-md)\",\n  },\n});\nconst classes = useStyles();\nreturn (\n  <div className={classes.parentContainer}>\n    {shortCode}\n  </div>\n)`,\n        },\n        {\n          language: \"Javascript\",\n          snippet: `const useStyles = createUseStyles({\n  parentContainer: {\n    display: \"flex\",\n    flexWrap: \"wrap\",\n    gap: \"var(--ic-space-xs)\",\n    padding: \"var(--ic-space-md)\",\n  },\n});\nconst classes = useStyles();\nreturn (\n  <div className={classes.parentContainer}>\n    {shortCode}\n  </div>\n)`,\n        },\n      ],\n    },\n  },\n];\n\n<ComponentPreview style={{ gap: \"0.5rem\" }} snippets={snippetsSizes}>\n  <IcStatusTag label=\"Neutral\" status=\"neutral\" size=\"small\" />\n  <IcStatusTag label=\"Success\" status=\"success\" />\n  <IcStatusTag label=\"Warning\" status=\"warning\" size=\"large\" />\n</ComponentPreview>\n",
       "path": "/components/status-tag/code",
-      "date": "2024-05-31",
+      "date": "2024-08-29",
       "title": "Status tag",
       "status": "BETA",
       "subTitle": "Status tags are short, clear and digestible ways to display the status of something on the page.",
@@ -3602,10 +3644,10 @@
       ],
       "meta": {
         "relativePath": "components/status-tags/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.132Z",
-        "size": 6654,
-        "formattedSize": "6.5 KB"
+        "createdAt": "2024-11-06T16:14:46.975Z",
+        "lastModified": "2024-11-06T16:14:46.975Z",
+        "size": 8760,
+        "formattedSize": "8.6 KB"
       }
     },
     {
@@ -3632,12 +3674,14 @@
           "path": "/components/status-tag/accessibility"
         }
       ],
-      "tags": ["Tags"],
+      "tags": [
+        "Tags"
+      ],
       "meta": {
         "relativePath": "components/status-tags/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.132Z",
-        "size": 6882,
+        "createdAt": "2024-11-06T16:14:57.595Z",
+        "lastModified": "2024-11-06T16:14:57.595Z",
+        "size": 6877,
         "formattedSize": "6.7 KB"
       }
     },
@@ -3697,10 +3741,10 @@
       ],
       "meta": {
         "relativePath": "components/stepper/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.132Z",
-        "size": 8348,
-        "formattedSize": "8.2 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 7954,
+        "formattedSize": "7.8 KB"
       }
     },
     {
@@ -3727,13 +3771,17 @@
           "path": "/components/stepper/accessibility"
         }
       ],
-      "tags": ["Progress indicator", "Steps", "Progress tracker"],
+      "tags": [
+        "Progress indicator",
+        "Steps",
+        "Progress tracker"
+      ],
       "meta": {
         "relativePath": "components/stepper/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.132Z",
-        "size": 7538,
-        "formattedSize": "7.4 KB"
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 7500,
+        "formattedSize": "7.3 KB"
       }
     },
     {
@@ -3822,12 +3870,15 @@
           "path": "/components/switch/accessibility"
         }
       ],
-      "tags": ["Toggle", "Lightswitch"],
+      "tags": [
+        "Toggle",
+        "Lightswitch"
+      ],
       "meta": {
         "relativePath": "components/switch/guidance.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.136Z",
-        "size": 6251,
+        "createdAt": "2024-11-06T16:14:57.595Z",
+        "lastModified": "2024-11-06T16:14:57.595Z",
+        "size": 6249,
         "formattedSize": "6.1 KB"
       }
     },
@@ -4011,7 +4062,10 @@
           "path": "/components/text-field/accessibility"
         }
       ],
-      "tags": ["Text input", "Text area"],
+      "tags": [
+        "Text input",
+        "Text area"
+      ],
       "meta": {
         "relativePath": "components/text-field/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.404Z",
@@ -4106,7 +4160,9 @@
           "path": "/components/toast/accessibility"
         }
       ],
-      "tags": ["Snackbar"],
+      "tags": [
+        "Snackbar"
+      ],
       "meta": {
         "relativePath": "components/toasts/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -4171,9 +4227,9 @@
       ],
       "meta": {
         "relativePath": "components/toggle-buttons/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.408Z",
-        "lastModified": "2024-11-06T10:19:00.160Z",
-        "size": 30156,
+        "createdAt": "2024-11-06T16:14:46.975Z",
+        "lastModified": "2024-11-06T16:14:46.975Z",
+        "size": 30065,
         "formattedSize": "29.4 KB"
       }
     },
@@ -4201,7 +4257,9 @@
           "path": "/components/toggle-button/accessibility"
         }
       ],
-      "tags": ["Segmented control"],
+      "tags": [
+        "Segmented control"
+      ],
       "meta": {
         "relativePath": "components/toggle-buttons/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -4360,9 +4418,9 @@
       ],
       "meta": {
         "relativePath": "components/top-nav/code.mdx",
-        "createdAt": "2024-11-06T10:27:49.404Z",
-        "lastModified": "2024-11-06T10:19:00.164Z",
-        "size": 41136,
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 41123,
         "formattedSize": "40.2 KB"
       }
     },
@@ -4390,7 +4448,9 @@
           "path": "/components/top-navigation/accessibility"
         }
       ],
-      "tags": ["Navigation bar"],
+      "tags": [
+        "Navigation bar"
+      ],
       "meta": {
         "relativePath": "components/top-nav/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.404Z",
@@ -4542,7 +4602,11 @@
           "path": "/components/typography/accessibility"
         }
       ],
-      "tags": ["Text", "Heading", "Label"],
+      "tags": [
+        "Text",
+        "Heading",
+        "Label"
+      ],
       "meta": {
         "relativePath": "components/typography/guidance.mdx",
         "createdAt": "2024-11-06T10:27:49.408Z",
@@ -4680,9 +4744,9 @@
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/index.mdx",
       "meta": {
         "relativePath": "get-started/index.mdx",
-        "createdAt": "2024-11-06T10:27:49.396Z",
-        "lastModified": "2024-11-06T10:19:00.176Z",
-        "size": 1645,
+        "createdAt": "2024-11-06T16:08:52.491Z",
+        "lastModified": "2024-11-06T16:08:52.491Z",
+        "size": 1669,
         "formattedSize": "1.6 KB"
       }
     },
