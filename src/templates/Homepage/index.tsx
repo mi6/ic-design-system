@@ -90,7 +90,12 @@ const Homepage: React.FC = () => {
         background-image={icdsHero}
         disable-background-parallax="true"
       >
-        <ic-link appearance="light" slot="interaction" id="get-started-link">
+        <ic-link
+          theme="dark"
+          monochrome
+          slot="interaction"
+          id="get-started-link"
+        >
           <GatsbyLink slot="router-item" to="/get-started">
             <ic-typography variant="h4">
               Get started

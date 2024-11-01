@@ -16,7 +16,7 @@ tabs:
   ]
 ---
 
-import { IcSelectWithMulti } from "@ukic/canary-react";
+import { IcSelect } from "@ukic/react";
 
 import {
   OPTIONS,
@@ -32,11 +32,11 @@ export const snippets = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -65,7 +65,7 @@ export const snippets = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   onIcChange={(event) => console.log(event.detail.value)}
@@ -117,7 +117,7 @@ return (
 ];
 
 <ComponentPreview snippets={snippets}>
-  <IcSelectWithMulti
+  <IcSelect
     label="What are your favourite types of coffee?"
     options={OPTIONS}
     multiple
@@ -126,7 +126,7 @@ return (
 
 ## Select with multi details
 
-<ComponentDetails component="ic-select-with-multi" canary />
+<ComponentDetails component="ic-select" />
 
 ## Variants
 
@@ -138,11 +138,11 @@ export const defaultValue = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -173,7 +173,7 @@ export const defaultValue = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   value={["Ame", "Fil", "Moc"]}
   options={options}
@@ -235,7 +235,7 @@ return (
 ];
 
 <ComponentPreview snippets={defaultValue}>
-  <IcSelectWithMulti
+  <IcSelect
     label="What are your favourite types of coffee?"
     value={["Ame", "Fil", "Moc"]}
     options={OPTIONS}
@@ -253,12 +253,12 @@ export const clear = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
   show-clear-button="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -287,7 +287,7 @@ export const clear = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   onIcChange={(event) => console.log(event.detail.value)}
@@ -349,7 +349,7 @@ return (
 ];
 
 <ComponentPreview snippets={clear}>
-  <IcSelectWithMulti
+  <IcSelect
     label="What are your favourite types of coffee?"
     showClearButton
     options={OPTIONS}
@@ -365,11 +365,11 @@ export const desc = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -424,7 +424,7 @@ export const desc = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   onIcChange={(event) => console.log(event.detail.value)}
@@ -543,7 +543,7 @@ return (
 ];
 
 <ComponentPreview snippets={desc}>
-  <IcSelectWithMulti
+  <IcSelect
     label="What are your favourite types of coffee?"
     options={OPTIONS_WITH_DESCRIPTIONS}
     multiple
@@ -558,12 +558,12 @@ export const helper = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   helper-text="Select some options from the list"
   multiple="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -592,7 +592,7 @@ export const helper = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   helperText="Select some options from the list"
   options={options}
@@ -654,7 +654,7 @@ return (
 ];
 
 <ComponentPreview snippets={helper}>
-  <IcSelectWithMulti
+  <IcSelect
     label="What are your favourite types of coffee?"
     options={OPTIONS}
     multiple
@@ -664,7 +664,7 @@ return (
 
 ### Sizes
 
-Set the size of the multi-select by using the `size` prop. This prop takes the values `small`, `default` or `large`.
+Set the size of the multi-select by using the `size` prop. This prop takes the values `small`, `medium` or `large`.
 Depending on the chosen size, the prop will apply styling to increase or decrease the amount of spacing within the component.
 The `default` variant is seen in the first [default](#default) example.
 
@@ -672,23 +672,23 @@ export const sizes = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default-small"
   label="What are your favourite types of coffee?"
   multiple="true"
   size="small"
-></ic-select-with-multi>
-<ic-select-with-multi
+></ic-select>
+<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
-></ic-select-with-multi>
-<ic-select-with-multi
+></ic-select>
+<ic-select
   id="select-default-large"
   label="What are your favourite types of coffee?"
   multiple="true"
   size="large"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     display: flex;
     flex-direction: column;
@@ -720,18 +720,18 @@ export const sizes = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
   size="small"
 />
-<IcSelectWithMulti
+<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
 />
-<IcSelectWithMulti
+<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
@@ -796,18 +796,18 @@ return (
 
 <ComponentPreview snippets={sizes}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       options={OPTIONS}
       multiple
       size="small"
     />
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       options={OPTIONS}
       multiple
     />
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       options={OPTIONS}
       multiple
@@ -824,11 +824,11 @@ export const disabled = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   label="What are your favourite types of coffee?"
   multiple="true"
   disabled="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -842,7 +842,7 @@ export const disabled = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   multiple
   disabled
@@ -901,7 +901,7 @@ return (
 
 <ComponentPreview snippets={disabled}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       multiple
       disabled
@@ -917,11 +917,11 @@ export const disabledOptions = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -950,7 +950,7 @@ export const disabledOptions = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   onIcChange={(event) => console.log(event.detail.value)}
@@ -1012,7 +1012,7 @@ return (
 
 <ComponentPreview snippets={disabledOptions}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       options={OPTIONS_WITH_DISABLED}
       multiple
@@ -1028,12 +1028,12 @@ export const hideLabel = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
   hide-label="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1062,7 +1062,7 @@ export const hideLabel = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
@@ -1122,7 +1122,7 @@ return (
 
 <ComponentPreview snippets={hideLabel}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       hideLabel
       multiple
@@ -1139,12 +1139,12 @@ export const required = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
   required="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1173,7 +1173,7 @@ export const required = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
@@ -1233,7 +1233,7 @@ return (
 
 <ComponentPreview snippets={required}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       multiple
       required
@@ -1251,12 +1251,12 @@ export const read = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
   readonly="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1286,7 +1286,7 @@ export const read = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   value={["Cap", "Fla", "Moc"]}
   label="What are your favourite types of coffee?"
   options={options}
@@ -1347,7 +1347,7 @@ return (
 
 <ComponentPreview snippets={read}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       multiple
       readonly
@@ -1366,11 +1366,11 @@ export const group = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1406,7 +1406,7 @@ export const group = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
@@ -1479,7 +1479,7 @@ return (
 
 <ComponentPreview snippets={group}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       multiple
       options={GROUPED_OPTIONS}
@@ -1496,11 +1496,11 @@ export const recc = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1529,7 +1529,7 @@ export const recc = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
@@ -1588,7 +1588,7 @@ return (
 
 <ComponentPreview snippets={recc}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       multiple
       options={OPTIONS_WITH_RECOMMENDED}
@@ -1605,13 +1605,13 @@ export const validation = [
   {
     technology: "Web component",
     snippets: {
-      short: ` <ic-select-with-multi
+      short: ` <ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
   validation-status="success"
   validation-text="Coffee available"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1640,7 +1640,7 @@ export const validation = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
@@ -1701,7 +1701,7 @@ return (
 
 <ComponentPreview snippets={validation}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       multiple
       options={OPTIONS}
@@ -1720,13 +1720,13 @@ export const loading = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-select-with-multi
+      short: `<ic-select
   id="select-default"
   label="What are your favourite types of coffee?"
   multiple="true"
   loading="true"
   timeout="1000"
-></ic-select-with-multi>`,
+></ic-select>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
   }
@@ -1755,7 +1755,7 @@ export const loading = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSelectWithMulti
+      short: `<IcSelect
   label="What are your favourite types of coffee?"
   options={options}
   multiple
@@ -1816,7 +1816,7 @@ return (
 
 <ComponentPreview snippets={loading}>
   <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelectWithMulti
+    <IcSelect
       label="What are your favourite types of coffee?"
       multiple
       loading
