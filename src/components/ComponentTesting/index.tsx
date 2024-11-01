@@ -38,7 +38,7 @@ const ActionButtons: React.FC<ActionProps> = ({
     <IcButton
       aria-label={isLargeViewport ? "" : "Copy code"}
       variant={isLargeViewport ? "tertiary" : "icon"}
-      size={isLargeViewport ? "small" : "default"}
+      size={isLargeViewport ? "small" : "medium"}
       appearance="dark"
       onClick={() => {
         navigator.clipboard.writeText(longCode);
