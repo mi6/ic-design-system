@@ -1,0 +1,104 @@
+---
+path: "/get-started/install-components/ag-grid-theme"
+
+navPriority: 10
+
+date: "2024-11-04"
+
+title: "AG Grid theme"
+
+subTitle: "How to theme an AG Grid component using ICDS styles."
+---
+
+import { AgGridReact } from "ag-grid-react";
+import "ag-grid-community/styles/ag-grid.css";
+import "@ukic/web-components/dist/core/ag-theme-icds.css";
+
+export const rowData = [
+  { make: "Tesla", model: "Model Y", price: 64950, electric: true },
+  { make: "Ford", model: "F-Series", price: 33850, electric: false },
+  { make: "Toyota", model: "Corolla", price: 29600, electric: false },
+];
+
+export const colDefs = [
+  {
+    headerName: "Car details",
+    children: [
+      { columnGroupShow: "closed", field: "price" },
+      {
+        columnGroupShow: "open",
+        field: "make",
+        filter: true,
+        filterParams: {
+          filterOptions: ["contains", "startsWith"],
+        },
+      },
+      {
+        columnGroupShow: "open",
+        field: "model",
+        editable: true,
+        cellEditor: "agLargeTextCellEditor",
+        cellEditorPopup: true,
+      },
+    ],
+  },
+  {
+    headerName: "Car specs",
+    headerTooltip: "Specs of the car",
+    children: [{ field: "electric", pinned: "left" }],
+  },
+];
+
+## Why we've created the theme
+
+While the ICDS encourages using our components to ensure consistency in accessibility and user experience, we also recognise that other, older component libraries may offer features that are not yet available in our library.
+
+In this case, our data table component may not provide the features needed by our consumers. This is due to the time and resources needed to implement these features, which are usually accomplished by large, dedicated teams in other libraries. For the ICDS, our team is small and our time spent delivering other useful features requested by the community.
+
+In order to not leave consumers without the features they require while we implement them into our component library, we are offering a custom-made ICDS theme.
+
+<p>
+  This theme is being implemented on the{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.ag-grid.com/"
+    rel="noreferer noopener nofollow"
+  >
+    ag-grid component
+  </ic-link>
+  , which is our recommended alternative data table solution whilst we take the time
+  to implement the features our users require in a structured manner, to deliver
+  the quality product our users expect.
+</p>
+
+## Example theme
+
+<ComponentPreview>
+  <div className="ag-theme-icds" style={{ height: 500 }}>
+    <AgGridReact
+      rowData={rowData}
+      columnDefs={colDefs}
+      rowSelection={{ mode: "multiRow" }}
+      pagination
+    />
+  </div>
+</ComponentPreview>
+
+## How to apply the theme
+
+The theme is held in a css file exported in our `@ukic/web-components` package. To apply it, add the following class to the parent `<div>` of the ag-grid component.
+
+```jsx
+// Can either import the css directly into the component file...
+import "@ukic/web-components/dist/core/ag-theme-icds.css";
+// ...or via another css file
+import "./{FILE_NAME}.css";
+
+return <div className="ag-theme-icds" style={{ height: 500 }}></div>;
+```
+
+If importing via another css file, add the following import to the top of the file.
+
+```css
+@import "@ukic/web-components/dist/core/ag-theme-icds.css";
+```
