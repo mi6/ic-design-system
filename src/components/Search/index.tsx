@@ -86,15 +86,19 @@ const Search: React.FC = () => {
   const onIcInput = async (
     event: IcSearchBarCustomEvent<IcValueEventDetail>
   ) => {
-    const newValue = event.detail.value;
+    const newValue = Array.isArray(event.detail.value)
+      ? event.detail.value.join(" ")
+      : event.detail.value;
     const includesNewValue = (property?: string) =>
-      !!property?.toLowerCase().includes(newValue.toLowerCase());
+      typeof newValue === "string" &&
+      typeof property === "string" &&
+      property.toLowerCase().includes(newValue.toLowerCase());
 
     if (idx && value !== newValue) {
       setLoading(true);
-      const loaded = await idx.search(newValue, {});
+      const loaded = await idx.search({ query: newValue as string });
       const mappedResults = loaded
-        .flatMap((loadedId) => {
+        .flatMap((loadedId: string | number) => {
           const { path, title, id, tags, body, subTitle } = store[loadedId];
           const isInTags = !!tags?.some((tag) => includesNewValue(tag));
           const isInBody = includesNewValue(body);
@@ -113,7 +117,7 @@ const Search: React.FC = () => {
               }
             : [];
         })
-        .sort((a, b) => {
+        .sort((a: SearchResult, b: SearchResult) => {
           const getPriority = ({
             label,
             description,
