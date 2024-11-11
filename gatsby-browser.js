@@ -3,6 +3,7 @@ import "@ukic/web-components/dist/core/core.css";
 import "@ukic/web-components/dist/core/normalize.css";
 import "./src/styles/gatsby-override.css";
 import "./src/styles/gatsby-reset.css";
+import "./src/styles/color-mode.css";
 
 import React from "react";
 import Layout from "./src/components/Layout";
