@@ -1,0 +1,20 @@
+/* colors for system light mode/light theme */
+:root,
+ic-theme {
+  --table-of-contents-text: var(--ic-color-text-primary);
+  --table-of-contents-banner: var(--ic-action-default);
+  --table-of-contents-hover: var(--ic-action-default-bg-hover);
+  --table-of-contents-pressed: var(--ic-action-default-bg-active);
+  --table-of-contents-label: var(--ic-color-text-primary);
+}
+
+/* colors for system dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --table-of-contents-text: var(--ic-color-text-primary);
+    --table-of-contents-banner: var(--ic-action-default);
+    --table-of-contents-hover: var(--ic-action-default-bg-hover);
+    --table-of-contents-pressed: var(--ic-action-default-bg-active);
+    --table-of-contents-label: var(--ic-color-text-primary);
+  }
+}
