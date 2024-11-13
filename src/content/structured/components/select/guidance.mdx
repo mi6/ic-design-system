@@ -20,7 +20,15 @@ tabs:
     { title: "Accessibility", path: "/components/select/accessibility" },
   ]
 
-tags: ["Dropdown", "Select input", "Combobox", "Autocomplete", "Autosuggest"]
+tags:
+  [
+    "Dropdown",
+    "Select input",
+    "Combobox",
+    "Autocomplete",
+    "Autosuggest",
+    "Dropdown menu",
+  ]
 ---
 
 import { IcSelect } from "@ukic/react";
@@ -63,7 +71,23 @@ export const SelectExample = () => (
 
 ### Multi-select
 
-The multi-select is currently released in our canary packages, which means it is likely to change in future releases. Guidance and documentation can be found on the [multi-select page](/components/multi-select).
+An example of a multi-select component.
+
+<ComponentPreview>
+  <IcSelect
+    label="What are your favourite types of coffee?"
+    options={[
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Filter", value: "Fil" },
+      { label: "Flat white", value: "Fla" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+    ]}
+    multiple
+  />
+</ComponentPreview>
 
 ## When to use
 
