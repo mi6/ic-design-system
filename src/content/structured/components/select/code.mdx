@@ -500,47 +500,86 @@ export const SelectExampleWithIcon = () => (
   <SelectExampleWithIcon />
 </ComponentPreview>
 
-### Size small
+### Sizes
 
-export const snippetsSmall = [
+export const snippetsSizes = [
   {
     technology: "Web component",
     snippets: {
       short: `<ic-select 
+  id="select-default-small"
   label="What is your favourite coffee?" 
   size="small"
+></ic-select>
+<ic-select 
+  id="select-default"
+  label="What is your favourite coffee?"
+></ic-select>
+<ic-select 
+  id="select-default-large"
+  label="What is your favourite coffee?" 
+  size="large"
 ></ic-select>`,
-      long: `{shortCode}
-<script>
-  const select = document.querySelector("ic-select");
-  let option = "Cappuccino";
-  select.options = [
-    { label: "Espresso", value: "espresso" },
-    { label: "Double Espresso", value: "doubleespresso" },
-    { label: "Flat White", value: "flatwhite" },
-    { label: "Cappuccino", value: "cappuccino" },
-    { label: "Americano", value: "americano" },
-    { label: "Mocha", value: "mocha" },
-  ];
-  select.addEventListener("icChange", function (event) {
-    console.log(event.detail.value);
-  });
-</script>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-md);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const select = document.querySelector("#select-default");
+    select.options = [
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ];
+    select.addEventListener("icChange", function (event) {
+      console.log(event.detail.value);
+    });
+  </script>`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcSelect 
+      short: `<IcSelect
   label="What is your favourite coffee?"
   options={options}
   onIcChange={(event) => console.log(event.detail.value)}
   size="small"
+/>
+<IcSelect
+  label="What is your favourite coffee?"
+  options={options}
+  onIcChange={(event) => console.log(event.detail.value)}
+/>
+<IcSelect
+  label="What is your favourite coffee?"
+  options={options}
+  onIcChange={(event) => console.log(event.detail.value)}
+  size="large"
 />`,
       long: [
         {
           language: "Typescript",
-          snippet: `const options = [
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
   { label: "Espresso", value: "espresso" },
   { label: "Double Espresso", value: "doubleespresso" },
   { label: "Flat White", value: "flatwhite" },
@@ -549,12 +588,22 @@ export const snippetsSmall = [
   { label: "Mocha", value: "mocha" },
 ];
 return (
-  {shortCode}
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
 )`,
         },
         {
           language: "Javascript",
-          snippet: `const options = [
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
   { label: "Espresso", value: "espresso" },
   { label: "Double Espresso", value: "doubleespresso" },
   { label: "Flat White", value: "flatwhite" },
@@ -562,8 +611,10 @@ return (
   { label: "Americano", value: "americano" },
   { label: "Mocha", value: "mocha" },
 ];
-return (
-  {shortCode}
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
 )`,
         },
       ],
@@ -571,24 +622,148 @@ return (
   },
 ];
 
-export const SelectExampleSmall = () => (
-  <IcSelect
-    label="What is your favourite coffee?"
-    options={[
+export const sizeOptions = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+
+export const SelectExampleSizes = () => (
+  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={sizeOptions}
+      onIcChange={(event) => console.log(event.detail.value)}
+      size="small"
+    />
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={sizeOptions}
+      onIcChange={(event) => console.log(event.detail.value)}
+    />
+    <IcSelect
+      label="What is your favourite coffee?"
+      options={sizeOptions}
+      onIcChange={(event) => console.log(event.detail.value)}
+      size="large"
+    />
+  </div>
+);
+
+<ComponentPreview snippets={snippetsSizes}>
+  <SelectExampleSizes />
+</ComponentPreview>
+
+### Required
+
+export const required = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  label="What is your favourite coffee?"
+  required="true"
+></ic-select>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    var select = document.querySelector("ic-select");
+    select.options = [
       { label: "Espresso", value: "espresso" },
       { label: "Double Espresso", value: "doubleespresso" },
       { label: "Flat White", value: "flatwhite" },
       { label: "Cappuccino", value: "cappuccino" },
       { label: "Americano", value: "americano" },
       { label: "Mocha", value: "mocha" },
-    ]}
-    onIcChange={(event) => console.log(event.detail.value)}
-    size="small"
-  />
-);
+    ];
+    select.addEventListener("icChange", function (event) {
+      console.log(event.detail.value);
+    });
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSelect
+  label="What is your favourite coffee?"
+  options={options}
+  required
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
 
-<ComponentPreview snippets={snippetsSmall}>
-  <SelectExampleSmall />
+<ComponentPreview snippets={required}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <IcSelect
+      label="What is your favourite coffee?"
+      required
+      options={[
+        { label: "Espresso", value: "espresso" },
+        { label: "Double Espresso", value: "doubleespresso" },
+        { label: "Flat White", value: "flatwhite" },
+        { label: "Cappuccino", value: "cappuccino" },
+        { label: "Americano", value: "americano" },
+        { label: "Mocha", value: "mocha" },
+      ]}
+    />
+  </div>
 </ComponentPreview>
 
 ### Hidden label
@@ -1210,7 +1385,7 @@ export const optionsWithCustomElements = [
   />
 </ComponentPreview>
 
-### Searchable
+## Searchable
 
 export const snippetsSearchable = [
   {
@@ -1616,6 +1791,512 @@ export const SearchableSelectWithGroupsExample = () => (
 
 <ComponentPreview snippets={snippetsSearchableWithGroups}>
   <SearchableSelectWithGroupsExample />
+</ComponentPreview>
+
+## Multi-select
+
+export const multiSelect = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+></ic-select>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    var select = document.querySelector("#select-default");
+    select.value = ["Ame", "Fil", "Moc"];
+    select.options = [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Filter", value: "Fil },
+      { label: "Flat white", value: "Fla" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+    ];
+    select.value = ["Cap", "Fla", "Moc"];
+    select.addEventListener("icChange", function (event) {
+      console.log(event.detail.value);
+    });
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSelect
+  label="What are your favourite types of coffee?"
+  value={["Ame", "Fil", "Moc"]}
+  options={options}
+  onIcChange={(event) => console.log(event.detail.value)}
+  onIcOptionSelect={(event) => console.log(event.detail.value)}
+  onIcOptionDeselect={(event) => console.log(event.detail.value)}
+  multiple
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat" },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil" },
+  { label: "Flat white", value: "Fla" },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat" },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil" },
+  { label: "Flat white", value: "Fla" },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={multiSelect}>
+  <IcSelect
+    label="What are your favourite types of coffee?"
+    value={["Ame", "Fil", "Moc"]}
+    options={[
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Filter", value: "Fil" },
+      { label: "Flat white", value: "Fla" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+    ]}
+    multiple
+  />
+</ComponentPreview>
+
+### Multi-select &ndash; Read-only
+
+Make the multi-select read-only by using the `readonly` prop.
+Use the `value` prop to set which options are selected and will be displayed when it is read-only.
+
+export const read = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+  readonly="true"
+></ic-select>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    var select = document.querySelector("#select-default");
+    select.options = [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Filter", value: "Fil" },
+      { label: "Flat white", value: "Fla" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+    ];
+    select.value = ["Cap", "Fla", "Moc"];
+    select.addEventListener("icChange", function (event) {
+      console.log(event.detail.value);
+    });
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSelect
+  value={["Cap", "Fla", "Moc"]}
+  label="What are your favourite types of coffee?"
+  options={options}
+  multiple
+  readonly
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat" },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil" },
+  { label: "Flat white", value: "Fla" },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat" },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil" },
+  { label: "Flat white", value: "Fla" },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={read}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <IcSelect
+      label="What are your favourite types of coffee?"
+      multiple
+      readonly
+      options={[
+        { label: "Cappuccino", value: "Cap" },
+        { label: "Latte", value: "Lat" },
+        { label: "Americano", value: "Ame" },
+        { label: "Filter", value: "Fil" },
+        { label: "Flat white", value: "Fla" },
+        { label: "Mocha", value: "Moc" },
+        { label: "Macchiato", value: "Mac" },
+      ]}
+      value={["Cap", "Fla", "Moc"]}
+    />
+  </div>
+</ComponentPreview>
+
+### Multi-select &ndash; Groups
+
+Display options in groups by passing an array of child options to the `children` property of a parent option.
+The parent option will be rendered as the title of the group.
+
+export const group = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+></ic-select>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    var select = document.querySelector("#select-default");
+    select.options = [
+      {
+        label: "Fancy",
+        children: [
+          { label: "Cappuccino", value: "Cap" },
+          { label: "Flat white", value: "Flat" },
+        ],
+      },
+      {
+        label: "Boring",
+        children: [
+          { label: "Filter", value: "Fil" },
+          { label: "Latte", value: "Lat" },
+        ],
+      },
+    ];
+    select.addEventListener("icChange", function (event) {
+      console.log(event.detail.value);
+    });
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSelect
+  label="What are your favourite types of coffee?"
+  options={options}
+  multiple
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  {
+    label: "Fancy",
+    children: [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Flat white", value: "Flat" },
+    ],
+  },
+  {
+    label: "Boring",
+    children: [
+      { label: "Filter", value: "Fil" },
+      { label: "Latte", value: "Lat" },
+    ],
+  },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  {
+    label: "Fancy",
+    children: [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Flat white", value: "Flat" },
+    ],
+  },
+  {
+    label: "Boring",
+    children: [
+      { label: "Filter", value: "Fil" },
+      { label: "Latte", value: "Lat" },
+    ],
+  },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={group}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <IcSelect
+      label="What are your favourite types of coffee?"
+      multiple
+      options={[
+        {
+          label: "Fancy",
+          children: [
+            { label: "Cappuccino", value: "Cap" },
+            { label: "Flat white", value: "Flat" },
+          ],
+        },
+        {
+          label: "Boring",
+          children: [
+            { label: "Filter", value: "Fil" },
+            { label: "Latte", value: "Lat" },
+          ],
+        },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+### Multi-select &ndash; Disabled options
+
+Disable certain options by setting the `disabled` property to `true` for each option.
+
+export const disabledOptions = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-select
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+></ic-select>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    var select = document.querySelector("#select-default");
+    select.options = [
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat", disabled: true },
+      { label: "Americano", value: "Ame" },
+      { label: "Filter", value: "Fil", disabled: true },
+      { label: "Flat white", value: "Fla", disabled: true },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+    ];
+    select.addEventListener("icChange", function (event) {
+      console.log(event.detail.value);
+    });
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSelect
+  label="What are your favourite types of coffee?"
+  options={options}
+  onIcChange={(event) => console.log(event.detail.value)}
+  onIcOptionSelect={(event) => console.log(event.detail.value)}
+  onIcOptionDeselect={(event) => console.log(event.detail.value)}
+  multiple
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat", disabled: true },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil", disabled: true },
+  { label: "Flat white", value: "Fla", disabled: true },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+const options = [
+  { label: "Cappuccino", value: "Cap" },
+  { label: "Latte", value: "Lat", disabled: true },
+  { label: "Americano", value: "Ame" },
+  { label: "Filter", value: "Fil", disabled: true },
+  { label: "Flat white", value: "Fla", disabled: true },
+  { label: "Mocha", value: "Moc" },
+  { label: "Macchiato", value: "Mac" },
+];
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={disabledOptions}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <IcSelect
+      label="What are your favourite types of coffee?"
+      options={[
+        { label: "Cappuccino", value: "Cap" },
+        { label: "Latte", value: "Lat", disabled: true },
+        { label: "Americano", value: "Ame" },
+        { label: "Filter", value: "Fil", disabled: true },
+        { label: "Flat white", value: "Fla", disabled: true },
+        { label: "Mocha", value: "Moc" },
+        { label: "Macchiato", value: "Mac" },
+      ]}
+      multiple
+    />
+  </div>
 </ComponentPreview>
 
 ## Custom filtering example
