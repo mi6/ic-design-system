@@ -1261,9 +1261,6 @@ export const snippetsSortable = [
       long: `{shortCode}
 <script>
   const dataTable = document.querySelector("ic-data-table");
-  dataTable.addEventListener("icSortChange", (event: CustomEvent) => {
-    console.log("Sort changed", event.detail);
-  });
   const columns = [
     {
       key: "firstName",
@@ -1312,7 +1309,6 @@ export const snippetsSortable = [
   columns={columns}
   data={data}
   sortable
-  onIcSortChange={(e) => console.log("Sort changed", e.detail)}
 />`,
       long: [
         {
@@ -1403,13 +1399,7 @@ return (
 ];
 
 <ComponentPreview snippets={snippetsSortable}>
-  <IcDataTable
-    caption="Sortable"
-    columns={COLUMNS}
-    data={DATA}
-    sortable
-    onIcSortChange={(e) => console.log("Sort changed", e.detail)}
-  />
+  <IcDataTable caption="Sortable" columns={COLUMNS} data={DATA} sortable />
 </ComponentPreview>
 
 ### Sort options

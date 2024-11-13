@@ -19,8 +19,6 @@
     "@ukic/react": "^2.31.0",
     "@ukic/web-components": "^2.31.0",
     "@xmldom/xmldom": "^0.8.4",
-    "ag-grid-community": "^32.3.2",
-    "ag-grid-react": "^32.3.2",
     "audit-ci": "^6.6.1",
     "clsx": "^1.1.1",
     "cross-env": "^7.0.3",
