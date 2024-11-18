@@ -35,7 +35,8 @@
 }
 
 .active-nav-link {
-  padding: var(--ic-space-xs) var(--ic-space-md) var(--ic-space-xs) var(--ic-space-xs);
+  padding: var(--ic-space-xs) var(--ic-space-md) var(--ic-space-xs)
+    var(--ic-space-xs);
   margin: 0 0 0 var(--ic-space-xs);
 }
 
