@@ -506,3 +506,146 @@ export const snippetsNoIcon = [
     message="Your coffee order is in the queue. We'll notify you when it's ready to be picked up."
   />
 </ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful the drink is hot."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+  theme="dark"
+  dismissible="true"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful the drink is hot."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+  theme="dark"
+  dismissible
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  style={{ display: "block", background: "#333333" }}
+  snippets={snippetsThemeDark}
+>
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    heading="Americano order"
+    message="Preparation status is unavailable."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="info"
+    heading="Did you know?"
+    message="Coffee is a brewed drink prepared from roasted coffee beans."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="error"
+    heading="Americano order error"
+    message="Americano couldn't be made, we ran out of beans."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="warning"
+    heading="Hot drink"
+    message="Please be careful the drink is hot."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="success"
+    heading="Americano order complete"
+    message="Success, your coffee is good to go."
+    theme="dark"
+    dismissible
+  />
+</ComponentPreview>

@@ -123,7 +123,7 @@ export const DefaultToast = () => {
 
 ### Displaying toasts
 
-Use the `openToast` prop on the toast region component to display a toast message. Do not use the `setVisible` method on the toast component as this does not work with the toast queuing functionality.
+Use the `openToast` prop on the toast region component to display a toast message.
 
 ### Queuing toasts
 
@@ -558,7 +558,7 @@ export const slottedActionsSnippet = [
     <ic-button slot='action' appearance='light'>Retry</ic-button>
   </ic-toast>
   <ic-toast id="toast-05" heading="Your order could not be placed" message="Please try again" variant='warning'>
-    <ic-link slot='action' appearance='light'>Retry</ic-link>
+    <ic-link slot='action' theme='dark'>Retry</ic-link>
   </ic-toast>
 </ic-toast-region>`,
       long: `.btn-container {
@@ -592,7 +592,7 @@ export const slottedActionsSnippet = [
       message="Please try again"
       variant="warning"
     >
-      <ic-link slot="action" appearance="light">Retry</ic-link>
+      <ic-link slot="action" theme="dark">Retry</ic-link>
     </ic-toast>
   </ic-toast-region>
   <script>
@@ -628,7 +628,7 @@ export const slottedActionsSnippet = [
     message='Please try again'
     variant='warning'
   >
-    <IcLink href="#" slot="action" appearance="light">Retry</IcLink>
+    <IcLink href="#" slot="action" theme="dark">Retry</IcLink>
   </IcToast>
 </IcToastRegion>`,
       long: [
@@ -683,7 +683,7 @@ return (
         message="Please try again"
         variant="warning"
       >
-        <IcLink href="#" slot="action" appearance="light">
+        <IcLink href="#" slot="action" theme="dark">
           Retry
         </IcLink>
       </IcToast>
@@ -742,7 +742,7 @@ return (
         message="Please try again"
         variant="warning"
       >
-        <IcLink href="#" slot="action" appearance="light">
+        <IcLink href="#" slot="action" theme="dark">
           Retry
         </IcLink>
       </IcToast>
@@ -792,7 +792,7 @@ export const SlottedActionsToast = () => {
           message="Please try again"
           variant="warning"
         >
-          <IcLink href="#" slot="action" appearance="light">
+          <IcLink href="#" slot="action" theme="dark">
             Retry
           </IcLink>
         </IcToast>

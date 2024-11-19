@@ -14,7 +14,7 @@ const testFiles = {
   checkCurrentStep(0);
 
   // Select a radio option
-  findShadowEl(IC_RADIO_OPTION, RADIO+'[value="house"]').check({ force: true });
+  cy.get(IC_RADIO_OPTION).find(RADIO+'[value="house"]').check({ force: true });
   cy.get(IC_RADIO_OPTION+'[label="House Blend"]').should(HAVE_ATTR, SELECTED);
 
   // Select a select option using mouse
@@ -58,7 +58,7 @@ const testFiles = {
   checkDateInputValue(new Date());
 
   // Agree to terms
-  findShadowEl(IC_RADIO_OPTION, RADIO+'[name="agree"]').check({ force: true });
+  cy.get(IC_RADIO_OPTION).find(RADIO+'[name="agree"]').check({ force: true });
   cy.get(IC_RADIO_OPTION + '[name="agree"]').should(HAVE_ATTR, SELECTED);
   
   // Submit and check the logged formValues
@@ -110,7 +110,7 @@ const TAB_KEY = "Tab";
 // Other
 const CONSOLE_LOG = "@consoleLog";
 const DATE_VAL = "val";
-const STEP_TYPE = "step-type";
+const STEP_TYPE = "type";
 const CURRENT = "current";
 const CHECKED = "checked";
 const SELECTED = "selected";
@@ -231,7 +231,7 @@ describe("Coffee subscription form", () => {
     checkCurrentStep(0);
 
     // Select a radio option
-    findShadowEl(IC_RADIO_OPTION, RADIO+'[value="house"]').check({ force: true });
+    cy.get(IC_RADIO_OPTION).find(RADIO+'[value="house"]').check({ force: true });
     cy.get(IC_RADIO_OPTION+'[label="House Blend"]').should(HAVE_ATTR, SELECTED);
 
     // Select a select option using mouse
@@ -275,7 +275,7 @@ describe("Coffee subscription form", () => {
     checkDateInputValue(new Date());
 
     // Agree to terms
-    findShadowEl(IC_RADIO_OPTION, RADIO+'[name="agree"]').check({ force: true });
+    cy.get(IC_RADIO_OPTION).find(RADIO+'[name="agree"]').check({ force: true });
     cy.get(IC_RADIO_OPTION + '[name="agree"]').should(HAVE_ATTR, SELECTED);
     
     // Submit and check the logged formValues
@@ -291,7 +291,7 @@ describe("Coffee subscription form", () => {
     checkCurrentStep(0);
 
     // Fill in details, missing an option
-    findShadowEl(IC_RADIO_OPTION, RADIO).first().check({ force: true });
+    cy.get(IC_RADIO_OPTION).find(RADIO).first().check({ force: true });
     cy.get(IC_RADIO_OPTION).eq(0).should(HAVE_ATTR, SELECTED);
     clickOnShadowEl(IC_SELECT, IC_INPUT_CONTAINER);
     clickOnShadowEl(IC_SELECT, IC_MENU_OPTION, 3);
@@ -322,8 +322,8 @@ describe("Coffee subscription form", () => {
         container.addEventListener("icChange", callbackFn);
 
         // Check the current form step
-        const stepOne = container.querySelector('ic-step[step-title="Choose coffee"]') as HTMLIcStepElement;
-        expect(stepOne.stepType).toBe(stepStates.current);
+        const stepOne = container.querySelector('ic-step[heading="Choose coffee"]') as HTMLIcStepElement;
+        expect(stepOne.type).toBe(stepStates.current);
 
         // Select radio-option from ic-radio-group
         const coffeeRadio = container.querySelector(
@@ -434,8 +434,8 @@ describe('Subscription component', () => {
         container.addEventListener("icChange", callbackFn);
 
         // Check the current form step
-        const stepOne = container.querySelector('ic-step[step-title="Choose coffee"]') as HTMLIcStepElement;
-        expect(stepOne.stepType).toBe(stepStates.current);
+        const stepOne = container.querySelector('ic-step[heading="Choose coffee"]') as HTMLIcStepElement;
+        expect(stepOne.type).toBe(stepStates.current);
 
         // Select radio-option from ic-radio-group
         const coffeeRadio = container.querySelector(
@@ -480,8 +480,8 @@ describe('Subscription component', () => {
       await user.click(coffeeSubmit);
 
       // Check second page is loaded
-      const stepTwo = await container.querySelector('ic-step[step-title="Enter Details"]') as HTMLIcStepElement;
-      expect(stepTwo.stepType).toBe(stepStates.current);
+      const stepTwo = await container.querySelector('ic-step[heading="Enter Details"]') as HTMLIcStepElement;
+      expect(stepTwo.type).toBe(stepStates.current);
 
       const detailsTypography = await screen.findByShadowText('Please enter your details') as HTMLIcTypographyElement;
       await waitFor(() => {
@@ -524,16 +524,16 @@ describe('Subscription component', () => {
     <IcChip slot="heading-adornment" label="V0.0.01" size="large" />
     <IcStepper slot="stepper">
       <IcStep
-        stepTitle="Choose coffee"
-        stepType={handleSteps(formSteps.chooseCoffee)}
+        heading="Choose coffee"
+        type={handleSteps(formSteps.chooseCoffee)}
       />
       <IcStep
-        stepTitle="Enter Details"
-        stepType={handleSteps(formSteps.enterDetails)}
+        heading="Enter Details"
+        type={handleSteps(formSteps.enterDetails)}
       />
       <IcStep
-        stepTitle="Checkout"
-        stepType={handleSteps(formSteps.checkout)}
+        heading="Checkout"
+        type={handleSteps(formSteps.checkout)}
       />
     </IcStepper>
   </IcPageHeader>
@@ -1063,16 +1063,16 @@ describe('Subscription component', () => {
           <IcChip slot="heading-adornment" label="V0.0.01" size="large" />
           <IcStepper slot="stepper">
             <IcStep
-              stepTitle="Choose coffee"
-              stepType={handleSteps(formSteps.chooseCoffee)}
+              heading="Choose coffee"
+              type={handleSteps(formSteps.chooseCoffee)}
             />
             <IcStep
-              stepTitle="Enter Details"
-              stepType={handleSteps(formSteps.enterDetails)}
+              heading="Enter Details"
+              type={handleSteps(formSteps.enterDetails)}
             />
             <IcStep
-              stepTitle="Checkout"
-              stepType={handleSteps(formSteps.checkout)}
+              heading="Checkout"
+              type={handleSteps(formSteps.checkout)}
             />
           </IcStepper>
         </IcPageHeader>

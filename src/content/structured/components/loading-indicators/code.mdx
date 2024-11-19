@@ -206,21 +206,21 @@ export const snippetsDeterminate = [
   />
 </ComponentPreview>
 
-### Light
+### Theme
 
-export const snippetsLight = [
+export const snippetsThemeDark = [
   {
     technology: "Web component",
     snippets: {
       short: `<ic-loading-indicator
     type="circular"
     label="Loading"
-    appearance="light"
+    theme="dark"
   ></ic-loading-indicator>
   <ic-loading-indicator
     type="linear"
     label="Loading"
-    appearance="light"
+    theme="dark"
   ></ic-loading-indicator>`,
       long: `.dark-background {
       flex-direction: column; 
@@ -237,8 +237,8 @@ export const snippetsLight = [
   {
     technology: "React",
     snippets: {
-      short: `<IcLoadingIndicator type="circular" label="Loading" appearance="light" />
-<IcLoadingIndicator type="linear" label="Loading" appearance="light" />`,
+      short: `<IcLoadingIndicator type="circular" label="Loading" theme="dark" />
+<IcLoadingIndicator type="linear" label="Loading" theme="dark" />`,
       long: [
         {
           language: "Typescript",
@@ -280,11 +280,11 @@ return (
 ];
 
 <ComponentPreview
-  snippets={snippetsLight}
+  snippets={snippetsThemeDark}
   style={{ flexDirection: "column", gap: "0.5rem", background: "#333333" }}
 >
-  <IcLoadingIndicator type="circular" label="Loading" appearance="light" />
-  <IcLoadingIndicator type="linear" label="Loading" appearance="light" />
+  <IcLoadingIndicator type="circular" label="Loading" theme="dark" />
+  <IcLoadingIndicator type="linear" label="Loading" theme="dark" />
 </ComponentPreview>
 
 ### Changing label
@@ -293,7 +293,13 @@ export const snippetsChangingLabel = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-loading-indicator type="circular" label="Loading.../Still loading..." label-duration="4000"></ic-loading-indicator>`,
+      short: `<ic-loading-indicator type="circular" label-duration="4000"></ic-loading-indicator>
+      <script>
+          document.querySelector("ic-loading-indicator").label = [
+            "Loading...",
+            "Still loading...",
+          ];
+        </script>`,
       long: `{shortCode}`,
     },
   },
@@ -302,7 +308,7 @@ export const snippetsChangingLabel = [
     snippets: {
       short: `<IcLoadingIndicator
       type="circular"
-      label="Loading.../Still loading..."
+      label={["Loading...", "Still loading..."]}
       labelDuration={4000}
     />`,
       long: [
@@ -322,7 +328,7 @@ export const snippetsChangingLabel = [
 <ComponentPreview snippets={snippetsChangingLabel}>
   <IcLoadingIndicator
     type="circular"
-    label="Loading.../Still loading..."
+    label={["Loading...", "Still loading..."]}
     labelDuration={4000}
   />
 </ComponentPreview>

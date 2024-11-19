@@ -531,13 +531,13 @@ export const snippetsLarge = [
   </div>
 </ComponentPreview>
 
-### Light
+### Theme
 
-export const snippetsLight = [
+export const snippetsTheme = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-tree-view heading="Menu" appearance="light">
+      short: `<ic-tree-view heading="Menu" theme="dark">
   <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
@@ -580,7 +580,7 @@ export const snippetsLight = [
   {
     technology: "React",
     snippets: {
-      short: `<IcTreeView heading="Menu" appearance="light">
+      short: `<IcTreeView heading="Menu" theme="dark">
   <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
@@ -656,9 +656,9 @@ return (
   },
 ];
 
-<ComponentPreview snippets={snippetsLight} style={{ background: "#333333" }}>
+<ComponentPreview snippets={snippetsTheme} style={{ background: "#333333" }}>
   <div style={{ width: "250px" }}>
-    <IcTreeView heading="Menu" appearance="light">
+    <IcTreeView heading="Menu" theme="dark">
       <SlottedSVG
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
