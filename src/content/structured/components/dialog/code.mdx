@@ -1236,3 +1236,112 @@ export const DialogWithPopout = () => {
 <ComponentPreview snippets={popoutElements}>
   <DialogWithPopout />
 </ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="showDialog()">Launch dialog</ic-button>
+<ic-dialog id="default-dialog" heading="Are you sure?" label="Coffee order" theme="dark">
+  <ic-typography>
+    You are about to add 'Americano' to your basket. Are you sure you want to continue?
+  </ic-typography>
+</ic-dialog>`,
+      long: `{shortCode}
+<script>
+  const dialog = document.querySelector("#default-dialog");
+  function showDialog() {    
+    dialog.open = true;
+  }
+  // Used if dismiss button is clicked
+  function hideDialog() { 
+    if (dialog.open) {
+      dialog.open = false;
+    }   
+  }
+  function dialogConfirmed(ev) {
+    alert("Added to basket");
+    dialog.open = false;
+  }
+  dialog.addEventListener("icDialogConfirmed", dialogConfirmed);
+  dialog.addEventListener("icDialogClosed", hideDialog);
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+<IcDialog
+  heading="Are you sure?"
+  label="Coffee order"
+  theme="dark"
+  open={openDialog}
+  // Set state to false if dismiss button is clicked
+  onIcDialogClosed={openDialog && handleDialogClose}
+  onIcDialogConfirmed={handleDialogClose}
+  onIcDialogCancelled={handleDialogClose}
+>
+  <IcTypography>
+    You are about to add 'Americano' to your basket. Are you sure you want
+    to continue?
+  </IcTypography>
+</IcDialog>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [openDialog, setOpenDialog] = useState<boolean>(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const ThemeDialog = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
+  return (
+    <>
+      <IcButton onClick={handleDialogOpen}>Launch dialog</IcButton>
+      <IcDialog
+        heading="Are you sure?"
+        label="Coffee order"
+        theme="dark"
+        open={openDialog}
+        onIcDialogClosed={openDialog && handleDialogClose} // Event fired when dismiss button is clicked
+        onIcDialogConfirmed={handleDialogClose}
+        onIcDialogCancelled={handleDialogClose}
+      >
+        <IcTypography>
+          You are about to add 'Americano' to your basket. Are you sure you want
+          to continue?
+        </IcTypography>
+      </IcDialog>
+    </>
+  );
+};
+
+<ComponentPreview snippets={snippetsThemeDark}>
+  <ThemeDialog />
+</ComponentPreview>

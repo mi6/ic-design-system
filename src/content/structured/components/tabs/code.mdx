@@ -347,92 +347,6 @@ export const disabled = [
   </IcTabContext>
 </ComponentPreview>
 
-### Light
-
-export const light = [
-  {
-    technology: "Web component",
-    snippets: {
-      short: `<ic-tab-context appearance="light">
-  <ic-tab-group label="Example tab group">
-    <ic-tab>Ingredients</ic-tab>
-    <ic-tab>Method</ic-tab>
-    <ic-tab>History</ic-tab>
-  </ic-tab-group>
-  <ic-tab-panel>Tab One - Ingredients</ic-tab-panel>
-  <ic-tab-panel>Tab Two - Method</ic-tab-panel>
-  <ic-tab-panel>Tab Three - History</ic-tab-panel>
-</ic-tab-context>`,
-      long: `.dark-background {
-    background-color: #2c2f34;
-    }
-  </style>
-  <body>
-    <div class="dark-background">
-      {shortCode}
-    </div>`,
-    },
-  },
-  {
-    technology: "React",
-    snippets: {
-      short: `<IcTabContext appearance="light">
-  <IcTabGroup label="Example tab group">
-    <IcTab>Ingredients</IcTab>
-    <IcTab>Method</IcTab>
-    <IcTab>History</IcTab>
-  </IcTabGroup>
-  <IcTabPanel>Tab One - Ingredients</IcTabPanel>
-  <IcTabPanel>Tab Two - Method</IcTabPanel>
-  <IcTabPanel>Tab Three - History</IcTabPanel>
-</IcTabContext>`,
-      long: [
-        {
-          language: "Typescript",
-          snippet: `  const useStyles = createUseStyles({
-    darkBackground: {
-      backgroundColor: "#2c2f34",
-    },
-  });
-  const classes = useStyles();
-  return (
-    <div className={classes.darkBackground}>
-      {shortCode}
-    </div>
-  )`,
-        },
-        {
-          language: "Javascript",
-          snippet: `  const useStyles = createUseStyles({
-    darkBackground: {
-      backgroundColor: "#2c2f34",
-    },
-  });
-  const classes = useStyles();
-  return (
-    <div className={classes.darkBackground}>
-      {shortCode}
-    </div>
-  )`,
-        },
-      ],
-    },
-  },
-];
-
-<ComponentPreview snippets={light} style={{ backgroundColor: "#2c2f34" }}>
-  <IcTabContext appearance="light">
-    <IcTabGroup label="Example tab group">
-      <IcTab>Ingredients</IcTab>
-      <IcTab>Method</IcTab>
-      <IcTab>History</IcTab>
-    </IcTabGroup>
-    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
-    <IcTabPanel>Tab Two - Method</IcTabPanel>
-    <IcTabPanel>Tab Three - History</IcTabPanel>
-  </IcTabContext>
-</ComponentPreview>
-
 ### Compact
 
 export const compact = [
@@ -625,5 +539,91 @@ export const nested = [
     </IcTabPanel>
     <IcTabPanel>Outer Tab Panel Two - Method</IcTabPanel>
     <IcTabPanel>Outer Tab Panel Three - History</IcTabPanel>
+  </IcTabContext>
+</ComponentPreview>
+
+### Theme
+
+export const themeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-tab-context theme="dark" monochrome="true">
+  <ic-tab-group label="Example tab group">
+    <ic-tab>Ingredients</ic-tab>
+    <ic-tab>Method</ic-tab>
+    <ic-tab>History</ic-tab>
+  </ic-tab-group>
+  <ic-tab-panel>Tab One - Ingredients</ic-tab-panel>
+  <ic-tab-panel>Tab Two - Method</ic-tab-panel>
+  <ic-tab-panel>Tab Three - History</ic-tab-panel>
+</ic-tab-context>`,
+      long: `.dark-background {
+    background-color: #2c2f34;
+    }
+  </style>
+  <body>
+    <div class="dark-background">
+      {shortCode}
+    </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTabContext theme="dark" monochrome>
+  <IcTabGroup label="Example tab group">
+    <IcTab>Ingredients</IcTab>
+    <IcTab>Method</IcTab>
+    <IcTab>History</IcTab>
+  </IcTabGroup>
+  <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+  <IcTabPanel>Tab Two - Method</IcTabPanel>
+  <IcTabPanel>Tab Three - History</IcTabPanel>
+</IcTabContext>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `  const useStyles = createUseStyles({
+    darkBackground: {
+      backgroundColor: "#2c2f34",
+    },
+  });
+  const classes = useStyles();
+  return (
+    <div className={classes.darkBackground}>
+      {shortCode}
+    </div>
+  )`,
+        },
+        {
+          language: "Javascript",
+          snippet: `  const useStyles = createUseStyles({
+    darkBackground: {
+      backgroundColor: "#2c2f34",
+    },
+  });
+  const classes = useStyles();
+  return (
+    <div className={classes.darkBackground}>
+      {shortCode}
+    </div>
+  )`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={themeDark} style={{ backgroundColor: "#2c2f34" }}>
+  <IcTabContext theme="dark" monochrome>
+    <IcTabGroup label="Example tab group">
+      <IcTab>Ingredients</IcTab>
+      <IcTab>Method</IcTab>
+      <IcTab>History</IcTab>
+    </IcTabGroup>
+    <IcTabPanel>Tab One - Ingredients</IcTabPanel>
+    <IcTabPanel>Tab Two - Method</IcTabPanel>
+    <IcTabPanel>Tab Three - History</IcTabPanel>
   </IcTabContext>
 </ComponentPreview>

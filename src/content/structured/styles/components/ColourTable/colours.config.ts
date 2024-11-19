@@ -243,43 +243,6 @@ export const ColoursStatus = [
   },
 ];
 
-export const ColoursDeprecatedStatus = [
-  {
-    colors: [
-      {
-        name: "Success background",
-        token: "--ic-status-success-background",
-        hex: "#E8FEF3",
-        deprecated: true,
-      },
-      {
-        name: "Warning mid",
-        token: "--ic-status-warning-mid",
-        hex: "#D07932",
-        deprecated: true,
-      },
-      {
-        name: "Warning background",
-        token: "--ic-status-warning-background",
-        hex: "#FFFBD8",
-        deprecated: true,
-      },
-      {
-        name: "Error background",
-        token: "--ic-status-error-background",
-        hex: "#FFE4E3",
-        deprecated: true,
-      },
-      {
-        name: "Information background",
-        token: "--ic-status-info-background",
-        hex: "#E1F0FC",
-        deprecated: true,
-      },
-    ],
-  },
-];
-
 export const ColoursClassification = [
   {
     colors: [

@@ -323,3 +323,74 @@ export const customConnectorWidth = [
     <IcStep heading="Collect" type="disabled" />
   </IcStepper>
 </ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper theme="dark">
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step heading="Pay for order" type="current"></ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `.parent-container {
+    background: #333333;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper theme="dark">
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep heading="Pay for order" type="current" />
+  <IcStep heading="Collect" type="disabled" />
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsThemeDark}>
+  <IcStepper theme="dark">
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
