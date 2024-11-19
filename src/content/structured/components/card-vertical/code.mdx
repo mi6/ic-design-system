@@ -2090,3 +2090,289 @@ return (
     </IcCardVertical>
   </a>
 </ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card-vertical 
+  heading="Americano order" 
+  subheading="Name: Michael" 
+  message="Extras: Double espresso shot and oat milk."
+  theme="dark"
+>
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </svg>
+  <ic-button variant="icon" title="More information" slot="interaction-button">
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+    </svg>
+  </ic-button>
+  <ic-status-tag slot="adornment" label="In Progress" size="small" theme="dark"></ic-status-tag>
+  <svg
+    slot="image-mid"
+    class="card-image"
+    viewBox="0 0 1600 1250"
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
+  <div 
+    slot="interaction-controls" 
+    class="interaction-area"
+  >
+    <ic-button variant="primary">Accept</ic-button>
+    <ic-button variant="secondary">Cancel</ic-button>
+  </div>
+  <ic-typography slot="expanded-content" variant="body">
+    To cancel your order click cancel.
+  </ic-typography>
+</ic-card-vertical>`,
+      long: `ic-card-vertical {
+    width: 22.5rem;
+  }
+  .interaction-area {
+    display: flex;
+    gap: var(--ic-space-md);
+  }
+  .card-image {
+    height: 100%;
+    width: 100%;
+    max-height: 20.375rem;
+    max-width: 20.375rem;
+  }
+  .parent-container {
+    background: #333333;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcCardVertical 
+  heading="Americano order" 
+  subheading="Name: Michael" 
+  message="Extras: Double espresso shot and oat milk."
+  className={classes.card}
+  theme="dark"
+>
+  <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+  </SlottedSVG>
+  <IcButton variant="icon" title="More information" slot="interaction-button">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+    </SlottedSVG>
+  </IcButton> 
+  <IcStatusTag slot="adornment" label="In Progress" size="small" theme="dark" />
+  <SlottedSVG
+    slot="image-mid"
+    viewBox="0 0 1600 1250"
+    className={classes.cardImage}
+  >
+    <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
+  <div 
+    slot="interaction-controls" 
+    className={classes.interactionArea}>
+    <IcButton variant="primary">Accept</IcButton>
+    <IcButton variant="secondary">Cancel</IcButton>
+  </div>
+  <IcTypography slot="expanded-content" variant="body">
+    To cancel your order click cancel.
+  </IcTypography>
+</IcCardVertical>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "22.5rem",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+  interactionArea: {
+    display: "flex",
+    gap: "var(--ic-space-md)",
+  },
+  parentContainer: {
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "22.5rem",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+  interactionArea: {
+    display: "flex",
+    gap: "var(--ic-space-md)",
+  },
+  parentContainer: {
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ background: "#333333" }}
+>
+  <IcCardVertical
+    heading="Americano order"
+    subheading="Name: Michael"
+    message="Extras: Double espresso shot and oat milk."
+    expandable
+    style={{ width: "22.5rem" }}
+    theme="dark"
+  >
+    <IcStatusTag
+      slot="adornment"
+      status="warning"
+      label="In Progress"
+      size="small"
+      theme="dark"
+    />
+    <IcButton variant="icon" title="More information" slot="interaction-button">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-three-dots-vertical"
+        viewBox="0 0 16 16"
+      >
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+      </svg>
+    </IcButton>
+    <svg
+      slot="image-mid"
+      style={{
+        height: "100%",
+        width: "100%",
+        maxHeight: "20.375rem",
+        maxWidth: "20.375rem",
+      }}
+      viewBox="0 0 1600 1250"
+    >
+      <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </svg>
+    <div slot="interaction-controls" style={{ display: "flex", gap: "1rem" }}>
+      <IcButton variant="primary">Accept</IcButton>
+      <IcButton variant="secondary">Cancel</IcButton>
+    </div>
+    <IcTypography slot="expanded-content" variant="body">
+      To cancel your order click cancel.
+    </IcTypography>
+  </IcCardVertical>
+</ComponentPreview>
