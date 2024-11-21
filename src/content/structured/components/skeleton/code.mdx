@@ -287,17 +287,17 @@ export const snippetsSetWidthAndHeight = [
   </div>
 </ComponentPreview>
 
-### Light
+### Theme
 
-export const snippetsLight = [
+export const snippetsTheme = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-skeleton variant="circle" appearance="light"></ic-skeleton>
+      short: `<ic-skeleton variant="circle" theme="dark"></ic-skeleton>
 <ic-typography variant="caption">
-  <ic-skeleton variant="text" appearance="light"></ic-skeleton>
+  <ic-skeleton variant="text" theme="dark"></ic-skeleton>
 </ic-typography>
-<ic-skeleton appearance="light"></ic-skeleton>`,
+<ic-skeleton theme="dark"></ic-skeleton>`,
       long: `.parent-container {
     display: flex;
     flex-direction: column;
@@ -313,11 +313,11 @@ export const snippetsLight = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSkeleton variant="circle" appearance="light" />
+      short: `<IcSkeleton variant="circle" theme="dark" />
 <IcTypography variant="caption">
-  <IcSkeleton variant="text" appearance="light" />
+  <IcSkeleton variant="text" theme="dark" />
 </IcTypography>
-<IcSkeleton appearance="light" />`,
+<IcSkeleton theme="dark" />`,
       long: [
         {
           language: "Typescript",
@@ -356,13 +356,13 @@ return (
   },
 ];
 
-<ComponentPreview snippets={snippetsLight}>
+<ComponentPreview snippets={snippetsTheme}>
   <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-    <IcSkeleton variant="circle" appearance="light" />
+    <IcSkeleton variant="circle" theme="dark" />
     <IcTypography variant="caption">
-      <IcSkeleton variant="text" appearance="light" />
+      <IcSkeleton variant="text" theme="dark" />
     </IcTypography>
-    <IcSkeleton appearance="light" />
+    <IcSkeleton theme="dark" />
   </div>
 </ComponentPreview>
 

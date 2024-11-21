@@ -571,3 +571,84 @@ export const snippetsIndeterminate = [
     </IcCheckbox>
   </IcCheckboxGroup>
 </ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group theme="dark" label="Select your extras" name="default">
+  <ic-checkbox value="extra" label="Extra shot (50p)"></ic-checkbox>
+  <ic-checkbox value="Soya milk" label="Soya milk" checked ></ic-checkbox>
+  <ic-checkbox value="keep cup" label="Takeaway cup" disabled="true" ></ic-checkbox>
+</ic-checkbox-group>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+    background: #333333;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup 
+  theme="dark" 
+  label="Select your extras" 
+  name="default" 
+>
+  <IcCheckbox value="extra" label="Extra shot (50p)" />
+  <IcCheckbox value="Soya milk" label="Soya milk" checked />
+  <IcCheckbox value="keep cup" label="Takeaway cup" disabled />
+</IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ marginTop: "1.5rem", background: "#333333" }}
+>
+  <IcCheckboxGroup label="Select your extras" name="default" theme="dark">
+    <IcCheckbox value="extra" label="Extra shot (50p)" />
+    <IcCheckbox value="Soya milk" label="Soya milk" checked />
+    <IcCheckbox value="keep cup" label="Takeaway cup" disabled />
+  </IcCheckboxGroup>
+</ComponentPreview>

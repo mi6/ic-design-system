@@ -373,3 +373,86 @@ return (
   <IcStatusTag label="Warning" status="warning" size="large" />
   <IcStatusTag label="Error" status="danger" size="large" />
 </ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-status-tag label="Neutral" status="neutral" theme="dark"></ic-status-tag>
+<ic-status-tag label="Success" status="success" theme="dark"></ic-status-tag>
+<ic-status-tag label="Warning" status="warning" theme="dark"></ic-status-tag>
+<ic-status-tag label="Error" status="danger" theme="dark"></ic-status-tag>`,
+      long: `.parent-container {
+      display: flex;
+      gap: var(--ic-space-xs);
+      flex-wrap: wrap;
+      padding: var(--ic-space-md);
+      background: #333333;
+    }
+  </style>
+  <body>
+    <div class="parent-container">
+      {shortCode}
+    </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStatusTag label="Neutral" status="neutral"/>
+<IcStatusTag label="Success" status="success" theme="dark" />
+<IcStatusTag label="Warning" status="warning" theme="dark" />
+<IcStatusTag label="Error" status="danger" theme="dark" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  style={{ gap: "0.5rem", background: "#333333" }}
+  snippets={snippetsThemeDark}
+>
+  <IcStatusTag label="Neutral" status="neutral" theme="dark" />
+  <IcStatusTag label="Success" status="success" theme="dark" />
+  <IcStatusTag label="Warning" status="warning" theme="dark" />
+  <IcStatusTag label="Error" status="danger" theme="dark" />
+</ComponentPreview>

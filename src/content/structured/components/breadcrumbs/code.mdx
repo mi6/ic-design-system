@@ -418,6 +418,105 @@ export const collapsed = [
   </IcBreadcrumbGroup>
 </ComponentPreview>
 
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group theme="dark">
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+    background: #333333;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup theme="dark">
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="#" />
+  <IcBreadcrumb 
+    current 
+    pageTitle="Coffee"
+    href="#"
+  />
+</IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#333333",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ background: "#333333" }}
+>
+  <IcBreadcrumbGroup theme="dark">
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
 ### With React Router
 
 export const withReactRouter = [

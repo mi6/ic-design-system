@@ -144,14 +144,14 @@ export const hideCurrent = [
   <IcPagination hideCurrentPage pages={15} />
 </ComponentPreview>
 
-### Appearance
+### Theme
 
-export const appearance = [
+export const theme = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-pagination appearance="dark" pages="15"></ic-pagination>
-<ic-pagination appearance="light" pages="15" class="dark-background"></ic-pagination>`,
+      short: `<ic-pagination theme="light" pages="15"></ic-pagination>
+<ic-pagination theme="dark" pages="15" class="dark-background"></ic-pagination>`,
       long: `.dark-background {
       background-color: #2c2f34;
     }
@@ -163,8 +163,62 @@ export const appearance = [
   {
     technology: "React",
     snippets: {
-      short: `<IcPagination appearance="dark" pages={15} />
-<IcPagination appearance="light" pages={15} class={classes.darkBackground} />`,
+      short: `<IcPagination theme="light" pages={15} />
+<IcPagination theme="dark" pages={15} class={classes.darkBackground} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  darkBackground: {
+    backgroundColor: "#2c2f34",
+  }
+});
+const classes = useStyles();
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ display: "block", margin: "auto" }} snippets={theme}>
+  <IcPagination theme="light" pages={15} />
+  <div style={{ backgroundColor: "#000", marginBottom: "0.75rem" }}>
+    <IcPagination theme="dark" pages={15} />
+  </div>
+</ComponentPreview>
+
+### Monochrome
+
+export const monochrome = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-pagination theme="light" monochrome="true" pages="15"></ic-pagination>
+<ic-pagination theme="dark" monochrome="true" pages="15" class="dark-background"></ic-pagination>`,
+      long: `.dark-background {
+      background-color: #2c2f34;
+    }
+  </style>
+  <body>
+    {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcPagination theme="light" monochrome pages={15} />
+<IcPagination theme="dark" monochrome pages={15} class={classes.darkBackground} />`,
       long: [
         {
           language: "Typescript",
@@ -193,11 +247,11 @@ return (
 
 <ComponentPreview
   style={{ display: "block", margin: "auto" }}
-  snippets={appearance}
+  snippets={monochrome}
 >
-  <IcPagination appearance="dark" pages={15} />
+  <IcPagination theme="light" monochrome pages={15} />
   <div style={{ backgroundColor: "#000", marginBottom: "0.75rem" }}>
-    <IcPagination appearance="light" pages={15} />
+    <IcPagination theme="dark" monochrome pages={15} />
   </div>
 </ComponentPreview>
 
