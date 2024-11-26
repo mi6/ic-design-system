@@ -15,6 +15,7 @@ import TopNavWrapper from "../TopNavWrapper";
 import "./index.css";
 
 import CookieConsentContext from "../../context/CookieConsentContext";
+import { ThemeProvider } from "../../context/ThemeContext";
 import { consentCookieApproved } from "../CookieBanner/cookies.helper";
 
 import { Heading, MdxFields, MdxFrontMatter } from "../../sharedTypes";
@@ -51,6 +52,8 @@ interface FooterLinks {
   key: string;
   link: string;
 }
+
+type Theme = "light" | "dark";
 
 const ClientOnly: React.FC<any> = ({ children, ...delegated }) => {
   const [hasMounted, setHasMounted] = useState(false);
@@ -187,6 +190,12 @@ const Layout: React.FC<LayoutProps> = ({
     }
   };
 
+  const [theme, setTheme] = useState<Theme>("light");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <>
       <Helmet>
@@ -229,67 +238,76 @@ const Layout: React.FC<LayoutProps> = ({
           content={process.env.GATSBY_GOOGLE_SEARCH_TOKEN}
         />
       </Helmet>
-      {!GATSBY_GA_TRACKING_ID && (
-        <ic-classification-banner id="site-banner" classification="official" />
-      )}
-      <CookieConsentContext.Provider value={value}>
-        <ClientOnly>
-          {pageTitle !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
-            <CookieBanner />
+      <ThemeProvider theme={theme} toggleTheme={toggleTheme}>
+        <ic-theme theme={theme}>
+          {!GATSBY_GA_TRACKING_ID && (
+            <ic-classification-banner
+              id="site-banner"
+              classification="official"
+            />
           )}
-        </ClientOnly>
-        <div className="main-page-container">
-          <ic-link href="#main-content" id="skip-main-content-link">
-            Skip to main content
-          </ic-link>
-          <TopNavWrapper
-            appTitle={TITLE}
-            status={STATUS}
-            version={VERSION}
-            shortTitle={SHORT_TITLE}
-          />
-          <main id="main" className="homepage-wrapper">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a id="main-content" tabIndex={-1}>
-              {" "}
-            </a>
-            {cloneElement(children, { location: location.pathname })}
-            <ic-back-to-top target="main" />
-          </main>
-        </div>
-        <div className="footer">
-          <ic-footer
-            description={FOOTER_PROPS.content}
-            caption={FOOTER_PROPS.caption}
-          >
-            {FOOTER_PROPS.footerLinks
-              .filter((footerLink: FooterLinks) => footerLink.key !== undefined)
-              .map((footerLink: FooterLinks) => (
-                <ic-footer-link
-                  slot="link"
-                  href={withPrefix(footerLink.link)}
-                  key={footerLink.key}
-                >
-                  {footerLink.text}
-                </ic-footer-link>
-              ))}
-            <div slot="logo" className="logo-wrapper" role="list">
-              <ic-footer-link href="https://sis.gov.uk">
-                <SISLogo aria-hidden="true" />
-                <span className="link-text">Go to S.I.S. website</span>
-              </ic-footer-link>
-              <ic-footer-link href="https://www.mi5.gov.uk">
-                <MI5Logo aria-hidden="true" />
-                <span className="link-text">Go to MI5 website</span>
-              </ic-footer-link>
-              <ic-footer-link href="https://gchq.gov.uk">
-                <GCHQLogo aria-hidden="true" />
-                <span className="link-text">Go to GCHQ website</span>
-              </ic-footer-link>
+          <CookieConsentContext.Provider value={value}>
+            <ClientOnly>
+              {pageTitle !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
+                <CookieBanner />
+              )}
+            </ClientOnly>
+            <div className="main-page-container">
+              <ic-link href="#main-content" id="skip-main-content-link">
+                Skip to main content
+              </ic-link>
+              <TopNavWrapper
+                appTitle={TITLE}
+                status={STATUS}
+                version={VERSION}
+                shortTitle={SHORT_TITLE}
+              />
+              <main id="main" className="homepage-wrapper">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a id="main-content" tabIndex={-1}>
+                  {" "}
+                </a>
+                {cloneElement(children, { location: location.pathname })}
+                <ic-back-to-top target="main" />
+              </main>
             </div>
-          </ic-footer>
-        </div>
-      </CookieConsentContext.Provider>
+            <div className="footer">
+              <ic-footer
+                description={FOOTER_PROPS.content}
+                caption={FOOTER_PROPS.caption}
+              >
+                {FOOTER_PROPS.footerLinks
+                  .filter(
+                    (footerLink: FooterLinks) => footerLink.key !== undefined
+                  )
+                  .map((footerLink: FooterLinks) => (
+                    <ic-footer-link
+                      slot="link"
+                      href={withPrefix(footerLink.link)}
+                      key={footerLink.key}
+                    >
+                      {footerLink.text}
+                    </ic-footer-link>
+                  ))}
+                <div slot="logo" className="logo-wrapper" role="list">
+                  <ic-footer-link href="https://sis.gov.uk">
+                    <SISLogo aria-hidden="true" />
+                    <span className="link-text">Go to S.I.S. website</span>
+                  </ic-footer-link>
+                  <ic-footer-link href="https://www.mi5.gov.uk">
+                    <MI5Logo aria-hidden="true" />
+                    <span className="link-text">Go to MI5 website</span>
+                  </ic-footer-link>
+                  <ic-footer-link href="https://gchq.gov.uk">
+                    <GCHQLogo aria-hidden="true" />
+                    <span className="link-text">Go to GCHQ website</span>
+                  </ic-footer-link>
+                </div>
+              </ic-footer>
+            </div>
+          </CookieConsentContext.Provider>
+        </ic-theme>
+      </ThemeProvider>
       <div
         className="route-announcer"
         role="status"
