@@ -50,6 +50,7 @@
   padding: var(--ic-space-xl) var(--ic-space-md);
   box-sizing: border-box;
   flex-wrap: wrap;
+  background: var(--ic-architectural-white);
 }
 
 .comp-zone.pattern {
@@ -95,6 +96,10 @@
 .snippet-container {
   background-color: var(--ic-architectural-40) !important;
   height: 46px;
+}
+
+.ic-theme-dark .snippet-container {
+  background: var(--ic-color-background-secondary-dark) !important;
 }
 
 .snippet-container ic-button button.button {

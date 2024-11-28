@@ -4,3 +4,7 @@
   padding: var(--ic-space-lg);
   border-radius: var(--ic-border-radius);
 }
+
+.ic-theme-dark .blockquote {
+  background: var(--ic-architectural-600);
+}

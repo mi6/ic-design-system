@@ -8,7 +8,7 @@ ic-page-header[heading="Components"] {
 
 ic-page-header ic-navigation-item a {
   height: 2.75rem !important;
-  color: var(--ic-color-primary-text) !important;
+  color: var(--ic-color-text-primary) !important;
   transition: all var(--ic-easing-transition-fast) !important;
 }
 

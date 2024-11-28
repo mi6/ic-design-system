@@ -1,5 +1,9 @@
 .cookies-card {
-  border: 1px solid var(--ic-architectural-300);
+  border: 1px solid var(--ic-color-border-neutral-default);
+}
+
+.ic-theme-dark .cookies-card {
+  border: 1px solid var(--ic-color-border-neutral-white);
 }
 
 .cookies-card tr:last-child td {

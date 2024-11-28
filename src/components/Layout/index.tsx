@@ -15,7 +15,7 @@ import TopNavWrapper from "../TopNavWrapper";
 import "./index.css";
 
 import CookieConsentContext from "../../context/CookieConsentContext";
-import { ThemeProvider } from "../../context/ThemeContext";
+import { ThemeProvider, Theme } from "../../context/ThemeContext";
 import { consentCookieApproved } from "../CookieBanner/cookies.helper";
 
 import { Heading, MdxFields, MdxFrontMatter } from "../../sharedTypes";
@@ -52,8 +52,6 @@ interface FooterLinks {
   key: string;
   link: string;
 }
-
-type Theme = "light" | "dark";
 
 const ClientOnly: React.FC<any> = ({ children, ...delegated }) => {
   const [hasMounted, setHasMounted] = useState(false);
@@ -193,8 +191,31 @@ const Layout: React.FC<LayoutProps> = ({
   const [theme, setTheme] = useState<Theme>("light");
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
   };
+
+  const systemThemeListener = (e: MediaQueryListEvent) => {
+    setTheme(e.matches ? "dark" : "light");
+  };
+
+  useEffect(() => {
+    const systemTheme =
+      typeof window !== "undefined"
+        ? window.matchMedia("(prefers-color-scheme: dark)")
+        : undefined;
+    const systemColorScheme = systemTheme?.matches ? "dark" : "light";
+
+    const storedTheme = localStorage.getItem("theme");
+    setTheme(storedTheme ? (storedTheme as Theme) : systemColorScheme);
+
+    systemTheme?.addEventListener("change", systemThemeListener);
+    return () =>
+      systemTheme?.removeEventListener("change", systemThemeListener);
+  }, []);
 
   return (
     <>
@@ -238,7 +259,11 @@ const Layout: React.FC<LayoutProps> = ({
           content={process.env.GATSBY_GOOGLE_SEARCH_TOKEN}
         />
       </Helmet>
-      <ThemeProvider theme={theme} toggleTheme={toggleTheme}>
+      <ThemeProvider
+        theme={theme}
+        toggleTheme={toggleTheme}
+        oppositeTheme={theme === "light" ? "dark" : "light"}
+      >
         <ic-theme theme={theme}>
           {!GATSBY_GA_TRACKING_ID && (
             <ic-classification-banner

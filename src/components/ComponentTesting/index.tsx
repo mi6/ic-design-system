@@ -20,70 +20,79 @@ import {
   ToggleShowProps,
   FileSelectionTabProps,
 } from "./types";
+import { useTheme } from "../../context/ThemeContext";
 
 const ActionButtons: React.FC<ActionProps> = ({
   longCode,
   showStackblitzBtn,
   stackblitzButtonTestAppProps,
   isLargeViewport,
-}) => (
-  <div className="button-container">
-    {showStackblitzBtn && stackblitzButtonTestAppProps && (
-      <TestingStackblitzButton
-        test={stackblitzButtonTestAppProps.test}
-        title={stackblitzButtonTestAppProps.title}
-        branch={stackblitzButtonTestAppProps.branch}
-      />
-    )}
-    <IcButton
-      aria-label={isLargeViewport ? "" : "Copy code"}
-      variant={isLargeViewport ? "tertiary" : "icon"}
-      size={isLargeViewport ? "small" : "medium"}
-      appearance="dark"
-      onClick={() => {
-        navigator.clipboard.writeText(longCode);
-        document
-          // eslint-disable-next-line no-undef
-          .querySelector<HTMLIcToastElement>("#copy-to-clipboard-toast")
-          ?.setVisible();
-      }}
-    >
-      <SlottedSVG
-        path={mdiContentCopy}
-        slot={isLargeViewport ? "left-icon" : undefined}
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-      />
-      {isLargeViewport && "Copy code"}
-    </IcButton>
-  </div>
-);
+}) => {
+  const { oppositeTheme } = useTheme();
+  return (
+    <div className="button-container">
+      {showStackblitzBtn && stackblitzButtonTestAppProps && (
+        <TestingStackblitzButton
+          test={stackblitzButtonTestAppProps.test}
+          title={stackblitzButtonTestAppProps.title}
+          branch={stackblitzButtonTestAppProps.branch}
+        />
+      )}
+      <IcButton
+        aria-label={isLargeViewport ? "" : "Copy code"}
+        variant={isLargeViewport ? "tertiary" : "icon"}
+        size={isLargeViewport ? "small" : "medium"}
+        theme={oppositeTheme}
+        monochrome
+        onClick={() => {
+          navigator.clipboard.writeText(longCode);
+          document
+            // eslint-disable-next-line no-undef
+            .querySelector<HTMLIcToastElement>("#copy-to-clipboard-toast")
+            ?.setVisible();
+        }}
+      >
+        <SlottedSVG
+          path={mdiContentCopy}
+          slot={isLargeViewport ? "left-icon" : undefined}
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        />
+        {isLargeViewport && "Copy code"}
+      </IcButton>
+    </div>
+  );
+};
 
 const ToggleShowButton: React.FC<ToggleShowProps> = ({
   disableMoreButton,
   showMore,
   setShowMore,
-}) => (
-  <div className="button-container">
-    <IcButton
-      variant="tertiary"
-      size="small"
-      onClick={() => setShowMore(!showMore)}
-      appearance="dark"
-      disabled={disableMoreButton}
-    >
-      Show {showMore && !disableMoreButton ? "less" : "full "} code
-      <SlottedSVG
-        slot="right-icon"
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-        path={showMore && !disableMoreButton ? mdiMenuUp : mdiMenuDown}
-      />
-    </IcButton>
-  </div>
-);
+}) => {
+  const { oppositeTheme } = useTheme();
+  return (
+    <div className="button-container">
+      <IcButton
+        variant="tertiary"
+        size="small"
+        onClick={() => setShowMore(!showMore)}
+        theme={oppositeTheme}
+        monochrome
+        disabled={disableMoreButton}
+      >
+        Show {showMore && !disableMoreButton ? "less" : "full "} code
+        <SlottedSVG
+          slot="right-icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          path={showMore && !disableMoreButton ? mdiMenuUp : mdiMenuDown}
+        />
+      </IcButton>
+    </div>
+  );
+};
 
 const CodeWindow: React.FC<CodeWindowProps> = ({ code }) => (
   <div>

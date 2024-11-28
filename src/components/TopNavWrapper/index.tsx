@@ -46,12 +46,6 @@ const LightIcon = () => (
   </SlottedSVG>
 );
 
-const ThemeIcon = () => {
-  const { theme } = useTheme();
-
-  return theme === "dark" ? <LightIcon /> : <DarkIcon />;
-};
-
 interface TopNavWrapperProps {
   appTitle: string;
   status: string;
@@ -60,13 +54,15 @@ interface TopNavWrapperProps {
 }
 
 const ThemeToggleButton: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
-
-  const label = theme === "dark" ? "Turn on light mode" : "Turn on dark mode";
+  const { theme, toggleTheme, oppositeTheme } = useTheme();
 
   return (
-    <ic-navigation-button label={label} slot="buttons" onClick={toggleTheme}>
-      <ThemeIcon />
+    <ic-navigation-button
+      label={`Turn on ${oppositeTheme} mode`}
+      slot="buttons"
+      onClick={toggleTheme}
+    >
+      {theme === "dark" ? <LightIcon /> : <DarkIcon />}
     </ic-navigation-button>
   );
 };

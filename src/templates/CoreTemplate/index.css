@@ -1,5 +1,5 @@
 body {
-  color: var(--ic-color-primary-text);
+  color: var(--ic-color-text-primary);
 }
 
 .gatsby-highlight {

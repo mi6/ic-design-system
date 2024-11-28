@@ -98,6 +98,10 @@
   height: 46px;
 }
 
+.ic-theme-dark .snippet-container {
+  background-color: var(--ic-color-background-secondary-dark) !important;
+}
+
 .snippet-container ic-button button.button {
   flex-direction: row-reverse;
 }
