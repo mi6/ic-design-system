@@ -33,6 +33,7 @@ export const snippets = [
   variant="icon"
   title="More information" 
   onclick="handleClick()"
+  aria-expanded="false"
 >
   <svg
     slot="icon"
@@ -64,8 +65,14 @@ export const snippets = [
       long: `{shortCode}
 <script>
   var icPopover = document.querySelector("#popover-menu");
+  var anchorButton = document.querySelector("#button-1");
   function handleClick() {
     icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
   }
 </script>`,
     },
@@ -78,6 +85,7 @@ export const snippets = [
   title="More information"
   id="button-1"
   onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
 >
   <SlottedSVG
     slot="icon"
@@ -140,6 +148,7 @@ export const DemoPopover = () => {
         title="More information"
         id="button-1"
         onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
       >
         <svg
           slot="icon"
@@ -207,6 +216,7 @@ export const snippetsButtons = [
   variant="icon"
   title="More information" 
   onclick="handleClick()"
+  aria-expanded="false"
 >
   <svg
     slot="icon"
@@ -247,8 +257,14 @@ export const snippetsButtons = [
       long: `{shortCode}
 <script>
   var icPopover = document.querySelector("#popover-menu-2");
+  var anchorButton = document.querySelector("#button-2");
   function handleClick() {
     icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
   }
 </script>`,
     },
@@ -261,6 +277,7 @@ export const snippetsButtons = [
   title="More information"
   id="button-2"
   onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
 >
   <SlottedSVG
     slot="icon"
@@ -335,6 +352,7 @@ export const ButtonsPopover = () => {
         title="More information"
         id="button-2"
         onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
       >
         <svg
           slot="icon"
@@ -401,6 +419,7 @@ export const snippetsGroups = [
   variant="icon"
   title="More information" 
   onclick="handleClick()"
+  aria-expanded="false"
 >
   <svg
     slot="icon"
@@ -423,14 +442,20 @@ export const snippetsGroups = [
     <ic-menu-group>
       <ic-menu-item label="Format"></ic-menu-item>
       <ic-menu-item label="Help"></ic-menu-item>
-    <ic-menu-group>
+    </ic-menu-group>
   </ic-popover-menu>
 </div>`,
       long: `{shortCode}
 <script>
   var icPopover = document.querySelector("#popover-menu-3");
+  var anchorButton = document.querySelector("#button-3");
   function handleClick() {
     icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
   }
 </script>`,
     },
@@ -443,6 +468,7 @@ export const snippetsGroups = [
   title="More information"
   id="button-3"
   onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
 >
   <SlottedSVG
     slot="icon"
@@ -505,6 +531,7 @@ export const GroupsPopover = () => {
         title="More information"
         id="button-3"
         onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
       >
         <svg
           slot="icon"
