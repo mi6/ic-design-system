@@ -22,7 +22,7 @@ tabs:
 ---
 
 import { IcPopoverMenu, IcMenuItem, IcButton } from "@ukic/react";
-import { useRef } from "react";
+import { useState } from "react";
 import popoverFig1 from "./images/fig-1-use-popover-menu-to-house-secondary-actions.png";
 import popoverFig2 from "./images/fig-2-dont-use-popover-menu-for-few-actions.png";
 import popoverFig3 from "./images/fig-3-set-maxheight-to-force-scroll.png";
@@ -39,17 +39,17 @@ import popoverVid3 from "./images/anim-3-avoid-nested-sub-menus.mp4";
 Click on the 'More Information' button below to view an example of the popover menu component.
 
 export const IntroPopover = () => {
-  const popoverEl = useRef(null);
-  const handleClick = () => {
-    popoverEl.current.open = !popoverEl.current.open;
-  };
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
   return (
     <>
       <IcButton
         variant="icon"
         title="More information"
         id="button-1"
-        onClick={handleClick}
+        onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
       >
         <svg
           slot="icon"
@@ -63,7 +63,7 @@ export const IntroPopover = () => {
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-1" aria-label="popover" ref={popoverEl}>
+      <IcPopoverMenu anchor="button-1" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
         <IcMenuItem label="Copy code" />
         <IcMenuItem label="Paste code" />
         <IcMenuItem label="Actions" submenuTriggerFor="actions" />
