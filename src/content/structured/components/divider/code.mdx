@@ -1,0 +1,880 @@
+---
+path: "/components/divider/code"
+
+date: "2024-12-02"
+
+title: "Divider"
+
+status: "BETA"
+
+subTitle: "Dividers are used to separate different elements in groups of content. Visually, they look like rules or lines."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/divider" },
+    { title: "Code", path: "/components/divider/code" },
+    { title: "Accessibility", path: "/components/divider/accessibility" },
+  ]
+---
+
+import { IcDivider, IcTypography } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider></ic-divider>
+<ic-divider border-style="dashed"></ic-divider>
+<ic-divider label="Coffee options" label-placement="center"></ic-divider>`,
+      long: `<div style="display: flex; flex-direction: column; gap: var(--ic-space-md); width: 100%;">
+{shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider />
+<IcDivider borderStyle="dashed" />
+<IcDivider label="Coffee options" labelPlacement="center" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider />
+    <IcDivider borderStyle="dashed" />
+    <IcDivider label="Coffee options" label-placement="center" />
+  </div>
+</ComponentPreview>
+
+## Divider details
+
+<ComponentDetails component="ic-divider" />
+
+## Variants
+
+### Weight
+
+export const snippetsWeight = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider weight="thin"></ic-divider>
+<ic-divider weight="medium"></ic-divider>
+<ic-divider weight="thick"></ic-divider>
+<ic-divider weight="very-thick"></ic-divider>
+<ic-divider
+  weight="medium"
+  label="Coffee options"
+  label-placement="center"
+></ic-divider>
+<ic-divider
+  weight="thick"
+  label="Coffee options"
+  label-placement="center"
+></ic-divider>`,
+      long: `<div style="display: flex; flex-direction: column; gap: var(--ic-space-md); width: 100%;">
+{shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider weight="thin" />
+<IcDivider weight="medium" />
+<IcDivider weight="thick" />
+<IcDivider weight="very-thick" />
+<IcDivider
+  weight="medium"
+  label="Coffee options"
+  labelPlacement="center"
+/>
+<IcDivider
+  weight="thick"
+  label="Coffee options"
+  labelPlacement="center"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsWeight}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider weight="thin" />
+    <IcDivider weight="medium" />
+    <IcDivider weight="thick" />
+    <IcDivider weight="very-thick" />
+    <IcDivider weight="medium" label="Coffee options" labelPlacement="center" />
+    <IcDivider weight="thick" label="Coffee options" labelPlacement="center" />
+  </div>
+</ComponentPreview>
+
+### Border style
+
+export const snippetsBorderStyle = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider border-style="solid"></ic-divider>
+<ic-divider border-style="dashed"></ic-divider>`,
+      long: `<div style="display: flex; flex-direction: column; gap: var(--ic-space-md); width: 100%;">
+{shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider borderStyle="solid" />
+<IcDivider borderStyle="dashed" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsBorderStyle}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider borderStyle="solid" />
+    <IcDivider borderStyle="dashed" />
+  </div>
+</ComponentPreview>
+
+### Vertical
+
+export const snippetsVertical = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider orientation="vertical"></ic-divider>
+<ic-divider orientation="vertical" border-style="dashed"></ic-divider>
+<ic-divider orientation="vertical" weight="thick"></ic-divider>
+<ic-divider
+  orientation="vertical"
+  border-style="dashed"
+  weight="thick"
+></ic-divider>`,
+      long: `<div style="display: flex; gap: var(--ic-space-lg); height: 15rem;">
+{shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider orientation="vertical" />
+<IcDivider orientation="vertical" borderStyle="dashed" />
+<IcDivider orientation="vertical" weight="thick" />
+<IcDivider
+  orientation="vertical"
+  borderStyle="dashed"
+  weight="thick"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    gap: "var(--ic-space-lg)",
+    height: "15rem"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    gap: "var(--ic-space-lg)",
+    height: "15rem"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsVertical}>
+  <div
+    style={{
+      display: "flex",
+      gap: "var(--ic-space-lg)",
+      height: "15rem",
+    }}
+  >
+    <IcDivider orientation="vertical" />
+    <IcDivider orientation="vertical" borderStyle="dashed" />
+    <IcDivider orientation="vertical" weight="thick" />
+    <IcDivider orientation="vertical" borderStyle="dashed" weight="thick" />
+  </div>
+</ComponentPreview>
+
+### Label placement (horizontal)
+
+export const snippetsLabelHorizontal = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider label="Coffee options" label-placement="left"></ic-divider>
+<ic-divider label="Coffee options" label-placement="center"></ic-divider>
+<ic-divider label="Coffee options" label-placement="right"></ic-divider>`,
+      long: `<div style="display: flex; flex-direction: column; gap: var(--ic-space-md); width: 100%;">
+{shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider label="Coffee options" labelPlacement="left" />
+<IcDivider label="Coffee options" labelPlacement="center" />
+<IcDivider label="Coffee options" labelPlacement="right" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    width: "100%"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLabelHorizontal}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider label="Coffee options" labelPlacement="left" />
+    <IcDivider label="Coffee options" labelPlacement="center" />
+    <IcDivider label="Coffee options" labelPlacement="right" />
+  </div>
+</ComponentPreview>
+
+### Label placement (vertical)
+
+export const snippetsLabelVertical = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider
+  label="Coffee options"
+  orientation="vertical"
+  label-placement="top"
+></ic-divider>
+<ic-divider
+  label="Coffee options"
+  orientation="vertical"
+  label-placement="center"
+></ic-divider>
+<ic-divider
+  label="Coffee options"
+  orientation="vertical"
+  label-placement="bottom"
+></ic-divider>`,
+      long: `<div style="display: flex; gap: var(--ic-space-lg); height: 15rem;">
+{shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider
+  label="Coffee options"
+  orientation="vertical"
+  labelPlacement="top"
+/>
+<IcDivider
+  label="Coffee options"
+  orientation="vertical"
+  labelPlacement="center"
+/>
+<IcDivider
+  label="Coffee options"
+  orientation="vertical"
+  labelPlacement="bottom"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    gap: "var(--ic-space-lg)",
+    height: "15rem"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div
+  style={{
+    display: "flex",
+    gap: "var(--ic-space-lg)",
+    height: "15rem"
+  }}
+>
+  {shortCode}
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLabelVertical}>
+  <div
+    style={{
+      display: "flex",
+      gap: "var(--ic-space-lg)",
+      height: "15rem",
+    }}
+  >
+    <IcDivider
+      label="Coffee options"
+      orientation="vertical"
+      labelPlacement="top"
+    />
+    <IcDivider
+      label="Coffee options"
+      orientation="vertical"
+      labelPlacement="center"
+    />
+    <IcDivider
+      label="Coffee options"
+      orientation="vertical"
+      labelPlacement="bottom"
+    />
+  </div>
+</ComponentPreview>
+
+### Slotted label
+
+export const snippetsSlottedLabel = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider label-placement="center">
+  <ic-typography style="width: max-content;" variant="label" slot="label">
+    <span>Coffee options</span>
+  </ic-typography>
+</ic-divider>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider labelPlacement="center">
+  <IcTypography style={{ width: "max-content" }} variant="label" slot="label">
+    <span>Coffee options</span>
+  </IcTypography>
+</IcDivider>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsSlottedLabel}>
+  <IcDivider labelPlacement="center">
+    <IcTypography style={{ width: "max-content" }} variant="label" slot="label">
+      <span>Coffee options</span>
+    </IcTypography>
+  </IcDivider>
+</ComponentPreview>
+
+### Theme
+
+export const snippetsTheme = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider theme="light"></ic-divider>
+<ic-divider
+  theme="light"
+  label="Coffee options"
+  label-placement="center"
+></ic-divider>
+<ic-divider theme="dark"></ic-divider>
+<ic-divider
+  theme="dark"
+  label="Coffee options"
+  label-placement="center"
+></ic-divider>`,
+      long: `<div>
+  <div style="display: flex; flex-direction: column; gap: var(--ic-space-md); padding: var(--ic-space-md); width: 100%;">
+    <ic-divider theme="light"></ic-divider>
+    <ic-divider theme="light"
+      label="Coffee options"
+      label-placement="center"
+    ></ic-divider>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: var(--ic-space-md); background: #333333; padding: var(--ic-space-md); width: 100%;">
+    <ic-divider theme="dark"></ic-divider>
+    <ic-divider
+      theme="dark"
+      label="Coffee options"
+      label-placement="center"
+    ></ic-divider>
+  </div>
+</div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider theme="light" />
+<IcDivider
+  theme="light"
+  label="Coffee options"
+  labelPlacement="center"
+/>
+<IcDivider theme="dark" />
+<IcDivider
+  theme="dark"
+  label="Coffee options"
+  labelPlacement="center"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      padding: "var(--ic-space-md)",
+      width: "100%"
+    }}
+  >
+    <IcDivider theme="light" />
+    <IcDivider
+      theme="light"
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      background: "#333333",
+      padding: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider theme="dark" />
+    <IcDivider
+      theme="dark"
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      padding: "var(--ic-space-md)",
+      width: "100%"
+    }}
+  >
+    <IcDivider theme="light" />
+    <IcDivider
+      theme="light"
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      background: "#333333",
+      padding: "var(--ic-space-md)",
+      width: "100%"
+    }}
+  >
+    <IcDivider theme="dark" />
+    <IcDivider
+      theme="dark"
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTheme}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      padding: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider theme="light" />
+    <IcDivider theme="light" label="Coffee options" labelPlacement="center" />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      background: "#333333",
+      padding: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider theme="dark" />
+    <IcDivider theme="dark" label="Coffee options" labelPlacement="center" />
+  </div>
+</ComponentPreview>
+
+### Monochrome
+
+export const snippetsMonochrome = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-divider theme="light" monochrome="true"></ic-divider>
+<ic-divider
+  theme="light"
+  monochrome="true"
+  label="Coffee options"
+  label-placement="center"
+></ic-divider>
+<ic-divider theme="dark" monochrome="true"></ic-divider>
+<ic-divider
+  theme="dark"
+  monochrome="true"
+  label="Coffee options"
+  label-placement="center"
+></ic-divider>`,
+      long: `<div>
+  <div style="display: flex; flex-direction: column; gap: var(--ic-space-md); padding: var(--ic-space-md); width: 100%;">
+    <ic-divider theme="light"></ic-divider>
+    <ic-divider
+      theme="light"
+      monochrome="true"
+      label="Coffee options"
+      label-placement="center"
+    ></ic-divider>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: var(--ic-space-md); background: #333333; padding: var(--ic-space-md); width: 100%;">
+    <ic-divider theme="dark"></ic-divider>
+    <ic-divider
+      theme="dark"
+      monochrome="true"
+      label="Coffee options"
+      label-placement="center"
+    ></ic-divider>
+  </div>
+</div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDivider theme="light" monochrome />
+<IcDivider
+  theme="light"
+  monochrome
+  label="Coffee options"
+  labelPlacement="center"
+/>
+<IcDivider theme="dark" monochrome />
+<IcDivider
+  theme="dark"
+  monochrome
+  label="Coffee options"
+  labelPlacement="center"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      padding: "var(--ic-space-md)",
+      width: "100%"
+    }}
+  >
+    <IcDivider theme="light" monochrome />
+    <IcDivider
+      theme="light"
+      monochrome
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      background: "#333333",
+      padding: "var(--ic-space-md)",
+      width: "100%"
+    }}
+  >
+    <IcDivider theme="dark" monochrome />
+    <IcDivider
+      theme="dark"
+      monochrome
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+</div>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      padding: "var(--ic-space-md)",
+      width: "100%"
+    }}
+  >
+    <IcDivider theme="light" monochrome />
+    <IcDivider
+      theme="light"
+      monochrome
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      background: "#333333",
+      padding: "var(--ic-space-md)",
+      width: "100%"
+    }}
+  >
+    <IcDivider theme="dark" monochrome />
+    <IcDivider
+      theme="dark"
+      monochrome
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+</div>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsMonochrome}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      padding: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider theme="light" monochrome />
+    <IcDivider
+      theme="light"
+      monochrome
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      background: "#333333",
+      padding: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider theme="dark" monochrome />
+    <IcDivider
+      theme="dark"
+      monochrome
+      label="Coffee options"
+      labelPlacement="center"
+    />
+  </div>
+</ComponentPreview>
