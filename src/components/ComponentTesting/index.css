@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 
-.container {
+.wrapper {
   border: 1px solid var(--ic-architectural-300);
   border-radius: var(--ic-border-radius);
   display: flex;

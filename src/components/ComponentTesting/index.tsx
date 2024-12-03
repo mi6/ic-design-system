@@ -147,7 +147,7 @@ const ComponentTesting: React.FC<ComponentTestingProps> = ({
   };
 
   return (
-    <div className="container">
+    <div className="wrapper">
       <IcTabContext
         onIcTabSelect={tabSelectCallback}
         selectedTabIndex={selectedTab}
