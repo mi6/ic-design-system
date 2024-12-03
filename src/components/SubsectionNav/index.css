@@ -54,7 +54,7 @@
 
 .scroll {
   width: auto;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -69,10 +69,6 @@
   .small-only {
     display: block;
     visibility: visible;
-  }
-
-  .scroll {
-    height: calc(100vh - var(--ic-space-lg));
   }
 }
 
