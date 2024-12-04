@@ -5,13 +5,13 @@
     "deterministicOrder": false,
     "display": true,
     "dist": "src/icds-pages-data.json",
-    "filePattern": "**/*.mdx",
+    "filePattern": "**/guidance.mdx",
     "ignore": "",
     "port": 3001,
     "server": false,
-    "src": "./src/content/structured/",
+    "src": "./src/content/structured/components",
     "name": "icds-guidance-pages",
-    "metadata": true,
+    "metadata": false,
     "version": "1.6.1"
   },
   "data": [

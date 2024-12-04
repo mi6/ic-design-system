@@ -131,14 +131,14 @@
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "static-analysis": "npm run lint & npm run prettier",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
-    "start": "npm run mdx-to-json && npm run develop",
+    "start": " npm run develop",
     "serve": "gatsby serve -p 8000",
     "clean": "gatsby clean",
     "test": "jest --passWithNoTests",
     "prepare": "husky install",
     "verify-ts": "tsc --noEmit",
     "audit": "audit-ci -m --config audit-ci.json",
-    "mdx-to-json": "markdown-json -c ./mdx-to-json-settings.json && node copy-json.js"
+    "mdx-to-json": "markdown-json -c ./mdx-to-json-settings.json"
   },
   "size-limit": [
     {
