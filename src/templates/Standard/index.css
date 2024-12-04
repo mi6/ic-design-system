@@ -13,7 +13,7 @@
 .sticky {
   position: sticky;
   top: 0;
-  z-index: var(--ic-z-index-sticky-page-header);
+  z-index: calc(var(--ic-z-index-sticky-page-header) + 1);
 }
 
 .page-content {

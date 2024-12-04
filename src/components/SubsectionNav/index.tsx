@@ -215,6 +215,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
     }
     window.addEventListener("scroll", updateNavigationHeight);
     window.addEventListener("resize", updateNavigationHeight);
+    updateNavigationHeight();
     return () => {
       window.removeEventListener("scroll", updateNavigationHeight);
       window.removeEventListener("resize", updateNavigationHeight);
