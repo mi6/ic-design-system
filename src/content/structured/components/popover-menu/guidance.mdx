@@ -63,7 +63,12 @@ export const IntroPopover = () => {
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-1" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
+      <IcPopoverMenu
+        anchor="button-1"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
         <IcMenuItem label="Copy code" />
         <IcMenuItem label="Paste code" />
         <IcMenuItem label="Actions" submenuTriggerFor="actions" />
