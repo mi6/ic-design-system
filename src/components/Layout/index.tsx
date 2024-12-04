@@ -273,7 +273,7 @@ const Layout: React.FC<LayoutProps> = ({
                   {footerLink.text}
                 </ic-footer-link>
               ))}
-            <div slot="logo" className="logo-wrapper">
+            <div slot="logo" className="logo-wrapper" role="list">
               <ic-footer-link href="https://sis.gov.uk">
                 <SISLogo aria-hidden="true" />
                 <span className="link-text">Go to S.I.S. website</span>
