@@ -1,10 +1,10 @@
 {
   "name": "icds-guidance-pages",
   "cwd": "./",
-  "src": "./src/content/structured/",
-  "filePattern": "**/*.mdx",
+  "src": "./src/content/structured/components",
+  "filePattern": "**/guidance.mdx",
   "dist": "src/icds-pages-data.json",
-  "metadata": true,
+  "metadata": false,
   "server": false,
   "port": 3001,
   "deterministicOrder": false
