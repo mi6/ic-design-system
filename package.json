@@ -138,7 +138,7 @@
     "prepare": "husky install",
     "verify-ts": "tsc --noEmit",
     "audit": "audit-ci -m --config audit-ci.json",
-    "mdx-to-json": "markdown-json -c ./mdx-to-json-settings.json && node copy-json.js"
+    "mdx-to-json": "markdown-json -c ./mdx-to-json-settings.json"
   },
   "size-limit": [
     {

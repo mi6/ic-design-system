@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
 import "./index.css";
-import pagesData from "../../icds-pages-data.json";
+import pagesData from "../../../public/icds-pages-data.json";
 import Accordion from "./ComponentImages/accordion-comp-gallery.png";
 import Alert from "./ComponentImages/alert-comp-gallery.png";
 import Backtotop from "./ComponentImages/back-to-top-comp-gallery.png";
