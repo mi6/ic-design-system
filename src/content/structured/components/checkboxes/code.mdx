@@ -67,7 +67,7 @@ export const snippetsDefault = [
   },
 ];
 
-<ComponentPreview snippets={snippetsDefault} style={{ marginTop: "1.5rem" }}>
+<ComponentPreview snippets={snippetsDefault}>
   <IcCheckboxGroup
     label="Select your extras"
     name="default"
@@ -127,10 +127,7 @@ export const snippetsHiddenLabel = [
   },
 ];
 
-<ComponentPreview
-  snippets={snippetsHiddenLabel}
-  style={{ marginTop: "1.5rem" }}
->
+<ComponentPreview snippets={snippetsHiddenLabel}>
   <IcCheckboxGroup label="Select your extras" hideLabel name="1">
     <IcCheckbox value="valueName1" label="Extra shot (50p)" />
     <IcCheckbox value="valueName2" label="Soya milk" checked />
@@ -171,7 +168,7 @@ export const snippetsHelperText = [
   },
 ];
 
-<ComponentPreview snippets={snippetsHelperText} style={{ marginTop: "1.5rem" }}>
+<ComponentPreview snippets={snippetsHelperText}>
   <IcCheckboxGroup
     label="Select your extras"
     name="1"
@@ -353,10 +350,7 @@ export const snippetsConditional = [
   },
 ];
 
-<ComponentPreview
-  snippets={snippetsConditional}
-  style={{ marginTop: "1.5rem" }}
->
+<ComponentPreview snippets={snippetsConditional}>
   <IcCheckboxGroup label="Which coffee do you like best?" name="conditional">
     <IcCheckbox value="americano" label="Americano" />
     <IcCheckbox value="espresso" label="Espresso" />
@@ -421,10 +415,7 @@ export const snippetsConditionalDynamic = [
   },
 ];
 
-<ComponentPreview
-  snippets={snippetsConditionalDynamic}
-  style={{ marginRight: "1rem" }}
->
+<ComponentPreview snippets={snippetsConditionalDynamic}>
   <div style={{ width: "21.875rem" }}>
     <IcCheckboxGroup label="Which coffee do you like best?" name="dynamic">
       <IcCheckbox value="americano" label="Americano" />
@@ -473,7 +464,7 @@ export const snippetsValidation = [
   },
 ];
 
-<ComponentPreview snippets={snippetsValidation} style={{ marginTop: "1.5rem" }}>
+<ComponentPreview snippets={snippetsValidation}>
   <IcCheckboxGroup
     label="Select your extras"
     name="1"
@@ -541,10 +532,7 @@ export const snippetsIndeterminate = [
   },
 ];
 
-<ComponentPreview
-  snippets={snippetsIndeterminate}
-  style={{ marginTop: "1.5rem" }}
->
+<ComponentPreview snippets={snippetsIndeterminate}>
   <IcCheckboxGroup label="Select your preferred drinks" name="1">
     <IcCheckbox value="drinks" label="Drinks" checked indeterminate>
       <IcCheckboxGroup
@@ -585,7 +573,7 @@ export const snippetsThemeDark = [
 </ic-checkbox-group>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
-    background: #333333;
+    background: #17191c;
   }
 </style>
 <body>
@@ -612,7 +600,7 @@ export const snippetsThemeDark = [
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
     padding: "var(--ic-space-md)",
-    background: "#333333",
+    background: "#17191c",
   },
 });
 const classes = useStyles();
@@ -627,7 +615,7 @@ return (
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
     padding: "var(--ic-space-md)",
-    background: "#333333",
+    background: "#17191c",
   },
 });
 const classes = useStyles();
@@ -644,7 +632,7 @@ return (
 
 <ComponentPreview
   snippets={snippetsThemeDark}
-  style={{ marginTop: "1.5rem", background: "#333333" }}
+  style={{ background: "#17191c" }}
 >
   <IcCheckboxGroup label="Select your extras" name="default" theme="dark">
     <IcCheckbox value="extra" label="Extra shot (50p)" />

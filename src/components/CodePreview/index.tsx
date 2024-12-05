@@ -492,7 +492,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
               aria-hidden="true"
             />
           ))}
-        <ic-theme theme="light">{children}</ic-theme>
+        {children}
       </div>
       {snippets && (
         <IcTabContext

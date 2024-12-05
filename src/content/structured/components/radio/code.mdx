@@ -78,7 +78,7 @@ export const snippets = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "1.5rem" }} snippets={snippets}>
+<ComponentPreview snippets={snippets}>
   <IcRadioGroup
     name="radio-group-1"
     label="Add a free purchase with any hot drink"
@@ -164,7 +164,7 @@ name="radio-group-2"
   },
 ];
 
-<ComponentPreview style={{ marginTop: "1.5rem" }} snippets={conditional}>
+<ComponentPreview snippets={conditional}>
   <IcRadioGroup name="radio-group-2" label="Do you have any special requests?">
     <IcRadioOption value="request" label="Yes, I want to modify my order">
       <IcTextField
@@ -311,7 +311,7 @@ export const withHelperText = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "1.5rem" }} snippets={withHelperText}>
+<ComponentPreview snippets={withHelperText}>
   <IcRadioGroup
     label="Do you have any special requests?"
     helperText="Let us know if you'd like an alternative to dairy milk."
@@ -370,7 +370,7 @@ export const smallSnippet = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "1.5rem" }} snippets={smallSnippet}>
+<ComponentPreview snippets={smallSnippet}>
   <IcRadioGroup
     label="Do you have any special requests?"
     name="radio-group-5"
@@ -433,7 +433,7 @@ export const withValidation = [
   },
 ];
 
-<ComponentPreview style={{ marginTop: "1.5rem" }} snippets={withValidation}>
+<ComponentPreview snippets={withValidation}>
   <IcRadioGroup
     label="Do you have any special requests?"
     validationStatus="error"
@@ -471,7 +471,7 @@ export const snippetsThemeDark = [
   ></ic-radio-option>
 </ic-radio-group>`,
       long: `.parent-container {
-    background: #333333;
+    background: #17191c;
   }
 </style>
 <body>
@@ -502,7 +502,7 @@ export const snippetsThemeDark = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#333333",
+    background: "#17191c",
   },
 });
 const classes = useStyles();
@@ -516,7 +516,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#333333",
+    background: "#17191c",
   },
 });
 const classes = useStyles();
@@ -532,7 +532,7 @@ return (
 ];
 
 <ComponentPreview
-  style={{ marginTop: "1.5rem", background: "#333333" }}
+  style={{ background: "#17191c" }}
   snippets={snippetsThemeDark}
 >
   <IcRadioGroup
