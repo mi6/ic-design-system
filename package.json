@@ -55,6 +55,8 @@
     "github-slugger": "^1.4.0",
     "lodash.kebabcase": "^4.1.1",
     "lodash.startcase": "^4.4.0",
+    "metalsmith": "^2.6.3",
+    "metalsmith-filter": "^1.0.2",
     "performant-array-to-tree": "^1.9.1",
     "piexifjs": "^1.0.6",
     "pizzip": "^3.1.7",
@@ -105,7 +107,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.0",
     "lint-staged": "^12.1.2",
-    "markdown-json": "^1.6.1",
     "npm-check-updates": "^11.4.1",
     "prettier": "2.5.1",
     "react-test-renderer": "^17.0.2",
@@ -138,7 +139,7 @@
     "prepare": "husky install",
     "verify-ts": "tsc --noEmit",
     "audit": "audit-ci -m --config audit-ci.json",
-    "mdx-to-json": "markdown-json -c ./mdx-to-json-settings.json"
+    "mdx-to-json": "node mdx-to-json.js"
   },
   "size-limit": [
     {
