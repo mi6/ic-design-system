@@ -28,9 +28,9 @@ const TopNavWrapper: React.FC<TopNavWrapperProps> = ({
     <a slot="app-icon" href={withPrefix("/")}>
       <ICDSLogo role="img" aria-labelledby="icds-link" className="icds-logo" />
     </a>
-    {textLinks.map(({ key, text, ...rest }) => (
+    {textLinks.map(({ key, text, props }) => (
       <ic-navigation-item slot="navigation" key={key}>
-        <GatsbyLink slot="navigation-item" {...rest}>
+        <GatsbyLink slot="navigation-item" {...props}>
           {text}
         </GatsbyLink>
       </ic-navigation-item>
