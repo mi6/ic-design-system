@@ -37,6 +37,7 @@ import {
   ToggleShowProps,
   FrameworkTabProps,
 } from "./types";
+import { useTheme } from "../../context/ThemeContext";
 
 export interface ToggleLanguageProps {
   handleToggle: (
@@ -60,40 +61,44 @@ const ActionButtons: React.FC<CodeSnippetProps> = ({
   projectDescription,
   selectedLanguage,
   isLargeViewport,
-}) => (
-  <div className="button-container">
-    {showStackblitzBtn && projectTitle !== undefined && (
-      <StackblitzButton
-        codeSnippet={longCode}
-        isWebComponents={isWebComponents}
-        projectTitle={projectTitle}
-        projectDescription={projectDescription}
-        isJSX={selectedLanguage === "Javascript"}
-      />
-    )}
-    <IcButton
-      aria-label={isLargeViewport ? "" : "Copy code"}
-      variant={isLargeViewport ? "tertiary" : "icon"}
-      size={isLargeViewport ? "small" : "medium"}
-      appearance="dark"
-      onClick={() => {
-        navigator.clipboard.writeText(code);
-        document
-          .querySelector<HTMLIcToastElement>("#copy-to-clipboard-toast")
-          ?.setVisible();
-      }}
-    >
-      <SlottedSVG
-        path={mdiContentCopy}
-        slot={isLargeViewport ? "left-icon" : undefined}
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-      />
-      {isLargeViewport && "Copy code"}
-    </IcButton>
-  </div>
-);
+}) => {
+  const { oppositeTheme } = useTheme();
+  return (
+    <div className="button-container">
+      {showStackblitzBtn && projectTitle !== undefined && (
+        <StackblitzButton
+          codeSnippet={longCode}
+          isWebComponents={isWebComponents}
+          projectTitle={projectTitle}
+          projectDescription={projectDescription}
+          isJSX={selectedLanguage === "Javascript"}
+        />
+      )}
+      <IcButton
+        aria-label={isLargeViewport ? "" : "Copy code"}
+        variant={isLargeViewport ? "tertiary" : "icon"}
+        size={isLargeViewport ? "small" : "medium"}
+        theme={oppositeTheme}
+        monochrome
+        onClick={() => {
+          navigator.clipboard.writeText(code);
+          document
+            .querySelector<HTMLIcToastElement>("#copy-to-clipboard-toast")
+            ?.setVisible();
+        }}
+      >
+        <SlottedSVG
+          path={mdiContentCopy}
+          slot={isLargeViewport ? "left-icon" : undefined}
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        />
+        {isLargeViewport && "Copy code"}
+      </IcButton>
+    </div>
+  );
+};
 
 const ToggleShowButton: React.FC<ToggleShowProps> = ({
   type,
@@ -101,44 +106,49 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
   setShow,
   showMore,
   setShowMore,
-}) => (
-  <div className="button-container">
-    {type === "pattern" && (
-      <IcButton
-        variant="tertiary"
-        size="small"
-        onClick={() => setShow(!show)}
-        appearance="dark"
-      >
-        {!show ? "Show" : "Hide"} code
-        <SlottedSVG
-          slot="right-icon"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          path={!show ? mdiMenuDown : mdiMenuUp}
-        />
-      </IcButton>
-    )}
-    {type !== "pattern" && (
-      <IcButton
-        variant="tertiary"
-        size="small"
-        onClick={() => setShowMore(!showMore)}
-        appearance="dark"
-      >
-        Show {showMore ? "less" : "full "} code
-        <SlottedSVG
-          slot="right-icon"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          path={showMore ? mdiMenuUp : mdiMenuDown}
-        />
-      </IcButton>
-    )}
-  </div>
-);
+}) => {
+  const { oppositeTheme } = useTheme();
+  return (
+    <div className="button-container">
+      {type === "pattern" && (
+        <IcButton
+          variant="tertiary"
+          size="small"
+          onClick={() => setShow(!show)}
+          theme={oppositeTheme}
+          monochrome
+        >
+          {!show ? "Show" : "Hide"} code
+          <SlottedSVG
+            slot="right-icon"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            path={!show ? mdiMenuDown : mdiMenuUp}
+          />
+        </IcButton>
+      )}
+      {type !== "pattern" && (
+        <IcButton
+          variant="tertiary"
+          size="small"
+          onClick={() => setShowMore(!showMore)}
+          theme={oppositeTheme}
+          monochrome
+        >
+          Show {showMore ? "less" : "full "} code
+          <SlottedSVG
+            slot="right-icon"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            path={showMore ? mdiMenuUp : mdiMenuDown}
+          />
+        </IcButton>
+      )}
+    </div>
+  );
+};
 
 const CodeWindow: React.FC<CodeWindowProps> = ({ code, show, language }) => (
   <div className="code-window">
@@ -482,7 +492,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
               aria-hidden="true"
             />
           ))}
-        {children}
+        <ic-theme theme="light">{children}</ic-theme>
       </div>
       {snippets && (
         <IcTabContext

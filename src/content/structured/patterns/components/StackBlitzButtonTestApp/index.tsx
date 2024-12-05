@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { StackBlitzLogo } from "../../../../../assets/svg";
 import { useViewportWidth } from "../../../../../utils/helpers";
+import { useTheme } from "../../../../../context/ThemeContext";
 
 export interface Snippet {
   fileName: string;
@@ -22,6 +23,7 @@ const StackblitzButtonTestApp: FC<StackblitzButtonTestAppProps> = ({
   title,
   branch,
 }) => {
+  const { oppositeTheme } = useTheme();
   const viewportWidth = useViewportWidth();
   const isLargeViewport: boolean = viewportWidth > 992;
 
@@ -38,7 +40,8 @@ const StackblitzButtonTestApp: FC<StackblitzButtonTestAppProps> = ({
       aria-label="Open code example in StackBlitz"
       size={isLargeViewport ? "small" : "medium"}
       variant={isLargeViewport ? "tertiary" : "icon"}
-      appearance="dark"
+      theme={oppositeTheme}
+      monochrome
       onClick={() => createStackblitzProject()}
     >
       {isLargeViewport && (

@@ -6,7 +6,11 @@
 }
 
 .circle-border {
-  border: 1px solid var(--ic-architectural-black);
+  border: 1px solid var(--ic-color-border-neutral-black);
+}
+
+.ic-theme-dark .circle-border {
+  border: 1px solid var(--ic-color-border-neutral-white);
 }
 
 .color-class ic-typography {

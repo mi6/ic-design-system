@@ -6,6 +6,7 @@ import { mdiArrowRight } from "@mdi/js";
 import { IcButtonVariants } from "@ukic/web-components";
 import icdsHero from "../../../static/icds-hero.png";
 import backgroundImage from "../../../static/background-image.png";
+import backgroundImageDarkMode from "../../../static/background-image-dark-mode.png";
 import accessibility from "../../assets/png/accessibility.png";
 import components from "../../assets/png/components.png";
 import patterns from "../../assets/png/patterns.png";
@@ -14,6 +15,7 @@ import { DesignImage, DevImage } from "../../assets/svg";
 
 import "./index.css";
 import { useViewportWidth } from "../../utils/helpers";
+import { useTheme } from "../../context/ThemeContext";
 
 const { homepage } = require("../../config");
 
@@ -80,6 +82,8 @@ const Homepage: React.FC = () => {
         return null;
     }
   };
+
+  const { theme } = useTheme();
 
   return (
     <div className="homepage">
@@ -235,7 +239,9 @@ const Homepage: React.FC = () => {
         <hr aria-hidden="true" className="divider" />
         <div
           style={{
-            backgroundImage: `url( ${backgroundImage} )`,
+            backgroundImage: `url( ${
+              theme === "light" ? backgroundImage : backgroundImageDarkMode
+            } )`,
             backgroundPosition: "center",
             backgroundSize: "contain",
           }}

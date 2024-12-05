@@ -3,3 +3,7 @@ ic-typography[data-class="type-container"] {
   padding: calc(var(--ic-space-xxs) + var(--ic-space-xxxs)) var(--ic-space-xs);
   width: fit-content;
 }
+
+.ic-theme-dark ic-typography[data-class="type-container"] {
+  background-color: var(--ic-color-background-secondary-dark);
+}

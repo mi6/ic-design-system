@@ -1,11 +1,15 @@
 .attribute-table {
   display: table;
-  border: 1px solid var(--ic-architectural-300);
+  border: 1px solid var(--ic-color-border-neutral-default);
   border-radius: var(--ic-border-radius);
 }
 
 .header {
   background-color: var(--ic-architectural-40);
+}
+
+.ic-theme-dark .header {
+  background-color: var(--ic-color-background-secondary-dark);
 }
 
 .cell {

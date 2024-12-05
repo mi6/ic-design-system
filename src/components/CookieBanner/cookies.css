@@ -8,6 +8,10 @@
   padding: var(--ic-space-md) 0;
 }
 
+.ic-theme-dark #cookie-banner {
+  background: var(--ic-color-background-primary);
+}
+
 .buttons {
   display: grid;
   column-gap: var(--ic-space-md);

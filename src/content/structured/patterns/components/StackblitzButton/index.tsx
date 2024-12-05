@@ -10,6 +10,7 @@ import {
 } from "./stackblitz-helpers";
 import { StackBlitzLogo } from "../../../../../assets/svg";
 import { useViewportWidth } from "../../../../../utils/helpers";
+import { useTheme } from "../../../../../context/ThemeContext";
 
 export type StackblitzProps = {
   codeSnippet?: string;
@@ -26,6 +27,7 @@ const StackblitzButton: FC<StackblitzProps> = ({
   projectDescription,
   isJSX = true,
 }) => {
+  const { oppositeTheme } = useTheme();
   const viewportWidth = useViewportWidth();
   const isLargeViewport: boolean = viewportWidth > 992;
 
@@ -93,7 +95,8 @@ const StackblitzButton: FC<StackblitzProps> = ({
       aria-label="Open code example in StackBlitz"
       size={isLargeViewport ? "small" : "medium"}
       variant={isLargeViewport ? "tertiary" : "icon"}
-      appearance="dark"
+      theme={oppositeTheme}
+      monochrome
       onClick={() => createStackblitzProject()}
     >
       {isLargeViewport && (
