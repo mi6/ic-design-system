@@ -50,7 +50,6 @@
   padding: var(--ic-space-xl) var(--ic-space-md);
   box-sizing: border-box;
   flex-wrap: wrap;
-  background: var(--ic-architectural-white);
 }
 
 .comp-zone.pattern {

@@ -8,6 +8,7 @@ const paths = [
   "/top-navigation-page-header-pattern/",
   "/top-navigation-back-to-top-pattern/",
   "/top-navigation-mega-menu-pattern/",
+  "/dark-mode-pattern/",
 ];
 
 export default paths;
