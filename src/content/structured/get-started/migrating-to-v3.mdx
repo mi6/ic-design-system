@@ -1,0 +1,219 @@
+---
+path: "/get-started/migrating-to-v3"
+
+navPriority: 1
+
+date: "2024-12-09"
+
+title: "Migrating from V2 to V3"
+
+subTitle: "This guide is intended to help you migrate from ICDS 2.x components to ICDS 3.x components."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/migrating-to-v3.mdx"
+---
+
+import { IcDataTable } from "@ukic/canary-react";
+import MigrationPropTable from "../../../components/MigrationTables/PropMigration";
+
+## Introduction
+
+ICDS V3 introduces several highly anticipated features such as dark mode, as well as… This is a comprehensive guide on how to upgrade your V2 app to V3. For a full list of the changes made in V3, please read the <ic-link href="/">3.x changelog</ic-link>.
+
+### Theming
+
+One of the biggest features in V3 is dark mode. With this new capability, you can set whether a component responds to changes in the system's light and dark theme or whether it always appears in a particular mode. As part of dark mode, we've adopted a design tokens approach in our components.
+
+### Migration of multi-select functionality into ic-select
+
+`ic-multi-select` (`IcMultiSelect`) is no longer a standalone component. The multi-select functionality can now be found in the `ic-select` (`IcSelect`) component.
+
+```tsx
+// v2
+<ic-select-with-multi
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+></ic-select-with-multi>
+
+// v3
+<ic-select
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+></ic-select>
+```
+
+## Prop Renames
+
+### Replace `appearance` with `theme` and `monochrome` props
+
+Following the introduction of dark mode, we have replaced the `appearance` prop with the `theme` and `monochrome` props where applicable. The `theme` prop manages a component's light or dark variant.
+
+### Sizing
+
+We've made our sizing easier to understand by changing instances of `size=”default”` to `size=”medium and replacing the `small`prop with`size=”small”`. These changes may affect any existing tests you have.
+
+#### Replace `size=”default”` with `“size=”medium”`
+
+#### Replace `small={true}` with `“size=”small”`
+
+### Rename `ic-data-entity` to `ic-data-list`
+
+To clarify its use, we've renamed the `ic-data-entity` (`IcDataEntity`) component to `ic-data-list` (`IcDataList`).
+
+### Rename `ic-card` to `ic-card-vertical`
+
+With the introduction of the `ic-card-horizontal` (`IcCardHorizontal`) component, we have renamed `ic-card` (`IcCard`), to `ic-card-vertical` (`IcCardVertical`), to help differentiate between the two card components.
+
+### Replace `variant=”icon”` in IcButton with new values: `icon-primary`, `icon-tertiary`, `icon-secondary`
+
+### Glossary of Terms
+
+A full list of attribute and prop name changes can be seen in the table below
+
+#### Props
+
+<MigrationPropTable />
+
+export const propColumns = [
+  {
+    Header: "V2 name of prop / attribute",
+    accessor: "v2Prop",
+  },
+  {
+    Header: "V3 name of prop / attribute",
+    accessor: "v3Prop",
+  },
+  {
+    Header: "Components affected",
+    accessor: "componentsAffected",
+  },
+];
+
+export const propData = [
+  {
+    v2Prop: "small=”true”/small/small={true}",
+    v3Prop: "size=”small”",
+    componentsAffected: "ic-select",
+  },
+  {
+    v2Prop: "size=”default”",
+    v3Prop: "size=”medium”",
+    componentsAffected: "ic-status-tag, ic-switch",
+  },
+  {
+    v2Prop: "group-title/groupTitle",
+    v3Prop: "label",
+    componentsAffected: "ic-accordion-group, ic-footer-link-group",
+  },
+  {
+    v2Prop: "text-label/textLabel",
+    v3Prop: "label",
+    componentsAffected: "ic-badge",
+  },
+  {
+    v2Prop: "body-max-lines/bodyMaxLines",
+    v3Prop: "max-lines/maxLines",
+    componentsAffected: "ic-empty-state",
+  },
+  {
+    v2Prop: "theme",
+    v3Prop: "brand",
+    componentsAffected: "ic-theme",
+  },
+  {
+    v2Prop: "step-type/stepType",
+    v3Prop: "type",
+    componentsAffected: "ic-step",
+  },
+  {
+    v2Prop: "step-title/stepTitle",
+    v3Prop: "heading",
+    componentsAffected: "ic-step",
+  },
+  {
+    v2Prop: "step-subtitle/stepSubtitle",
+    v3Prop: "subheading",
+    componentsAffected: "ic-step",
+  },
+  {
+    v2Prop: "step-status/stepStatus",
+    v3Prop: "status",
+    componentsAffected: "ic-step",
+  },
+  {
+    v2Prop: "adjacent-count/adjacentCount",
+    v3Prop: " adjacent-page-count/adjacentPageCount ",
+    componentsAffected: "ic-pagination",
+  },
+  {
+    v2Prop: "boundary-count/boundaryCount",
+    v3Prop: " boundary-page-count/boundaryPageCount ",
+    componentsAffected: "ic-pagination",
+  },
+  {
+    v2Prop: "keyboard-shortcut/keyboardShortcut",
+    v3Prop: "keyboard-shortcut-label/keyboardShortcutLabel",
+    componentsAffected: "ic-menu-item",
+  },
+  {
+    v2Prop: "disable-filter/disableFilter",
+    v3Prop: "disable-auto-filtering/disableAutoFiltering",
+    componentsAffected: "ic-search-bar, ic-select",
+  },
+  {
+    v2Prop: "max-length/maxLength",
+    v3Prop: "max-characters/maxCharacters",
+    componentsAffected: "ic-text-field",
+  },
+  {
+    v2Prop: "toggle-checked/toggleChecked",
+    v3Prop: "checked",
+    componentsAffected: "ic-menu-item, ic-toggle-button",
+  },
+  {
+    v2Prop: "hint-text/hintText",
+    v3Prop: "assistive-hint-text/assistiveHintText",
+    componentsAffected: "ic-search-bar",
+  },
+];
+
+#### Events
+
+export const eventColumns = [
+  {
+    key: "v2Prop",
+    title: " V2 name of event",
+    dataType: "string",
+  },
+  {
+    key: "v3Prop",
+    title: "V3 name event",
+    dataType: "string",
+  },
+  {
+    key: "componentsAffected",
+    title: "Components affected",
+    dataType: "string",
+  },
+];
+
+export const eventData = [
+  {
+    v2Prop: "sideNavExpanded/onSideNavExpanded",
+    v3Prop: "icSideNavExpanded/onIcSideNavExpanded",
+    componentsAffected: "ic-side-navigation",
+  },
+  {
+    v2Prop: "topNavResized/onTopNavResized",
+    v3Prop: "icTopNavResized/onIcTopNavResized",
+    componentsAffected: "ic-top-navigation",
+  },
+];
+
+<IcDataTable
+  columns={eventColumns}
+  data={eventData}
+  embedded
+  style={{ height: "auto" }}
+/>
