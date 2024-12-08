@@ -112,8 +112,16 @@ module.exports = {
         "Whether you're building a new interface or refining an existing one, our Figma UI Kit, principles and documentation enable you to create intuitive, consistent and accessible designs with ease.",
       ],
       button: [
-        { href: "", text: "Explore design", variant: "primary" },
-        { href: "", text: "Read our design principles", variant: "secondary" },
+        {
+          href: "/get-started/design",
+          text: "Explore design",
+          variant: "primary",
+        },
+        {
+          href: "/get-started/design/design-principles",
+          text: "Read our design principles",
+          variant: "secondary",
+        },
       ],
     },
     develop: {
@@ -123,9 +131,13 @@ module.exports = {
         "With a focus on accessibility and ease of use, these components equip developers to create responsive and inclusive experiences.",
       ],
       button: [
-        { href: "", text: "Explore development", variant: "primary" },
         {
-          href: "",
+          href: "/get-started/development",
+          text: "Explore development",
+          variant: "primary",
+        },
+        {
+          href: "/get-started/development/test-components",
           text: "Learn how we test components",
           variant: "secondary",
         },
