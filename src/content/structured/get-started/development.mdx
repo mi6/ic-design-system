@@ -1,33 +1,33 @@
 ---
-path: "/get-started"
+path: "/get-started/development"
 
-navPriority: 0
+navPriority: 2
 
 date: "2024-12-06"
 
-title: "Get started"
+title: "Development"
 
-subTitle: "Discover a high-quality, accessible UI Kit built for MI6, MI5 and GCHQ apps and digital products."
+subTitle: "Our UI Kit is built with Stencil.js to ensure seamless integration across React, Vue, Angular, and other frameworks."
 
-contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/index.mdx"
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/development.mdx"
 ---
 
 import { IcCardVertical } from "@ukic/react";
 import GetStartedHorizontalCard from "../../../components/GetStartedHorizontalCard";
 import "./index.css";
 
-## Introduction
+## Installing the components
 
-Our Design System helps MI6, MI5 and GCHQ to create powerful and accessible capabilities that keep the UK and its partners safe and prosperous.
+The development library provides a robust set of UI components that are not only high-quality and visually appealing but also thoroughly tested for reliability and performance.
 
-The Design System has already proven that we can simultaneously speed up and improve the quality of what we build. This means the community and assets we adopt can better serve our fast-changing mission needs and we can be confident in them being accessible.
+With a focus on accessibility and ease of use, these components empower developers to create responsive and inclusive experiences.
 
 <div className="get-started-vertical-cards">
   <IcCardVertical
-    heading="Get started with design"
-    message="Our design documentation empowers you to create intuitive, consistent and accessible designs with ease."
+    heading="Install the components"
+    message="Install and use the UI Kit component library. Use React or web components to quickly build accessible interfaces."
     clickable
-    href="/get-started/design"
+    href="/get-started/development/install-components"
     style={{ width: "100%" }}
   >
     <svg
@@ -41,33 +41,25 @@ The Design System has already proven that we can simultaneously speed up and imp
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="248" height="140" fill="#07277E" />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M159.643 65.6013C159.688 65.3022 159.821 65.0257 160.024 64.8119L187.22 36.0896C187.473 35.8224 187.816 35.6724 188.174 35.6724C188.532 35.6724 188.875 35.8224 189.128 36.0896L199.625 47.1761C199.877 47.4432 200.019 47.805 200.019 48.1821C200.019 48.5593 199.877 48.9211 199.625 49.1882L172.424 77.9133C172.221 78.1267 171.959 78.2664 171.676 78.3123L159.276 80.3244C159.067 80.3583 158.853 80.3397 158.652 80.2701C158.451 80.2004 158.268 80.0817 158.118 79.9235C157.968 79.7653 157.856 79.5722 157.79 79.3596C157.724 79.147 157.706 78.921 157.738 78.6999L159.643 65.6013ZM162.245 66.4962L160.688 77.2122L170.832 75.5649L196.762 48.1821L188.173 39.1134L162.245 66.4962Z"
-        fill="white"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M190.752 55.2927L181.208 45.2322L183.115 43.2144L192.657 53.2749L190.752 55.2927Z"
-        fill="white"
-      />
-      <path
-        d="M182.176 43.1484L161.064 65.4455L159.556 79.7793L170.112 78.1867L176.144 73.4087L191.224 55.8896L182.176 43.1484Z"
-        fill="white"
-      />
-      <path
-        d="M60 84.257C124.966 111.745 111.31 63.7574 156 84.257"
+      <line x1="84" y1="104.5" x2="163" y2="104.5" stroke="white" />
+      <line x1="84.5" y1="95" x2="84.5" y2="105" stroke="white" />
+      <line x1="163.5" y1="95" x2="163.5" y2="105" stroke="white" />
+      <line x1="124.5" y1="35" x2="124.5" y2="90" stroke="white" />
+      <line
+        x1="107.343"
+        y1="73.6359"
+        x2="124.343"
+        y2="89.6359"
         stroke="white"
       />
+      <line x1="124.635" y1="89.658" x2="139.635" y2="73.658" stroke="white" />
     </svg>
   </IcCardVertical>
   <IcCardVertical
-    heading="Get started with development"
-    message="Rapidly build apps using our React and web components."
+    heading="Test the components"
+    message="Test the UI Kit components within the shadow DOM using a testing framework."
     clickable
-    href="/get-started/development"
+    href="/get-started/development/test-components"
     style={{ width: "100%" }}
   >
     <svg
@@ -81,17 +73,36 @@ The Design System has already proven that we can simultaneously speed up and imp
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="248" height="140" fill="#07277E" />
-      <path
-        d="M74 46V36.5C74 34.567 75.567 33 77.5 33H169.5C171.433 33 173 34.567 173 36.5V46"
+      <rect
+        x="78.6472"
+        y="33.4324"
+        width="91.6588"
+        height="61.3941"
+        rx="1.72941"
         stroke="white"
+        stroke-width="0.864706"
+      />
+      <path d="M104.156 55.05H121.882" stroke="white" stroke-width="0.864706" />
+      <path
+        d="M104.156 74.9382H121.882"
+        stroke="white"
+        stroke-width="0.864706"
       />
       <path
-        d="M173 73L173 94.5C173 96.433 171.433 98 169.5 98L77.5 98C75.567 98 74 96.433 74 94.5L74 73"
+        d="M129.232 73.5546L134.853 78.397L143.932 68.0205"
         stroke="white"
+        stroke-width="0.864706"
       />
-      <rect x="110" y="98" width="28" height="10" fill="white" />
-      <path d="M85.5 50L74 60.5L85.5 72" stroke="white" />
-      <path d="M162 72L173.5 61.5L162 50" stroke="white" />
+      <path
+        d="M129.232 53.6664L134.853 58.5088L143.932 48.1323"
+        stroke="white"
+        stroke-width="0.864706"
+      />
+      <path
+        d="M176.063 98.7178H73.0284C71.6898 98.7178 70.8587 100.173 71.539 101.326L74.09 105.65C74.401 106.177 74.9675 106.5 75.5795 106.5H173.744C174.381 106.5 174.966 106.15 175.268 105.588L177.587 101.265C178.205 100.113 177.37 98.7178 176.063 98.7178Z"
+        stroke="white"
+        stroke-width="0.864706"
+      />
     </svg>
   </IcCardVertical>
 </div>
@@ -154,7 +165,7 @@ Explore the design system to discover our components, guidelines and more.
   </GetStartedHorizontalCard>
   <GetStartedHorizontalCard
     heading="Accessibility"
-    message="Design, build, and test apps and services that work for everyone."
+    message="Design, build, and test apps and services that work for everyone. "
     href="/accessibility"
   >
     <svg
@@ -188,37 +199,9 @@ Explore the design system to discover our components, guidelines and more.
     </svg>
   </GetStartedHorizontalCard>
   <GetStartedHorizontalCard
-    heading="Figma UI kit"
-    message="Reusable and flexible components used to design and prototype."
-    href="/get-started/design/figma"
-  >
-    <svg
-      slot="image"
-      viewBox="0 0 1600 1600"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="1600" height="1600" fill="#07277E" />
-      <path
-        d="M940.833 940.834C1018.61 940.834 1081.67 877.78 1081.67 800C1081.67 722.22 1018.61 659.167 940.833 659.167C863.053 659.167 800 722.22 800 800C800 877.78 863.053 940.834 940.833 940.834Z"
-        stroke="white"
-        stroke-width="16"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M659.167 940.833C631.313 940.833 604.084 949.093 580.924 964.568C557.764 980.043 539.713 1002.04 529.054 1027.77C518.395 1053.51 515.606 1081.82 521.04 1109.14C526.474 1136.46 539.887 1161.55 559.583 1181.25C579.279 1200.95 604.373 1214.36 631.692 1219.79C659.011 1225.23 687.328 1222.44 713.061 1211.78C738.795 1201.12 760.791 1183.07 776.266 1159.91C791.74 1136.75 800 1109.52 800 1081.67V940.833M659.167 940.833H800M659.167 940.833C621.816 940.833 585.994 925.996 559.583 899.584C533.171 873.173 518.334 837.351 518.334 800C518.334 762.649 533.171 726.827 559.583 700.416C585.994 674.004 621.816 659.167 659.167 659.167M800 940.833V659.167M800 377.5H940.834C978.185 377.5 1014.01 392.338 1040.42 418.749C1066.83 445.16 1081.67 480.982 1081.67 518.333C1081.67 555.685 1066.83 591.506 1040.42 617.918C1014.01 644.329 978.185 659.167 940.834 659.167H800M800 377.5V659.167M800 377.5H659.167C621.816 377.5 585.994 392.338 559.583 418.749C533.171 445.16 518.334 480.982 518.334 518.333C518.334 555.685 533.171 591.506 559.583 617.918C585.994 644.329 621.816 659.167 659.167 659.167M800 659.167H659.167"
-        stroke="white"
-        stroke-width="16"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  </GetStartedHorizontalCard>
-  <GetStartedHorizontalCard
-    heading="Patterns"
-    message="Lower learning curves by using intuitive, expandable patterns."
-    href="/patterns"
+    heading="Custom themes"
+    message="How to change the appearance of some components."
+    href="/get-started/development/custom-theme"
   >
     <svg
       slot="image"
@@ -228,75 +211,59 @@ Explore the design system to discover our components, guidelines and more.
     >
       <rect width="1600" height="1600" fill="#07277E" />
       <rect x="1104" y="192" width="272" height="272" fill="#07277E" />
+      <circle cx="1040" cy="1032" r="199.5" fill="white" stroke="white" />
       <rect
-        x="344.447"
-        y="376.447"
-        width="591.105"
-        height="223.105"
-        fill="white"
-        stroke="white"
-        stroke-width="0.894737"
-      />
-      <rect
-        x="655.12"
-        y="671.12"
-        width="561.76"
-        height="593.76"
+        x="367.12"
+        y="855.12"
+        width="353.76"
+        height="353.76"
         stroke="white"
         stroke-width="14.24"
       />
-      <circle
-        cx="456"
-        cy="1160"
-        r="104"
-        fill="white"
-        stroke="white"
-        stroke-width="16"
-      />
-      <circle cx="936" cy="912" r="56" stroke="white" stroke-width="16" />
       <path
-        d="M848 1064C848 1040.66 857.271 1018.28 873.775 1001.77C890.278 985.271 912.661 976 936 976C959.339 976 981.722 985.271 998.225 1001.77C1014.73 1018.28 1024 1040.66 1024 1064"
+        d="M599.082 728L800 380L1000.92 728H599.082Z"
         stroke="white"
         stroke-width="16"
       />
-      <line
-        x1="344"
-        y1="672"
-        x2="568"
-        y2="672"
-        stroke="white"
-        stroke-width="16"
-      />
-      <line
-        x1="344"
-        y1="776"
-        x2="568"
-        y2="776"
-        stroke="white"
-        stroke-width="16"
-      />
-      <line
-        x1="344"
-        y1="872"
-        x2="568"
-        y2="872"
-        stroke="white"
-        stroke-width="16"
-      />
-      <line
-        x1="344"
-        y1="968"
-        x2="568"
-        y2="968"
-        stroke="white"
-        stroke-width="16"
-      />
-      <path
-        d="M1206.91 586.712L1207.48 586.146L1206.91 585.581L1135.87 514.539C1148.12 500.157 1155.47 481.448 1155.47 461C1155.47 438.952 1146.71 417.806 1131.12 402.216C1115.53 386.625 1094.38 377.867 1072.33 377.867C1050.29 377.867 1029.14 386.625 1013.55 402.216C997.959 417.806 989.2 438.952 989.2 461C989.2 483.048 997.959 504.193 1013.55 519.784C1029.14 535.374 1050.28 544.133 1072.33 544.133C1091.88 544.153 1110.8 537.25 1125.74 524.661L1196.79 595.706L1197.35 596.271L1197.92 595.706L1206.91 586.712ZM1023.64 412.304C1036.55 399.389 1054.07 392.133 1072.33 392.133C1081.38 392.133 1090.33 393.914 1098.69 397.375C1107.04 400.836 1114.63 405.909 1121.03 412.304C1127.42 418.699 1132.5 426.29 1135.96 434.646C1139.42 443.001 1141.2 451.956 1141.2 461C1141.2 470.044 1139.42 478.999 1135.96 487.354C1132.5 495.709 1127.42 503.301 1121.03 509.696C1114.63 516.091 1107.04 521.163 1098.69 524.624C1090.33 528.085 1081.38 529.867 1072.33 529.867C1054.07 529.867 1036.55 522.611 1023.64 509.696C1010.72 496.781 1003.47 479.264 1003.47 461C1003.47 442.735 1010.72 425.219 1023.64 412.304Z"
-        fill="white"
-        stroke="white"
-        stroke-width="1.6"
-      />
+    </svg>
+  </GetStartedHorizontalCard>
+  <GetStartedHorizontalCard
+    heading="Releases"
+    message="Our approach to releases and versioning."
+    href="/get-started"
+  >
+    <svg
+      slot="image"
+      viewBox="0 0 1600 1600"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="1600" height="1600" fill="#07277E" />
+      <rect x="1040" y="192" width="336" height="336" fill="#07277E" />
+      <g clip-path="url(#clip0_743_11336)">
+        <path
+          d="M893.822 983.521C947.251 1120.22 797.259 1269.27 691.827 1255.06C762.082 1201.99 812.906 1138.19 807.502 1039.98C768.027 1074.49 732.801 1061.07 698.901 1032.01C658.664 1089.3 624.004 1149.56 575.046 1198.15C573.548 1197.46 572.049 1196.78 570.551 1196.07C572.049 1189.64 572.491 1182.68 575.218 1176.85C592.07 1140.83 608.97 1104.85 626.755 1069.3C637.195 1048.44 649.256 1028.44 661.588 1006.31C619.754 987.673 598.407 957.899 615.774 906.451C523.092 941.543 484.918 1014.16 466.2 1101.99C411.789 1012.81 483.199 809.304 630.12 805.81C635.279 783.985 640.192 761.882 645.719 739.931C685.956 580.525 785.197 471.757 924.872 399.776C966.239 378.458 1011.68 365.596 1054.82 347.746C1090.32 333.036 1144.14 363.267 1148.36 410.612C1157.97 518.444 1149.64 623.491 1110.63 725.044C1071.82 826.115 1005.84 903.894 919.689 964.76C910.944 970.938 902.371 977.318 893.822 983.521ZM874.932 978.71C892.643 965.722 910.625 952.632 928.508 939.416C1023.52 869.157 1086.02 775.656 1116.87 659.469C1118.59 652.962 1119.87 648.075 1113.28 643.088C1030.21 580.095 944.229 521.609 854.912 468.491C851.596 466.516 844.496 467.427 841.229 469.883C804.505 497.784 772.178 530.395 743.413 567.031C686.054 640.1 660.359 726.462 643.361 816.545C642.869 819.128 645.35 823.736 647.733 825.229C677.972 844.395 708.457 863.157 739.31 882.297C741.325 879.563 743.216 876.854 745.23 874.271C766.528 847.054 787.654 819.71 809.344 792.822C813.447 787.733 819.833 784.568 825.164 780.517C826.564 781.555 827.94 782.593 829.34 783.656C820.349 828.521 794.139 865.942 775.126 906.451C808.534 930.63 841.303 954.329 874.957 978.66L874.932 978.71ZM1125.66 618.604C1130.11 611.009 1126.65 606.021 1119.38 601.084C1043.13 549.586 967.001 497.936 891.022 446.033C883.333 440.767 877.61 441.501 872.918 447.223C956.954 504.19 1041.16 561.283 1125.66 618.579V618.604ZM1121.32 639.67C1125.61 633.998 1121.83 630.099 1116.21 625.871C1036.72 565.79 954.448 510.064 869.503 458.515C863.141 454.667 858.4 454.11 855.354 459.376C943.861 519.381 1032.22 579.285 1121.29 639.67H1121.32Z"
+          fill="white"
+        />
+        <path
+          d="M908.02 570.5C961.326 570.5 1003.63 614.377 1003.55 669.597C1003.48 723.601 960.957 767.58 908.315 768.111C854.838 768.643 811.628 724.158 811.727 668.635C811.825 613.592 854.101 570.5 908.045 570.5H908.02ZM906.817 748.945C950.026 749.173 985.719 712.968 985.424 669.192C985.129 625.467 950.272 589.312 908.192 589.109C865.155 588.907 829.659 625.061 829.684 669.015C829.684 712.714 864.443 748.717 906.817 748.945Z"
+          fill="white"
+        />
+        <path
+          d="M912 423.999L848 455.999L856 463.999L1128 647.999L1136 615.999L1128 591.999L912 423.999Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_743_11336">
+          <rect
+            width="704"
+            height="912"
+            fill="white"
+            transform="translate(448 344)"
+          />
+        </clipPath>
+      </defs>
     </svg>
   </GetStartedHorizontalCard>
 </div>
