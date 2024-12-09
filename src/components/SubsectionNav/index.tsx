@@ -128,17 +128,6 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       tooltip?.setExternalPopperProps({
         strategy: "fixed",
       });
-      const pageHeader = document.querySelector("ic-page-header");
-      if (pageHeader && pageHeader.getAttribute("sticky-desktop-only")) {
-        pageHeader.classList.add("temp-remove-sticky");
-      }
-    };
-
-    const handleMouseOut = () => {
-      const pageHeader = document.querySelector("ic-page-header");
-      if (pageHeader && pageHeader.getAttribute("sticky-desktop-only")) {
-        pageHeader.classList.remove("temp-remove-sticky");
-      }
     };
 
     // eslint-disable-next-line no-undef
@@ -169,7 +158,6 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
         selected={!hasChildren && isCurrentPage(item.data.fields.slug, false)}
         expanded={hasChildren && isChildSelected(item)}
         onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
         onIcTreeItemSelected={() =>
           sessionStorage.setItem("navlinkclick", "true")
         }
