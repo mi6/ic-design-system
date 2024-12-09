@@ -123,9 +123,13 @@ module.exports = {
         "With a focus on accessibility and ease of use, these components equip developers to create responsive and inclusive experiences.",
       ],
       button: [
-        { href: "", text: "Explore development", variant: "primary" },
         {
-          href: "",
+          href: "/get-started/development",
+          text: "Explore development",
+          variant: "primary",
+        },
+        {
+          href: "/get-started/development/test-components",
           text: "Learn how we test components",
           variant: "secondary",
         },
