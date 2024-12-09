@@ -12,6 +12,8 @@ subTitle: "Install and use the UI Kit component library. Use React or web compon
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/install-components.mdx"
 ---
 
+import { IcAlert } from "@ukic/react";
+
 ## Installing the components
 
 <p>
@@ -35,6 +37,21 @@ npm install @ukic/react @ukic/fonts
 ```
 
 ## Using the components
+
+<IcAlert
+  heading="Components automatically switch colours based on the user's system settings"
+  variant="warning"
+>
+  <span slot="message">
+    When the ic-theme component is not implemented, components will default to
+    the user's system colour scheme. Please keep this in mind when styling your
+    application. See the{" "}
+    <ic-link href="/get-started/install-components/custom-theme/#dark-mode-as-a-theme">
+      theming guidance
+    </ic-link>{" "}
+    for more information.
+  </span>
+</IcAlert>
 
 To use the components in a particular framework, follow the framework instructions.
 

@@ -4649,9 +4649,9 @@
       "contents": "\n## Customising component colours\n\nSome components can have their theme colour changed by using either of the methods below. When the theme colour is changed, components will automatically update.\n\nOther styles on affected components will also adapt accordingly, such as the colour of text or icons.\n\n## CSS variables\n\nYou can set the theme colour by using the three CSS variables (one for each of the RGB values for the colour) shown below:\n\n```css\n:root {\n  --ic-theme-primary-r: 92;\n  --ic-theme-primary-g: 9;\n  --ic-theme-primary-b: 72;\n}\n```\n\n## Theme component\n\nAlternatively, you can include the `ic-theme` component and set the `color` property:\n\n```jsx\n<ic-theme color=\"rgb(92, 9, 72)\"></ic-theme>\n<ic-theme color=\"#5c0949\"></ic-theme>\n```\n\n### Components that use the theme colour\n\n- [Footer](/components/footer)\n- [Hero](/components/hero)\n- [Side navigation](/components/side-navigation)\n- [Top navigation](/components/top-navigation)\n",
       "path": "/get-started/install-components/custom-theme",
       "navPriority": 9,
-      "date": "2024-02-05",
+      "date": "2024-12-02",
       "title": "Custom theme",
-      "subTitle": "How to change the theme colour of some components.",
+      "subTitle": "How to change the colours of some components.",
       "contribute": "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/custom-theme.mdx",
       "meta": {
         "relativePath": "get-started\\custom-theme.mdx",
