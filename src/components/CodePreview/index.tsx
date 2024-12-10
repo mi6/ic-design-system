@@ -62,7 +62,7 @@ const ActionButtons: React.FC<CodeSnippetProps> = ({
   selectedLanguage,
   isLargeViewport,
 }) => {
-  const { oppositeTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className="button-container">
       {showStackblitzBtn && projectTitle !== undefined && (
@@ -78,7 +78,7 @@ const ActionButtons: React.FC<CodeSnippetProps> = ({
         aria-label={isLargeViewport ? "" : "Copy code"}
         variant={isLargeViewport ? "tertiary" : "icon"}
         size={isLargeViewport ? "small" : "medium"}
-        theme={oppositeTheme}
+        theme={theme}
         monochrome
         onClick={() => {
           navigator.clipboard.writeText(code);
@@ -107,7 +107,7 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
   showMore,
   setShowMore,
 }) => {
-  const { oppositeTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className="button-container">
       {type === "pattern" && (
@@ -115,7 +115,7 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
           variant="tertiary"
           size="small"
           onClick={() => setShow(!show)}
-          theme={oppositeTheme}
+          theme={theme}
           monochrome
         >
           {!show ? "Show" : "Hide"} code
@@ -133,8 +133,8 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
           variant="tertiary"
           size="small"
           onClick={() => setShowMore(!showMore)}
-          theme={oppositeTheme}
           monochrome
+          theme={theme}
         >
           Show {showMore ? "less" : "full "} code
           <SlottedSVG

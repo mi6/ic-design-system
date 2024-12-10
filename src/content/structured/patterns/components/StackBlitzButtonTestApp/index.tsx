@@ -23,7 +23,7 @@ const StackblitzButtonTestApp: FC<StackblitzButtonTestAppProps> = ({
   title,
   branch,
 }) => {
-  const { oppositeTheme } = useTheme();
+  const { theme } = useTheme();
   const viewportWidth = useViewportWidth();
   const isLargeViewport: boolean = viewportWidth > 992;
 
@@ -40,7 +40,7 @@ const StackblitzButtonTestApp: FC<StackblitzButtonTestAppProps> = ({
       aria-label="Open code example in StackBlitz"
       size={isLargeViewport ? "small" : "medium"}
       variant={isLargeViewport ? "tertiary" : "icon"}
-      theme={oppositeTheme}
+      theme={theme}
       monochrome
       onClick={() => createStackblitzProject()}
     >
