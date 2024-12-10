@@ -1,7 +1,7 @@
 ---
-path: "/get-started/install-components/web-components"
+path: "/get-started/development/install-components/web-components"
 
-navPriority: 5
+navPriority: 8
 
 date: "2024-04-22"
 
@@ -58,8 +58,7 @@ Add the following into the top level CSS file for your project.
 
 <p>
   In order to be rendered consistently across browsers and in line with modern
-  standards, each of the ICDS components uses styles from a global CSS file
-  based on{" "}
+  standards, each of the components uses styles from a global CSS file based on{" "}
   <ic-link
     target="_blank"
     href="https://necolas.github.io/normalize.css/"
@@ -70,7 +69,7 @@ Add the following into the top level CSS file for your project.
   .
 </p>
 
-If you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the ICDS components, add the following into the top level CSS file as well.
+If you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the components, add the following into the top level CSS file as well.
 
 ```css
 @import "@ukic/web-components/dist/core/normalize.css";
@@ -139,14 +138,14 @@ defineCustomElements();
 
 ### Step three
 
-You can now use any of the ICDS components so long as your HTML page includes the output file defined in your `webpack.config.js`. For example, including an [ic-status-tag](/components/status-tag) below:
+You can now use any of the components so long as your HTML page includes the output file defined in your `webpack.config.js`. For example, including an [ic-status-tag](/components/status-tag) below:
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Getting Started with ICDS</title>
+    <title>Getting started</title>
   </head>
   <body>
     <script src="dist/main.js"></script>

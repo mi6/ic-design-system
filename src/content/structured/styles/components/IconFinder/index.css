@@ -10,18 +10,17 @@
 
 .icon-group-links {
   min-width: 12.5rem;
-  background: var(--ic-architectural-20);
+  background: var(--ic-color-background-secondary);
   border-right: 1px solid var(--ic-architectural-200);
   padding: calc(var(--ic-space-md) + var(--ic-space-sm)) var(--ic-space-sm)
     var(--ic-space-md) var(--ic-space-lg);
   display: flex;
   flex-direction: column;
   gap: var(--ic-space-md);
-  /* padding-top: calc(var(--ic-space-md) + var(--ic-space-sm)); */
 }
 
 .icon-group-links:first-child {
-  color: var(--ic-color-secondary-text);
+  --ic-typography-color: var(--ic-color-text-secondary);
 }
 
 .icon-group-links ic-link {
@@ -51,7 +50,7 @@ span.icon {
   justify-content: center;
   align-items: center;
   border: 1px solid var(--ic-architectural-300);
-  color: inherit;
+  color: var(--ic-color-text-primary);
   transition: var(--ic-easing-transition-fast);
 }
 

@@ -563,7 +563,7 @@ export const maxLinesSnippets = [
     technology: "Web component",
     snippets: {
       short: `<ic-empty-state 
-  body-max-lines="1" 
+  max-lines="1" 
   heading="Hmm...there's nothing here"
   subheading="We don't currently have any favourite teas, probably because coffee is much better."
   body="Take a look at our favourite coffees instead, there's much more of those. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you."
@@ -575,7 +575,7 @@ export const maxLinesSnippets = [
     technology: "React",
     snippets: {
       short: `<IcEmptyState 
-  bodyMaxLines="1" 
+  maxLines="1" 
   heading="Hmm...there's nothing here"
   subheading="We don't currently have any favourite teas, probably because coffee is much better."
   body="Take a look at our favourite coffees instead, there's much more of those. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you."
@@ -596,9 +596,156 @@ export const maxLinesSnippets = [
 
 <ComponentPreview snippets={maxLinesSnippets}>
   <IcEmptyState
-    bodyMaxLines="1"
+    maxLines="1"
     heading="Hmm...there's nothing here"
     subheading="We don't currently have any favourite teas, probably because coffee is much better."
     body="Take a look at our favourite coffees instead, there's much more of those. Please try looking again or come back later. We're very sorry for any inconvenience this may cause you."
   />
+</ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those."
+  theme="dark"
+>
+  <svg slot="image" viewBox="0 0 1600 1600">
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </svg>
+  <ic-button slot="actions" appearance="light">Go to favourite coffees</ic-button>
+  <ic-link slot="actions" href="/" theme="dark">
+    Customer support
+  </ic-link>
+</ic-empty-state>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+    background: #17191c;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those." 
+  theme="dark"
+>
+  <SlottedSVG slot="image" viewBox="0 0 1600 1600">
+    <rect fill="#ff7700" width="1600" height="1600" />
+    <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+    <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+    <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+    <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+    <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+    <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+    <polygon fill="#b80066" points="641 695 886 900 367 900" />
+    <polygon fill="#960052" points="587 900 641 695 886 900" />
+    <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+    <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+    <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+    <polygon fill="#880088" points="943 900 1210 900 971 687" />
+  </SlottedSVG>
+  <IcButton slot="actions" appearance="light">Go to favourite coffees</IcButton>
+  <IcLink slot="actions" href="/" theme="dark">
+    Customer support
+  </IcLink>
+</IcEmptyState>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#17191c",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#17191c",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ background: "#17191c" }}
+>
+  <IcEmptyState
+    heading="Hmm...there's nothing here"
+    subheading="We don't currently have any favourite teas, probably because coffee is much better."
+    body="Take a look at our favourite coffees instead, there's much more of those."
+    theme="dark"
+  >
+    <svg slot="image" viewBox="0 0 1600 1600">
+      <rect fill="#ff7700" width="1600" height="1600" />
+      <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+      <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+      <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+      <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+      <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+      <polygon fill="#b80066" points="641 695 886 900 367 900" />
+      <polygon fill="#960052" points="587 900 641 695 886 900" />
+      <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+      <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+      <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+      <polygon fill="#880088" points="943 900 1210 900 971 687" />
+    </svg>
+    <IcButton slot="actions" appearance="light">
+      Go to favourite coffees
+    </IcButton>
+    <IcLink
+      slot="actions"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+      theme="dark"
+    >
+      Customer support
+    </IcLink>
+  </IcEmptyState>
 </ComponentPreview>

@@ -1,33 +1,14 @@
 import React, { FocusEvent, useState, useEffect } from "react";
 import clsx from "clsx";
-import { Link as GatsbyLink } from "gatsby";
 import { arrayToTree, TreeItem } from "performant-array-to-tree";
+import { navigate } from "gatsby";
 
 import Icon from "@mdi/react";
 import { mdiChevronDown } from "@mdi/js";
+import { IcTreeItem, IcTreeView } from "@ukic/canary-react";
 
 import "./index.css";
 import { NavigationObject } from "../../sharedTypes";
-
-interface WrappedListItemProps {
-  text: string;
-  url?: string;
-  open?: boolean;
-  label?: string;
-  controls?: string;
-  onClick?: Function;
-  tabs?: boolean | undefined;
-}
-
-interface ListItemProps {
-  item: TreeItem;
-  onClick: Function;
-  open: boolean | undefined;
-}
-
-interface ListChildenProps {
-  item: TreeItem | undefined;
-}
 
 interface SubsectionNavProps {
   allStructuredNav: NavigationObject[];
@@ -77,150 +58,6 @@ const getNavTree = (
   return tree.find((el) => el.data.fields.navSection === section);
 };
 
-const WrappedListItem: React.FC<WrappedListItemProps> = ({
-  text,
-  url = "",
-  onClick,
-  open = false,
-  label = "",
-  controls,
-  tabs = false,
-}) => {
-  if (onClick) {
-    return (
-      <a
-        href=".#"
-        role="button"
-        className="list-title"
-        aria-controls={controls}
-        aria-expanded={open ? "true" : "false"}
-        aria-label={label}
-        onClick={(e) => {
-          e.preventDefault();
-          onClick();
-        }}
-      >
-        <ic-typography data-class="list-typography" variant="body">
-          {text}
-        </ic-typography>
-        <Icon
-          path={mdiChevronDown}
-          size={1.25}
-          className={clsx("chevron", open && "chevron-flip")}
-        />
-      </a>
-    );
-  }
-  return (
-    <GatsbyLink
-      activeClassName="active"
-      to={url}
-      title={label}
-      partiallyActive={tabs && true}
-      onClick={() => sessionStorage.setItem("navlinkclick", "true")}
-    >
-      <ic-typography data-class="list-typography" variant="body">
-        {text}
-      </ic-typography>
-    </GatsbyLink>
-  );
-};
-
-const ListItem: React.FC<ListItemProps> = ({ item, onClick, open }) => {
-  const { children, data } = item;
-  const addComponentA11yLabel =
-    data.fields.navSection === "components" &&
-    data.frontmatter.title !== "Components";
-  if (children.length > 0 && !data.frontmatter.tabs) {
-    return (
-      <WrappedListItem
-        key={data.id}
-        text={data.frontmatter.title}
-        onClick={onClick}
-        open={open}
-        controls={data.id}
-      />
-    );
-  }
-  return (
-    <WrappedListItem
-      key={data.id}
-      text={data.frontmatter.title}
-      url={data.fields.slug}
-      open={open}
-      tabs={data.frontmatter.tabs}
-      label={
-        addComponentA11yLabel
-          ? `${data.frontmatter.title} component`
-          : undefined
-      }
-    />
-  );
-};
-
-const ListChildren: React.FC<ListChildenProps> = ({ item }) => {
-  if (!item) {
-    return null;
-  }
-
-  const isRoot = item.data.fields.navParent === "NONE";
-  const [open, setOpen] = useState(item.selected);
-  const toggleOpen = () => setOpen(!open);
-
-  if (isRoot) {
-    return (
-      <>
-        <li key={item.data.id} className="list-item">
-          <WrappedListItem
-            key={item.data.id}
-            text={item.data.frontmatter.title}
-            url={item.data.fields.slug}
-            open={open}
-          />
-        </li>
-        {item.children.map((child: TreeItem, index: number) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <ListChildren item={child} key={index} />
-        ))}
-      </>
-    );
-  }
-  if (item.children?.length > 0 && !item.data.frontmatter.tabs) {
-    return (
-      <li key={item.data.id} className={clsx("list-item", "icds-gatsby-lp")}>
-        <ListItem
-          item={item}
-          onClick={toggleOpen}
-          open={isRoot ? true : open}
-        />
-        <ul
-          id={item.data.id}
-          className={clsx("list", !(isRoot || open) && "list-closed")}
-        >
-          <li className="list-item">
-            <WrappedListItem
-              key={item.data.id}
-              text="Overview"
-              label={`Overview of ${item.data.frontmatter.title}`}
-              url={item.data.fields.slug}
-              open={false}
-            />
-          </li>
-          {item.children.map((child: TreeItem, index: number) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <ListChildren item={child} key={index} />
-          ))}
-        </ul>
-      </li>
-    );
-  }
-  return (
-    <li key={item.data.id} className="list-item">
-      <ListItem item={item} onClick={toggleOpen} open={isRoot ? true : open} />
-    </li>
-  );
-};
-
 const SubsectionNav: React.FC<SubsectionNavProps> = ({
   allStructuredNav,
   section,
@@ -228,8 +65,9 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 }) => {
   const currentNavSection = getNavTree(allStructuredNav, section, currentPage);
 
+  const isRoot = currentNavSection?.data.fields.navParent === "NONE";
+
   const [responsiveNavOpen, setResponsiveNavOpen] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
   const [navHeight, setNavHeight] = useState(0);
 
   const toggleResponsiveNavOpen = () =>
@@ -254,59 +92,142 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
     }
   };
 
+  const handleNavigation = (url: string) => {
+    navigate(url);
+  };
+
+  const isBrowser = () => typeof window !== "undefined";
+
+  const isCurrentPage = (url: string, isParentPage: boolean) => {
+    if (!isBrowser()) return false;
+
+    const currentPath = window.location.pathname;
+
+    return (
+      currentPath === url ||
+      currentPath === `${url}/` ||
+      new RegExp(`${url}$`).test(currentPath) ||
+      (!isParentPage && currentPath.includes(url))
+    );
+  };
+
+  const renderTreeItems = (item: TreeItem) => {
+    let hasChildren = item.children && item.children.length > 0;
+
+    if (item.data.fields.navSection === "components" && hasChildren) {
+      hasChildren = false;
+    }
+
+    /* eslint-disable no-undef */
+    const handleMouseOver = (e: React.MouseEvent<HTMLIcTreeItemElement>) => {
+      const target = e.target as HTMLIcTreeItemElement;
+      const tooltip = target.shadowRoot?.querySelector(
+        "ic-tooltip"
+      ) as HTMLIcTooltipElement;
+      /* eslint-enable no-undef */
+      tooltip?.setExternalPopperProps({
+        strategy: "fixed",
+      });
+      const pageHeader = document.querySelector("ic-page-header");
+      if (pageHeader && pageHeader.getAttribute("sticky-desktop-only")) {
+        pageHeader.classList.add("temp-remove-sticky");
+      }
+    };
+
+    const handleMouseOut = () => {
+      const pageHeader = document.querySelector("ic-page-header");
+      if (pageHeader && pageHeader.getAttribute("sticky-desktop-only")) {
+        pageHeader.classList.remove("temp-remove-sticky");
+      }
+    };
+
+    // eslint-disable-next-line no-undef
+    const handleKeyUp = (e: React.KeyboardEvent<HTMLIcTreeItemElement>) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        handleNavigation(item.data.fields.slug);
+      }
+    };
+
+    const isChildSelected = (treeItem: TreeItem) => {
+      const isOverviewSelected = isCurrentPage(
+        treeItem.data.fields.slug,
+        false
+      );
+
+      const isAnyChildSelected = treeItem.children.some((child: any) =>
+        isCurrentPage(child.data.fields.slug, false)
+      );
+
+      return isOverviewSelected || isAnyChildSelected;
+    };
+
+    return (
+      <IcTreeItem
+        key={item.data.id}
+        label={item.data.frontmatter.title}
+        selected={!hasChildren && isCurrentPage(item.data.fields.slug, false)}
+        expanded={hasChildren && isChildSelected(item)}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        onIcTreeItemSelected={() =>
+          sessionStorage.setItem("navlinkclick", "true")
+        }
+        {...(!hasChildren && {
+          onClick: (e) => {
+            e.preventDefault();
+            handleNavigation(item.data.fields.slug);
+          },
+          onKeyUp: handleKeyUp,
+        })}
+      >
+        {hasChildren && (
+          <IcTreeItem
+            key={item.data.id}
+            label="Overview"
+            aria-label={`Overview of ${item.data.frontmatter.title}`}
+            selected={isCurrentPage(item.data.fields.slug, true)}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation(item.data.fields.slug);
+            }}
+            onKeyUp={handleKeyUp}
+          />
+        )}
+        {hasChildren &&
+          item.children.map((child: TreeItem) => renderTreeItems(child))}
+      </IcTreeItem>
+    );
+  };
+
   useEffect(() => {
-    setHasMounted(true);
-    checkAllLoaded();
     const linkClick = sessionStorage.getItem("navlinkclick");
     sessionStorage.setItem("navlinkclick", "false");
     if (linkClick === "true") {
       setTimeout(() => {
+        /* eslint-disable no-undef */
         const currentEl = document.querySelector(
-          "li.list-item a.active"
-        ) as HTMLElement;
-        if (currentEl) currentEl.focus();
+          ".ic-tree-item-selected"
+        ) as HTMLIcTreeItemElement;
+        /* eslint-enable no-undef */
+        if (currentEl) currentEl.setFocus();
       }, 300);
     }
-
     window.addEventListener("scroll", updateNavigationHeight);
     window.addEventListener("resize", updateNavigationHeight);
+    updateNavigationHeight();
     return () => {
       window.removeEventListener("scroll", updateNavigationHeight);
       window.removeEventListener("resize", updateNavigationHeight);
     };
   }, []);
 
-  const checkAllLoaded = () => {
-    const cookieBanner = document.querySelector("#cookie-banner");
-    const topNav = document.querySelector("#site-top-nav");
-    const classificationBanner = document.querySelector("#site-banner");
-    const cookieBannerOK = !cookieBanner || cookieBanner.clientHeight;
-    const topNavOK = !topNav || topNav.clientHeight;
-    const classificationBannerOK =
-      !classificationBanner || classificationBanner.clientHeight;
-
-    if (cookieBannerOK && topNavOK && classificationBannerOK) {
-      setTimeout(updateNavigationHeight, 300);
-    } else {
-      setTimeout(checkAllLoaded, 300);
-    }
-  };
-
   const handleBlur = (e: FocusEvent<HTMLElement>) => {
-    // If not clicking on the elements of the Side Nav
-    if (
-      !(
-        e.relatedTarget?.hasAttribute("title") ||
-        e.relatedTarget?.className === "list-title" ||
-        e.relatedTarget?.matches("ic-button")
-      )
-    ) {
+    // If not clicking on the elements of the tree view
+    if (!(e.relatedTarget?.tagName === "IC-TREE-ITEM")) {
       setResponsiveNavOpen(false);
     }
   };
-
-  const accessibleLabel =
-    section.slice(-1).toLowerCase() === "s" ? section.slice(0, -1) : section;
 
   return (
     <>
@@ -334,27 +255,36 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
           />
         </div>
       </ic-button>
-      <nav
+      <IcTreeView
         id="icds-section-nav"
-        aria-label={`${accessibleLabel} pages`}
+        class={clsx(
+          "tree-view-container",
+          "large-only",
+          "scroll",
+          responsiveNavOpen && "small-only"
+        )}
         style={
           (!responsiveNavOpen &&
             navHeight > 0 && { height: `${navHeight}px` }) ||
           {}
         }
-        className={clsx(
-          "scroll",
-          "large-only",
-          responsiveNavOpen && "force-open",
-          !hasMounted && "not-mounted"
-        )}
-        onBlur={handleBlur}
-        tabIndex={-1}
+        focusInset
       >
-        <ul className={clsx("list-root", "list")}>
-          <ListChildren item={currentNavSection} />
-        </ul>
-      </nav>
+        {isRoot && (
+          <IcTreeItem
+            label={currentNavSection.data.frontmatter.title}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation(currentNavSection.data.fields.slug);
+            }}
+            selected={isCurrentPage(currentNavSection.data.fields.slug, true)}
+          />
+        )}
+        {currentNavSection &&
+          currentNavSection.children.map((child: TreeItem) =>
+            renderTreeItems(child)
+          )}
+      </IcTreeView>
     </>
   );
 };

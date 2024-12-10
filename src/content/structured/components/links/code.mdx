@@ -1,13 +1,13 @@
 ---
 path: "/components/link/code"
 
-date: "2024-05-31"
+date: "2024-09-03"
 
 title: "Link"
 
 status: "BETA"
 
-subTitle: "Links can be used either as standalone components or inline with text."
+subTitle: "Links can be used to navigate to different pages or sections of a page."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/link"
 
@@ -97,14 +97,14 @@ export const snippetsIcon = [
   </IcLink>
 </ComponentPreview>
 
-### Appearance
+### Theme
 
-export const snippetsLightDark = [
+export const snippetsTheme = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-link href="#" appearance="dark" target="_blank">About our coffees</ic-link>
-<ic-link href="#" appearance="light" target="_blank">About our coffees</ic-link>`,
+      short: `<ic-link href="#" theme="light" target="_blank">About our coffees</ic-link>
+<ic-link href="#" theme="dark" target="_blank">About our coffees</ic-link>`,
       long: `.parent-container {
     display: flex;
     flex-wrap: wrap;
@@ -113,19 +113,19 @@ export const snippetsLightDark = [
     padding: var(--ic-space-xs);
   }
   .dark-background {
-    background: #333333;
+    background: #17191c;
     padding: var(--ic-space-xs);
   }
 </style>
 <body>
   <div class="parent-container">
     <div class="light-background">
-      <ic-link href="#" appearance="dark" target="_blank">
+      <ic-link href="#" theme="light" target="_blank">
         About our coffees
       </ic-link>
     </div>
     <div class="dark-background">
-      <ic-link href="#" appearance="light" target="_blank">
+      <ic-link href="#" theme="dark" target="_blank">
         About our coffees
       </ic-link>
     </div>
@@ -135,8 +135,8 @@ export const snippetsLightDark = [
   {
     technology: "React",
     snippets: {
-      short: `<IcLink href="#" appearance="dark" target="_blank">About our coffees</IcLink>
-<IcLink href="#" appearance="light" target="_blank">About our coffees</IcLink>`,
+      short: `<IcLink href="#" theme="light" target="_blank">About our coffees</IcLink>
+<IcLink href="#" theme="dark" target="_blank">About our coffees</IcLink>`,
       long: [
         {
           language: "Typescript",
@@ -149,7 +149,7 @@ export const snippetsLightDark = [
     padding: 'var(--ic-space-xs)',
   },
   darkBackground: {
-    background: '#333333',
+    background: '#17191c',
     padding: 'var(--ic-space-xs)',
   },
 });
@@ -157,12 +157,12 @@ const classes = useStyles();
 return (
   <div className={classes.parentContainer}>
     <div className={classes.lightBackground}>
-      <IcLink href="/" appearance="dark" target="_blank">
+      <IcLink href="/" theme="light" target="_blank">
         About our coffees
       </IcLink>
     </div>
     <div className={classes.darkBackground}>
-      <IcLink href="#" appearance="light" target="_blank">
+      <IcLink href="#" theme="dark" target="_blank">
         About our coffees
       </IcLink>
     </div>
@@ -180,7 +180,7 @@ return (
     padding: 'var(--ic-space-xs)',
   },
   darkBackground: {
-    background: '#333333',
+    background: '#17191c',
     padding: 'var(--ic-space-xs)',
   },
 });
@@ -188,12 +188,142 @@ const classes = useStyles();
 return (
   <div className={classes.parentContainer}>
     <div className={classes.lightBackground}>
-      <IcLink href="/" appearance="dark" target="_blank">
+      <IcLink href="/" theme="light" target="_blank">
         About our coffees
       </IcLink>
     </div>
     <div className={classes.darkBackground}>
-      <IcLink href="#" appearance="light" target="_blank">
+      <IcLink href="#" theme="dark" target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTheme}>
+  <div
+    style={{
+      padding: "0.5rem",
+    }}
+  >
+    <IcLink href="/" theme="light" target="_blank">
+      About our coffees
+    </IcLink>
+  </div>
+  <div
+    style={{
+      background: "#17191c",
+      padding: "0.5rem",
+    }}
+  >
+    <IcLink href="/" theme="dark" target="_blank">
+      About our coffees
+    </IcLink>
+  </div>
+</ComponentPreview>
+
+### Monochrome
+
+export const snippetsLightDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-link href="#" theme="light" monochrome="true" target="_blank">About our coffees</ic-link>
+<ic-link href="#" theme="dark" monochrome="true" target="_blank">About our coffees</ic-link>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .light-background {
+    padding: var(--ic-space-xs);
+  }
+  .dark-background {
+    background: #17191c;
+    padding: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    <div class="light-background">
+      <ic-link href="#" theme="light" monochrome="true" target="_blank">
+        About our coffees
+      </ic-link>
+    </div>
+    <div class="dark-background">
+      <ic-link href="#" theme="dark" monochrome="true" target="_blank">
+        About our coffees
+      </ic-link>
+    </div>
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLink href="#" theme="light" monochrome target="_blank">About our coffees</IcLink>
+<IcLink href="#" theme="dark" monochrome target="_blank">About our coffees</IcLink>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  lightBackground: {
+    padding: 'var(--ic-space-xs)',
+  },
+  darkBackground: {
+    background: '#17191c',
+    padding: 'var(--ic-space-xs)',
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    <div className={classes.lightBackground}>
+      <IcLink href="/" theme="light" monochrome target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+    <div className={classes.darkBackground}>
+      <IcLink href="#" theme="dark" monochrome target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  lightBackground: {
+    padding: 'var(--ic-space-xs)',
+  },
+  darkBackground: {
+    background: '#17191c',
+    padding: 'var(--ic-space-xs)',
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    <div className={classes.lightBackground}>
+      <IcLink href="/" theme="light" monochrome target="_blank">
+        About our coffees
+      </IcLink>
+    </div>
+    <div className={classes.darkBackground}>
+      <IcLink href="#" theme="dark" monochrome target="_blank">
         About our coffees
       </IcLink>
     </div>
@@ -211,17 +341,17 @@ return (
       padding: "0.5rem",
     }}
   >
-    <IcLink href="/" appearance="dark" target="_blank">
+    <IcLink href="/" theme="light" monochrome target="_blank">
       About our coffees
     </IcLink>
   </div>
   <div
     style={{
-      background: "#333333",
+      background: "#17191c",
       padding: "0.5rem",
     }}
   >
-    <IcLink href="/" appearance="light" target="_blank">
+    <IcLink href="/" theme="dark" monochrome target="_blank">
       About our coffees
     </IcLink>
   </div>

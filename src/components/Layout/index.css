@@ -8,7 +8,7 @@
 }
 
 #skip-main-content-link:focus {
-  background: var(--ic-architectural-white);
+  background: var(--ic-color-background-primary);
   position: absolute;
   z-index: 100;
   top: var(--ic-space-sm);
@@ -35,13 +35,13 @@
   min-height: calc(100vh - var(--ic-space-lg));
 }
 
+.ic-theme-dark .main-page-container {
+  background-color: #17191c;
+}
+
 .main-page-container ic-top-navigation ic-section-container {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-}
-
-.footer {
-  justify-self: flex-end;
 }
 
 .footer svg * {

@@ -3,7 +3,7 @@ path: "/accessibility/needs/visual"
 
 navPriority: 5
 
-date: "2022-11-15"
+date: "2024-10-21"
 
 title: "Visual needs"
 
@@ -12,6 +12,9 @@ subTitle: "A visual impairment is a reduction in clarity or loss of vision that 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/visual.mdx"
 ---
 
+import visualAccessibilityFig12 from "./images/fig-12-messages-using-colour-and-text.png";
+import visualAccessibilityFig13 from "./images/fig-13-messages-using-colour-only.png";
+
 ## Introduction
 
 Visual impairments can affect people to different degrees, including:
@@ -19,13 +22,36 @@ Visual impairments can affect people to different degrees, including:
 - Blind people who are sightless with no light perception.
 - Those with only slight peripheral vision.
 - People with light perception but a colour deficiency ('colour blindness').
-- Temporary impairments such as distraction or glare.<sup id="ref-1"><a href="#fn-1">1</a></sup>
+- Temporary impairments such as distraction or glare.
 
 Some people will use a screen magnifier, screen reader and/or Braille display to use technology. Some people may also require travel, mobility and navigational assistance.
 
-Nearly 2 million people in the UK are blind or partially sighted<sup id="ref-2"><a href="#fn-2">2</a></sup>. Only one-third of people registered blind or partially sighted are in paid work.
+<p>
+  Nearly 2 million people in the UK are blind or partially sighted. Only
+  one-third of people registered blind or partially sighted are in paid work.{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.nhs.uk/conditions/vision-loss/"
+    rel="noreferer noopener nofollow"
+  >
+    Read more about vision loss on the NHS website
+  </ic-link>
+  .
+</p>
 
-Over one-third (44%) of blind or partially sighted people also have depression, making it the most common secondary condition for those with sight loss<sup id="ref-3"><a href="#fn-3">3</a></sup>.
+<p>
+  Over one-third (44%) of blind or partially sighted people also have
+  depression, making it the most common secondary condition for those with sight
+  loss.{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.rnib.org.uk/nb-online/rise-depression-rates-people-sight-loss"
+    rel="noreferer noopener nofollow"
+  >
+    Read more about vision depression rates rising among people with sight loss
+  </ic-link>
+  .
+</p>
 
 ## Examples of visual impairments
 
@@ -37,16 +63,16 @@ The following table lists examples of visual impairments in three columns (perma
 | Glaucoma (damaged optic nerve)                              | Refractive errors (long/short sight, double vision) | Distraction (visual complexity) |
 | Macular degeneration (effecting central part of the retina) |                                                     |                                 |
 
-## Making things accessible
+## How to design for visual needs
 
-In addressing some of the design issues below, we make it easier for everyone to use our apps.
+In addressing some of the design tips below, we make it easier for everyone to use our apps.
 
 ### Readability and contrast
 
 Use the [typographic scale](/styles/typography) with the font ‘Open Sans’ to create readable content.
 
 <p>
-  Use a colour contrast of at least 4:5:1. Use a{" "}
+  Use a colour contrast of at least 4.5:1. Use a{" "}
   <ic-link
     target="_blank"
     href="http://contrast-checker.glitch.me/"
@@ -68,45 +94,19 @@ A linear and logical layout can help users when navigating using a keyboard or w
 
 ### Help convey meanings
 
-Don’t rely on [colour](/styles/colour) only to convey a meaning. Use a combination of labels, icons and shapes to help people identify elements.
+Don’t rely on [colour](/styles/colour) only to convey a meaning. Use a combination of labels, icons and shapes to help people identify elements. Using colour alone can affect those with colour-blindness who will not understand the colours' meaning without any context.
 
-## References
-
-<p>
-  1.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment"
-    rel="noreferer noopener nofollow"
-    id="fn-1"
-  >
-    Blindness and vision impairment
-  </ic-link>{" "}
-  .<i> World Health Organization</i>. Accessed 5 November 2022.{" "}
-  <a href="#ref-1">Back to content</a>
-</p>
-<p>
-  2.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.nhs.uk/conditions/vision-loss/"
-    rel="noreferer noopener nofollow"
-    id="fn-2"
-  >
-    Blindness and vision loss
-  </ic-link>{" "}
-  .<i> NHS</i>. 8 June 2018. Accessed 5 November 2022.{" "}
-  <a href="#ref-2">Back to content </a>
-</p>
-<p>
-  3.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.rnib.org.uk/nb-online/rise-depression-rates-people-sight-loss"
-    rel="noreferer noopener nofollow"
-    id="fn-3"
-  >
-    Depression rates are rising among people with sight loss
-  </ic-link>{" "}
-  .<i> RNIB</i>. Accessed 5 November 2022. <a href="#ref-3">Back to content</a>
-</p>
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={visualAccessibilityFig12}
+    imageAlt=" A graphic of text field validation showing an error, a warning and a success using colour, text and icons to differentiate meaning."
+    state="good"
+    caption="Colour and text are used to convey meaning to people."
+  />
+  <DoDontCaution
+    imageSrc={visualAccessibilityFig13}
+    imageAlt="A graphic of a dialogue box to show default text font."
+    state="bad"
+    caption="Only colour is used to convey meaning. This will not benefit people who are colour blind or who do not understand what the colours mean."
+  />
+</DoubleDoDontCaution>

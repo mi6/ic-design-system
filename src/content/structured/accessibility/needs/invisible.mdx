@@ -3,7 +3,7 @@ path: "/accessibility/needs/invisible"
 
 navPriority: 2
 
-date: "2022-11-15"
+date: "2024-10-21"
 
 title: "Invisible illness"
 
@@ -12,13 +12,17 @@ subTitle: "Invisible illness is an umbrella term for medical conditions that are
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/invisible.mdx"
 ---
 
+import invisibleAccessibilityFig4 from "./images/fig-4-good-error-messages.png";
+import invisibleAccessibilityFig5 from "./images/fig-5-bad-error-messages.png";
+import toastAnimation from "./images/toast-example-ten-seconds.mp4";
+
 ## Introduction
 
 The examples below aren't exhaustive but show some common experiences that may affect how people use apps and services.
 
 ### Stress and anxiety
 
-Stress and anxiety disorders are a group of related conditions that can cause both psychological and physical symptoms. Symptoms can include feeling restless or worried<sup id="ref-1"><a href="#fn-1">1</a></sup>, irritability, fatigue, dizziness and difficulty breathing.
+Stress and anxiety disorders are a group of related conditions that can cause both psychological and physical symptoms. Symptoms can include feeling restless or worried, irritability, fatigue, dizziness and difficulty breathing.
 
 Behavioural effects include procrastination, avoidance and social withdrawal.
 
@@ -27,7 +31,6 @@ Behavioural effects include procrastination, avoidance and social withdrawal.
     target="_blank"
     href="https://www.nhs.uk/conditions/generalised-anxiety-disorder/"
     rel="noreferer noopener nofollow"
-    id="fn-1"
   >
     Read more about anxiety disorders on the NHS website
   </ic-link>{" "}
@@ -36,7 +39,7 @@ Behavioural effects include procrastination, avoidance and social withdrawal.
 
 ### Epilepsy
 
-Epilepsy is a condition that affects around one in every 100 people in the UK. When someone has epilepsy, it means they tend to have epileptic seizures<sup id="ref-2"><a href="#fn-2">2</a></sup>.
+Epilepsy is a condition that affects around one in every 100 people in the UK. When someone has epilepsy, it means they tend to have epileptic seizures.
 
 Triggers aren't the same for everyone, but common triggers include temperature, light, stress, tiredness, flicker and computer screens.
 
@@ -45,7 +48,6 @@ Triggers aren't the same for everyone, but common triggers include temperature, 
     target="_blank"
     href="https://www.epilepsysociety.org.uk/about-epilepsy/what-epilepsy"
     rel="noreferer noopener nofollow"
-    id="fn-1"
   >
     Read more about epilepsy at the Epilepsy Society
   </ic-link>{" "}
@@ -54,7 +56,7 @@ Triggers aren't the same for everyone, but common triggers include temperature, 
 
 ### Myalgic Encephalopathy/Chronic Fatigue Syndrome
 
-Myalgic Encephalopathy/Chronic Fatigue Syndrome (ME/CFS) causes persistent fatigue (extreme tiredness) that affects day to day living and isn’t relieved by sleep or rest<sup id="ref-3"><a href="#fn-3">3</a></sup>.
+Myalgic Encephalopathy/Chronic Fatigue Syndrome (ME/CFS) causes persistent fatigue (extreme tiredness) that affects day to day living and isn’t relieved by sleep or rest.
 
 The main symptoms of ME/CFS are persistent mental and physical fatigue, although there are other common symptoms including muscular and joint pain, severe headaches, poor short-term memory and concentration, difficulty organising thoughts and problems finding the right words.
 
@@ -74,7 +76,7 @@ The main symptoms of ME/CFS are persistent mental and physical fatigue, although
 
 Fibromyalgia, also called Fibromyalgia Syndrome (FMS), is a long-term condition that causes pain all over the body.
 
-As well as widespread pain, people with FMS can also experience increased sensitivity to pain, extreme tiredness, muscle stiffness, difficulty sleeping, problems with mental processes (known as "fibro-fog") such as memory and concentration, headaches and irritable bowel syndrome (IBS)<sup id="ref-4"><a href="#fn-4">4</a></sup>.
+As well as widespread pain, people with FMS can also experience increased sensitivity to pain, extreme tiredness, muscle stiffness, difficulty sleeping, problems with mental processes (known as "fibro-fog") such as memory and concentration, headaches and irritable bowel syndrome (IBS).
 
 <p>
   <ic-link
@@ -88,72 +90,52 @@ As well as widespread pain, people with FMS can also experience increased sensit
   .
 </p>
 
-## Making things accessible
+## How to design for invisible illnesses
 
-In addressing some of the design issues below, we make it easier for everyone to use our apps. Thinking about the [design considerations for neurodiversity](/accessibility/needs/neurodiversity) can help people who have invisible illnesses.
+In addressing some of the design tips below, we make it easier for everyone to use our apps.
 
-### Anxiety and stress-free design
+Thinking about the [design considerations for neurodiversity](/accessibility/needs/neurodiversity) can help people who have invisible illnesses.
 
 Some things we include in apps increase anxiety and, for some people, the impact can be significant.
 
-Consider:
+### Error messages
 
-- Error messages should explain how to fix the problem and not blame the user.
-- [Motion/animation](/styles/motion) or information should only appear when the user expects it.
-- Popups that disappear too quickly before they can be read, like [toasts](/components/toast).
-- Use simple [layouts](/styles/layout-spacing) as complicated, dense layouts can overload users with information.
+Any error messages on a page should explain how to fix the problem without blaming the user. Being blamed can increase anxiety and stress which may affect other invisible needs.
+Make sure any error messages explain what needs to be done to fix the error.
 
-## References
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={invisibleAccessibilityFig4}
+    imageAlt="A graphic of an error message and a submit button where the error asks the user to check data. The error states that the error is with the form, not with the user."
+    state="good"
+    caption="Error messages should advise people on how to fix the issue rather than blaming them."
+  />
+  <DoDontCaution
+    imageSrc={invisibleAccessibilityFig5}
+    imageAlt="A graphic of an error message and a submit button where the error blames the user for the submission failing."
+    state="bad"
+    caption="Error messages should not blame the person or fail to tell them how to fix the issue."
+  />
+</DoubleDoDontCaution>
 
-<p>
-  1.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.nhs.uk/conditions/generalised-anxiety-disorder"
-    rel="noreferer noopener nofollow"
-    id="fn-1"
-  >
-    Generalised anxiety disorder in adults
-  </ic-link>{" "}
-  .<i> NHS</i>. 19 December 2018. Accessed 5 November 2022{" "}
-  <a href="#ref-1">Back to content</a>
-</p>
-<p>
-  2.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.epilepsysociety.org.uk/about-epilepsy/epileptic-seizures"
-    rel="noreferer noopener nofollow"
-    id="fn-2"
-  >
-    Epileptic seizures
-  </ic-link>{" "}
-  .<i> Epilepsy Society</i>. Accessed 5 November 2022{" "}
-  <a href="#ref-2">Back to content</a>
-</p>
-<p>
-  3.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.meresearch.org.uk/what-is-me"
-    rel="noreferer noopener nofollow"
-    id="fn-3"
-  >
-    What is ME?
-  </ic-link>{" "}
-  .<i> ME Research UK</i>. Accessed 5 November 2022{" "}
-  <a href="#ref-3">Back to content</a>
-</p>
-<p>
-  4.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.nhs.uk/conditions/fibromyalgia/"
-    rel="noreferer noopener nofollow"
-    id="fn-4"
-  >
-    Fibromyalgia
-  </ic-link>{" "}
-  .<i> NHS</i>. 20 February 2019. Accessed 5 November 2022{" "}
-  <a href="#ref-4">Back to content</a>
-</p>
+### Motions/Animations/GIFs
+
+The use of animations or motion on a webpage when people aren’t expecting it can increase stress.
+If an animation is required, ensure to add an option to close it quickly as the motion could also affect those with Epilepsy.
+
+### Disappearing pop-ups/toasts
+
+Make sure pop-ups and toasts are visible for a good amount of time, and that they don't flash up too quickly on the screen.
+Components like toasts can be auto dismissed, meaning they can sometimes disappear too quickly and not allow enough time to be read.
+
+The toast component displayed in the video below dismisses after 10 seconds, which allows plenty of time for the toast to be read.
+
+<video
+  width="50%"
+  muted
+  controls
+  loop
+  title="A graphic of a toast showing a success message that will dismiss after 10 seconds."
+>
+  <source src={toastAnimation} type="video/mp4" />
+</video>

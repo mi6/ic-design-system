@@ -22,7 +22,7 @@ tabs:
 import {
   IcSkeleton,
   IcTypography,
-  IcCard,
+  IcCardVertical,
   IcButton,
   SlottedSVG,
 } from "@ukic/react";
@@ -287,17 +287,17 @@ export const snippetsSetWidthAndHeight = [
   </div>
 </ComponentPreview>
 
-### Light
+### Theme
 
-export const snippetsLight = [
+export const snippetsTheme = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-skeleton variant="circle" appearance="light"></ic-skeleton>
+      short: `<ic-skeleton variant="circle" theme="dark"></ic-skeleton>
 <ic-typography variant="caption">
-  <ic-skeleton variant="text" appearance="light"></ic-skeleton>
+  <ic-skeleton variant="text" theme="dark"></ic-skeleton>
 </ic-typography>
-<ic-skeleton appearance="light"></ic-skeleton>`,
+<ic-skeleton theme="dark"></ic-skeleton>`,
       long: `.parent-container {
     display: flex;
     flex-direction: column;
@@ -313,11 +313,11 @@ export const snippetsLight = [
   {
     technology: "React",
     snippets: {
-      short: `<IcSkeleton variant="circle" appearance="light" />
+      short: `<IcSkeleton variant="circle" theme="dark" />
 <IcTypography variant="caption">
-  <IcSkeleton variant="text" appearance="light" />
+  <IcSkeleton variant="text" theme="dark" />
 </IcTypography>
-<IcSkeleton appearance="light" />`,
+<IcSkeleton theme="dark" />`,
       long: [
         {
           language: "Typescript",
@@ -356,23 +356,23 @@ return (
   },
 ];
 
-<ComponentPreview snippets={snippetsLight}>
+<ComponentPreview snippets={snippetsTheme}>
   <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-    <IcSkeleton variant="circle" appearance="light" />
+    <IcSkeleton variant="circle" theme="dark" />
     <IcTypography variant="caption">
-      <IcSkeleton variant="text" appearance="light" />
+      <IcSkeleton variant="text" theme="dark" />
     </IcTypography>
-    <IcSkeleton appearance="light" />
+    <IcSkeleton theme="dark" />
   </div>
 </ComponentPreview>
 
-### Within IcCard component
+### Within IcCardVertical component
 
 export const snippetsInCard = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-card heading="Americano Order" subheading="Name: Michael">
+      short: `<ic-card-vertical heading="Americano Order" subheading="Name: Michael">
   <ic-skeleton
     slot="icon"
     variant="circle"
@@ -403,14 +403,14 @@ export const snippetsInCard = [
     variant="rectangle"
     style="height: 2.5rem; width: 6.25rem;"
   ></ic-skeleton>
-</ic-card>`,
+</ic-card-vertical>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcCard heading="Americano Order" subheading="Name: Michael">
+      short: `<IcCardVertical heading="Americano Order" subheading="Name: Michael">
   <IcSkeleton
     slot="icon"
     variant="circle"
@@ -459,7 +459,7 @@ export const snippetsInCard = [
       width: "6.25rem",
     }}
   />
-</IcCard>`,
+</IcCardVertical>`,
       long: [
         {
           language: "Typescript",
@@ -475,7 +475,7 @@ export const snippetsInCard = [
 ];
 
 export const loading = () => (
-  <IcCard heading="Americano Order" subheading="Name: Michael">
+  <IcCardVertical heading="Americano Order" subheading="Name: Michael">
     <IcSkeleton
       slot="icon"
       variant="circle"
@@ -524,11 +524,11 @@ export const loading = () => (
         width: "6.25rem",
       }}
     />
-  </IcCard>
+  </IcCardVertical>
 );
 
 export const loaded = () => (
-  <IcCard
+  <IcCardVertical
     heading="Americano Order"
     subheading="Name: Michael"
     message="Extras: double espresso shot & oat milk"
@@ -547,7 +547,7 @@ export const loaded = () => (
       <IcButton variant="primary">Accept</IcButton>
       <IcButton variant="secondary">Cancel</IcButton>
     </div>
-  </IcCard>
+  </IcCardVertical>
 );
 
 export const ContentFunction = () => {

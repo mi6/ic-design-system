@@ -1,7 +1,7 @@
 ---
 path: "/components/dialog"
 
-navPriority: 15
+navPriority: 16
 
 date: "2023-10-24"
 
@@ -19,6 +19,8 @@ tabs:
     { title: "Code", path: "/components/dialog/code" },
     { title: "Accessibility", path: "/components/dialog/accessibility" },
   ]
+
+tags: ["Popup", "Modal window"]
 ---
 
 import { IcDialog, IcButton, IcTypography } from "@ukic/react";
@@ -49,18 +51,7 @@ export const DialogExample = () => {
       <IcButton onclick={showDialog} aria-label="Launch dialog">
         Launch dialog
       </IcButton>
-      <IcDialog
-        heading="Are you sure?"
-        label="Coffee order"
-        ref={dialogEl}
-        buttonProps={[
-          { label: "Cancel", onclick: "this.cancelDialog()" },
-          {
-            label: "Confirm",
-            onclick: "alert('Confirmed!'); this.open = false;",
-          },
-        ]}
-      >
+      <IcDialog heading="Are you sure?" label="Coffee order" ref={dialogEl}>
         <IcTypography>
           You are about to add 'Americano' to your basket. Are you sure you want
           to continue?

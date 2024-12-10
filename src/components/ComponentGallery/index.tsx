@@ -13,7 +13,7 @@ import Checkbox from "./ComponentImages/checkbox-comp-gallery.png";
 import Chip from "./ComponentImages/chip-comp-gallery.png";
 import Classificationbanner from "./ComponentImages/classification-banner-comp-gallery.png";
 import Datatable from "./ComponentImages/data-table-comp-gallery.png";
-import Dataentity from "./ComponentImages/date-entity-comp-gallery.png";
+import Datalist from "./ComponentImages/data-list-comp-gallery.png";
 import Dateinput from "./ComponentImages/date-input-comp-gallery.png";
 import Datepicker from "./ComponentImages/date-picker-comp-gallery.png";
 import Dialog from "./ComponentImages/dialog-comp-gallery.png";
@@ -41,6 +41,7 @@ import Toast from "./ComponentImages/toast-comp-gallery.png";
 import Togglebutton from "./ComponentImages/toggle-button-comp-gallery.png";
 import Tooltip from "./ComponentImages/tooltip-comp-gallery.png";
 import Topnavigation from "./ComponentImages/top-navigation-comp-gallery.png";
+import Treeview from "./ComponentImages/tree-view-comp-gallery.png";
 import Typography from "./ComponentImages/typography-comp-gallery.png";
 import PlaceHolder from "./ComponentImages/placeholder-comp-gallery.png";
 
@@ -56,8 +57,8 @@ const ComponentImages: { [key: string]: any } = {
   Chip,
   Classificationbanner,
   Datatable,
-  Dataentity,
   Dateinput,
+  Datalist,
   Datepicker,
   Dialog,
   Emptystate,
@@ -84,6 +85,7 @@ const ComponentImages: { [key: string]: any } = {
   Togglebutton,
   Tooltip,
   Topnavigation,
+  Treeview,
   Typography,
 };
 
@@ -101,9 +103,9 @@ const ComponentGallery: React.FC = () => {
       {uniqueComponentDetails?.map(({ path, subTitle, title }) => (
         <li key={title}>
           <GatsbyLink to={path}>
-            <ic-card message={subTitle} full-width clickable>
+            <ic-card-vertical message={subTitle} full-width clickable>
               <img
-                src={ComponentImages[title.replace(/ /g, "")] || PlaceHolder}
+                src={ComponentImages[title.replace(/[- ]/g, "")] || PlaceHolder}
                 slot="image-top"
                 alt={title}
                 width="100%"
@@ -116,7 +118,7 @@ const ComponentGallery: React.FC = () => {
               >
                 <h4>{title}</h4>
               </ic-typography>
-            </ic-card>
+            </ic-card-vertical>
           </GatsbyLink>
         </li>
       ))}

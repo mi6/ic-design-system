@@ -1,28 +1,35 @@
 {
   "canaryReactComponentNames": [
+    "IcCardHorizontal",
     "IcDataTable",
     "IcDataTableTitleBar",
     "IcDateInput",
     "IcDatePicker",
-    "IcMenuWithMulti",
     "IcPaginationBar",
-    "IcSelectWithMulti"
+    "IcTreeItem",
+    "IcTreeView"
   ],
   "canaryWebComponentsNames": [
+    "ic-card-horizontal",
     "ic-data-table",
     "ic-data-table-title-bar",
     "ic-date-input",
     "ic-date-picker",
-    "ic-menu-with-multi",
     "ic-pagination-bar",
-    "ic-select-with-multi"
+    "ic-tree-item",
+    "ic-tree-view"
   ],
   "canaryTypes": [
+    "IcCardSizes",
     "IcDataTableSortOrderOptions",
     "IcDataTableDensityOptions",
     "IcDataTableColumnDataTypes",
+    "IcDataTableColumnWidthTypes",
     "IcDataTableColumnObject",
-    "IcDataTableRowHeights"
+    "IcDataTableRowHeights",
+    "IcDataTableTruncationTypes",
+    "truncWrapperDetailsTypes",
+    "IcDataTableDataType"
   ],
   "reactComponentNames": [
     "IcAccordion",
@@ -33,12 +40,12 @@
     "IcBreadcrumb",
     "IcBreadcrumbGroup",
     "IcButton",
-    "IcCard",
+    "IcCardVertical",
     "IcCheckbox",
     "IcCheckboxGroup",
     "IcChip",
     "IcClassificationBanner",
-    "IcDataEntity",
+    "IcDataList",
     "IcDataRow",
     "IcDialog",
     "IcDivider",

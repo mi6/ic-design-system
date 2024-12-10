@@ -1,7 +1,7 @@
 ---
 path: "/components/data-table/code"
 
-date: "2024-05-31"
+date: "2024-08-21"
 
 title: "Data table"
 
@@ -41,6 +41,8 @@ import {
   ICON_COLUMNS,
   ICON_DATA,
   LOADING_DATA,
+  TRUNCATION_COLUMNS,
+  TRUNCATION_DATA,
 } from "./story-data";
 
 ## Component demo
@@ -1259,6 +1261,9 @@ export const snippetsSortable = [
       long: `{shortCode}
 <script>
   const dataTable = document.querySelector("ic-data-table");
+  dataTable.addEventListener("icSortChange", (event: CustomEvent) => {
+    console.log("Sort changed", event.detail);
+  });
   const columns = [
     {
       key: "firstName",
@@ -1307,6 +1312,7 @@ export const snippetsSortable = [
   columns={columns}
   data={data}
   sortable
+  onIcSortChange={(e) => console.log("Sort changed", e.detail)}
 />`,
       long: [
         {
@@ -1397,7 +1403,13 @@ return (
 ];
 
 <ComponentPreview snippets={snippetsSortable}>
-  <IcDataTable caption="Sortable" columns={COLUMNS} data={DATA} sortable />
+  <IcDataTable
+    caption="Sortable"
+    columns={COLUMNS}
+    data={DATA}
+    sortable
+    onIcSortChange={(e) => console.log("Sort changed", e.detail)}
+  />
 </ComponentPreview>
 
 ### Sort options
@@ -2897,6 +2909,7 @@ return (
     columns={COLUMNS}
     data={LOADING_DATA}
     loading
+    style={{ height: "250px" }}
   />
 </ComponentPreview>
 
@@ -3865,4 +3878,457 @@ return (
       </IcTypography>
     </IcDataTableTitleBar>
   </IcDataTable>
+</ComponentPreview>
+
+### Truncation - tooltip
+
+export const snippetsTooltip = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Data table truncation - tooltip" truncation-pattern="tooltip"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "firstName",
+      title: "First name",
+      // dataType types: "string" | "number" | "address" | "element" | "date";
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+    },
+  ];
+  const data = [
+    {
+      firstName: "Joe",
+      lastName: "Bloggs",
+      jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    },
+    {
+      firstName: "Sarah",
+      lastName: "Smith",
+      jobTitle: "Junior developer",
+    },
+    {
+      firstName: "Mark",
+      lastName: "Owens",
+      jobTitle: "Team lead",
+    },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+  dataTable.globalRowHeight = 40;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Data table truncation - tooltip" columns={columns} data={data} truncationPattern="tooltip" globalRowHeight={40}/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+    },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    jobTitle: "Junior developer",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    jobTitle: "Team lead",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    jobTitle: "Junior developer",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    jobTitle: "Team lead",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTooltip}>
+  <IcDataTable
+    caption="Data table truncation - tooltip"
+    columns={TRUNCATION_COLUMNS}
+    data={TRUNCATION_DATA}
+    truncationPattern="tooltip"
+    globalRowHeight={40}
+  />
+</ComponentPreview>
+
+### Truncation - show/hide
+
+export const snippetsShowHide = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Data table truncation - show/hide" truncation-pattern="show-hide"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "firstName",
+      title: "First name",
+      // dataType types: "string" | "number" | "address" | "element" | "date";
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+    },
+  ];
+  const data = [
+    {
+      firstName: "Joe",
+      lastName: "Bloggs",
+      jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    },
+    {
+      firstName: "Sarah",
+      lastName: "Smith",
+      jobTitle: "Junior developer",
+    },
+    {
+      firstName: "Mark",
+      lastName: "Owens",
+      jobTitle: "Team lead",
+    },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+  dataTable.globalRowHeight = 40;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Data table truncation - show/hide" columns={columns} data={data} truncationPattern="show-hide" globalRowHeight={40}/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+    },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    jobTitle: "Junior developer",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    jobTitle: "Team lead",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    jobTitle: "Junior developer",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    jobTitle: "Team lead",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsShowHide}>
+  <IcDataTable
+    caption="Data table truncation - show/hide"
+    columns={TRUNCATION_COLUMNS}
+    data={TRUNCATION_DATA}
+    truncationPattern="show-hide"
+    globalRowHeight={40}
+  />
+</ComponentPreview>
+
+### Text wrap
+
+export const snippetsTextWrap = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Data table text wrap"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "firstName",
+      title: "First name",
+      // dataType types: "string" | "number" | "address" | "element" | "date";
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+      textWrap: true,
+    },
+  ];
+  const data = [
+    {
+      firstName: "Joe",
+      lastName: "Bloggs",
+      jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    },
+    {
+      firstName: "Sarah",
+      lastName: "Smith",
+      jobTitle: "Junior developer",
+    },
+    {
+      firstName: "Mark",
+      lastName: "Owens",
+      jobTitle: "Team lead",
+    },
+  ];
+  dataTable.globalRowHeight = 40;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Data table text wrap" columns={columns} data={data} globalRowHeight={40}/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+      textWrap: true,
+    },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    jobTitle: "Junior developer",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    jobTitle: "Team lead",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+    },
+    {
+      key: "jobTitle",
+      title: "Job title",
+      dataType: "string",
+      textWrap: true,
+    },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    jobTitle: "Junior developer",
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    jobTitle: "Team lead",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTextWrap}>
+  <IcDataTable
+    caption="Data table text wrap"
+    columns={TRUNCATION_COLUMNS}
+    data={TRUNCATION_DATA}
+    globalRowHeight={40}
+  />
 </ComponentPreview>

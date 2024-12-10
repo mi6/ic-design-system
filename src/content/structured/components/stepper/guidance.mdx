@@ -1,7 +1,7 @@
 ---
 path: "/components/stepper"
 
-navPriority: 32
+navPriority: 33
 
 date: "2023-02-03"
 
@@ -19,6 +19,8 @@ tabs:
     { title: "Code", path: "/components/stepper/code" },
     { title: "Accessibility", path: "/components/stepper/accessibility" },
   ]
+
+tags: ["Progress indicator", "Steps", "Progress tracker"]
 ---
 
 import { IcStepper, IcStep } from "@ukic/react";
@@ -37,9 +39,9 @@ An example of the stepper component.
 
 <ComponentPreview>
   <IcStepper>
-    <IcStep stepTitle="Order coffee" stepType="completed" />
-    <IcStep stepTitle="Pay for order" stepType="current" />
-    <IcStep stepTitle="Collect" stepType="disabled" />
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
   </IcStepper>
 </ComponentPreview>
 
@@ -86,10 +88,10 @@ Steps are single elements that together form the stepper. Steps have four differ
 
 <ComponentPreview>
   <IcStepper>
-    <IcStep stepTitle="Add details" stepType="completed" />
-    <IcStep stepTitle="Customer" stepType="current" />
-    <IcStep stepTitle="Upload" />
-    <IcStep stepTitle="Submit" stepType="disabled" />
+    <IcStep heading="Add details" type="completed" />
+    <IcStep heading="Customer" type="current" />
+    <IcStep heading="Upload" />
+    <IcStep heading="Submit" type="disabled" />
   </IcStepper>
 </ComponentPreview>
 
@@ -126,7 +128,7 @@ When a stepper is too large to fit comfortably within its container, it will swi
 
 ### Labels
 
-Use the step title to describe each step concisely in one or two words. Avoid using lengthy step titles.
+Use the heading to describe each step concisely in one or two words. Avoid using lengthy headings.
 
 <DoDontCaution
   imageSrc={stepperFig2}
@@ -160,7 +162,7 @@ Hide step information only if the step content is clearly labelled itself. Do no
   caption="Don’t use a stepper without step labels if the page content does not include the step name in a heading."
 />
 
-Set a step status to show whether the step is required or optional in the step's subtitle. Override the step subtitle text to provide a custom message.
+Set a status to show whether the step is required or optional in the subheading. Override the subheading text to provide a custom message.
 
 ### Validation
 

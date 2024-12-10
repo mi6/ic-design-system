@@ -10,6 +10,7 @@ export const ColoursText = [
         name: "Secondary text",
         token: "--ic-color-secondary-text",
         hex: "#41464D",
+        border: true,
       },
       {
         name: "Tertiary text",
@@ -76,11 +77,17 @@ export const ColoursAction = [
         hex: "#A7ACB3",
       },
       { name: "Action dark active", token: "--ic-action-dark", hex: "#0B0C0C" },
-      { name: "Action dark hover", token: "--ic-action-hover", hex: "#2C2F34" },
+      {
+        name: "Action dark hover",
+        token: "--ic-action-hover",
+        hex: "#2C2F34",
+        border: true,
+      },
       {
         name: "Action dark pressed",
         token: "--ic-action-active",
         hex: "#41464D",
+        border: true,
       },
     ],
   },
@@ -94,24 +101,28 @@ export const ColoursActionBackgrounds = [
         token: "--ic-action-default-bg-hover",
         hex: "#1759BC1A",
         hexDisplay: "#1759BC, 10%",
+        border: true,
       },
       {
         name: "Action background pressed",
         token: "--ic-action-default-bg-active",
         hex: "#1759BC33",
         hexDisplay: "#1759BC, 20%",
+        border: true,
       },
       {
         name: "Action dark background hover",
         token: "--ic-action-dark-bg-hover",
         hex: "#41464D1A",
         hexDisplay: "#41464D, 10%",
+        border: true,
       },
       {
         name: "Action dark background pressed",
         token: "--ic-action-dark-bg-active",
         hex: "#41464D33",
         hexDisplay: "#41464D, 20%",
+        border: true,
       },
       {
         name: "Action light background hover",
@@ -136,7 +147,6 @@ export const ColoursLinks = [
     colors: [
       { name: "Link", token: "--ic-hyperlink", hex: "#1759BC" },
       { name: "Link visited", token: "--ic-hyperlink-visited", hex: "#330072" },
-      { name: "Link hover", token: "--ic-hyperlink-hover", hex: "#7C2855" },
     ],
   },
 ];
@@ -159,6 +169,7 @@ export const ColoursStatus = [
         name: "Success dark",
         token: "--ic-status-success-dark",
         hex: "#0E3020",
+        border: true,
       },
       { name: "Warning", token: "--ic-status-warning", hex: "#D07932" },
       {
@@ -239,43 +250,7 @@ export const ColoursStatus = [
         name: "Unknown dark",
         token: "--ic-status-unknown-dark",
         hex: "#2C2F34",
-      },
-    ],
-  },
-];
-
-export const ColoursDeprecatedStatus = [
-  {
-    colors: [
-      {
-        name: "Success background",
-        token: "--ic-status-success-background",
-        hex: "#E8FEF3",
-        deprecated: true,
-      },
-      {
-        name: "Warning mid",
-        token: "--ic-status-warning-mid",
-        hex: "#D07932",
-        deprecated: true,
-      },
-      {
-        name: "Warning background",
-        token: "--ic-status-warning-background",
-        hex: "#FFFBD8",
-        deprecated: true,
-      },
-      {
-        name: "Error background",
-        token: "--ic-status-error-background",
-        hex: "#FFE4E3",
-        deprecated: true,
-      },
-      {
-        name: "Information background",
-        token: "--ic-status-info-background",
-        hex: "#E1F0FC",
-        deprecated: true,
+        border: true,
       },
     ],
   },
@@ -312,16 +287,19 @@ export const ColoursArchitecturalAll = [
         name: "Architectural 900",
         token: "--ic-architectural-900",
         hex: "#0B0C0C",
+        border: true,
       },
       {
         name: "Architectural 800",
         token: "--ic-architectural-800",
         hex: "#2C2F34",
+        border: true,
       },
       {
         name: "Architectural 700",
         token: "--ic-architectural-700",
         hex: "#41464D",
+        border: true,
       },
       {
         name: "Architectural 600",

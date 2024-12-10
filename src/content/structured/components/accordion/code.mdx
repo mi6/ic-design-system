@@ -264,10 +264,13 @@ return (
   </IcAccordion>
 </ComponentPreview>
 
-### With group title and see all / hide all button
+### With accordion group label and see all / hide all button
 
-<ComponentPreview snippets={groupTitle} style={{ flexDirection: "column" }}>
-  <IcAccordionGroup group-title="Coffee">
+<ComponentPreview
+  snippets={accordionGroupLabel}
+  style={{ flexDirection: "column" }}
+>
+  <IcAccordionGroup label="Coffee">
     <IcAccordion heading="Cappuccino">
       <IcTypography variant="body">
         An espresso-based drink that is traditionally prepared with steamed milk
@@ -282,11 +285,11 @@ return (
   </IcAccordionGroup>
 </ComponentPreview>
 
-export const groupTitle = [
+export const accordionGroupLabel = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-accordion-group group-title="Coffee">
+      short: `<ic-accordion-group label="Coffee">
   <ic-accordion heading="Cappuccino">
     <ic-typography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -311,7 +314,7 @@ export const groupTitle = [
   {
     technology: "React",
     snippets: {
-      short: `<IcAccordionGroup groupTitle="Coffee">
+      short: `<IcAccordionGroup label="Coffee">
   <IcAccordion heading="Cappucino">
     <IcTypography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -357,13 +360,168 @@ return (
   },
 ];
 
+### Theme
+
+export const themeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-accordion-group label="Coffee" theme="dark">
+  <ic-accordion heading="English Breakfast">
+    <svg
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </svg>
+    <ic-typography variant="body">
+      A blend of different black teas.
+    </ic-typography>
+    </ic-accordion>
+    <ic-accordion heading="Earl Grey">
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </svg>
+    <ic-typography variant="body">
+      A tea blend that has been flavoured with oil of bergamot.
+    </ic-typography>
+  </ic-accordion>
+</ic-accordion-group>`,
+      long: `.parent-container {
+    background: #17191c;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAccordionGroup label="Coffee" theme="dark">
+  <IcAccordion heading="English Breakfast">
+    <SlottedSVG
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </SlottedSVG>
+    <IcTypography variant="body">
+      A blend of different black teas.
+    </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Earl Grey">
+      <SlottedSVG
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+    <IcTypography variant="body">
+      A tea blend that has been flavoured with oil of bergamot.
+    </IcTypography>
+  </IcAccordion>
+</IcAccordionGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    background: "#17191c",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    background: "#17191c",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={themeDark}
+  style={{ flexDirection: "column", background: "#17191c" }}
+>
+  <IcAccordionGroup label="Coffee" theme="dark">
+    <IcAccordion heading="English Breakfast">
+      <SlottedSVG
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+      <IcTypography variant="body">
+        A blend of different black teas.
+      </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Earl Grey">
+      <SlottedSVG
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+      </SlottedSVG>
+      <IcTypography variant="body">
+        A tea blend that has been flavoured with oil of bergamot.
+      </IcTypography>
+    </IcAccordion>
+  </IcAccordionGroup>
+</ComponentPreview>
+
 ### With nested accordions
 
 export const snippetsNested = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-accordion-group group-title="Coffee">
+      short: `<ic-accordion-group label="Coffee">
   <ic-accordion heading="Cappuccino">
     <ic-typography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -395,7 +553,7 @@ export const snippetsNested = [
   {
     technology: "React",
     snippets: {
-      short: `<IcAccordionGroup groupTitle="Coffee">
+      short: `<IcAccordionGroup label="Coffee">
   <IcAccordion heading="Cappucino">
     <IcTypography variant="body">
       An espresso-based drink that is traditionally prepared with steamed milk foam.
@@ -449,7 +607,7 @@ return (
 ];
 
 <ComponentPreview snippets={snippetsNested} style={{ flexDirection: "column" }}>
-  <IcAccordionGroup group-title="Coffee">
+  <IcAccordionGroup label="Coffee">
     <IcAccordion heading="Cappuccino">
       <IcTypography variant="body">
         An espresso-based drink that is traditionally prepared with steamed milk

@@ -20,7 +20,7 @@ tabs:
 ---
 
 import { IcPopoverMenu, IcMenuItem, IcMenuGroup, IcButton } from "@ukic/react";
-import { useRef } from "react";
+import { useState } from "react";
 
 ## Component demo
 
@@ -33,9 +33,9 @@ export const snippets = [
   variant="icon"
   title="More information" 
   onclick="handleClick()"
+  aria-expanded="false"
 >
   <svg
-    slot="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
@@ -64,8 +64,14 @@ export const snippets = [
       long: `{shortCode}
 <script>
   var icPopover = document.querySelector("#popover-menu");
+  var anchorButton = document.querySelector("#button-1");
   function handleClick() {
     icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
   }
 </script>`,
     },
@@ -77,21 +83,21 @@ export const snippets = [
   variant="icon"
   title="More information"
   id="button-1"
-  onClick={handleClick}
+  onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
 >
   <SlottedSVG
-    slot="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
     fill="currentColor"
-    class="bi bi-three-dots-vertical"
+    className="bi bi-three-dots-vertical"
     viewBox="0 0 16 16"
   >
     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
   </SlottedSVG>
 </IcButton>
-<IcPopoverMenu anchor="button-1" aria-label="popover" ref={popoverEl}>
+<IcPopoverMenu anchor="button-1" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
   <IcMenuItem label="Copy code" />
   <IcMenuItem label="Paste code" />
   <IcMenuItem label="Actions" submenuTriggerFor="actions" />
@@ -104,10 +110,9 @@ export const snippets = [
       long: [
         {
           language: "Typescript",
-          snippet: `const popoverEl = useRef(null);
-const handleClick = () => {
-  popoverEl.current.open = !popoverEl.current.open;
-};
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
 return (
   <>
     {shortCode}
@@ -116,10 +121,9 @@ return (
         },
         {
           language: "Javascript",
-          snippet: `const popoverEl = useRef(null);
-const handleClick = () => {
-  popoverEl.current.open = !popoverEl.current.open;
-};
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
 return (
   <>
     {shortCode}
@@ -132,31 +136,35 @@ return (
 ];
 
 export const DemoPopover = () => {
-  const popoverEl = useRef(null);
-  const handleClick = () => {
-    popoverEl.current.open = !popoverEl.current.open;
-  };
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
   return (
     <>
       <IcButton
         variant="icon"
         title="More information"
         id="button-1"
-        onClick={handleClick}
+        onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
       >
         <svg
-          slot="icon"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
           fill="currentColor"
-          class="bi bi-three-dots-vertical"
+          className="bi bi-three-dots-vertical"
           viewBox="0 0 16 16"
         >
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-1" aria-label="popover" ref={popoverEl}>
+      <IcPopoverMenu
+        anchor="button-1"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
         <IcMenuItem label="Copy code" />
         <IcMenuItem label="Paste code" />
         <IcMenuItem label="Actions" submenuTriggerFor="actions" />
@@ -205,9 +213,9 @@ export const snippetsButtons = [
   variant="icon"
   title="More information" 
   onclick="handleClick()"
+  aria-expanded="false"
 >
   <svg
-    slot="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
@@ -221,7 +229,7 @@ export const snippetsButtons = [
 <div>
   <ic-popover-menu anchor="button-2" aria-label="popover" id="popover-menu-2">
     <ic-menu-item label="Copy" disabled="true"></ic-menu-item>
-    <ic-menu-item label="Paste" keyboard-shortcut="Cmd + V"></ic-menu-item>
+    <ic-menu-item label="Paste" keyboard-shortcut-label="Cmd + V"></ic-menu-item>
     <ic-menu-item label="Edit" description="This is used to edit the original."></ic-menu-item>
     <ic-menu-item label="Show/Hide" variant="toggle"></ic-menu-item>
     <ic-menu-item label="Find icons">
@@ -245,8 +253,14 @@ export const snippetsButtons = [
       long: `{shortCode}
 <script>
   var icPopover = document.querySelector("#popover-menu-2");
+  var anchorButton = document.querySelector("#button-2");
   function handleClick() {
     icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
   }
 </script>`,
     },
@@ -258,23 +272,23 @@ export const snippetsButtons = [
   variant="icon"
   title="More information"
   id="button-2"
-  onClick={handleClick}
+  onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
 >
-  <SlottedSVG
-    slot="icon"
+  <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
     fill="currentColor"
-    class="bi bi-three-dots-vertical"
+    className="bi bi-three-dots-vertical"
     viewBox="0 0 16 16"
   >
     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-  </SlottedSVG>
+  </svg>
 </IcButton>
-<IcPopoverMenu anchor="button-2" aria-label="popover" ref={popoverEl}>
+<IcPopoverMenu anchor="button-2" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
   <IcMenuItem label="Copy" disabled />
-  <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />
+  <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
   <IcMenuItem label="Edit" description="This is used to edit the original." />
   <IcMenuItem label="Show/Hide" variant="toggle" />
   <IcMenuItem label="Find icons">
@@ -297,10 +311,9 @@ export const snippetsButtons = [
       long: [
         {
           language: "Typescript",
-          snippet: `const popoverEl = useRef(null);
-const handleClick = () => {
-  popoverEl.current.open = !popoverEl.current.open;
-};
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
 return (
   <>
     {shortCode}
@@ -309,10 +322,9 @@ return (
         },
         {
           language: "Javascript",
-          snippet: `const popoverEl = useRef(null);
-const handleClick = () => {
-  popoverEl.current.open = !popoverEl.current.open;
-};
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
 return (
   <>
     {shortCode}
@@ -325,33 +337,37 @@ return (
 ];
 
 export const ButtonsPopover = () => {
-  const popoverEl = useRef(null);
-  const handleClick = () => {
-    popoverEl.current.open = !popoverEl.current.open;
-  };
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
   return (
     <>
       <IcButton
         variant="icon"
         title="More information"
         id="button-2"
-        onClick={handleClick}
+        onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
       >
         <svg
-          slot="icon"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
           fill="currentColor"
-          class="bi bi-three-dots-vertical"
+          className="bi bi-three-dots-vertical"
           viewBox="0 0 16 16"
         >
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-2" aria-label="popover" ref={popoverEl}>
+      <IcPopoverMenu
+        anchor="button-2"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
         <IcMenuItem label="Copy" disabled />
-        <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />
+        <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
         <IcMenuItem
           label="Edit"
           description="This is used to edit the original."
@@ -397,9 +413,9 @@ export const snippetsGroups = [
   variant="icon"
   title="More information" 
   onclick="handleClick()"
+  aria-expanded="false"
 >
   <svg
-    slot="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
@@ -414,19 +430,25 @@ export const snippetsGroups = [
   <ic-popover-menu anchor="button-3" aria-label="popover" id="popover-menu-3">
     <ic-menu-group label="Edit options">
       <ic-menu-item label="Copy" disabled="true"></ic-menu-item>
-      <ic-menu-item label="Paste" keyboard-shortcut="Cmd + V"></ic-menu-item>
+      <ic-menu-item label="Paste" keyboard-shortcut-label="Cmd + V"></ic-menu-item>
     </ic-menu-group>
     <ic-menu-group>
       <ic-menu-item label="Format"></ic-menu-item>
       <ic-menu-item label="Help"></ic-menu-item>
-    <ic-menu-group>
+    </ic-menu-group>
   </ic-popover-menu>
 </div>`,
       long: `{shortCode}
 <script>
   var icPopover = document.querySelector("#popover-menu-3");
+  var anchorButton = document.querySelector("#button-3");
   function handleClick() {
     icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
   }
 </script>`,
     },
@@ -438,24 +460,24 @@ export const snippetsGroups = [
   variant="icon"
   title="More information"
   id="button-3"
-  onClick={handleClick}
+  onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
 >
-  <SlottedSVG
-    slot="icon"
+  <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
     fill="currentColor"
-    class="bi bi-three-dots-vertical"
+    className="bi bi-three-dots-vertical"
     viewBox="0 0 16 16"
   >
     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-  </SlottedSVG>
+  </svg>
 </IcButton>
-<IcPopoverMenu anchor="button-3" aria-label="popover" ref={popoverEl}>
+<IcPopoverMenu anchor="button-3" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
   <IcMenuGroup label="Edit options">
     <IcMenuItem label="Copy" disabled />
-    <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />
+    <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
   </IcMenuGroup>
   <IcMenuGroup>
     <IcMenuItem label="Format" />
@@ -465,10 +487,9 @@ export const snippetsGroups = [
       long: [
         {
           language: "Typescript",
-          snippet: `const popoverEl = useRef<HTMLIcPopoverMenuElement | null>(null);
-const handleClick = () => {
-  popoverEl.current.open = !popoverEl.current.open;
-};
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
 return (
   <>
     {shortCode}
@@ -477,10 +498,9 @@ return (
         },
         {
           language: "Javascript",
-          snippet: `const popoverEl = useRef(null);
-const handleClick = () => {
-  popoverEl.current.open = !popoverEl.current.open;
-};
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
 return (
   <>
     {shortCode}
@@ -493,34 +513,38 @@ return (
 ];
 
 export const GroupsPopover = () => {
-  const popoverEl = useRef(null);
-  const handleClick = () => {
-    popoverEl.current.open = !popoverEl.current.open;
-  };
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
   return (
     <>
       <IcButton
         variant="icon"
         title="More information"
         id="button-3"
-        onClick={handleClick}
+        onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
       >
         <svg
-          slot="icon"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
           fill="currentColor"
-          class="bi bi-three-dots-vertical"
+          className="bi bi-three-dots-vertical"
           viewBox="0 0 16 16"
         >
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
         </svg>
       </IcButton>
-      <IcPopoverMenu anchor="button-3" aria-label="popover" ref={popoverEl}>
+      <IcPopoverMenu
+        anchor="button-3"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
         <IcMenuGroup label="Edit options">
           <IcMenuItem label="Copy" disabled />
-          <IcMenuItem label="Paste" keyboardShortcut="Cmd + V" />
+          <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
         </IcMenuGroup>
         <IcMenuGroup>
           <IcMenuItem label="Format" />
@@ -539,4 +563,172 @@ export const GroupsPopover = () => {
   snippets={snippetsGroups}
 >
   <GroupsPopover />
+</ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button 
+  id="button-4" 
+  variant="icon"
+  title="More information" 
+  onclick="handleClick()"
+  theme="dark"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</ic-button>
+<div>
+  <ic-popover-menu theme="dark" anchor="button-4" aria-label="popover" id="popover-menu">
+    <ic-menu-item label="Copy code"></ic-menu-item>
+    <ic-menu-item label="Paste code"></ic-menu-item>
+    <ic-menu-item
+      label="Actions"
+      submenu-trigger-for="actions"
+    ></ic-menu-item>
+  </ic-popover-menu>
+  <ic-popover-menu submenu-id="actions">
+    <ic-menu-item label="Edit"></ic-menu-item>
+    <ic-menu-item label="Find"></ic-menu-item>
+    <ic-menu-item label="Delete" variant="destructive"></ic-menu-item>
+  </ic-popover-menu>
+</div>`,
+      long: `{shortCode}
+<script>
+  var icPopover = document.querySelector("#popover-menu");
+  function handleClick() {
+    icPopover.open = !icPopover.open;
+  }
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  variant="icon"
+  title="More information"
+  id="button-4"
+  onClick={handlePopoverToggled}
+  theme="dark"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    className="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</IcButton>
+<IcPopoverMenu 
+  theme="dark" 
+  anchor="button-4" 
+  aria-label="popover" 
+  open={popoverOpen} 
+  onIcPopoverClosed={handlePopoverClosed}
+>
+  <IcMenuItem label="Copy code" />
+  <IcMenuItem label="Paste code" />
+  <IcMenuItem label="Actions" submenuTriggerFor="actions" />
+</IcPopoverMenu>
+<IcPopoverMenu submenuId="actions" aria-label="popover">
+  <IcMenuItem label="Edit" />
+  <IcMenuItem label="Find" />
+  <IcMenuItem label="Delete" variant="destructive" />
+</IcPopoverMenu>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+      ],
+    },
+  },
+];
+
+export const ThemeDarkPopover = () => {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
+  return (
+    <>
+      <IcButton
+        variant="icon"
+        title="More information"
+        id="button-4"
+        onClick={handlePopoverToggled}
+        theme="dark"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-three-dots-vertical"
+          viewBox="0 0 16 16"
+        >
+          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+        </svg>
+      </IcButton>
+      <IcPopoverMenu
+        anchor="button-4"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+        theme="dark"
+      >
+        <IcMenuItem label="Copy code" />
+        <IcMenuItem label="Paste code" />
+        <IcMenuItem label="Actions" submenuTriggerFor="actions" />
+      </IcPopoverMenu>
+      <IcPopoverMenu submenuId="actions" aria-label="popover">
+        <IcMenuItem label="Edit" />
+        <IcMenuItem label="Find" />
+        <IcMenuItem label="Delete" variant="destructive" />
+      </IcPopoverMenu>
+    </>
+  );
+};
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    background: "#17191c",
+  }}
+  snippets={snippetsThemeDark}
+>
+  <ThemeDarkPopover />
 </ComponentPreview>

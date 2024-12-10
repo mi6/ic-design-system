@@ -3,7 +3,7 @@ path: "/accessibility/needs/motor"
 
 navPriority: 3
 
-date: "2022-11-15"
+date: "2024-10-21"
 
 title: "Motor needs"
 
@@ -12,11 +12,28 @@ subTitle: "'Motor impairment' means a partial or total lack of function in a bod
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/motor.mdx"
 ---
 
+import motorAccessibilityFig8 from "./images/fig-8-large-clickable-areas.png";
+import motorAccessibilityFig9 from "./images/fig-9-clickable-areas-too-small.png";
+import motorAccessibilityFig10 from "./images/fig-10-dictate-function-on-text-fields.png";
+import motorAccessibilityFig11 from "./images/fig-11-no-dictate-function.png";
+
 ## Introduction
 
 Motor impairments can fundamentally affect the usage of your app or service. Some people that use walking frames can't hold a mobile phone, and some with muscle tremors may be unable to use dropdown menus with a mouse.
 
-There are many types and causes of motor impairments<sup id="ref-1"><a href="#fn-1">1</a></sup>. Over 400,000 people in the UK have rheumatoid arthritis<sup id="ref-2"><a href="#fn-2">2</a></sup> and the number of people diagnosed with Parkinson's in 2018 in the UK was around one in 350 adults<sup id="ref-3"><a href="#fn-3">3</a></sup>.
+There are many types and causes of motor impairments. Over 400,000 people in the UK have rheumatoid arthritis and the number of people diagnosed with Parkinson's in 2018 in the UK was around one in 350 adults.
+
+<p>
+  <ic-link
+    target="_blank"
+    href="https://www.nhs.uk/conditions/fibromyalgia/"
+    rel="noreferer noopener nofollow"
+    id="fn-1"
+  >
+    Read more about Parkinson's on the Parkinson's UK website
+  </ic-link>{" "}
+  .
+</p>
 
 ## Examples of motor impairments
 
@@ -29,21 +46,36 @@ The following table lists examples of motor impairments in three columns (perman
 | Dyspraxia (co-ordination of movement)                      |             | General multi-tasking |
 | Muscle tremor (including Parkinson's)                      |             |                       |
 
-## Making things accessible
+## How to design for motor needs
 
-In addressing some of the design issues below, we make it easier for everyone to use our apps.
+In addressing some of the design tips below, we make it easier for everyone to use our apps.
 
 ### Clear clickable actions
 
-Make sure any buttons are clear and easily clickable. Buttons should be easy enough to click and shouldn't be too close together.
+Make sure any interactive elements are clear and easily clickable. They should be easy enough to click and shouldn't be too close together.
 
 Avoid placing lots of actions next to each other as this could increase the risk of a user taking the wrong action.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig8}
+    imageAlt="A graphic of a yes or no option and a submit button. The clickable areas include the text of the ‘yes’ radio option and the whole button."
+    state="good"
+    caption="The cursors are positioned on a larger clickable area that includes the text for the button."
+  />
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig9}
+    imageAlt="A graphic of a yes or no option and a submit button with outlines around only the circle of the radio button and the chevron of the submit button, showing a limited clickable area."
+    state="bad"
+    caption="The cursors are positioned on a smaller clickable area that does not include the text for the button, making it harder for people with motor needs."
+  />
+</DoubleDoDontCaution>
 
 ### Design for keyboard and speech
 
 Make sure that all functionality is accessible by keyboard only. Some users with motor impairments may not use a mouse and instead use assistive technology such as speech input.
 
-Consider alternate input means (mouthpieces, clickers and text to speech software). Apps and services that conform to [WCAG](/accessibility/requirement/wcag) are more likely to work with assistive technologies.
+Consider alternative input means (mouthpieces, clickers and text to speech software). Apps and services that conform to [WCAG](/accessibility/requirement/wcag) are more likely to work with assistive technologies.
 
 <p>
   For example,{" "}
@@ -56,63 +88,20 @@ Consider alternate input means (mouthpieces, clickers and text to speech softwar
     Dragon speech recognition software
   </ic-link>{" "}
   allows users to navigate apps, browse desktops, open applications, type and
-  more
-  <sup id="ref-4">
-    <a href="#fn-4">4</a>
-  </sup>.
+  more.
 </p>
 
-## References
-
-<p>
-  1.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.neuromodulation.com/motor-impairment"
-    rel="noreferer noopener nofollow"
-    id="fn-1"
-  >
-    Motor impairment
-  </ic-link>{" "}
-  .<i> International Neuromodulation Society</i>. 25 April 2017. Accessed 5
-  November 2022. <a href="#ref-1">Back to content</a>
-</p>
-<p>
-  2.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.nras.org.uk/what-is-ra-article"
-    rel="noreferer noopener nofollow"
-    id="fn-2"
-  >
-    What is RA?
-  </ic-link>{" "}
-  .<i> National Rheumatoid Arthritis Society (NRAS)</i>. Accessed 5 November
-  2022. <a href="#ref-2">Back to content</a>
-</p>
-<p>
-  3.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.parkinsons.org.uk/about-us/understanding-parkinsons-journalist/"
-    rel="noreferer noopener nofollow"
-    id="fn-3"
-  >
-    Parkinson's UK
-  </ic-link>{" "}
-  .<i> Parkinson's UK</i>. Accessed 5 November 2022.{" "}
-  <a href="#ref-3">Back to content</a>
-</p>
-<p>
-  4.{" "}
-  <ic-link
-    target="_blank"
-    href="https://www.nuance.com/en-gb/dragon.html"
-    rel="noreferer noopener nofollow"
-    id="fn-4"
-  >
-    Dragon speech recognition
-  </ic-link>{" "}
-  .<i> Nuance</i>. Accessed 5 November 2022.{" "}
-  <a href="#ref-4">Back to content</a>
-</p>
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig10}
+    imageAlt="A graphic of a text field requiring user to enter a description with a dictate button for those who would prefer to use speech to text rather than typing."
+    state="good"
+    caption="Text field with an option to dictate what is written."
+  />
+  <DoDontCaution
+    imageSrc={motorAccessibilityFig11}
+    imageAlt="A graphic of a text field requiring user to enter a description with only the option to type, which can be limiting for people with motor difficulties."
+    state="bad"
+    caption="Text field that only has an option to type, which limits accessibility."
+  />
+</DoubleDoDontCaution>

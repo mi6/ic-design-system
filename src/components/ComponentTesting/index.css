@@ -1,0 +1,158 @@
+.link-zone {
+  border-top: var(--ic-border-width) solid var(--ic-architectural-300);
+  border-bottom: var(--ic-border-width) solid var(--ic-architectural-300);
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.wrapper {
+  border: 1px solid var(--ic-architectural-300);
+  border-radius: var(--ic-border-radius);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--ic-space-lg);
+  position: relative;
+}
+
+.link-zone:nth-child(2) {
+  border-top: 0;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-right: var(--ic-space-xxs);
+  z-index: 1;
+}
+
+.button-container {
+  margin: auto var(--ic-space-xxs) auto var(--ic-space-xxs);
+}
+
+.comp-preview {
+  position: relative;
+  border: 1px solid var(--ic-architectural-300);
+  border-radius: var(--ic-border-radius);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--ic-space-lg);
+}
+
+.comp-preview ic-side-navigation {
+  height: 43.75rem;
+  z-index: 0;
+}
+
+.comp-preview ic-page-header,
+.comp-preview ic-classification-banner {
+  z-index: 0;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.comp-zone {
+  display: flex;
+  padding: var(--ic-space-xl) var(--ic-space-md);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.comp-zone.pattern {
+  container-type: inline-size;
+}
+
+.comp-zone.centered {
+  justify-content: center;
+}
+
+.comp-zone.no-padding {
+  padding: 0;
+}
+
+.comp-zone.no-padding > * {
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.comp-zone ic-alert {
+  margin-bottom: 0;
+}
+
+.left {
+  justify-content: flex-start !important;
+}
+
+.snippet {
+  border-radius: 0;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  padding-bottom: var(--ic-space-sm);
+}
+
+.snippet-container {
+  background-color: var(--ic-architectural-40) !important;
+  height: 46px;
+}
+
+.ic-theme-dark .snippet-container {
+  background-color: var(--ic-color-background-secondary-dark) !important;
+}
+
+.snippet-container ic-button button.button {
+  flex-direction: row-reverse;
+}
+
+.snippet-container ic-button button svg {
+  max-width: 1.5rem;
+}
+
+.comp-preview ic-tab-context {
+  display: grid;
+}
+
+.comp-preview ic-tab-panel {
+  min-width: 0;
+}
+
+.comp-preview ic-tab-panel[hidden][tab-position="1"] {
+  display: none;
+}
+
+.comp-icon {
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+  border-radius: 50%;
+}
+
+.comp-dont-icon {
+  color: #d4351c;
+  background: #eaeaea;
+}
+
+.comp-do-icon {
+  color: #00703c;
+  background: #eaeaea;
+}
+
+@media screen and (min-width: 577px) {
+  .comp-preview ic-side-navigation {
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .comp-preview {
+    max-width: 90vw;
+  }
+}
+
+@media (forced-colors: active) {
+  .snippet {
+    forced-color-adjust: none;
+  }
+}

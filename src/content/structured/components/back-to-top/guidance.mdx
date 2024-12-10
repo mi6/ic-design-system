@@ -19,6 +19,8 @@ tabs:
     { title: "Code", path: "/components/back-to-top/code" },
     { title: "Accessibility", path: "/components/back-to-top/accessibility" },
   ]
+
+tags: ["Button", "Anchor", "Scroll to top"]
 ---
 
 import { IcTypography, IcButton } from "@ukic/react";
@@ -27,6 +29,8 @@ import backToTopFig2 from "./images/fig-2-do-not-show-the-back-to-top-button-on-
 import backToTopFig3 from "./images/fig-3-dont-use-other-buttons-for-back-to-top.png";
 import backToTopFig4 from "./images/fig-4-dont-show-back-to-top-anywhere-other-than-the-bottom-right.png";
 import backToTopFig5 from "./images/fig-5-anchored-on-footer.png";
+import backToTopFig6 from "./images/fig-6-icon-back-to-top-zoom.png";
+import backToTopFig7 from "./images/fig-7-default-back-to-top-zoom.png";
 
 ## Introduction
 
@@ -46,7 +50,16 @@ An example of the back to top component.
   </IcButton>
 </ComponentPreview>
 
+## Component variants
+
+There are two variants of the back to top component:
+
+- Default
+- Icon-only
+
 ## When to use
+
+### Default
 
 Use this component for pages with a lot of content that requires scrolling, such as intranets, reports and content-heavy apps.
 
@@ -57,6 +70,17 @@ Consider using it on all apps to improve usability for everyone, including keybo
   imageAlt="An example page that is scrolled half way down and showing an overlaid back to top button in the bottom right-hand side."
   state="good"
   caption="Display the back to top button when a page has been scrolled."
+/>
+
+### Icon-only
+
+The icon-only back to top button should be used when a page is zoomed, to minimise overlapping content.
+
+<DoDontCaution
+  imageSrc={backToTopFig6}
+  imageAlt="An example page that is scrolled halfway down and zoomed in, with an icon-only variant back to top button in the bottom right corner."
+  state="good"
+  caption="Use the icon-only variant when zoomed to reduce overlapping content."
 />
 
 ## When not to use
@@ -79,6 +103,15 @@ Only use the provided back to top component. Don't use any other button in place
   imageAlt="An example page that is scrolled half way down and displays a primary button reading ‘Back to top’ in the bottom right corner instead of the back to top component."
   state="bad"
   caption="Don’t use any other component for providing back to top functionality. Use the back to top button."
+/>
+
+Avoid using the default back to top button when zoomed, as it may obscure important page content. The icon-only back to top button should be used instead.
+
+<DoDontCaution
+  imageSrc={backToTopFig7}
+  imageAlt="An example page that is scrolled halfway down and zoomed in, with a default variant back to top button in the bottom right corner that obscures some of the text on the page."
+  state="caution"
+  caption="Avoid using the default variant where it may obscure important page content."
 />
 
 ## Interaction behaviour

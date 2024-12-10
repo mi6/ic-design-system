@@ -1,0 +1,187 @@
+---
+path: "/get-started/development/test-components/testing-with-jest-and-rtl"
+
+date: "2023-02-16"
+
+title: "Testing with Jest and React Testing Library"
+
+subTitle: "How to test our components with Jest and React Testing Library."
+
+navPriority: 2
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/testing-with-jest.mdx"
+---
+
+import testFiles from "./test-app/index";
+
+export const snippetArray = [
+  {
+    fileName: testFiles.rtl.fileName,
+    disableMoreButton: testFiles.rtl.disableMoreButton,
+    snippets: {
+      short: testFiles.rtl.snippets.short,
+      long: testFiles.rtl.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.component.fileName,
+    disableMoreButton: testFiles.component.disableMoreButton,
+    snippets: {
+      short: testFiles.component.snippets.short,
+      long: testFiles.component.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.types.fileName,
+    disableMoreButton: testFiles.types.disableMoreButton,
+    snippets: {
+      short: testFiles.types.snippets.short,
+      long: testFiles.types.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.constants.fileName,
+    disableMoreButton: testFiles.constants.disableMoreButton,
+    snippets: {
+      short: testFiles.constants.snippets.short,
+      long: testFiles.constants.snippets.long,
+    },
+  },
+  {
+    fileName: testFiles.methods.fileName,
+    disableMoreButton: testFiles.methods.disableMoreButton,
+    snippets: {
+      short: testFiles.methods.snippets.short,
+      long: testFiles.methods.snippets.long,
+    },
+  },
+];
+
+export const stackblitzProps = {
+  test: "develop",
+  title: "Testing with Jest and React Testing Library",
+  branch: "/tree/main",
+};
+
+## About Jest
+
+<p>
+  <ic-link
+    target="_blank"
+    href="https://jestjs.io/"
+    rel="noreferer noopener nofollow"
+  >
+    Jest
+  </ic-link>{" "}
+  is a JavaScript testing framework designed to ensure correctness of any
+  JavaScript codebase. It allows you to write tests with an approachable,
+  familiar and feature-rich API that gives you results quickly.
+</p>
+
+<p>
+  These instructions have been written with JavaScript in mind. Jest also
+  supports TypeScript. Further instructions on how to set up Jest for TypeScript
+  can be found on their{" "}
+  <ic-link
+    target="_blank"
+    href="https://jestjs.io/docs/getting-started#using-typescript"
+    rel="noreferer noopener nofollow"
+  >
+    'Getting Started'
+  </ic-link>{" "}
+  page.
+</p>
+
+<p>
+  More information on setting up Jest can be found on{" "}
+  <ic-link
+    target="_blank"
+    href="https://jestjs.io/docs/getting-started"
+    rel="noreferer noopener nofollow"
+  >
+    Jest’s Getting Started page
+  </ic-link>
+  .
+</p>
+
+## Testing with React components
+
+The `@ukic/react` package will need to be transformed before you can use these components in Jest tests.
+
+Add a `transformIgnorePatterns` field with the value `["/node_modules/(?!@ukic/react)"]` to your Jest config.
+
+## About React Testing Library
+
+<p>
+  <ic-link
+    target="_blank"
+    href="https://testing-library.com/docs/react-testing-library/intro"
+    rel="noreferer noopener nofollow"
+  >
+    React Testing Library (RTL)
+  </ic-link>{" "}
+  provides a set of utility functions, which interrogate the DOM tree, in order
+  to build maintainable React tests. The recommended approach with RTL is to
+  test React components based on how the users view the components rather than
+  the implementation of the component. For example, a user wouldview a button by
+  the label 'Add', so the library provides a method called{" "}
+  <code style={{ backgroundColor: "#EEEFF0" }}>getByText()</code> to facilitate
+  that.
+</p>
+
+## Shadow DOM Testing Library
+
+<p>
+  It is not possible to exclusively use RTL to test{" "}
+  <code style={{ backgroundColor: "#EEEFF0" }}>@ukic/react</code> components as
+  they are React-wrapped web components, which use the{" "}
+  <ic-link
+    target="_blank"
+    href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"
+    rel="noreferer noopener nofollow"
+  >
+    shadow DOM
+  </ic-link>{" "}
+  (<code style={{ backgroundColor: "#EEEFF0" }}>&lt;ShadowRoot&gt;</code>). RTL
+  does not provide utility functions that traverse beyond the shadow DOM. With
+  the addition of{" "}
+  <ic-link
+    target="_blank"
+    href="https://github.com/KonnorRogers/shadow-dom-testing-library"
+    rel="noreferer noopener nofollow"
+  >
+    Shadow DOM Testing Library
+  </ic-link>
+  , elements within the shadow DOM can be selected and then interacted with by using
+  methods provided by RTL. Shadow DOM Testing Library provides functions with 'Shadow'
+  prefixed to the query type (for example, <code
+    style={{ backgroundColor: "#EEEFF0" }}>
+    getByShadowText()
+  </code>).
+</p>
+
+```tsx
+// DOM tree for IcAlert.
+<ic-alert class="dark hydrated" message="Foo" role="alert">
+  <ShadowRoot>
+    ...
+    <ic-typography class="ic-typography-body hydrated">
+      <ShadowRoot>
+        <slot />
+      </ShadowRoot>
+      Foo
+    </ic-typography>
+    ...
+  </ShadowRoot>
+</ic-alert>
+```
+
+## Example: Testing multiple components
+
+Below is an example of testing `@ukic/react` components within an ICDS ‘test app’ using RTL, Jest and Shadow DOM Testing Library.
+
+<ComponentTesting
+  snippetArray={snippetArray}
+  showStackblitzBtn
+  stackblitzButtonTestAppProps={stackblitzProps}
+/>

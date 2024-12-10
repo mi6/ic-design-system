@@ -25,10 +25,12 @@ const StyleTable: React.FC<StyleTableProps> = ({ styleData }) => {
 
   const data = useMemo(
     () =>
-      styleData.map((style) => ({
-        name: <CodeAttribute label={style.name} key={style.name} />,
-        description: style.docs,
-      })),
+      styleData
+        .filter((style) => !!style.docs)
+        .map((style) => ({
+          name: <CodeAttribute label={style.name} key={style.name} />,
+          description: style.docs,
+        })),
     []
   );
 

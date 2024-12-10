@@ -19,6 +19,18 @@ tabs:
     { title: "Code", path: "/components/accordion/code" },
     { title: "Accessibility", path: "/components/accordion/accessibility" },
   ]
+
+tags:
+  [
+    "Arrow toggle",
+    "Collapse",
+    "Collapsible sections",
+    "Collapsible",
+    "Details",
+    "Expandable",
+    "Expander",
+    "Show hide",
+  ]
 ---
 
 import {
@@ -46,7 +58,7 @@ Group accordions to hide more content on the page and to structure content into 
 An accordion group can be nested within another accordion to create one layer of nested content. Do not nest more accordion groups within an already nested accordion group. Only use one level of nesting.
 
 <ComponentPreview style={{ flexDirection: "column" }}>
-  <IcAccordionGroup groupTitle="Our coffees - Ingredients">
+  <IcAccordionGroup label="Our coffees - Ingredients">
     <IcAccordion heading="Americano">
       <SlottedSVG
         slot="icon"
@@ -138,7 +150,7 @@ Add custom content to an accordion using the slotted section to create different
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={accordionFig3}
-    imageAlt="An accordion titled ‘Order details’ including a three-row data entity for a coffee order in the content area."
+    imageAlt="An accordion titled ‘Order details’ including a three-row data list for a coffee order in the content area."
     state="good"
     caption="Use the slotted content of an accordion to house other content."
   />
@@ -184,7 +196,7 @@ Do not use nested accordions as a replacement for an accordion group. Consider u
 
 ## Colour
 
-Use the dark or light appearance to achieve colour contrast compliance when using accordions on different coloured backgrounds.
+Use the dark or light theme with `monochrome={true}` to achieve colour contrast compliance when using accordions on different coloured backgrounds.
 
 ## Sizing
 

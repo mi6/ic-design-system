@@ -1,15 +1,15 @@
 ---
 path: "/components/link"
 
-navPriority: 19
+navPriority: 21
 
-date: "2023-07-28"
+date: "2023-09-03"
 
 title: "Link"
 
 status: "BETA"
 
-subTitle: "Links can be used either as standalone components or inline with text."
+subTitle: "Links can be used to navigate to different pages or sections of a page."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/link"
 
@@ -19,6 +19,8 @@ tabs:
     { title: "Code", path: "/components/link/code" },
     { title: "Accessibility", path: "/components/link/accessibility" },
   ]
+
+tags: ["Anchor", "Hyperlink"]
 ---
 
 import { IcLink, IcTypography } from "@ukic/react";
@@ -28,32 +30,19 @@ import linksFig3 from "./images/use-a-button-when-displaying-a-clickable-action.
 import linksFig4 from "./images/dont-use-a-link-to-initiate-an-action.png";
 import linksFig5 from "./images/when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text.png";
 import linksFig6 from "./images/avoid-using-the-same-colour-style-as-the-adjacent-text.png";
-import linksFig7 from "./images/use-the-monochromatic-variant-when-listing-standalone-links.png";
+import linksFig7 from "./images/use-the-monochromatic-variant-when-listing-links.png";
 import linksFig8 from "./images/do-not-use-bad-link-text.png";
 
-## Component variants
+## Component demo
 
-### Standalone
-
-Standalone links are positioned separately from other text content.
-
-A standalone link can include a launch icon to the right of the link for clarity.
+Links can include a launch icon to the right of the link for clarity.
 
 <ComponentPreview>
   <IcTypography>
+    Return to the{" "}
     <IcLink href="/components/link" target="_blank">
-      About our coffees
+      café homepage
     </IcLink>
-  </IcTypography>
-</ComponentPreview>
-
-### Inline
-
-Inline links are contained within other text elements.
-
-<ComponentPreview>
-  <IcTypography>
-    Return to the <IcLink href="/components/link">café homepage</IcLink>
   </IcTypography>
 </ComponentPreview>
 
@@ -106,29 +95,29 @@ Your browser is set to remember what links have been visited. Visited links feat
 
 All other states will use specific [hyperlink styling](/styles/colour#links).
 
-Use default appearance links when used inline with other text. If the text appears on a different coloured background, use the light or dark appearance links to achieve good colour contrast.
+Use default theme links when used inline with other text. If the text appears on a different coloured background, use the light or dark theme links with `monochrome={true}` to achieve good colour contrast.
 
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={linksFig5}
-    imageAlt="An example paragraph with black text, featuring an inline link with blue colour styling."
-    caption="When using inline links, always use a different colour to the adjacent text."
+    imageAlt="An example paragraph with black text, featuring a link with blue colour styling."
+    caption="When using links, always use a different colour to the adjacent text."
     state="good"
   />
   <DoDontCaution
     imageSrc={linksFig6}
-    imageAlt="An example paragraph with black text, featuring an inline link the same colour styling."
-    caption="Avoid using the same link appearance as the adjacent text. Only use the same appearance if the text is used on a dark background."
+    imageAlt="An example paragraph with black text, featuring a link the same colour styling."
+    caption="Avoid using the same link theme as the adjacent text. Only use the same theme if the text is used on a dark background."
     state="bad"
   />
 </DoubleDoDontCaution>
 
-Use the light or dark appearance links when listing a series of standalone links on different coloured backgrounds.
+Use the light or dark theme links with `monochrome={true}` when listing a series of links on different coloured backgrounds.
 
 <DoDontCaution
   imageSrc={linksFig7}
-  imageAlt="An image of a footer with two navigation groups titled ‘Services’ and ‘Policy’ which house a list of several standalone links. Every text element in the footer is white, including the hyperlinks."
-  caption="Use light appearance links when displaying standalone links on a dark background."
+  imageAlt="An image of a footer with two navigation groups titled ‘Services’ and ‘Policy’ which house a list of several links. Every text element in the footer is white, including the hyperlinks."
+  caption="Use light theme links when displaying links on a dark background."
   state="good"
 />
 

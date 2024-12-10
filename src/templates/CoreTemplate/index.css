@@ -1,5 +1,5 @@
 body {
-  color: var(--ic-color-primary-text);
+  color: var(--ic-color-text-primary);
 }
 
 .gatsby-highlight {
@@ -58,6 +58,10 @@ ic-alert {
 
 video.half-width {
   width: 48.5%;
+}
+
+ic-page-header.temp-remove-sticky {
+  position: static;
 }
 
 @media screen and (max-width: 768px) {

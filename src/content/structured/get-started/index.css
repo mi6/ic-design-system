@@ -1,0 +1,29 @@
+ic-card-vertical svg,
+ic-card-horizontal svg {
+  fill: none;
+}
+
+.get-started-vertical-cards {
+  display: grid;
+  grid-gap: var(--ic-space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.get-started-horizontal-cards {
+  display: grid;
+  grid-gap: var(--ic-space-md);
+  grid-template: 1fr 1fr / 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media screen and (max-width: 800px) {
+  .get-started-vertical-cards {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .get-started-horizontal-cards {
+    grid-template-columns: auto;
+  }
+}

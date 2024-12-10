@@ -6,12 +6,17 @@ const AttributeName: React.FC<{
   value: (string | undefined)[];
 }> = ({ name, value }) => (
   <div className="attribute-name">
-    {name.map((attributeName, i) => (
-      <div key={`attribute-${attributeName.toLowerCase().split(" ")[0]}`}>
-        <ic-typography variant="subtitle-small">{attributeName}</ic-typography>
-        <ic-typography variant="subtitle-large">{value[i]}</ic-typography>
-      </div>
-    ))}
+    {name.map(
+      (attributeName, i) =>
+        value[i] && (
+          <div key={`attribute-${attributeName.toLowerCase().split(" ")[0]}`}>
+            <ic-typography variant="subtitle-small">
+              {attributeName}
+            </ic-typography>
+            <ic-typography variant="subtitle-large">{value[i]}</ic-typography>
+          </div>
+        )
+    )}
   </div>
 );
 

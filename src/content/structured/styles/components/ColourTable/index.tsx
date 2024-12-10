@@ -51,12 +51,14 @@ const PaletteRow: React.FC<PaletteRowProps> = ({ color }) => {
           &nbsp;
         </div>
       </div>
-      <div className="color-name">{name}</div>
+      <div className="color-name">
+        <ic-typography>{name}</ic-typography>
+      </div>
       <div className="color-token color-class">
         <ic-typography variant="body">{token}</ic-typography>
         {deprecated && (
           <div className="deprecation-tag">
-            <ic-status-tag label="Deprecated" status="warning" small />
+            <ic-status-tag label="Deprecated" status="warning" size="small" />
           </div>
         )}
       </div>

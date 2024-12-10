@@ -1,9 +1,9 @@
 ---
-path: "/get-started/install-components"
+path: "/get-started/development/install-components"
 
-navPriority: 1
+navPriority: 2
 
-date: "2024-01-04"
+date: "2024-08-29"
 
 title: "Install the components"
 
@@ -11,6 +11,8 @@ subTitle: "Install and use the UI Kit component library. Use React or web compon
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/install-components.mdx"
 ---
+
+import { IcAlert } from "@ukic/react";
 
 ## Installing the components
 
@@ -36,7 +38,20 @@ npm install @ukic/react @ukic/fonts
 
 ## Using the components
 
-Web components can be used without the need for a framework. To use web components without a framework, follow the [web components instructions](/get-started/install-components/web-components).
+<IcAlert
+  heading="Components automatically switch colours based on the user's system settings"
+  variant="warning"
+>
+  <span slot="message">
+    When the ic-theme component is not implemented, components will default to
+    the user's system colour scheme. Please keep this in mind when styling your
+    application. See the{" "}
+    <ic-link href="/get-started/install-components/custom-theme/#dark-mode-as-a-theme">
+      theming guidance
+    </ic-link>{" "}
+    for more information.
+  </span>
+</IcAlert>
 
 To use the components in a particular framework, follow the framework instructions.
 
@@ -46,6 +61,8 @@ To use the components in a particular framework, follow the framework instructio
 - [Svelte](/get-started/install-components/svelte)
 - [Gatsby](/get-started/install-components/gatsby)
 - [Next.js](/get-started/install-components/nextJS)
+
+Web components can be used without the need for a framework. To use web components without a framework, follow the [web components instructions](/get-started/install-components/web-components).
 
 <p>
   Custom Elements Everywhere has{" "}
@@ -59,6 +76,8 @@ To use the components in a particular framework, follow the framework instructio
   .
 </p>
 
-## Using third-party libraries alongside ICDS
+## Using third-party components
 
-If you can't find a suitable component in ICDS, then you can use one from a third-party library in your project. Use that library's theming and customisation options to style the third-party component following the [ICDS styles](/styles) so that they look and feel as similar as possible on the page. Make sure to check for new component releases from ICDS regularly so you can replace the third-party components with ICDS ones when they are released.
+If you can't find a suitable component in this Design System, then you can use one from a third-party library. Use the library's theming and customisation options and follow our [styles](/styles) so that they look and feel as similar as possible.
+
+You can replace the third-party components once they are released in the Design System.

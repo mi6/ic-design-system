@@ -3,48 +3,304 @@ path: "/get-started"
 
 navPriority: 0
 
-date: "2022-11-15"
+date: "2024-12-06"
 
 title: "Get started"
 
-subTitle: "Use the Design System and UI Kit to create accessible, usable and consistent apps and services for the United Kingdom Intelligence Community."
+subTitle: "Discover a high-quality, accessible UI Kit built for MI6, MI5 and GCHQ apps and digital products."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/index.mdx"
 ---
 
-import { IcCard } from "@ukic/react";
+import { IcCardVertical } from "@ukic/react";
+import GetStartedHorizontalCard from "../../../components/GetStartedHorizontalCard";
+import "./index.css";
 
-## Design System and UI Kit
+## Introduction
 
-- [Accessibility guidance](/accessibility) to design, build and test apps and services that work for everyone.
-- [Style tokens](/styles) to create consistent experiences.
-- [Component guidance](/components) to implement accessible, usable and consistent user interfaces (UI).
-- [Patterns](/patterns) to help users with intuitive experiences for common user tasks.
+Our Design System helps MI6, MI5 and GCHQ to create powerful and accessible capabilities that keep the UK and its partners safe and prosperous.
 
-### For developers
+The Design System has already proven that we can simultaneously speed up and improve the quality of what we build. This means the community and assets we adopt can better serve our fast-changing mission needs and we can be confident in them being accessible.
 
-<IcCard
-  heading="Install the UI Kit components"
-  message="Install and use the UI Kit component library. Use React or web components to quickly build accessible interfaces."
-  href="get-started/install-components"
-  clickable
-  fullWidth
-/>
+<div className="get-started-vertical-cards">
+  <IcCardVertical
+    heading="Get started with design"
+    message="Our design documentation empowers you to create intuitive, consistent and accessible designs with ease."
+    clickable
+    href="/get-started/design"
+    style={{ width: "100%" }}
+  >
+    <svg
+      slot="image-top"
+      style={{
+        height: "100%",
+        width: "100%",
+      }}
+      viewBox="0 0 248 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="248" height="140" fill="#07277E" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M159.643 65.6013C159.688 65.3022 159.821 65.0257 160.024 64.8119L187.22 36.0896C187.473 35.8224 187.816 35.6724 188.174 35.6724C188.532 35.6724 188.875 35.8224 189.128 36.0896L199.625 47.1761C199.877 47.4432 200.019 47.805 200.019 48.1821C200.019 48.5593 199.877 48.9211 199.625 49.1882L172.424 77.9133C172.221 78.1267 171.959 78.2664 171.676 78.3123L159.276 80.3244C159.067 80.3583 158.853 80.3397 158.652 80.2701C158.451 80.2004 158.268 80.0817 158.118 79.9235C157.968 79.7653 157.856 79.5722 157.79 79.3596C157.724 79.147 157.706 78.921 157.738 78.6999L159.643 65.6013ZM162.245 66.4962L160.688 77.2122L170.832 75.5649L196.762 48.1821L188.173 39.1134L162.245 66.4962Z"
+        fill="white"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M190.752 55.2927L181.208 45.2322L183.115 43.2144L192.657 53.2749L190.752 55.2927Z"
+        fill="white"
+      />
+      <path
+        d="M182.176 43.1484L161.064 65.4455L159.556 79.7793L170.112 78.1867L176.144 73.4087L191.224 55.8896L182.176 43.1484Z"
+        fill="white"
+      />
+      <path
+        d="M60 84.257C124.966 111.745 111.31 63.7574 156 84.257"
+        stroke="white"
+      />
+    </svg>
+  </IcCardVertical>
+  <IcCardVertical
+    heading="Get started with development"
+    message="Rapidly build apps using our React and web components."
+    clickable
+    href="/get-started/development"
+    style={{ width: "100%" }}
+  >
+    <svg
+      slot="image-top"
+      style={{
+        height: "100%",
+        width: "100%",
+      }}
+      viewBox="0 0 248 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="248" height="140" fill="#07277E" />
+      <path
+        d="M74 46V36.5C74 34.567 75.567 33 77.5 33H169.5C171.433 33 173 34.567 173 36.5V46"
+        stroke="white"
+      />
+      <path
+        d="M173 73L173 94.5C173 96.433 171.433 98 169.5 98L77.5 98C75.567 98 74 96.433 74 94.5L74 73"
+        stroke="white"
+      />
+      <rect x="110" y="98" width="28" height="10" fill="white" />
+      <path d="M85.5 50L74 60.5L85.5 72" stroke="white" />
+      <path d="M162 72L173.5 61.5L162 50" stroke="white" />
+    </svg>
+  </IcCardVertical>
+</div>
 
-### For designers
+## Explore the design system
 
-<IcCard
-  heading="Figma UI Kit"
-  message="Reusable and flexible Figma components used to design, prototype and hand-off designs for apps and digital products."
-  href="get-started/figma"
-  clickable
-  fullWidth
-/>
+Explore the design system to discover our components, guidelines and more.
+
+<div className="get-started-horizontal-cards">
+  <GetStartedHorizontalCard
+    heading="Components"
+    message="Rapidly build apps that work robustly across frameworks."
+    href="/components"
+  >
+    <svg
+      slot="image"
+      viewBox="0 0 1600 1600"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="1600" height="1600" fill="#07277E" />
+      <rect x="1104" y="192" width="272" height="272" fill="#07277E" />
+      <rect
+        x="800.453"
+        y="364.314"
+        width="283.04"
+        height="283.04"
+        transform="rotate(45 800.453 364.314)"
+        stroke="white"
+        stroke-width="16"
+      />
+      <rect
+        x="800.453"
+        y="835.22"
+        width="283.04"
+        height="283.04"
+        transform="rotate(45 800.453 835.22)"
+        stroke="white"
+        stroke-width="16"
+      />
+      <rect
+        x="564.453"
+        y="598.314"
+        width="283.04"
+        height="283.04"
+        transform="rotate(45 564.453 598.314)"
+        stroke="white"
+        stroke-width="16"
+      />
+      <rect
+        x="1035.36"
+        y="598.314"
+        width="283.04"
+        height="283.04"
+        transform="rotate(45 1035.36 598.314)"
+        stroke="white"
+        stroke-width="16"
+      />
+    </svg>
+  </GetStartedHorizontalCard>
+  <GetStartedHorizontalCard
+    heading="Accessibility"
+    message="Design, build, and test apps and services that work for everyone."
+    href="/accessibility"
+  >
+    <svg
+      slot="image"
+      viewBox="0 0 1600 1600"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="1600" height="1600" fill="#1E1E1E" />
+      <rect width="1600" height="1600" fill="#07277E" />
+      <mask id="path-2-inside-1_0_1" fill="white">
+        <path d="M1161.56 608.776C1161.05 611.484 1160.7 614.23 1160.01 616.879C1156.8 629.18 1148.88 637.921 1138.8 644.942C1127.58 652.736 1115.1 657.938 1102.31 662.425C1082.58 669.329 1062.89 676.292 1043.18 683.235C1013.03 693.852 982.905 704.47 952.758 715.088C942.357 718.743 932.282 723.036 923.32 729.709C918.619 733.209 916.066 737.831 915.011 743.517C913.149 753.632 912.862 763.844 913.994 773.997C916.22 794.111 918.849 814.185 921.363 834.28C923.205 848.939 924.721 863.676 927.081 878.259C929.979 896.303 933.568 914.231 936.888 932.198C942.184 960.898 947.519 989.599 952.834 1018.3C958.399 1048.3 963.965 1078.27 969.549 1108.27C974.557 1135.25 979.547 1162.25 984.613 1189.21C989.737 1216.53 973.425 1238.95 947.941 1245.6C937.06 1248.44 926.045 1248.89 915.088 1246.28C900.484 1242.82 890.352 1233.57 883.424 1220.48C877.744 1209.75 875.019 1198.08 872.735 1186.25C867.612 1159.65 862.641 1133.02 856.961 1106.55C849.919 1073.67 842.434 1040.89 834.739 1008.16C829.654 986.562 823.724 965.153 816.202 944.247C813.266 936.104 810.291 927.943 805.283 920.768C801.176 914.888 797.645 914.869 793.462 920.71C788.28 927.943 785.229 936.24 782.312 944.537C773.811 968.653 767.517 993.428 761.894 1018.34C755.696 1045.82 749.785 1073.36 744.105 1100.94C739.461 1123.47 735.412 1146.12 730.998 1168.69C728.676 1180.46 726.412 1192.26 723.553 1203.92C721.288 1213.17 717.22 1221.74 711.348 1229.34C703.653 1239.3 693.597 1245.27 681.239 1247.07C667.403 1249.08 653.951 1247.69 641.304 1241.33C621.711 1231.48 611.848 1211.74 615.762 1189.98C621.5 1157.95 627.372 1125.95 633.187 1093.92C638.618 1063.98 644.029 1034.02 649.46 1004.08C655.985 968.054 662.375 931.985 669.091 895.993C672.833 875.918 674.964 855.65 677.689 835.44C679.972 818.479 682.313 801.518 684.424 784.537C686.209 770.206 687.111 755.837 685.173 741.39C683.599 729.612 677.477 721.392 666.827 716.809C659.861 713.83 652.684 711.316 645.449 709.034C614.995 699.345 584.502 689.83 554.028 680.256C534.589 674.145 514.938 668.594 495.748 661.748C482.814 657.126 470.111 651.498 459.019 642.95C444.761 631.945 437.411 617.827 439.368 599.396C441.076 583.267 446.776 568.974 458.942 557.97C469.477 548.455 481.778 545.631 495.461 549.518C512.482 554.373 529.427 559.517 546.525 564.101C577.536 572.417 608.797 579.65 640.249 585.993C665.963 591.177 691.793 595.702 717.815 599.164C744.796 602.742 771.835 605.237 799.065 605.295C817.219 605.333 835.334 604.192 853.411 602.413C880.699 599.744 907.776 595.625 934.719 590.674C964.156 585.259 993.44 579.128 1022.44 571.701C1049.17 564.836 1075.82 557.583 1102.4 550.137C1113.65 546.985 1124.35 546.849 1134.68 552.826C1142.47 557.332 1148.23 563.888 1152.64 571.682C1157.53 580.346 1160.45 589.668 1161.24 599.628C1161.28 600.034 1161.49 600.421 1161.6 600.808V608.679L1161.56 608.776Z" />
+      </mask>
+      <path
+        d="M1161.56 608.776C1161.05 611.484 1160.7 614.23 1160.01 616.879C1156.8 629.18 1148.88 637.921 1138.8 644.942C1127.58 652.736 1115.1 657.938 1102.31 662.425C1082.58 669.329 1062.89 676.292 1043.18 683.235C1013.03 693.852 982.905 704.47 952.758 715.088C942.357 718.743 932.282 723.036 923.32 729.709C918.619 733.209 916.066 737.831 915.011 743.517C913.149 753.632 912.862 763.844 913.994 773.997C916.22 794.111 918.849 814.185 921.363 834.28C923.205 848.939 924.721 863.676 927.081 878.259C929.979 896.303 933.568 914.231 936.888 932.198C942.184 960.898 947.519 989.599 952.834 1018.3C958.399 1048.3 963.965 1078.27 969.549 1108.27C974.557 1135.25 979.547 1162.25 984.613 1189.21C989.737 1216.53 973.425 1238.95 947.941 1245.6C937.06 1248.44 926.045 1248.89 915.088 1246.28C900.484 1242.82 890.352 1233.57 883.424 1220.48C877.744 1209.75 875.019 1198.08 872.735 1186.25C867.612 1159.65 862.641 1133.02 856.961 1106.55C849.919 1073.67 842.434 1040.89 834.739 1008.16C829.654 986.562 823.724 965.153 816.202 944.247C813.266 936.104 810.291 927.943 805.283 920.768C801.176 914.888 797.645 914.869 793.462 920.71C788.28 927.943 785.229 936.24 782.312 944.537C773.811 968.653 767.517 993.428 761.894 1018.34C755.696 1045.82 749.785 1073.36 744.105 1100.94C739.461 1123.47 735.412 1146.12 730.998 1168.69C728.676 1180.46 726.412 1192.26 723.553 1203.92C721.288 1213.17 717.22 1221.74 711.348 1229.34C703.653 1239.3 693.597 1245.27 681.239 1247.07C667.403 1249.08 653.951 1247.69 641.304 1241.33C621.711 1231.48 611.848 1211.74 615.762 1189.98C621.5 1157.95 627.372 1125.95 633.187 1093.92C638.618 1063.98 644.029 1034.02 649.46 1004.08C655.985 968.054 662.375 931.985 669.091 895.993C672.833 875.918 674.964 855.65 677.689 835.44C679.972 818.479 682.313 801.518 684.424 784.537C686.209 770.206 687.111 755.837 685.173 741.39C683.599 729.612 677.477 721.392 666.827 716.809C659.861 713.83 652.684 711.316 645.449 709.034C614.995 699.345 584.502 689.83 554.028 680.256C534.589 674.145 514.938 668.594 495.748 661.748C482.814 657.126 470.111 651.498 459.019 642.95C444.761 631.945 437.411 617.827 439.368 599.396C441.076 583.267 446.776 568.974 458.942 557.97C469.477 548.455 481.778 545.631 495.461 549.518C512.482 554.373 529.427 559.517 546.525 564.101C577.536 572.417 608.797 579.65 640.249 585.993C665.963 591.177 691.793 595.702 717.815 599.164C744.796 602.742 771.835 605.237 799.065 605.295C817.219 605.333 835.334 604.192 853.411 602.413C880.699 599.744 907.776 595.625 934.719 590.674C964.156 585.259 993.44 579.128 1022.44 571.701C1049.17 564.836 1075.82 557.583 1102.4 550.137C1113.65 546.985 1124.35 546.849 1134.68 552.826C1142.47 557.332 1148.23 563.888 1152.64 571.682C1157.53 580.346 1160.45 589.668 1161.24 599.628C1161.28 600.034 1161.49 600.421 1161.6 600.808V608.679L1161.56 608.776Z"
+        fill="#07277E"
+        stroke="white"
+        stroke-width="28.8"
+        mask="url(#path-2-inside-1_0_1)"
+      />
+      <mask id="path-3-inside-2_0_1" fill="white">
+        <path d="M807.389 352C811.151 352.58 814.969 352.948 818.673 353.779C855.384 361.979 880.906 383.698 892.516 419.728C904.26 456.184 896.297 489.352 870.486 517.55C853.445 536.174 831.761 546.424 806.699 547.701C768.798 549.615 739.016 534.221 718.041 502.291C707.64 486.451 702.785 468.678 702.958 449.725C703.188 423.693 712.188 401.007 730.092 382.151C746.346 365.035 766.38 355.346 789.696 352.522C790.828 352.387 791.941 352.174 793.074 352.019C797.852 352.019 802.63 352.019 807.389 352.019V352Z" />
+      </mask>
+      <path
+        d="M807.389 352C811.151 352.58 814.969 352.948 818.673 353.779C855.384 361.979 880.906 383.698 892.516 419.728C904.26 456.184 896.297 489.352 870.486 517.55C853.445 536.174 831.761 546.424 806.699 547.701C768.798 549.615 739.016 534.221 718.041 502.291C707.64 486.451 702.785 468.678 702.958 449.725C703.188 423.693 712.188 401.007 730.092 382.151C746.346 365.035 766.38 355.346 789.696 352.522C790.828 352.387 791.941 352.174 793.074 352.019C797.852 352.019 802.63 352.019 807.389 352.019V352Z"
+        fill="#07277E"
+        stroke="white"
+        stroke-width="28.8"
+        mask="url(#path-3-inside-2_0_1)"
+      />
+    </svg>
+  </GetStartedHorizontalCard>
+  <GetStartedHorizontalCard
+    heading="Figma UI kit"
+    message="Reusable and flexible components used to design and prototype."
+    href="/get-started/design/figma"
+  >
+    <svg
+      slot="image"
+      viewBox="0 0 1600 1600"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="1600" height="1600" fill="#07277E" />
+      <path
+        d="M940.833 940.834C1018.61 940.834 1081.67 877.78 1081.67 800C1081.67 722.22 1018.61 659.167 940.833 659.167C863.053 659.167 800 722.22 800 800C800 877.78 863.053 940.834 940.833 940.834Z"
+        stroke="white"
+        stroke-width="16"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M659.167 940.833C631.313 940.833 604.084 949.093 580.924 964.568C557.764 980.043 539.713 1002.04 529.054 1027.77C518.395 1053.51 515.606 1081.82 521.04 1109.14C526.474 1136.46 539.887 1161.55 559.583 1181.25C579.279 1200.95 604.373 1214.36 631.692 1219.79C659.011 1225.23 687.328 1222.44 713.061 1211.78C738.795 1201.12 760.791 1183.07 776.266 1159.91C791.74 1136.75 800 1109.52 800 1081.67V940.833M659.167 940.833H800M659.167 940.833C621.816 940.833 585.994 925.996 559.583 899.584C533.171 873.173 518.334 837.351 518.334 800C518.334 762.649 533.171 726.827 559.583 700.416C585.994 674.004 621.816 659.167 659.167 659.167M800 940.833V659.167M800 377.5H940.834C978.185 377.5 1014.01 392.338 1040.42 418.749C1066.83 445.16 1081.67 480.982 1081.67 518.333C1081.67 555.685 1066.83 591.506 1040.42 617.918C1014.01 644.329 978.185 659.167 940.834 659.167H800M800 377.5V659.167M800 377.5H659.167C621.816 377.5 585.994 392.338 559.583 418.749C533.171 445.16 518.334 480.982 518.334 518.333C518.334 555.685 533.171 591.506 559.583 617.918C585.994 644.329 621.816 659.167 659.167 659.167M800 659.167H659.167"
+        stroke="white"
+        stroke-width="16"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </GetStartedHorizontalCard>
+  <GetStartedHorizontalCard
+    heading="Patterns"
+    message="Lower learning curves by using intuitive, expandable patterns."
+    href="/patterns"
+  >
+    <svg
+      slot="image"
+      viewBox="0 0 1600 1600"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="1600" height="1600" fill="#07277E" />
+      <rect x="1104" y="192" width="272" height="272" fill="#07277E" />
+      <rect
+        x="344.447"
+        y="376.447"
+        width="591.105"
+        height="223.105"
+        fill="white"
+        stroke="white"
+        stroke-width="0.894737"
+      />
+      <rect
+        x="655.12"
+        y="671.12"
+        width="561.76"
+        height="593.76"
+        stroke="white"
+        stroke-width="14.24"
+      />
+      <circle
+        cx="456"
+        cy="1160"
+        r="104"
+        fill="white"
+        stroke="white"
+        stroke-width="16"
+      />
+      <circle cx="936" cy="912" r="56" stroke="white" stroke-width="16" />
+      <path
+        d="M848 1064C848 1040.66 857.271 1018.28 873.775 1001.77C890.278 985.271 912.661 976 936 976C959.339 976 981.722 985.271 998.225 1001.77C1014.73 1018.28 1024 1040.66 1024 1064"
+        stroke="white"
+        stroke-width="16"
+      />
+      <line
+        x1="344"
+        y1="672"
+        x2="568"
+        y2="672"
+        stroke="white"
+        stroke-width="16"
+      />
+      <line
+        x1="344"
+        y1="776"
+        x2="568"
+        y2="776"
+        stroke="white"
+        stroke-width="16"
+      />
+      <line
+        x1="344"
+        y1="872"
+        x2="568"
+        y2="872"
+        stroke="white"
+        stroke-width="16"
+      />
+      <line
+        x1="344"
+        y1="968"
+        x2="568"
+        y2="968"
+        stroke="white"
+        stroke-width="16"
+      />
+      <path
+        d="M1206.91 586.712L1207.48 586.146L1206.91 585.581L1135.87 514.539C1148.12 500.157 1155.47 481.448 1155.47 461C1155.47 438.952 1146.71 417.806 1131.12 402.216C1115.53 386.625 1094.38 377.867 1072.33 377.867C1050.29 377.867 1029.14 386.625 1013.55 402.216C997.959 417.806 989.2 438.952 989.2 461C989.2 483.048 997.959 504.193 1013.55 519.784C1029.14 535.374 1050.28 544.133 1072.33 544.133C1091.88 544.153 1110.8 537.25 1125.74 524.661L1196.79 595.706L1197.35 596.271L1197.92 595.706L1206.91 586.712ZM1023.64 412.304C1036.55 399.389 1054.07 392.133 1072.33 392.133C1081.38 392.133 1090.33 393.914 1098.69 397.375C1107.04 400.836 1114.63 405.909 1121.03 412.304C1127.42 418.699 1132.5 426.29 1135.96 434.646C1139.42 443.001 1141.2 451.956 1141.2 461C1141.2 470.044 1139.42 478.999 1135.96 487.354C1132.5 495.709 1127.42 503.301 1121.03 509.696C1114.63 516.091 1107.04 521.163 1098.69 524.624C1090.33 528.085 1081.38 529.867 1072.33 529.867C1054.07 529.867 1036.55 522.611 1023.64 509.696C1010.72 496.781 1003.47 479.264 1003.47 461C1003.47 442.735 1010.72 425.219 1023.64 412.304Z"
+        fill="white"
+        stroke="white"
+        stroke-width="1.6"
+      />
+    </svg>
+  </GetStartedHorizontalCard>
+</div>
 
 ## Contribute
 
-We are expanding the UI Kit. You can check out the [roadmap](/community/roadmap) for what's coming. If you would like to help please [read more on how to contribute](/community).
-
-## Using v1.0 component library
-
-You can still use v1.0 (link available for internal users only). Support will be limited and the library deprecated in the future.
+We are expanding the UI Kit. You can check out the [roadmap](/community/roadmap) for what's coming. If you would like to help, please read more on [how to contribute](/community).

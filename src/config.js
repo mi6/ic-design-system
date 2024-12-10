@@ -41,6 +41,11 @@ module.exports = {
             key: "cookies-policy",
           }
         : {},
+      {
+        link: "/get-started/releases-versions",
+        text: "Versions",
+        key: "versions",
+      },
     ],
     content:
       "The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and partners.",
@@ -68,28 +73,24 @@ module.exports = {
         {
           path: "/accessibility/",
           title: "Accessibility",
-          icon: "AccessibilityIcon",
           description:
             "Design, build and test apps and services that work equitably for everyone.",
         },
         {
           path: "/styles",
           title: "Styles",
-          icon: "StyleOutlinedIcon",
           description:
             "Create experiences that empower time after time, across diverse touchpoints.",
         },
         {
           path: "/components",
           title: "Components",
-          icon: "ExtensionOutlinedIcon",
           description:
             "Rapidly build apps that work robustly across tech stacks and platforms.",
         },
         {
           path: "/patterns",
           title: "Patterns",
-          icon: "DashboardOutlinedIcon",
           description:
             "Lower learning curves and create super users with intuitive, extendable patterns.",
         },
@@ -103,34 +104,53 @@ module.exports = {
         "To find out more, delve into our story on how we support people and organisations develop valuable apps and services accessible for everyone.",
       ],
       link: "/get-started/a-design-system",
-      linkText: "Read the story of our Design System",
+      buttonText: "Read our story",
+    },
+    design: {
+      title: "For designers",
+      content: [
+        "Whether you're building a new interface or refining an existing one, our Figma UI Kit, principles and documentation enable you to create intuitive, consistent and accessible designs with ease.",
+      ],
+      button: [
+        {
+          href: "/get-started/design",
+          text: "Explore design",
+          variant: "primary",
+        },
+        {
+          href: "/get-started/design/design-principles",
+          text: "Read our design principles",
+          variant: "secondary",
+        },
+      ],
+    },
+    develop: {
+      title: "For developers",
+      content: [
+        "Our development UI Kit is built with Stencil.js to ensure seamless integration across React, Vue, Angular and other frameworks.",
+        "With a focus on accessibility and ease of use, these components equip developers to create responsive and inclusive experiences.",
+      ],
+      button: [
+        {
+          href: "/get-started/development",
+          text: "Explore development",
+          variant: "primary",
+        },
+        {
+          href: "/get-started/development/test-components",
+          text: "Learn how we test components",
+          variant: "secondary",
+        },
+      ],
     },
     contribute: {
-      title: "Contribute",
+      title: "Contribute to our community",
       content: [
         "The Design System is primarily built for the large numbers of apps and services we have.",
         "While most of the work is undertaken by our Engineering teams, we've open sourced our Design System for the world to see, use and contribute to (which we think is very cool).",
       ],
       link: "/community",
-      linkText: "Learn how to contribute",
-    },
-    resources: {
-      title: "Resources",
-      content: [],
-      cards: [
-        {
-          path: "/get-started/install-components",
-          title: "Install the UI Kit components",
-          description:
-            "Install and use the UI Kit component library. Use React or web components to quickly build accessible interfaces.",
-        },
-        {
-          path: "/get-started/figma",
-          title: "Figma UI Kit",
-          description:
-            "Reusable and flexible Figma components used to design, prototype and hand-off designs for apps and digital products.",
-        },
-      ],
+      buttonText: "Find out more",
     },
   },
 
