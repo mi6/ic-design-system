@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { Link as GatsbyLink, withPrefix } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 import Icon from "@mdi/react";
 import { mdiArrowRight } from "@mdi/js";
 import { IcButtonVariants } from "@ukic/web-components";
@@ -156,8 +156,10 @@ const Homepage: React.FC = () => {
               {text}
             </ic-typography>
           ))}
-          <ic-button href={withPrefix(homepage.about.link)}>
-            {homepage.about.buttonText}
+          <ic-button>
+            <GatsbyLink slot="router-item" to={homepage.about.link}>
+              {homepage.about.buttonText}
+            </GatsbyLink>
           </ic-button>
         </div>
         <hr aria-hidden="true" className="divider" />
@@ -185,10 +187,11 @@ const Homepage: React.FC = () => {
                   variant: IcButtonVariants;
                 }) => (
                   <ic-button
-                    href={withPrefix(button.href)}
                     variant={button.variant}
                   >
-                    {button.text}
+                    <GatsbyLink slot="router-item" to={button.href}>
+                      {button.text}
+                    </GatsbyLink>
                   </ic-button>
                 )
               )}
@@ -226,10 +229,11 @@ const Homepage: React.FC = () => {
                   variant: IcButtonVariants;
                 }) => (
                   <ic-button
-                    href={withPrefix(button.href)}
                     variant={button.variant}
                   >
-                    {button.text}
+                    <GatsbyLink slot="router-item" to={button.href}>
+                      {button.text}
+                    </GatsbyLink>
                   </ic-button>
                 )
               )}
@@ -261,9 +265,11 @@ const Homepage: React.FC = () => {
                 {text}
               </ic-typography>
             ))}
-            <ic-button href={withPrefix(homepage.contribute.link)}>
-              {homepage.contribute.buttonText}
-            </ic-button>
+              <ic-button>
+                <GatsbyLink slot="router-item" to={homepage.contribute.link}>
+                  {homepage.contribute.buttonText}
+                </GatsbyLink>
+              </ic-button>
           </div>
         </div>
       </ic-section-container>

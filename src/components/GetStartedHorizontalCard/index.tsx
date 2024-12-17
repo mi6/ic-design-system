@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { Link as GatsbyLink } from "gatsby";
 import { IcCardHorizontal } from "@ukic/canary-react";
 import { useViewportWidth } from "../../utils/helpers";
 
@@ -18,16 +19,17 @@ const GetStartedHorizontalCard: React.FC<GetStartedHorizontalCardProps> = ({
   const isSmallViewport = viewportWidth < 577;
 
   return (
-    <IcCardHorizontal
-      heading={heading}
-      message={message}
-      href={href}
-      clickable
-      size="large"
-      style={{ "--card-horizontal-width": "100%" }}
-    >
-      {!isSmallViewport && children}
-    </IcCardHorizontal>
+    <GatsbyLink to={href}>
+      <IcCardHorizontal
+        heading={heading}
+        message={message}
+        clickable
+        size="large"
+        style={{ "--card-horizontal-width": "100%" }}
+      >
+        {!isSmallViewport && children}
+      </IcCardHorizontal>
+    </GatsbyLink>
   );
 };
 

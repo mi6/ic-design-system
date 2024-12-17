@@ -1,4 +1,3 @@
-import { withPrefix } from "gatsby";
 import React, {
   ReactElement,
   cloneElement,
@@ -6,6 +5,8 @@ import React, {
   useMemo,
   useState,
 } from "react";
+
+import { Link as GatsbyLink } from "gatsby";
 
 import { Helmet } from "react-helmet";
 
@@ -308,10 +309,11 @@ const Layout: React.FC<LayoutProps> = ({
                   .map((footerLink: FooterLinks) => (
                     <ic-footer-link
                       slot="link"
-                      href={withPrefix(footerLink.link)}
                       key={footerLink.key}
                     >
-                      {footerLink.text}
+                      <GatsbyLink to={footerLink.link} style={{color: "white"}}>
+                        {footerLink.text}
+                      </GatsbyLink>
                     </ic-footer-link>
                   ))}
                 <div slot="logo" className="logo-wrapper" role="list">

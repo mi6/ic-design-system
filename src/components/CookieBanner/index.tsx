@@ -1,4 +1,5 @@
 import React, { createRef, useState, useEffect, useContext } from "react";
+import { Link as GatsbyLink } from "gatsby";
 
 import "./cookies.css";
 import {
@@ -47,8 +48,10 @@ const CookieBanner: React.FC = () => {
           <ic-typography role="alert" variant="body">
             You’ve {consentCookieApproved() ? "accepted" : "rejected"} analytics
             cookies. You can{" "}
-            <ic-link href="/icds/cookies-policy">
-              change your cookie settings
+            <ic-link>
+              <GatsbyLink slot="router-item" to="/icds/cookies-policy">
+                change your cookie settings
+              </GatsbyLink>
             </ic-link>{" "}
             at any time.
           </ic-typography>
@@ -72,7 +75,11 @@ const CookieBanner: React.FC = () => {
             <ic-button variant="secondary" onClick={() => handleConsent(false)}>
               Decline
             </ic-button>
-            <ic-link href="/icds/cookies-policy">Manage cookies</ic-link>
+            <ic-link>
+              <GatsbyLink slot="router-item" to="/icds/cookies-policy">
+                Manage cookies
+              </GatsbyLink>
+            </ic-link>
           </div>
         </ic-section-container>
       )}
