@@ -156,18 +156,19 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
         key={item.data.id}
         label={item.data.frontmatter.title}
         selected={!hasChildren && isCurrentPage(item.data.fields.slug, false)}
-        expanded={hasChildren && isChildSelected(item)}
         onMouseOver={handleMouseOver}
         onIcTreeItemSelected={() =>
           sessionStorage.setItem("navlinkclick", "true")
         }
-        {...(!hasChildren && {
-          onClick: (e) => {
-            e.preventDefault();
-            handleNavigation(item.data.fields.slug);
-          },
-          onKeyUp: handleKeyUp,
-        })}
+        {...(hasChildren
+          ? isChildSelected(item) && { expanded: true }
+          : {
+              onClick: (e) => {
+                e.preventDefault();
+                handleNavigation(item.data.fields.slug);
+              },
+              onKeyUp: handleKeyUp,
+            })}
       >
         {hasChildren && (
           <IcTreeItem
