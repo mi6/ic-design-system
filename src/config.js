@@ -41,6 +41,12 @@ module.exports = {
             key: "cookies-policy",
           }
         : {},
+      {
+        link: "https://mi6.github.io/ic-design-system-githubpages/branches/v3.0.0/develop",
+        text: "Version 3.0",
+        key: "version-3.0",
+        target: "_blank",
+      },
     ],
     content:
       "The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and partners.",
