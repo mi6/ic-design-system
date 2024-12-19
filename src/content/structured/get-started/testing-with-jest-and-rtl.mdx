@@ -125,16 +125,15 @@ Add a `transformIgnorePatterns` field with the value `["/node_modules/(?!@ukic/r
   test React components based on how the users view the components rather than
   the implementation of the component. For example, a user wouldview a button by
   the label 'Add', so the library provides a method called{" "}
-  <code style={{ backgroundColor: "#EEEFF0" }}>getByText()</code> to facilitate
-  that.
+  <code className="language-text">getByText()</code> to facilitate that.
 </p>
 
 ## Shadow DOM Testing Library
 
 <p>
   It is not possible to exclusively use RTL to test{" "}
-  <code style={{ backgroundColor: "#EEEFF0" }}>@ukic/react</code> components as
-  they are React-wrapped web components, which use the{" "}
+  <code className="language-text">@ukic/react</code> components as they are
+  React-wrapped web components, which use the{" "}
   <ic-link
     target="_blank"
     href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"
@@ -142,9 +141,9 @@ Add a `transformIgnorePatterns` field with the value `["/node_modules/(?!@ukic/r
   >
     shadow DOM
   </ic-link>{" "}
-  (<code style={{ backgroundColor: "#EEEFF0" }}>&lt;ShadowRoot&gt;</code>). RTL
-  does not provide utility functions that traverse beyond the shadow DOM. With
-  the addition of{" "}
+  (<code className="language-text">&lt;ShadowRoot&gt;</code>). RTL does not
+  provide utility functions that traverse beyond the shadow DOM. With the
+  addition of{" "}
   <ic-link
     target="_blank"
     href="https://github.com/KonnorRogers/shadow-dom-testing-library"
@@ -154,9 +153,7 @@ Add a `transformIgnorePatterns` field with the value `["/node_modules/(?!@ukic/r
   </ic-link>
   , elements within the shadow DOM can be selected and then interacted with by using
   methods provided by RTL. Shadow DOM Testing Library provides functions with 'Shadow'
-  prefixed to the query type (for example, <code
-    style={{ backgroundColor: "#EEEFF0" }}
-  >
+  prefixed to the query type (for example, <code className="language-text">
     getByShadowText()
   </code>).
 </p>

@@ -28,7 +28,7 @@ const ActionButtons: React.FC<ActionProps> = ({
   stackblitzButtonTestAppProps,
   isLargeViewport,
 }) => {
-  const { oppositeTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className="button-container">
       {showStackblitzBtn && stackblitzButtonTestAppProps && (
@@ -42,7 +42,7 @@ const ActionButtons: React.FC<ActionProps> = ({
         aria-label={isLargeViewport ? "" : "Copy code"}
         variant={isLargeViewport ? "tertiary" : "icon"}
         size={isLargeViewport ? "small" : "medium"}
-        theme={oppositeTheme}
+        theme={theme}
         monochrome
         onClick={() => {
           navigator.clipboard.writeText(longCode);
@@ -70,14 +70,14 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
   showMore,
   setShowMore,
 }) => {
-  const { oppositeTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className="button-container">
       <IcButton
         variant="tertiary"
         size="small"
         onClick={() => setShowMore(!showMore)}
-        theme={oppositeTheme}
+        theme={theme}
         monochrome
         disabled={disableMoreButton}
       >

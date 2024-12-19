@@ -186,9 +186,7 @@ const Homepage: React.FC = () => {
                   text: string;
                   variant: IcButtonVariants;
                 }) => (
-                  <ic-button
-                    variant={button.variant}
-                  >
+                  <ic-button variant={button.variant}>
                     <GatsbyLink slot="router-item" to={button.href}>
                       {button.text}
                     </GatsbyLink>
@@ -228,9 +226,7 @@ const Homepage: React.FC = () => {
                   text: string;
                   variant: IcButtonVariants;
                 }) => (
-                  <ic-button
-                    variant={button.variant}
-                  >
+                  <ic-button variant={button.variant}>
                     <GatsbyLink slot="router-item" to={button.href}>
                       {button.text}
                     </GatsbyLink>
@@ -265,11 +261,11 @@ const Homepage: React.FC = () => {
                 {text}
               </ic-typography>
             ))}
-              <ic-button>
-                <GatsbyLink slot="router-item" to={homepage.contribute.link}>
-                  {homepage.contribute.buttonText}
-                </GatsbyLink>
-              </ic-button>
+            <ic-button>
+              <GatsbyLink slot="router-item" to={homepage.contribute.link}>
+                {homepage.contribute.buttonText}
+              </GatsbyLink>
+            </ic-button>
           </div>
         </div>
       </ic-section-container>
