@@ -3,7 +3,7 @@ path: "/get-started/development/install-components/gatsby"
 
 navPriority: 7
 
-date: "2024-04-24"
+date: "2024-12-23"
 
 title: "Gatsby"
 
@@ -27,11 +27,11 @@ In the root of your project:
 
 ```shell
 // using npm
-npm install @ukic/react @ukic/fonts
+npm install @ukic/react@next @ukic/fonts@next
 
 // using yarn
 rm package-lock.json
-yarn add @ukic/react @ukic/fonts
+yarn add @ukic/react@next @ukic/fonts@next
 ```
 
 ## Step Two
@@ -40,7 +40,10 @@ Install the `gatsby-plugin-stencil` package to allow Gatsby to render the compon
 
 ```shell
 // using npm
-npm install --save gatsby-plugin-stencil
+npm install gatsby-plugin-stencil
+
+// using yarn
+yarn add gatsby-plugin-stencil
 ```
 
 ## Step three
@@ -79,7 +82,7 @@ import "@ukic/react/dist/core/core.css";
   <ic-link
     target="_blank"
     href="https://necolas.github.io/normalize.css/"
-    rel="noreferer noopener nofollow"
+    rel="noreferrer noopener nofollow"
   >
     Normalize.css
   </ic-link>
@@ -109,7 +112,7 @@ import { IcComponent } from "@ukic/react";
   <ic-link
     target="_blank"
     href="https://www.gatsbyjs.com/plugins/gatsby-plugin-stencil/"
-    rel="noreferer noopener nofollow"
+    rel="noreferrer noopener nofollow"
   >
     gatsby-plugin-stencil
   </ic-link>{" "}
@@ -117,7 +120,7 @@ import { IcComponent } from "@ukic/react";
   <ic-link
     target="_blank"
     href="https://dev.to/brunnerlivio/use-stencil-with-gatsbyjs-1omo"
-    rel="noreferer noopener nofollow"
+    rel="noreferrer noopener nofollow"
   >
     using Stencil web components in Gatsby
   </ic-link>
