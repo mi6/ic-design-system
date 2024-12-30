@@ -10,9 +10,10 @@ const { slug } = require("github-slugger");
 interface AnchorNavProps {
   allHeadings: Heading[];
   currentPage: string;
+  id?: string;
 }
 
-const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage }) => {
+const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage, id }) => {
   const headings = allHeadings.filter(({ depth }) => depth === 2);
 
   const headingIds = headings.map(({ value }) => slug(value));
@@ -32,16 +33,16 @@ const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage }) => {
       { rootMargin: `20% 0% -70% 0%` }
     );
 
-    headingIds.forEach((id) => {
-      const heading = document.getElementById(id);
+    headingIds.forEach((eachId) => {
+      const heading = document.getElementById(eachId);
       if (heading) {
         observer.observe(heading);
       }
     });
 
     return () => {
-      headingIds.forEach((id) => {
-        const heading = document.getElementById(id);
+      headingIds.forEach((eachId) => {
+        const heading = document.getElementById(eachId);
         if (heading) {
           observer.unobserve(heading);
         }
@@ -105,7 +106,7 @@ const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage }) => {
   }
 
   return headings.length > 0 ? (
-    <div className="side-nav">
+    <div className="side-nav" id={id}>
       <nav
         aria-label={`${currentPageName} ${currTab} page contents`}
         className="nav"
