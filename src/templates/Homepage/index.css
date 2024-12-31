@@ -48,7 +48,7 @@ ic-card-horizontal {
 }
 
 .hero-card {
-  color: var(--ic-theme-text);
+  color: var(--ic-brand-text-color);
   width: 18.75rem;
 }
 
