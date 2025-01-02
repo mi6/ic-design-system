@@ -260,11 +260,7 @@ const Layout: React.FC<LayoutProps> = ({
           content={process.env.GATSBY_GOOGLE_SEARCH_TOKEN}
         />
       </Helmet>
-      <ThemeProvider
-        theme={theme}
-        toggleTheme={toggleTheme}
-        oppositeTheme={theme === "light" ? "dark" : "light"}
-      >
+      <ThemeProvider theme={theme} toggleTheme={toggleTheme}>
         <ic-theme theme={theme}>
           {!GATSBY_GA_TRACKING_ID && (
             <ic-classification-banner
@@ -307,11 +303,11 @@ const Layout: React.FC<LayoutProps> = ({
                     (footerLink: FooterLinks) => footerLink.key !== undefined
                   )
                   .map((footerLink: FooterLinks) => (
-                    <ic-footer-link
-                      slot="link"
-                      key={footerLink.key}
-                    >
-                      <GatsbyLink to={footerLink.link} style={{color: "white"}}>
+                    <ic-footer-link slot="link" key={footerLink.key}>
+                      <GatsbyLink
+                        to={footerLink.link}
+                        style={{ color: "white" }}
+                      >
                         {footerLink.text}
                       </GatsbyLink>
                     </ic-footer-link>
