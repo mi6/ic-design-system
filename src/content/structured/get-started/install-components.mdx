@@ -14,8 +14,6 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 import { IcAlert } from "@ukic/react";
 
-import { Link as GatsbyLink } from "gatsby";
-
 ## Installing the components
 
 <p>
@@ -44,19 +42,15 @@ npm install @ukic/react@next @ukic/fonts@next
   heading="Components automatically switch colours based on the user's system settings"
   variant="warning"
 >
-  <span slot="message">
-    <ic-typography>
-      When the ic-theme component is not implemented, components will default to
-      the user's system colour scheme. Please keep this in mind when styling your
-      application. See the{" "}
-      <ic-link>
-        <GatsbyLink slot="router-item" to="/get-started/development/custom-theme#dark-mode-as-a-theme">
-          theming guidance
-        </GatsbyLink>
-      </ic-link>{" "}
-      for more information.
-    </ic-typography>
-  </span>
+  <ic-typography slot="message">
+    When the ic-theme component is not implemented, components will default to
+    the user's system colour scheme. Please keep this in mind when styling your
+    application. See the{" "}
+    <a href="/get-started/development/custom-theme#dark-mode-as-a-theme">
+      theming guidance
+    </a>{" "}
+    for more information.
+  </ic-typography>
 </IcAlert>
 
 To use the components in a particular framework, follow the framework instructions.

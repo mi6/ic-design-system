@@ -55,7 +55,7 @@ export default {
     vue({
       template: {
         compilerOptions: {
-          // treat any tag that starts with ic- as custom elementss
+          // treat any tag that starts with ic- as a custom element
           isCustomElement: (tag) => tag.startsWith("ic-"),
         },
       },
@@ -75,7 +75,7 @@ module.exports = {
       .tap((options) => ({
         ...options,
         compilerOptions: {
-          // treat any tag that starts with ic- as custom elements
+          // treat any tag that starts with ic- as a custom element
           isCustomElement: (tag) => tag.startsWith("ic-"),
         },
       }));

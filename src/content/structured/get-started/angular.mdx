@@ -37,13 +37,13 @@ yarn add @ukic/web-components@next @ukic/fonts@next
 
 Import the `CUSTOM_ELEMENTS_SCHEMA`:
 
-### For Modules
+### For modules
 Into the `app.module.ts` file:
 ```jsx
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 ```
 
-### For Standalone Components
+### For standalone components
 Into the `app.component.ts` file:
 ```jsx
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from "@angular/core";
@@ -51,9 +51,9 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component } from "@angular/core";
 
 ## Step three
 
-Include CUSTOM_ELEMENTS_SCHEMA in the decorator object in the same file:
+Include `CUSTOM_ELEMENTS_SCHEMA` in the decorator object in the same file:
 
-### For Modules
+### For modules
 
 ```jsx
 @NgModule({
@@ -64,7 +64,7 @@ Include CUSTOM_ELEMENTS_SCHEMA in the decorator object in the same file:
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 ```
-### For Standalone Components
+### For standalone components
 
 ```jsx
 @Component({

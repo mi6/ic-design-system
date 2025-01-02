@@ -54,11 +54,11 @@ interface TopNavWrapperProps {
 }
 
 const ThemeToggleButton: React.FC = () => {
-  const { theme, toggleTheme, oppositeTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <ic-navigation-button
-      label={`Turn on ${oppositeTheme} mode`}
+      label={`Turn on ${theme === "light" ? "dark" : "light"} mode`}
       slot="buttons"
       onClick={toggleTheme}
     >
