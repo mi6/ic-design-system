@@ -42,7 +42,8 @@ ic-alert {
   margin-bottom: calc(var(--ic-space-xxl) + var(--ic-space-lg));
 }
 
-#page-section-container {
+#page-section-container,
+#page-section-container-large-font {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: fit-content(100%) 1fr;
