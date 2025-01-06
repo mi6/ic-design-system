@@ -3,7 +3,7 @@ path: "/get-started/development/install-components/vue"
 
 navPriority: 4
 
-date: "2024-04-22"
+date: "2024-12-23"
 
 title: "Vue"
 
@@ -17,7 +17,7 @@ import { IcAlert } from "@ukic/react";
 <IcAlert
   variant="info"
   heading="Version check"
-  message="These instructions were used with Vue version 3.2.31."
+  message="These instructions were used with Vue version 3.5.13."
 />
 
 ## Step one
@@ -26,28 +26,28 @@ In the root of your project:
 
 ```shell
 // using npm
-npm install @ukic/web-components @ukic/fonts
+npm install @ukic/web-components@next @ukic/fonts@next
 
 // using yarn
 rm package-lock.json
-yarn add @ukic/web-components @ukic/fonts
+yarn add @ukic/web-components@next @ukic/fonts@next
 ```
 
 ## Step two
 
-Add options into your relevant config.
+Add the necessary options to your relevant configuration:
 
 ### In-Browser config
+This only works if using in-browser compilation.
 
 ```jsx
-// Only works if using in-browser compilation.
-app.config.compilerOptions.isCustomElement = (tag) => tag.includes("-");
+app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith("ic-");
 ```
 
 ### Vite config
+Add the following to your `vite.config.js`:
 
 ```jsx
-// vite.config.js
 import vue from "@vitejs/plugin-vue";
 
 export default {
@@ -55,8 +55,8 @@ export default {
     vue({
       template: {
         compilerOptions: {
-          // treat all tags with a dash as custom elements
-          isCustomElement: (tag) => tag.includes("-"),
+          // treat any tag that starts with ic- as a custom element
+          isCustomElement: (tag) => tag.startsWith("ic-"),
         },
       },
     }),
@@ -65,9 +65,8 @@ export default {
 ```
 
 ### Vue CLI config
-
+Add the following to your `vue.config.js`:
 ```jsx
-// vue.config.js
 module.exports = {
   chainWebpack: (config) => {
     config.module
@@ -76,7 +75,7 @@ module.exports = {
       .tap((options) => ({
         ...options,
         compilerOptions: {
-          // treat any tag that starts with ic- as custom elements
+          // treat any tag that starts with ic- as a custom element
           isCustomElement: (tag) => tag.startsWith("ic-"),
         },
       }));
@@ -119,7 +118,7 @@ Add the following into the top level CSS file for your project.
   <ic-link
     target="_blank"
     href="https://necolas.github.io/normalize.css/"
-    rel="noreferer noopener nofollow"
+    rel="noreferrer noopener nofollow"
   >
     Normalize.css
   </ic-link>

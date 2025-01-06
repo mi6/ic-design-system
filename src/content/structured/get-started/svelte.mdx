@@ -3,7 +3,7 @@ path: "/get-started/development/install-components/svelte"
 
 navPriority: 6
 
-date: "2024-04-22"
+date: "2024-12-23"
 
 title: "Svelte"
 
@@ -17,7 +17,7 @@ import { IcAlert } from "@ukic/react";
 <IcAlert
   variant="info"
   heading="Version check"
-  message="These instructions were used with Svelte version 3.50.1."
+  message="These instructions were used with Svelte version 5.15.0."
 />
 
 ## Step one
@@ -26,11 +26,11 @@ In the root of your project:
 
 ```shell
 // using npm
-npm install @ukic/web-components @ukic/fonts
+npm install @ukic/web-components@next @ukic/fonts@next
 
 // using yarn
 rm package-lock.json
-yarn add @ukic/web-components @ukic/fonts
+yarn add @ukic/web-components@next @ukic/fonts@next
 ```
 
 ## Step two
@@ -68,7 +68,7 @@ Add the following into the top level CSS file for your project. For newly genera
   <ic-link
     target="_blank"
     href="https://necolas.github.io/normalize.css/"
-    rel="noreferer noopener nofollow"
+    rel="noreferrer noopener nofollow"
   >
     Normalize.css
   </ic-link>

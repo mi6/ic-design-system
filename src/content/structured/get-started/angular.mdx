@@ -3,7 +3,7 @@ path: "/get-started/development/install-components/angular"
 
 navPriority: 3
 
-date: "2024-08-29"
+date: "2024-12-23"
 
 title: "Angular"
 
@@ -17,7 +17,7 @@ import { IcAlert } from "@ukic/react";
 <IcAlert
   variant="info"
   heading="Version check"
-  message="These instructions were used with Angular version 13.2.5."
+  message="These instructions were used with Angular version 17.3.0."
 />
 
 ## Step one
@@ -26,29 +26,36 @@ In the root of your project:
 
 ```shell
 // using npm
-npm install @ukic/web-components @ukic/fonts
+npm install @ukic/web-components@next @ukic/fonts@next
 
 // using yarn
 rm package-lock.json
-yarn add @ukic/web-components @ukic/fonts
+yarn add @ukic/web-components@next @ukic/fonts@next
 ```
 
 ## Step two
 
-In the `app.modules.ts` file, import the `CUSTOM_ELEMENTS_SCHEMA`.
+Import the `CUSTOM_ELEMENTS_SCHEMA`:
 
-Or for standalone components, import the `CUSTOM_ELEMENTS_SCHEMA` into the `.ts` file of any component using the components from this Design System.
-
+### For modules
+Into the `app.module.ts` file:
 ```jsx
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 ```
 
+### For standalone components
+Into the `app.component.ts` file:
+```jsx
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from "@angular/core";
+```
+
 ## Step three
 
-Then include it in the `@NgModule` decorator object. Or for standalone components, include it in the `@Component` decorator object.
+Include `CUSTOM_ELEMENTS_SCHEMA` in the decorator object in the same file:
+
+### For modules
 
 ```jsx
-// Modules
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule],
@@ -56,13 +63,16 @@ Then include it in the `@NgModule` decorator object. Or for standalone component
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-// Standalone components
+```
+### For standalone components
+
+```jsx
 @Component({
-  selector: 'app-foo',
+  selector: 'app-root',
   standalone: true,
   imports: [],
-  templateUrl: './foo.component.html',
-  styleUrl: './foo.component.scss',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 ```
@@ -73,7 +83,7 @@ Set skipLibCheck to `true` in your `tsconfig.json` file.
 
 ```jsx
 "compilerOptions": {
-  "skipLibCheck": true,
+  "skipLibCheck": true
 },
 ```
 
@@ -112,7 +122,7 @@ Add the following into the top level CSS file for your project. For newly genera
   <ic-link
     target="_blank"
     href="https://necolas.github.io/normalize.css/"
-    rel="noreferer noopener nofollow"
+    rel="noreferrer noopener nofollow"
   >
     Normalize.css
   </ic-link>
