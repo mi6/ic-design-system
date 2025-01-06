@@ -277,7 +277,56 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 
   const tabSelectCallback = (ev: CustomEvent) => {
     setSelectedTab(ev.detail.tabLabel);
+    localStorage.setItem("selectedTab", ev.detail.tabLabel); 
+  
+    const event = new CustomEvent("tabSelectionChanged", {
+      detail: { selectedTab: ev.detail.tabLabel },
+    });
+    window.dispatchEvent(event);
   };
+
+  useEffect(() => {
+    const storedTab = localStorage.getItem("selectedTab");
+    if (storedTab) {
+      setSelectedTab(storedTab as "Web component" | "React");
+    }
+
+    const handleTabSelectionChange = (event: CustomEvent) => {
+      setSelectedTab(event.detail.selectedTab);
+    };
+
+    window.addEventListener("tabSelectionChanged", handleTabSelectionChange); 
+
+    return () => {
+      window.removeEventListener(
+        "tabSelectionChanged",
+        handleTabSelectionChange
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage as "Typescript" | "Javascript");
+    }
+
+    const handleLanguageSelectionChange = (event: CustomEvent) => {
+      setSelectedLanguage(event.detail.selectedLanguage);
+    };
+
+    window.addEventListener(
+      "languageSelectionChanged",
+      handleLanguageSelectionChange
+    );
+
+    return () => {
+      window.removeEventListener(
+        "languageSelectionChanged",
+        handleLanguageSelectionChange
+      );
+    };
+  }, []);
 
   const pageMetadata = React.useContext(PageMetadataContext);
 
@@ -461,6 +510,12 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
         currentToggleBtnRef.current.checked = true;
       }
     }
+
+    localStorage.setItem("selectedLanguage", intendedLanguage);
+    const event = new CustomEvent("languageSelectionChanged", {
+      detail: { selectedLanguage: intendedLanguage },
+    });
+    window.dispatchEvent(event);
   };
 
   return (
