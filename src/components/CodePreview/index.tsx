@@ -38,6 +38,7 @@ import {
   FrameworkTabProps,
 } from "./types";
 import { useTheme } from "../../context/ThemeContext";
+import CookieConsentContext from "../../context/CookieConsentContext";
 
 export interface ToggleLanguageProps {
   handleToggle: (
@@ -329,6 +330,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   }, []);
 
   const pageMetadata = React.useContext(PageMetadataContext);
+  const { localStorageConsent } = React.useContext(CookieConsentContext);
 
   const getTypeOfProject = (snippet: Snippet) => {
     if (type === "pattern") {
@@ -518,6 +520,18 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     window.dispatchEvent(event);
   };
 
+  const clearLocalStorage = () => {
+    localStorage.removeItem("selectedTab");
+    localStorage.removeItem("selectedLanguage");
+    localStorage.removeItem("theme");
+  };
+
+  useEffect(() => {
+    if (!localStorageConsent) {
+      clearLocalStorage();
+    }
+  }, [localStorageConsent]);
+
   return (
     <div className="comp-preview">
       <h4 className="offscreen">Interactive example</h4>
@@ -542,10 +556,10 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
           (state === "bad" && (
             <Icon
               path={mdiCloseCircle}
-              size="36px"
-              className={clsx("comp-icon", "comp-dont-icon")}
-              aria-hidden="true"
-            />
+            size="36px"
+            className={clsx("comp-icon", "comp-dont-icon")}
+            aria-hidden="true"
+          />
           ))}
         {children}
       </div>

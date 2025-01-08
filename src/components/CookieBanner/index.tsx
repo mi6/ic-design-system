@@ -39,7 +39,7 @@ const CookieBanner: React.FC = () => {
   return (
     <div
       id="cookie-banner"
-      aria-label="cookies banner"
+      aria-label="cookies and local storage banner"
       role="region"
       ref={banner}
     >
@@ -47,25 +47,25 @@ const CookieBanner: React.FC = () => {
         <ic-section-container full-height aligned="full-width" tab-index="-1">
           <ic-typography role="alert" variant="body">
             You’ve {consentCookieApproved() ? "accepted" : "rejected"} analytics
-            cookies. You can{" "}
+            cookies and local storage. You can{" "}
             <ic-link>
               <GatsbyLink slot="router-item" to="/icds/cookies-policy">
-                change your cookie settings
+                change your preferences
               </GatsbyLink>
             </ic-link>{" "}
             at any time.
           </ic-typography>
           <div className="buttons">
             <ic-button variant="primary" onClick={() => setVisible(false)}>
-              Hide cookie message
+              Hide message
             </ic-button>
           </div>
         </ic-section-container>
       ) : (
         <ic-section-container full-height aligned="full-width">
-          <ic-typography variant="h2">Cookies on this site</ic-typography>
+          <ic-typography variant="h2">Cookies and Local Storage on this site</ic-typography>
           <ic-typography variant="body">
-            We’d like to use analytics cookies to understand how you use the
+            We’d like to use analytics cookies and local storage to understand how you use the
             Design System, so that we can make improvements.
           </ic-typography>
           <div className="buttons">
@@ -77,7 +77,7 @@ const CookieBanner: React.FC = () => {
             </ic-button>
             <ic-link>
               <GatsbyLink slot="router-item" to="/icds/cookies-policy">
-                Manage cookies
+                Manage preferences
               </GatsbyLink>
             </ic-link>
           </div>

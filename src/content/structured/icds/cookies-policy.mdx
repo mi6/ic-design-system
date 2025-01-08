@@ -1,11 +1,11 @@
 ---
 path: "/icds/cookies-policy"
 
-date: "2022-11-20"
+date: "2025-01-08"
 
-title: "Cookies Policy"
+title: "Cookies and Local Storage Policy"
 
-subTitle: "Cookies Policy for the Intelligence Community Design System."
+subTitle: "Cookies and Local Storage Policy for the Intelligence Community Design System."
 ---
 
 import InlineCookiesManager from "../../static/components/InlineCookiesManager";
@@ -53,6 +53,22 @@ export const optionalCookies = [
   },
 ];
 
+export const localStorageHeaders = ["Item", "Description"];
+export const localStorageItems = [
+  {
+    item: "selectedTab",
+    desc: "Remembers if you're using React or Web components.",
+  },
+  {
+    item: "selectedLanguage",
+    desc: "Remembers if you’re using JavaScript or TypeScript tabs.",
+  },
+  {
+    item: "theme",
+    desc: "Remembers if you’re using light or dark mode.",
+  },
+];
+
 ## About cookies
 
 A cookie is a file stored on your device that contains an identifier (usually a string of letters and numbers) when you access a website. When you visit the same website again, the cookies stored on your device are accessed by code on the website. This means that the website can recognise the device being used and provide useful features, such as remembering your preferences or keeping you logged in.
@@ -64,6 +80,14 @@ Cookies that are set by the website owner are called 'first party cookies'. Cook
 Cookies do not typically contain any information that personally identifies a user, but personal information that we store about you may be linked to the information stored in and obtained from cookies.
 
 We use cookies on this website to help improve the performance of our digital advertising and to collect basic data about how the website is used so that we can make decisions about how to improve it.
+
+## About local storage
+
+Local storage is a type of web storage that allows websites to store data on a user's device. This data is stored in the browser and persists even after the browser is closed. Local storage is often used to store user preferences and settings.
+
+Local storage does not typically contain any information that personally identifies a user, but personal information that we store about you may be linked to the information stored in and obtained from local storage.
+
+We use local storage on this website to remember your preferences and settings, such as the framework you’re using for tabs, the language you’re using for code snippets, and the theme you’re using.
 
 ## Summary of cookies used by this website
 
@@ -77,7 +101,7 @@ Essential cookies do things like remember the notifications you’ve seen so we 
   caption="Essential Cookies Table"
 />
 
-## Manage your cookie preferences
+## Manage your cookie and local storage preferences
 
 <InlineCookiesManager />
 <br />
@@ -91,6 +115,16 @@ For more information, please read [Google's overview of privacy and safeguarding
   headers={cookiesHeaders}
   data={optionalCookies}
   caption="Optional Cookies Table"
+/>
+
+### Local storage items
+
+Local storage items are used to remember your preferences and settings. They are always present and help us provide a better user experience.
+
+<CookiesData
+  headers={localStorageHeaders}
+  data={localStorageItems}
+  caption="Local Storage Items Table"
 />
 
 ## Limitations and amendments

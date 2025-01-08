@@ -171,12 +171,23 @@ const Layout: React.FC<LayoutProps> = ({
     updateConsent(consent);
   };
 
+  const [localStorageConsent, setLocalStorageConsent] = useState(false);
+
+  const handleLocalStorageConsent = (consent: boolean) => {
+    setLocalStorageConsent(consent);
+    if (!consent) {
+      clearLocalStorage();
+    }
+  };
+
   const value = useMemo(
     () => ({
       cookieConsent,
       handleCookieConsent,
+      localStorageConsent,
+      handleLocalStorageConsent,
     }),
-    [cookieConsent, handleCookieConsent]
+    [cookieConsent, handleCookieConsent, localStorageConsent, handleLocalStorageConsent]
   );
 
   const updateConsent = (consentGranted: boolean) => {
@@ -218,6 +229,18 @@ const Layout: React.FC<LayoutProps> = ({
       systemTheme?.removeEventListener("change", systemThemeListener);
   }, []);
 
+  const clearLocalStorage = () => {
+    localStorage.removeItem("selectedTab");
+    localStorage.removeItem("selectedLanguage");
+    localStorage.removeItem("theme");
+  };
+
+  useEffect(() => {
+    if (!cookieConsent) {
+      clearLocalStorage();
+    }
+  }, [cookieConsent]);
+  
   return (
     <>
       <Helmet>
