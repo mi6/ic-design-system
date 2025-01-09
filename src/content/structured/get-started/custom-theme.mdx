@@ -31,19 +31,26 @@ You can set the 'brand' colour by using the three CSS variables (one for each of
 
 ```css
 :root {
-  --ic-theme-primary-r: 92;
-  --ic-theme-primary-g: 9;
-  --ic-theme-primary-b: 72;
+  --ic-brand-color-primary-r: 92;
+  --ic-brand-color-primary-g: 9;
+  --ic-brand-color-primary-b: 72;
 }
 ```
 
 ## Theme component
 
-Alternatively, you can include the `ic-theme` component and set the `color` property:
+Alternatively, if using the `ic-theme` web component, you can set the `brand-color` attribute:
 
 ```jsx
-<ic-theme color="rgb(92, 9, 72)"></ic-theme>
-<ic-theme color="#5c0949"></ic-theme>
+<ic-theme brand-color="rgb(92, 9, 72)"></ic-theme>
+<ic-theme brand-color="#5c0949"></ic-theme>
+```
+
+Or, if using the React `IcTheme` component, you can set the `brandColor` property:
+
+```jsx
+<IcTheme brandColor="rgb(92, 9, 72)"></IcTheme>
+<IcTheme brandColor="#5c0949"></IcTheme>
 ```
 
 The components that use the 'brand' colour are:
