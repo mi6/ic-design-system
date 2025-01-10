@@ -1,0 +1,62 @@
+---
+path: "/components/tree-view/accessibility"
+
+navPriority: 41
+
+date: "2024-08-23"
+
+title: "Tree view"
+
+status: "CANARY"
+
+subTitle: "Use the tree view component to display hierarchical data in a tree structure."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/tree-view" },
+    { title: "Code", path: "/components/tree-view/code" },
+    { title: "Accessibility", path: "/components/tree-view/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+The tree view items will focus top-down, including any expanded parents’ child nodes, but any closed parent nodes will not be included in the focus order.
+Tree view items can be iterated over with the tab or up and down keys.
+Enter and space keys can be used to expand the currently selected parent node, or to follow the link the currently selected node points to.
+
+## For Assistive Technology
+
+Tree view items are made up of a button and an extended text area. When using ascreen reader, the title of the tree view will be declared first along with how many items there are within it.
+When focussed on a tree view item, screen readers will state the label of a tree view item, its’ index, state, and how many nested items are within it. Any tree view items which aren’t in focus will not be declared by the screen reader.
+
+## Based on
+
+The tree view component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://carbondesignsystem.com/components/tree-view/usage/"
+      rel="noreferer noopener nofollow"
+    >
+      Carbon Design System - Tree View
+    </ic-link>
+    , Carbon Design System IBM Group, accessed February 2024.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://v4.clarity.design/tree-view#top"
+      rel="noreferer noopener nofollow"
+    >
+      Project Clarity - Tree View
+    </ic-link>
+    , VMWare Clairty, accessed September 2023.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

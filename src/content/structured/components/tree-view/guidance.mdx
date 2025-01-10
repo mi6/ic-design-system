@@ -15,11 +15,16 @@ tabs:
   [
     { title: "Guidance", path: "/components/tree-view" },
     { title: "Code", path: "/components/tree-view/code" },
+    { title: "Accessibility", path: "/components/tree-view/accessibility" },
   ]
 ---
 
 import { IcAlert, IcLink } from "@ukic/react";
 import { IcTreeView, IcTreeItem } from "@ukic/canary-react";
+import treeViewFig1 from "./images/fig-1-use-tree-view-for-navigation-options.png";
+import treeViewFig2 from "./images/fig-2-use-tree-view-for-related-subsections.png";
+import treeViewFig3 from "./images/fig-3-avoid-tree-view-for-dense-data-display.png";
+import treeViewFig4 from "./images/fig-4-avoid-using-tree-view-with-limited-width.png";
 
 <IcAlert
   heading="Canary component"
@@ -56,7 +61,11 @@ For more information on canary components, read our approach to [releases and ve
   storybooks.
 </p>
 
-## Component demo
+## Introduction
+
+Tree view provides a navigation tree for use in applications with heirarchical organised pages.
+
+Tree views allow for a large array of items to be displayed compactly, providing quick navigation throughout an application.
 
 <ComponentPreview>
   <div style={{ width: "250px" }}>
@@ -67,3 +76,74 @@ For more information on canary components, read our approach to [releases and ve
     </IcTreeView>
   </div>
 </ComponentPreview>
+
+## When to use
+
+Use tree view to display further navigation options in the application, such as web pages following the home page.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={treeViewFig1}
+    imageAlt="An example of using tree view to navigate throughout an app with nested pages."
+    state="good"
+    caption="Use tree view to navigate throughout heirarchical content."
+  />
+</DoubleDoDontCaution>
+
+Use tree view for hierarchical navigation options, such as related subsections to the current page or topic.
+
+Use the tree view title bar to provide further clarity on the context of your tree view items.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={treeViewFig2}
+    imageAlt="An example of using tree view with a title bar to display related content."
+    state="good"
+    caption="Use tree view to with icons and a title bar to provide context to your data."
+  />
+</DoubleDoDontCaution>
+
+## When not to use
+
+Avoid using tree view for dense or complicated data display. Consider if this could be displayed better with a [data table](/components/data-table) or a grid.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={treeViewFig3}
+    imageAlt="An example of using tree view for dense data with several data types."
+    state="bad"
+    caption="Don't use tree view for data that would benefit from being displayed vertically."
+  />
+</DoubleDoDontCaution>
+
+Avoid using tree view in a drawer/section with restricted width, as the nested layers for child tree items require width to expand into.
+
+Avoid using multiple tree views on the same web page, consider using tabs to separate sections.
+
+## Colour
+
+Use the dark or light appearance to achieve colour contrast compliance when using tree view on different coloured backgrounds.
+
+Icons can be used to provide a range of colours to your application.
+
+## Sizing and placement
+
+Set the tree view item’s vertical size dependent on the amount of tree view items being displayed within one tree view. Large items take up more height so are good to use when there are fewer navigation options. Small items allow for denser and more compact options so are best to use in situations with many nested layers of navigation items.
+
+The width of the tree view is set by the screen size or the container that it is placed within. Tree view item text will be truncated if it overlaps the size of the container, and tooltips will highlight the original text string.
+
+Place the tree view at either side of the page to ensure it can always be accessed independent of the screen content. Tree views should fill the whole height of the container that they sit within.
+
+{" "}
+<DoDontCaution
+  imageSrc={treeViewFig4}
+  imageAlt="An example of placing tree view within a width restricted container leading to truncation."
+  state="bad"
+  caption="Place tree view within a wide enough container to properly indent nested data."
+/>
+
+## Interaction behaviour
+
+When a tree view item is selected, the link it points to will be loaded, if provided. Any nested items will appear underneath the parent item.
+
+Tree view items can scroll within the tree view if they surpass the height of the container.
