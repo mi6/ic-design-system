@@ -164,6 +164,13 @@ const Layout: React.FC<LayoutProps> = ({
     typeof document !== "undefined" ? consentCookieApproved() : false;
 
   const [cookieConsent, setCookieConsent] = useState(defaultCookieConsentValue);
+  const [localStorageConsent, setLocalStorageConsent] = useState(() => {
+    if (typeof window !== "undefined") {
+      const storedConsent = localStorage.getItem("localStorageConsent");
+      return storedConsent === "true";
+    }
+    return false;
+  });
   const defaultConsent = cookieConsent ? "granted" : "denied";
 
   const handleCookieConsent = (consent: boolean) => {
@@ -171,12 +178,28 @@ const Layout: React.FC<LayoutProps> = ({
     updateConsent(consent);
   };
 
+  const handleLocalStorageConsent = (consent: boolean) => {
+    setLocalStorageConsent(consent);
+    if (consent) {
+      localStorage.setItem("localStorageConsent", "true");
+    } else {
+      localStorage.removeItem("localStorageConsent");
+    }
+  };
+
   const value = useMemo(
     () => ({
       cookieConsent,
+      localStorageConsent,
       handleCookieConsent,
+      handleLocalStorageConsent,
     }),
-    [cookieConsent, handleCookieConsent]
+    [
+      cookieConsent,
+      localStorageConsent,
+      handleCookieConsent,
+      handleLocalStorageConsent,
+    ]
   );
 
   const updateConsent = (consentGranted: boolean) => {
@@ -194,7 +217,9 @@ const Layout: React.FC<LayoutProps> = ({
   const toggleTheme = () => {
     setTheme((prevTheme) => {
       const newTheme = prevTheme === "light" ? "dark" : "light";
-      localStorage.setItem("theme", newTheme);
+      if (isLocalStorageEnabled()) {
+        localStorage.setItem("theme", newTheme);
+      }
       return newTheme;
     });
   };
@@ -210,13 +235,17 @@ const Layout: React.FC<LayoutProps> = ({
         : undefined;
     const systemColorScheme = systemTheme?.matches ? "dark" : "light";
 
-    const storedTheme = localStorage.getItem("theme");
+    const storedTheme = isLocalStorageEnabled()
+      ? localStorage.getItem("theme")
+      : null;
     setTheme(storedTheme ? (storedTheme as Theme) : systemColorScheme);
 
     systemTheme?.addEventListener("change", systemThemeListener);
     return () =>
       systemTheme?.removeEventListener("change", systemThemeListener);
   }, []);
+
+  const isLocalStorageEnabled = () => localStorageConsent;
 
   return (
     <>
@@ -270,9 +299,8 @@ const Layout: React.FC<LayoutProps> = ({
           )}
           <CookieConsentContext.Provider value={value}>
             <ClientOnly>
-              {pageTitle !== "Cookies Policy" && GATSBY_GA_TRACKING_ID && (
-                <CookieBanner />
-              )}
+              {pageTitle !== "Cookies and Storage Policy" &&
+                GATSBY_GA_TRACKING_ID && <CookieBanner />}
             </ClientOnly>
             <div className="main-page-container">
               <ic-link href="#main-content" id="skip-main-content-link">

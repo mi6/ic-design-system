@@ -11,10 +11,11 @@ export interface CookiesDataProps {
 }
 
 export interface CookiesDetails {
-  provider: string;
-  domain: string;
-  desc: string;
-  cookies: string;
+  provider?: string;
+  domain?: string;
+  description?: string;
+  cookies?: string;
+  key?: string;
 }
 
 const CookiesData = ({ headers, data, caption }: CookiesDataProps) => {

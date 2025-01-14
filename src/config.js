@@ -36,9 +36,9 @@ module.exports = {
       },
       process.env.GATSBY_GA_TRACKING_ID
         ? {
-            link: "/icds/cookies-policy",
-            text: "Cookies Policy",
-            key: "cookies-policy",
+            link: "/icds/cookies-and-storage-policy",
+            text: "Cookies and Storage Policy",
+            key: "cookies-and-storage-policy",
           }
         : {},
       {

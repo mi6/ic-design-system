@@ -1,0 +1,154 @@
+---
+path: "/icds/cookies-and-storage-policy"
+
+date: "2025-01-13"
+
+title: "Cookies and Storage Policy"
+
+subTitle: "Cookies and Storage Policy for the Intelligence Community Design System."
+---
+
+import InlineCookiesManager from "../../static/components/InlineCookiesManager";
+import CookiesData from "../../static/components/CookiesData";
+
+export const cookiesHeaders = ["Provider", "Domain", "Description", "Cookies"];
+export const essentialCookies = [
+  {
+    provider: "design.sis.gov.uk",
+    domain: "design.sis.gov.uk",
+    description:
+      "This cookie records whether or not the cookie notification pop-up has been acknowledged by the user, including whether or not you permit us to use Google Analytics (GA). The date is used in the cookie name, to ensure you have accepted this version of the policy.",
+    cookies: "ICDSPREF_{policyDate}",
+  },
+  {
+    provider: "Google Analytics",
+    domain: "sis.gov.uk",
+    description:
+      "These cookies are generated from our parent site, sis.gov.uk. These cookies are used to collect essential performance data so that we can review performance of the website, including aspects such as number of visitors and which pages are most popular.",
+    cookies: "_ga, _gid, _gcl_au",
+  },
+  {
+    provider: "Google Doubleclick",
+    domain: "sis.gov.uk",
+    description:
+      "These cookies are used to help us to monitor which digital advertising channels are most effective. By recording which job adverts are generating the most interest, we are able to make better choices about where to advertise.",
+    cookies: "APISID, SSID, NID, PREF, drt, SID, SAPISID, id, HSID",
+  },
+  {
+    provider: "OneTrust",
+    domain: "sis.gov.uk",
+    description:
+      "These cookies are generated from our parent site, sis.gov.uk. These cookies record whether or not the cookie notification pop-up that appears on our parent site has been acknowledged by the user and records whether consent for the cookies have been given.",
+    cookies: "OptanonConsent, OptanonAlertBoxClosed",
+  },
+  {
+    provider: "Cloudflare",
+    domain: "sis.gov.uk",
+    description:
+      "This cookie is generated from our parent site, sis.gov.uk. It helps manage incoming traffic to our parent site and allows for better visibility on the origin of a particular request.",
+    cookies: "_cfruid",
+  },
+];
+export const optionalCookies = [
+  {
+    provider: "Google Analytics",
+    domain: "design.sis.gov.uk",
+    description:
+      "These cookies are used to collect essential performance data so that we can review performance of the website, including aspects such as number of visitors and which pages are most popular.",
+    cookies: "_ga, _gat",
+  },
+];
+
+export const localStorageHeaders = ["Key", "Description"];
+export const essentialLocalStorage = [
+  {
+    key: "localStorageConsent",
+    description:
+      "This records whether or not local storage has been enabled by the user.",
+  },
+];
+export const optionalLocalStorage = [
+  {
+    key: "selectedTab",
+    description: "Stores your preferred framework for Code Previews.",
+  },
+  {
+    key: "selectedLanguage",
+    description:
+      "Stores your preferred programming language for Code Previews.",
+  },
+  {
+    key: "theme",
+    description: "Stores your theme preference (light or dark).",
+  },
+];
+
+## About cookies and local storage
+
+A cookie is a file stored on your device that contains an identifier (usually a string of letters and numbers) when you access a website. When you visit the same website again, the cookies stored on your device are accessed by code on the website. This means that the website can recognise the device being used and provide useful features, such as remembering your preferences or keeping you logged in.
+
+Local storage is a type of web storage that allows websites and apps to store data in a browser on a device. This data is persistent and remains even after the browser is closed. Local storage is often used to store user preferences and settings.
+
+Cookies may be either 'persistent cookies' or 'session cookies'. A persistent cookie will be stored by a web browser and will remain valid until its set expiry date, unless deleted by the user before the expiry date. A session cookie, on the other hand, will expire at the end of the user session, when the web browser is closed.
+
+Cookies that are set by the website owner are called 'first party cookies'. Cookies that are set by another platform or service are called 'third party cookies'. These tend to be used for additional services, such as advertising or analytics.
+
+Cookies and local storage do not typically contain any information that personally identifies a user, but personal information that we store about you may be linked to the information stored in and obtained from cookies and local storage.
+
+We use cookies on this website to help improve the performance of our digital advertising and to collect basic data about how the website is used so that we can make decisions about how to improve it. We use local storage to remember your preferences and improve your experience on the website.
+
+## Summary of cookies and local storage used by this website
+
+### Essential cookies
+
+Essential cookies do things like remember the notifications you’ve seen so we don't show them to you again, and to adhere to your cookie preferences. They are always present and help us host the website.
+
+<CookiesData
+  headers={cookiesHeaders}
+  data={essentialCookies}
+  caption="Essential Cookies Table"
+/>
+
+### Essential local storage
+
+Essential local storage do things like remember the preferences you’ve set so we don't have to ask you them again, and to adhere to your local storage preferences. They are always present and help us keep the website functional.
+
+<CookiesData
+  headers={localStorageHeaders}
+  data={essentialLocalStorage}
+  caption="Essential Local Storage Table"
+/>
+
+## Manage your cookie and storage preferences
+
+<InlineCookiesManager />
+
+### Optional cookies
+
+We use optional cookies from Google Analytics (GA) to collect data that we use to improve your experience of our website. We do this to help make sure the site is meeting the needs of its users and to help us make improvements.
+
+For more information, please read [Google's overview of privacy and safeguarding data](https://support.google.com/analytics/answer/6004245), and should you wish, you can [opt-out of Google Analytics cookies](https://tools.google.com/dlpage/gaoptout).
+
+<CookiesData
+  headers={cookiesHeaders}
+  data={optionalCookies}
+  caption="Optional Cookies Table"
+/>
+
+### Optional local storage
+
+We use optional local storage to remember your preferences and improve your experience on our website. This helps us ensure the site meets your needs and enhances its functionality.
+
+<CookiesData
+  headers={localStorageHeaders}
+  data={optionalLocalStorage}
+  caption="Local Storage Table"
+/>
+
+## Limitations and amendments
+
+This statement only covers the Design System website at design.sis.gov.uk. This statement does not cover third party websites to which we may link. It does not cover the main SIS website.
+
+## Changes to this notice
+
+We may change this privacy notice. When we make changes to this notice, the 'last updated' date at the bottom of this page will also change. Any changes to this privacy notice will apply to you and your data immediately. If these changes affect how your personal data is processed, SIS will take reasonable steps to make sure you know.
