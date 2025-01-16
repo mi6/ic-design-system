@@ -14,14 +14,14 @@
 .dont {
   border-top: var(--ic-space-xs) solid var(--ic-status-error-default);
   position: relative;
-  margin-bottom: var(--ic-space-xxl);
+  margin-bottom: var(--ic-space-lg);
   display: inline-block;
 }
 
 .do {
   border-top: var(--ic-space-xs) solid var(--ic-status-success-default);
   position: relative;
-  margin-bottom: var(--ic-space-xxl);
+  margin-bottom: var(--ic-space-lg);
   display: inline-block;
 }
 
