@@ -8,6 +8,10 @@ ic-typography:hover .permalink svg,
   opacity: 1;
 }
 
+.title-container {
+  display: inline;
+}
+
 .permalink {
   transition: var(--ic-easing-transition-fast);
   width: 2.625rem;
