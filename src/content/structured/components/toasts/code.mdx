@@ -1031,3 +1031,86 @@ export const CustomIconAriaLabels = () => {
 <ComponentPreview snippets={customIconAriaLabelsSnippet}>
   <CustomIconAriaLabels />
 </ComponentPreview>
+
+
+
+### Toast usage without useRef
+
+export const ToastWithoutRefSnippet = [
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleClick}>
+  Display toast on load without useRef
+</IcButton>
+<IcToastRegion>
+  <IcToast
+    heading="Toast with coffee"
+    id="toast"
+  />
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const handleClick = () => {
+    const toastRegion = document.querySelector(
+      "ic-toast-region",
+    ) as HTMLIcToastRegionElement;
+    const toastElement = document.getElementById("toast") as HTMLIcToastElement;
+
+    if (toastRegion && toastElement) {
+      toastRegion.openToast = toastElement;
+    }
+  };
+
+  useEffect(() => {
+    handleClick();
+  }, []);
+
+  return (
+    <>
+      <IcButton onClick={handleClick}>
+  Display toast on load without useRef
+</IcButton>    
+      Display toast on load without useRef
+      <IcToastRegion>
+        <IcToast heading={"Toast with coffee"} id="toast" />
+      </IcToastRegion>
+    </>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const ToastWithoutRefs = () => {
+    const handleClick = () => {
+    const toastRegion = document.querySelector(
+      "ic-toast-region",
+    );
+    const toastElement = document.getElementById("toast");
+
+    if (toastRegion && toastElement) {
+      toastRegion.openToast = toastElement;
+    }
+  };
+
+  useEffect(() => {
+    handleClick();
+  }, []);
+
+  return (
+    <>
+      <IcButton onClick={handleClick}>Display default toast</IcButton>
+      <IcToastRegion>
+        <IcToast heading={"Toast with coffee"} id="toast" />
+      </IcToastRegion>
+    </>
+  );
+};
+
+<ComponentPreview snippets={ToastWithoutRefSnippet}>
+  <ToastWithoutRefs />
+</ComponentPreview>
+
