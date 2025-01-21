@@ -38,6 +38,7 @@ yarn add @ukic/web-components@next @ukic/fonts@next
 Add the necessary options to your relevant configuration:
 
 ### In-Browser config
+
 This only works if using in-browser compilation.
 
 ```jsx
@@ -45,6 +46,7 @@ app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith("ic-");
 ```
 
 ### Vite config
+
 Add the following to your `vite.config.js`:
 
 ```jsx
@@ -65,7 +67,9 @@ export default {
 ```
 
 ### Vue CLI config
+
 Add the following to your `vue.config.js`:
+
 ```jsx
 module.exports = {
   chainWebpack: (config) => {
