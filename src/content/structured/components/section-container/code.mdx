@@ -38,7 +38,7 @@ export const snippetsDefault = [
   </div>
 </ic-section-container>`,
       long: `ic-section-container {
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid var(--ic-color-text-primary);
     margin: var(--ic-space-xxs);
   }
   .content-container {
@@ -66,7 +66,7 @@ export const snippetsDefault = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -84,7 +84,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -104,7 +104,9 @@ return (
 ];
 
 <ComponentPreview snippets={snippetsDefault} style={{ display: "contents" }}>
-  <IcSectionContainer style={{ border: "0.0625rem solid black" }}>
+  <IcSectionContainer
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
+  >
     <div
       style={{
         display: "flex",
@@ -139,7 +141,7 @@ export const snippetsCenter = [
   </div>
 </ic-section-container>`,
       long: `ic-section-container {
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid var(--ic-color-text-primary);
     margin: var(--ic-space-xxs);
     width: 60%;
   }
@@ -171,7 +173,7 @@ export const snippetsCenter = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -189,7 +191,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -211,7 +213,7 @@ return (
 <ComponentPreview snippets={snippetsCenter}>
   <IcSectionContainer
     aligned="center"
-    style={{ border: "0.0625rem solid black" }}
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
   >
     <div
       style={{
@@ -241,7 +243,7 @@ export const snippetsFullWidth = [
   </div>
 </ic-section-container>`,
       long: `ic-section-container {
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid var(--ic-color-text-primary);
     margin: var(--ic-space-xxs);
     width: 60%;
   }
@@ -273,7 +275,7 @@ export const snippetsFullWidth = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -291,7 +293,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -312,7 +314,7 @@ return (
 
 <ComponentPreview snippets={snippetsFullWidth} style={{ display: "block" }}>
   <IcSectionContainer
-    style={{ border: "0.0625rem solid black" }}
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
     aligned="full-width"
   >
     <div
@@ -343,7 +345,7 @@ export const snippetsFullHeight = [
   </div>
 </ic-section-container>`,
       long: `ic-section-container {
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid var(--ic-color-text-primary);
     margin: var(--ic-space-xxs);
     width: 60%;
   }
@@ -375,7 +377,7 @@ export const snippetsFullHeight = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -393,7 +395,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   sectionContainer: {
-    border: "0.0625rem solid black",
+    border: "0.0625rem solid var(--ic-color-text-primary)",
     margin: "var(--ic-space-xxs)",
   },
   contentContainer: {
@@ -416,7 +418,7 @@ return (
   <IcSectionContainer
     aligned="center"
     fullHeight
-    style={{ border: "0.0625rem solid black" }}
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
   >
     <div
       style={{

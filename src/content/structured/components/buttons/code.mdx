@@ -762,8 +762,8 @@ export const snippetsColour = [
     technology: "Web component",
     snippets: {
       short: `<ic-button variant="primary">Add to order</ic-button>
-<ic-button variant="primary" appearance="dark">Add to order</ic-button>
-<ic-button variant="primary" appearance="light">Add to order</ic-button>`,
+<ic-button variant="primary" monochrome="true">Add to order</ic-button>
+<ic-button variant="primary" theme="dark" monochrome="true">Add to order</ic-button>`,
       long: `.parent-container {
     display: flex;
     flex-wrap: wrap;
@@ -781,8 +781,8 @@ export const snippetsColour = [
     technology: "React",
     snippets: {
       short: `<IcButton variant="primary">Add to order</IcButton>
-<IcButton variant="primary" appearance="dark">Add to order</IcButton>
-<IcButton variant="primary" appearance="light">Add to order</IcButton>`,
+<IcButton variant="primary" monochrome>Add to order</IcButton>
+<IcButton variant="primary" theme="dark" monochrome>Add to order</IcButton>`,
       long: [
         {
           language: "Typescript",
@@ -825,10 +825,10 @@ return (
 
 <ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsColour}>
   <IcButton variant="primary">Add to order</IcButton>
-  <IcButton variant="primary" appearance="dark">
+  <IcButton variant="primary" theme="light" monochrome>
     Add to order
   </IcButton>
-  <IcButton variant="primary" appearance="light">
+  <IcButton variant="primary" theme="dark" monochrome>
     Add to order
   </IcButton>
 </ComponentPreview>
