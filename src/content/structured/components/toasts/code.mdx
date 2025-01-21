@@ -1031,3 +1031,89 @@ export const CustomIconAriaLabels = () => {
 <ComponentPreview snippets={customIconAriaLabelsSnippet}>
   <CustomIconAriaLabels />
 </ComponentPreview>
+
+### Toast usage without useRef
+
+export const toastWithoutRefsSnippet = [
+  {
+    technology: "React",
+    snippets: {
+      short: `
+<IcToastRegion>
+  <IcToast
+    heading="Your coffee is ready"
+  />
+</IcToastRegion>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const handleClick = () => {
+    const toastRegion = document.querySelector(
+      "ic-toast-region",
+    );
+    const toastElement = document.getElementById("toast");
+    if (toastRegion && toastElement) {
+      toastRegion.openToast = toastElement;
+    }
+  };
+  useEffect(() => {
+    handleClick();
+  }, []);
+  return (
+    <>
+      <IcButton onClick={handleClick}>Display toast</IcButton>
+      <IcToastRegion>
+        <IcToast heading="Your coffee is ready" id="toast" />
+      </IcToastRegion>
+    </>
+  );`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const handleClick = () => {
+    const toastRegion = document.querySelector(
+      "ic-toast-region",
+    );
+    const toastElement = document.getElementById("toast");
+    if (toastRegion && toastElement) {
+      toastRegion.openToast = toastElement;
+    }
+  };
+  useEffect(() => {
+    handleClick();
+  }, []);
+  return (
+    <>
+      <IcButton onClick={handleClick}>Display toast</IcButton>
+      <IcToastRegion>
+        <IcToast heading="Your coffee is ready" id="toast" />
+      </IcToastRegion>
+    </>
+  );`,
+        },
+      ],
+    },
+  },
+];
+
+export const ToastComponentWithoutRefs = () => {
+  const handleClick = () => {
+    const toastRegion = document.querySelector("ic-toast-region");
+    const toastElement = document.getElementById("toast");
+    if (toastRegion && toastElement) {
+      toastRegion.openToast = toastElement;
+    }
+  };
+  return (
+    <>
+      <IcButton onClick={handleClick}>Display toast</IcButton>
+      <IcToastRegion>
+        <IcToast heading="Your coffee is ready" id="toast" />
+      </IcToastRegion>
+    </>
+  );
+};
+
+<ComponentPreview snippets={toastWithoutRefsSnippet}>
+  <ToastComponentWithoutRefs />
+</ComponentPreview>
