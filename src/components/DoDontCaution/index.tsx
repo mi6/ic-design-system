@@ -1,15 +1,16 @@
 import React from "react";
+import Icon from "@mdi/react";
+import { mdiCheck, mdiClose, mdiAlert } from "@mdi/js";
 import clsx from "clsx";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { useTheme } from "../../context/ThemeContext";
+import { passImage } from "../../utils/helpers";
 
 import "./index.css";
 
-import Icon from "@mdi/react";
-import { mdiCheck, mdiClose, mdiAlert } from "@mdi/js";
-
 interface DoDontCautionProps {
-  imageSrc?: string;
+  imageSrc?: Array<string> | string;
   imageAlt: string;
   state?: "good" | "bad" | "none" | "caution";
   caption?: string;
@@ -37,6 +38,9 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
   state = "none",
   caption = "",
 }) => {
+  const { theme } = useTheme();
+  const transformedImageSrc = passImage(imageSrc, theme);
+
   const imageData = useStaticQuery(graphql`
     query {
       allFile(filter: { ext: { in: [".jpg", ".png"] } }) {
@@ -108,14 +112,14 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
       {imageSrc &&
         (isBase64 ? (
           <img
-            src={imageSrc}
+            src={transformedImageSrc}
             alt={imageAlt}
             className="image-wide"
             loading="lazy"
           />
         ) : (
           <GatsbyImage
-            image={filterImageData(imageSrc)}
+            image={filterImageData(transformedImageSrc)}
             alt={imageAlt}
             className="image-wide"
           />

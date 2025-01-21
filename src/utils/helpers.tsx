@@ -56,3 +56,11 @@ export const useViewportWidth = () => {
 
   return viewportWidth;
 };
+
+// returns the image source based on theme mode and whether it is an array of light and dark mode images or a single image
+export const passImage = (imageSrc: Array<string> | string, theme: string) => {
+  if (typeof imageSrc === "string") {
+    return imageSrc;
+  }
+  return theme === "light" ? imageSrc[0] : imageSrc[1];
+};
