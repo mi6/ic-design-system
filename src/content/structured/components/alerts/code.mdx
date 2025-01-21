@@ -188,7 +188,7 @@ export const snippetsWithAction = [
     technology: "Web component",
     snippets: {
       short: `<ic-alert variant="info" heading="Did you know?" message="There is a new range of coffees to try.">
-  <ic-button slot="action" variant="secondary" appearance="dark">View Drinks</ic-button></ic-alert>`,
+  <ic-button slot="action" variant="secondary" monochrome="true">View Drinks</ic-button></ic-alert>`,
       long: `{shortCode}
 <script>
   const btn = document.querySelector('ic-button');
@@ -209,7 +209,7 @@ export const snippetsWithAction = [
   <IcButton 
     slot="action" 
     variant="secondary" 
-    appearance="dark" 
+    monochrome
     onClick={(ev) => console.log(ev)}
   >
     View Drinks
@@ -238,7 +238,7 @@ export const snippetsWithAction = [
     <IcButton
       slot="action"
       variant="secondary"
-      appearance="dark"
+      monochrome
       onClick={(ev) => console.log(ev)}
     >
       View Drinks
