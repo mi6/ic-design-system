@@ -6,3 +6,4 @@ export { default as ICDSLogo } from "./icds-logo.svg";
 export { default as StackBlitzLogo } from "./stackblitz-logo.svg";
 export { default as DesignImage } from "./designers-image.svg";
 export { default as DevImage } from "./developers-image.svg";
+export { default as TestDarkImage } from "./test-dark-mode-image.svg";
