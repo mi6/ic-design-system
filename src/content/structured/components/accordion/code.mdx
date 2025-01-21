@@ -200,6 +200,21 @@ export const withIcon = [
   </IcAccordionGroup>
 </ComponentPreview>
 
+<ComponentPreview snippets={groupTitle} style={{ flexDirection: "column" }}>
+  <IcAccordionGroup group-title="Sport">
+    <IcAccordion heading="Football">
+      <IcTypography variant="body">
+        A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+      </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Basketball">
+      <IcTypography variant="body">
+        A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+      </IcTypography>
+    </IcAccordion>
+  </IcAccordionGroup>
+</ComponentPreview>
+
 export const groupTitle = [
   {
     language: "Web component",
@@ -212,6 +227,21 @@ export const groupTitle = [
   <ic-accordion heading="Americano">
     <ic-typography variant="body">
       An espresso-based drink that is diluted with hot water.
+    </ic-typography>
+  </ic-accordion>
+</ic-accordion-group>`,
+  },
+  {
+    language: "Web component",
+    snippet: `<ic-accordion-group group-title="Sport">
+  <ic-accordion heading="Football">
+    <ic-typography variant="body">
+      A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+    </ic-typography>
+  </ic-accordion>
+  <ic-accordion heading="Basketball">
+    <ic-typography variant="body">
+      A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
     </ic-typography>
   </ic-accordion>
 </ic-accordion-group>`,
@@ -231,6 +261,21 @@ export const groupTitle = [
   </IcAccordion>
 </IcAccordionGroup>`,
   },
+  {
+    language: "React",
+    snippet: `<IcAccordionGroup groupTitle="Sport">
+  <IcAccordion heading="Football">
+    <IcTypography variant="body">
+      A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Basketball">
+    <IcTypography variant="body">
+      A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+    </IcTypography>
+  </IcAccordion>
+</IcAccordionGroup>`,
+  }
 ];
 
 ### With nested accordions
@@ -259,6 +304,28 @@ export const snippetsNested = [
 </ic-accordion-group>`,
   },
   {
+    language: "Web component",
+    snippet: `<ic-accordion-group group-title="Sport">
+  <ic-accordion heading="Football">
+    <ic-typography variant="body">
+      A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+    </ic-typography>
+  </ic-accordion>
+  <ic-accordion heading="Other sports">
+    <ic-accordion heading="Basketball">
+      <ic-typography variant="body">
+        A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+      </ic-typography>
+    </ic-accordion>
+    <ic-accordion heading="Tennis">
+      <ic-typography variant="body">
+        A racket sport which can be played individually against a single opponent, or in pairs against a team of two.
+      </ic-typography>
+    </ic-accordion>
+  </ic-accordion>
+</ic-accordion-group>`,
+  },
+  {
     language: "React",
     snippet: `<IcAccordionGroup groupTitle="Coffee">
   <IcAccordion heading="Cappucino">
@@ -280,6 +347,28 @@ export const snippetsNested = [
   </IcAccordion>
 </IcAccordionGroup>`,
   },
+  {
+    language: "React",
+    snippet: `<IcAccordionGroup groupTitle="Sport">
+  <IcAccordion heading="Football">
+    <IcTypography variant="body">
+      A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Other sports">
+    <IcAccordion heading="Basketball">
+      <IcTypography variant="body">
+        A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+      </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Tennis">
+      <IcTypography variant="body">
+        A racket sport which can be played individually against a single opponent, or in pairs against a team of two.
+      </IcTypography>
+    </IcAccordion>
+  </IcAccordion>
+</IcAccordionGroup>`,
+  }
 ];
 
 <ComponentPreview snippets={snippetsNested} style={{ flexDirection: "column" }}>
@@ -305,6 +394,28 @@ export const snippetsNested = [
   </IcAccordionGroup>
 </ComponentPreview>
 
+<ComponentPreview snippets={snippetsNested} style={{ flexDirection: "column" }}>
+  <IcAccordionGroup group-title="Sport">
+    <IcAccordion heading="Football">
+      <IcTypography variant="body">
+        A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+      </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Other sports">
+      <IcAccordion heading="Basketball">
+        <IcTypography variant="body">
+          A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+        </IcTypography>
+      </IcAccordion>
+      <IcAccordion heading="Tennis">
+        <IcTypography variant="body">
+          A racket sport which can be played individually against a single opponent, or in pairs against a team of two.
+        </IcTypography>
+      </IcAccordion>
+    </IcAccordion>
+  </IcAccordionGroup>
+</ComponentPreview>
+
 ### With single expansion
 
 export const snippetsSingleExpansion = [
@@ -319,6 +430,21 @@ export const snippetsSingleExpansion = [
   <ic-accordion heading="Americano">
     <ic-typography variant="body">
       An espresso-based drink that is diluted with hot water.
+    </ic-typography>
+  </ic-accordion>
+</ic-accordion-group>`,
+  },
+  {
+    language: "Web component",
+    snippet: `<ic-accordion-group group-title="Sport" single-expansion='true'>
+  <ic-accordion heading="Football">
+    <ic-typography variant="body">
+      A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+    </ic-typography>
+  </ic-accordion>
+  <ic-accordion heading="Basketball">
+    <ic-typography variant="body">
+      A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
     </ic-typography>
   </ic-accordion>
 </ic-accordion-group>`,
@@ -339,6 +465,21 @@ export const snippetsSingleExpansion = [
   </IcAccordion>
 </IcAccordionGroup>`,
   },
+  {
+    language: "React",
+    snippet: `<IcAccordionGroup group-title="Sport" single-expansion="true">
+  <IcAccordion heading="Football">
+    <IcTypography variant="body">
+      A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Basketball">
+    <IcTypography variant="body">
+      A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+    </IcTypography>
+  </IcAccordion>
+</IcAccordionGroup>`,
+  }
 ];
 
 <ComponentPreview
@@ -360,6 +501,23 @@ export const snippetsSingleExpansion = [
   </IcAccordionGroup>
 </ComponentPreview>
 
+<ComponentPreview
+  snippets={snippetsSingleExpansion}
+  style={{ flexDirection: "column" }}
+>
+  <IcAccordionGroup group-title="Sport" single-expansion="true">
+    <IcAccordion heading="Football">
+      <IcTypography variant="body">
+        A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+      </IcTypography>
+    </IcAccordion>
+    <IcAccordion heading="Basketball">
+      <IcTypography variant="body">
+        A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+      </IcTypography>
+    </IcAccordion>
+  </IcAccordionGroup>
+</ComponentPreview>
 ### With disabled
 
 export const snippetsDisabled = [
@@ -382,6 +540,24 @@ export const snippetsDisabled = [
 </ic-accordion>`,
   },
   {
+    language: "Web component",
+    snippet: `<ic-accordion heading="Basketball">
+  <ic-typography variant="body">
+    A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+  </ic-typography>
+</ic-accordion>
+<ic-accordion heading="Football" disabled="true">
+  <ic-typography variant="body">
+    A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+  </ic-typography>
+</ic-accordion>
+<ic-accordion heading="Tennis" disabled="true">
+  <ic-typography variant="body">
+    A racket sport which can be played individually against a single opponent, or in pairs against a team of two.
+  </ic-typography>
+</ic-accordion>`,
+  },
+  {
     language: "React",
     snippet: `<IcAccordion heading="Americano">
   <IcTypography variant="body">
@@ -399,6 +575,24 @@ export const snippetsDisabled = [
   </IcTypography>
 </IcAccordion>`,
   },
+  {
+    language: "React",
+    snippet: `<IcAccordion heading="Basketball">
+  <IcTypography variant="body">
+    A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+  </IcTypography>
+</IcAccordion>
+<IcAccordion heading="Football" disabled="true">
+  <IcTypography variant="body">
+    A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+  </IcTypography>
+</IcAccordion>
+<IcAccordion heading="Tennis" disabled="true">
+  <IcTypography variant="body">
+    A racket sport which can be played individually against a single opponent, or in pairs against a team of two.
+  </IcTypography>
+</IcAccordion>`,
+  }
 ];
 
 <ComponentPreview
@@ -422,3 +616,25 @@ export const snippetsDisabled = [
     </IcTypography>
   </IcAccordion>
 </ComponentPreview>
+
+<ComponentPreview
+  snippets={snippetsDisabled}
+  style={{ flexDirection: "column" }}
+>
+  <IcAccordion heading="Basketball">
+    <IcTypography variant="body">
+      A team sport played between two teams of 5, players use a round ball to score through a 10ft hoop.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Football" disabled="true">
+    <IcTypography variant="body">
+      A team sport played between two teams of 11, players use a round ball and must score in the goal net.
+    </IcTypography>
+  </IcAccordion>
+  <IcAccordion heading="Tennis" disabled="true">
+    <IcTypography variant="body">
+      A racket sport which can be played individually against a single opponent, or in pairs against a team of two.
+    </IcTypography>
+  </IcAccordion>
+</ComponentPreview>
+
