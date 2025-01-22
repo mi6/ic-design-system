@@ -89,18 +89,10 @@ const ComponentImages: { [key: string]: any } = {
   Typography,
 };
 
-const ComponentGallery: React.FC = () => {
-  const uniqueComponentDetails = [
-    ...new Map(
-      pagesData.data
-        .filter(({ tabs }) => tabs)
-        .map((item) => [item.title, item])
-    ).values(),
-  ];
-
-  return (
+const ComponentGallery: React.FC = () =>
+  pagesData?.data && (
     <ul className="card-container">
-      {uniqueComponentDetails?.map(({ path, subTitle, title }) => (
+      {pagesData.data.map(({ path, subTitle, title }) => (
         <li key={title}>
           <GatsbyLink to={path}>
             <ic-card message={subTitle} full-width clickable>
@@ -124,6 +116,5 @@ const ComponentGallery: React.FC = () => {
       ))}
     </ul>
   );
-};
 
 export default ComponentGallery;
