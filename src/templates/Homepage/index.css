@@ -52,6 +52,10 @@
   width: 18.75rem;
 }
 
+ic-alert ic-link {
+  padding-right: var(--ic-space-xs);
+}
+
 .hero .ic-typography-h4 .MuiSvgIcon-root {
   height: var(--ic-space-lg);
   width: var(--ic-space-lg);
