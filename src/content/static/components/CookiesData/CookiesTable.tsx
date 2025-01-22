@@ -7,7 +7,7 @@ const CookiesTable = ({ headers, data, caption }: CookiesDataProps) => (
     <thead>
       <tr>
         {headers.map((header: string) => (
-          <th>
+          <th key={header}>
             <ic-typography variant="subtitle-small">{header}</ic-typography>
           </th>
         ))}
@@ -15,11 +15,12 @@ const CookiesTable = ({ headers, data, caption }: CookiesDataProps) => (
     </thead>
     <tbody>
       {data.map((cookieData: any) => (
-        <tr>
-          <td>{cookieData.provider}</td>
-          <td>{cookieData.domain}</td>
-          <td>{cookieData.desc}</td>
-          <td>{cookieData.cookies}</td>
+        <tr key={cookieData.key || cookieData.cookies}>
+          {headers.map((header: string) => (
+            <td key={`${cookieData.key || cookieData.cookies}-${header}`}>
+              {cookieData[header.toLowerCase()]}
+            </td>
+          ))}
         </tr>
       ))}
     </tbody>
