@@ -535,11 +535,7 @@ export const withReactRouter = [
         <NavLink slot="router-item" to="/">Beverages</NavLink>
       </IcLink>
     </IcBreadcrumb>
-    <IcBreadcrumb pageTitle="Coffee" current>
-      <IcLink>
-        <NavLink to="/" slot="router-item">Coffee</NavLink>
-      </IcLink>
-    </IcBreadcrumb>
+    <IcBreadcrumb pageTitle="Coffee" href="/" current />
   </IcBreadcrumbGroup>
 </MemoryRouter>`,
       long: [
@@ -573,13 +569,7 @@ export const withReactRouter = [
           </NavLink>
         </IcLink>
       </IcBreadcrumb>
-      <IcBreadcrumb pageTitle="Coffee" current>
-        <IcLink>
-          <NavLink to="/" slot="router-item">
-            Coffee
-          </NavLink>
-        </IcLink>
-      </IcBreadcrumb>
+      <IcBreadcrumb pageTitle="Coffee" href="/" current />
     </IcBreadcrumbGroup>
   </MemoryRouter>
 </ComponentPreview>

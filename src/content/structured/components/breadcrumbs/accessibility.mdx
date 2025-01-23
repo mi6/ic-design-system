@@ -27,6 +27,8 @@ Breadcrumbs are formed out of a set of links. Each of these links is individuall
 
 The separators between links are added programmatically so that they aren't read out by screen readers. The separators are purely decorative so don't need to be announced to the user.
 
+Avoid adding a slotted link to the breadcrumb for the current page. Doing so may cause screen readers to announce the breadcrumb as a link which could be confusing to users because current page breadcrumbs are not focusable.
+
 ## Based on
 
 The breadcrumbs component has been based on the following resources:
