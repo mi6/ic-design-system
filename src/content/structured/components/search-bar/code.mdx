@@ -674,6 +674,119 @@ return (
   />
 </ComponentPreview>
 
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-search-bar 
+  label="What is your favourite coffee?" 
+  placeholder="Start typing to search…"
+  theme="dark"
+></ic-search-bar>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+    background: #17191c;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>    
+  <script>
+    const searchBar = document.querySelector("ic-search-bar");
+    searchBar.options = [
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ];
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSearchBar 
+  label="What is your favourite coffee?"
+  options={options}
+  placeholder="Start typing to search…"
+  theme="dark"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#17191c",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const options = [
+  { label: "Espresso", value: "espresso" },
+  { label: "Double Espresso", value: "doubleespresso" },
+  { label: "Flat White", value: "flatwhite" },
+  { label: "Cappuccino", value: "cappuccino" },
+  { label: "Americano", value: "americano" },
+  { label: "Mocha", value: "mocha" },
+];
+const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "#17191c",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ background: "#17191c" }}
+>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+    theme="dark"
+    placeholder="Start typing to search…"
+  />
+</ComponentPreview>
+
 ## Custom filtering example
 
 This example shows how to filter data asynchronously when the value in the input field changes. The data is mocked and displayed after a one second delay, but could be replaced with a call to an API or database.
@@ -860,117 +973,4 @@ export const CustomFilterExample = () => {
 
 <ComponentPreview snippets={customFiltering}>
   <CustomFilterExample />
-</ComponentPreview>
-
-### Theme
-
-export const snippetsThemeDark = [
-  {
-    technology: "Web component",
-    snippets: {
-      short: `<ic-search-bar 
-  label="What is your favourite coffee?" 
-  placeholder="Start typing to search…"
-  theme="dark"
-></ic-search-bar>`,
-      long: `.parent-container {
-    padding: var(--ic-space-md);
-    background: #17191c;
-  }
-</style>
-<body>
-  <div class="parent-container">
-    {shortCode}
-  </div>    
-  <script>
-    const searchBar = document.querySelector("ic-search-bar");
-    searchBar.options = [
-      { label: "Espresso", value: "espresso" },
-      { label: "Double Espresso", value: "doubleespresso" },
-      { label: "Flat White", value: "flatwhite" },
-      { label: "Cappuccino", value: "cappuccino" },
-      { label: "Americano", value: "americano" },
-      { label: "Mocha", value: "mocha" },
-    ];
-  </script>`,
-    },
-  },
-  {
-    technology: "React",
-    snippets: {
-      short: `<IcSearchBar 
-  label="What is your favourite coffee?"
-  options={options}
-  placeholder="Start typing to search…"
-  theme="dark"
-/>`,
-      long: [
-        {
-          language: "Typescript",
-          snippet: `const options = [
-  { label: "Espresso", value: "espresso" },
-  { label: "Double Espresso", value: "doubleespresso" },
-  { label: "Flat White", value: "flatwhite" },
-  { label: "Cappuccino", value: "cappuccino" },
-  { label: "Americano", value: "americano" },
-  { label: "Mocha", value: "mocha" },
-];
-const useStyles = createUseStyles({
-  parentContainer: {
-    padding: "var(--ic-space-md)",
-    background: "#17191c",
-  },
-});
-const classes = useStyles();
-return (
-  <div className={classes.parentContainer}>
-    {shortCode}
-  </div>
-)`,
-        },
-        {
-          language: "Javascript",
-          snippet: `const options = [
-  { label: "Espresso", value: "espresso" },
-  { label: "Double Espresso", value: "doubleespresso" },
-  { label: "Flat White", value: "flatwhite" },
-  { label: "Cappuccino", value: "cappuccino" },
-  { label: "Americano", value: "americano" },
-  { label: "Mocha", value: "mocha" },
-];
-const useStyles = createUseStyles({
-  parentContainer: {
-    padding: "var(--ic-space-md)",
-    background: "#17191c",
-  },
-});
-const classes = useStyles();
-return (
-  <div className={classes.parentContainer}>
-    {shortCode}
-  </div>
-)`,
-        },
-      ],
-    },
-  },
-];
-
-<ComponentPreview
-  snippets={snippetsThemeDark}
-  style={{ background: "#17191c" }}
->
-  <IcSearchBar
-    label="What is your favourite coffee?"
-    options={[
-      { label: "Espresso", value: "espresso" },
-      { label: "Double Espresso", value: "doubleespresso" },
-      { label: "Flat White", value: "flatwhite" },
-      { label: "Cappuccino", value: "cappuccino" },
-      { label: "Americano", value: "americano" },
-      { label: "Mocha", value: "mocha" },
-    ]}
-    theme="dark"
-    placeholder="Start typing to search…"
-  />
 </ComponentPreview>
