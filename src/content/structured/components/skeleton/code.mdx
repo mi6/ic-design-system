@@ -302,6 +302,7 @@ export const snippetsTheme = [
     display: flex;
     flex-direction: column;
     gap: var(--ic-space-xs);
+    background: #17191c;
   }
 </style>
 <body>
@@ -326,6 +327,7 @@ export const snippetsTheme = [
     display: "flex",
     flexDirection: "column",
     gap: "var(--ic-space-xs)",
+    background: "#17191c",
   },
 });
 const classes = useStyles();
@@ -342,6 +344,7 @@ return (
     display: "flex",
     flexDirection: "column",
     gap: "var(--ic-space-xs)",
+    background: "#17191c",
   },
 });
 const classes = useStyles();
@@ -356,7 +359,7 @@ return (
   },
 ];
 
-<ComponentPreview snippets={snippetsTheme}>
+<ComponentPreview snippets={snippetsTheme} style={{ background: "#17191c" }}>
   <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
     <IcSkeleton variant="circle" theme="dark" />
     <IcTypography variant="caption">

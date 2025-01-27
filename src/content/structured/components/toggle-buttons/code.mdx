@@ -433,24 +433,24 @@ return (
   </IcToggleButton>
 </ComponentPreview>
 
-### Dark
+### Monochrome
 
-export const snippetsDark = [
+export const snippetsMonochrome = [
   {
     technology: "Web component",
     snippets: {
       short: `<ic-toggle-button
   label="Switch to oat milk"
-  appearance="dark"
+  monochrome="true"
 ></ic-toggle-button>
 <ic-toggle-button
   label="Switch to oat milk"
-  appearance="dark"
+  monochrome="true"
   loading="true"
 ></ic-toggle-button>
 <ic-toggle-button
   label="Switch to oat milk"
-  appearance="dark"
+  monochrome="true"
   loading="true"
   checked="true"
 ></ic-toggle-button>`,
@@ -470,11 +470,11 @@ export const snippetsDark = [
   {
     technology: "React",
     snippets: {
-      short: `<IcToggleButton label="Switch to oat milk" appearance="dark" />
-<IcToggleButton label="Switch to oat milk" appearance="dark" loading />
+      short: `<IcToggleButton label="Switch to oat milk" monochrome="true" />
+<IcToggleButton label="Switch to oat milk" monochrome="true" loading />
 <IcToggleButton
   label="Switch to oat milk"
-  appearance="dark"
+  monochrome="true"
   loading
   checked
 />`,
@@ -518,30 +518,30 @@ return (
   },
 ];
 
-<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsDark}>
-  <IcToggleButton label="Switch to oat milk" appearance="dark" />
-  <IcToggleButton label="Switch to oat milk" appearance="dark" loading />
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsMonochrome}>
+  <IcToggleButton label="Switch to oat milk" monochrome="true" />
+  <IcToggleButton label="Switch to oat milk" monochrome="true" loading />
   <IcToggleButton
     label="Switch to oat milk"
-    appearance="dark"
+    monochrome="true"
     loading
     checked
   />
 </ComponentPreview>
 
-### Light
+### Theme
 
-export const snippetsLight = [
+export const snippetsThemeDark = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-toggle-button label="Switch to oat milk" appearance="light"></ic-toggle-button>
-<ic-toggle-button label="Switch to oat milk" appearance="light" loading="true"></ic-toggle-button>
-<ic-toggle-button label="Switch to oat milk" appearance="light" loading="true" checked="true"></ic-toggle-button>`,
+      short: `<ic-toggle-button label="Switch to oat milk" theme="dark"></ic-toggle-button>
+<ic-toggle-button label="Switch to oat milk" theme="dark" loading="true"></ic-toggle-button>
+<ic-toggle-button label="Switch to oat milk" theme="dark" loading="true" checked="true"></ic-toggle-button>`,
       long: `.dark-background {
     display: flex;
     flex-wrap: wrap;
-    background-color: #2c2f34;
+    background-color: #17191c;
     padding: var(--ic-space-md);
     gap: var(--ic-space-xs);
   }
@@ -555,11 +555,11 @@ export const snippetsLight = [
   {
     technology: "React",
     snippets: {
-      short: `<IcToggleButton label="Switch to oat milk" appearance="light" />
-<IcToggleButton label="Switch to oat milk" appearance="light" loading />
+      short: `<IcToggleButton label="Switch to oat milk" theme="dark" />
+<IcToggleButton label="Switch to oat milk" theme="dark" loading />
 <IcToggleButton
   label="Switch to oat milk"
-  appearance="light"
+  theme="dark"
   loading
   checked
 />`,
@@ -570,7 +570,7 @@ export const snippetsLight = [
   darkBackground: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#2c2f34",
+    backgroundColor: "#17191c",
     padding: "var(--ic-space-md)",
     gap: "var(--ic-space-xs)",
   },
@@ -588,7 +588,7 @@ return (
   darkBackground: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#2c2f34",
+    backgroundColor: "#17191c",
     padding: "var(--ic-space-md)",
     gap; "var(--ic-space-xs)",
   },
@@ -606,17 +606,12 @@ return (
 ];
 
 <ComponentPreview
-  style={{ backgroundColor: "#2c2f34", gap: "0.5rem" }}
-  snippets={snippetsLight}
+  style={{ backgroundColor: "#17191c", gap: "0.5rem" }}
+  snippets={snippetsThemeDark}
 >
-  <IcToggleButton label="Switch to oat milk" appearance="light" />
-  <IcToggleButton label="Switch to oat milk" appearance="light" loading />
-  <IcToggleButton
-    label="Switch to oat milk"
-    appearance="light"
-    loading
-    checked
-  />
+  <IcToggleButton label="Switch to oat milk" theme="dark" />
+  <IcToggleButton label="Switch to oat milk" theme="dark" loading />
+  <IcToggleButton label="Switch to oat milk" theme="dark" loading checked />
 </ComponentPreview>
 
 ### Full width
