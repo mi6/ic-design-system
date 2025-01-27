@@ -11,7 +11,7 @@ import accessibility from "../../assets/png/accessibility.png";
 import components from "../../assets/png/components.png";
 import patterns from "../../assets/png/patterns.png";
 import styles from "../../assets/png/styles.png";
-import { DesignImage, DevImage } from "../../assets/svg";
+import { DevImage, DesignImage, TestDarkImage } from "../../assets/svg";
 
 import "./index.css";
 import { useViewportWidth } from "../../utils/helpers";
@@ -85,6 +85,7 @@ const Homepage: React.FC = () => {
 
   const { theme } = useTheme();
 
+  const DesignImageTest = theme === "light" ? DesignImage : TestDarkImage;
   return (
     <div className="homepage">
       <ic-hero
@@ -196,7 +197,7 @@ const Homepage: React.FC = () => {
             </div>
           </div>
           <div>
-            <DesignImage className="design-image" />
+            <DesignImageTest className="design-image" />
           </div>
         </div>
         <hr aria-hidden="true" className="divider" />

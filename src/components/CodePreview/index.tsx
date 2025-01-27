@@ -277,8 +277,8 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 
   const tabSelectCallback = (ev: CustomEvent) => {
     setSelectedTab(ev.detail.tabLabel);
-    localStorage.setItem("selectedTab", ev.detail.tabLabel); 
-  
+    localStorage.setItem("selectedTab", ev.detail.tabLabel);
+
     const event = new CustomEvent("tabSelectionChanged", {
       detail: { selectedTab: ev.detail.tabLabel },
     });
@@ -295,7 +295,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
       setSelectedTab(event.detail.selectedTab);
     };
 
-    window.addEventListener("tabSelectionChanged", handleTabSelectionChange); 
+    window.addEventListener("tabSelectionChanged", handleTabSelectionChange);
 
     return () => {
       window.removeEventListener(

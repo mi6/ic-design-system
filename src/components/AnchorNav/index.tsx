@@ -13,7 +13,11 @@ interface AnchorNavProps {
   id?: string;
 }
 
-const AnchorNav: React.FC<AnchorNavProps> = ({ allHeadings, currentPage, id }) => {
+const AnchorNav: React.FC<AnchorNavProps> = ({
+  allHeadings,
+  currentPage,
+  id,
+}) => {
   const headings = allHeadings.filter(({ depth }) => depth === 2);
 
   const headingIds = headings.map(({ value }) => slug(value));
