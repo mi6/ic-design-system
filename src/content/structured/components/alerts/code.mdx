@@ -21,7 +21,7 @@ tabs:
 
 ## Component demo
 
-import { IcAlert, IcButton, IcLink } from "@ukic/react";
+import { IcAlert, IcButton, IcLink, IcTypography } from "@ukic/react";
 
 export const snippetsDefault = [
   {
@@ -344,7 +344,7 @@ export const snippetsCustomMessage = [
     technology: "Web component",
     snippets: {
       short: `<ic-alert variant="info" heading="Want to know more about our coffee?">
-  <span slot="message"> Go to our <ic-link href="/">coffee page</ic-link> to learn more.</span></ic-alert>`,
+  <ic-typography slot="message"> Go to our <ic-link href="/">coffee page</ic-link> to learn more.</ic-typography></ic-alert>`,
       long: `{shortCode}`,
     },
   },
@@ -352,7 +352,7 @@ export const snippetsCustomMessage = [
     technology: "React",
     snippets: {
       short: `<IcAlert variant="info" heading="Want to know more about our coffee?">
-  <span slot="message"> Go to our <IcLink href="/">coffee page</IcLink> to learn more.</span>
+  <IcTypography slot="message"> Go to our <IcLink href="/">coffee page</IcLink> to learn more.</IcTypography>
 </IcAlert>`,
       long: [
         {
@@ -370,19 +370,13 @@ export const snippetsCustomMessage = [
 
 <ComponentPreview snippets={snippetsCustomMessage}>
   <IcAlert variant="info" heading="Want to know more about our coffee?">
-    <span
-      slot="message"
-      style={{
-        font: "var(--ic-font-body)",
-        letterSpacing: "var(--ic-font-letter-spacing-0pt005)",
-      }}
-    >
+    <IcTypography slot="message">
       Go to our{" "}
       <IcLink href="#" onClick={(e) => e.preventDefault()}>
         coffee page
       </IcLink>{" "}
       to learn more.
-    </span>
+    </IcTypography>
   </IcAlert>
 </ComponentPreview>
 
