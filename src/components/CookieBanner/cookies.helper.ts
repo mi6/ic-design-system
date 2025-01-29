@@ -1,5 +1,7 @@
 // One year
 const EXPIRY_IN_SECONDS = 31104000000;
+// policyDate should mirror the date the policy was last updated, which triggers a new cookie, to force users to re-accept the updated policy
+const policyDate = "2025-01-13";
 
 export const setCookie = (value: string) => {
   if (typeof document !== "undefined") {
@@ -12,11 +14,12 @@ export const setCookie = (value: string) => {
 
 export const consentCookieActioned = () =>
   typeof document !== "undefined"
-    ? document.cookie.indexOf("ICDSPREF") !== -1
+    ? document.cookie.indexOf(`ICDSPREF_${policyDate}`) !== -1
     : false;
 
 export const consentCookieApproved = () =>
-  consentCookieActioned() && document.cookie.indexOf("ICDSPREF=true") !== -1;
+  consentCookieActioned() &&
+  document.cookie.indexOf(`ICDSPREF_${policyDate}=true`) !== -1;
 
 const deleteDomainCookies = () => {
   if (typeof window !== "undefined") {
@@ -40,12 +43,23 @@ const deleteDomainCookies = () => {
   }
 };
 
-export const setConsent = (consent: boolean) => {
-  // treat no consent as 'revoked' and delete existing cookies
+const deleteLocalStorage = () => {
+  if (typeof window !== "undefined") {
+    localStorage.clear();
+  }
+};
+
+export const setLocalStorageConsent = (consent: boolean) => {
+  if (!consent) {
+    deleteLocalStorage();
+  }
+};
+
+export const setCookieConsent = (consent: boolean) => {
   if (!consent) {
     deleteDomainCookies();
   }
-  setCookie(`ICDSPREF=${consent}`);
+  setCookie(`ICDSPREF_${policyDate}=${consent}`);
 };
 
 export const isBotOrDoNotTrack = () => {
