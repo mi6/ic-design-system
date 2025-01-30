@@ -63,7 +63,6 @@ export const createReactIndexHTML = (ext: string) => `<html lang="en">
 export const packageJson = (
   projectTitle: string,
   isWebComponents: boolean,
-  fileExtension: "jsx" | "tsx",
   codeSnippet: string | undefined
 ) => {
   const dependenciesArray = isWebComponents
@@ -78,6 +77,10 @@ export const packageJson = (
           "@ukic/react",
           `${designSystemPackageJson.dependencies["@ukic/react"]}`,
         ],
+        [
+          "@ukic/web-components",
+          `${designSystemPackageJson.dependencies["@ukic/web-components"]}`,
+        ],
         ["react", "^18.2.0"],
         ["react-dom", "^18.2.0"],
         ["react-jss", "^10.10.0"],
@@ -87,13 +90,6 @@ export const packageJson = (
     dependenciesArray.splice(1, 0, [
       "@ukic/canary-react",
       `${designSystemPackageJson.dependencies["@ukic/canary-react"]}`,
-    ]);
-  }
-
-  if (fileExtension === "tsx") {
-    dependenciesArray.splice(3, 0, [
-      "@ukic/web-components",
-      `${designSystemPackageJson.dependencies["@ukic/web-components"]}`,
     ]);
   }
 
