@@ -64,7 +64,9 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
 
   useEffect(() => {
     const checkFontSize = () => {
-      const bodyFontSize = parseFloat(window.getComputedStyle(document.body).fontSize);
+      const bodyFontSize = parseFloat(
+        window.getComputedStyle(document.body).fontSize
+      );
       if (bodyFontSize > 16) {
         setIsLargeFont(true);
       } else {
@@ -85,8 +87,19 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
           tabs={mdx.frontmatter.tabs}
           location={location}
         />
-        <ic-section-container aligned="center" id={isLargeFont ? "page-section-container-large-font" : "page-section-container"}>
-          <AnchorNav currentPage={mdx.fields.slug} allHeadings={mdx.headings} id={isLargeFont ? 'anchor-nav-large-font' : ''} />
+        <ic-section-container
+          aligned="center"
+          id={
+            isLargeFont
+              ? "page-section-container-large-font"
+              : "page-section-container"
+          }
+        >
+          <AnchorNav
+            currentPage={mdx.fields.slug}
+            allHeadings={mdx.headings}
+            id={isLargeFont ? "anchor-nav-large-font" : ""}
+          />
           <div className="content-container">
             <PageMetadataContext.Provider value={pageTitleValue}>
               <MDXRenderer>{children}</MDXRenderer>
