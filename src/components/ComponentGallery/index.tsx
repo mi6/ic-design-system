@@ -181,47 +181,42 @@ const ComponentImages: { [key: string]: any } = {
 
 const ComponentGallery: React.FC = () => {
   const { theme } = useTheme();
-  const uniqueComponentDetails = [
-    ...new Map(
-      pagesData.data
-        .filter(({ tabs }) => tabs)
-        .map((item) => [item.title, item])
-    ).values(),
-  ];
 
   // to allow the concatenation of a camelcase variable name, we capitalise the value of theme
   const capitalisedTheme =
     String(theme).charAt(0).toUpperCase() + String(theme).slice(1);
 
   return (
-    <ul className="card-container">
-      {uniqueComponentDetails?.map(({ path, subTitle, title }) => (
-        <li key={title}>
-          <GatsbyLink to={path}>
-            <ic-card-vertical message={subTitle} full-width clickable>
-              <img
-                src={
-                  ComponentImages[
-                    title.replace(/[- ()]/g, "") + capitalisedTheme
-                  ] || passImage([PlaceHolderLight, PlaceHolderDark], theme)
-                }
-                slot="image-top"
-                alt={title}
-                width="100%"
-                height="100%"
-              />
-              <ic-typography
-                slot="heading"
-                variant="h4"
-                aria-label={`${title} component.`}
-              >
-                <h4>{title}</h4>
-              </ic-typography>
-            </ic-card-vertical>
-          </GatsbyLink>
-        </li>
-      ))}
-    </ul>
+    pagesData?.data && (
+      <ul className="card-container">
+        {pagesData.data.map(({ path, subTitle, title }) => (
+          <li key={title}>
+            <GatsbyLink to={path}>
+              <ic-card-vertical message={subTitle} full-width clickable>
+                <img
+                  src={
+                    ComponentImages[
+                      title.replace(/[- ()]/g, "") + capitalisedTheme
+                    ] || passImage([PlaceHolderLight, PlaceHolderDark], theme)
+                  }
+                  slot="image-top"
+                  alt={title}
+                  width="100%"
+                  height="100%"
+                />
+                <ic-typography
+                  slot="heading"
+                  variant="h4"
+                  aria-label={`${title} component.`}
+                >
+                  <h4>{title}</h4>
+                </ic-typography>
+              </ic-card-vertical>
+            </GatsbyLink>
+          </li>
+        ))}
+      </ul>
+    )
   );
 };
 
