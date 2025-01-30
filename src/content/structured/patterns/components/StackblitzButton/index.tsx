@@ -66,7 +66,7 @@ const StackblitzButton: FC<StackblitzProps> = ({
     }
 
     files["package.json"] = JSON.stringify(
-      packageJson(projectTitle, isWebComponentsInternal, ext, codeSnippet),
+      packageJson(projectTitle, isWebComponentsInternal, codeSnippet),
       null,
       2
     );
