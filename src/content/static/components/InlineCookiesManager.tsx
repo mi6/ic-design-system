@@ -49,7 +49,6 @@ const InlineCookiesManager: React.FC = () => {
           checked={cookiesApproved}
           label="Optional analytics cookies"
           onIcChange={() => handleCookiesChange()}
-          showState
           disabled={!process.env.GATSBY_GA_TRACKING_ID}
         />
       </div>
@@ -60,7 +59,6 @@ const InlineCookiesManager: React.FC = () => {
           checked={localStorageApproved}
           label="Optional local storage"
           onIcChange={() => handleLocalStorageChange()}
-          showState
         />
       </div>
     </>
