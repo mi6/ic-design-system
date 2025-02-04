@@ -30,6 +30,7 @@
     "IcDataTableColumnDataTypes",
     "IcDataTableColumnWidthTypes",
     "IcDataTableColumnObject",
+    "IcLoadingOptions",
     "IcDataTableRowHeights",
     "IcDataTableTruncationTypes",
     "truncWrapperDetailsTypes",
