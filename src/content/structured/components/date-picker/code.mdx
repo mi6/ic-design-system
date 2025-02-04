@@ -175,6 +175,10 @@ return (
       display: "flex",
       flexDirection: "column",
       gap: "1rem",
+      maxWidth: "100%",
+      overflowX: "auto",
+      paddingLeft: "0.5rem",
+      paddingBottom: "1rem",
     }}
   >
     <IcDatePicker
@@ -216,7 +220,7 @@ export const maxWidth = [
     padding: var(--ic-space-md);
   }
   ic-date-picker {
-    --input-width: 31.25rem;
+    --input-width: 25.25rem;
   }
 </style>
 <body>
@@ -253,7 +257,7 @@ export const maxWidth = [
     padding: "var(--ic-space-md)",
   },
   datePicker: {
-    "--input-width": "31.25rem",
+    "--input-width": "25.25rem",
   },
 });
 const classes = useStyles();
@@ -273,7 +277,7 @@ return (
     padding: "var(--ic-space-md)",
   },
   datePicker: {
-    "--input-width": "31.25rem",
+    "--input-width": "25.25rem",
   },
 });
 const classes = useStyles();
@@ -294,19 +298,23 @@ return (
       display: "flex",
       flexDirection: "column",
       gap: "1rem",
+      maxWidth: "100%",
+      overflowX: "auto",
+      paddingLeft: "0.5rem",
+      paddingBottom: "1rem",
     }}
   >
     <IcDatePicker
-      style={{ "--input-width": "31.25rem" }}
+      style={{ "--input-width": "25.25rem" }}
       label="When would you like to collect your coffee?"
       size="small"
     />
     <IcDatePicker
-      style={{ "--input-width": "31.25rem" }}
+      style={{ "--input-width": "25.25rem" }}
       label="When would you like to collect your coffee?"
     />
     <IcDatePicker
-      style={{ "--input-width": "31.25rem" }}
+      style={{ "--input-width": "25.25rem" }}
       label="When would you like to collect your coffee?"
       size="large"
     />
@@ -397,7 +405,7 @@ export const dateFormats = [
     padding: var(--ic-space-md);
   }
   ic-date-picker {
-    --input-width: 31.25rem;
+    --input-width: 25.25rem;
   }
 </style>
 <body>
