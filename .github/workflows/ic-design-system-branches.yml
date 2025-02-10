@@ -7,6 +7,7 @@ on:
     branches:
       - "develop"
       - "v3.0.0/develop"
+      - "v3-deploy-test"
   pull_request:
     types: [opened, reopened, edited, synchronize]
 
@@ -56,8 +57,6 @@ jobs:
 
       - name: Build
         run: |
-          BRANCH=${{ steps.extract_branch.outputs.branch }}
-          export ICDS_PREFIX=/ic-design-system-githubpages/branches/$BRANCH
           npm ci
           echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_DEV }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
@@ -65,7 +64,7 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e #v4
-        if: ${{ steps.extract_branch.outputs.branch != 'v3.0.0/main' }}
+        if: ${{ steps.extract_branch.outputs.branch != 'v3-deploy-test' }}
         with:
           repository-name: mi6/ic-design-system-githubpages
           folder: ./public
@@ -74,7 +73,7 @@ jobs:
 
       - name: Deploy v3
         uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e #v4
-        if: ${{ steps.extract_branch.outputs.branch == 'v3.0.0/main' }}
+        if: ${{ steps.extract_branch.outputs.branch == 'v3-deploy-test' }}
         with:
           repository-name: mi6/ic-design-system-githubpages
           folder: ./public
