@@ -1,18 +1,10 @@
-name: Branches
+name: V3 Deploy
 permissions: read-all
 
 on:
-  workflow_dispatch:
   push:
     branches:
-      - "develop"
-      - "v3.0.0/develop"
-  pull_request:
-    types: [opened, reopened, edited, synchronize]
-
-concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+      - v3.0.0/main
 
 jobs:
   ic-design-system-static-analysis-tests:
@@ -26,8 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci
-
+          npm ci --also=dev
       - name: Lint site
         run: |
           npm run lint
@@ -37,7 +28,7 @@ jobs:
 
   ic-design-system-deploy:
     needs: [ic-design-system-static-analysis-tests]
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
+    concurrency: ci-${{ github.ref }}
     name: "Deploy"
     runs-on: ubuntu-latest
     permissions:
@@ -49,25 +40,18 @@ jobs:
       - uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 #v3
         with:
           node-version: 18
-
-      - name: Extract branch name
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
-
       - name: Build
         run: |
-          BRANCH=${{ steps.extract_branch.outputs.branch }}
-          export ICDS_PREFIX=/ic-design-system-githubpages/branches/$BRANCH
+          export ICDS_PREFIX=ic-design-system-githubpages/v3  
           npm ci
           echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_DEV }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
-          npm run build:prefixed
+          npm run build:v3-prefixed
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e #v4
-        if: ${{ steps.extract_branch.outputs.branch != 'v3.0.0/main' }}
         with:
           repository-name: mi6/ic-design-system-githubpages
           folder: ./public
-          target-folder: ./branches/${{ steps.extract_branch.outputs.branch }}
+          target-folder: ./v3
           token: ${{ secrets.IC_DESIGN_SYSTEM_QA }}
