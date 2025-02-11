@@ -257,6 +257,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
             navHeight > 0 && { height: `${navHeight}px` }) ||
           {}
         }
+        truncateTreeItems
         focusInset
       >
         {isRoot && (
