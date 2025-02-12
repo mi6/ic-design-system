@@ -12,7 +12,7 @@ subTitle: "Hearing impairment means a complete or partial loss of the ability to
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/auditory.mdx"
 ---
 
-import auditoryAccessibilityFig3 from "./images/fig-3-closed-caption-and-transcripts.png";
+import { Fig3ClosedCapLight, Fig3ClosedCapDark } from "./images";
 
 ## Introduction
 
@@ -58,7 +58,7 @@ Don't rely on automated subtitling and transcription because it might be inaccur
 Including closed captions and transcripts on video or audio files will make the page accessible to those with hearing impairments.
 
 <DoDontCaution
-  imageSrc={auditoryAccessibilityFig3}
+  imageSrc={[Fig3ClosedCapLight, Fig3ClosedCapDark]}
   imageAlt="A graphic of a video player with a show transcript button. On the right hand side there is a transcript window displaying the audio of the video in text format."
   state="good"
   caption="Include transcripts for audio elements where possible."

@@ -12,10 +12,16 @@ subTitle: "People often think, communicate, understand or remember things in way
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/neurodiversity.mdx"
 ---
 
-import neurodiversityAccessibilityFig14 from "./images/fig-14-graphics-and-text-used-to-show-data.png";
-import neurodiversityAccessibilityFig15 from "./images/fig-15-only-text-is-used-to-show-data.png";
-import neurodiversityAccessibilityFig16 from "./images/fig-16-dyslexia-friendly-font.png";
-import neurodiversityAccessibilityFig17 from "./images/fig-17-no-dyslexia-friendly-font.png";
+import {
+  Fig14GraphicsLight,
+  Fig14GraphicsDark,
+  Fig15OnlyTextLight,
+  Fig15OnlyTextDark,
+  Fig16DyslexiaLight,
+  Fig16DyslexiaDark,
+  Fig17NoDyslexiaDark,
+  Fig17NoDyslexiaLight,
+} from "./images";
 
 ## Introduction
 
@@ -163,13 +169,13 @@ All images and icons must use [accessible colour](/styles/colour) and have `alt`
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={neurodiversityAccessibilityFig14}
+    imageSrc={[Fig14GraphicsLight, Fig14GraphicsDark]}
     imageAlt="A graphic of a survey regarding eye colour. Results are conveyed by short lines of text and by a pie chart that displays the results in a more visible solution."
     state="good"
     caption="Using both images and text can make it easier to understand data."
   />
   <DoDontCaution
-    imageSrc={neurodiversityAccessibilityFig15}
+    imageSrc={[Fig15OnlyTextLight, Fig15OnlyTextDark]}
     imageAlt="A graphic of a survey regarding eye colour. Results are written in long sentences that do not show the information as clearly as possible."
     state="bad"
     caption="Using text only to present data can be complex and overwhelming."
@@ -201,13 +207,13 @@ These include Windows High Contrast mode, macOS increased contrast and browser e
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={neurodiversityAccessibilityFig16}
+    imageSrc={[Fig16DyslexiaLight, Fig16DyslexiaDark]}
     imageAlt="A graphic of a dialogue box to show open-dyslexic text font, which is easier for people with dyslexia to read."
     state="good"
     caption="Open-dyslexic font is used to make text more readable for those with dyslexia."
   />
   <DoDontCaution
-    imageSrc={neurodiversityAccessibilityFig17}
+    imageSrc={[Fig17NoDyslexiaLight, Fig17NoDyslexiaDark]}
     imageAlt="A graphic of a dialogue box to show default text font."
     state="bad"
     caption="Default fonts might not always benefit people with dyslexia."

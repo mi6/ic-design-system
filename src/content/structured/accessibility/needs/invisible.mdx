@@ -12,8 +12,12 @@ subTitle: "Invisible illness is an umbrella term for medical conditions that are
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/invisible.mdx"
 ---
 
-import invisibleAccessibilityFig4 from "./images/fig-4-good-error-messages.png";
-import invisibleAccessibilityFig5 from "./images/fig-5-bad-error-messages.png";
+import {
+  Fig4GoodErrorLight,
+  Fig4GoodErrorDark,
+  Fig5BadErrorLight,
+  Fig5BadErrorDark,
+} from "./images";
 import toastAnimation from "./images/toast-example-ten-seconds.mp4";
 
 ## Introduction
@@ -105,13 +109,13 @@ Make sure any error messages explain what needs to be done to fix the error.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={invisibleAccessibilityFig4}
+    imageSrc={[Fig4GoodErrorLight, Fig4GoodErrorDark]}
     imageAlt="A graphic of an error message and a submit button where the error asks the user to check data. The error states that the error is with the form, not with the user."
     state="good"
     caption="Error messages should advise people on how to fix the issue rather than blaming them."
   />
   <DoDontCaution
-    imageSrc={invisibleAccessibilityFig5}
+    imageSrc={[Fig5BadErrorLight, Fig5BadErrorDark]}
     imageAlt="A graphic of an error message and a submit button where the error blames the user for the submission failing."
     state="bad"
     caption="Error messages should not blame the person or fail to tell them how to fix the issue."

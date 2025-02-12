@@ -7,9 +7,11 @@ import "./index.css";
 
 import Icon from "@mdi/react";
 import { mdiCheck, mdiClose, mdiAlert } from "@mdi/js";
+import { useTheme } from "../../context/ThemeContext";
+import { passImage } from "../../utils/helpers";
 
 interface DoDontCautionProps {
-  imageSrc?: string;
+  imageSrc?: Array<string> | string;
   imageAlt: string;
   state?: "good" | "bad" | "none" | "caution";
   caption?: string;
@@ -37,6 +39,9 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
   state = "none",
   caption = "",
 }) => {
+  const { theme } = useTheme();
+  const transformedImageSrc = passImage(imageSrc, theme);
+
   const imageData = useStaticQuery(graphql`
     query {
       allFile(filter: { ext: { in: [".jpg", ".png"] } }) {
@@ -105,17 +110,17 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
           <Icon path={STATE_VALUES[state].icon} aria-hidden="true" />
         </div>
       )}
-      {imageSrc &&
+      {transformedImageSrc &&
         (isBase64 ? (
           <img
-            src={imageSrc}
+            src={transformedImageSrc}
             alt={imageAlt}
             className="image-wide"
             loading="lazy"
           />
         ) : (
           <GatsbyImage
-            image={filterImageData(imageSrc)}
+            image={filterImageData(transformedImageSrc)}
             alt={imageAlt}
             className="image-wide"
           />

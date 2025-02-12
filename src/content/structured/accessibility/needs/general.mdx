@@ -12,8 +12,12 @@ subTitle: "Every app and service you create must have a minimal baseline of acce
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/general.mdx"
 ---
 
-import generalAccessibilityFig1 from "./images/fig-1-linear-layout.png";
-import generalAccessibilityFig2 from "./images/fig-2-non-linear-layout.png";
+import {
+  Fig1LinearLight,
+  Fig1LinearDark,
+  Fig2NonLinearLight,
+  Fig2NonLinearDark,
+} from "./images";
 
 ## Introduction
 
@@ -59,13 +63,13 @@ Ensure data is displayed in a linear format that is readable for people. Don’t
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={generalAccessibilityFig1}
+    imageSrc={[Fig1LinearLight, Fig1LinearDark]}
     imageAlt="A graphic of an information page currently at step 1 requiring an email address to be inputted and a ‘yes’ or ‘no’ as to whether you wish to be contacted. All of these options are aligned to the left and the ‘Next’ button to continue to next step is at the bottom."
     state="good"
     caption="Ensure all components are linear and aligned to the left."
   />
   <DoDontCaution
-    imageSrc={generalAccessibilityFig2}
+    imageSrc={[Fig2NonLinearLight, Fig2NonLinearDark]}
     imageAlt="A graphic of an information page currently at step 1 requiring an email address to be inputted and a ‘yes’ or ‘no’ as to whether you wish to be contacted. These options are not aligned to the left and the ‘Next’ button to move on to the next page is next to the email input, and not at the bottom of the page. This non linear layout can be confusing to people who don’t know the layout well."
     state="bad"
     caption="All components are not aligned to the left, showing what the layout should not look like."
