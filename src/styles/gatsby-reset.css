@@ -3,7 +3,7 @@ html {
   -webkit-text-size-adjust: 100%;
   height: 100%;
 }
-html:has(ic-theme.ic-theme-dark) {
+html:has(#theme-wrapper.ic-theme-dark) {
   color-scheme: dark;
 }
 body {
