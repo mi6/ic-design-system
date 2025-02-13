@@ -190,7 +190,8 @@ const ComponentGallery: React.FC = () => {
   ];
 
   // to allow the concatenation of a camelcase variable name, we capitalise the value of theme
-  const capitalisedTheme = String(theme).charAt(0).toUpperCase() + String(theme).slice(1);
+  const capitalisedTheme =
+    String(theme).charAt(0).toUpperCase() + String(theme).slice(1);
 
   return (
     <ul className="card-container">
@@ -200,8 +201,9 @@ const ComponentGallery: React.FC = () => {
             <ic-card-vertical message={subTitle} full-width clickable>
               <img
                 src={
-                  ComponentImages[title.replace(/[- ]/g, "") + capitalisedTheme] ||
-                  passImage([PlaceHolderLight, PlaceHolderDark], theme)
+                  ComponentImages[
+                    title.replace(/[- ]/g, "") + capitalisedTheme
+                  ] || passImage([PlaceHolderLight, PlaceHolderDark], theme)
                 }
                 slot="image-top"
                 alt={title}

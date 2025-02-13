@@ -57,7 +57,9 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
       }
     }
   `);
-  const isBase64: boolean = imageSrc.includes("data:image/png;base64");
+  const isBase64: boolean = transformedImageSrc.includes(
+    "data:image/png;base64"
+  );
   const imageObject: ImageFile[] = imageData.allFile.edges;
 
   const filterImageData: any = (imagePath: string) => {

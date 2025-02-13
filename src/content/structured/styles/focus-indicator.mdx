@@ -10,8 +10,12 @@ title: "Focus indicator"
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/focus-indicator.mdx"
 ---
 
-import focusIndicatorFig1 from "./images/fig-1-focus-indicators-inherit-the-border-radius-of-the-components-they-enclose.png";
-import focusIndicatorFig2 from "./images/fig-2-focus-on-links-is-indicated-by-an-underline.png";
+import {
+  Fig1FocusLight,
+  Fig1FocusDark,
+  Fig2FocusOnLinksLight,
+  Fig2FocusOnLinksDark,
+} from "./images";
 
 ## Enclosing components
 
@@ -23,7 +27,7 @@ When applied to rounded components, for example [radio](/components/radio), [swi
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={focusIndicatorFig1}
+    imageSrc={[Fig1FocusLight, Fig1FocusDark]}
     imageAlt="An image of a button and back to top component, both with focus applied to them."
     state="none"
     caption="Focus indicators inherit the border radius of the components they enclose."
@@ -36,7 +40,7 @@ When links are focused, the indicator will appear as the hover state.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={focusIndicatorFig2}
+    imageSrc={[Fig2FocusOnLinksLight, Fig2FocusOnLinksDark]}
     imageAlt="An image of a blue link labelled 'Coffee blog' with a thick underline of the same colour."
     state="none"
     caption="Focus on links is indicated by a thick underline."

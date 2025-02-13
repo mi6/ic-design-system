@@ -12,14 +12,24 @@ subTitle: "Common layout and spacing create consistency across pages and enable 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/layout-spacing.mdx"
 ---
 
-import layoutSpacingFig1 from "./images/fig-1-components-laid-out-on-8px-grid.png";
-import layoutSpacingFig2 from "./images/fig-2-vertical-rhythm-example.png";
-import layoutSpacingFig3 from "./images/fig-3-margins-columns-gutters.png";
-import layoutSpacingFig4 from "./images/fig-4-max-width.png";
-import layoutSpacingFig5 from "./images/fig-5-content-on-grid.png";
-import layoutSpacingFig6 from "./images/fig-6-containers.png";
-import layoutSpacingFig7 from "./images/fig-7-fixed-grid.png";
-import layoutSpacingFig8 from "./images/fig-8-influencers.png";
+import {
+  Fig1ComponentsLight,
+  Fig1ComponentsDark,
+  Fig2VerticalLight,
+  Fig2VerticalDark,
+  Fig3MarginsLight,
+  Fig3MarginsDark,
+  Fig4MaxLight,
+  Fig4MaxDark,
+  Fig5ContentLight,
+  Fig5ContentDark,
+  Fig6ContainersLight,
+  Fig6ContainersDark,
+  Fig7FixedLight,
+  Fig7FixedDark,
+  Fig8InfluencersLight,
+  Fig8InfluencersDark,
+} from "./images";
 
 ## Using consistent layouts
 
@@ -34,7 +44,7 @@ Using the eight-pixel square provides visual rhythm throughout the UI components
 Every component is created upon a grid comprising of eight-pixel squares. Each internal element uses position, sizing and padding values in multiples of eight pixels so that they align to this grid. Some smaller or more compact elements can use fractions of the eight-pixel square to achieve sizes such as four or two pixels.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig1}
+  imageSrc={[Fig1ComponentsLight, Fig1ComponentsDark]}
   imageAlt="Two short forms each with a select box, text area and secondary button. All components and their internal elements align to a visible eight-pixel grid."
   state="none"
   caption="Components are based upon an eight-pixel grid to help drive visual consistency between them."
@@ -56,7 +66,7 @@ Spacing tokens are used within the components to make sure they are consistent a
 Elements are vertically laid out on a page also using these spacing tokens. This helps to provide vertical rhythm throughout a page’s contents and makes it easier to understand by organising the content into repeatable spacing patterns.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig2}
+  imageSrc={[Fig2VerticalLight, Fig2VerticalDark]}
   imageAlt="Two examples of a text article with a heading, subtitle and some paragraphs of body copy. The first example has its elements aligned to the eight pixel grid creating vertical rhythm, whereas the second example’s elements don't align to the grid and seem uneven."
   state="none"
   caption="Align all elements to the vertical eight-pixel grid to create vertical rhythm. The example on the right does not align to the grid and seems uneven."
@@ -71,7 +81,7 @@ It dictates the positioning of each individual component along with the horizont
 The fluid column grid is made up of three elements: margins, columns and gutters. The values for each of them can differ across different breakpoints.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig3}
+  imageSrc={[Fig3MarginsLight, Fig3MarginsDark]}
   imageAlt="An example of a 12-column grid applied to a viewport showing margins on the left and right and gutters in between each column."
   state="none"
   caption="An example of a 12-column grid applied to a viewport showing margins on the left and right and gutters in between each column."
@@ -108,7 +118,7 @@ The grid can be constrained to a max-width if you don’t want the grid to span 
 The max-width will limit the width of your grid to the max-width value, and add scaling outer margins around the grid container.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig4}
+  imageSrc={[Fig4MaxLight, Fig4MaxDark]}
   imageAlt="An example of a viewport with a 12-column grid with a max-width set. Outer margins are applied on the left and right of the grid."
   state="none"
   caption="Set a max-width so that the column grid is constrained and outer margins are applied on the left and right of the viewport."
@@ -121,7 +131,7 @@ Page content can be defined as spanning a number of columns, and this number of 
 For example, a card component may span three columns on the extra large breakpoint, but span all four columns on the extra small breakpoint.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig5}
+  imageSrc={[Fig5ContentLight, Fig5ContentDark]}
   imageAlt="An example showing lots of different pieces of content laid onto a 12-column grid. Different content spans different numbers of columns."
   state="none"
   caption="Lay out content by specifying how many columns it spans. Content can span different numbers of columns in order to achieve different layouts."
@@ -134,7 +144,7 @@ Take care when using fixed width elements so that they don't overflow the screen
 Content can be added to containers so that only the container is set to span grid columns. This can be useful when trying to align content in an enclosed area.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig6}
+  imageSrc={[Fig6ContainersLight, Fig6ContainersDark]}
   imageAlt="An example form titled ‘Coffee survey’  laid out on a 12-column gird. It has some text elements spanning all 12 columns, a select input that spans six columns, a text area that spans 12 columns and a container that is aligned to the left column but is sized to hug three buttons that it contains."
   state="none"
   caption="Group components into containers so that they can be positioned separately from the grid. Instead, the container is positioned to the grid, not the container’s contents."
@@ -145,7 +155,7 @@ Content can be added to containers so that only the container is set to span gri
 A fixed grid can be used instead of using the fluid grid layout defined above. Instead of the number of columns being specified, specify the fixed width of each column, and the page will include more columns as it grows in width and space becomes available. This can be useful when you are laying out content that can’t resize as the columns resize.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig7}
+  imageSrc={[Fig7FixedLight, Fig7FixedDark]}
   imageAlt="Two examples of fixed column grids. One has a viewport width of 496px and displays six columns. The second has a viewport width of 336px and displays only four columns."
   state="none"
   caption="A fixed column grid includes different numbers of columns dependent on the viewport size. This is useful when you don't want content to resize."
@@ -160,7 +170,7 @@ When a page is zoomed in upon using the browser controls, the page and breakpoin
 Sometimes other page elements exist outside of the grid and influence how it is sized. Including a fixed size side navigation forces the grid to occupy the remaining available horizontal width of the viewport.
 
 <DoDontCaution
-  imageSrc={layoutSpacingFig8}
+  imageSrc={[Fig8InfluencersLight, Fig8InfluencersDark]}
   imageAlt="An example of a viewport with a side navigation on the left-hand side and a 12-column grid filling the remaining space on the right."
   state="none"
   caption="Grid influencers, such as a fixed width side navigation, cause the grid to compress into the remaining available space."
