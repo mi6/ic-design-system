@@ -14,7 +14,7 @@ module.exports = {
 
   SOURCE_REPO_LINK: process.env.GATSBY_SOURCE_REPO_LINK,
 
-  TITLE: "Intelligence Community Design System",
+  TITLE: "Intelligence Community Deign System",
   SHORT_TITLE: "ICDS",
   META_DESCRIPTION:
     "Use the UK Intelligence Community's Design System to create accessible, usable, and consistent capabilities for complex and specialised needs",

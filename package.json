@@ -36,6 +36,7 @@
     "gatsby-plugin-manifest": "^4.2.0",
     "gatsby-plugin-mdx": "^3.20.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
+    "gatsby-plugin-minify": "^0.5.0",
     "gatsby-plugin-no-sourcemaps": "^5.11.0",
     "gatsby-plugin-offline": "^5.2.0",
     "gatsby-plugin-postbuild": "^3.0.2",

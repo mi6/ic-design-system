@@ -174,5 +174,6 @@ module.exports = {
         ignore: [`.(doc|doc|html)$`],
       },
     },
+    `gatsby-plugin-minify`,
   ],
 };
