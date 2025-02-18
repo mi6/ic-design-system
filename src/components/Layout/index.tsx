@@ -290,7 +290,7 @@ const Layout: React.FC<LayoutProps> = ({
         />
       </Helmet>
       <ThemeProvider theme={theme} toggleTheme={toggleTheme}>
-        <ic-theme theme={theme}>
+        <ic-theme id="theme-wrapper" theme={theme}>
           {!GATSBY_GA_TRACKING_ID && (
             <ic-classification-banner
               id="site-banner"

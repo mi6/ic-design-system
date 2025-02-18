@@ -3,9 +3,11 @@ path: "/styles/colour"
 
 navPriority: 1
 
-date: "2024-09-30"
+date: "2025-02-11"
 
 title: "Colour"
+
+subTitle: "People can complete tasks faster with recognisable, accessible and consistent colours."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/colour.mdx"
 ---
@@ -14,92 +16,145 @@ import ColorTable from "./components/ColourTable";
 import {
   ColoursText,
   ColoursAction,
-  ColoursActionBackgrounds,
+  ColoursBackgrounds,
+  ColoursBorders,
   ColoursLinks,
   ColoursStatus,
+  ColoursIcons,
   ColoursClassification,
-  ColoursArchitecturalAll,
-  ColoursTheme,
+  ColoursArchitectural,
+  ColoursBrand,
+  ColoursFocus,
+  ColoursKeyline,
+  ColoursArchitecturalStateLayers,
+  ColoursBlue,
+  ColoursBlueStateLayers,
+  ColoursRed,
+  ColoursGreen,
+  ColoursPurple,
+  ColoursYellow,
 } from "./components/ColourTable/colours.config";
 
-## Using colours
-
-People can complete tasks faster with recognisable, accessible and consistent colours.
-
-Always use the Design System colour styles. These colours meet or exceed all [accessibility requirements](/accessibility/requirement).
+ICDS uses tokens to manage colours, primarily to enable light and dark mode switching but will also enable custom theming.
 
 The colour styles are built into the [UI Kit](/get-started). You should use these to help maintain consistency when you are building custom experiences.
 
-## Text
+The tokens are visible in Figma; click on Libraries in the colour-picker popup and select ICDS v3.0. The colours are displayed in the following hierarchy order:
 
-Primary text is an off-black colour that satisfies minimum and maximum contrast needs. Use this colour for the majority of text and elements.
+- [Primitive](#primitive)
+- [Semantic](#semantic)
+- [Component](#component)
 
-Use the secondary text colour for supporting content such as helper text or less important information in lists and tables.
+## Primitive
 
-Use the tertiary text colour for even less important information. Use the tertiary text colour sparingly and always try to use the primary or secondary colours first.
+These are the fundamental building blocks for all colours used throughout the ICDS. Primitive tokens are grouped by base colour and contain several shades of that colour. These are the only tokens that contain a HEX value.
 
-Don't use different colours for text, unless specified as part of a component.
+For example, `Color/Red:800= #F15B4E`
 
-<ColorTable config={ColoursText} />
+The primitive tokens are grouped as follows;
 
-## Action
+### Architectural
 
-Use the action colour for interactive elements like buttons, form controls and important actions. This makes it easy for people to recognise elements and switch between contexts.
+<ColorTable config={ColoursArchitectural} />
 
-The single action colour creates consistency across a range of apps. Use the dark or light action colour variant if a background colour is used.
+### Architectural state layers
 
-Use the destructive action colour styles for actions that can't be reversed.
+<ColorTable config={ColoursArchitecturalStateLayers} />
+
+### Blue
+
+<ColorTable config={ColoursBlue} />
+
+### Blue state layers
+
+<ColorTable config={ColoursBlueStateLayers} />
+
+### Green
+
+<ColorTable config={ColoursGreen} />
+
+### Purple
+
+<ColorTable config={ColoursPurple} />
+
+### Red
+
+<ColorTable config={ColoursRed} />
+
+### Yellow
+
+<ColorTable config={ColoursYellow} />
+
+## Semantic
+
+These tokens carry meaning and explain the intent of their use. A semantic token will always refer to a primitive token for its colour.
+
+For example, `border/error/default = Color/Red/800` (This token is for a border in an error state.)
+
+Semantic tokens are grouped as follows (`Key = Colour name | CSS token | Light & Dark hex value`);
+
+### Action
 
 <ColorTable config={ColoursAction} />
 
-### Action backgrounds
+### Background
 
-Interactive elements sometimes require transparent backgrounds for their hover and pressed states. The action background colour styles use the action colour styles with transparency.
+<ColorTable config={ColoursBackgrounds} />
 
-<ColorTable config={ColoursActionBackgrounds} />
+### Border
 
-## Links
+<ColorTable config={ColoursBorders} />
 
-Use these colours for all links. These specific colours help to identify links from non-interactive text.
+### Brand
 
-<ColorTable config={ColoursLinks} />
+<ColorTable config={ColoursBrand} />
 
-## Status
-
-Use these colours only for status updates, errors and warnings. Always include text describing the status even if you use an icon.
-
-Use the contrast colour variants to achieve good contrast when displaying status on dark backgrounds.
-
-Use the 'warning dark' colour for any 'warning' text.
-
-<ColorTable config={ColoursStatus} />
-
-## Classification
-
-Use these colour styles for components that indicate content's classification.
+### Classification
 
 <ColorTable config={ColoursClassification} />
 
-## Architectural
+### Focus
 
-Use these colours in lines, borders and backgrounds to logically separate distinct pieces of content.
+<ColorTable config={ColoursFocus} />
 
-<ColorTable config={ColoursArchitecturalAll} />
+### Icons
 
-## Theme
+<ColorTable config={ColoursIcons} />
 
-You may choose a theme colour to give your app a distinct theme or 'brand'. Make sure it meets contrast requirements with either black or white foreground text.
+### Keyline
 
-If you use the [IC UI Kit](/components), the foreground colour will be automatically determined based on your brand colour.
+<ColorTable config={ColoursKeyline} />
 
-The brand colour is used on the [top navigation](/components/top-navigation), [side navigation](/components/side-navigation), [hero](/components/hero) and [footer](/components/footer) components.
+### Link
 
-Don't use brand colours on any other components.
+<ColorTable config={ColoursLinks} />
 
-<ColorTable config={ColoursTheme} />
+### Status
+
+<ColorTable config={ColoursStatus} />
+
+### Text
+
+<ColorTable config={ColoursText} />
+
+## Component
+
+These tokens are assigned to components. They have both light and dark mode values, which allows the component to switch between the two colours easily. The component tokens always refer to semantic tokens. The name of the component token indicates:
+
+- The component it will be used with (e.g. text-field)
+- The attribute of the component it will be applied to (e.g. border)
+- The context (e.g. error)
+
+For example;
+
+| Component token         | Light mode           | Dark mode                 |
+| ----------------------- | -------------------- | ------------------------- |
+| text-field-border-error | border/error/default | border/error/default-dark |
+
+Component tokens will provide the ability to introduce theming to specific components and their attributes.
+
+If you do introduce theming, please ensure that your colours meet or exceed all [accessibility requirements](/accessibility/requirement).
 
 ## Accessibility considerations
 
 These colours have been considered against a variety of accessibility and usability practices. This includes colour contrast, recognition, consistency and with various colour deficiencies.
-
-If using a 'light' brand colour, any text in those components will need to be black instead of white. This is automatic if you're using the IC UI Kit. It's not possible to use 'inaccessible' colours in the IC UI Kit as they'll revert to the default brand colour. See the component documentation for more details.
