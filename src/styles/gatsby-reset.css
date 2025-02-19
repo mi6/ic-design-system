@@ -6,6 +6,9 @@ html {
 html:has(#theme-wrapper.ic-theme-dark) {
   color-scheme: dark;
 }
+html:has(#theme-wrapper.ic-theme-light) {
+  color-scheme: light;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
