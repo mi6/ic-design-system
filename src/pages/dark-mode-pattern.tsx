@@ -73,7 +73,7 @@ const TopNavigation: React.FC<PageProps> = () => {
   const classes = useStyles();
 
   return (
-    <IcTheme theme={theme}>
+    <IcTheme id="theme-wrapper" theme={theme}>
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"

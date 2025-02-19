@@ -21,7 +21,7 @@ export const snippetsTopNav = [
   {
     technology: "Web component",
     snippets: {
-      long: `<ic-theme theme="light">
+      long: `<ic-theme id="theme-wrapper" theme="light">
     <ic-top-navigation
       app-title="[Enter your application name]"
       status="alpha"
@@ -176,7 +176,7 @@ export const snippetsTopNav = [
   });
   const classes = useStyles(); 
   return (
-    <IcTheme theme={theme}>
+    <IcTheme id="theme-wrapper" theme={theme}>
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -271,7 +271,7 @@ export const snippetsTopNav = [
   });
   const classes = useStyles(); 
   return (
-    <IcTheme theme={theme}>
+    <IcTheme id="theme-wrapper" theme={theme}>
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -342,3 +342,16 @@ This pattern includes the components:
 - [Typography](/components/typography)
 
 As well as the [theme wrapper](/get-started/install-components/custom-theme).
+
+## CSS color-scheme
+
+When manually switching the theme using this pattern, things like browser scrollbars and other native elements may not switch their color-scheme. To ensure consistency, you may need to add the following CSS to the root of your project:
+
+```css
+html:has(#theme-wrapper.ic-theme-dark) {
+  color-scheme: dark;
+}
+html:has(#theme-wrapper.ic-theme-light) {
+  color-scheme: light;
+}
+```
