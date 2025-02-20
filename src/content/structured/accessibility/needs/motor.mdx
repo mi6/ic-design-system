@@ -12,10 +12,16 @@ subTitle: "'Motor impairment' means a partial or total lack of function in a bod
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/motor.mdx"
 ---
 
-import motorAccessibilityFig8 from "./images/fig-8-large-clickable-areas.png";
-import motorAccessibilityFig9 from "./images/fig-9-clickable-areas-too-small.png";
-import motorAccessibilityFig10 from "./images/fig-10-dictate-function-on-text-fields.png";
-import motorAccessibilityFig11 from "./images/fig-11-no-dictate-function.png";
+import {
+  Fig8LargeClickLight,
+  Fig8LargeClickDark,
+  Fig9ClickSmallLight,
+  Fig9ClickSmallDark,
+  Fig10DictateLight,
+  Fig10DictateDark,
+  Fig11NoDictateLight,
+  Fig11NoDictateDark,
+} from "./images";
 
 ## Introduction
 
@@ -58,13 +64,13 @@ Avoid placing lots of actions next to each other as this could increase the risk
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={motorAccessibilityFig8}
+    imageSrc={[Fig8LargeClickLight, Fig8LargeClickDark]}
     imageAlt="A graphic of a yes or no option and a submit button. The clickable areas include the text of the ‘yes’ radio option and the whole button."
     state="good"
     caption="The cursors are positioned on a larger clickable area that includes the text for the button."
   />
   <DoDontCaution
-    imageSrc={motorAccessibilityFig9}
+    imageSrc={[Fig9ClickSmallLight, Fig9ClickSmallDark]}
     imageAlt="A graphic of a yes or no option and a submit button with outlines around only the circle of the radio button and the chevron of the submit button, showing a limited clickable area."
     state="bad"
     caption="The cursors are positioned on a smaller clickable area that does not include the text for the button, making it harder for people with motor needs."
@@ -93,13 +99,13 @@ Consider alternative input means (mouthpieces, clickers and text to speech softw
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={motorAccessibilityFig10}
+    imageSrc={[Fig10DictateLight, Fig10DictateDark]}
     imageAlt="A graphic of a text field requiring user to enter a description with a dictate button for those who would prefer to use speech to text rather than typing."
     state="good"
     caption="Text field with an option to dictate what is written."
   />
   <DoDontCaution
-    imageSrc={motorAccessibilityFig11}
+    imageSrc={[Fig11NoDictateLight, Fig11NoDictateDark]}
     imageAlt="A graphic of a text field requiring user to enter a description with only the option to type, which can be limiting for people with motor difficulties."
     state="bad"
     caption="Text field that only has an option to type, which limits accessibility."
