@@ -69,6 +69,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   const [responsiveNavOpen, setResponsiveNavOpen] = useState(false);
   const [navHeight, setNavHeight] = useState(0);
+  const [treeChange, setTreeChange] = useState(false);
 
   const toggleResponsiveNavOpen = () =>
     setResponsiveNavOpen(!responsiveNavOpen);
@@ -103,12 +104,25 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
     const currentPath = window.location.pathname;
 
+    if (!isParentPage) {
+      return currentPage.split("/").pop() === url.split("/").pop();
+    }
     return (
       currentPath === url ||
       currentPath === `${url}/` ||
-      new RegExp(`${url}$`).test(currentPath) ||
-      (!isParentPage && currentPath.includes(url))
+      new RegExp(`${url}$`).test(currentPath)
     );
+  };
+
+  const setTooltipStrategy = () => {
+    const treeItems = document.querySelectorAll("ic-tree-item");
+    treeItems.forEach((treeItem) => {
+      const tooltip = treeItem.shadowRoot?.querySelector("ic-tooltip");
+      if (tooltip)
+        tooltip.setExternalPopperProps({
+          strategy: "fixed",
+        });
+    });
   };
 
   const renderTreeItems = (item: TreeItem) => {
@@ -118,23 +132,21 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       hasChildren = false;
     }
 
-    /* eslint-disable no-undef */
-    const handleMouseOver = (e: React.MouseEvent<HTMLIcTreeItemElement>) => {
-      const target = e.target as HTMLIcTreeItemElement;
-      const tooltip = target.shadowRoot?.querySelector(
-        "ic-tooltip"
-      ) as HTMLIcTooltipElement;
-      /* eslint-enable no-undef */
-      tooltip?.setExternalPopperProps({
-        strategy: "fixed",
-      });
-    };
-
     // eslint-disable-next-line no-undef
     const handleKeyUp = (e: React.KeyboardEvent<HTMLIcTreeItemElement>) => {
       if (e.key === "Enter") {
         e.preventDefault();
         handleNavigation(item.data.fields.slug);
+      }
+    };
+
+    const handleKeyUpParent = (
+      // eslint-disable-next-line no-undef
+      e: React.KeyboardEvent<HTMLIcTreeItemElement>
+    ) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        setTreeChange(true);
       }
     };
 
@@ -151,24 +163,23 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       return isOverviewSelected || isAnyChildSelected;
     };
 
+    const handleParentClick = () => {
+      setTreeChange(true);
+    };
+
     return (
       <IcTreeItem
         key={item.data.id}
         label={item.data.frontmatter.title}
         selected={!hasChildren && isCurrentPage(item.data.fields.slug, false)}
-        onMouseOver={handleMouseOver}
-        onIcTreeItemSelected={() =>
-          sessionStorage.setItem("navlinkclick", "true")
-        }
-        {...(hasChildren
-          ? isChildSelected(item) && { expanded: true }
-          : {
-              onClick: (e) => {
-                e.preventDefault();
-                handleNavigation(item.data.fields.slug);
-              },
-              onKeyUp: handleKeyUp,
-            })}
+        onClick={(e) => {
+          e.preventDefault();
+          return hasChildren
+            ? handleParentClick()
+            : handleNavigation(item.data.fields.slug);
+        }}
+        onKeyUp={hasChildren ? handleKeyUpParent : handleKeyUp}
+        {...(hasChildren && isChildSelected(item) && { expanded: true })}
       >
         {hasChildren && (
           <IcTreeItem
@@ -189,19 +200,24 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
     );
   };
 
+  // eslint-disable-next-line no-undef
+  const getTreeItemByUrl = (): HTMLIcTreeItemElement => {
+    const selected = document.querySelector(
+      "ic-tree-item[selected=true]"
+      // eslint-disable-next-line no-undef
+    ) as HTMLIcTreeItemElement;
+    return selected;
+  };
+
   useEffect(() => {
-    const linkClick = sessionStorage.getItem("navlinkclick");
-    sessionStorage.setItem("navlinkclick", "false");
-    if (linkClick === "true") {
+    const selectedElement = getTreeItemByUrl();
+    if (selectedElement) {
       setTimeout(() => {
-        /* eslint-disable no-undef */
-        const currentEl = document.querySelector(
-          ".ic-tree-item-selected"
-        ) as HTMLIcTreeItemElement;
-        /* eslint-enable no-undef */
-        if (currentEl) currentEl.setFocus();
-      }, 300);
+        selectedElement.setFocus();
+        setTooltipStrategy();
+      }, 100);
     }
+
     window.addEventListener("scroll", updateNavigationHeight);
     window.addEventListener("resize", updateNavigationHeight);
     updateNavigationHeight();
@@ -210,6 +226,15 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       window.removeEventListener("resize", updateNavigationHeight);
     };
   }, []);
+
+  useEffect(() => {
+    if (treeChange === true) {
+      setTimeout(() => {
+        setTooltipStrategy();
+      }, 100);
+      setTreeChange(false);
+    }
+  }, [treeChange]);
 
   const handleBlur = (e: FocusEvent<HTMLElement>) => {
     // If not clicking on the elements of the tree view
@@ -258,6 +283,8 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
           {}
         }
         focusInset
+        truncateTreeItems
+        truncateHeading
       >
         {isRoot && (
           <IcTreeItem
