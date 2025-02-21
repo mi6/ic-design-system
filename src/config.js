@@ -2,6 +2,9 @@ const SITE_URL = process.env.GATSBY_ICDS_WEBSITE_BASE
   ? process.env.GATSBY_ICDS_WEBSITE_BASE
   : "https://design.sis.gov.uk/";
 
+const V3_SITE_URL =
+  "https://mi6.github.io/ic-design-system-githubpages/branches/v3.0.0/develop";
+
 const pkg = require("../package.json");
 
 module.exports = {
@@ -11,6 +14,8 @@ module.exports = {
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/"
       : SITE_URL,
+
+  v3SiteUrl: V3_SITE_URL,
 
   SOURCE_REPO_LINK: process.env.GATSBY_SOURCE_REPO_LINK,
 
@@ -41,6 +46,12 @@ module.exports = {
             key: "cookies-policy",
           }
         : {},
+      {
+        link: V3_SITE_URL,
+        text: "Version 3.0",
+        key: "version-3.0",
+        target: "_blank",
+      },
     ],
     content:
       "The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and partners.",

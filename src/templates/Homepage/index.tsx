@@ -13,7 +13,7 @@ import icdsHero from "../../../static/icds-hero.jpg";
 
 import "./index.css";
 
-const { homepage } = require("../../config");
+const { homepage, v3SiteUrl } = require("../../config");
 
 interface homepageCardItem {
   description: string;
@@ -76,6 +76,23 @@ const Homepage: React.FC = () => {
         </ic-link>
       </ic-hero>
       <ic-section-container aligned="center" full-height>
+        <div className="section">
+          <ic-alert
+            heading="Design System and UI Kit v3.0 now in pre-release"
+            message="Start experimenting with Dark Mode, new components and more today!"
+            variant="info"
+          >
+            <ic-link
+              slot="action"
+              appearance="dark"
+              href={v3SiteUrl}
+              target="_blank"
+              rel="noreferer noopener nofollow"
+            >
+              Go to v3.0
+            </ic-link>
+          </ic-alert>
+        </div>
         <div className="section">
           <ul className={clsx("cards-container", "explore-cards")}>
             {homepage.cards.content &&
