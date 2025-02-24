@@ -141,7 +141,7 @@ export const sizes = [
   },
 });
 const classes = useStyles();
-return ( 
+return (
   <div className={classes.parentContainer}>
     {shortCode}
   </div>
@@ -158,7 +158,7 @@ return (
   },
 });
 const classes = useStyles();
-return ( 
+return (
   <div className={classes.parentContainer}>
     {shortCode}
   </div>
@@ -261,7 +261,7 @@ export const maxWidth = [
   },
 });
 const classes = useStyles();
-return ( 
+return (
   <div className={classes.parentContainer}>
     {shortCode}
   </div>
@@ -281,7 +281,7 @@ return (
   },
 });
 const classes = useStyles();
-return ( 
+return (
   <div className={classes.parentContainer}>
     {shortCode}
   </div>
@@ -432,7 +432,7 @@ export const dateFormats = [
   },
 });
 const classes = useStyles();
-return ( 
+return (
   <div className={classes.parentContainer}>
     {shortCode}
   </div>
@@ -449,7 +449,7 @@ return (
   },
 });
 const classes = useStyles();
-return ( 
+return (
   <div className={classes.parentContainer}>
     {shortCode}
   </div>
@@ -1263,7 +1263,9 @@ export const DatePickerWithIcChange = () => {
         onIcChange={dateChangedHandler}
         value={value}
       />
-      <span>{selectedDate}</span>
+      <span style={{ color: "var(--ic-color-text-primary)" }}>
+        {selectedDate}
+      </span>
     </div>
   );
 };

@@ -5,8 +5,12 @@
 }
 
 .prop-description .ic-typography-subtitle-small::before {
-  color: var(--ic-status-error);
+  color: var(--ic-status-error-default);
   content: "*";
+}
+
+.ic-theme-dark .prop-description .ic-typography-subtitle-small::before {
+  color: var(--ic-status-error-contrast);
 }
 
 .prop-description .deprecation-tag {

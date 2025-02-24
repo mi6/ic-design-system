@@ -221,7 +221,7 @@ export const snippetsLogoLinks = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-footer description="  description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners.">
+      short: `<ic-footer description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners.">
   <ic-footer-link slot="link" href="#">Accessibility</ic-footer-link>
   <ic-footer-link slot="link" href="#">Styles</ic-footer-link>
   <ic-footer-link slot="link" href="#">Components</ic-footer-link>
@@ -377,8 +377,8 @@ export const withReactRouter = [
     <Route path="/" element={<IcTypography>This is the accessibility page</IcTypography>} />
     <Route path="/Styles" element={<IcTypography>This page is about styles</IcTypography>} />
   </Routes>
-  <IcFooter description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners." 
-  > 
+  <IcFooter description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, GCHQ, MI5, and partners."
+  >
     <IcFooterLink slot="link">
       <NavLink to="#">Accessibility</NavLink>
     </IcFooterLink>
@@ -450,7 +450,7 @@ return (
         slot="logo"
         style={{
           width: "6.25rem",
-          height: "25rem",
+          height: "6.25rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -472,9 +472,9 @@ export const footerLayoutExample = [
   {
     technology: "Web component",
     snippets: {
-      short: `<div class='footer-layout-root'>
-  <div class="div-container>  
-    <ic-top-navigation appTitle="ICDS" status="alpha" version="v0.0.7">
+      short: `<div class="footer-layout-root">
+  <div class="div-container">
+    <ic-top-navigation app-title="ICDS" status="alpha" version="v0.0.7">
       <svg
         slot="app-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -525,8 +525,8 @@ export const footerLayoutExample = [
   {
     technology: "React",
     snippets: {
-      short: `<div className='footer-layout-root'>
-  <div className={classes.divContainer}>  
+      short: `<div className="footer-layout-root">
+  <div className={classes.divContainer}>
     <IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
       <SlottedSVG
         slot="app-icon"
