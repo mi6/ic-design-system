@@ -10,16 +10,27 @@ interface WrappedLinkProps {
 
 // Destructuring props results in those values being undefined?
 /* eslint-disable react/destructuring-assignment */
-const WrappedLink: React.FC<WrappedLinkProps> = (props) =>
-  props.href ? (
+const WrappedLink: React.FC<WrappedLinkProps> = (props) => {
+  let correctedHref = props.href;
+
+  if (
+    props.href &&
+    process.env.GATSBY_ICDS_PREFIX &&
+    props.href.startsWith(process.env.GATSBY_ICDS_PREFIX)
+  ) {
+    correctedHref = props.href.replace(process.env.GATSBY_ICDS_PREFIX, "");
+  }
+
+  return correctedHref ? (
     <ic-link>
-      <GatsbyLink to={props.href} {...props}>
+      <GatsbyLink to={correctedHref} {...props}>
         {props.children}
       </GatsbyLink>
     </ic-link>
   ) : (
     <ic-link {...props} />
   );
+};
 /* eslint-enable react/destructuring-assignment */
 
 export default WrappedLink;
