@@ -1,0 +1,16 @@
+export { default as Fig1LoadingLight } from "./fig-1-use-clear-concise-and-specific-labels.png";
+export { default as Fig2LoadingLight } from "./fig-2-do-not-make-labels-unnecessarily-long.png";
+export { default as Fig3LoadingLight } from "./fig-3-always-centre-the-component.png";
+export { default as Fig4LoadingLight } from "./fig-4-do-not-position-the-loading-indicators-on-other-parts-of-the-page-or-container.png";
+export { default as Fig5LoadingLight } from "./fig-5-place-the-full-width-indicator-at-the-top-of-the-container.png";
+export { default as Fig6LoadingLight } from "./fig-6-do-not-position-full-width-loading-indicators-on-other-parts-of-the-container.png";
+export { default as Fig7LoadingLight } from "./fig-7-place-loading-indicators-in-modals-when-overlayed-on-other-content.png";
+export { default as Fig8LoadingLight } from "./fig-8-do-not-place-loading-indicators-over-other-content.png";
+export { default as Fig1LoadingDark } from "./fig-1-use-clear-concise-and-specific-labels-dark.png";
+export { default as Fig2LoadingDark } from "./fig-2-do-not-make-labels-unnecessarily-long-dark.png";
+export { default as Fig3LoadingDark } from "./fig-3-always-centre-the-component-dark.png";
+export { default as Fig4LoadingDark } from "./fig-4-do-not-position-the-loading-indicators-on-other-parts-of-the-page-or-container-dark.png";
+export { default as Fig5LoadingDark } from "./fig-5-place-the-full-width-indicator-at-the-top-of-the-container-dark.png";
+export { default as Fig6LoadingDark } from "./fig-6-do-not-position-full-width-loading-indicators-on-other-parts-of-the-container-dark.png";
+export { default as Fig7LoadingDark } from "./fig-7-place-loading-indicators-in-modals-when-overlayed-on-other-content-dark.png";
+export { default as Fig8LoadingDark } from "./fig-8-do-not-place-loading-indicators-over-other-content-dark.png";

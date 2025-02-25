@@ -1,0 +1,14 @@
+export { default as Fig1DialogLight } from "./fig-1-use-action-buttons-to-provide-user-with-choice.png";
+export { default as Fig1DialogDark } from "./fig-1-use-action-buttons-to-provide-user-with-choice-dark.png";
+export { default as Fig2DialogLight } from "./fig-2-use-inputs-to-get-important-information-from-users.png";
+export { default as Fig2DialogDark } from "./fig-2-use-inputs-to-get-important-information-from-users-dark.png";
+export { default as Fig3DialogLight } from "./fig-3-use-dialogs-to-show-additional-info.png";
+export { default as Fig3DialogDark } from "./fig-3-use-dialogs-to-show-additional-info-dark.png";
+export { default as Fig4DialogLight } from "./fig-4-use-status-alert-to-provide-status-information.png";
+export { default as Fig4DialogDark } from "./fig-4-use-status-alert-to-provide-status-information-dark.png";
+export { default as Fig5DialogLight } from "./fig-5-use-destructive-actions.png";
+export { default as Fig5DialogDark } from "./fig-5-use-destructive-actions-dark.png";
+export { default as Fig6DialogLight } from "./fig-6-avoid-including-complex-content.png";
+export { default as Fig6DialogDark } from "./fig-6-avoid-including-complex-content-dark.png";
+export { default as Fig7DialogLight } from "./fig-7-dialog-anatomy.png";
+export { default as Fig7DialogDark } from "./fig-7-dialog-anatomy-dark.png";

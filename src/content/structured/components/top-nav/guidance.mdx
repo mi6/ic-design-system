@@ -32,16 +32,28 @@ import {
   IcNavigationItem,
   IcNavigationGroup,
 } from "@ukic/react";
-import topNavFig1 from "./images/fig-1-dont-use-both-side-and-top-navigation.png";
-import topNavFig2 from "./images/fig-2-show-status-version-and-secondary-links.png";
-import topNavFig3 from "./images/fig-3-top-nav-with-megamenu.png";
-import topNavFig4 from "./images/fig-4-use-drawer-navigation-on-small-screens.png";
-import topNavFig5 from "./images/fig-5-personality-colours.png";
-import topNavFig6 from "./images/fig-6-dont-position-top-nav-not-full-width.png";
-import topNavFig7 from "./images/fig-7-use-full-width-alignment.png";
-import topNavFig8 from "./images/fig-8-use-centre-alignment.png";
-import topNavFig9 from "./images/fig-9-dont-use-long-labels.png";
-import topNavFig10 from "./images/fig-10-megamenu-with-too-many-links.png";
+import {
+  Fig10TopNavDark,
+  Fig10TopNavLight,
+  Fig1TopNavDark,
+  Fig1TopNavLight,
+  Fig2TopNavDark,
+  Fig2TopNavLight,
+  Fig3TopNavDark,
+  Fig3TopNavLight,
+  Fig4TopNavDark,
+  Fig4TopNavLight,
+  Fig5TopNavDark,
+  Fig5TopNavLight,
+  Fig6TopNavDark,
+  Fig6TopNavLight,
+  Fig7TopNavDark,
+  Fig7TopNavLight,
+  Fig8TopNavDark,
+  Fig8TopNavLight,
+  Fig9TopNavDark,
+  Fig9TopNavLight,
+} from "./images";
 
 ## Component variants
 
@@ -155,7 +167,7 @@ For apps with a small number of pages, use [side navigation](/components/side-na
 Use either top navigation or side navigation. Don't use both at the same time.
 
 <DoDontCaution
-  imageSrc={topNavFig1}
+  imageSrc={[Fig1TopNavLight, Fig1TopNavDark]}
   imageAlt="An example app that shows a top navigation and side navigation used on the same page."
   state="bad"
   caption="Don't use both top navigation and side navigation at the same time."
@@ -176,7 +188,7 @@ Include secondary links or actions that appear on the right-hand side of the top
 Use the title adornment and app version to display the app's info in the top navigation.
 
 <DoDontCaution
-  imageSrc={topNavFig2}
+  imageSrc={[Fig2TopNavLight, Fig2TopNavDark]}
   imageAlt="An example of top navigation with a search bar included as well as secondary links and app status and version information."
   state="good"
   caption="Top navigation with search bar, secondary links and app status and version."
@@ -187,7 +199,7 @@ Use the title adornment and app version to display the app's info in the top nav
 When using a top navigation with mega-menu, the menu is displayed when hovering over, or focusing on, the main navigation groups.
 
 <DoDontCaution
-  imageSrc={topNavFig3}
+  imageSrc={[Fig3TopNavLight, Fig3TopNavDark]}
   imageAlt="An example top navigation with mega-menu showing the mega-menu appearing when the user hovers over a navigation group in the top navigation component."
   state="good"
   caption="A mega-menu is displayed when hovering or focusing on the top navigation's main groups."
@@ -196,7 +208,7 @@ When using a top navigation with mega-menu, the menu is displayed when hovering 
 On smaller screens, both top navigation variants will display a menu button that opens a drawer menu from the right-hand side of the screen. The drawer menu can display lists of single links or grouped links that can be expanded and collapsed.
 
 <DoDontCaution
-  imageSrc={topNavFig4}
+  imageSrc={[Fig4TopNavLight, Fig4TopNavDark]}
   imageAlt="An example of top navigation displayed on a smaller screen. It displays a menu button that opens a drawer menu that includes the navigation links."
   state="good"
   caption="Top navigation displayed on smaller screens uses a drawer menu to display its navigation links."
@@ -209,7 +221,7 @@ The top navigation uses the app's [brand colour](/styles/colour/#theme) as the b
 Change the app's brand colour to change the background colour of the top navigation and help distinguish your app from others your users may use.
 
 <DoDontCaution
-  imageSrc={topNavFig5}
+  imageSrc={[Fig5TopNavLight, Fig5TopNavDark]}
   imageAlt="Six examples of top navigation components using different brand colours."
   state="good"
   caption="Examples of top navigation using different brand colours."
@@ -220,7 +232,7 @@ Change the app's brand colour to change the background colour of the top navigat
 Always position the top navigation at the top of the screen and make sure that it horizontally fills the browser window.
 
 <DoDontCaution
-  imageSrc={topNavFig6}
+  imageSrc={[Fig6TopNavLight, Fig6TopNavDark]}
   imageAlt="An example app with top navigation that does not horizontally fill the browser window."
   state="bad"
   caption="Don't position the top navigation so that it does not horizontally fill the browser window."
@@ -235,7 +247,7 @@ Align the top navigation's content either full width or centred.
 Use full width alignment to position the top navigation content to the left and right of the browser window.
 
 <DoDontCaution
-  imageSrc={topNavFig7}
+  imageSrc={[Fig7TopNavLight, Fig7TopNavDark]}
   imageAlt="An example top navigation that is aligned full width. The app name and main navigation is aligned to the left-hand side of the browser window and the secondary links and search bar is aligned to the right."
   state="good"
   caption="Use full width alignment to position the top navigation content to the left and right of the browser window."
@@ -244,7 +256,7 @@ Use full width alignment to position the top navigation content to the left and 
 Use centre alignment to position the top navigation content in line with other page content.
 
 <DoDontCaution
-  imageSrc={topNavFig8}
+  imageSrc={[Fig8TopNavLight, Fig8TopNavDark]}
   imageAlt="An example top navigation with its content aligned to centre. The top navigation content aligns with the page margins used for the rest of the page content."
   state="good"
   caption="Use centre alignment to position the top navigation content in line with other page content."
@@ -265,7 +277,7 @@ Make sure to keep navigation option labels concise, as they may not all fit with
 For the standard variant, don't use more than eight links as this may not display correctly.
 
 <DoDontCaution
-  imageSrc={topNavFig9}
+  imageSrc={[Fig9TopNavLight, Fig9TopNavDark]}
   imageAlt="An example top navigation with eight links with long labels. The links don't fit horizontally within the top navigation."
   state="bad"
   caption="Don't use lengthy navigation option labels as they may not fit on all screen sizes."
@@ -276,7 +288,7 @@ For the standard variant, don't use more than eight links as this may not displa
 Include up to five columns of navigation links in the mega-menu and aim to keep the number of links in each column to six or fewer.
 
 <DoDontCaution
-  imageSrc={topNavFig10}
+  imageSrc={[Fig10TopNavLight, Fig10TopNavDark]}
   imageAlt="An example top navigation with mega-menu that shows seven columns of links, with each column containing eight links."
   state="caution"
   caption="Avoid using a mega-menu with more than five columns of links, and avoid using more than six links in each group."

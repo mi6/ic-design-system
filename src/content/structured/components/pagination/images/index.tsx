@@ -1,0 +1,16 @@
+export { default as Fig1PaginationLight } from "./fig-1-use-pagination-to-split-content-across-pages.png";
+export { default as Fig1PaginationDark } from "./fig-1-use-pagination-to-split-content-across-pages-dark.png";
+export { default as Fig2PaginationLight } from "./fig-2-complex-simple-pagination.png";
+export { default as Fig2PaginationDark } from "./fig-2-complex-simple-pagination-dark.png";
+export { default as Fig3PaginationLight } from "./fig-3-data-table-with-pagination-bar.png";
+export { default as Fig3PaginationDark } from "./fig-3-data-table-with-pagination-bar-dark.png";
+export { default as Fig4PaginationLight } from "./fig-4-use-colour-variants.png";
+export { default as Fig4PaginationDark } from "./fig-4-use-colour-variants-dark.png";
+export { default as Fig5PaginationLight } from "./fig-5-place-pagination-at-bottom.png";
+export { default as Fig5PaginationDark } from "./fig-5-place-pagination-at-bottom-dark.png";
+export { default as Fig6PaginationLight } from "./fig-6-place-pagination-at-top-and-bottom.png";
+export { default as Fig6PaginationDark } from "./fig-6-place-pagination-at-top-and-bottom-dark.png";
+export { default as Fig7PaginationLight } from "./fig-7-setting-adjacent-and-boundary-items.png";
+export { default as Fig7PaginationDark } from "./fig-7-setting-adjacent-and-boundary-items-dark.png";
+export { default as Fig8PaginationLight } from "./fig-8-pagination-bars-with-different-elements.png";
+export { default as Fig8PaginationDark } from "./fig-8-pagination-bars-with-different-elements-dark.png";

@@ -24,11 +24,17 @@ tags: ["Search input"]
 ---
 
 import { IcSearchBar } from "@ukic/react";
-import searchBarFig1 from "./images/fig-1-dont-display-large-numbers-of-search-results-in-droplist.png";
-import searchBarFig3 from "./images/fig-3-search-field-with-helpful-placeholder.png";
-import searchBarFig4 from "./images/fig-4-search-field-with-unhelpful-placeholder.png";
-import searchBarFig5 from "./images/fig-5-suggested-options-loading-state.png";
-import searchBarFig6 from "./images/fig-6-suggested-options-empty-state.png";
+import {
+  Fig1SearchDark,
+  Fig1SearchLight,
+  Fig3SearchDark,
+  Fig3SearchLight,
+  Fig4SearchDark,
+  Fig4SearchLight,
+  Fig5SearchLight,
+  Fig6SearchDark,
+  Fig6SearchLight,
+} from "./images";
 
 ## Introduction
 
@@ -97,7 +103,7 @@ Take care when using a search bar with search results when you have large, compl
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={searchBarFig1}
+    imageSrc={[Fig1SearchLight, Fig1SearchDark]}
     imageAlt="A search bar with a large number of results causing long scroll length."
     state="bad"
     caption="Avoid showing long lists of results in a search bar's search results."
@@ -116,13 +122,13 @@ Use clear and specific placeholder text that informs the user on the context and
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={searchBarFig3}
+    imageSrc={[Fig3SearchLight, Fig3SearchDark]}
     imageAlt="An example of helpful search placeholder text outlining 'search coffee drinks'."
     state="good"
     caption="Use helpful placeholder text within a search bar to describe what the user is searching for."
   />
   <DoDontCaution
-    imageSrc={searchBarFig4}
+    imageSrc={[Fig4SearchLight, Fig4SearchDark]}
     imageAlt="An example of unhelpful search placeholder text outlining 'coffee'."
     state="bad"
     caption="Don't use generic placeholder text."
@@ -133,13 +139,13 @@ For searches that take time to load results or suggestions, display the loading 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={searchBarFig5}
+    imageSrc={[Fig5SearchLight, Fig6SearchDark]}
     imageAlt="A search bar with an entered search term that displays a loading indicator whilst the search is occurring."
     state="good"
     caption="Use the loading state whilst results load."
   />
   <DoDontCaution
-    imageSrc={searchBarFig6}
+    imageSrc={[Fig6SearchLight, Fig6SearchDark]}
     imageAlt="A search bar with an entered search term that has no search results."
     state="good"
     caption="Tell the user when their search term yields no results."

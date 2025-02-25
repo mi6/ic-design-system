@@ -24,14 +24,24 @@ tags: ["Anchor", "Hyperlink"]
 ---
 
 import { IcLink, IcTypography } from "@ukic/react";
-import linksFig1 from "./images/always-include-a-launch-icon-when-directing-users-to-an-external-address.png";
-import linksFig2 from "./images/dont-use-a-default-link-for-links-which-open-a-new-tab-or-website.png";
-import linksFig3 from "./images/use-a-button-when-displaying-a-clickable-action.png";
-import linksFig4 from "./images/dont-use-a-link-to-initiate-an-action.png";
-import linksFig5 from "./images/when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text.png";
-import linksFig6 from "./images/avoid-using-the-same-colour-style-as-the-adjacent-text.png";
-import linksFig7 from "./images/use-the-monochromatic-variant-when-listing-links.png";
-import linksFig8 from "./images/do-not-use-bad-link-text.png";
+import {
+  Fig1LinksDark,
+  Fig1LinksLight,
+  Fig5LinksLight,
+  Fig2LinksDark,
+  Fig2LinksLight,
+  Fig3LinksDark,
+  Fig3LinksLight,
+  Fig4LinksLight,
+  Fig5LinksDark,
+  Fig4LinksDark,
+  Fig6LinksLight,
+  Fig6LinksDark,
+  Fig7LinksLight,
+  Fig7LinksDark,
+  Fig8LinksLight,
+  Fig8LinksDark,
+} from "./images";
 
 ## Component demo
 
@@ -55,14 +65,14 @@ Links can be applied to any text element but will use the link styling.
 Always show a launch icon when a link is set up to open a page in a new tab or window, or when directing to an external app.
 
 <DoDontCaution
-  imageSrc={linksFig1}
+  imageSrc={[Fig1LinksLight, Fig1LinksDark]}
   imageAlt="An example of a link labelled ‘Fairtrade Foundation” featuring a ‘launch’ icon to denote it will open a new tab or page."
   caption="Always include an external link icon formed by a square and an arrow when directing users to an external address."
   state="good"
 />
 
 <DoDontCaution
-  imageSrc={linksFig2}
+  imageSrc={[Fig2LinksLight, Fig2LinksDark]}
   imageAlt="An example of a link labelled ‘Fairtrade Foundation” not featuring an external link icon."
   caption="Don’t use a default link for links that open a new tab or website."
   state="bad"
@@ -74,13 +84,13 @@ Don’t use a link to display an action on a page, use a [button](/components/bu
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={linksFig3}
+    imageSrc={[Fig3LinksLight, Fig3LinksDark]}
     imageAlt="An image of an example form featuring a group of radio buttons, with a submit button at the end."
     caption="Use a button when displaying a clickable action."
     state="good"
   />
   <DoDontCaution
-    imageSrc={linksFig4}
+    imageSrc={[Fig4LinksLight, Fig4LinksDark]}
     imageAlt="An image of an example form featuring a group of radio buttons, and a link labelled ‘Submit’ at the end."
     caption="Don’t use a link to initiate an action."
     state="bad"
@@ -99,13 +109,13 @@ Use default theme links when used inline with other text. If the text appears on
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={linksFig5}
+    imageSrc={[Fig5LinksLight, Fig5LinksDark]}
     imageAlt="An example paragraph with black text, featuring a link with blue colour styling."
     caption="When using links, always use a different colour to the adjacent text."
     state="good"
   />
   <DoDontCaution
-    imageSrc={linksFig6}
+    imageSrc={[Fig6LinksLight, Fig6LinksDark]}
     imageAlt="An example paragraph with black text, featuring a link the same colour styling."
     caption="Avoid using the same link theme as the adjacent text. Only use the same theme if the text is used on a dark background."
     state="bad"
@@ -115,7 +125,7 @@ Use default theme links when used inline with other text. If the text appears on
 Use the light or dark theme links with `monochrome={true}` when listing a series of links on different coloured backgrounds.
 
 <DoDontCaution
-  imageSrc={linksFig7}
+  imageSrc={[Fig7LinksLight, Fig7LinksDark]}
   imageAlt="An image of a footer with two navigation groups titled ‘Services’ and ‘Policy’ which house a list of several links. Every text element in the footer is white, including the hyperlinks."
   caption="Use light theme links when displaying links on a dark background."
   state="good"
@@ -141,7 +151,7 @@ Don’t omit important descriptive information from the link text. Avoid using u
 </IcTypography>
 
 <DoDontCaution
-  imageSrc={linksFig8}
+  imageSrc={[Fig8LinksLight, Fig8LinksDark]}
   imageAlt="An example of three links. One reads ‘www.coffeeshop.com/about-our-coffees', the second reads ‘Let us tell you all about our speciality coffees’, and the third reads ‘Coffees’."
   caption="Don’t use URLs in the link text, don’t use unnecessarily long link text, and don’t omit important descriptive information."
   state="bad"

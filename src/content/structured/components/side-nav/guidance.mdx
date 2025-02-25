@@ -27,18 +27,30 @@ tags: ["Navigation bar"]
 ---
 
 import { IcSideNavigation, IcNavigationItem, IcAlert } from "@ukic/react";
-
-import sideNavigationFig1 from "./images/fig-1-dont-use-both-side-and-top-navigation.png";
-import sideNavigationFig2 from "./images/fig-2-avoid-side-navigation-for-complex-app-structures.png";
-import sideNavigationFig3 from "./images/fig-3-set-side-navigation-default-display.png";
-import sideNavigationFig4 from "./images/fig-4-static-side-navigation.png";
-import sideNavigationFig5 from "./images/fig-5-side-navigation-sub-menu.png";
-import sideNavigationFig6 from "./images/fig-6-personality-colourisation.png";
-import sideNavigationFig7 from "./images/fig-7-dont-position-side-nav-above-footer.png";
-import sideNavigationFig8 from "./images/fig-8-keep-menu-option-labels-concise-to-avoid-truncation.png";
-import sideNavigationFig9 from "./images/fig-9-tooltips-show-labels-on-hover-or-focus.png";
-import sideNavigationFig10 from "./images/fig-10-set-menu-options-to-display-labels.png";
-import sideNavigationFig11 from "./images/fig-11-use-menu-groups-and-drilldowns.png";
+import {
+  Fig10SideNavDark,
+  Fig10SideNavLight,
+  Fig11SideNavDark,
+  Fig11SideNavLight,
+  Fig1SideNavDark,
+  Fig1SideNavLight,
+  Fig2SideNavDark,
+  Fig2SideNavLight,
+  Fig3SideNavDark,
+  Fig3SideNavLight,
+  Fig4SideNavDark,
+  Fig4SideNavLight,
+  Fig5SideNavDark,
+  Fig5SideNavLight,
+  Fig6SideNavDark,
+  Fig6SideNavLight,
+  Fig7SideNavDark,
+  Fig7SideNavLight,
+  Fig8SideNavDark,
+  Fig8SideNavLight,
+  Fig9SideNavDark,
+  Fig9SideNavLight,
+} from "./images";
 
 ## Introduction
 
@@ -111,7 +123,7 @@ For intranet-style and content-heavy apps, use [top navigation](/components/top-
 Use either side navigation or top navigation. Don't use both at the same time.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig1}
+  imageSrc={[Fig1SideNavLight, Fig1SideNavDark]}
   imageAlt="An example app that shows a top navigation and side navigation used on the same page."
   state="bad"
   caption="Don't use both side navigation and top navigation at the same time."
@@ -120,7 +132,7 @@ Use either side navigation or top navigation. Don't use both at the same time.
 Avoid using side navigation if the app has many destinations grouped into a multi-level hierarchy. Instead use a [top navigation](/components/top-navigation) with grouped links.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig2}
+  imageSrc={[Fig2SideNavLight, Fig2SideNavDark]}
   imageAlt="An example app using side navigation to display multiple groups of links."
   state="caution"
   caption="Avoid using side navigation for apps with complex page hierarchies. Instead use top navigation with grouped links."
@@ -131,7 +143,7 @@ Avoid using side navigation if the app has many destinations grouped into a mult
 Side navigation is expandable and displays the navigation labels and app info when expanded. Choose whether to display the side navigation as expanded or collapsed by default when the page loads.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig3}
+  imageSrc={[Fig3SideNavLight, Fig3SideNavDark]}
   imageAlt="An example of an application with the side navigation expanded or collapsed by default as the page loads."
   state="good"
   caption="Choose to display the side navigation as collapsed or expanded when the page loads."
@@ -140,7 +152,7 @@ Side navigation is expandable and displays the navigation labels and app info wh
 Set the side navigation to static if you want it to be either permanently expanded or permanently collapsed. This removes the expansion toggle button from the bottom of the side navigation.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig4}
+  imageSrc={[Fig4SideNavLight, Fig4SideNavDark]}
   imageAlt="Two examples of side navigation that are set to static collapsed and static expanded. No expansion toggle button is displayed in the bottom section of the side navigation."
   state="good"
   caption="Static side navigation examples."
@@ -151,7 +163,7 @@ Use a drill-down menu option to provide access to child links in a sub-menu. The
 Sub-menus can be nested, but avoid creating overly deep page hierarchies and consider using top navigation with grouped links instead.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig5}
+  imageSrc={[Fig5SideNavLight, Fig5SideNavDark]}
   imageAlt="An example side navigation component showing a menu option with a sub-menu of child links."
   state="good"
   caption="A side navigation component with a sub-menu."
@@ -162,7 +174,7 @@ Sub-menus can be nested, but avoid creating overly deep page hierarchies and con
 The side navigation uses the app's [brand colour](/styles/colour/#theme) as the background and automatically sets the foreground colour to ensure accessible contrast ratios. Change the app's brand colour to change the background colour of the side navigation and help distinguish your app from others your users may use.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig6}
+  imageSrc={[Fig6SideNavLight, Fig6SideNavDark]}
   imageAlt="Two examples of side navigation components using different brand colours."
   state="good"
   caption="Examples of side navigation using different brand colours."
@@ -173,7 +185,7 @@ The side navigation uses the app's [brand colour](/styles/colour/#theme) as the 
 Always position the side navigation on the left hand of the screen and make sure that it vertically fills the browser window.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig7}
+  imageSrc={[Fig7SideNavLight, Fig7SideNavDark]}
   imageAlt="An example app with a side navigation component that sits above the footer."
   state="bad"
   caption="Don't position the side navigation so that it does not vertically fill the browser window."
@@ -194,7 +206,7 @@ Follow the [icon style guidelines](/styles/icons) when selecting icons for menu 
 Keep labels concise as they will truncate if they are too long to display in the side navigation.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig8}
+  imageSrc={[Fig8SideNavLight, Fig8SideNavDark]}
   imageAlt="An example side navigation showing menu items with long labels that are truncated."
   state="caution"
   caption="Keep labels concise to avoid truncation."
@@ -207,7 +219,7 @@ Set the side navigation menu items to reflect your app's main navigation links.
 By default, menu items will only display their icon when the side navigation is collapsed. The item label will be displayed via a tooltip when hovering or focusing on the menu item.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig9}
+  imageSrc={[Fig9SideNavLight, Fig9SideNavDark]}
   imageAlt="An example side navigation component showing the menu option labels in a tooltip when hovering or focusing on the menu option."
   state="good"
   caption="Side navigation shows menu item labels using tooltips when collapsed."
@@ -216,7 +228,7 @@ By default, menu items will only display their icon when the side navigation is 
 Set the menu items to display their labels in the collapsed state by default if this will aid the recognition of the feature. However, take care when doing this as long menu item labels will be truncated.
 
 <DoDontCaution
-  imageSrc={sideNavigationFig10}
+  imageSrc={[Fig10SideNavLight, Fig10SideNavDark]}
   imageAlt="An example side navigation in collapsed state showing labels below the icons for each menu option."
   state="good"
   caption="Set menu items to display their labels even in the collapsed state if this aids recognition of the feature."
@@ -233,7 +245,7 @@ Use a drill-down menu item if the menu item has a large number of child links to
 />
 
 <DoDontCaution
-  imageSrc={sideNavigationFig11}
+  imageSrc={[Fig11SideNavLight, Fig11SideNavDark]}
   imageAlt="An example of side navigation showing grouped menu items and drill-down menu items."
   state="good"
   caption="Side navigation showing grouped menu items and drill-down menu items."

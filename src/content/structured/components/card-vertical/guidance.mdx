@@ -27,15 +27,26 @@ import {
   IcTypography,
   IcStatusTag,
 } from "@ukic/react";
-import cardsFig1 from "./images/fig-1-card-anatomy.png";
-import cardsFig2 from "./images/fig-2-heading-area-anatomy.png";
-import cardsFig3 from "./images/fig-3-place-images-either-at-the-top-or-in-the-middle-of-cards-if-content-is-present.png";
-import cardsFig4 from "./images/fig-4-dont-place-images-below-content.png";
-import cardsFig5 from "./images/fig-5-interaction-area-anatomy.png";
-import cardsFig6 from "./images/fig-6-dont-mix-card-variants-when-arranged-in-a-group.png";
-import cardsFig7 from "./images/fig-7-dont-vertically-align-cards-with-different-widths.png";
-import cardsFig10 from "./images/fig-10-use-the-show-less-show-more-pattern-when-adding-long-portions-of-text-to-the-content-area.png";
-import cardsFig11 from "./images/fig-11-avoid-displaying-lengthy-descriptions-in-the-content-area.png";
+import {
+  Fig10VerticalCardDark,
+  Fig10VerticalCardLight,
+  Fig11VerticalCardDark,
+  Fig11VerticalCardLight,
+  Fig1VerticalCardDark,
+  Fig1VerticalCardLight,
+  Fig2VerticalCardDark,
+  Fig2VerticalCardLight,
+  Fig3VerticalCardDark,
+  Fig3VerticalCardLight,
+  Fig4VerticalCardDark,
+  Fig4VerticalCardLight,
+  Fig5VerticalCardDark,
+  Fig5VerticalCardLight,
+  Fig6VerticalCardDark,
+  Fig6VerticalCardLight,
+  Fig7VerticalCardDark,
+  Fig7VerticalCardLight,
+} from "./images";
 
 ## Component variants
 
@@ -133,7 +144,7 @@ Static cards are non-interactive and contain static content only.
 The following section describes the different areas of content on a card.
 
 <DoDontCaution
-  imageSrc={cardsFig1}
+  imageSrc={[Fig1VerticalCardLight, Fig1VerticalCardDark]}
   imageAlt="A diagram showing the positioning of the different areas within a card. The areas are a heading area, an image area, a content area, an interaction area, and an expandable area."
   state="none"
   caption="A card includes a heading area, an image area, a content area, an interaction area and an expandable area."
@@ -142,7 +153,7 @@ The following section describes the different areas of content on a card.
 ### 1. Heading area
 
 <DoDontCaution
-  imageSrc={cardsFig2}
+  imageSrc={[Fig2VerticalCardLight, Fig2VerticalCardDark]}
   imageAlt="A diagram showing the positioning of the different sections within the heading area. The area is split up into three different rows. The first row houses section 'A' on the left, section 'B' in the middle, and section 'E' on the right. The second row houses section 'C', and the third row houses section 'D'."
   state="none"
   caption="A card's heading area includes five elements."
@@ -162,13 +173,13 @@ Include an image either at the top or in the middle of the card. Don't place ima
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={cardsFig3}
+    imageSrc={[Fig3VerticalCardLight, Fig3VerticalCardDark]}
     imageAlt="Two example cards vertically aligned, where the top card displays an image above the heading area and content area, and the bottom card displays an image below the heading area and above the content area."
     state="good"
     caption="Place images either at the top or in the middle of cards if content is present."
   />
   <DoDontCaution
-    imageSrc={cardsFig4}
+    imageSrc={[Fig4VerticalCardLight, Fig4VerticalCardDark]}
     imageAlt="An example card where an image is displayed below the heading and content area."
     state="bad"
     caption="Don't place images below content."
@@ -184,7 +195,7 @@ Since clickable cards can only contain one interaction, text can't be hidden.
 ### 4. Interaction area (interactive cards only)
 
 <DoDontCaution
-  imageSrc={cardsFig5}
+  imageSrc={[Fig5VerticalCardLight, Fig5VerticalCardDark]}
   imageAlt="A diagram showing the positioning of the different sections within the interaction area. The area features one row with two different sections, 'A' on the left and 'E' on the far right."
   state="none"
   caption="A card's interaction area includes two elements."
@@ -209,7 +220,7 @@ This area can be expanded by clicking the “expand” button found on the inter
 When arranging multiple cards together, try to use the same card variant for each.
 
 <DoDontCaution
-  imageSrc={cardsFig6}
+  imageSrc={[Fig6VerticalCardLight, Fig6VerticalCardDark]}
   imageAlt="An image showing a three static cards, one interactive card, and one clickable card arranged in a group."
   state="caution"
   caption="Avoid mixing card variants when arranged in a group."
@@ -222,7 +233,7 @@ When cards are shown in columns, make sure cards are vertically aligned and main
 When arranging cards in rows, try to match the vertical height of the cards by including similar amounts of content so that they automatically align horizontally.
 
 <DoDontCaution
-  imageSrc={cardsFig7}
+  imageSrc={[Fig7VerticalCardLight, Fig7VerticalCardDark]}
   imageAlt="An image showing six cards arranged into three rows and two columns, and the width of the cards changes for each row."
   state="bad"
   caption="Don't vertically align cards with different widths."
@@ -255,13 +266,13 @@ If placing several lines of text in the content area, use a 'see more' link to m
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={cardsFig10}
+    imageSrc={[Fig10VerticalCardLight, Fig10VerticalCardDark]}
     imageAlt="An example card titled ‘Your order' with two rows of content in the content area. The second line displays truncated content and a 'see more' clickable text button."
     state="good"
     caption="Use a ‘see more’ link when adding long text to the content area."
   />
   <DoDontCaution
-    imageSrc={cardsFig11}
+    imageSrc={[Fig11VerticalCardLight, Fig11VerticalCardDark]}
     imageAlt="An example card titled 'Your order' with nine rows of content in the content area."
     state="caution"
     caption="Avoid displaying lengthy descriptions in the content area."

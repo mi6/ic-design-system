@@ -1,0 +1,10 @@
+export { default as Fig1AlertsLight } from "./fig-1-do-use-alerts-inline-with-other-associated-page-content.png";
+export { default as Fig1AlertsDark } from "./fig-1-do-use-alerts-inline-with-other-associated-page-content-dark.png";
+export { default as Fig2AlertsLight } from "./fig-2-do-use-alerts-with-an-optional-action-and-dismiss-button.png";
+export { default as Fig2AlertsDark } from "./fig-2-do-use-alerts-with-an-optional-action-and-dismiss-button-dark.png";
+export { default as Fig3AlertsLight } from "./fig-3-dont-use-alerts-overlaid-on-page-content.png";
+export { default as Fig3AlertsDark } from "./fig-3-dont-use-alerts-overlaid-on-page-content-dark.png";
+export { default as Fig4AlertsLight } from "./fig-4-dont-use-an-alert-variant-unrelated-to-its-message.png";
+export { default as Fig4AlertsDark } from "./fig-4-dont-use-an-alert-variant-unrelated-to-its-message-dark.png";
+export { default as Fig5AlertsLight } from "./fig-5-avoid-using-lengthy-messages-within-an-alert.png";
+export { default as Fig5AlertsDark } from "./fig-5-avoid-using-lengthy-messages-within-an-alert-dark.png";

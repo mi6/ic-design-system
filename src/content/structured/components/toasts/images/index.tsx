@@ -1,0 +1,12 @@
+export { default as Fig1ToastLight } from "./fig-1c-toast-with-action-button.png";
+export { default as Fig1ToastDark } from "./fig-1c-toast-with-action-button-dark.png";
+export { default as Fig2ToastLight } from "./fig-2c-toast-with-link.png";
+export { default as Fig2ToastDark } from "./fig-2c-toast-with-link-dark.png";
+export { default as Fig3ToastLight } from "./fig-3c-dont-use-toast-to-display-errors.png";
+export { default as Fig3ToastDark } from "./fig-3c-dont-use-toast-to-display-errors-dark.png";
+export { default as Fig4ToastLight } from "./fig-4c-correct-toast-positioning.png";
+export { default as Fig4ToastDark } from "./fig-4c-correct-toast-positioning-dark.png";
+export { default as Fig5ToastLight } from "./fig-5c-incorrect-toast-positioning.png";
+export { default as Fig5ToastDark } from "./fig-5c-incorrect-toast-positioning-dark.png";
+export { default as Fig6ToastLight } from "./fig-6c-toast-with-description.png";
+export { default as Fig6ToastDark } from "./fig-6c-toast-with-description-dark.png";

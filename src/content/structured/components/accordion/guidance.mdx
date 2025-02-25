@@ -39,15 +39,26 @@ import {
   IcTypography,
   SlottedSVG,
 } from "@ukic/react";
-import accordionFig1 from "./images/fig-1-add-accordion-titles-to-help-organise-content.png";
-import accordionFig2a from "./images/fig-2a-use-see-all-button-to-open-all-accordions-within-an-accordion-group-at-once.png";
-import accordionFig2b from "./images/fig-2b-use-hide-all-button-to-close-all-accordions-within-an-accordion-group-at-once.png";
-import accordionFig3 from "./images/fig-3-use-the-slotted-content-of-an-accordion-to-house-other-content.png";
-import accordionFig4 from "./images/fig-4-do-not-nest-an-accordion-or-accordion-group-within-an-already-nested-accordion-one-level-of-nesting-is-the-maximum.png";
-import accordionFig5a from "./images/fig-5a-use-an-accordion-group-with-a-title-for-clearer-organisation.png";
-import accordionFig5b from "./images/fig-5b-consider-using-an-accordion-group-instead-of-nested-accordions-for-clearer-organisation.png";
-import accordionFig6 from "./images/fig-6-always-make-sure-your-title-is-relevant-to-your-accordion-group-content.png";
-import accordionFig7 from "./images/fig-7-do-not-use-scroll-bars-within-accordions.png";
+import {
+  Fig1AccordionDark,
+  Fig1AccordionLight,
+  Fig2aAccordionLight,
+  Fig2aAccordionDark,
+  Fig2bAccordionLight,
+  Fig2bAccordionDark,
+  Fig3AccordionLight,
+  Fig3AccordionDark,
+  Fig4AccordionLight,
+  Fig4AccordionDark,
+  Fig5aAccordionLight,
+  Fig5aAccordionDark,
+  Fig5bAccordionLight,
+  Fig5bAccordionDark,
+  Fig6AccordionLight,
+  Fig6AccordionDark,
+  Fig7AccordionLight,
+  Fig7AccordionDark,
+} from "./images";
 
 ## Introduction
 
@@ -116,7 +127,7 @@ For example, use an accordion group for a frequently asked questions (FAQs) page
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig1}
+    imageSrc={[Fig1AccordionLight, Fig1AccordionDark]}
     imageAlt="Two collapsed accordion groups. One titled ‘Bari-star member benefits’ and one titled ‘FAQs’, both containing three accordions."
     state="good"
     caption="Add accordion titles to help organise content."
@@ -129,7 +140,7 @@ Use 'see all' and 'hide all' functionality to show or hide all information from 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig2a}
+    imageSrc={[Fig2aAccordionLight, Fig2aAccordionDark]}
     imageAlt="A collapsed accordion group titled ‘Bari-star member benefits’ with a ‘see all’ button."
     state="good"
     caption="Use the 'see all' button to open all accordions within an accordion group at once. "
@@ -138,7 +149,7 @@ Use 'see all' and 'hide all' functionality to show or hide all information from 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig2b}
+    imageSrc={[Fig2bAccordionLight, Fig2bAccordionDark]}
     imageAlt="An expanded accordion group titled ‘Bari-star member benefits’ with a ‘hide all’ button."
     state="good"
     caption="Use the 'hide all' button to close all accordions within an accordion group at once."
@@ -149,7 +160,7 @@ Add custom content to an accordion using the slotted section to create different
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig3}
+    imageSrc={[Fig3AccordionLight, Fig3AccordionDark]}
     imageAlt="An accordion titled ‘Order details’ including a three-row data list for a coffee order in the content area."
     state="good"
     caption="Use the slotted content of an accordion to house other content."
@@ -170,7 +181,7 @@ Do not place accordion groups within nested accordion groups, one layer of nesti
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig4}
+    imageSrc={[Fig4AccordionLight, Fig4AccordionDark]}
     imageAlt="An accordion group titled ‘Roasting hot’ containing an accordion group with another nested accordion group within it."
     state="bad"
     caption="Do not nest an accordion or accordion group within an already nested accordion. One level of nesting is the maximum. "
@@ -181,13 +192,13 @@ Do not use nested accordions as a replacement for an accordion group. Consider u
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig5a}
+    imageSrc={[Fig5aAccordionLight, Fig5aAccordionDark]}
     imageAlt="An accordion group titled Coffee with three collapsed accordions"
     state="good"
     caption="Use an accordion group with a title for clearer organisation."
   />
   <DoDontCaution
-    imageSrc={accordionFig5b}
+    imageSrc={[Fig5bAccordionLight, Fig5bAccordionDark]}
     imageAlt="A parent accordion with the heading Coffee with a nested accordion group containing three accordions."
     state="caution"
     caption="Avoid nesting an accordion group to add a title. Instead, use an accordion group title."
@@ -216,7 +227,7 @@ When using a title for an accordion group, make sure it is relevant to the infor
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig6}
+    imageSrc={[Fig6AccordionLight, Fig6AccordionDark]}
     imageAlt="An accordion group containing three accordions with headings of different types of tea, with a title of ‘Our coffee menu’"
     state="bad"
     caption="Always make sure your title is relevant to your accordion group content."
@@ -235,7 +246,7 @@ Do not make accordion content scrollable as this will interfere with the page sc
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={accordionFig7}
+    imageSrc={[Fig7AccordionLight, Fig7AccordionDark]}
     imageAlt="An accordion group with three accordions where the first accordion is expanded, containing a scroll bar."
     state="bad"
     caption="Do not use scroll bars within accordions."

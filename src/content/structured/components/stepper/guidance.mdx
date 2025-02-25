@@ -24,14 +24,24 @@ tags: ["Progress indicator", "Steps", "Progress tracker"]
 ---
 
 import { IcStepper, IcStep } from "@ukic/react";
-import stepperFig1 from "./images/fig-1-stepper-component-being-used-to-describe-the-steps-of-a-multistep-form.png";
-import stepperFig2 from "./images/fig-2-use-concise-labels-within-a-stepper.png";
-import stepperFig3 from "./images/fig-3-dont-use-long-labels-within-a-stepper.png";
-import stepperFig4 from "./images/fig-4-a-stepper-accompanied-by-a-page-title-showing-how-the-stepper-should-be-implemented.png";
-import stepperFig5 from "./images/fig-5-dont-use-a-compact-stepper-if-the-page-content-does-not-include-the-step-name-in-a-heading.png";
-import stepperFig6 from "./images/fig-6-a-stepper-that-is-leftaligned-at-the-top-of-the-page-showing-how-the-stepper-should-be-implemented.png";
-import stepperFig7 from "./images/fig-7-a-stepper-that-is-centrealigned-at-the-top-of-the-page-showing-how-the-stepper-should-not-be-implemented.png";
-import stepperFig8 from "./images/fig-8-use-compact-stepper-when-there-is-not-much-room.png";
+import {
+  Fig1StepperDark,
+  Fig1StepperLight,
+  Fig2StepperDark,
+  Fig2StepperLight,
+  Fig3StepperDark,
+  Fig3StepperLight,
+  Fig4StepperDark,
+  Fig4StepperLight,
+  Fig5StepperDark,
+  Fig5StepperLight,
+  Fig6StepperDark,
+  Fig6StepperLight,
+  Fig7StepperDark,
+  Fig7StepperLight,
+  Fig8StepperDark,
+  Fig8StepperLight,
+} from "./images";
 
 ## Introduction
 
@@ -60,7 +70,7 @@ Use the compact variant for compact layouts or processes with many steps.
 Use steppers when a multi-step linear process is required. Steps are displayed from left to right and show the direction of movement through the process.
 
 <DoDontCaution
-  imageSrc={stepperFig1}
+  imageSrc={[Fig1StepperLight, Fig1StepperDark]}
   imageAlt="An image showing a form titled 'Make a coffee' featuring a stepper with four steps, titled 'Take order', 'Make drink', 'Take payment', and 'Finish'. The first step is selected, and the page below shows three input fields and a button labelled 'Confirm order'."
   state="good"
   caption="Stepper component being used to describe the steps of a multi-step form."
@@ -100,14 +110,14 @@ Steps are single elements that together form the stepper. Steps have four differ
 Always align steppers to the left and place them above the main body content of the page.
 
 <DoDontCaution
-  imageSrc={stepperFig6}
+  imageSrc={[Fig6StepperLight, Fig6StepperDark]}
   imageAlt="An image showing a stepper with four steps, titled 'Warm kettle', 'Add milk', 'Pour water', and 'Drink coffee'. The first step is selected, and the stepper is accurately placed at the top-left of a page."
   state="good"
   caption="A stepper that is left-aligned at the top of the page, showing how the stepper should be implemented."
 />
 
 <DoDontCaution
-  imageSrc={stepperFig7}
+  imageSrc={[Fig7StepperLight, Fig7StepperDark]}
   imageAlt="An image showing a stepper with four steps, titled 'Warm kettle', 'Add milk’, 'Pour water’, and 'Drink coffee'. The first step is selected, and the stepper is incorrectly placed in the centre of a page."
   state="bad"
   caption="A stepper that is centre-aligned at the top of the page, showing how the stepper should not be implemented."
@@ -117,7 +127,7 @@ When a stepper is too large to fit comfortably within its container, it will swi
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={stepperFig8}
+    imageSrc={[Fig8StepperLight, Fig8StepperDark]}
     imageAlt="A compact stepper showing the current step labelled 'warm kettle' and the next step label 'add milk'."
     state="good"
     caption="The compact stepper shows the current step as well as the next step in the process."
@@ -131,14 +141,14 @@ When a stepper is too large to fit comfortably within its container, it will swi
 Use the heading to describe each step concisely in one or two words. Avoid using lengthy headings.
 
 <DoDontCaution
-  imageSrc={stepperFig2}
+  imageSrc={[Fig2StepperLight, Fig2StepperDark]}
   imageAlt="An image showing a stepper with four steps, labelled 'Take order', 'make drink', 'Take payment', and 'Finish’. The first step is selected."
   state="good"
   caption="Use concise labels within a stepper."
 />
 
 <DoDontCaution
-  imageSrc={stepperFig3}
+  imageSrc={[Fig3StepperLight, Fig3StepperDark]}
   imageAlt="An image showing a stepper with four steps, each with very long labels. The first step is selected."
   state="caution"
   caption="Avoid using long labels within a stepper."
@@ -147,7 +157,7 @@ Use the heading to describe each step concisely in one or two words. Avoid using
 When a stepper is used, always use page titles and section headings on the page content itself.
 
 <DoDontCaution
-  imageSrc={stepperFig4}
+  imageSrc={[Fig4StepperLight, Fig4StepperDark]}
   imageAlt="An image showing a form titled 'Make a coffee' featuring a stepper with four steps, labelled 'Take order', 'Make drink', 'Take payment', and 'Finish’. The first step, 'Take order', is selected, and the page below shows three input fields and a button labelled 'Confirm order'."
   state="good"
   caption="A stepper accompanied by a page title, showing how the stepper should be implemented."
@@ -156,7 +166,7 @@ When a stepper is used, always use page titles and section headings on the page 
 Hide step information only if the step content is clearly labelled itself. Do not omit step labels if no headings are provided in the step content.
 
 <DoDontCaution
-  imageSrc={stepperFig5}
+  imageSrc={[Fig5StepperLight, Fig5StepperDark]}
   imageAlt="An image showing a form without a heading featuring a stepper with 4 steps, each without a label. The first unlabelled step is selected, and the page below shows three input fields and a button labelled ‘Confirm order’."
   state="bad"
   caption="Don’t use a stepper without step labels if the page content does not include the step name in a heading."

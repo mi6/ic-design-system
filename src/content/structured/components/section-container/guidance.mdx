@@ -25,11 +25,18 @@ tabs:
 ---
 
 import { IcChip, IcSectionContainer } from "@ukic/react";
-import image1 from "./images/Fig-1-section-containers-align-content.png";
-import image2 from "./images/Fig-2-full-height-example.png";
-import image3 from "./images/Fig-3-section-containers-align-centre.png";
-import image4 from "./images/Fig-4-section-containers-align-left.png";
-import image5 from "./images/Fig-5-section-containers-align-full-width.png";
+import {
+  Fig1SectionDark,
+  Fig1SectionLight,
+  Fig2SectionDark,
+  Fig2SectionLight,
+  Fig3SectionDark,
+  Fig3SectionLight,
+  Fig4SectionDark,
+  Fig4SectionLight,
+  Fig5SectionDark,
+  Fig5SectionLight,
+} from "./images";
 
 ## Introduction
 
@@ -99,7 +106,7 @@ Section containers are used in components to control alignment of their content.
 Use a section container to group multiple elements and align them on a page. Use multiple section containers to ensure alignment between them all.
 
 <DoDontCaution
-  imageSrc={image1}
+  imageSrc={[Fig1SectionLight, Fig1SectionDark]}
   imageAlt="A page showing section containers used to align content to the centre of the viewport."
   caption="Use section containers maintain alignment across a page."
 />
@@ -115,7 +122,7 @@ The size of the section container changes dependent on the size of the viewport.
 Make a section container full height to remove the vertical padding and help align vertical content more easily.
 
 <DoDontCaution
-  imageSrc={image2}
+  imageSrc={[Fig2SectionLight, Fig2SectionDark]}
   imageAlt="Two section containers. The first section container has vertical padding included at the top and bottom of the container, whereas the second section container is full-height and has no vertical padding."
   caption="Make section containers full height to remove vertical padding and easily space content vertically."
 />
@@ -127,7 +134,7 @@ Use the alignment properties of the section container to change how they align w
 Use centre alignment to position the section container in the centre of the viewport.
 
 <DoDontCaution
-  imageSrc={image3}
+  imageSrc={[Fig3SectionLight, Fig3SectionDark]}
   imageAlt="An example of a page with three section containers with centred alignment appearing in the middle of the viewport."
   caption="Section containers using centred alignment."
 />
@@ -135,7 +142,7 @@ Use centre alignment to position the section container in the centre of the view
 Use left alignment to position the section container to the left of the viewport.
 
 <DoDontCaution
-  imageSrc={image4}
+  imageSrc={[Fig4SectionLight, Fig4SectionDark]}
   imageAlt="An example of a page with three section containers with left alignment appearing to the left of the viewport."
   caption="Section containers using left alignment."
 />
@@ -143,7 +150,7 @@ Use left alignment to position the section container to the left of the viewport
 Use full-width alignment to make the section container span the full width of the viewport.
 
 <DoDontCaution
-  imageSrc={image5}
+  imageSrc={[Fig5SectionLight, Fig5SectionDark]}
   imageAlt="An example of a page with three section containers with full-width alignment stretching to the edges of the viewport."
   caption="Section containers using full-width alignment."
 />

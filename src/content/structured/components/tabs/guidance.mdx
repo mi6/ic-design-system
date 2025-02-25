@@ -22,16 +22,28 @@ tabs:
 ---
 
 import { IcTab, IcTabContext, IcTabGroup, IcTabPanel } from "@ukic/react";
-import tabsFig1 from "./images/fig-1-light-tab-bar-example.png";
-import tabsFig2 from "./images/fig-2-dark-tab-bar-example.png";
-import tabsFig3 from "./images/fig-3-dont-separate-the-tab-container-from-the-tab-bar.png";
-import tabsFig4 from "./images/fig-4-compact-tab-presentation.png";
-import tabsFig5 from "./images/fig-5-keep-labels-concise.png";
-import tabsFig6 from "./images/fig-6-dont-use-long-labels.png";
-import tabsFig7 from "./images/fig-7-avoid-using-too-many-tabs.png";
-import tabsFig8 from "./images/fig-8-use-clear-icons-for-tabs.png";
-import tabsFig9 from "./images/fig-9-dont-use-ambiguous-icons.png";
-import tabsFig10 from "./images/fig-10-dont-mix-icon-tabs-with-normal-tabs.png";
+import {
+  Fig10TabsDark,
+  Fig10TabsLight,
+  Fig1TabsDark,
+  Fig1TabsLight,
+  Fig2TabsDark,
+  Fig2TabsLight,
+  Fig3TabsDark,
+  Fig3TabsLight,
+  Fig4TabsDark,
+  Fig4TabsLight,
+  Fig5TabsDark,
+  Fig5TabsLight,
+  Fig6TabsDark,
+  Fig6TabsLight,
+  Fig7TabsDark,
+  Fig7TabsLight,
+  Fig8TabsDark,
+  Fig8TabsLight,
+  Fig9TabsDark,
+  Fig9TabsLight,
+} from "./images";
 
 ## Introduction
 
@@ -68,13 +80,13 @@ Use a dark tab bar on light backgrounds and use a light tab bar on darker backgr
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={tabsFig1}
+    imageSrc={[Fig1TabsLight, Fig1TabsDark]}
     imageAlt="A recipe site showing a recipe titled ‘Hazelnut macchiato recipe’. The recipe sits on a white background and has a dark tab bar with two tabs for ‘Ingredients’ and ‘Method’."
     state="good"
     caption="Use a dark tab bar on light backgrounds."
   />
   <DoDontCaution
-    imageSrc={tabsFig2}
+    imageSrc={[Fig2TabsLight, Fig2TabsDark]}
     imageAlt="A recipe site showing a recipe titled ‘Hazelnut macchiato recipe’. The recipe sits on a dark blue background and has a light tab bar with two tabs for ‘Ingredients’ and ‘Method’."
     state="good"
     caption="Use a light tab bar on dark backgrounds."
@@ -88,7 +100,7 @@ Always place tabs directly above the content container that they control.
 Don’t position tabs so that they are unconnected from the content that belongs to them.
 
 <DoDontCaution
-  imageSrc={tabsFig3}
+  imageSrc={[Fig3TabsLight, Fig3TabsDark]}
   imageAlt="A recipe site showing a page titled ‘Hazelnut macchiato recipe’. The page title has a tab bar showing two tabs ‘Ingredients’ and ‘Method’. Between the tab bar and the tab container is a link to ‘our menu’."
   state="bad"
   caption="Don’t separate the tab container from the tab bar."
@@ -98,7 +110,7 @@ On smaller screen sizes, tab bars with a large number of tabs will collapse into
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={tabsFig4}
+    imageSrc={[Fig4TabsLight, Fig4TabsDark]}
     imageAlt="A recipe site showing a page titled ‘Hazelnut macchiato recipe’. The page title has a tab bar showing a series of tabs. Three tabs are viewable on the screen and scroll buttons are displayed in the tab bar indicating that more tabs can be scrolled into view."
     state="good"
     caption="A tab bar showing multiple tabs in a compact layout. Scroll controls are added to navigate through the tab bar."
@@ -113,13 +125,13 @@ Keep labels short and informative so that the tab’s content is clear. Tab labe
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={tabsFig5}
+    imageSrc={[Fig5TabsLight, Fig5TabsDark]}
     imageAlt="A recipe page showing a tab bar with two tabs labelled ‘Ingredients’ and ‘Method’."
     state="good"
     caption="Use concise labels on tabs."
   />
   <DoDontCaution
-    imageSrc={tabsFig6}
+    imageSrc={[Fig6TabsLight, Fig6TabsDark]}
     imageAlt="A recipe page showing a tab bar with two tabs labelled ‘This is what goes in it’ and 'How it's made’."
     state="bad"
     caption="Don’t use long labels."
@@ -133,7 +145,7 @@ Arrange the tabs in an order that makes the most sense in context. Always show t
 Avoid using six or more tabs as this may add too much complexity to the page. Consider if content can be reduced or split across multiple pages instead.
 
 <DoDontCaution
-  imageSrc={tabsFig7}
+  imageSrc={[Fig7TabsLight, Fig7TabsDark]}
   imageAlt="A recipe page with a tab bar with six tabs."
   state="caution"
   caption="Avoid using too many tabs as it can complicate the page."
@@ -145,13 +157,13 @@ Add icons to tab labels to provide an extra visual cue to the tab’s content. E
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={tabsFig8}
+    imageSrc={[Fig8TabsLight, Fig8TabsDark]}
     imageAlt="A tab bar with two icon tabs labelled ‘Ingredients’ and ‘Method’. The ingredients tab has a fridge icon and the method tab has a checklist icon."
     state="good"
     caption="Use clear icons on tab labels."
   />
   <DoDontCaution
-    imageSrc={tabsFig9}
+    imageSrc={[Fig9TabsLight, Fig9TabsDark]}
     imageAlt="A tab bar with two icon tabs labelled ‘Ingredients’ and ‘Method’. Both icons are difficult to understand as they don't clearly match the label."
     state="bad"
     caption="Don’t use ambiguous icons."
@@ -161,7 +173,7 @@ Add icons to tab labels to provide an extra visual cue to the tab’s content. E
 Don’t use icons for some tabs and not others. Always apply icons to all tabs if using them.
 
 <DoDontCaution
-  imageSrc={tabsFig10}
+  imageSrc={[Fig10TabsLight, Fig10TabsDark]}
   imageAlt=" A recipe page that shows a tab bar with three tabs. Only one tab out of the three uses an icon."
   state="bad"
   caption="Don’t mix normal tabs with icon tabs. Use either all normal tabs or all icon tabs."

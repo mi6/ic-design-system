@@ -22,14 +22,24 @@ tabs:
 ---
 
 import { IcPagination } from "@ukic/react";
-import paginationFig1 from "./images/fig-1-use-pagination-to-split-content-across-pages.png";
-import paginationFig2 from "./images/fig-2-complex-simple-pagination.png";
-import paginationFig3 from "./images/fig-3-data-table-with-pagination-bar.png";
-import paginationFig4 from "./images/fig-4-use-colour-variants.png";
-import paginationFig5 from "./images/fig-5-place-pagination-at-bottom.png";
-import paginationFig6 from "./images/fig-6-place-pagination-at-top-and-bottom.png";
-import paginationFig7 from "./images/fig-7-setting-adjacent-and-boundary-items.png";
-import paginationFig8 from "./images/fig-8-pagination-bars-with-different-elements.png";
+import {
+  Fig1PaginationDark,
+  Fig1PaginationLight,
+  Fig2PaginationDark,
+  Fig2PaginationLight,
+  Fig3PaginationDark,
+  Fig3PaginationLight,
+  Fig4PaginationDark,
+  Fig4PaginationLight,
+  Fig5PaginationDark,
+  Fig5PaginationLight,
+  Fig6PaginationDark,
+  Fig6PaginationLight,
+  Fig7PaginationDark,
+  Fig7PaginationLight,
+  Fig8PaginationDark,
+  Fig8PaginationLight,
+} from "./images";
 
 ## Introduction
 
@@ -63,7 +73,7 @@ Try to create an understandable order to the content split across pages. This wa
 For example, if content is ordered alphabetically, then it becomes obvious that entries beginning with a ‘Z’ would appear on the last few pages.
 
 <DoDontCaution
-  imageSrc={paginationFig1}
+  imageSrc={[Fig1PaginationLight, Fig1PaginationDark]}
   imageAlt="An example application showing a list of hot drink products split across pages. A pagination component provides access to navigate through the list of products."
   state="good"
   caption="Use pagination to split content across multiple pages."
@@ -79,7 +89,7 @@ Use simple pagination to navigate sequentially between pages using the ‘next�
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={paginationFig2}
+    imageSrc={[Fig2PaginationLight, Fig2PaginationDark]}
     imageAlt="An image showing two pagination components. Complex pagination provides numbered buttons for each page. Simple pagination simply provides next, previous, first and last buttons."
     state="none"
     caption="Use complex or simple pagination variants for different implementations."
@@ -89,7 +99,7 @@ Use simple pagination to navigate sequentially between pages using the ‘next�
 Use a pagination bar to provide more navigation functionality through particularly complex data sets. For example, use pagination bars with data tables to navigate large data sets easily.
 
 <DoDontCaution
-  imageSrc={paginationFig3}
+  imageSrc={[Fig3PaginationLight, Fig3PaginationDark]}
   imageAlt="An example nutritional data table for coffee products. Coffee products are displayed in a table and a pagination bar allows the number of items per page to be changed, displays the total number of items, and includes a simple pagination control allowing navigation through the pages."
   state="good"
   caption="Use a pagination bar to provide more functionality."
@@ -116,7 +126,7 @@ In a pagination bar, when the number of items per page is changed, then the pagi
 Use the default, dark and light theme pagination with `monochrome={true}` when placing them on different coloured backgrounds to ensure the correct contrast ratios are met.
 
 <DoDontCaution
-  imageSrc={paginationFig4}
+  imageSrc={[Fig4PaginationLight, Fig4PaginationDark]}
   imageAlt="Three pagination examples on different coloured backgrounds. The default theme pagination is used on a white background. The monochrome dark theme pagination is used on a light yellow background. The monochrome light theme pagination is used on a dark grey background."
   state="good"
   caption="Use colour contrast variants when placing pagination components on different coloured backgrounds."
@@ -129,7 +139,7 @@ Place the pagination component so that it is obvious what it controls. Match the
 Try to place pagination at the bottom of the page it controls, as this encourages the user to read through the page before moving to the next. However, placing pagination at the top of the page is still a valid option.
 
 <DoDontCaution
-  imageSrc={paginationFig5}
+  imageSrc={[Fig5PaginationLight, Fig5PaginationDark]}
   imageAlt="An example product grid showing hot beverages. A pagination control appears below the drinks grid that it controls."
   state="good"
   caption="Try to place pagination at the bottom of the container it controls."
@@ -138,7 +148,7 @@ Try to place pagination at the bottom of the page it controls, as this encourage
 For large page containers that require scrolling, use two pagination components at the top and bottom of the page container to provide easy access to navigation when at either the top or bottom of the page.
 
 <DoDontCaution
-  imageSrc={paginationFig6}
+  imageSrc={[Fig6PaginationLight, Fig6PaginationDark]}
   imageAlt="An example product grid showing hot beverages. A complex pagination control appears below the drinks grid that it controls. A simple pagination control is displayed in the top-right above the product grid."
   state="good"
   caption="Place pagination controls at the top and bottom of the page container to provide additional navigation functionality."
@@ -149,7 +159,7 @@ For large page containers that require scrolling, use two pagination components 
 When using complex pagination, specify the number of adjacent pages to display next to the current page. Also specify the number of boundary pages to display at the start and end of the page range.
 
 <DoDontCaution
-  imageSrc={paginationFig7}
+  imageSrc={[Fig7PaginationLight, Fig7PaginationDark]}
   imageAlt="Three complex pagination components with different settings for adjacent and boundary items. Increasing boundary items shows more page buttons at the start and end of the range. Increasing the adjacent items shows more page buttons next to the current page."
   state="none"
   caption="Set the adjacent and boundary items to change which page buttons are displayed."
@@ -158,7 +168,7 @@ When using complex pagination, specify the number of adjacent pages to display n
 Select which elements within a pagination bar you want to display. Each element in the pagination bar can be toggled on or off except for the pagination component itself, which can be switched to use complex or simple pagination.
 
 <DoDontCaution
-  imageSrc={paginationFig8}
+  imageSrc={[Fig8PaginationLight, Fig8PaginationDark]}
   imageAlt="Three example pagination bars with different elements displaying. The top shows the ‘items per page selector’ and ‘go to page button’ displayed, whilst the other examples have these elements hidden."
   state="none"
   caption="Select which elements to show within a pagination bar."

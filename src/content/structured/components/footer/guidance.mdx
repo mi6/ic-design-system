@@ -22,19 +22,34 @@ tabs:
 ---
 
 import { IcFooter, IcFooterLink } from "@ukic/react";
-import footerFig1 from "./images/fig-1-colours.png";
-import footerFig2 from "./images/fig-2-not-full-width.png";
-import footerFig3 from "./images/fig-3-below-the-fold.png";
-import footerFig4 from "./images/fig-4-above-the-fold.png";
-import footerFig5 from "./images/fig-5-app-drawer-layouts.png";
-import footerFig6 from "./images/fig-6-left-aligned.png";
-import footerFig7 from "./images/fig-7-centred.png";
-import footerFig8 from "./images/fig-8-full-width.png";
-import footerFig9 from "./images/fig-9-single-line-links.png";
-import footerFig10 from "./images/fig-10-grouped-links.png";
-import footerFig11 from "./images/fig-11-desktop-logos.png";
-import footerFig12 from "./images/fig-12-correct-copy.png";
-import footerFig13 from "./images/fig-13-incorrect-copy.png";
+import {
+  Fig10FooterDark,
+  Fig10FooterLight,
+  Fig11FooterDark,
+  Fig11FooterLight,
+  Fig12FooterDark,
+  Fig12FooterLight,
+  Fig13FooterDark,
+  Fig13FooterLight,
+  Fig1FooterDark,
+  Fig1FooterLight,
+  Fig2FooterDark,
+  Fig2FooterLight,
+  Fig3FooterDark,
+  Fig3FooterLight,
+  Fig4FooterDark,
+  Fig4FooterLight,
+  Fig5FooterDark,
+  Fig5FooterLight,
+  Fig6FooterDark,
+  Fig6FooterLight,
+  Fig7FooterDark,
+  Fig7FooterLight,
+  Fig8FooterDark,
+  Fig8FooterLight,
+  Fig9FooterDark,
+  Fig9FooterLight,
+} from "./images";
 
 ## Introduction
 
@@ -79,7 +94,7 @@ Use grouped footers when more than eight links are required or the links can be 
 The background colour of the footer reflects the chosen brand colour for the application. Set the global brand colour token to change the footer’s appearance.
 
 <DoDontCaution
-  imageSrc={footerFig1}
+  imageSrc={[Fig1FooterLight, Fig1FooterDark]}
   imageAlt="A footer using automatically generated secondary and tertiary shades of the app’s brand colour as the background colours for the footer’s link section and logo section respectively."
   state="good"
   caption="Change the global brand colour token to change the footer’s appearance."
@@ -92,7 +107,7 @@ The footer always extends to the full width of the viewport.
 Don’t embed the footer within another container that is not full width.
 
 <DoDontCaution
-  imageSrc={footerFig2}
+  imageSrc={[Fig2FooterLight, Fig2FooterDark]}
   imageAlt="A footer positioned centred between two other content areas that sit to the left and right of the footer."
   state="bad"
   caption="Don’t place the footer within other content. Always make sure it's the full width of the viewport."
@@ -105,14 +120,14 @@ Don’t embed the footer within another container that is not full width.
 Always place the footer at the bottom of the page and below the fold, meaning users should scroll to see it.
 
 <DoDontCaution
-  imageSrc={footerFig3}
+  imageSrc={[Fig3FooterLight, Fig3FooterDark]}
   imageAlt="A footer component placed below the fold within a page design."
   state="good"
   caption="Footer placed correctly below the fold on a page."
 />
 
 <DoDontCaution
-  imageSrc={footerFig4}
+  imageSrc={[Fig4FooterLight, Fig4FooterDark]}
   imageAlt="A footer component placed above the fold within a page design."
   state="bad"
   caption="Footer placed incorrectly above the fold."
@@ -121,7 +136,7 @@ Always place the footer at the bottom of the page and below the fold, meaning us
 Position the footer adjacent to the [side navigation](/components/side-navigation) if your app uses one.
 
 <DoDontCaution
-  imageSrc={footerFig5}
+  imageSrc={[Fig5FooterLight, Fig5FooterDark]}
   imageAlt="An example app showing a side navigation component with a footer component positioned on the right and adjacent to the side navigation."
   state="good"
   caption="Place the footer adjacent to the side navigation."
@@ -134,7 +149,7 @@ The footer can be set to left-aligned, centred or full width.
 Use left-aligned to align footer content to the left of the main body of the page. This works well with apps that use the side navigation.
 
 <DoDontCaution
-  imageSrc={footerFig6}
+  imageSrc={[Fig6FooterLight, Fig6FooterDark]}
   imageAlt="A footer component with its content left aligned."
   state="good"
   caption="A footer with its content left aligned."
@@ -143,7 +158,7 @@ Use left-aligned to align footer content to the left of the main body of the pag
 Use centred alignment to centre footer content to the main body of the page.
 
 <DoDontCaution
-  imageSrc={footerFig7}
+  imageSrc={[Fig7FooterLight, Fig7FooterDark]}
   imageAlt="A footer component with its content centre aligned."
   state="good"
   caption="A footer with its content centre aligned."
@@ -152,7 +167,7 @@ Use centred alignment to centre footer content to the main body of the page.
 Use full-width to position footer content so that it spans the full width of the viewport.
 
 <DoDontCaution
-  imageSrc={footerFig8}
+  imageSrc={[Fig8FooterLight, Fig8FooterDark]}
   imageAlt="A footer component with its content aligned to the full width of the viewport."
   state="good"
   caption="A footer with its content aligned to the full width of the viewport."
@@ -169,14 +184,14 @@ Give link groups clear labels when using grouped links.
 Order the links so that the most important links appear at the top left of the links section.
 
 <DoDontCaution
-  imageSrc={footerFig9}
+  imageSrc={[Fig9FooterLight, Fig9FooterDark]}
   imageAlt="A footer showing a single set of links. The four links include ‘Accessibility statement’, ‘Privacy’, ‘Cookies’ and ‘Contribute’."
   state="good"
   caption="A footer with a single set of links."
 />
 
 <DoDontCaution
-  imageSrc={footerFig10}
+  imageSrc={[Fig10FooterLight, Fig10FooterDark]}
   imageAlt="A footer showing two groups of links. The two link groups are titled ‘Services’ and ‘Policy’ and each group includes a set of links."
   state="good"
   caption="A footer with grouped links."
@@ -187,7 +202,7 @@ Order the links so that the most important links appear at the top left of the l
 Footers can include a number of different logos. The logos appear at the bottom of the footer. Choose the correct theme (i.e., light or dark) of your logo to match the selected brand colour background.
 
 <DoDontCaution
-  imageSrc={footerFig11}
+  imageSrc={[Fig11FooterLight, Fig11FooterDark]}
   imageAlt="A footer displaying four different logos on a large screen."
   state="good"
   caption="A footer displaying four different logos on a large screen."
@@ -199,13 +214,13 @@ Provide additional information in either the top section above the links or in t
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={footerFig12}
+    imageSrc={[Fig12FooterLight, Fig12FooterDark]}
     imageAlt="A footer component showing concise and easily understandable information. It reads ‘The ICDS is maintained by the Design Practice Team. If you’ve got a question or want to feedback, please get in touch.’"
     state="good"
     caption="Concise and easily understandable information shown in the footer."
   />
   <DoDontCaution
-    imageSrc={footerFig13}
+    imageSrc={[Fig13FooterLight, Fig13FooterDark]}
     imageAlt="A footer component showing overly lengthy information. It reads ‘The ICDS is maintained by the Design Practice Team. If you’ve got a question or want to feedback, please get in touch. The best way to contact the team would be through Microsoft Teams between the hours of 9am to 5pm, Monday to Friday. We will strive to get back to you as soon as possible.’"
     state="bad"
     caption="The information included in the footer is too long."
