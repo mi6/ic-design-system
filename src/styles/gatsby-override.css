@@ -10,4 +10,4 @@ ic-typography label {
   letter-spacing: inherit;
 }
 
-ic-link > a:visited { color: var(--ic-hyperlink-visited) !important; }
+ic-link > a:visited { color: var(--ic-color-hyperlink-visited) !important; }
