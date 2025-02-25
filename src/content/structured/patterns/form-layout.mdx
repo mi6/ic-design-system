@@ -13,11 +13,18 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 ---
 
 import { IcAlert } from "@ukic/react";
-import basicFormGood from "./images/basic-form-good.png";
-import basicFormBad from "./images/basic-form-bad.png";
-import basicFormBad2 from "./images/basic-form-bad-2.png";
-import stepper1 from "./images/stepper1.png";
-import stepper2 from "./images/stepper2.png";
+import {
+  Fig1KeepFormSimpleLight,
+  Fig1KeepFormSimpleDark,
+  Fig2DontUseMultipleColumnsLight,
+  Fig2DontUseMultipleColumnsDark,
+  Fig3DontAlignCentreLight,
+  Fig3DontAlignCentreDark,
+  Fig4StepperSplitLight,
+  Fig4StepperSplitDark,
+  Fig5StepperManageLight,
+  Fig5StepperManageDark,
+} from "./images";
 
 <IcAlert
   heading="Pattern in development"
@@ -37,13 +44,13 @@ Form fields should match the size of the answer you expect to each question &nda
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={basicFormGood}
+    imageSrc={[Fig1KeepFormSimpleLight, Fig1KeepFormSimpleDark]}
     imageAlt="A good example of a form with fields that match the size of the expected input and are displayed in a single column."
     state="good"
     caption="Use fields that reflect the size of the expected input to make it easier to understand what each question is asking for. The whole width of the page does not need to be filled."
   />
   <DoDontCaution
-    imageSrc={basicFormBad}
+    imageSrc={[Fig2DontUseMultipleColumnsLight, Fig2DontUseMultipleColumnsDark]}
     imageAlt="A bad example of a form with fields that take up the whole width of the screen instead of matching the size of the expected input. The form fields are also displayed in multiple columns."
     state="bad"
     caption="Don't use multiple columns as this can affect readability and make it more likely that users will miss something."
@@ -53,7 +60,7 @@ Form fields should match the size of the answer you expect to each question &nda
 Align form fields to the left for a clean and consistent layout for your application.
 
 <DoDontCaution
-  imageSrc={basicFormBad2}
+  imageSrc={[Fig3DontAlignCentreLight, Fig3DontAlignCentreDark]}
   imageAlt="A bad example of a form that is centre-aligned, with a left-aligned page header."
   state="bad"
   caption="Don't align your form to the centre of the page."
@@ -67,13 +74,13 @@ Use multiple pages if your form is much longer than about five or six fields.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={stepper1}
+    imageSrc={[Fig4StepperSplitLight, Fig4StepperSplitDark]}
     imageAlt="A form, with four fields, and a stepper indicating the current step."
     state="none"
     caption="A stepper can split up complex forms to let you add inline guidance and design simpler layouts."
   />
   <DoDontCaution
-    imageSrc={stepper2}
+    imageSrc={[Fig5StepperManageLight, Fig5StepperManageDark]}
     imageAlt="A form, with two fields, and a stepper indicating the current, completed, and invalid steps."
     state="none"
     caption="A stepper can help you manage complex validation and intermediate (as-you-go) saving of forms."

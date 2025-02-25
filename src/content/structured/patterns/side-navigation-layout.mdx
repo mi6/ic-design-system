@@ -14,7 +14,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 import { IcLink } from "@ukic/react";
 import { createReactAppTsx } from "./components/StackblitzButton/stackblitz-helpers";
-import sideNavigationPatternFig1 from "./images/fig-1-example-of-theming-applied-to-side-navigation-layout.png";
+import { Fig1ThemingSideNavLight, Fig1ThemingSideNavDark } from "./images";
 
 ## Introduction
 
@@ -2549,7 +2549,7 @@ export const snippetsSideNavBackToTop = [
 This pattern can be themed to change the look and feel of the app. Use the [custom theme](/get-started/install-components/custom-theme) guidance to change your app's theme. Make sure to select your theme in line with the accessibility requirements around colour contrast.
 
 <DoDontCaution
-  imageSrc={sideNavigationPatternFig1}
+  imageSrc={[Fig1ThemingSideNavLight, Fig1ThemingSideNavDark]}
   imageAlt="An example page showing the layout with an alternatively themed look."
   state="none"
   caption="An example of the side navigation layout themed to an alternative colour."
