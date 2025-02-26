@@ -16,7 +16,7 @@ import { IcLink } from "@ukic/react";
 
 import { createReactAppTsx } from "./components/StackblitzButton/stackblitz-helpers";
 
-import topNavigationPatternFig1 from "./images/fig-1-example-of-theming-applied-to-top-navigation-layout@2x.png";
+import { Fig1ThemingTopNavLight, Fig1ThemingTopNavDark } from "./images";
 
 ## Introduction
 
@@ -2052,7 +2052,7 @@ export const snippetsTopNavBackToTop = [
 This pattern can be themed to change the look and feel of the app. Use the [custom theme](/get-started/install-components/custom-theme) guidance to change your app's theme. Make sure to select your theme in line with the accessibility requirements around colour contrast.
 
 <DoDontCaution
-  imageSrc={topNavigationPatternFig1}
+  imageSrc={[Fig1ThemingTopNavLight, Fig1ThemingTopNavDark]}
   imageAlt="An example page showing the layout with an alternatively themed look."
   state="none"
   caption="An example of the top navigation layout themed to an alternative colour."
