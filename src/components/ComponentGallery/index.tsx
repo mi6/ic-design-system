@@ -10,7 +10,7 @@ import {
   BadgeLight,
   BreadcrumbLight,
   ButtonLight,
-  CardLight,
+  CardverticalLight,
   CheckboxLight,
   ChipLight,
   ClassificationbannerLight,
@@ -51,7 +51,7 @@ import {
   BadgeDark,
   BreadcrumbDark,
   ButtonDark,
-  CardDark,
+  CardverticalDark,
   CheckboxDark,
   ChipDark,
   ClassificationbannerDark,
@@ -100,7 +100,7 @@ const ComponentImages: { [key: string]: any } = {
   BadgeLight,
   BreadcrumbLight,
   ButtonLight,
-  CardLight,
+  CardverticalLight,
   CheckboxLight,
   ChipLight,
   ClassificationbannerLight,
@@ -142,7 +142,7 @@ const ComponentImages: { [key: string]: any } = {
   BadgeDark,
   BreadcrumbDark,
   ButtonDark,
-  CardDark,
+  CardverticalDark,
   CheckboxDark,
   ChipDark,
   ClassificationbannerDark,
@@ -202,7 +202,7 @@ const ComponentGallery: React.FC = () => {
               <img
                 src={
                   ComponentImages[
-                    title.replace(/[- ]/g, "") + capitalisedTheme
+                    title.replace(/[- ()]/g, "") + capitalisedTheme
                   ] || passImage([PlaceHolderLight, PlaceHolderDark], theme)
                 }
                 slot="image-top"
