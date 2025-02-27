@@ -70,7 +70,7 @@ ic-card-horizontal {
 }
 
 #get-started-link a {
-  color: var(--ic-architectural-white);
+  --ic-color-hyperlink-visited: var(--ic-architectural-white);
 }
 
 .get-started-arrow {
