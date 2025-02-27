@@ -21,6 +21,11 @@
   flex-direction: column;
 }
 
+.ag-theme-icds {
+  height: 500px;
+  width: -webkit-fill-available;
+}
+
 @media screen and (max-width: 576px) {
   .subsection-nav {
     background-color: var(--ic-architectural-40);
@@ -58,6 +63,12 @@
   .subsection-nav {
     margin-top: 0;
     border-right: 1px solid var(--ic-architectural-300);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .ag-theme-icds .ag-paging-panel {
+    display:none;
   }
 }
 
