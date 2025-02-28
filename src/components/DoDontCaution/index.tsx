@@ -69,9 +69,21 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
         imagePath.lastIndexOf("-")
       );
 
-      const gatsbyFileObj: ImageFile | undefined = imageObject.find(
-        (image: ImageFile) => image.node.relativePath.includes(croppedImagePath)
+      const gatsbyFileObjMatches = imageObject.filter((image: ImageFile) =>
+        image.node.relativePath.includes(croppedImagePath)
       );
+
+      let gatsbyFileObj;
+
+      if (gatsbyFileObjMatches) {
+        if (gatsbyFileObjMatches.length > 1) {
+          gatsbyFileObj = gatsbyFileObjMatches.find(
+            (image) => !image.node.relativePath.includes("dark")
+          );
+        } else {
+          [gatsbyFileObj] = gatsbyFileObjMatches;
+        }
+      }
 
       if (gatsbyFileObj !== undefined) {
         return gatsbyFileObj.node.childImageSharp.gatsbyImageData;
