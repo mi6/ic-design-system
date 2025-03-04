@@ -3,7 +3,7 @@ path: "/components/toggle-button"
 
 navPriority: 38
 
-date: "2024-03-08"
+date: "2025-03-04"
 
 title: "Toggle button"
 
@@ -120,24 +120,24 @@ For example, an audio player could use a toggle button group for its play, fast 
 
 ## Colour
 
-Use the appearance options when placing toggle buttons on different coloured backgrounds. This makes sure that a good colour contrast can be achieved in adherence to the accessibility guidelines.
+Use the `theme` and `monochrome` props when placing toggle buttons on different coloured backgrounds. This makes sure that a good colour contrast can be achieved in adherence to the accessibility guidelines.
 
-Don’t mix different appearance buttons in the same toggle button group, always use the same appearance for all toggle buttons within a group.
+Don’t mix different coloured buttons in the same toggle button group, always use the same colour for all toggle buttons within a group.
 
 Don’t re-colour the icons in a toggle button, make sure they match the text label so that they also achieve a high colour contrast ratio.
 
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={[Fig4ToggleLight, Fig4ToggleDark]}
-    imageAlt="Two versions of a text styling setting that uses toggle button groups. One has a dark background with light appearance toggle buttons, and the other has a light coloured background with dark appearance toggle button groups."
+    imageAlt="Two versions of a text styling setting that uses toggle button groups. One has a dark background with light theme toggle buttons, and the other has a light coloured background with dark theme toggle button groups."
     state="good"
     caption="Use the appearance options to achieve good contrast on different coloured backgrounds."
   />
   <DoDontCaution
     imageSrc={[Fig5ToggleLight, Fig5ToggleDark]}
-    imageAlt="A text styling setting that uses toggle button groups. Within the toggle button groups different toggle buttons use different appearance options."
+    imageAlt="A text styling setting that uses toggle button groups. Within the toggle button groups different toggle buttons use different monochrome prop values."
     state="bad"
-    caption="Don’t mix appearance options together in the same toggle button group."
+    caption="Don’t mix theme and monochrome props in the same toggle button group."
   />
 </DoubleDoDontCaution>
 
