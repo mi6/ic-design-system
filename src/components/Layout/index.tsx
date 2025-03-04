@@ -50,6 +50,7 @@ interface FooterLinks {
   text: string;
   key: string;
   link: string;
+  target?: string;
 }
 
 const ClientOnly: React.FC<any> = ({ children, ...delegated }) => {
@@ -269,6 +270,7 @@ const Layout: React.FC<LayoutProps> = ({
                   slot="link"
                   href={withPrefix(footerLink.link)}
                   key={footerLink.key}
+                  target={footerLink.target}
                 >
                   {footerLink.text}
                 </ic-footer-link>
