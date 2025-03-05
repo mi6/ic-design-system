@@ -24,19 +24,34 @@ tags: ["Tab", "Label", "Chip"]
 ---
 
 import { IcBadge, IcButton } from "@ukic/react";
-import badgeFig1 from "./images/fig-1-badge-types.png";
-import badgeFig2 from "./images/fig-2-badge-notification-on-inbox.png";
-import badgeFig3 from "./images/fig-3-text-badge-notification-on-new-list-item.png";
-import badgeFig4 from "./images/fig-4-dont-use-text-badge-with-long-label.png";
-import badgeFig5 from "./images/fig-5-use-dot-badges.png";
-import badgeFig6 from "./images/fig-6-use-icon-badges.png";
-import badgeFig7 from "./images/fig-7-dont-add-badges-to-non-components.png";
-import badgeFig9 from "./images/fig-9-use-plus-symbol-for-large-numbers.png";
-import badgeFig10 from "./images/fig-10-use-high-contrast-combinations.png";
-import badgeFig11 from "./images/fig-11-dont-use-low-conotrast-combinations.png";
-import badgeFig12 from "./images/fig-12-badge-positioning.png";
-import badgeFig13 from "./images/fig-13-understandable-badge-content.png";
-import badgeFig14 from "./images/fig-14-confusing-badge-content.png";
+import {
+  Fig10BadgeDark,
+  Fig10BadgeLight,
+  Fig11BadgeDark,
+  Fig11BadgeLight,
+  Fig12BadgeDark,
+  Fig12BadgeLight,
+  Fig13BadgeDark,
+  Fig13BadgeLight,
+  Fig14BadgeDark,
+  Fig14BadgeLight,
+  Fig1BadgeDark,
+  Fig1BadgeLight,
+  Fig2BadgeDark,
+  Fig2BadgeLight,
+  Fig3BadgeDark,
+  Fig3BadgeLight,
+  Fig4BadgeDark,
+  Fig4BadgeLight,
+  Fig5BadgeDark,
+  Fig5BadgeLight,
+  Fig6BadgeDark,
+  Fig6BadgeLight,
+  Fig7BadgeDark,
+  Fig7BadgeLight,
+  Fig9BadgeDark,
+  Fig9BadgeLight,
+} from "./images";
 
 ## Introduction
 
@@ -58,7 +73,7 @@ There are three types of badge available:
 - Dot badge: Badge background without any content.
 
 <DoDontCaution
-  imageSrc={badgeFig1}
+  imageSrc={[Fig1BadgeLight, Fig1BadgeDark]}
   imageAlt="Three types of badges applied to a secondary button titled ‘inbox’."
   caption="Three types of badge are available: a text, icon and a dot badge."
 />
@@ -68,7 +83,7 @@ There are three types of badge available:
 Use badges to draw attention to new or updated information. For example, use them to display an item count such as the number of new notifications, or to display an icon such as a padlock icon for locked content.
 
 <DoDontCaution
-  imageSrc={badgeFig2}
+  imageSrc={[Fig2BadgeLight, Fig2BadgeDark]}
   imageAlt="An example app showing a top navigation bar that includes an icon button for messages. A badge is displayed on the messages icon button showing the number 8 in its label."
   state="good"
   caption="Use text badges to draw attention to new information such as new messages in an inbox."
@@ -78,13 +93,13 @@ Use text badges to attach short labels to other information. For example, a badg
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={badgeFig3}
+    imageSrc={[Fig3BadgeLight, Fig3BadgeDark]}
     imageAlt="Use text badges to add short labels to other page elements."
     state="good"
     caption="A list of cards showing coffee-themed blog posts. The top card has a text badge displaying the label ‘New’."
   />
   <DoDontCaution
-    imageSrc={badgeFig4}
+    imageSrc={[Fig4BadgeLight, Fig4BadgeDark]}
     imageAlt="A list of cards showing coffee themed blog posts. The top card has a text badge displaying the label ‘Brand new content’."
     state="bad"
     caption="Don’t use long labels in text badges."
@@ -99,7 +114,7 @@ For example, use a dot badge to highlight that new comments are available to rev
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={badgeFig5}
+    imageSrc={[Fig5BadgeLight, Fig5BadgeDark]}
     imageAlt="A side navigation component with an icon button for accessing an inbox. The icon button shows a dot badge indicating that something is available in the inbox."
     state="good"
     caption="Use dot badges as a subtle way to indicate the presence of something without using a text label or an icon."
@@ -112,7 +127,7 @@ One exception is when using icon badges to add additional meaning only. For exam
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={badgeFig6}
+    imageSrc={[Fig6BadgeLight, Fig6BadgeDark]}
     imageAlt="A side navigation showing an icon button for accessing a trends page. An icon badge is displayed showing a closed padlock icon indicating that it can’t be accessed."
     state="good"
     caption="Use icon badges to add additional information. Here a lock icon is used to indicate limited access rights to a feature of the app."
@@ -134,7 +149,7 @@ Don’t use an icon badge as the only means of showing information on a non-navi
 For example, if using an icon badge with a lock symbol to indicate limited access to a navigation button, then allow the navigation button to still be clicked, but show a message stating that it is locked using a dialog or alert.
 
 <DoDontCaution
-  imageSrc={badgeFig7}
+  imageSrc={[Fig7BadgeLight, Fig7BadgeDark]}
   imageAlt="An example app with a hero component with the title ‘Come and taste our cool beans.’ A text badge is attached to the title and shows the number 8."
   state="bad"
   caption="Don’t add badges to non-navigational components as it can be hard to understand what it means."
@@ -151,7 +166,7 @@ For example, on an app for displaying coffee orders to baristas, don’t show mu
 Avoid using badges with more than four characters, including the ‘+’ symbol. Use the ‘maxNumber’ property to limit what is displayed before a ‘+’ symbol is added. For example, this can be used to show ‘99+’ notifications.
 
 <DoDontCaution
-  imageSrc={badgeFig9}
+  imageSrc={[Fig9BadgeLight, Fig9BadgeDark]}
   imageAlt="An example app with a top navigation showing an icon button for an inbox page. The inbox icon button shows a badge that reads ‘99+’."
   state="bad"
   caption="Use the maxNumber property to limit large numbers in text badges and display a ‘+’ symbol instead."
@@ -165,13 +180,13 @@ Specify a custom colour for the badge, but take care to make sure the colour con
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={badgeFig10}
+    imageSrc={[Fig10BadgeLight, Fig10BadgeDark]}
     imageAlt="A secondary button on a white background showing a badge with a contrasting blue colour."
     state="good"
     caption="Use high contrast badges so that they stand out against background colours."
   />
   <DoDontCaution
-    imageSrc={badgeFig11}
+    imageSrc={[Fig11BadgeLight, Fig11BadgeDark]}
     imageAlt="A secondary button on a white background showing a badge with a light grey colour that has a low contrast. The badge is difficult to make out."
     state="bad"
     caption="Don’t use colour combinations with low contrast ratios."
@@ -190,7 +205,7 @@ For components that are adjacent to one another, such as tabs, use ‘inline’ 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={badgeFig12}
+    imageSrc={[Fig12BadgeLight, Fig12BadgeDark]}
     imageAlt="A secondary button with a badge using ‘far’ positioning, a chip with a badge using ‘near’ positioning, and a tab bar containing a tab with a badge using ‘inline’ positioning."
     state="good"
     caption="Use the badge positioning options to change where a badge is placed on a component."
@@ -203,13 +218,13 @@ Make sure that it is obvious what the badge relates to. Only use badges when the
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={badgeFig13}
+    imageSrc={[Fig13BadgeLight, Fig13BadgeDark]}
     imageAlt="An app showing a top navigation with an icon button for an inbox page. It shows a badge showing the number 5, representing the number of messages in the inbox."
     state="good"
     caption="Use badges where it is understandable what they represent. In this example the badge clearly indicates 5 messages in the inbox."
   />
   <DoDontCaution
-    imageSrc={badgeFig14}
+    imageSrc={[Fig14BadgeLight, Fig14BadgeDark]}
     imageAlt="An app showing a menu button with a badge showing the number 5. It is not clear what the number 5 represents."
     state="caution"
     caption="Avoid using them in cases where the badge’s meaning is difficult to understand. In this example it is not clear what the 5 in the badge represents."

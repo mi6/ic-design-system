@@ -22,18 +22,32 @@ tabs:
 ---
 
 import { IcEmptyState, IcButton, IcLink } from "@ukic/react";
-import emptyStateFig1 from "./images/fig-1-data-table-with-empty-state.png";
-import emptyStateFig2 from "./images/fig-2-use-empty-state-for-access-rights.png";
-import emptyStateFig3 from "./images/fig-3-use-empty-state-with-positive-messaging.png";
-import emptyStateFig4 from "./images/fig-4-use-empty-states-as-starting-points-for-flows.png";
-import emptyStateFig5 from "./images/fig-5-dont-use-empty-states-for-messages-unrelated-to-empty-state.png";
-import emptyStateFig6 from "./images/fig-6-dont-use-empty-state-for-loading-messages.png";
-import emptyStateFig7 from "./images/fig-7-use-empty-states-on-a-full-screen.png";
-import emptyStateFig8 from "./images/fig-8-use-empty-states-on-a-side-panel.png";
-import emptyStateFig9 from "./images/fig-9-use-empty-states-on-other-containers.png";
-import emptyStateFig10 from "./images/fig-10-empty-state-anatomy.png";
-import emptyStateFig11 from "./images/fig-11-avoid-using-too-many-actions.png";
-import emptyStateFig12 from "./images/fig-12-dont-use-other-component-in-interaction-area.png";
+import {
+  Fig10EmptyStateDark,
+  Fig10EmptyStateLight,
+  Fig11EmptyStateDark,
+  Fig11EmptyStateLight,
+  Fig12EmptyStateDark,
+  Fig12EmptyStateLight,
+  Fig1EmptyStateDark,
+  Fig1EmptyStateLight,
+  Fig2EmptyStateDark,
+  Fig2EmptyStateLight,
+  Fig3EmptyStateDark,
+  Fig3EmptyStateLight,
+  Fig4EmptyStateDark,
+  Fig4EmptyStateLight,
+  Fig5EmptyStateDark,
+  Fig5EmptyStateLight,
+  Fig6EmptyStateDark,
+  Fig6EmptyStateLight,
+  Fig7EmptyStateDark,
+  Fig7EmptyStateLight,
+  Fig8EmptyStateDark,
+  Fig8EmptyStateLight,
+  Fig9EmptyStateDark,
+  Fig9EmptyStateLight,
+} from "./images";
 
 ## Component demo
 
@@ -79,7 +93,7 @@ Empty states are used for many different reasons such as:
 Use empty states when no data can be displayed in a component’s contents. For example, show an empty state when no data is available to display in a data table, or if a search term didn’t find any results.
 
 <DoDontCaution
-  imageSrc={emptyStateFig1}
+  imageSrc={[Fig1EmptyStateLight, Fig1EmptyStateDark]}
   imageAlt="An example app called ‘We love coffee’ with a page displaying favourite teas. An empty data table is displayed with an empty state that reads ‘There’s nothing here’."
   state="good"
   caption="Use empty states when there is no data available to display."
@@ -88,7 +102,7 @@ Use empty states when no data can be displayed in a component’s contents. For 
 Use empty states to highlight access issues. If a user does not have access to some content, use an empty state to provide this messaging as well as a means of continuing.
 
 <DoDontCaution
-  imageSrc={emptyStateFig2}
+  imageSrc={[Fig2EmptyStateLight, Fig2EmptyStateDark]}
   imageAlt="An example app showing favourite coffees. The ‘americano’ product is selected, but show’s a ‘locked’ status on it. A drawer is displayed containing an empty state component that reads ‘Sorry, you don’t have access to this at the moment’."
   state="good"
   caption="Use empty states to show access rights issue if the content is not available to that user."
@@ -97,7 +111,7 @@ Use empty states to highlight access issues. If a user does not have access to s
 Empty states are not always due to errors, so use positive messaging as well. For example, in a to-do list app, all items might have been cleared and so the empty state message may be celebratory.
 
 <DoDontCaution
-  imageSrc={emptyStateFig3}
+  imageSrc={[Fig3EmptyStateLight, Fig3EmptyStateDark]}
   imageAlt="An example app that shows new orders for coffee that need to be fulfilled. After the orders have been completed, an empty state component is displayed showing a positive message that reads ‘All done! Have a cuppa’."
   state="good"
   caption="Use empty states for positive messaging when empty is the desirable state, such as in a ticketing system or to-do list."
@@ -107,7 +121,7 @@ Use empty states as starting points for processes that require people to add inp
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={emptyStateFig4}
+    imageSrc={[Fig4EmptyStateLight, Fig4EmptyStateDark]}
     imageAlt="An example app showing a product customisation page for an Americano coffee. A section appears titled ‘Extras’ and an empty state message is displayed prompting the user to ‘add extras’."
     state="good"
     caption="Use the empty state component as a starting point for a process, such as adding extras to a product customisation."
@@ -121,7 +135,7 @@ Avoid using custom components instead of empty states. The empty state component
 Don’t use empty states to communicate other messages to people that are not related to something being empty, use [alerts](/components/alert) or [toasts](/components/toasts) instead. Only use empty states in situations where no data is present to display.
 
 <DoDontCaution
-  imageSrc={emptyStateFig5}
+  imageSrc={[Fig5EmptyStateLight, Fig5EmptyStateDark]}
   imageAlt="A blog post titled ‘The perfect blend’. An empty state component is used inline with the content that reads ‘This is a brand new post’."
   state="bad"
   caption="Don’t use empty states to convey messages that are not related to an empty state."
@@ -133,7 +147,7 @@ Don’t use empty states to indicate something is loading, instead use a [loadin
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={emptyStateFig6}
+    imageSrc={[Fig6EmptyStateLight, Fig6EmptyStateDark]}
     imageAlt="An empty state component being used to indicate that an order history is loading."
     state="bad"
     caption="Don’t use empty state components for loading messages."
@@ -147,21 +161,21 @@ Embed empty states in components that would otherwise show data. For example, us
 Use an empty state on a full screen in case something couldn’t be loaded, or there is no content available yet. For example, use an empty state to show a 404 message.
 
 <DoDontCaution
-  imageSrc={emptyStateFig7}
+  imageSrc={[Fig7EmptyStateLight, Fig7EmptyStateDark]}
   imageAlt="An empty state component displayed on a full screen that reads ‘There’s nothing here.’"
   state="none"
   caption="Use empty states on full screen page if no data is available to display."
 />
 
 <DoDontCaution
-  imageSrc={emptyStateFig8}
+  imageSrc={[Fig8EmptyStateLight, Fig8EmptyStateDark]}
   imageAlt="An example app with a side panel displayed over the page content containing an empty state component that reads ‘No comments yet’."
   state="none"
   caption="Use empty states in other containers such as drawers and side panels."
 />
 
 <DoDontCaution
-  imageSrc={emptyStateFig9}
+  imageSrc={[Fig9EmptyStateLight, Fig9EmptyStateDark]}
   imageAlt="A grid of cards for coffee products with one card showing an empty state component that reads ‘Woops, this coffee cup is empty’."
   state="none"
   caption="Use empty states within other components and containers when no data is present."
@@ -178,7 +192,7 @@ Place empty states at the top and don’t resize the container, keep it sized th
 Use the empty state to clearly communicate to someone what has happened, why they are seeing the empty state and what to do next.
 
 <DoDontCaution
-  imageSrc={emptyStateFig10}
+  imageSrc={[Fig10EmptyStateLight, Fig10EmptyStateDark]}
   imageAlt="A diagram showing the different elements that make up the empty state component. These are an image or icon, a title, a subtitle, some body text, and an interaction area."
   state="none"
   caption="The empty state component has an image or icon, a title, a subtitle, some body text and an interaction area."
@@ -197,7 +211,7 @@ Use the interaction area to include actions and links that will help people to c
 However, avoid placing too many actions in the interaction area as this will cause confusion about what to do next.
 
 <DoDontCaution
-  imageSrc={emptyStateFig11}
+  imageSrc={[Fig11EmptyStateLight, Fig11EmptyStateDark]}
   imageAlt="An empty state component that has three buttons and three links within its interaction area."
   state="caution"
   caption="Avoid placing too many actions within the interaction area."
@@ -205,7 +219,12 @@ However, avoid placing too many actions in the interaction area as this will cau
 
 Don’t place other interactive components, such as inputs, in an empty state’s interaction area. If input needs to be collected, then do this on a full page or on a dialog.
 
-<DoDontCaution imageSrc={emptyStateFig12} imageAlt="" state="bad" caption="" />
+<DoDontCaution
+  imageSrc={[Fig12EmptyStateLight, Fig12EmptyStateDark]}
+  imageAlt="An empty state component with a text field within its interaction area."
+  state="bad"
+  caption=""
+/>
 
 ## Accessibility considerations
 

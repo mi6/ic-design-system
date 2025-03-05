@@ -24,11 +24,18 @@ tags: ["Notification", "Feedback", "Message", "Banner", "Callout"]
 ---
 
 import { IcAlert } from "@ukic/react";
-import alertFig1 from "./images/fig-1-do-use-alerts-inline-with-other-associated-page-content.png";
-import alertFig2 from "./images/fig-2-do-use-alerts-with-an-optional-action-and-dismiss-button.png";
-import alertFig3 from "./images/fig-3-dont-use-alerts-overlaid-on-page-content.png";
-import alertFig4 from "./images/fig-4-dont-use-an-alert-variant-unrelated-to-its-message.png";
-import alertFig5 from "./images/fig-5-avoid-using-lengthy-messages-within-an-alert.png";
+import {
+  Fig1AlertsDark,
+  Fig1AlertsLight,
+  Fig2AlertsDark,
+  Fig2AlertsLight,
+  Fig3AlertsDark,
+  Fig3AlertsLight,
+  Fig4AlertsDark,
+  Fig4AlertsLight,
+  Fig5AlertsDark,
+  Fig5AlertsLight,
+} from "./images";
 
 ## Introduction
 
@@ -57,7 +64,7 @@ Use an alert to notify a user without blocking or interrupting them.
 Position alerts in line with page content so that they are closely associated with the related content that follows them.
 
 <DoDontCaution
-  imageSrc={alertFig1}
+  imageSrc={[Fig1AlertsLight, Fig1AlertsDark]}
   imageAlt="An article titled ‘The perfect blend’ displaying a warning alert which reads ‘Take care. This article has yet to be reviewed and so may contain errors’. "
   state="good"
   caption="Use alerts in line with other associated page content. "
@@ -75,7 +82,7 @@ Include a button or link within an alert to provide related interactions.
 Include a dismiss button within an alert to allow the alert to be dismissed.
 
 <DoDontCaution
-  imageSrc={alertFig2}
+  imageSrc={[Fig2AlertsLight, Fig2AlertsDark]}
   imageAlt="An article titled ‘The perfect blend’ showing an information alert with an action button that says ‘Post comment’ and a dismiss button. The alert message says ‘This is a brand new post. Show your appreciation by leaving a comment below."
   state="good"
   caption="Include a button or link to provide actions on an alert. Use a dismiss button to allow the alert to be dismissed."
@@ -88,7 +95,7 @@ Don’t use alerts for passive feedback on a process, for example 'draft discard
 Don’t overlay alerts on page content. Alerts are placed inline with the rest of the page content.
 
 <DoDontCaution
-  imageSrc={alertFig3}
+  imageSrc={[Fig3AlertsLight, Fig3AlertsDark]}
   imageAlt="An article titled ‘The perfect blend’ with an information alert overlaid on top of the page content."
   state="bad"
   caption="Don’t use alerts positioned above/on top of page content."
@@ -97,7 +104,7 @@ Don’t overlay alerts on page content. Alerts are placed inline with the rest o
 Use the [form validation pattern](/patterns/form-validation) for errors on a text field or in a form.
 
 <DoDontCaution
-  imageSrc={alertFig4}
+  imageSrc={[Fig4AlertsLight, Fig4AlertsDark]}
   imageAlt="A form titled ‘The perfect blend’ that contains 2 skeletons. A success alert shows an error message that says ‘There was an error on this page. Please fix any errors highlighted before continuing.’"
   state="bad"
   caption="Do not use an alert variant that is not related to its message."
@@ -110,7 +117,7 @@ Avoid using lengthy message content in an alert. Use dialogs or a [full page err
 Use a title on an alert to provide a short description of the alert content.
 
 <DoDontCaution
-  imageSrc={alertFig5}
+  imageSrc={[Fig5AlertsLight, Fig5AlertsDark]}
   imageAlt="An image of an article titled ‘The perfect blend’ showing an info alert with a lengthy message that takes a lot of room to display among other page content."
   state="caution"
   caption="Avoid using lengthy messages within an alert."

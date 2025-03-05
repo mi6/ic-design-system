@@ -3,7 +3,7 @@ path: "/components/toggle-button"
 
 navPriority: 38
 
-date: "2024-03-08"
+date: "2025-03-04"
 
 title: "Toggle button"
 
@@ -24,13 +24,22 @@ tags: ["Segmented control"]
 ---
 
 import { IcToggleButton } from "@ukic/react";
-import toggleFig1 from "./images/fig-1-use-standalone-toggle-buttons-to-show-a-selection-status.png";
-import toggleFig2 from "./images/fig-2-use-toggle-button-groups-for-multiple-options.png";
-import toggleFig3 from "./images/fig-3-use-single-select-group-when-all-buttons-can-be-deselected.png";
-import toggleFig4 from "./images/fig-4-use-different-appearance-options-on-different-background.png";
-import toggleFig5 from "./images/fig-5-dont-mix-different-appearance-options-together.png";
-import toggleFig6 from "./images/fig-6-use-consistent-label-between-states.png";
-import toggleFig7 from "./images/fig-7-dont-use-different-icon-positions-in-same-group.png";
+import {
+  Fig1ToggleDark,
+  Fig1ToggleLight,
+  Fig2ToggleDark,
+  Fig2ToggleLight,
+  Fig3ToggleDark,
+  Fig3ToggleLight,
+  Fig4ToggleDark,
+  Fig4ToggleLight,
+  Fig5ToggleDark,
+  Fig5ToggleLight,
+  Fig6ToggleDark,
+  Fig6ToggleLight,
+  Fig7ToggleDark,
+  Fig7ToggleLight,
+} from "./images";
 
 ## Introduction
 
@@ -54,7 +63,7 @@ For example, use a standalone toggle button for a mute button in an audio player
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={toggleFig1}
+    imageSrc={[Fig1ToggleLight, Fig1ToggleDark]}
     imageAlt="A standalone toggle button used for a mute button in an audio player."
     state="good"
     caption="Use a standalone toggle button for a mute button to indicate when the setting is enabled or disabled."
@@ -75,7 +84,7 @@ Similarly, use a single-select toggle button group to provide text alignment opt
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={toggleFig2}
+    imageSrc={[Fig2ToggleLight, Fig2ToggleDark]}
     imageAlt="A toggle button group used for text styling options including bold, italic, underline and strikethrough, and a second toggle button group used for text alignment options including left, centre, right, and justified."
     state="good"
     caption="Use toggle button groups to provide multiple options for a setting such as text styling options."
@@ -102,7 +111,7 @@ For example, an audio player could use a toggle button group for its play, fast 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={toggleFig3}
+    imageSrc={[Fig3ToggleLight, Fig3ToggleDark]}
     imageAlt="An audio player’s play, fast forward and rewind buttons where all toggle buttons can be deselected at the same time."
     state="good"
     caption="Use a single select group with manual selection to allow all options in a toggle button group to be deselected at the same time."
@@ -111,24 +120,24 @@ For example, an audio player could use a toggle button group for its play, fast 
 
 ## Colour
 
-Use the appearance options when placing toggle buttons on different coloured backgrounds. This makes sure that a good colour contrast can be achieved in adherence to the accessibility guidelines.
+Use the `theme` and `monochrome` props when placing toggle buttons on different coloured backgrounds. This makes sure that a good colour contrast can be achieved in adherence to the accessibility guidelines.
 
-Don’t mix different appearance buttons in the same toggle button group, always use the same appearance for all toggle buttons within a group.
+Don’t mix different coloured buttons in the same toggle button group, always use the same colour for all toggle buttons within a group.
 
 Don’t re-colour the icons in a toggle button, make sure they match the text label so that they also achieve a high colour contrast ratio.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={toggleFig4}
-    imageAlt="Two versions of a text styling setting that uses toggle button groups. One has a dark background with light appearance toggle buttons, and the other has a light coloured background with dark appearance toggle button groups."
+    imageSrc={[Fig4ToggleLight, Fig4ToggleDark]}
+    imageAlt="Two versions of a text styling setting that uses toggle button groups. One has a dark background with light theme toggle buttons, and the other has a light coloured background with dark theme toggle button groups."
     state="good"
     caption="Use the appearance options to achieve good contrast on different coloured backgrounds."
   />
   <DoDontCaution
-    imageSrc={toggleFig5}
-    imageAlt="A text styling setting that uses toggle button groups. Within the toggle button groups different toggle buttons use different appearance options."
+    imageSrc={[Fig5ToggleLight, Fig5ToggleDark]}
+    imageAlt="A text styling setting that uses toggle button groups. Within the toggle button groups different toggle buttons use different monochrome prop values."
     state="bad"
-    caption="Don’t mix appearance options together in the same toggle button group."
+    caption="Don’t mix theme and monochrome props in the same toggle button group."
   />
 </DoubleDoDontCaution>
 
@@ -150,7 +159,7 @@ For example, when using a toggle button for a mute button, the label should read
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={toggleFig6}
+    imageSrc={[Fig6ToggleLight, Fig6ToggleDark]}
     imageAlt="An example of an audio player with a mute button. The button reads ‘mute’ when the button is toggled either on or off."
     state="good"
     caption="Use consistent labels between states on a toggle button to avoid confusion."
@@ -163,7 +172,7 @@ Set the icon position to be either left, right or above the text label. Don’t 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={toggleFig7}
+    imageSrc={[Fig7ToggleLight, Fig7ToggleDark]}
     imageAlt="A text alignment setting with three options for left, centre and right. Each button has its icon positioned differently on the toggle button."
     state="bad"
     caption="Don’t mix icon positions on buttons within the same group."

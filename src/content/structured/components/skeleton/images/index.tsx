@@ -1,0 +1,12 @@
+export { default as Fig1SkeletonLight } from "./fig-1-use-the-variant-which-outlines-the-whole-components.png";
+export { default as Fig1SkeletonDark } from "./fig-1-use-the-variant-which-outlines-the-whole-components-dark.png";
+export { default as Fig2SkeletonLight } from "./fig-2-do-not-use-skeletons-within-skeletons.png";
+export { default as Fig2SkeletonDark } from "./fig-2-do-not-use-skeletons-within-skeletons-dark.png";
+export { default as Fig3SkeletonLight } from "./fig-3-use-the-correct-text-style-to-match-the-size-of-the-text.png";
+export { default as Fig3SkeletonDark } from "./fig-3-use-the-correct-text-style-to-match-the-size-of-the-text-dark.png";
+export { default as Fig4SkeletonLight } from "./fig-4-do-not-use-the-same-text-variant-for-different-text-sizes.png";
+export { default as Fig4SkeletonDark } from "./fig-4-do-not-use-the-same-text-variant-for-different-text-sizes-dark.png";
+export { default as Fig5SkeletonLight } from "./fig-5-use-a-separate-text-skeleton-component-for-each-line.png";
+export { default as Fig5SkeletonDark } from "./fig-5-use-a-separate-text-skeleton-component-for-each-line-dark.png";
+export { default as Fig6SkeletonLight } from "./fig-6-do-not-scale-the-text-skeleton-to-the-full-height-of-a-body-of-text.png";
+export { default as Fig6SkeletonDark } from "./fig-6-do-not-scale-the-text-skeleton-to-the-full-height-of-a-body-of-text-dark.png";

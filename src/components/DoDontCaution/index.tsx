@@ -7,9 +7,11 @@ import "./index.css";
 
 import Icon from "@mdi/react";
 import { mdiCheck, mdiClose, mdiAlert } from "@mdi/js";
+import { useTheme } from "../../context/ThemeContext";
+import { passImage } from "../../utils/helpers";
 
 interface DoDontCautionProps {
-  imageSrc?: string;
+  imageSrc?: Array<string> | string;
   imageAlt: string;
   state?: "good" | "bad" | "none" | "caution";
   caption?: string;
@@ -37,6 +39,9 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
   state = "none",
   caption = "",
 }) => {
+  const { theme } = useTheme();
+  const transformedImageSrc = passImage(imageSrc, theme);
+
   const imageData = useStaticQuery(graphql`
     query {
       allFile(filter: { ext: { in: [".jpg", ".png"] } }) {
@@ -52,7 +57,9 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
       }
     }
   `);
-  const isBase64: boolean = imageSrc.includes("data:image/png;base64");
+  const isBase64: boolean = transformedImageSrc?.includes(
+    "data:image/png;base64"
+  );
   const imageObject: ImageFile[] = imageData.allFile.edges;
 
   const filterImageData: any = (imagePath: string) => {
@@ -62,9 +69,21 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
         imagePath.lastIndexOf("-")
       );
 
-      const gatsbyFileObj: ImageFile | undefined = imageObject.find(
-        (image: ImageFile) => image.node.relativePath.includes(croppedImagePath)
+      const gatsbyFileObjMatches = imageObject.filter((image: ImageFile) =>
+        image.node.relativePath.includes(croppedImagePath)
       );
+
+      let gatsbyFileObj;
+
+      if (gatsbyFileObjMatches) {
+        if (gatsbyFileObjMatches.length > 1) {
+          gatsbyFileObj = gatsbyFileObjMatches.find(
+            (image) => !image.node.relativePath.endsWith("dark.png")
+          );
+        } else {
+          [gatsbyFileObj] = gatsbyFileObjMatches;
+        }
+      }
 
       if (gatsbyFileObj !== undefined) {
         return gatsbyFileObj.node.childImageSharp.gatsbyImageData;
@@ -105,17 +124,17 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
           <Icon path={STATE_VALUES[state].icon} aria-hidden="true" />
         </div>
       )}
-      {imageSrc &&
+      {transformedImageSrc &&
         (isBase64 ? (
           <img
-            src={imageSrc}
+            src={transformedImageSrc}
             alt={imageAlt}
             className="image-wide"
             loading="lazy"
           />
         ) : (
           <GatsbyImage
-            image={filterImageData(imageSrc)}
+            image={filterImageData(transformedImageSrc)}
             alt={imageAlt}
             className="image-wide"
           />

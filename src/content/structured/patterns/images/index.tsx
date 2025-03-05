@@ -1,0 +1,14 @@
+export { default as Fig1ThemingSideNavLight } from "./fig-1-example-of-theming-applied-to-side-navigation-layout.png";
+export { default as Fig1ThemingSideNavDark } from "./fig-1-example-of-theming-applied-to-side-navigation-layout-dark.png";
+export { default as Fig1ThemingTopNavLight } from "./fig-1-example-of-theming-applied-to-top-navigation-layout@2x.png";
+export { default as Fig1ThemingTopNavDark } from "./fig-1-example-of-theming-applied-to-top-navigation-layout-dark@2x.png";
+export { default as Fig1KeepFormSimpleLight } from "./fig-1-keep-the-layout-of-the-form-simple.png";
+export { default as Fig1KeepFormSimpleDark } from "./fig-1-keep-the-layout-of-the-form-simple-dark.png";
+export { default as Fig2DontUseMultipleColumnsLight } from "./fig-2-dont-use-multiple-columns.png";
+export { default as Fig2DontUseMultipleColumnsDark } from "./fig-2-dont-use-multiple-columns-dark.png";
+export { default as Fig3DontAlignCentreLight } from "./fig-3-dont-align-your-form-to-the-centre-of-the-page.png";
+export { default as Fig3DontAlignCentreDark } from "./fig-3-dont-align-your-form-to-the-centre-of-the-page-dark.png";
+export { default as Fig4StepperSplitLight } from "./fig-4-a-stepper-can-split-up-complex-forms.png";
+export { default as Fig4StepperSplitDark } from "./fig-4-a-stepper-can-split-up-complex-forms-dark.png";
+export { default as Fig5StepperManageLight } from "./fig-5-a-stepper-can-help-you-manage-complex-validation.png";
+export { default as Fig5StepperManageDark } from "./fig-5-a-stepper-can-help-you-manage-complex-validation-dark.png";

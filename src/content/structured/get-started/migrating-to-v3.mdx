@@ -1,0 +1,152 @@
+---
+path: "/get-started/migrating-to-v3"
+
+navPriority: 4
+
+date: "2025-02-13"
+
+title: "Migrating to V3"
+
+subTitle: "This guide is intended to help you migrate from ICDS 2.x components to ICDS 3.x components."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/migrating-to-v3.mdx"
+---
+
+## Introduction
+
+<p>
+  ICDS V3 introduces one of our mostly highly anticipated features, dark mode,
+  as well as general improvements. This is a comprehensive guide on how to
+  upgrade your V2 app to V3. For a full list of the changes made in V3, please
+  read the{" "}
+  <ic-link
+    target="_blank"
+    href="https://github.com/mi6/ic-ui-kit/blob/v3.0.0/main/packages/web-components/CHANGELOG.md"
+    rel="noreferrer noopener"
+  >
+    changelog
+  </ic-link>
+  .
+</p>
+
+## Theming and dark mode
+
+With V3's arrival comes an improved `ic-theme` component. This component was initially responsible for managing the theme of the UI Kit. In addition to the existing functionality, you can now use the `ic-theme` component to set whether a component responds to changes in the system's light and dark theme or whether it always appears in a particular mode. Guidance on implementing the `ic-theme` component can be found in the [custom theme guidance](/get-started/development/custom-theme).
+
+## Codemod
+
+To aid your migration from ICDS V2 to V3, we have created a codemod to automate the process of migrating your code. A codemod is a tool that can be used to make large-scale changes to codebases quickly and efficiently. Our ICDS V2 to V3 codemod is the simplest and easiest way to migrate your codebase to the latest version of the UI Kit.
+
+### How it works
+
+Given a directory, it will scan over files and find any relevant ICDS components that require a change either by component name or props used.
+
+### How to run
+
+<p>
+  This package works as an executable requiring a directory and optional test
+  boolean argument to help migrate your tests from ICDS V2 to ICDS V3. Further
+  information and examples can be found in the{" "}
+  <ic-link
+    target="_blank"
+    href="https://github.com/mi6/ic-ui-kit/blob/v3.0.0/main/packages/codemod/README.md"
+    rel="noreferrer noopener"
+  >
+    codemod package README
+  </ic-link>
+  .
+</p>
+
+```console
+- npm i @ukic/react@latest
+- npm i @ukic/web-components@latest
+- npx @ukic/codemod <dir> <test>
+```
+
+## Breaking changes
+
+### 1. Prop renaming
+
+- The `appearance` prop has been replaced with the `theme` and `monochrome` [props](/get-started/development/custom-theme/#dark-mode-as-a-theme).
+- In `ic-text-field` (`IcTextField`) the `auto-focus` prop has been renamed to `autofocus`and the `max-length/maxLength` prop has been renamed to `max-characters/maxCharacters`.
+- The `color` prop in `ic-hero` (`IcHero`), `ic-top-navigation` (`IcTopNavigation`), `ic-side-navigation` (`IcSideNavigation`), `ic-footer` (`IcFooter`) and `ic-theme` (`IcTheme`) has been renamed to `brand-color/brandColor`.
+- The `group-title/groupTitle` prop in `ic-accordion-group` (`IcAccordionGroup`) and `ic-footer-link-group` (`IcFooterLinkGroup`) has been renamed to `label`.
+- The `text-label/textLabel` prop in `ic-badge` (`IcBadge`) has been renamed to `label`.
+- The `body-max-lines/bodyMaxLines` prop in `ic-empty-state` (`IcEmptyState`) has been renamed to `max-lines/maxLines`.
+- The `error` prop in `ic-input-label` (`IcInputLabel`) has been renamed to `status` with `error` as an option.
+- The `boundary-count/boundaryCount` and `adjacent-count/adjacentCount` props in `ic-pagination` (`IcPagination`) have been renamed to `boundary-page-count/boundaryPageCount` and `adjacent-page-count/adjacentPageCount`.
+- The `disable-filter/disableFilter` prop in `ic-search-bar` (`IcSearchBar`) and `ic-select` (`IcSelect`) has been renamed to `disable-auto-filtering/disableAutoFiltering`.
+- The `hint-text/hintText` prop in `ic-search-bar` (`IcSearchBar`) has been renamed to `assistive-hint-text/assistiveHintText`.
+- Some `ic-step` (`IcStep`) props have had the prefix "step" removed, e.g., `step-status/stepStatus` has been renamed to `status`, `step-title/stepTitle` and `step-subtitle/stepSubtitle` props have been renamed to `heading` and `subheading` respectively.
+- The `toggle-checked/toggleChecked` prop in `ic-toggle-button` (`IcToggleButton`) has been renamed to `checked`.
+- The `small=”true”` prop has been replaced with `size=”small”` in `ic-select` (`IcSelect`).
+- The `theme` prop has been renamed to `brand` in `ic-theme` (`IcTheme`).
+- The `keyboard-shortcut/keyboardShortcut` prop has been renamed to `keyboard-shortcut-label/keyboardShortcutLabel` in `ic-menu-item` (`IcMenuItem`).
+
+### 2. Component renaming
+
+- `ic-card` (`IcCard`) has been renamed to `ic-card-vertical` (`IcCardVertical`) .
+- `ic-data-entity` (`IcDataEntity`) has been renamed to `ic-data-list` (`IcDataList`).
+
+### 3. Removed props/slots/events/methods
+
+- Deprecated props, slots, events, and methods have been removed entirely.
+- The `max-length/maxLength` prop has been removed. Instead, use the `max-characters/maxCharacters` prop and the `hide-char-count/hideCharCount` prop to hide the character count visually.
+- The `small` prop has been removed. Please use `size="small"` instead.
+- The `size=”default”` prop has been removed. Please use `size="medium"` instead.
+
+### 4. Class name changes
+
+- Class names on the host for most components have been updated to include the component name in the class name. For example, `disabled` has been updated to `ic-select-disabled`.
+
+### 5. Event name changes
+
+- The `icThemeChange` event has been renamed to `icBrandChange`.
+- The events `sideNavExpanded` and `topNavResized` are now called `icSideNavExpanded` and `icTopNavResized`.
+
+### 6. CSS token changes
+
+- Some existing CSS tokens have been renamed following the move towards primitive, semantic, and component tokens.
+
+### 7. Component behaviour changes
+
+- The `ic-toast` (`IcToast`) component now shows a dismiss button when the toast is hovered over or focused.
+- The shadow DOM has been removed from `ic-radio` (`IcRadio`) and may affect current tests.
+- `ic-multi-select` (`IcMultiSelect`) is no longer a standalone component. The multi-select functionality can now be achieved using the `ic-select` (`IcSelect`) component and its `multiple` prop.
+
+```tsx
+// v2
+<ic-select-with-multi
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+></ic-select-with-multi>
+// v3
+<ic-select
+  id="select-default"
+  label="What are your favourite types of coffee?"
+  multiple="true"
+></ic-select>
+```
+
+## New features
+
+### 1. Theme prop
+
+- A new `theme` prop has been added to many components to enable light and dark mode.
+
+### 2. Monochrome prop
+
+- A new `monochrome` prop has been added to components like `ic-toggle-button` (`IcToggleButton`) and `ic-toggle-button-group` (`IcToggleButtonGroup`).
+
+## Manual migration steps
+
+1. **Update Prop Names**: Replace all instances of the old prop names with the new ones.
+2. **Update Component Names**: Rename components according to the new names.
+3. **Remove Deprecated Props/Slots/Events/Methods**: Remove any usage of deprecated props, slots, events, and methods.
+4. **Update Class Names**: Update class names to the new format.
+5. **Update Event Names**: Replace old event names with the new ones.
+6. **Update CSS Tokens**: Update any CSS tokens that have been renamed.
+7. **Test Your Application**: Thoroughly test your application to ensure that all changes have been applied correctly and that there are no regressions.
+
+By following these steps, you should be able to successfully migrate your project from version 2 to version 3 of the `@ukic/web-components` or `@ukic/react` package.

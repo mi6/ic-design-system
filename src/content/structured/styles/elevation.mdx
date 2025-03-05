@@ -10,7 +10,7 @@ title: "Elevation"
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/elevation.mdx"
 ---
 
-import elevationFig1 from "./images/fig-1-an-example-of-an-application-showing-the-different-layers-of-interaction.png";
+import { Fig1ExampleAppLight, Fig1ExampleAppDark } from "./images";
 
 ## Interaction layers
 
@@ -25,7 +25,7 @@ There are three layers:
 3. The modal layer sits above all other content and contains components that are important to display to the user and interrupt their current task. Components on this layer cast a large shadow.
 
 <DoDontCaution
-  imageSrc={elevationFig1}
+  imageSrc={[Fig1ExampleAppLight, Fig1ExampleAppDark]}
   imageAlt="A graphic of an application showing the different layers of interaction on the lef-hand side and a depth chart on the right. The chart is used to show the hierarchy of the interactions. Explained in the previous text."
   state="none"
   caption="An example of an application showing the different layers of interaction. This includes the base layer with some raised content, the overlay layer and the modal layer."

@@ -22,16 +22,28 @@ tabs:
 ---
 
 import { IcCheckboxGroup, IcCheckbox } from "@ukic/react";
-import checkboxFig1 from "./images/fig-1-use-the-checklist-to-provide-a-number-of-options.png";
-import checkboxFig2 from "./images/fig-2-use-single-checkboxes-to-allow-a-person-to-agree-to-a-statement.png";
-import checkboxFig3 from "./images/fig-3-a-nested-checklist-that-shows-indeterminate-states-of-a-parent-checkbox-when-only-some-of-its-children-are-selected.png";
-import checkboxFig4 from "./images/fig-4-use-dense-sizing-options-for-compact-layouts.png";
-import checkboxFig5 from "./images/fig-5-checklist-error-state-shown-correctly.png";
-import checkboxFig6 from "./images/fig-6-single-checkbox-error-state-shown-correctly.png";
-import checkboxFig7 from "./images/fig-7-checkbox-child-input-error-shown-correctly.png";
-import checkboxFig8 from "./images/fig-8-checkbox-child-input-error-shown-incorrectly.png";
-import checkboxFig9 from "./images/fig-9-use-clear-and-concise-wording-in-checkbox-labels.png";
-import checkboxFig10 from "./images/fig-10-do-not-use-ambiguous-wording.png";
+import {
+  Fig10CheckboxDark,
+  Fig10CheckboxLight,
+  Fig1CheckboxDark,
+  Fig1CheckboxLight,
+  Fig2CheckboxDark,
+  Fig2CheckboxLight,
+  Fig3CheckboxDark,
+  Fig3CheckboxLight,
+  Fig4CheckboxDark,
+  Fig4CheckboxLight,
+  Fig5CheckboxDark,
+  Fig5CheckboxLight,
+  Fig6CheckboxDark,
+  Fig6CheckboxLight,
+  Fig7CheckboxDark,
+  Fig7CheckboxLight,
+  Fig8CheckboxDark,
+  Fig8CheckboxLight,
+  Fig9CheckboxLight,
+  Fig9CheckboxDark,
+} from "./images";
 
 ## Introduction
 
@@ -51,7 +63,7 @@ Use checkboxes to allow a user to select any number of options from a list. Chec
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={checkboxFig1}
+    imageSrc={[Fig1CheckboxLight, Fig1CheckboxDark]}
     imageAlt="A checklist asking the question ‘What are your favourite types of coffee?’ with six options where two are checked."
     state="good"
     caption="Use the checkbox group to provide a number of options that can be selected."
@@ -62,7 +74,7 @@ Use a single checkbox on its own to allow a user to agree with a statement. For 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={checkboxFig2}
+    imageSrc={[Fig2CheckboxLight, Fig2CheckboxDark]}
     imageAlt="A single unchecked checkbox with a label that reads “I agree to the terms and conditions, and privacy statement”."
     state="good"
     caption="Use single checkboxes to allow a person to agree to a statement."
@@ -83,7 +95,7 @@ Display the indeterminate selection state when the selection of child elements i
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={checkboxFig3}
+    imageSrc={[Fig3CheckboxLight, Fig3CheckboxDark]}
     imageAlt="A checkbox group asking ‘Which hot drinks do you like?’. A checkbox with label ‘coffee’ shows its indeterminate state as only one of its two child checkboxes is selected."
     state="good"
     caption="A nested checkbox group that shows an indeterminate state on a parent checkbox when only some of its children are selected."
@@ -97,7 +109,7 @@ Checkboxes are selected or unselected by clicking any part of the checkbox, incl
 Use small sized checkbox groups for compact layouts. Always use small components with other small input components.
 
 <DoDontCaution
-  imageSrc={checkboxFig4}
+  imageSrc={[Fig4CheckboxLight, Fig4CheckboxDark]}
   imageAlt="Two forms containing a checklist and a text input. One uses default sizing resulting in larger spacing between components. The other uses small sizing that reduces space between components and results in a shorter vertical height for the same form."
   state="good"
   caption="Use small sizing for compact layouts."
@@ -111,13 +123,13 @@ A checkbox input error is when the checkbox or checkbox group component itself i
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={checkboxFig5}
+    imageSrc={[Fig5CheckboxLight, Fig5CheckboxDark]}
     imageAlt="A checklist asking 'What are your favourite types of coffee?' with helper text stating 'Select at least one'. Six options are shown but all are unchecked. An error message is displayed below the checklist reading 'Please select at least one option'."
     state="good"
     caption="Checkbox group error state shown correctly."
   />
   <DoDontCaution
-    imageSrc={checkboxFig6}
+    imageSrc={[Fig6CheckboxLight, Fig6CheckboxDark]}
     imageAlt="An unchecked checkbox with label 'I agree to the terms and conditions and privacy statement' alongside a submit button. An error state is shown after the checkbox reading 'Please agree before continuing'."
     state="good"
     caption="Single checkbox error state shown correctly."
@@ -128,13 +140,13 @@ For errors on a checkbox’s conditional field, the error is shown only on the c
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={checkboxFig7}
+    imageSrc={[Fig7CheckboxLight, Fig7CheckboxDark]}
     imageAlt="A checklist asking ‘What are your favourite types of coffee’. Six options are shown and one labelled ‘Flat white’ is selected and shows a conditional field that asks ‘How frothy do you like it?’. An error message is displayed below the conditional field reading ‘Please provide an answer’."
     state="good"
     caption="Checkbox conditional field error shown correctly."
   />
   <DoDontCaution
-    imageSrc={checkboxFig8}
+    imageSrc={[Fig8CheckboxLight, Fig8CheckboxDark]}
     imageAlt="A checklist asking ‘What are your favourite types of coffee?’. Six options are shown and one labelled ‘Flat white’ is selected and shows a child field that asks ‘How frothy do you like it?’. An error message is displayed below the child field reading ‘Please provide an answer’. Another error message is displayed below the checklist repeating the same error message."
     state="bad"
     caption="Checkbox conditional field error shown incorrectly. Only the field needs to show the error state and not the parent checkbox or checkbox group."
@@ -151,13 +163,13 @@ Make sure to use labels that make it easy to understand what selecting the check
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={checkboxFig9}
+    imageSrc={[Fig9CheckboxLight, Fig9CheckboxDark]}
     imageAlt="A short form asking the user to agree to the terms and conditions. A single unchecked checkbox with label ‘I agree to the terms and conditions and privacy statement’ is shown alongside a submit button."
     state="good"
     caption="Use clear and concise wording in checkbox labels that makes it easy to understand what selecting the box represents."
   />
   <DoDontCaution
-    imageSrc={checkboxFig10}
+    imageSrc={[Fig10CheckboxLight, Fig10CheckboxDark]}
     imageAlt="A short form asking the user to agree to the terms and conditions. A single unchecked checkbox with label ‘These are our terms and conditions and privacy statement’ is shown alongside a submit button."
     state="bad"
     caption="Don’t use ambiguous wording that makes it hard to understand what selecting the box represents."

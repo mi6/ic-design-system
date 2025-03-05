@@ -12,10 +12,16 @@ subTitle: "Follow these common layout templates to apply frequently used navigat
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/templates.mdx"
 ---
 
-import templatesFig1 from "./images/fig-1-side-navigation.png";
-import templatesFig2 from "./images/fig-2-top-navigation.png";
-import templatesFig3 from "./images/fig-3-side-nav-with-page-header.png";
-import templatesFig4 from "./images/fig-4-hero.png";
+import {
+  Fig1SideNavLight,
+  Fig1SideNavDark,
+  Fig2TopNavLight,
+  Fig2TopNavDark,
+  Fig3SideNavLight,
+  Fig3SideNavDark,
+  Fig4HeroLight,
+  Fig4HeroDark,
+} from "./images";
 
 ## Using layout templates
 
@@ -30,7 +36,7 @@ Side navigation is preferred for most apps as it provides more screen space for 
 Use the [side navigation](/components/side-navigation) layout for data-heavy apps. This template prioritises the main content area, giving it the full height and width of the viewport. The navigation items in the side navigation give access to your app’s main functions from every page.
 
 <DoDontCaution
-  imageSrc={templatesFig1}
+  imageSrc={[Fig1SideNavLight, Fig1SideNavDark]}
   imageAlt="An example of an app with a side navigation and some example content laid out using a 12-column grid."
   state="none"
   caption="The side navigation template is useful for data-heavy apps."
@@ -41,7 +47,7 @@ Use the [side navigation](/components/side-navigation) layout for data-heavy app
 [Top navigation](/components/top-navigation) works well for content-based apps, such as an intranet, blog or this Design System. The main navigation items can always be accessed at the top of the page. This layout often uses large margins to achieve a readable line-length for the page’s main content section.
 
 <DoDontCaution
-  imageSrc={templatesFig2}
+  imageSrc={[Fig2TopNavLight, Fig2TopNavDark]}
   imageAlt="An example app titled ‘Java nice day’ that uses a top navigation and has some example content laid out on a 12-column grid."
   state="none"
   caption="The top navigation template is useful for content-based apps."
@@ -60,7 +66,7 @@ Use [tabs](/components/tabs) to provide access to related pages where the conten
 Use a [stepper](/components/stepper) to signpost a user through a linear series of steps to complete a process or view information in a particular order.
 
 <DoDontCaution
-  imageSrc={templatesFig3}
+  imageSrc={[Fig3SideNavLight, Fig3SideNavDark]}
   imageAlt="Two examples of a side-navigation layout each with a page header. One uses a page header with tabs to provide secondary navigation. The other uses a page header with a stepper."
   state="none"
   caption="Two examples of a side-navigation layout each with a page header. One uses a page header with tabs to provide secondary navigation. The other uses a page header with a stepper."
@@ -71,7 +77,7 @@ Use a [stepper](/components/stepper) to signpost a user through a linear series 
 A [hero](/components/hero) can be included on homepages to signpost key links or actions in an emphasised position. Don’t use hero banners on every page though.
 
 <DoDontCaution
-  imageSrc={templatesFig4}
+  imageSrc={[Fig4HeroLight, Fig4HeroDark]}
   imageAlt="An example app using a top navigation layout with a hero banner that provides a key link titled ‘Get started’."
   state="none"
   caption="Use top navigation and hero on a homepage to introduce the app or provide direction to a key action (such as search or get started)."

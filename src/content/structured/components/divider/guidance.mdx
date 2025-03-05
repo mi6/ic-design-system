@@ -22,17 +22,26 @@ tags: ["Separator", "Horizontal rule", "Vertical rule", "Thematic break"]
 ---
 
 import { IcDivider } from "@ukic/react";
-import dividerFig1 from "./images/fig-1-add-full-with-dividers-to-help-group-content.png";
-import dividerFig2 from "./images/fig-2-add-inset-dividers-to-help-group-content.png";
-import dividerFig3 from "./images/fig-3-use-a-dashed-divider-to-help-the-page-feel-more-textured.png";
-import dividerFig4 from "./images/fig-4-the-light-appearance-on-the-divider-component.png";
-import dividerFig5 from "./images/fig-5-the-dark-appearance-on-the-divider-component.png";
-import dividerFig6 from "./images/fig-6-use-different-weights-of-dividers-to-show-the-structure-of-the-page.png";
-import dividerFig7 from "./images/fig-7-divider-with-a-left-aligned-label.png";
-import dividerFig8 from "./images/fig-8-divider-with-label-text-that-is-too-long.png";
-import dividerFig9 from "./images/fig-9-use-a-vertical-divider-to-create-sections-of-related-content.png";
-import dividerFig10 from "./images/fig-10-use-dividers-to-group-a-similar-type-of-content-together.png";
-import dividerFig11 from "./images/fig-11-do-not-use-dividers-to-separate-individual-items.png";
+import {
+  Fig1DividerDark,
+  Fig1DividerLight,
+  Fig2DividerDark,
+  Fig2DividerLight,
+  Fig3DividerDark,
+  Fig3DividerLight,
+  Fig4DividerDark,
+  Fig4DividerLight,
+  Fig5DividerDark,
+  Fig5DividerLight,
+  Fig6DividerDark,
+  Fig6DividerLight,
+  Fig7DividerDark,
+  Fig7DividerLight,
+  Fig8DividerDark,
+  Fig8DividerLight,
+  Fig9DividerDark,
+  Fig9DividerLight,
+} from "./images";
 
 ## Introduction
 
@@ -57,13 +66,13 @@ Colour, white space, images, lines, and shadows are all great examples of visual
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={dividerFig1}
+    imageSrc={[Fig1DividerLight, Fig1DividerDark]}
     imageAlt="Full-width dividers being used to group a person's messages."
     state="good"
     caption="Add full-width dividers to help group content."
   />
   <DoDontCaution
-    imageSrc={dividerFig2}
+    imageSrc={[Fig2DividerLight, Fig2DividerDark]}
     imageAlt="An inset divider used to clearly separate the description of a mug and the list of the colours in which it is available."
     state="good"
     caption="Add inset dividers to help group content."
@@ -79,30 +88,11 @@ There are five types of variants which display dividers in diverse ways.
 Use a default divider for a simple way to group content. For a decorative approach, use the dashed divider.
 
 <DoDontCaution
-  imageSrc={dividerFig3}
+  imageSrc={[Fig3DividerLight, Fig3DividerDark]}
   imageAlt="Light, dashed divider with 4px weight used to define sections of a web page."
   state="good"
   caption="Use a dashed divider to make the page feel more textured."
 />
-
-### Appearance
-
-Use the divider's theme and monochrome options to change the colour so that it complements the rest of your app's colour scheme. Use the theme options to set the colour of the divider to its light or dark theme colour. Use the monochrome option to set the divider to a grey colour.
-
-<DoubleDoDontCaution>
-  <DoDontCaution
-    imageSrc={dividerFig4}
-    imageAlt="Full-width dividers in the 'dark' theme colour."
-    state="good"
-    caption="The 'dark' theme colour on the divider component."
-  />
-  <DoDontCaution
-    imageSrc={dividerFig5}
-    imageAlt="Full-width dividers in the 'light' theme colour."
-    state="good"
-    caption="The 'light' theme colour on the divider component."
-  />
-</DoubleDoDontCaution>
 
 ### Weight
 
@@ -111,7 +101,7 @@ The divider component has four weights to choose from. These are thin, medium, t
 Alter the weight of the divider to create a clear and logical structure of the page; for example, using a thicker divider to clearly separate unrelated content, whilst using thinner dividers to group together less important content.
 
 <DoDontCaution
-  imageSrc={dividerFig6}
+  imageSrc={[Fig4DividerLight, Fig4DividerDark]}
   imageAlt="Divider in 'light' theme colour and 8px weight used to separate two sections of a page, whilst various monochrome dividers with 1px weight separate less important content."
   state="good"
   caption="Use different weights of dividers to show the structure of a page."
@@ -127,13 +117,13 @@ Make sure the text in the label is brief so that it clearly aids navigation and 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={dividerFig7}
+    imageSrc={[Fig5DividerLight, Fig5DividerDark]}
     imageAlt="Divider with left-aligned 'Advanced' label being used to separate sections in Settings."
     state="good"
     caption="Divider being placed to the right of the label to reinforce the label's connection to the content."
   />
   <DoDontCaution
-    imageSrc={dividerFig8}
+    imageSrc={[Fig6DividerLight, Fig6DividerDark]}
     imageAlt="Divider with left-aligned label that has a word count which is not recommended. Multiple lines are required to show the lengthy label."
     state="bad"
     caption="Divider with label text that is too long."
@@ -143,7 +133,7 @@ Make sure the text in the label is brief so that it clearly aids navigation and 
 Use horizontal or vertical dividers to create any necessary sections between content. Pair the vertical divider with text to create a title when you want to draw attention to a paragraph.
 
 <DoDontCaution
-  imageSrc={dividerFig9}
+  imageSrc={[Fig7DividerLight, Fig7DividerDark]}
   imageAlt="Vertical dividers used to create sections of related content."
   state="good"
   caption="Use the vertical divider to create sections of related content."
@@ -157,7 +147,7 @@ For example, apply dividers between sections of content to make groups and creat
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={dividerFig10}
+    imageSrc={[Fig8DividerLight, Fig8DividerDark]}
     imageAlt="An inset divider used to break up alphabetical sections."
     state="good"
     caption="Use dividers when you want to group a similar type of content together."
@@ -170,7 +160,7 @@ Do not use dividers to separate individual items when it is not necessary. Use d
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={dividerFig11}
+    imageSrc={[Fig9DividerLight, Fig9DividerDark]}
     imageAlt="Inset dividers being used to separate individual contacts rather than separating by alphabetical sections."
     state="bad"
     caption="Do not use dividers to separate individual items when it is not necessary."

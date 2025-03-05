@@ -12,8 +12,12 @@ subTitle: "A visual impairment is a reduction in clarity or loss of vision that 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/accessibility/needs/visual.mdx"
 ---
 
-import visualAccessibilityFig12 from "./images/fig-12-messages-using-colour-and-text.png";
-import visualAccessibilityFig13 from "./images/fig-13-messages-using-colour-only.png";
+import {
+  Fig12MessagesColourTextLight,
+  Fig12MessagesColourTextDark,
+  Fig13MessagesColourOnlyLight,
+  Fig13MessagesColourOnlyDark,
+} from "./images";
 
 ## Introduction
 
@@ -98,13 +102,13 @@ Don’t rely on [colour](/styles/colour) only to convey a meaning. Use a combina
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={visualAccessibilityFig12}
+    imageSrc={[Fig12MessagesColourTextLight, Fig12MessagesColourTextDark]}
     imageAlt=" A graphic of text field validation showing an error, a warning and a success using colour, text and icons to differentiate meaning."
     state="good"
     caption="Colour and text are used to convey meaning to people."
   />
   <DoDontCaution
-    imageSrc={visualAccessibilityFig13}
+    imageSrc={[Fig13MessagesColourOnlyLight, Fig13MessagesColourOnlyDark]}
     imageAlt="A graphic of a dialogue box to show default text font."
     state="bad"
     caption="Only colour is used to convey meaning. This will not benefit people who are colour blind or who do not understand what the colours mean."

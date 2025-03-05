@@ -1,0 +1,14 @@
+export { default as Fig1BackToTopLight } from "./fig-1-do-show-the-back-to-top-button-on-the-bottom-right-hand-side.png";
+export { default as Fig1BackToTopDark } from "./fig-1-do-show-the-back-to-top-button-on-the-bottom-right-hand-side-dark.png";
+export { default as Fig2BackToTopLight } from "./fig-2-use-the-icon-only-variant-when-zoomed-to-reduce-overlapping-content.png";
+export { default as Fig2BackToTopDark } from "./fig-2-use-the-icon-only-variant-when-zoomed-to-reduce-overlapping-content-dark.png";
+export { default as Fig3BackToTopLight } from "./fig-3-do-not-show-the-back-to-top-button-on-a-non-scrollable-page.png";
+export { default as Fig3BackToTopDark } from "./fig-3-do-not-show-the-back-to-top-button-on-a-non-scrollable-page-dark.png";
+export { default as Fig4BackToTopLight } from "./fig-4-dont-use-other-buttons-for-back-to-top.png";
+export { default as Fig4BackToTopDark } from "./fig-4-dont-use-other-buttons-for-back-to-top-dark.png";
+export { default as Fig5BackToTopLight } from "./fig-5-avoid-using-the-default-variant-where-it-may-obscure-important-page-content.png";
+export { default as Fig5BackToTopDark } from "./fig-5-avoid-using-the-default-variant-where-it-may-obscure-important-page-content-dark.png";
+export { default as Fig6BackToTopLight } from "./fig-6-dont-show-back-to-top-anywhere-other-than-the-bottom-right.png";
+export { default as Fig6BackToTopDark } from "./fig-6-dont-show-back-to-top-anywhere-other-than-the-bottom-right-dark.png";
+export { default as Fig7BackToTopLight } from "./fig-7-anchored-on-footer.png";
+export { default as Fig7BackToTopDark } from "./fig-7-anchored-on-footer-dark.png";

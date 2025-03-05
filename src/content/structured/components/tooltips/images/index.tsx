@@ -1,0 +1,12 @@
+export { default as Fig1TooltipsLight } from "./fig-1-tooltips-provide-text-alternatives.png";
+export { default as Fig1TooltipsDark } from "./fig-1-tooltips-provide-text-alternatives-dark.png";
+export { default as Fig2TooltipsLight } from "./fig-2-dont-describe-unrelated-things.png";
+export { default as Fig2TooltipsDark } from "./fig-2-dont-describe-unrelated-things-dark.png";
+export { default as Fig3TooltipsLight } from "./fig-3-keep-the-tooltip-visible-when-cursor-is-over-tooltip.png";
+export { default as Fig3TooltipsDark } from "./fig-3-keep-the-tooltip-visible-when-cursor-is-over-tooltip-dark.png";
+export { default as Fig4TooltipsLight } from "./fig-4-use-multiple-lines-to-show-longer-messages.png";
+export { default as Fig4TooltipsDark } from "./fig-4-use-multiple-lines-to-show-longer-messages-dark.png";
+export { default as Fig5TooltipsLight } from "./fig-5-avoid-position-tooltips-so-they-obscure-other-content.png";
+export { default as Fig5TooltipsDark } from "./fig-5-avoid-position-tooltips-so-they-obscure-other-content-dark.png";
+export { default as Fig6TooltipsLight } from "./fig-6-dont-include-interactive-content-in-a-tooltip.png";
+export { default as Fig6TooltipsDark } from "./fig-6-dont-include-interactive-content-in-a-tooltip-dark.png";

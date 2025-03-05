@@ -1,0 +1,12 @@
+export { default as Fig1SearchLight } from "./fig-1-dont-display-large-numbers-of-search-results-in-droplist.png";
+export { default as Fig1SearchDark } from "./fig-1-dont-display-large-numbers-of-search-results-in-droplist-dark.png";
+export { default as Fig3SearchLight } from "./fig-3-search-field-with-helpful-placeholder.png";
+export { default as Fig3SearchDark } from "./fig-3-search-field-with-helpful-placeholder-dark.png";
+export { default as Fig4SearchLight } from "./fig-4-search-field-with-unhelpful-placeholder.png";
+export { default as Fig4SearchDark } from "./fig-4-search-field-with-unhelpful-placeholder-dark.png";
+export { default as Fig5SearchLight } from "./fig-5-suggested-options-loading-state.png";
+export { default as Fig5SearchDark } from "./fig-5-suggested-options-loading-state-dark.png";
+export { default as Fig6SearchLight } from "./fig-6-suggested-options-empty-state.png";
+export { default as Fig6SearchDark } from "./fig-6-suggested-options-empty-state-dark.png";
+export { default as Fig7SearchLight } from "./fig-7-correct-tab-order.png";
+export { default as Fig7SearchDark } from "./fig-7-correct-tab-order-dark.png";
