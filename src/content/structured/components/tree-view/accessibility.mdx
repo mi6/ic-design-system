@@ -1,0 +1,80 @@
+---
+path: "/components/tree-view/accessibility"
+
+navPriority: 41
+
+date: "2024-08-23"
+
+title: "Tree view"
+
+status: "CANARY"
+
+subTitle: "Use the tree view component to display hierarchical data, or provide navigation, within a tree structure."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/tree-view" },
+    { title: "Code", path: "/components/tree-view/code" },
+    { title: "Accessibility", path: "/components/tree-view/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+The tree view items will focus top-down, including the child nodes of any expanded parent items.
+Tree view items can be iterated over with the tab or up and down keys.
+Enter and space keys can be used to expand the currently selected parent node, or to follow the link of the currently selected node.
+
+## For Assistive Technology
+
+Tree view items consist of a button and an extended text area. When using a screen reader, the title of the tree view will be declared first along with how many items it contains.
+When focussed on a tree view item, screen readers will state its:
+
+<ul>
+  <li>Label</li>
+  <li>Index</li>
+  <li>State</li>
+  <li>Number of nested items</li>
+</ul>
+Any tree view items which aren’t in focus will not be declared by the screen reader.
+
+## Based on
+
+The tree view component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html"
+      rel="noreferer noopener nofollow"
+    >
+      WCAG - Target Size (Enhanced) (Level AAA)
+    </ic-link>
+    , W3C Web Accessibility Initiative, accessed February 2024.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://retool.com/blog/designing-a-ui-for-tree-data#keyboarding-and-accessibility"
+      rel="noreferer noopener nofollow"
+    >
+      Retool - Designing a UI for Tree Data - Keyboarding and Accessibility
+    </ic-link>
+    , Retool, accessed August 2023.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.a11y-collective.com/blog/icon-usability-and-accessibility/"
+      rel="noreferer noopener nofollow"
+    >
+      A11Y - Improving Icon Usability and Accessibility
+    </ic-link>
+    , A11Y Collective, accessed February 2024.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.
