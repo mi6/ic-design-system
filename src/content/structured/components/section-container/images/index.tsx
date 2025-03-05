@@ -1,0 +1,10 @@
+export { default as Fig1SectionLight } from "./Fig-1-section-containers-align-content.png";
+export { default as Fig1SectionDark } from "./Fig-1-section-containers-align-content-dark.png";
+export { default as Fig2SectionLight } from "./Fig-2-full-height-example.png";
+export { default as Fig2SectionDark } from "./Fig-2-full-height-example-dark.png";
+export { default as Fig3SectionLight } from "./Fig-3-section-containers-align-centre.png";
+export { default as Fig3SectionDark } from "./Fig-3-section-containers-align-centre-dark.png";
+export { default as Fig4SectionLight } from "./Fig-4-section-containers-align-left.png";
+export { default as Fig4SectionDark } from "./Fig-4-section-containers-align-left-dark.png";
+export { default as Fig5SectionLight } from "./Fig-5-section-containers-align-full-width.png";
+export { default as Fig5SectionDark } from "./Fig-5-section-containers-align-full-width-dark.png";

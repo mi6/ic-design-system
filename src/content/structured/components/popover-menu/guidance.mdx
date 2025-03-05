@@ -23,16 +23,25 @@ tabs:
 
 import { IcPopoverMenu, IcMenuItem, IcButton } from "@ukic/react";
 import { useState } from "react";
-import popoverFig1 from "./images/fig-1-use-popover-menu-to-house-secondary-actions.png";
-import popoverFig2 from "./images/fig-2-dont-use-popover-menu-for-few-actions.png";
-import popoverFig3 from "./images/fig-3-set-maxheight-to-force-scroll.png";
-import popoverFig4 from "./images/fig-4-position-menus-in-available-space.png";
-import popoverFig5 from "./images/fig-5-menu-buttons-with-different-elements.png";
-import popoverFig6 from "./images/fig-6-menu-toggle-buttons.png";
-import popoverFig7 from "./images/fig-7-menu-groups.png";
 import popoverVid1 from "./images/anim-1-popover-menu-interaction.mp4";
 import popoverVid2 from "./images/anim-2-sub-menu-interaction.mp4";
 import popoverVid3 from "./images/anim-3-avoid-nested-sub-menus.mp4";
+import {
+  Fig1PopoverDark,
+  Fig1PopoverLight,
+  Fig2PopoverDark,
+  Fig2PopoverLight,
+  Fig3PopoverDark,
+  Fig3PopoverLight,
+  Fig4PopoverDark,
+  Fig4PopoverLight,
+  Fig5PopoverDark,
+  Fig5PopoverLight,
+  Fig6PopoverDark,
+  Fig6PopoverLight,
+  Fig7PopoverDark,
+  Fig7PopoverLight,
+} from "./images";
 
 ## Introduction
 
@@ -96,7 +105,7 @@ Use a popover menu to place multiple actions behind a single trigger. This is es
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={popoverFig1}
+    imageSrc={[Fig1PopoverLight, Fig1PopoverDark]}
     imageAlt="A popover menu with edit and view options using a mix of menu items, menu groups and menu toggle items."
     state="good"
     caption="Use popover menus to contain multiple actions."
@@ -111,7 +120,7 @@ Avoid placing important actions in popover menus as these may be missed. Instead
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={popoverFig2}
+    imageSrc={[Fig2PopoverLight, Fig2PopoverDark]}
     imageAlt="A popover menu with two options for edit and download. Plenty of space is available on the background interface to display these options."
     state="bad"
     caption="Avoid using popover menus with few actions, or with important actions."
@@ -141,7 +150,7 @@ When you click a menu item within a popover menu, the popover menu will hide and
 By default, popover menus expand vertically to hug their contents. Set a max-height on the popover menu to constrain the height and allow the menu to scroll. Avoid setting the width of the popover menu to be greater than the available viewport.
 
 <DoDontCaution
-  imageSrc={popoverFig3}
+  imageSrc={[Fig3PopoverLight, Fig3PopoverDark]}
   imageAlt="Two examples of popover menus. The first displays all menu items within the menu container. The second example shows the same menu items, but with some hidden due to a smaller menu container. A scroll bar allows the menu to be scrolled."
   state="good"
   caption="Set a max-height to constrain the height of the menu and cause its contents to scroll."
@@ -152,7 +161,7 @@ By default, popover menus expand vertically to hug their contents. Set a max-hei
 Popover menus appear adjacent to their triggering element. By default, they appear below and aligned to the left of the trigger element. However, if no space is available, the popover menu will appear above or aligned to the right of the trigger element.
 
 <DoDontCaution
-  imageSrc={popoverFig4}
+  imageSrc={[Fig4PopoverLight, Fig4PopoverDark]}
   imageAlt="Two examples of popover menus. The first example shows the menu aligned to the left of the screen. The second shows the menu aligned to the right."
   state="good"
   caption="Popover menus position themselves based on the available space."
@@ -192,7 +201,7 @@ Specify a menu item as a parent if it has children that appear in a sub-menu. Wh
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={popoverFig5}
+    imageSrc={[Fig5PopoverLight, Fig5PopoverDark]}
     imageAlt="A popover menu showing a set of edit options that include icons and keyboard shortcuts alongside their labels."
     state="good"
     caption="Use menu items for single actions. Add an icon or a description to provide more context. Highlight keyboard shortcuts using the keyboard shortcut label."
@@ -207,7 +216,7 @@ Like default menu items, provide an icon or a description to add additional cont
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={popoverFig6}
+    imageSrc={[Fig6PopoverLight, Fig6PopoverDark]}
     imageAlt="A popover menu containing two menu toggle items. Their labels read ‘Show/Hide’ and ‘Lock/Unlock’ and display a tick indicating that they are toggled on."
     state="good"
     caption="Use menu toggle items to show a selection state alongside the action."
@@ -220,7 +229,7 @@ Use menu groups to organise menu items into sections within the popover menu. Pr
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={popoverFig7}
+    imageSrc={[Fig7PopoverLight, Fig7PopoverDark]}
     imageAlt=" A popover menu with a menu group for ‘Edit options’, a menu group for ‘View options’, an untitled menu group containing unrelated actions, and a final untitled menu group containing destructive actions."
     state="good"
     caption="Use menu groups to create sections within a popover menu."

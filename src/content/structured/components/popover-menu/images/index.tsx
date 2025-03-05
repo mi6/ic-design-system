@@ -1,0 +1,14 @@
+export { default as Fig1PopoverLight } from "./fig-1-use-popover-menu-to-house-secondary-actions.png";
+export { default as Fig1PopoverDark } from "./fig-1-use-popover-menu-to-house-secondary-actions-dark.png";
+export { default as Fig2PopoverLight } from "./fig-2-dont-use-popover-menu-for-few-actions.png";
+export { default as Fig2PopoverDark } from "./fig-2-dont-use-popover-menu-for-few-actions-dark.png";
+export { default as Fig3PopoverLight } from "./fig-3-set-maxheight-to-force-scroll.png";
+export { default as Fig3PopoverDark } from "./fig-3-set-maxheight-to-force-scroll-dark.png";
+export { default as Fig4PopoverLight } from "./fig-4-position-menus-in-available-space.png";
+export { default as Fig4PopoverDark } from "./fig-4-position-menus-in-available-space-dark.png";
+export { default as Fig5PopoverLight } from "./fig-5-menu-buttons-with-different-elements.png";
+export { default as Fig5PopoverDark } from "./fig-5-menu-buttons-with-different-elements-dark.png";
+export { default as Fig6PopoverLight } from "./fig-6-menu-toggle-buttons.png";
+export { default as Fig6PopoverDark } from "./fig-6-menu-toggle-buttons-dark.png";
+export { default as Fig7PopoverLight } from "./fig-7-menu-groups.png";
+export { default as Fig7PopoverDark } from "./fig-7-menu-groups-dark.png";

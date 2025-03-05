@@ -57,7 +57,7 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
       }
     }
   `);
-  const isBase64: boolean = transformedImageSrc.includes(
+  const isBase64: boolean = transformedImageSrc?.includes(
     "data:image/png;base64"
   );
   const imageObject: ImageFile[] = imageData.allFile.edges;
@@ -78,7 +78,7 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
       if (gatsbyFileObjMatches) {
         if (gatsbyFileObjMatches.length > 1) {
           gatsbyFileObj = gatsbyFileObjMatches.find(
-            (image) => !image.node.relativePath.includes("dark")
+            (image) => !image.node.relativePath.endsWith("dark.png")
           );
         } else {
           [gatsbyFileObj] = gatsbyFileObjMatches;

@@ -24,10 +24,16 @@ tags: ["Breadcrumb trail"]
 ---
 
 import { IcBreadcrumbGroup, IcBreadcrumb } from "@ukic/react";
-import breadcrumbsFig1 from "./images/fig-1-use-breadcrumbs-as-a-secondary-navigation-method.png";
-import breadcrumbsFig2 from "./images/fig-2-dont-use-breadcrumbs-for-shallow-app-structures.png";
-import breadcrumbsFig3 from "./images/fig-3-dont-include-current-page-in-breadcrumbs.png";
-import breadcrumbsFig4 from "./images/fig-4-use-contrast-breadcrumbs-for-different-backgrounds.png";
+import {
+  Fig1BreadcrumbsDark,
+  Fig1BreadcrumbsLight,
+  Fig2BreadcrumbsDark,
+  Fig2BreadcrumbsLight,
+  Fig3BreadcrumbsDark,
+  Fig3BreadcrumbsLight,
+  Fig4BreadcrumbsDark,
+  Fig4BreadcrumbsLight,
+} from "./images";
 
 ## Introduction
 
@@ -63,7 +69,7 @@ Show the current page’s parents, grandparents and other ancestors so that the 
 Use breadcrumbs as a secondary navigation option to supplement the app’s main navigation method.
 
 <DoDontCaution
-  imageSrc={breadcrumbsFig1}
+  imageSrc={[Fig1BreadcrumbsLight, Fig1BreadcrumbsDark]}
   imageAlt="Above the page header is a breadcrumb component with links to parent pages for ‘Coffees’, ‘Beverages’ and ‘Home’. This is separate from the site navigation."
   state="good"
   caption="A breadcrumb providing a secondary method of navigation that supplements the main navigation from the top navigation."
@@ -82,7 +88,7 @@ Don’t use breadcrumbs to show the history of recently visited pages. Only use 
 Don’t use breadcrumbs if the app’s structure is only one or two pages deep. Use the ‘back breadcrumb’ or use a different method to indicate the page’s position.
 
 <DoDontCaution
-  imageSrc={breadcrumbsFig2}
+  imageSrc={[Fig2BreadcrumbsLight, Fig2BreadcrumbsDark]}
   imageAlt="Above the page header is a breadcrumb component with links to parent pages for ‘Coffee’ and ‘Home’."
   state="bad"
   caption="Don’t use breadcrumbs for apps with structures that are only one or two pages deep."
@@ -91,7 +97,7 @@ Don’t use breadcrumbs if the app’s structure is only one or two pages deep. 
 Don’t include the current page as a link within the breadcrumbs. Instead use clear titling on the page itself to label the current page. If displaying the current page within the breadcrumb, then make sure it is not clickable.
 
 <DoDontCaution
-  imageSrc={breadcrumbsFig3}
+  imageSrc={[Fig3BreadcrumbsLight, Fig3BreadcrumbsDark]}
   imageAlt="An example app called ‘A whole latte love’ showing a page titled ‘Latte’. A breadcrumb exists in the page header that includes links to the current page ‘Latte’, and its ancestors ‘Coffee’, ‘Beverages’ and ‘Home’."
   state="bad"
   caption="Don’t include the current page as a link within the breadcrumb."
@@ -104,7 +110,7 @@ Avoid showing more than six levels in a breadcrumb. Consider your app’s inform
 Always use the default theme of breadcrumbs to ensure that the links are recognisable as links. However, use the light or dark theme with `monochrome={true}` if breadcrumbs are positioned on different coloured backgrounds to ensure good colour contrast.
 
 <DoDontCaution
-  imageSrc={breadcrumbsFig4}
+  imageSrc={[Fig4BreadcrumbsLight, Fig4BreadcrumbsDark]}
   imageAlt="An example app called ‘A whole latte love’ that shows a page titled ‘Latte’. A hero banner sits at the top of the page with a dark blue background. A breadcrumb component that sits on top of the dark hero banner uses white styled links to achieve high contrast."
   state="good"
   caption="Use contrast styling if using breadcrumbs on different coloured backgrounds."

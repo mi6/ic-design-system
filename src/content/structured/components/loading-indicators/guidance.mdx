@@ -27,14 +27,24 @@ tags: ["Progress bar", "Progress indicator", "Spinner"]
 ---
 
 import { IcLoadingIndicator, IcTypography } from "@ukic/react";
-import loadingIndicatorFig1 from "./images/fig-1-use-clear-concise-and-specific-labels.png";
-import loadingIndicatorFig2 from "./images/fig-2-do-not-make-labels-unnecessarily-long.png";
-import loadingIndicatorFig3 from "./images/fig-3-always-centre-the-component.png";
-import loadingIndicatorFig4 from "./images/fig-4-do-not-position-the-loading-indicators-on-other-parts-of-the-page-or-container.png";
-import loadingIndicatorFig5 from "./images/fig-5-place-the-full-width-indicator-at-the-top-of-the-container.png";
-import loadingIndicatorFig6 from "./images/fig-6-do-not-position-full-width-loading-indicators-on-other-parts-of-the-container.png";
-import loadingIndicatorFig7 from "./images/fig-7-place-loading-indicators-in-modals-when-overlayed-on-other-content.png";
-import loadingIndicatorFig8 from "./images/fig-8-do-not-place-loading-indicators-over-other-content.png";
+import {
+  Fig1LoadingDark,
+  Fig1LoadingLight,
+  Fig2LoadingDark,
+  Fig2LoadingLight,
+  Fig3LoadingDark,
+  Fig3LoadingLight,
+  Fig4LoadingDark,
+  Fig4LoadingLight,
+  Fig5LoadingDark,
+  Fig5LoadingLight,
+  Fig6LoadingDark,
+  Fig6LoadingLight,
+  Fig7LoadingDark,
+  Fig7LoadingLight,
+  Fig8LoadingDark,
+  Fig8LoadingLight,
+} from "./images";
 
 ## Component variants
 
@@ -146,13 +156,13 @@ Indeterminate loading indicators have a customisable label. The label can be set
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={loadingIndicatorFig1}
+    imageSrc={[Fig1LoadingLight, Fig1LoadingDark]}
     imageAlt="A graphic of a radial loading indicator with the label of 'Submitting form...'."
     state="good"
     caption="Use clear, concise and specific labels."
   />
   <DoDontCaution
-    imageSrc={loadingIndicatorFig2}
+    imageSrc={[Fig2LoadingLight, Fig2LoadingDark]}
     imageAlt="A graphic of a radial loading indicator with the label of ‘The form is now being submitted... Please wait...’."
     state="bad"
     caption="Don’t make labels unnecessarily long."
@@ -165,13 +175,13 @@ Loading indicators always appear centred within their container. If the whole pa
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={loadingIndicatorFig3}
+    imageSrc={[Fig3LoadingLight, Fig3LoadingDark]}
     imageAlt="A graphic of a radial loading indicator positioned in the middle of a blank page."
     state="good"
     caption="Always centre the component."
   />
   <DoDontCaution
-    imageSrc={loadingIndicatorFig4}
+    imageSrc={[Fig4LoadingLight, Fig4LoadingDark]}
     imageAlt="A graphic of a radial loading indicator positioned in the top left corner of a blank page."
     state="bad"
     caption="Don’t position the loading indicators on other parts of the page or container."
@@ -182,13 +192,13 @@ When using the full-width variant of linear loading indicators, make sure to pla
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={loadingIndicatorFig5}
+    imageSrc={[Fig5LoadingLight, Fig5LoadingDark]}
     imageAlt="A graphic of a full width loading indicator at the top of a page."
     state="good"
     caption="Place the full width indicator at the top of the container."
   />
   <DoDontCaution
-    imageSrc={loadingIndicatorFig6}
+    imageSrc={[Fig6LoadingLight, Fig6LoadingDark]}
     imageAlt="A graphic of a full width loading indicator positioned in the centre of a container with a bigger width."
     state="bad"
     caption="Don’t position full width loading indicators on other parts of the container. Make sure it has the same width of this container."
@@ -198,14 +208,14 @@ When using the full-width variant of linear loading indicators, make sure to pla
 If loading indicators are overlaid on other content, place them in a dialog.
 
 <DoDontCaution
-  imageSrc={loadingIndicatorFig7}
+  imageSrc={[Fig7LoadingLight, Fig7LoadingDark]}
   imageAlt="A loading indicator placed inside a modal dialog, overlaid on a page filled with content."
   state="good"
   caption="Place loading indicators in dialogs when overlaid on other content."
 />
 
 <DoDontCaution
-  imageSrc={loadingIndicatorFig8}
+  imageSrc={[Fig8LoadingLight, Fig8LoadingDark]}
   imageAlt="A loading indicator overlaid on a page filled with content."
   state="bad"
   caption="Don’t place loading indicators over other content, even if changing the opacity of the background."

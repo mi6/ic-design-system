@@ -24,13 +24,20 @@ tags: ["Tags"]
 ---
 
 import { IcChip } from "@ukic/react";
-import chipsFig1 from "./images/fig-1-use-dismissible-chips-for-filtering-multiple-item.png";
-import chipsFig2 from "./images/fig-2-do-use-static-chip-to-display-descriptive-non-interactive-information.png";
-import chipsFig3 from "./images/fig-3-do-not-replace-status-tags-for-static-chips.png";
-import chipsFig4 from "./images/fig-4-do-use-status-tags-to-display-status.png";
-import chipsFig5 from "./images/fig-5-avoid-using-long-labels-as-it-will-force-the-text-to-wrap.png";
 import chipsVid1 from "./images/anim-1-do-allow-users-to-re-select-the-item-after-it-has-been-dismissed.mp4";
 import chipsVid2 from "./images/anim-2-do-not-use-dismissible-chips-when-the-user-will-not-be-able-to-re-select-the-dismissed-item.mp4";
+import {
+  Fig1ChipsDark,
+  Fig1ChipsLight,
+  Fig2ChipsDark,
+  Fig2ChipsLight,
+  Fig3ChipsDark,
+  Fig3ChipsLight,
+  Fig4ChipsDark,
+  Fig4ChipsLight,
+  Fig5ChipsDark,
+  Fig5ChipsLight,
+} from "./images";
 
 ## Component variants
 
@@ -87,7 +94,7 @@ Common use cases include:
 - Choosing multiple recipients of a message.
 
 <DoDontCaution
-  imageSrc={chipsFig1}
+  imageSrc={[Fig1ChipsLight, Fig1ChipsDark]}
   imageAlt="A correct example of a series of dismissible chips being used in a multi-select dropdown to display a list of selected items."
   state="good"
   caption="Use dismissible chips for filtering multiple items."
@@ -104,7 +111,7 @@ Common use cases include:
 - Displaying the current location of an item.
 
 <DoDontCaution
-  imageSrc={chipsFig2}
+  imageSrc={[Fig2ChipsLight, Fig2ChipsDark]}
   imageAlt="A correct example of three static chips labelled 'Published 18 May 2021', '#UI', and '#Components' right below the header of a page titled 'Guidance'."
   state="good"
   caption="Use static chips to display descriptive, non-interactive information."
@@ -148,13 +155,13 @@ Don't use static chips to show status. Use [status tags](/components/status-tag)
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={chipsFig4}
+    imageSrc={[Fig4ChipsLight, Fig4ChipsDark]}
     imageAlt="Three chips, of which a neutral tag labelled 'Idle, a warning tag labelled 'Offline', and success tag labelled 'Online' displaying the status of three coffee machines."
     state="good"
     caption="Use status tags to display status."
   />
   <DoDontCaution
-    imageSrc={chipsFig3}
+    imageSrc={[Fig3ChipsLight, Fig3ChipsDark]}
     imageAlt="Three static chips labelled 'Idle', 'Offline', and 'Online' displaying the status of three coffee machines."
     state="bad"
     caption="Don't use static chips to denote status."
@@ -177,7 +184,7 @@ Use concise labels for better readability. Longer labels will force the text to 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={chipsFig5}
+    imageSrc={[Fig5ChipsLight, Fig5ChipsDark]}
     imageAlt="An example of a long label being wrapped on two lines."
     state="caution"
     caption="Avoid using long labels as it will force the text to wrap."

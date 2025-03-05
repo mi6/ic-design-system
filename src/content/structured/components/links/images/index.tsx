@@ -1,0 +1,16 @@
+export { default as Fig1LinksLight } from "./always-include-a-launch-icon-when-directing-users-to-an-external-address.png";
+export { default as Fig1LinksDark } from "./always-include-a-launch-icon-when-directing-users-to-an-external-address-dark.png";
+export { default as Fig2LinksLight } from "./dont-use-a-default-link-for-links-which-open-a-new-tab-or-website.png";
+export { default as Fig2LinksDark } from "./dont-use-a-default-link-for-links-which-open-a-new-tab-or-website-dark.png";
+export { default as Fig3LinksLight } from "./use-a-button-when-displaying-a-clickable-action.png";
+export { default as Fig3LinksDark } from "./use-a-button-when-displaying-a-clickable-action-dark.png";
+export { default as Fig4LinksLight } from "./dont-use-a-link-to-initiate-an-action.png";
+export { default as Fig4LinksDark } from "./dont-use-a-link-to-initiate-an-action-dark.png";
+export { default as Fig5LinksLight } from "./when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text.png";
+export { default as Fig5LinksDark } from "./when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text-dark.png";
+export { default as Fig6LinksLight } from "./avoid-using-the-same-colour-style-as-the-adjacent-text.png";
+export { default as Fig6LinksDark } from "./avoid-using-the-same-colour-style-as-the-adjacent-text-dark.png";
+export { default as Fig7LinksLight } from "./use-the-monochromatic-variant-when-listing-links.png";
+export { default as Fig7LinksDark } from "./use-the-monochromatic-variant-when-listing-links-dark.png";
+export { default as Fig8LinksLight } from "./do-not-use-bad-link-text.png";
+export { default as Fig8LinksDark } from "./do-not-use-bad-link-text-dark.png";

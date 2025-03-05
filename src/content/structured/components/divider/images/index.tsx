@@ -1,0 +1,18 @@
+export { default as Fig1DividerLight } from "./fig-1-add-full-width-dividers-to-help-group-content.png";
+export { default as Fig1DividerDark } from "./fig-1-add-full-width-dividers-to-help-group-content-dark.png";
+export { default as Fig2DividerLight } from "./fig-2-add-inset-dividers-to-help-group-content.png";
+export { default as Fig2DividerDark } from "./fig-2-add-inset-dividers-to-help-group-content-dark.png";
+export { default as Fig3DividerLight } from "./fig-3-use-a-dashed-divider-to-make-the-page-feel-more-textured.png";
+export { default as Fig3DividerDark } from "./fig-3-use-a-dashed-divider-to-make-the-page-feel-more-textured-dark.png";
+export { default as Fig4DividerLight } from "./fig-4-use-different-weights-of-dividers-to-show-the-structure-of-a-page.png";
+export { default as Fig4DividerDark } from "./fig-4-use-different-weights-of-dividers-to-show-the-structure-of-a-page-dark.png";
+export { default as Fig5DividerLight } from "./fig-5-Do-place-divider-to-the-right-of-the-label.png";
+export { default as Fig5DividerDark } from "./fig-5-Do-place-divider-to-the-right-of-the-label-dark.png";
+export { default as Fig6DividerLight } from "./fig-6-Dont-use-a-divider-with-label-text-that-is-too-long.png";
+export { default as Fig6DividerDark } from "./fig-6-Dont-use-a-divider-with-label-text-that-is-too-long-dark.png";
+export { default as Fig7DividerLight } from "./fig-7-use-the-vertical-divider-to create-sections-of-related-content.png";
+export { default as Fig7DividerDark } from "./fig-7-use-the-vertical-divider-to create-sections-of-related-content-dark.png";
+export { default as Fig8DividerLight } from "./fig-8-use-dividers-when-you-want-to-group-a-similar-type-of-content-together.png";
+export { default as Fig8DividerDark } from "./fig-8-use-dividers-when-you-want-to-group-a-similar-type-of-content-together-dark.png";
+export { default as Fig9DividerLight } from "./fig-9-do-not-use-dividers-to-separate-individual-items-when-it-is-not-necessary.png";
+export { default as Fig9DividerDark } from "./fig-9-do-not-use-dividers-to-separate-individual-items-when-it-is-not-necessary-dark.png";

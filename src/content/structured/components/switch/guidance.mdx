@@ -26,12 +26,20 @@ tags: ["Toggle", "Lightswitch"]
 import { IcSwitch, IcTypography } from "@ukic/react";
 import switchVid1 from "./images/anim-1-avoid-change-a-switch-state-from-a-different-trigger.mp4";
 import switchVid2 from "./images/anim-2-dont-change-switch-label-at-same-time-as-switch-state.mp4";
-import switchFig1 from "./images/fig-1-make-sure-switch-changes-take-effect-immediately.png";
-import switchFig2 from "./images/fig-2-dont-use-a-separate-trigger-to-make-switch-changes-take-effect.png";
-import switchFig3 from "./images/fig-3-dont-use-a-switch-for-yes-no-answers.png";
-import switchFig4 from "./images/fig-4-give-switches-clear-labels.png";
-import switchFig5 from "./images/fig-5-dont-give-switches-ambiguous-labels.png";
-import switchFig6 from "./images/fig-6-dont-mix-switches-with-icons-with-switches-without-icons.png";
+import {
+  Fig1SwitchDark,
+  Fig1SwitchLight,
+  Fig2SwitchDark,
+  Fig2SwitchLight,
+  Fig3SwitchDark,
+  Fig3SwitchLight,
+  Fig4SwitchDark,
+  Fig4SwitchLight,
+  Fig5SwitchDark,
+  Fig5SwitchLight,
+  Fig6SwitchDark,
+  Fig6SwitchLight,
+} from "./images";
 
 ## Introduction
 
@@ -53,13 +61,13 @@ Don't use a switch when the selection of the option should take effect after a s
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={switchFig1}
+    imageSrc={[Fig1SwitchLight, Fig1SwitchDark]}
     imageAlt="An example settings panel with text that says 'Your changes will take place immediately'. Three switches are displayed for 'notifications', 'don't disturb' and 'night mode'."
     state="good"
     caption="Make sure the change in a switch's state causes immediate effect."
   />
   <DoDontCaution
-    imageSrc={switchFig2}
+    imageSrc={[Fig2SwitchLight, Fig2SwitchDark]}
     imageAlt="An example settings panel with text that says 'Remember to save your changes'. Three switches are displayed for 'notifications', 'don't disturb' and 'night mode'. A button that says 'Save changes' sits below the switches. "
     state="bad"
     caption="Don't use a separate trigger to make the change in state take effect."
@@ -74,7 +82,7 @@ Don't use a switch for 'yes' or 'no' answers. Use two [radio buttons](/component
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={switchFig3}
+    imageSrc={[Fig3SwitchLight, Fig3SwitchDark]}
     imageAlt="An example settings panel with a single switch with a heading that says 'Do you want to receive notifications?''. The switch is in the 'on' position and it has a label that says 'Yes'."
     state="bad"
     caption="Don't use a switch for 'yes' or 'no' answers."
@@ -110,13 +118,13 @@ For example, a switch to turn notifications 'on' or 'off', with a label that say
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={switchFig4}
+    imageSrc={[Fig4SwitchLight, Fig4SwitchDark]}
     imageAlt="An example settings panel with a single switch in the 'off' position. It's label says 'Notifications'."
     state="good"
     caption="Give switches labels that make it clear what the switch will do in either the 'on' or 'off' position."
   />
   <DoDontCaution
-    imageSrc={switchFig5}
+    imageSrc={[Fig5SwitchLight, Fig5SwitchDark]}
     imageAlt="An example settings panel with a single switch in the 'off' position. It's label says 'Turn notifications off?'."
     state="bad"
     caption="Don't give switches ambiguous labels that makes it hard to understand what the switch will do."
@@ -142,7 +150,7 @@ Don't group switches with icons with other switches without icons.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={switchFig6}
+    imageSrc={[Fig6SwitchLight, Fig6SwitchDark]}
     imageAlt="An example settings panel with three switches. The first switch is on with a label that says 'Notifications'. The second switch is off with a label that says 'Don't disturb'. The third switch is off with a label that includes a moon icon and says 'Night mode'."
     state="bad"
     caption="Don't mix switches with icons with switches without icons."

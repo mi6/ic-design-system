@@ -27,12 +27,19 @@ import { IcTypography, IcToast, IcToastRegion, IcButton } from "@ukic/react";
 import { useRef } from "react";
 import toastVid1 from "./images/anim-1-auto-dismiss-toast.mp4";
 import toastVid2 from "./images/anim-2-manual-dismiss-toast.mp4";
-import toastFig1 from "./images/fig-1c-toast-with-action-button.png";
-import toastFig2 from "./images/fig-2c-toast-with-link.png";
-import toastFig3 from "./images/fig-3c-dont-use-toast-to-display-errors.png";
-import toastFig4 from "./images/fig-4c-correct-toast-positioning.png";
-import toastFig5 from "./images/fig-5c-incorrect-toast-positioning.png";
-import toastFig6 from "./images/fig-6c-toast-with-description.png";
+import {
+  Fig1ToastDark,
+  Fig1ToastLight,
+  Fig2ToastDark,
+  Fig2ToastLight,
+  Fig3ToastLight,
+  Fig4ToastDark,
+  Fig4ToastLight,
+  Fig5ToastDark,
+  Fig5ToastLight,
+  Fig6ToastDark,
+  Fig6ToastLight,
+} from "./images";
 
 ## Introduction
 
@@ -69,14 +76,14 @@ Toasts can be set to disappear on their own, or remain visible on screen until a
 An action, such as a link or button, can be included but isn’t recommended. Try to place actions in the main content of the page instead. If an action is included, then the toast can't be set to automatically dismiss.
 
 <DoDontCaution
-  imageSrc={toastFig1}
+  imageSrc={[Fig1ToastLight, Fig1ToastDark]}
   imageAlt="A comments section with a toast message that says ‘Comment added’ with an ‘undo’ button and a dismiss button."
   state="caution"
   caption="A toast message containing an action button. The toast has to be manually dismissed."
 />
 
 <DoDontCaution
-  imageSrc={toastFig2}
+  imageSrc={[Fig2ToastLight, Fig2ToastDark]}
   imageAlt="A comments section with a toast message that says ‘Comment added’ with a link that reads ‘View our privacy statement’, and a dismiss button."
   state="caution"
   caption="A toast message containing a link. The toast has to be manually dismissed."
@@ -89,7 +96,7 @@ It's best to use toasts for passive success messages, for example 'document save
 If the message must be seen, use an [alert](/components/alert) or dialog depending on the severity of the problem.
 
 <DoDontCaution
-  imageSrc={toastFig3}
+  imageSrc={[Fig3ToastLight, Fig4ToastDark]}
   imageAlt="A comments section with a toast message displaying an error that reads ‘Your comment couldn’t be saved’."
   state="bad"
   caption="Don’t use toast messages to display errors."
@@ -142,14 +149,14 @@ Toasts always appear centred at the bottom of the screen. Positioning toasts her
 Only one toast can be displayed at a time. If multiple toasts are required, they are queued one after the other.
 
 <DoDontCaution
-  imageSrc={toastFig4}
+  imageSrc={[Fig4ToastLight, Fig4ToastDark]}
   imageAlt="An app called ‘Better latte than never’ displaying an article page and showing a toast message positioned at the bottom and centre of the screen that reads ‘Comment added’.  "
   state="good"
   caption="Position toast message at the centre and bottom of the screen.  "
 />
 
 <DoDontCaution
-  imageSrc={toastFig5}
+  imageSrc={[Fig5ToastLight, Fig5ToastDark]}
   imageAlt="An app whose title is obscured by a toast message positioned at the top of the screen that reads ‘Comment added’."
   state="bad"
   caption="Don’t position toasts at the top of the screen as they may interfere with important content.  "
@@ -160,7 +167,7 @@ Only one toast can be displayed at a time. If multiple toasts are required, they
 Use short messages in toasts. Use the optional description text in addition to the toast title for additional content.
 
 <DoDontCaution
-  imageSrc={toastFig6}
+  imageSrc={[Fig6ToastLight, Fig6ToastDark]}
   imageAlt="An app called ‘Better latte than never’ showing an article page with comments that displays a toast message with a title that says ‘Comment added’ and a description that says ‘Thanks for letting us know.’."
   state="good"
   caption="Use the optional toast description to provide more information on the toast message."

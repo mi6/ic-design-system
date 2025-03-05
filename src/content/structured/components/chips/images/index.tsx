@@ -1,0 +1,10 @@
+export { default as Fig1ChipsLight } from "./fig-1-use-dismissible-chips-for-filtering-multiple-item.png";
+export { default as Fig1ChipsDark } from "./fig-1-use-dismissible-chips-for-filtering-multiple-item-dark.png";
+export { default as Fig2ChipsLight } from "./fig-2-do-use-static-chip-to-display-descriptive-non-interactive-information.png";
+export { default as Fig2ChipsDark } from "./fig-2-do-use-static-chip-to-display-descriptive-non-interactive-information-dark.png";
+export { default as Fig3ChipsLight } from "./fig-3-do-not-replace-status-tags-for-static-chips.png";
+export { default as Fig3ChipsDark } from "./fig-3-do-not-replace-status-tags-for-static-chips-dark.png";
+export { default as Fig4ChipsLight } from "./fig-4-do-use-status-tags-to-display-status.png";
+export { default as Fig4ChipsDark } from "./fig-4-do-use-status-tags-to-display-status-dark.png";
+export { default as Fig5ChipsLight } from "./fig-5-avoid-using-long-labels-as-it-will-force-the-text-to-wrap.png";
+export { default as Fig5ChipsDark } from "./fig-5-avoid-using-long-labels-as-it-will-force-the-text-to-wrap-dark.png";

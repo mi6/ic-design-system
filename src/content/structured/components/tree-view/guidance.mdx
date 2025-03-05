@@ -21,10 +21,16 @@ tabs:
 
 import { IcAlert, IcLink } from "@ukic/react";
 import { IcTreeView, IcTreeItem } from "@ukic/canary-react";
-import treeViewFig1 from "./images/fig-1-use-tree-view-for-navigation-options.png";
-import treeViewFig2 from "./images/fig-2-use-tree-view-for-related-subsections.png";
-import treeViewFig3 from "./images/fig-3-avoid-tree-view-for-dense-data-display.png";
-import treeViewFig4 from "./images/fig-4-avoid-using-tree-view-with-limited-width.png";
+import {
+  Fig1TreeViewDark,
+  Fig1TreeViewLight,
+  Fig2TreeViewDark,
+  Fig2TreeViewLight,
+  Fig3TreeViewDark,
+  Fig3TreeViewLight,
+  Fig4TreeViewDark,
+  Fig4TreeViewLight,
+} from "./images";
 
 <IcAlert
   heading="Canary component"
@@ -81,7 +87,7 @@ Use tree view to display further navigation options in the application, such as 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={treeViewFig1}
+    imageSrc={[Fig1TreeViewLight, Fig1TreeViewDark]}
     imageAlt="An example of using tree view to navigate throughout an app with nested pages."
     state="good"
     caption="Use tree view to navigate throughout hierarchical content."
@@ -94,7 +100,7 @@ Use the tree view title bar to provide further clarity on the context of your tr
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={treeViewFig2}
+    imageSrc={[Fig2TreeViewLight, Fig2TreeViewDark]}
     imageAlt="An example of using tree view with a title bar to display related content."
     state="good"
     caption="Use tree view with icons and a title bar to provide context to your data."
@@ -107,7 +113,7 @@ Avoid using tree view for dense or complicated data display. Consider if this co
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={treeViewFig3}
+    imageSrc={[Fig3TreeViewLight, Fig3TreeViewDark]}
     imageAlt="An example of using tree view for dense data with several data types."
     state="bad"
     d
@@ -132,7 +138,7 @@ The width of the tree view is set by the screen size or the container it is plac
 Place the tree view at either side of the page to ensure it can always be accessed independent of the screen content. Tree views should fill the whole height of the container they sit within.
 
 <DoDontCaution
-  imageSrc={treeViewFig4}
+  imageSrc={[Fig4TreeViewLight, Fig4TreeViewDark]}
   imageAlt="An example of placing tree view within a width restricted container leading to truncation."
   state="bad"
   caption="Place tree view in a wide enough container to properly indent nested data."

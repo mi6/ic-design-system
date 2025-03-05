@@ -1,0 +1,12 @@
+export { default as Fig1SwitchLight } from "./fig-1-make-sure-switch-changes-take-effect-immediately.png";
+export { default as Fig2SwitchLight } from "./fig-2-dont-use-a-separate-trigger-to-make-switch-changes-take-effect.png";
+export { default as Fig3SwitchLight } from "./fig-3-dont-use-a-switch-for-yes-no-answers.png";
+export { default as Fig4SwitchLight } from "./fig-4-give-switches-clear-labels.png";
+export { default as Fig5SwitchLight } from "./fig-5-dont-give-switches-ambiguous-labels.png";
+export { default as Fig6SwitchLight } from "./fig-6-dont-mix-switches-with-icons-with-switches-without-icons.png";
+export { default as Fig1SwitchDark } from "./fig-1-make-sure-switch-changes-take-effect-immediately-dark.png";
+export { default as Fig2SwitchDark } from "./fig-2-dont-use-a-separate-trigger-to-make-switch-changes-take-effect-dark.png";
+export { default as Fig3SwitchDark } from "./fig-3-dont-use-a-switch-for-yes-no-answers-dark.png";
+export { default as Fig4SwitchDark } from "./fig-4-give-switches-clear-labels-dark.png";
+export { default as Fig5SwitchDark } from "./fig-5-dont-give-switches-ambiguous-labels-dark.png";
+export { default as Fig6SwitchDark } from "./fig-6-dont-mix-switches-with-icons-with-switches-without-icons-dark.png";

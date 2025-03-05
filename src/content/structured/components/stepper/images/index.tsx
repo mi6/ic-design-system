@@ -1,0 +1,16 @@
+export { default as Fig1StepperLight } from "./fig-1-stepper-component-being-used-to-describe-the-steps-of-a-multistep-form.png";
+export { default as Fig1StepperDark } from "./fig-1-stepper-component-being-used-to-describe-the-steps-of-a-multistep-form-dark.png";
+export { default as Fig2StepperLight } from "./fig-2-use-concise-labels-within-a-stepper.png";
+export { default as Fig2StepperDark } from "./fig-2-use-concise-labels-within-a-stepper-dark.png";
+export { default as Fig3StepperLight } from "./fig-3-dont-use-long-labels-within-a-stepper.png";
+export { default as Fig3StepperDark } from "./fig-3-dont-use-long-labels-within-a-stepper-dark.png";
+export { default as Fig4StepperLight } from "./fig-4-a-stepper-accompanied-by-a-page-title-showing-how-the-stepper-should-be-implemented.png";
+export { default as Fig4StepperDark } from "./fig-4-a-stepper-accompanied-by-a-page-title-showing-how-the-stepper-should-be-implemented-dark.png";
+export { default as Fig5StepperLight } from "./fig-5-dont-use-a-compact-stepper-if-the-page-content-does-not-include-the-step-name-in-a-heading.png";
+export { default as Fig5StepperDark } from "./fig-5-dont-use-a-compact-stepper-if-the-page-content-does-not-include-the-step-name-in-a-heading-dark.png";
+export { default as Fig6StepperLight } from "./fig-6-a-stepper-that-is-leftaligned-at-the-top-of-the-page-showing-how-the-stepper-should-be-implemented.png";
+export { default as Fig6StepperDark } from "./fig-6-a-stepper-that-is-leftaligned-at-the-top-of-the-page-showing-how-the-stepper-should-be-implemented-dark.png";
+export { default as Fig7StepperLight } from "./fig-7-a-stepper-that-is-centrealigned-at-the-top-of-the-page-showing-how-the-stepper-should-not-be-implemented.png";
+export { default as Fig7StepperDark } from "./fig-7-a-stepper-that-is-centrealigned-at-the-top-of-the-page-showing-how-the-stepper-should-not-be-implemented-dark.png";
+export { default as Fig8StepperLight } from "./fig-8-use-compact-stepper-when-there-is-not-much-room.png";
+export { default as Fig8StepperDark } from "./fig-8-use-compact-stepper-when-there-is-not-much-room-dark.png";

@@ -21,12 +21,20 @@ tabs:
   ]
 ---
 
-import skeletonFig1 from "./images/fig-1-use-the-variant-which-outlines-the-whole-components.png";
-import skeletonFig2 from "./images/fig-2-do-not-use-skeletons-within-skeletons.png";
-import skeletonFig3 from "./images/fig-3-use-the-correct-text-style-to-match-the-size-of-the-text.png";
-import skeletonFig4 from "./images/fig-4-do-not-use-the-same-text-variant-for-different-text-sizes.png";
-import skeletonFig5 from "./images/fig-5-use-a-separate-text-skeleton-component-for-each-line.png";
-import skeletonFig6 from "./images/fig-6-do-not-scale-the-text-skeleton-to-the-full-height-of-a-body-of-text.png";
+import {
+  Fig1SkeletonDark,
+  Fig1SkeletonLight,
+  Fig2SkeletonLight,
+  Fig2SkeletonDark,
+  Fig3SkeletonLight,
+  Fig3SkeletonDark,
+  Fig4SkeletonLight,
+  Fig4SkeletonDark,
+  Fig5SkeletonLight,
+  Fig5SkeletonDark,
+  Fig6SkeletonLight,
+  Fig6SkeletonDark,
+} from "./images";
 
 ## Introduction
 
@@ -57,14 +65,14 @@ Use the rectangle variant as a placeholder for any other components. This includ
 Use skeleton variants as a placeholder for when a full page or individual components are loading. Don't nest skeletons. If a label or text is wrapped inside a component, for example in cards, only use the skeleton variant of the component that wraps the other components.
 
 <DoDontCaution
-  imageSrc={skeletonFig1}
+  imageSrc={[Fig1SkeletonLight, Fig1SkeletonDark]}
   imageAlt="An image which shows the card component and the rectangle skeleton variant used to replace the full card width and height while it’s loading."
   state="good"
   caption="Use skeletons to outline the whole component."
 />
 
 <DoDontCaution
-  imageSrc={skeletonFig2}
+  imageSrc={[Fig2SkeletonLight, Fig2SkeletonDark]}
   imageAlt="An image showing a card component’s skeleton state including text skeleton variants used within another rectangle skeleton variant."
   state="bad"
   caption="Don't use skeletons within skeletons."
@@ -78,13 +86,13 @@ When using the text variant, set the skeleton’s height to match the text style
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={skeletonFig3}
+    imageSrc={[Fig3SkeletonLight, Fig3SkeletonDark]}
     imageAlt="A graphic of a list of text styles side by side with the correct text variant height."
     state="good"
     caption="Use the correct text style to match the size of the text."
   />
   <DoDontCaution
-    imageSrc={skeletonFig4}
+    imageSrc={[Fig4SkeletonLight, Fig4SkeletonDark]}
     imageAlt="A graphic of a list of different text styles side by side with a list of skeleton components of the same height."
     state="bad"
     caption="Don't use the same skeleton size for different text sizes."
@@ -94,14 +102,14 @@ When using the text variant, set the skeleton’s height to match the text style
 Don't replace large bodies of texts with one single large text skeleton. Replace each line with a separate text skeleton.
 
 <DoDontCaution
-  imageSrc={skeletonFig5}
+  imageSrc={[Fig5SkeletonLight, Fig5SkeletonDark]}
   imageAlt="An image showing multiple lines of text being replaced by multiple text skeleton components for each line of text."
   state="good"
   caption="Use a separate text skeleton component for each line."
 />
 
 <DoDontCaution
-  imageSrc={skeletonFig6}
+  imageSrc={[Fig6SkeletonLight, Fig6SkeletonDark]}
   imageAlt="An image showing multiple lines of text being incorrectly replaced by one large custom text skeleton."
   state="bad"
   caption="Don't scale the text skeleton to the full height of a body of text."

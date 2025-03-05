@@ -22,16 +22,28 @@ tabs:
 ---
 
 import { IcRadioGroup, IcRadioOption } from "@ukic/react";
-import radioFig1 from "./images/fig-1-do-not-use-a-radio-button-group-to-allow-multiple-selected-options-from-a-list.png";
-import radioFig2 from "./images/fig-2-use-a-checkbox-group-to-allow-multiple-sections-from-a-list.png";
-import radioFig3 from "./images/fig-3-do-not-use-radio-buttons-to-turn-something-on-or-off.png";
-import radioFig4 from "./images/fig-4-use-a-switch-to-toggle-something-on-or-off.png";
-import radioFig5 from "./images/fig-5-always-display-radio-buttons-as-a-stack-when-there-are-more-than-two-options.png";
-import radioFig6 from "./images/fig-6-do-not-display-radio-groups-with-more-than-two-options-in-a-row.png";
-import radioFig7 from "./images/fig-7-display-radio-buttons-as-a-stack-or-in-a-row-when-radio-groups-have-two-options.png";
-import radioFig8 from "./images/fig-8-when-there-is-an-issue-show-an-error-message-next-to-the-entire-radio-group.png";
-import radioFig9 from "./images/fig-9-error-validation-shown-correctly-on-the-field-causing-the-error.png";
-import radioFig10 from "./images/fig-10-only-display-the-error-on-the-field-causing-it.png";
+import {
+  Fig10RadioDark,
+  Fig10RadioLight,
+  Fig1RadioDark,
+  Fig1RadioLight,
+  Fig2RadioDark,
+  Fig2RadioLight,
+  Fig3RadioDark,
+  Fig3RadioLight,
+  Fig4RadioDark,
+  Fig4RadioLight,
+  Fig5RadioDark,
+  Fig5RadioLight,
+  Fig6RadioDark,
+  Fig6RadioLight,
+  Fig7RadioDark,
+  Fig7RadioLight,
+  Fig8RadioDark,
+  Fig8RadioLight,
+  Fig9RadioDark,
+  Fig9RadioLight,
+} from "./images";
 
 ## Introduction
 
@@ -67,13 +79,13 @@ Don’t use radio buttons when the user can select multiple options from the lis
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={radioFig1}
+    imageSrc={[Fig1RadioLight, Fig1RadioDark]}
     imageAlt="A radio button group titled ‘What are your favourite coffees?’ with two out of six radio buttons showing as selected."
     state="bad"
     caption="Don’t use a radio button group to allow multiple selected options from a list."
   />
   <DoDontCaution
-    imageSrc={radioFig2}
+    imageSrc={[Fig2RadioLight, Fig2RadioDark]}
     imageAlt="A checkbox group titled ‘What are your favourite coffees?’ with two out of six checkboxes selected."
     state="good"
     caption="Use a checkbox group to allow multiple sections from a list."
@@ -84,13 +96,13 @@ Don’t use radio buttons to turn something on or off. Use a [switch](/component
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={radioFig3}
+    imageSrc={[Fig3RadioLight, Fig3RadioDark]}
     imageAlt="A two option radio button group with the label ‘Turn on the coffee machine?’ with options for ‘On’ and ‘Off’."
     state="bad"
     caption="Don’t use radio buttons to turn something on or off."
   />
   <DoDontCaution
-    imageSrc={radioFig4}
+    imageSrc={[Fig4RadioLight, Fig4RadioDark]}
     imageAlt="Two switches under the heading 'equipment'. One switch is toggled on whilst the other is off."
     state="good"
     caption="Use a switch to toggle something on or off."
@@ -113,7 +125,7 @@ Stack radio buttons when there are more than two options.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={radioFig5}
+    imageSrc={[Fig5RadioLight, Fig5RadioDark]}
     imageAlt="A radio button group titled ‘What milk would you like?’ with three radio buttons for ‘dairy’, ‘soya’ and ‘nut’ stacked vertically."
     state="good"
     caption="Always display radio buttons as a stack when there are more than two options."
@@ -122,7 +134,7 @@ Stack radio buttons when there are more than two options.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={radioFig6}
+    imageSrc={[Fig6RadioLight, Fig6RadioDark]}
     imageAlt="A radio button group asking ‘What milk would you like?’ and showing three options for ‘Dairy’, ‘Soya’  and ‘Nut’ displayed in a row."
     state="bad"
     caption="Don’t display radio button groups with more than two options in a row."
@@ -133,7 +145,7 @@ If there are only two options, you can display them either stacked or in a row.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={radioFig7}
+    imageSrc={[Fig7RadioLight, Fig7RadioDark]}
     imageAlt="A radio button group asking ‘Would you like a coffee?’ with radio buttons for ‘Yes’ and ‘No’ displayed in a row. A second radio button group asking ‘What milk would you like?’ with radio buttons for ‘Dairy’ and ‘Soya’ displayed stacked."
     state="good"
     caption="Display radio buttons as a stack or in a row when radio button groups have two options."
@@ -148,7 +160,7 @@ A radio button input error is when the radio button group itself is responsible 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={radioFig8}
+    imageSrc={[Fig8RadioLight, Fig8RadioDark]}
     imageAlt="A radio button group displayed with no radio button selected with an error message reading ‘Please select an option’."
     state="good"
     caption="When there’s an issue show an error message next to the entire radio button group."
@@ -159,13 +171,13 @@ For errors on a radio button’s conditional field, the error is shown only on t
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={radioFig9}
+    imageSrc={[Fig9RadioLight, Fig9RadioDark]}
     imageAlt="A graphic showing a radio button group with four options and an error reading ‘Answer required’ displayed with an empty input field that is a conditional field of one of the radio buttons."
     state="good"
     caption="Error validation shown correctly on the field causing the error."
   />
   <DoDontCaution
-    imageSrc={radioFig10}
+    imageSrc={[Fig10RadioLight, Fig10RadioDark]}
     imageAlt="A graphic showing two error labels incorrectly applied to a radio button group. One error reading ‘Answer required’ is displayed with an empty input field that is the conditional field of a radio button. The other error, also reading ‘Answer required’ is displayed with the whole radio button group."
     state="bad"
     caption="Only display the error on the field causing it. Don’t display an error on the field as well as the radio group."

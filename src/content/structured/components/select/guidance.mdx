@@ -32,12 +32,20 @@ tags:
 ---
 
 import { IcSelect } from "@ukic/react";
-import selectFig1 from "./images/fig-1-use-radio-or-checkbox-groups-when-less-than-four-options-are-available2x.png";
-import selectFig2 from "./images/fig-2-dont-use-dropdowns-when-displaying-a-limited-number-of-options2x.png";
-import selectFig3 from "./images/fig-3-use-labels-to-indicate-the-title-of-the-field.png";
-import selectFig4 from "./images/fig-4-dont-replace-labels-with-placeholder-text.png";
-import selectFig5 from "./images/fig-5-use-a-standard-select-when-providing-less-than-ten-options.png";
-import selectFig6 from "./images/fig-6-do-not-use-the-searchable-variant-when-providing-less-than-ten-options.png";
+import {
+  Fig1SelectDark,
+  Fig1SelectLight,
+  Fig2SelectDark,
+  Fig2SelectLight,
+  Fig3SelectDark,
+  Fig3SelectLight,
+  Fig4SelectDark,
+  Fig4SelectLight,
+  Fig5SelectDark,
+  Fig5SelectLight,
+  Fig6SelectDark,
+  Fig6SelectLight,
+} from "./images";
 
 ## Component variants
 
@@ -96,13 +104,13 @@ When more than ten options are available, consider using the [searchable variant
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={selectFig1}
+    imageSrc={[Fig1SelectLight, Fig1SelectDark]}
     imageAlt="A graphic of a radio group labelled 'Single or double shot?' with two radio buttons labelled 'Single' and 'Double'."
     state="good"
     caption="Use radio or checkbox groups when less than four options are available."
   />
   <DoDontCaution
-    imageSrc={selectFig2}
+    imageSrc={[Fig2SelectLight, Fig2SelectDark]}
     imageAlt="A graphic of a select component labelled 'Single or double shot?' with two options 'Single' and 'Double' in the dropdown list."
     state="bad"
     caption="Don’t use select when displaying a limited number of options."
@@ -137,13 +145,13 @@ Labels should always be visible regardless of the state of the field and should 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={selectFig3}
+    imageSrc={[Fig3SelectLight, Fig3SelectDark]}
     imageAlt="A graphic of a select component with the label 'Coffee type' and placeholder text 'Select one'."
     state="good"
     caption="Use labels to indicate the title of the field."
   />
   <DoDontCaution
-    imageSrc={selectFig4}
+    imageSrc={[Fig4SelectLight, Fig4SelectDark]}
     imageAlt="A graphic of a select component with no label and the placeholder text 'Coffee type'."
     state="bad"
     caption="Don't replace labels with placeholder text."
@@ -194,13 +202,13 @@ Don’t use the searchable variant when providing less than ten options. The add
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={selectFig5}
+    imageSrc={[Fig5SelectLight, Fig5SelectDark]}
     imageAlt="A graphic of a select component with the label 'What’s your favourite type of coffee' and five options in the dropdown list."
     state="good"
     caption="Use a standard select when providing less than ten options."
   />
   <DoDontCaution
-    imageSrc={selectFig6}
+    imageSrc={[Fig6SelectLight, Fig6SelectDark]}
     imageAlt="A graphic of a select component with searchable functionality with the label 'What’s your favourite type of coffee' and five options in the dropdown list. Focus is on the input field rather than the dropdown list."
     state="bad"
     caption="Don’t use the searchable variant when providing less than ten options."
