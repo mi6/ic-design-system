@@ -42,7 +42,7 @@ jobs:
           node-version: 18
       - name: Build
         run: |
-          export ICDS_PREFIX=ic-design-system-githubpages/v3  
+          export ICDS_PREFIX=/ic-design-system-githubpages/v3  
           npm ci
           echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_DEV }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
