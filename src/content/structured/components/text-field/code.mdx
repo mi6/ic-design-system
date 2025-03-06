@@ -730,3 +730,157 @@ return (
     helperText="Such as Arabica, Robusta or Liberica"
   />
 </ComponentPreview>
+
+### Full width
+
+export const snippetsFullWidth = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-text-field  
+  label="What is your favourite coffee?" 
+  required="true" 
+  placeholder="Please enter…" 
+  helper-text="Such as Arabica, Robusta or Liberica" 
+  full-width="true"
+></ic-text-field>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTextField
+  label="What is your favourite coffee?" 
+  required 
+  placeholder="Please enter…" 
+  helperText="Such as Arabica, Robusta or Liberica"
+  fullWidth
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsFullWidth}>
+  <IcTextField
+    label="What is your favourite coffee?"
+    required
+    placeholder="Please enter…"
+    helperText="Such as Arabica, Robusta or Liberica"
+    fullWidth
+  />
+</ComponentPreview>
+
+### Custom width
+
+export const snippetsCustomWidth = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-text-field  
+  style="--input-width:25.25rem"
+  label="What is your favourite coffee?" 
+  required="true" 
+  placeholder="Please enter…" 
+  helper-text="Such as Arabica, Robusta or Liberica" 
+> </ic-text-field>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTextField
+  style={{ "--input-width": "25.25rem" }}
+  label="What is your favourite coffee?" 
+  required 
+  placeholder="Please enter…" 
+  helperText="Such as Arabica, Robusta or Liberica"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsCustomWidth}>
+  <IcTextField
+    style={{ "--input-width": "25.25rem" }}
+    label="What is your favourite coffee?"
+    required
+    placeholder="Please enter…"
+    helperText="Such as Arabica, Robusta or Liberica"
+  />
+</ComponentPreview>
