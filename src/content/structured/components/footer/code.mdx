@@ -19,9 +19,11 @@ tabs:
   ]
 ---
 
-import { IcFooter, IcLink, IcFooterLink, IcFooterLinkGroup } from "@ukic/react";
+import { IcFooter, IcFooterLink, IcFooterLinkGroup } from "@ukic/react";
 
 import { NavLink, MemoryRouter } from "react-router-dom";
+
+import LinkToNewWin from "../../../../components/LinkToNewWin";
 
 ## Component demo
 
@@ -595,7 +597,5 @@ return (
 ];
 
 <ComponentPreview snippets={footerLayoutExample}>
-  <IcLink href="/footer-layout" target="_blank">
-    View example in new window
-  </IcLink>
+  <LinkToNewWin href="/footer-layout" />
 </ComponentPreview>
