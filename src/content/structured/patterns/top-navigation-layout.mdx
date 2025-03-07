@@ -12,7 +12,7 @@ subTitle: "Use the top navigation layout to quickly set up a page where the top 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/navigation-patterns/top-navigation-layout.mdx"
 ---
 
-import { IcLink } from "@ukic/react";
+import LinkToNewWin from "../../../components/LinkToNewWin";
 
 import { createReactAppTsx } from "./components/StackblitzButton/stackblitz-helpers";
 
@@ -457,9 +457,7 @@ export const snippetsTopNav = [
     padding: "1rem",
   }}
 >
-  <IcLink href="/top-navigation-pattern" target="_blank">
-    View example in new window
-  </IcLink>
+  <LinkToNewWin href="/top-navigation-pattern" />
 </ComponentPreview>
 
 This pattern includes the components:
@@ -1098,9 +1096,7 @@ export const snippetsTopNavPageHeader = [
     padding: "1rem",
   }}
 >
-  <IcLink href="/top-navigation-page-header-pattern" target="_blank">
-    View example in new window
-  </IcLink>
+  <LinkToNewWin href="/top-navigation-page-header-pattern" />
 </ComponentPreview>
 
 ### Mega-menu
@@ -1587,9 +1583,7 @@ return (
     padding: "1rem",
   }}
 >
-  <IcLink href="/top-navigation-mega-menu-pattern" target="_blank">
-    View example in new window
-  </IcLink>
+  <LinkToNewWin href="/top-navigation-mega-menu-pattern" />
 </ComponentPreview>
 
 ### Back to top
@@ -2042,20 +2036,18 @@ export const snippetsTopNavBackToTop = [
     padding: "1rem",
   }}
 >
-  <IcLink href="/top-navigation-back-to-top-pattern" target="_blank">
-    View example in new window
-  </IcLink>
+  <LinkToNewWin href="/top-navigation-back-to-top-pattern" />
 </ComponentPreview>
 
 ## Customisation
 
-This pattern can be themed to change the look and feel of the app. Use the [custom theme](/get-started/install-components/custom-theme) guidance to change your app's theme. Make sure to select your theme in line with the accessibility requirements around colour contrast.
+This pattern can be branded to change the look and feel of the app. Use the [custom theme and branding](/get-started/development/custom-theme) guidance to change your app's brand. Make sure to select your brand in line with the accessibility requirements around colour contrast.
 
 <DoDontCaution
   imageSrc={[Fig1ThemingTopNavLight, Fig1ThemingTopNavDark]}
-  imageAlt="An example page showing the layout with an alternatively themed look."
+  imageAlt="An example page showing the layout with an alternatively branded look."
   state="none"
-  caption="An example of the top navigation layout themed to an alternative colour."
+  caption="An example of the top navigation layout branded to an alternative colour."
 />
 
 ## Accessibility considerations

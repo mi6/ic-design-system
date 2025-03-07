@@ -10,8 +10,8 @@ title: "Dark mode"
 subTitle: "Use the dark mode pattern to quickly implement theming into an application."
 ---
 
-import { IcLink } from "@ukic/react";
 import { createReactAppTsx } from "./components/StackblitzButton/stackblitz-helpers";
+import LinkToNewWin from "../../../components/LinkToNewWin";
 
 ## Introduction
 
@@ -329,9 +329,7 @@ export const snippetsTopNav = [
     padding: "1rem",
   }}
 >
-  <IcLink href="/dark-mode-pattern" target="_blank">
-    View example in new window
-  </IcLink>
+  <LinkToNewWin href="/dark-mode-pattern" />
 </ComponentPreview>
 
 This pattern includes the components:
@@ -341,7 +339,7 @@ This pattern includes the components:
 - [Alert](/components/alert)
 - [Typography](/components/typography)
 
-As well as the [theme wrapper](/get-started/install-components/custom-theme).
+As well as the [theme wrapper](/get-started/development/custom-theme).
 
 ## CSS color-scheme
 
