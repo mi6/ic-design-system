@@ -3,7 +3,7 @@ path: "/styles/typography"
 
 navPriority: 6
 
-date: "2022-11-15"
+date: "2025-03-11"
 
 title: "Typography"
 
@@ -11,6 +11,13 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 ---
 
 import TypographicScale from "./components/TypographicScale";
+import {
+  TypographyHeadings,
+  TypographyLabels,
+  TypographyLinks,
+  TypographySubtitles,
+  TypographyText,
+} from "./components/TypographicScale/typography.config";
 
 ## Using consistent typography
 
@@ -43,7 +50,7 @@ Write all headings in sentence case.
 
 Use the logical order of `h#` tags in code. For example, a `h3` heading needs to come after a `h2` heading but can be styled as any variant. It's important that [heading tags are used properly](/accessibility/coding/headings).
 
-<TypographicScale variants="h1, h2, h3, h4" />
+<TypographicScale config={TypographyHeadings} />
 
 ## Subtitles
 
@@ -51,22 +58,34 @@ Write all subtitles in sentence case.
 
 Use subtitles for sub-section headings and table headings.
 
-<TypographicScale variants="subtitle-large, subtitle-small" />
+<TypographicScale config={TypographySubtitles} />
 
 ## Text
 
 Write all body text in sentence case.
 
-Use a minimum of 16pt for body text. 18pt should be used for apps with a lot of text (like intranets or reports).
+Use a minimum of `1rem` for body text. `1.125rem` should be used for apps with a lot of text (like intranets or reports).
 
-<TypographicScale variants="body, caption, caption-uppercase" />
+<p>
+  Code snippets use the{" "}
+  <ic-link
+    target="_blank"
+    href="https://fonts.google.com/specimen/Source+Code+Pro"
+    rel="noreferrer noopener nofollow"
+  >
+    Source Code Pro
+  </ic-link>{" "}
+  font.
+</p>
+
+<TypographicScale config={TypographyText} />
 
 ## Labels
 
-<TypographicScale variants="label, label-uppercase" />
+<TypographicScale config={TypographyLabels} />
 
 ## Links
 
 If your link is at the end of a sentence or paragraph, make sure that the linked text does not include the full stop.
 
-<TypographicScale variants="link" />
+<TypographicScale config={TypographyLinks} />
