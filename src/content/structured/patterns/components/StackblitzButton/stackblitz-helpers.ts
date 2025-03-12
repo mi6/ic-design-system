@@ -242,6 +242,15 @@ export const createWebComponentsIndexHTML = (
 
   const formattedCodeSnippet = formatLines();
 
+  const fontsPackage =
+    `${designSystemPackageJson.dependencies["@ukic/fonts"]}`.slice(1);
+  const webCompsPackage =
+    `${designSystemPackageJson.dependencies["@ukic/web-components"]}`.slice(1);
+  const canaryWebCompsPackage =
+    `${designSystemPackageJson.dependencies["@ukic/canary-web-components"]}`.slice(
+      1
+    );
+
   return `<html lang="en">
   <head>
     <title>Home</title>
@@ -250,30 +259,30 @@ export const createWebComponentsIndexHTML = (
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://unpkg.com/@ukic/fonts/dist/fonts.css"
+      href="https://unpkg.com/@ukic/fonts@${fontsPackage}/dist/fonts.css"
       crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://unpkg.com/@ukic/web-components/dist/core/core.css"
+      href="https://unpkg.com/@ukic/web-components@${webCompsPackage}/dist/core/core.css"
       crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://unpkg.com/@ukic/web-components/dist/core/normalize.css"
+      href="https://unpkg.com/@ukic/web-components@${webCompsPackage}/dist/core/normalize.css"
       crossorigin="anonymous"
     />
   </head>
   ${styling}
     ${formattedCodeSnippet}
     <script defer>
-      import('https://unpkg.com/@ukic/web-components/loader').then((module) => {
+      import('https://unpkg.com/@ukic/web-components@${webCompsPackage}/loader').then((module) => {
         module.defineCustomElements();
       });${
         getCanaryWebComponentsImports()
-          ? `\n\t  import('https://unpkg.com/@ukic/canary-web-components/loader').then((module) => {
+          ? `\n\t  import('https://unpkg.com/@ukic/canary-web-components@${canaryWebCompsPackage}/loader').then((module) => {
         module.defineCustomElements();
       });`
           : ""
