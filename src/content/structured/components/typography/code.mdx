@@ -29,10 +29,18 @@ export const snippets = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-typography variant="h1"><h1>H1</h1></ic-typography>
-<ic-typography variant="h2"><h2>H2</h2></ic-typography>
-<ic-typography variant="h3"><h3>H3</h3></ic-typography>
-<ic-typography variant="h4"><h4>H4</h4></ic-typography>
+      short: `<ic-typography variant="h1">
+  <h1>H1</h1>
+</ic-typography>
+<ic-typography variant="h2">
+  <h2>H2</h2>
+</ic-typography>
+<ic-typography variant="h3">
+  <h3>H3</h3>
+</ic-typography>
+<ic-typography variant="h4">
+  <h4>H4</h4>
+</ic-typography>
 <ic-typography>Body</ic-typography>
 <ic-typography variant="subtitle-large">Subtitle large</ic-typography>
 <ic-typography variant="subtitle-small">Subtitle small</ic-typography>
@@ -49,10 +57,18 @@ export const snippets = [
   {
     technology: "React",
     snippets: {
-      short: `<IcTypography variant="h1">H1</IcTypography>
-<IcTypography variant="h2"><h2>H2</h2></IcTypography>
-<IcTypography variant="h3"><h3>H3</h3></IcTypography>
-<IcTypography variant="h4"><h4>H4</h4></IcTypography>
+      short: `<IcTypography variant="h1">
+  <h1>H1</h1>
+</IcTypography>
+<IcTypography variant="h2">
+  <h2>H2</h2>
+</IcTypography>
+<IcTypography variant="h3">
+  <h3>H3</h3>
+</IcTypography>
+<IcTypography variant="h4">
+  <h4>H4</h4>
+</IcTypography>
 <IcTypography>Body</IcTypography>
 <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
 <IcTypography variant="subtitle-small">Subtitle small</IcTypography>
@@ -84,16 +100,16 @@ export const snippets = [
 <ComponentPreview snippets={snippets}>
   <div>
     <IcTypography variant="h1">
-      <h1>H1</h1>
+      <h1 preview>H1</h1>
     </IcTypography>
     <IcTypography variant="h2">
-      <h2>H2</h2>
+      <h2 preview>H2</h2>
     </IcTypography>
     <IcTypography variant="h3">
-      <h3>H3</h3>
+      <h3 preview>H3</h3>
     </IcTypography>
     <IcTypography variant="h4">
-      <h4>H4</h4>
+      <h4 preview>H4</h4>
     </IcTypography>
     <IcTypography>Body</IcTypography>
     <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
@@ -160,7 +176,7 @@ export const spacingSnippets = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-typography apply-vertical-margins="true">
+      short: `<ic-typography apply-vertical-margins>
   <h5>H5 with margins applied</h5>
 </ic-typography>`,
       long: `{shortCode}`,
@@ -198,7 +214,7 @@ export const spacingRestyledSnippets = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-typography variant="h2" apply-vertical-margins="true">
+      short: `<ic-typography variant="h2" apply-vertical-margins>
   <h5>H5 with H2 styling and margins applied</h5>
 </ic-typography>`,
       long: `{shortCode}`,
@@ -305,20 +321,36 @@ export const additionalStylingSnippets = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-typography variant="h4" bold="true">Bold</ic-typography>
-<ic-typography variant="h4" italic="true">Italic</ic-typography>
-<ic-typography variant="h4" underline="true">Underline</ic-typography>
-<ic-typography variant="h4" strikethrough="true">Strikethrough</ic-typography>`,
+      short: `<ic-typography variant="h4" bold>
+  <h4>Bold</h4>
+</ic-typography>
+<ic-typography variant="h4" italic>
+  <h4>Italic</h4>
+</ic-typography>
+<ic-typography variant="h4" underline>
+  <h4>Underline</h4>
+</ic-typography>
+<ic-typography variant="h4" strikethrough>
+  <h4>Strikethrough</h4>
+</ic-typography>`,
       long: `{shortCode}`,
     },
   },
   {
     technology: "React",
     snippets: {
-      short: `<IcTypography variant="h4" bold>Bold</IcTypography>
-<IcTypography variant="h4" italic>Italic</IcTypography>
-<IcTypography variant="h4" underline>Underline</IcTypography>
-<IcTypography variant="h4" strikethrough>Strikethrough</IcTypography>`,
+      short: `<IcTypography variant="h4" bold>
+  <h4>Bold</h4>
+</IcTypography>
+<IcTypography variant="h4" italic>
+  <h4>Italic</h4>
+</IcTypography>
+<IcTypography variant="h4" underline>
+  <h4>Underline</h4>
+</IcTypography>
+<IcTypography variant="h4" strikethrough>
+  <h4>Strikethrough</h4>
+</IcTypography>`,
       long: [
         {
           language: "Typescript",
@@ -340,16 +372,16 @@ export const additionalStylingSnippets = [
 <ComponentPreview snippets={additionalStylingSnippets}>
   <div>
     <IcTypography variant="h4" bold>
-      <h4>Bold</h4>
+      <h4 preview>Bold</h4>
     </IcTypography>
     <IcTypography variant="h4" italic>
-      <h4>Italic</h4>
+      <h4 preview>Italic</h4>
     </IcTypography>
     <IcTypography variant="h4" underline>
-      <h4>Underline</h4>
+      <h4 preview>Underline</h4>
     </IcTypography>
     <IcTypography variant="h4" strikethrough>
-      <h4>Strikethrough</h4>
+      <h4 preview>Strikethrough</h4>
     </IcTypography>
   </div>
 </ComponentPreview>
