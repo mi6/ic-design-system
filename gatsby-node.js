@@ -4,7 +4,44 @@ const fs = require("fs");
 const prettier = require("prettier");
 // eslint-disable-next-line import/no-extraneous-dependencies
 const webpack = require("webpack");
+
+const componentJson = require("@ukic/docs");
+const canaryComponentJson = require("@ukic/canary-docs");
+
 const pagesConfig = require("./src/config");
+
+const manualPageGroupsRegex = pagesConfig.manualPageGroups.join("|");
+const mainQuery = `
+  fragment contents on Mdx {
+    id
+    fileAbsolutePath
+    body
+    rawBody
+    fields {
+      slug
+      navSection
+    }
+    frontmatter {
+      path
+      title
+      status
+      subTitle
+    }
+  }
+  query {
+    allMarkdown: allMdx(
+      sort: { order: DESC, fields: [frontmatter___date] }
+
+      filter: { fileAbsolutePath: { regex: "//content/(${manualPageGroupsRegex})//" } }
+    ) {
+      edges {
+        node {
+          ...contents
+        }
+      }
+    }
+  }
+`;
 
 const createPosts = ({ createPage, createRedirect, edges }) => {
   edges.forEach(({ node }) => {
@@ -64,35 +101,7 @@ const createArticles = ({ data, actions }) => {
 
 // eslint-disable-next-line consistent-return
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const manualPageGroupsRegex = pagesConfig.manualPageGroups.join("|");
-
-  const { data, errors } = await graphql(`
-    fragment contents on Mdx {
-      id
-      fileAbsolutePath
-      body
-      fields {
-        slug
-        navSection
-      }
-      frontmatter {
-        path
-      }
-    }
-    query {
-      allMarkdown: allMdx(
-        sort: { order: DESC, fields: [frontmatter___date] }
-
-        filter: { fileAbsolutePath: { regex: "//content/(${manualPageGroupsRegex})//" } }
-      ) {
-        edges {
-          node {
-            ...contents
-          }
-        }
-      }
-    }
-  `);
+  const { data, errors } = await graphql(mainQuery);
 
   // Handle errors
   if (errors) {
@@ -384,4 +393,124 @@ exports.sourceNodes = () => {
     outputFilePath,
     prettier.format(JSON.stringify(data), { parser: "json" })
   );
+};
+
+// See https://llmstxt.org/
+const createLlmsTxt = async ({ edges, reporter }) => {
+  let textString = `# ${pagesConfig.TITLE}
+
+> ${pagesConfig.META_DESCRIPTION}
+
+# Docs
+
+`;
+
+  edges.forEach(({ node }) => {
+    const pagePath = node.fields.slug;
+    if (!pagePath) {
+      return;
+    }
+
+    let nodeString = `- [${node.frontmatter.title}](${pagesConfig.siteUrl.slice(
+      0,
+      -1
+    )}${pagePath})`;
+    if (node.frontmatter.subTitle) {
+      nodeString += `: ${node.frontmatter.subTitle}`;
+    }
+
+    textString += `${nodeString}\n`;
+  });
+
+  const outputPath = path.join("public", "llms.txt");
+  fs.writeFileSync(outputPath, textString, "utf8");
+  reporter.info(`Wrote llms.txt`);
+};
+
+const createLlmsTxtFull = async ({ edges, reporter }) => {
+  let textString = "";
+
+  edges.forEach(({ node }) => {
+    const pagePath = node.fields.slug;
+    if (!pagePath) {
+      return;
+    }
+    let nodeMd = node.rawBody;
+
+    // Remove raw frontmatter
+    if (nodeMd.startsWith("---\n")) {
+      // eslint-disable-next-line prefer-destructuring
+      nodeMd = nodeMd.slice(2).split("---")[1];
+    }
+
+    let nodeString = `# ${node.frontmatter.title}
+
+URL: ${pagesConfig.siteUrl.slice(0, -1)}${pagePath}
+`;
+
+    if (node.frontmatter.status) {
+      nodeString += `Status: ${node.frontmatter.status}\n`;
+    }
+    if (node.frontmatter.subTitle) {
+      nodeString += `Subtitle: ${node.frontmatter.subTitle}\n`;
+    }
+
+    nodeString += nodeMd;
+
+    // Embed the component details data
+    nodeString = nodeString.replaceAll(
+      /<ComponentDetails component="([\w-]+)" (canary )?\/>/g,
+      (match, component, canary) => {
+        const componentDetailsJson = canary
+          ? canaryComponentJson
+          : componentJson;
+        const componentDetails = componentDetailsJson.components.find(
+          ({ tag }) => tag === component
+        );
+        if (!componentDetails) return;
+        const { props, slots, events, methods, styles, listeners } =
+          componentDetails;
+        const jsonText = JSON.stringify(
+          {
+            props,
+            slots,
+            styles,
+            events,
+            methods,
+            listeners,
+          },
+          null,
+          2
+        );
+        // eslint-disable-next-line consistent-return
+        return `${jsonText}\n`;
+      }
+    );
+    textString += `${nodeString}\n---\n\n`;
+  });
+
+  const outputPath = path.join("public", "llms-full.txt");
+  fs.writeFileSync(outputPath, textString, "utf8");
+  reporter.info(`Wrote llms-full.txt`);
+};
+
+// eslint-disable-next-line consistent-return
+exports.onPostBuild = async ({ graphql, reporter }) => {
+  const { data, errors } = await graphql(mainQuery);
+
+  // Handle errors
+  if (errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return Promise.reject(errors);
+  }
+
+  const { allMarkdown } = data;
+
+  if (!allMarkdown.edges.length) {
+    throw new Error("There are no articles");
+  }
+  const { edges } = allMarkdown;
+
+  await createLlmsTxt({ edges, reporter });
+  await createLlmsTxtFull({ edges, reporter });
 };
