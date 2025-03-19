@@ -8,16 +8,19 @@ const { slug } = require("github-slugger");
 
 interface WrappedH2Props {
   children: string;
+  preview?: boolean;
 }
 
-const WrappedH2: React.FC<WrappedH2Props> = ({ children }) => (
-  <ic-typography variant="h2" apply-vertical-margins data-class="h2">
-    {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
-    <h3 id={slug(children)}>
-      {children}
-      <Permalink title={children} sluggedTitle={slug(children)} />
-    </h3>
-  </ic-typography>
-);
+const WrappedH2: React.FC<WrappedH2Props> = ({ children, preview }) =>
+  preview ? (
+    <h2>{children}</h2>
+  ) : (
+    <ic-typography variant="h2" apply-vertical-margins data-class="h2">
+      <h3 id={slug(children)}>
+        {children}
+        <Permalink title={children} sluggedTitle={slug(children)} />
+      </h3>
+    </ic-typography>
+  );
 
 export default WrappedH2;

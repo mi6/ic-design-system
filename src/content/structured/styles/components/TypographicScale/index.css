@@ -9,8 +9,7 @@ ic-button[data-class="additional-padding"] {
   margin-bottom: var(--ic-space-xs);
 }
 
-.caption {
-  opacity: 1;
+.ic-typography-caption {
   margin-bottom: 0.375rem;
 }
 
