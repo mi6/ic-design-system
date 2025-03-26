@@ -1,0 +1,65 @@
+---
+path: "/components/skip-link/accessibility"
+
+date: "2024-04-15"
+
+title: "Skip link"
+
+status: "BETA"
+
+subTitle: "Skip links are used to bypass repetitive blocks of content and interface and go directly to the main content of a page."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/skip-link"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/skip-link" },
+    { title: "Code", path: "/components/skip-link/code" },
+    { title: "Accessibility", path: "/components/skip-link/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+Skip links use the semantic `<a>` HTML element (anchor element) with an `href` attribute to create a hyperlink to another element on the page.
+
+The skip link targets an element or landmark on the page in order to move focus to the top of the target content and not require keyboard users to tab through all other navigational components.
+
+### Keyboard navigation
+
+Skip links are visually hidden by default. They temporarily appear when they are tabbed to, using the **Tab** key. Skip links are activated using the **Enter** key or by mouse click.
+
+## For Assistive Technology
+
+Most screen readers will announce "link" alongside a skip link's label. For example, using Voiceover on Mac, a skip link labelled "Skip to main content" will be read out as "Skip to main content, link".
+
+## Based on
+
+The skip link component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Bypass Blocks (Level A)
+    </ic-link>
+    , W3C, published on, accessed January 2025.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#accessibility"
+      rel="noreferrer noopener nofollow"
+    >
+      The Anchor element
+    </ic-link>
+    , Mozilla, accessed April 2025.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

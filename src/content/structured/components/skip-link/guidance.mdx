@@ -1,0 +1,96 @@
+---
+path: "/components/skip-link"
+
+navPriority: 32
+
+date: "2025-03-13"
+
+title: "Skip link"
+
+status: "BETA"
+
+subTitle: "Skip links are used to bypass repetitive blocks of content and interface and go directly to the main content of a page."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/skip-link"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/skip-link" },
+    { title: "Code", path: "/components/skip-link/code" },
+    { title: "Accessibility", path: "/components/skip-link/accessibility" },
+  ]
+---
+
+import {
+  Fig1DefaultVariantLight,
+  Fig1DefaultVariantDark,
+  Fig2InlineVariantLight,
+  Fig2InlineVariantDark,
+  Fig3NoHeaderContentLight,
+  Fig3NoHeaderContentDark,
+} from "./images";
+
+## Introduction
+
+<ComponentPreview>
+  <ic-typography>
+    To view the skip link component, tab to this component preview, or click
+    inside this component preview and press the Tab key.
+  </ic-typography>
+  {/* insert skip link here */}
+</ComponentPreview>
+
+## Component variants
+
+There are two variants of the skip link component:
+
+- Default
+- Inline
+
+## When to use
+
+### Default
+
+Use the default skip link to bypass repetitive blocks of content and interface, such as page headers and top navigation, and go directly to the main content of a page.
+
+The first focusable element on a page should be a skip link that, on activation, sets focus on the main content on the page.
+
+<DoDontCaution
+  imageSrc={[Fig1DefaultVariantLight, Fig1DefaultVariantDark]}
+  imageAlt="A skip link component appearing as the first item in a tree view"
+  state="good"
+  caption="Use the default variant to skip to the main content of a page."
+/>
+
+### Inline
+
+Use the inline variant when you are nesting skip link in a navigational component like [tree view](/components/tree-view).
+
+<DoDontCaution
+  imageSrc={[Fig2InlineVariantLight, Fig2InlineVariantDark]}
+  imageAlt="A skip link component appearing as the first item in a tree view"
+  state="good"
+  caption="Use the inline variant to nest skip link in a tree view navigational component."
+/>
+
+## Interaction behaviour
+
+Skip links temporarily appear when they are tabbed to. They are visually hidden when they are no longer in focus. They are activated using the **Enter** key or by mouse click. On activation, a skip link should set focus on a targeted content area, for example a `<main>` element.
+
+Avoid setting focus to the top of the body because users will have to navigate through the header and navigation.
+
+## When not to use
+
+Avoid using a skip link when a page has no navigation or repetitive blocks of content.
+
+<DoDontCaution
+  imageSrc={[Fig3NoHeaderContentLight, Fig3NoHeaderContentDark]}
+  imageAlt="A skip link component appearing in a page with no navigation"
+  state="bad"
+  caption="Don't use a skip link when there are no repetitive blocks of content or interface that need to be bypassed."
+/>
+
+## Related components
+
+- [Back to Top](/components/back-to-top)
+- [Link](/components/link)
