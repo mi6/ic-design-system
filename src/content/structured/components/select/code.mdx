@@ -1,7 +1,7 @@
 ---
 path: "/components/select/code"
 
-date: "2024-07-02"
+date: "2025-03-24"
 
 title: "Select"
 
@@ -19,6 +19,7 @@ tabs:
   ]
 ---
 
+import { useEffect, useRef } from "react";
 import { IcSelect } from "@ukic/react";
 
 ## Component demo
@@ -1495,7 +1496,7 @@ export const SearchableSelectExample = () => (
   <SearchableSelectExample />
 </ComponentPreview>
 
-### Searchable &ndash; with descriptions included in search
+### Searchable - with descriptions included in search
 
 export const snippetsSearchableWithDescriptions = [
   {
@@ -1640,7 +1641,7 @@ export const SearchableSelectWithDescriptionsExample = () => (
   <SearchableSelectWithDescriptionsExample />
 </ComponentPreview>
 
-### Searchable &ndash; with group titles included in search
+### Searchable - with group titles included in search
 
 export const snippetsSearchableWithGroups = [
   {
@@ -1912,7 +1913,7 @@ return (
   />
 </ComponentPreview>
 
-### Multi-select &ndash; Read-only
+### Multi-select - Read-only
 
 Make the multi-select read-only by using the `readonly` prop.
 Use the `value` prop to set which options are selected and will be displayed when it is read-only.
@@ -2015,27 +2016,37 @@ return (
   },
 ];
 
+export const ReadonlyMulti = () => {
+  const readonlyMultiSelectEl = useRef(null);
+  useEffect(() => {
+    readonlyMultiSelectEl.current.setAttribute("readonly", "true");
+  }, []);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <IcSelect
+        label="What are your favourite types of coffee?"
+        multiple
+        options={[
+          { label: "Cappuccino", value: "Cap" },
+          { label: "Latte", value: "Lat" },
+          { label: "Americano", value: "Ame" },
+          { label: "Filter", value: "Fil" },
+          { label: "Flat white", value: "Fla" },
+          { label: "Mocha", value: "Moc" },
+          { label: "Macchiato", value: "Mac" },
+        ]}
+        value={["Cap", "Fla", "Moc"]}
+        ref={readonlyMultiSelectEl}
+      />
+    </div>
+  );
+};
+
 <ComponentPreview snippets={read}>
-  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelect
-      label="What are your favourite types of coffee?"
-      multiple
-      readonly
-      options={[
-        { label: "Cappuccino", value: "Cap" },
-        { label: "Latte", value: "Lat" },
-        { label: "Americano", value: "Ame" },
-        { label: "Filter", value: "Fil" },
-        { label: "Flat white", value: "Fla" },
-        { label: "Mocha", value: "Moc" },
-        { label: "Macchiato", value: "Mac" },
-      ]}
-      value={["Cap", "Fla", "Moc"]}
-    />
-  </div>
+  <ReadonlyMulti />
 </ComponentPreview>
 
-### Multi-select &ndash; Groups
+### Multi-select - Groups
 
 Display options in groups by passing an array of child options to the `children` property of a parent option.
 The parent option will be rendered as the title of the group.
@@ -2180,7 +2191,7 @@ return (
   </div>
 </ComponentPreview>
 
-### Multi-select &ndash; Disabled options
+### Multi-select - Disabled options
 
 Disable certain options by setting the `disabled` property to `true` for each option.
 
