@@ -1,5 +1,5 @@
-export { default as Fig1TopNavLight } from "./fig-1-dont-use-both-top-and-side-navigation.png";
-export { default as Fig1TopNavDark } from "./fig-1-dont-use-both-top-and-side-navigation-dark.png";
+export { default as Fig1TopNavLight } from "./fig-1-dont-use-both-side-and-top-navigation.png";
+export { default as Fig1TopNavDark } from "./fig-1-dont-use-both-side-and-top-navigation-dark.png";
 export { default as Fig2TopNavLight } from "./fig-2-show-status-version-and-secondary-links.png";
 export { default as Fig2TopNavDark } from "./fig-2-show-status-version-and-secondary-links-dark.png";
 export { default as Fig3TopNavLight } from "./fig-3-top-nav-with-megamenu.png";
