@@ -1,4 +1,4 @@
-export { default as Fig1ButtonsLight } from "./fig-1-use-buttons-to-complete-actions-on-the-page-such-as-adding-or-deleting-an-item-confirming-or-closing-a-dialog-or-as-a-tool-in-a-toolbar.png";
+export { default as Fig1ButtonsLight } from "./fig-1-use-buttons-to-complete-actions-on-the-page.png";
 export { default as Fig1ButtonsDark } from "./fig-1-use-buttons-to-complete-actions-on-the-page-dark.png";
 export { default as Fig2ButtonsLight } from "./fig-2-do-not-use-buttons-to-navigate-users-to-a-new-page.png";
 export { default as Fig2ButtonsDark } from "./fig-2-do-not-use-buttons-to-navigate-users-to-a-new-page-dark.png";
@@ -12,7 +12,7 @@ export { default as Fig6ButtonsLight } from "./fig-6-do-not-mix-different-sized-
 export { default as Fig6ButtonsDark } from "./fig-6-do-not-mix-different-sized-components-dark.png";
 export { default as Fig7ButtonsLight } from "./fig-7-use-large-buttons-for-standalone-higher-priority-actions.png";
 export { default as Fig7ButtonsDark } from "./fig-7-use-large-buttons-for-standalone-higher-priority-actions-dark.png";
-export { default as Fig8ButtonsLight } from "./fig-8-use-a-primary-button-for-the-most-important-action-or-when-you-want-to-influence-an-action.png";
+export { default as Fig8ButtonsLight } from "./fig-8-use-a-primary-button-for-the-most-important-action-or-to-influence-an-action.png";
 export { default as Fig8ButtonsDark } from "./fig-8-use-a-primary-button-for-the-most-important-action-or-to-influence-an-action-dark.png";
 export { default as Fig9ButtonsLight } from "./fig-9-two-primary-buttons-make-it-less-clear-what-the-expected-action-is.png";
 export { default as Fig9ButtonsDark } from "./fig-9-two-primary-buttons-make-it-less-clear-what-the-expected-action-is-dark.png";
