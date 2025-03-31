@@ -2325,7 +2325,6 @@ export const customFiltering = [
   debounce="300"
   disable-auto-filtering="true"
   id="external-filter-select"
-  characters-until-suggestions="2"
 ></ic-select>`,
       long: `{shortCode}
 <script>
@@ -2348,11 +2347,12 @@ export const customFiltering = [
   select.addEventListener("icOptionSelect", function (event) {
     selectedValue = event.detail.value;
   });
-  select.addEventListener("icChange", function (event) {
+  select.addEventListener("icInput", function (event) {
     const value = event.detail.value;
     console.log(value);
     if (value !== selectedValue) {
       if (value && value.length > 1) {
+        select.loading = true;
         mockAPI = (query) => {
           filteredResults = mockData.filter((item) =>
             item.label.toLowerCase().includes(query.toLowerCase())
@@ -2362,6 +2362,7 @@ export const customFiltering = [
           );
         };
         mockAPI(value).then((results) => {
+          select.loading = false;
           select.options = results;
         });
       } else {
@@ -2384,7 +2385,8 @@ export const customFiltering = [
    options={results} 
    onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
    onIcClear={() => setResults([])}
-   onIcChange={changeHandler}
+   onIcInput={inputHandler}
+   loading={loading}
 />`,
       long: [
         {
@@ -2400,13 +2402,15 @@ export const customFiltering = [
   { label: "Mocha", value: "Moc" },
   { label: "Macchiato", value: "Mac" },
 ];
+const [loading, setLoading] = useState(false);
 const [results, setResults] = useState([]);
 const [selectedValue, setSelectedValue] = useState("");
-const changeHandler = (event) => {
+const inputHandler = (event) => {
   const newValue = event.detail.value;
   console.log(newValue);
   if (newValue !== selectedValue) {
     if (newValue && newValue.length > 1) {
+      setLoading(true);
       const mockAPI = (query) => {
         const filteredResults = mockData.filter((item) => 
           item.label.toLowerCase().includes(query.toLowerCase()));
@@ -2414,7 +2418,10 @@ const changeHandler = (event) => {
           setTimeout(() => resolve(filteredResults), 1000)
         });
       };
-      mockAPI(newValue).then((results) => setResults(results));
+      mockAPI(newValue).then((newResults) => { 
+        setLoading(false);
+        setResults(newResults);
+      });
     } else {
       setResults([]);
     }
@@ -2439,13 +2446,15 @@ return(
   { label: "Mocha", value: "Moc" },
   { label: "Macchiato", value: "Mac" },
 ];
+const [loading, setLoading] = useState(false);
 const [results, setResults] = useState([]);
 const [selectedValue, setSelectedValue] = useState("");
-const changeHandler = (event) => {
+const inputHandler = (event) => {
   const newValue = event.detail.value;
   console.log(newValue);
   if (newValue !== selectedValue) {
     if (newValue && newValue.length > 1) {
+      setLoading(true);
       const mockAPI = (query) => {
         const filteredResults = mockData.filter((item) => 
           item.label.toLowerCase().includes(query.toLowerCase()));
@@ -2453,7 +2462,10 @@ const changeHandler = (event) => {
           setTimeout(() => resolve(filteredResults), 1000)
         });
       };
-      mockAPI(newValue).then((results) => setResults(results));
+      mockAPI(newValue).then((newResults) => { 
+        setLoading(false);
+        setResults(newResults);
+      });
     } else {
       setResults([]);
     }
@@ -2482,13 +2494,15 @@ export const CustomFilterExample = () => {
     { label: "Mocha", value: "Moc" },
     { label: "Macchiato", value: "Mac" },
   ];
+  const [loading, setLoading] = React.useState(false);
   const [results, setResults] = React.useState([]);
   const [selectedValue, setSelectedValue] = React.useState("");
-  const changeHandler = (event) => {
+  const inputHandler = (event) => {
     const newValue = event.detail.value;
     console.log(newValue);
     if (newValue !== selectedValue) {
       if (newValue && newValue.length > 1) {
+        setLoading(true);
         const mockAPI = (query) => {
           const filteredResults = mockData.filter((item) =>
             item.label.toLowerCase().includes(query.toLowerCase())
@@ -2497,7 +2511,10 @@ export const CustomFilterExample = () => {
             setTimeout(() => resolve(filteredResults), 1000);
           });
         };
-        mockAPI(newValue).then((newResults) => setResults(newResults));
+        mockAPI(newValue).then((newResults) => {
+          setLoading(false);
+          setResults(newResults);
+        });
       } else {
         setResults([]);
       }
@@ -2505,7 +2522,7 @@ export const CustomFilterExample = () => {
   };
   return (
     <IcSelect
-      placeholder="Select an option…"
+      placeholder="Select an option..."
       label="What is your favourite coffee?"
       debounce="300"
       searchable
@@ -2513,7 +2530,8 @@ export const CustomFilterExample = () => {
       options={results}
       onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
       onIcClear={() => setResults([])}
-      onIcChange={changeHandler}
+      onIcInput={inputHandler}
+      loading={loading}
     />
   );
 };
