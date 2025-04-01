@@ -94,6 +94,7 @@ Given a directory, it will scan over files and find any relevant ICDS components
 - The `max-length/maxLength` prop has been removed. Instead, use the `max-characters/maxCharacters` prop and the `hide-char-count/hideCharCount` prop to hide the character count visually.
 - The `small` prop has been removed. Please use `size="small"` instead.
 - The `size=”default”` prop has been removed. Please use `size="medium"` instead.
+- The `button-props/buttonProps` prop has been removed from the `ic-dialog` (`IcDialog`) component and replaced with the `dialog-controls` slot.
 
 ### 4. Class name changes
 
@@ -113,6 +114,8 @@ Given a directory, it will scan over files and find any relevant ICDS components
 - The `ic-toast` (`IcToast`) component now shows a dismiss button when the toast is hovered over or focused.
 - The shadow DOM has been removed from `ic-radio` (`IcRadio`) and may affect current tests.
 - `ic-multi-select` (`IcMultiSelect`) is no longer a standalone component. The multi-select functionality can now be achieved using the `ic-select` (`IcSelect`) component and its `multiple` prop.
+- The `ic-select` (`IcSelect`) component's searchable variant now clears the input field when it loses focus if the value does not match any of the items in the list of options.
+- The `ic-select` (`IcSelect`) component's `onIcChange/icChange` event is no longer emitted on each keystroke or controlled by the `debounce` prop. The `onIcInput/icInput` event should be used for handling changes based on keystrokes and is controlled by the `debounce` prop.
 
 ```tsx
 // v2
