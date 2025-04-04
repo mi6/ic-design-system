@@ -47,6 +47,9 @@ import {
   LOADING_DATA,
   TRUNCATION_COLUMNS,
   TRUNCATION_DATA,
+  COLS_WIDTH,
+  DATA_WITH_DESCRIPTIONS,
+  DATA_WITH_EMPTY_VALUES,
 } from "./story-data";
 
 ## Component demo
@@ -4699,6 +4702,8 @@ export const snippetsTextWrap = [
       coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
     },
   ];
+  dataTable.columns = columns;
+  dataTable.data = data;
   dataTable.globalRowHeight = 40;
 </script>`,
     },
@@ -4801,5 +4806,518 @@ return (
     columns={TRUNCATION_COLUMNS}
     data={TRUNCATION_DATA}
     globalRowHeight={40}
+  />
+</ComponentPreview>
+
+### Columns widths and table sizing
+
+export const snippetsColumnWidths = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Columns widths and table sizing" table-layout="auto" width="800px"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: "15%",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+    columnWidth: "300px",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+    columnWidth: {
+      maxWidth: "100px",
+    },
+  },
+  ];
+  const data = [
+    {
+    firstName: "Joe",
+    coffeeOrder: "Latte",
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: 2,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Columns widths and table sizing" columns={columns} data={data} width="800px" tableLayout="auto"/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+    {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: "15%",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+    columnWidth: "300px",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+    columnWidth: {
+      maxWidth: "100px",
+    },
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: "Latte",
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: 2,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: "15%",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+    columnWidth: "300px",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+    columnWidth: {
+      maxWidth: "100px",
+    },
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: "Latte",
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: 2,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsColumnWidths}>
+  <IcDataTable
+    caption="Columns widths and table sizing"
+    columns={COLS_WIDTH}
+    data={DATA}
+    width="800px"
+    tableLayout="auto"
+  />
+</ComponentPreview>
+
+### Description and icons within cells
+
+export const snippetsDescriptionAndIcons = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Description and icons within cells" table-layout="auto"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+  ];
+  const data = [
+    {
+    firstName: "Joe",
+    coffeeOrder: {
+      data: "Latte",
+      description: {
+        data: "A latte is a coffee drink made with espresso and steamed milk.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 1,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: {
+      data: "Mocha",
+      description: {
+        data: "A mocha is a chocolate-flavoured variant of a caffè latte.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      }
+    },
+    quantity: 6,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: {
+      data: "Espresso",
+      description: {
+        data: "An espresso is a concentrated form of coffee served in small, strong shots.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      }
+    },
+    quantity: 2,
+  },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Description and icons within cells" columns={columns} data={data} tableLayout="auto"/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: {
+      data: "Latte",
+      description: {
+        data: "A latte is a coffee drink made with espresso and steamed milk.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 1,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: {
+      data: "Mocha",
+      description: {
+        data: "A mocha is a chocolate-flavoured variant of a caffè latte.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 6,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: {
+      data: "Espresso",
+      description: {
+        data: "An espresso is a concentrated form of coffee served in small, strong shots.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 2,
+  },
+  ];
+return (
+{shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+{
+key: "firstName",
+title: "First name",
+dataType: "string",
+},
+{
+key: "coffeeOrder",
+title: "Coffee order",
+dataType: "string",
+},
+{
+key: "quantity",
+title: "Quantity",
+dataType: "number",
+},
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: {
+      data: "Latte",
+      description: {
+        data: "A latte is a coffee drink made with espresso and steamed milk.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 1,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: {
+      data: "Mocha",
+      description: {
+        data: "A mocha is a chocolate-flavoured variant of a caffè latte.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 6,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: {
+      data: "Espresso",
+      description: {
+        data: "An espresso is a concentrated form of coffee served in small, strong shots.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 2,
+  },
+];
+return (
+{shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDescriptionAndIcons}>
+  <IcDataTable
+    caption="Description and icons within cells"
+    columns={COLUMNS}
+    data={DATA_WITH_DESCRIPTIONS}
+    tableLayout="auto"
+  />
+</ComponentPreview>
+
+### Missing cell data
+
+export const snippetsMissingCellData = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Missing cell data"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+  ];
+  const data = [
+    {
+    firstName: "Joe",
+    coffeeOrder: null,
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: undefined,
+  },
+  {
+    firstName: "",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Missing cell data" columns={columns} data={data} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: null,
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: undefined,
+  },
+  {
+    firstName: "",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: null,
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: undefined,
+  },
+  {
+    firstName: "",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsMissingCellData}>
+  <IcDataTable
+    caption="Missing cell data"
+    columns={COLUMNS}
+    data={DATA_WITH_EMPTY_VALUES}
   />
 </ComponentPreview>
