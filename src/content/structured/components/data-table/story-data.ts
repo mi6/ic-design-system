@@ -461,3 +461,142 @@ export const TRUNCATION_DATA = [
     jobTitle: "Team lead",
   },
 ];
+
+export const COLS_WIDTH = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: "15%",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+    columnWidth: "300px",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      maxWidth: "100px",
+    },
+  },
+];
+
+export const COLS_DESCRIPTIONS = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+];
+
+export const DATA_WITH_DESCRIPTIONS = [
+  {
+    firstName: {
+      data: "Joe",
+      description: {
+        data: "The name of Joe",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+  },
+  {
+    firstName: {
+      data: "Sarah",
+      description: {
+        data: "The name of Sarah",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: {
+      data: "Mark",
+      description: {
+        data: "The name of Mark",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+  },
+  {
+    firstName: {
+      data: "Naomi",
+      description: {
+        data: "The name of Naomi",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Analyst",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: {
+      data: 18,
+      description: {
+        data: "The age of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    jobTitle: {
+      data: "Junior Developer",
+      description: {
+        data: "The job title of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+  },
+];
+
+export const DATA_WITH_EMPTY_VALUES = [
+  {
+    firstName: "Nigel",
+    lastName: null,
+    age: 62,
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: undefined,
+  },
+  {
+    firstName: "",
+    lastName: "Owens",
+    age: 45,
+  },
+];
