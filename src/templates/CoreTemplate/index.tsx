@@ -21,6 +21,7 @@ import WrappedH4 from "../../components/WrappedH4";
 import WrappedLi from "../../components/WrappedLi";
 import WrappedLink from "../../components/WrappedLink";
 import WrappedP from "../../components/WrappedP";
+import ThemedVideo from "../../components/ThemedVideo";
 import PageMetadataContext from "../../context/PageMetadata";
 
 const { MDXProvider } = require("@mdx-js/react");
@@ -53,6 +54,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
     blockquote: WrappedBlockquote,
     DoDontCaution,
     DoubleDoDontCaution,
+    ThemedVideo
   };
 
   const pageTitleValue = useMemo(
