@@ -4,26 +4,26 @@
 
 # Docs
 
-- [Talking about disability and needs](https://design.sis.gov.uk/accessibility/introduction/discussing): How to talk about disability and needs.
 - [Accessibility](https://design.sis.gov.uk/accessibility): This section introduces accessibility and how to design, build and test for accessible apps and services.
+- [Talking about disability and needs](https://design.sis.gov.uk/accessibility/introduction/discussing): How to talk about disability and needs.
 - [Alt text](https://design.sis.gov.uk/accessibility/coding/alt-text): Follow our accessibility tips for alt text.
-- [Accessibility Statement guidance](https://design.sis.gov.uk/accessibility/documenting/accessibility-statements-guidance): How to fill out and maintain an Accessibility Statement.
 - [Accessibility Statements](https://design.sis.gov.uk/accessibility/documenting/accessibility-statements): Accessibility Statements are simple but important documents that are useful to everyone.
-- [Accessibility Conformance Report](https://design.sis.gov.uk/accessibility/documenting/conformance-report): An Accessibility Conformance Report is used for accurate and consistent reporting of accessibility status in apps and services.
-- [Documenting accessibility](https://design.sis.gov.uk/accessibility/documenting): This section tells you how to document how accessible your app or service is.
+- [Accessibility Statement guidance](https://design.sis.gov.uk/accessibility/documenting/accessibility-statements-guidance): How to fill out and maintain an Accessibility Statement.
 - [When to create and update](https://design.sis.gov.uk/accessibility/documenting/when-to-create-and-update): Keep your documentation current and transparent.
+- [Accessibility Conformance Report](https://design.sis.gov.uk/accessibility/documenting/conformance-report): An Accessibility Conformance Report is used for accurate and consistent reporting of accessibility status in apps and services.
 - [Digital Accessibility Policy](https://design.sis.gov.uk/accessibility/requirement): This section gives you an overview on how to meet our Digital Accessibility Policy.
 - [Meeting the Policy](https://design.sis.gov.uk/accessibility/requirement/meeting-the-policy): This section is a summary of the Policy. Refer to the full document for full details.
-- [Subtitling, transcripts and audio description](https://design.sis.gov.uk/accessibility/requirement/subtitles-transcripts-captions): This section tells you how to make videos and audio accessible.
 - [WCAG standards](https://design.sis.gov.uk/accessibility/requirement/wcag): This section briefly introduces the Web Content Accessibility Guidelines (WCAG).
+- [Subtitling, transcripts and audio description](https://design.sis.gov.uk/accessibility/requirement/subtitles-transcripts-captions): This section tells you how to make videos and audio accessible.
+- [Documenting accessibility](https://design.sis.gov.uk/accessibility/documenting): This section tells you how to document how accessible your app or service is.
 - [AG Grid theme](https://design.sis.gov.uk/get-started/install-components/ag-grid-theme): How to theme an AG Grid component using ICDS styles.
 - [Auditory needs](https://design.sis.gov.uk/accessibility/needs/auditory): Hearing impairment means a complete or partial loss of the ability to hear in one or both ears.
-- [Invisible illness](https://design.sis.gov.uk/accessibility/needs/invisible): Invisible illness is an umbrella term for medical conditions that are invisible to others.
-- [Accessibility needs](https://design.sis.gov.uk/accessibility/needs): When building apps and services, be careful not to assume everyone is like you.
 - [Designing for accessibility needs](https://design.sis.gov.uk/accessibility/needs/general): Every app and service you create must have a minimal baseline of accessible designs.
+- [Accessibility needs](https://design.sis.gov.uk/accessibility/needs): When building apps and services, be careful not to assume everyone is like you.
 - [Motor needs](https://design.sis.gov.uk/accessibility/needs/motor): 'Motor impairment' means a partial or total lack of function in a body part, usually a limb or limbs.
-- [Visual needs](https://design.sis.gov.uk/accessibility/needs/visual): A visual impairment is a reduction in clarity or loss of vision that may be temporary or permanent.
+- [Invisible illness](https://design.sis.gov.uk/accessibility/needs/invisible): Invisible illness is an umbrella term for medical conditions that are invisible to others.
 - [Neurodiversity](https://design.sis.gov.uk/accessibility/needs/neurodiversity): People often think, communicate, understand or remember things in ways we might not consider.
+- [Visual needs](https://design.sis.gov.uk/accessibility/needs/visual): A visual impairment is a reduction in clarity or loss of vision that may be temporary or permanent.
 - [Colour](https://design.sis.gov.uk/styles/colour)
 - [Community](https://design.sis.gov.uk/community): The UK Intelligence Community Design System is a community effort endorsed across the UK Intelligence Community.
 - [Links](https://design.sis.gov.uk/styles/content-style/links): Links need to be understandable by all users.
@@ -42,40 +42,40 @@
 - [Automated accessibility testing](https://design.sis.gov.uk/accessibility/testing/automated-testing): Use a variety of automated testing tools to capture as many accessibility issues as possible.
 - [Section container](https://design.sis.gov.uk/components/section-container): Use the section container component to consistently align content within an app.
 - [Tree view](https://design.sis.gov.uk/components/tree-view/accessibility): Use the tree view component to display hierarchical data, or provide navigation, within a tree structure.
-- [Tree view](https://design.sis.gov.uk/components/tree-view): Use the tree view component to display hierarchical data, or provide navigation, within a tree structure.
 - [Tree view](https://design.sis.gov.uk/components/tree-view/code): Use the tree view component to display hierarchical data, or provide navigation, within a tree structure.
+- [Tree view](https://design.sis.gov.uk/components/tree-view): Use the tree view component to display hierarchical data, or provide navigation, within a tree structure.
 - [Data table](https://design.sis.gov.uk/components/data-table/code): Use a data table to organise and display large quantities of related data.
 - [Select](https://design.sis.gov.uk/components/select/code): Select allows users to select one or more values from a list of options.
 - [Testing the components](https://design.sis.gov.uk/get-started/test-components): Test the UI Kit components within the shadow DOM using a testing framework.
 - [Top navigation](https://design.sis.gov.uk/components/top-navigation/code): Top navigation sits across the top of the page. It includes the app name, search bar, main navigation and secondary links.
 - [Side navigation](https://design.sis.gov.uk/components/side-navigation/code): Side navigation provides an app's main navigation and is fixed on the left-hand side of the app. It includes the app's name, main navigation and optional secondary links.
 - [How to contribute](https://design.sis.gov.uk/community/contribute): Anyone can contribute to the Design System and UI Kit.
-- [Multi-select](https://design.sis.gov.uk/components/multi-select): Use the multi-select component to allow users to select one or more values from a list of options.
 - [Multi-select](https://design.sis.gov.uk/components/multi-select/code): Use the multi-select component to allow users to select one or more values from a list of options.
-- [Accordion](https://design.sis.gov.uk/components/accordion/code): Accordions are expandable and collapsible sections that are used to show and hide additional content.
+- [Multi-select](https://design.sis.gov.uk/components/multi-select): Use the multi-select component to allow users to select one or more values from a list of options.
 - [Alert](https://design.sis.gov.uk/components/alert/code): Alerts display a short important message in a way that attracts attention without interrupting the current task.
+- [Accordion](https://design.sis.gov.uk/components/accordion/code): Accordions are expandable and collapsible sections that are used to show and hide additional content.
 - [Back to top](https://design.sis.gov.uk/components/back-to-top/code): The back to top component helps people quickly return to the top of a long page.
-- [Badge](https://design.sis.gov.uk/components/badge/code): Badges are attached to other components to provide an indication that something new is available, or that something has changed.
 - [Breadcrumb](https://design.sis.gov.uk/components/breadcrumb/code): Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages.
+- [Badge](https://design.sis.gov.uk/components/badge/code): Badges are attached to other components to provide an indication that something new is available, or that something has changed.
 - [Button](https://design.sis.gov.uk/components/button/code): Buttons are used to allow or encourage people to take an action.
 - [Card](https://design.sis.gov.uk/components/card/code): Cards are containers used to display structured information or interactive content.
 - [Checkbox](https://design.sis.gov.uk/components/checkbox/code): Use checkboxes as part of a form, in dialogs and in control areas such as filters or settings.
 - [Chip](https://design.sis.gov.uk/components/chip/code): Chips are used to filter and present data.
 - [Classification banner](https://design.sis.gov.uk/components/classification-banner/code): Classification banners are used to show the data classification (also known as protective marking) of an app.
 - [Data entity](https://design.sis.gov.uk/components/data-entity/code): The data entity component displays a group of related data in a consistent and easy to consume way.
-- [Date input](https://design.sis.gov.uk/components/date-input/code): A date input is used when gathering a specific date in a text-based format.
 - [Date picker](https://design.sis.gov.uk/components/date-picker/code): A date picker is a type of drop-down control that allows people to easily view and select dates.
-- [Empty state](https://design.sis.gov.uk/components/empty-state/code): Use the empty state component when there is no content to display. It provides a consistent way of communicating to people what to do next.
+- [Date input](https://design.sis.gov.uk/components/date-input/code): A date input is used when gathering a specific date in a text-based format.
 - [Dialog](https://design.sis.gov.uk/components/dialog/code): Dialogs are modal windows that interrupt the user's current task to bring something important to attention.
+- [Empty state](https://design.sis.gov.uk/components/empty-state/code): Use the empty state component when there is no content to display. It provides a consistent way of communicating to people what to do next.
 - [Footer](https://design.sis.gov.uk/components/footer/code): Footers are placed at the bottom of the page and can be used for additional links not found in the main navigation.
 - [Hero](https://design.sis.gov.uk/components/hero/code): A large banner found at the top of page used to introduce page content, provide key actions and add personality.
 - [Loading indicator](https://design.sis.gov.uk/components/loading-indicator/code): Loading indicators help inform users that a request is being processed. Circular and linear indicators provide flexibility in design.
 - [Page header](https://design.sis.gov.uk/components/page-header/code): A page header defines the top of the page content and is a consistent way to show page context, key actions and secondary navigation.
 - [Pagination](https://design.sis.gov.uk/components/pagination/code): Use the Pagination components to split large amounts of content into pages and navigate between them.
 - [Popover menu](https://design.sis.gov.uk/components/popover-menu/code): Use popover menus to place actions inside a menu that overlays other page content when opened.
-- [Radio button](https://design.sis.gov.uk/components/radio/code): Radio buttons let people select a single option from a list.
 - [Search bar](https://design.sis.gov.uk/components/search-bar/code): The search bar allows users to search for information using keywords or phrases.
 - [Section container](https://design.sis.gov.uk/components/section-container/code): Use the section container component to consistently align content within an app.
+- [Radio button](https://design.sis.gov.uk/components/radio/code): Radio buttons let people select a single option from a list.
 - [Status tag](https://design.sis.gov.uk/components/status-tag/code): Status tags are short, clear and digestible ways to display the status of something on the page.
 - [Skeleton](https://design.sis.gov.uk/components/skeleton/code): Skeleton loading states are representations of the shape of content that help inform users that a specific type of component is loading.
 - [Stepper](https://design.sis.gov.uk/components/stepper/code): A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process.
@@ -83,11 +83,11 @@
 - [Tabs](https://design.sis.gov.uk/components/tabs/code): Tabs let users navigate between content within the same context. Tabs organise complex layouts by moving content into multiple sections.
 - [Text field](https://design.sis.gov.uk/components/text-field/code): Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text.
 - [Toast](https://design.sis.gov.uk/components/toast/code): Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'.
-- [Toggle button](https://design.sis.gov.uk/components/toggle-button/code): Toggle buttons provide an action capable of indicating a state. They are commonly used for turning settings either ‘on’ or ‘off’.
 - [Tooltip](https://design.sis.gov.uk/components/tooltip/code): Tooltips provide helpful information when the cursor hovers over an element or when focus is applied.
+- [Toggle button](https://design.sis.gov.uk/components/toggle-button/code): Toggle buttons provide an action capable of indicating a state. They are commonly used for turning settings either ‘on’ or ‘off’.
 - [Typography](https://design.sis.gov.uk/components/typography/code): Use the typography component for consistent styling across typographical elements.
-- [Date input](https://design.sis.gov.uk/components/date-input): A date input is used when gathering a specific date in a text-based format.
 - [Date picker](https://design.sis.gov.uk/components/date-picker): A date picker is a type of drop-down control that allows people to easily view and select dates.
+- [Date input](https://design.sis.gov.uk/components/date-input): A date input is used when gathering a specific date in a text-based format.
 - [Badge](https://design.sis.gov.uk/components/badge): Badges are attached to other components to provide an indication that something new is available, or that something has changed.
 - [Button](https://design.sis.gov.uk/components/button): Buttons are used to allow or encourage people to take an action.
 - [Page header](https://design.sis.gov.uk/components/page-header): A page header defines the top of the page content and is a consistent way to show page context, key actions and secondary navigation.
@@ -108,8 +108,8 @@
 - [Voice and tone](https://design.sis.gov.uk/styles/content-style/voice-and-tone): Learn how to apply our familiar tongue and how to choose the right tone.
 - [Why we built a Design System](https://design.sis.gov.uk/get-started/a-design-system)
 - [Styles](https://design.sis.gov.uk/styles): This section introduces our style tokens, which describe how things look and feel.
-- [CSS and inline styles](https://design.sis.gov.uk/accessibility/coding/css): Follow our accessibility tips for CSS.
 - [ARIA](https://design.sis.gov.uk/accessibility/coding/aria): Follow our accessibility tips for ARIA.
+- [CSS and inline styles](https://design.sis.gov.uk/accessibility/coding/css): Follow our accessibility tips for CSS.
 - [Doctypes](https://design.sis.gov.uk/accessibility/coding/doctype): Follow our accessibility tips for doctypes.
 - [Document structure](https://design.sis.gov.uk/accessibility/coding/document-structure): Follow our accessibility tips for document structure.
 - [Headings](https://design.sis.gov.uk/accessibility/coding/headings): Follow our accessibility tips for headings.
@@ -121,11 +121,11 @@
 - [Accessibility Statement](https://design.sis.gov.uk/icds/accessibility-statement): Accessibility Statement for the Intelligence Community Design System.
 - [Limitations of automated testing](https://design.sis.gov.uk/accessibility/testing/automated-testing-limitation): Automated accessibility testing is essential but it has limitations and only finds between 30-50% of accessibility problems.
 - [Manual accessibility testing](https://design.sis.gov.uk/accessibility/testing/manual-testing): Manual accessibility testing can include keyboard, screen reader and documentation checks.
-- [Accordion](https://design.sis.gov.uk/components/accordion/accessibility): Accordions are expandable and collapsible sections that are used to show and hide additional content. 
 - [Alert](https://design.sis.gov.uk/components/alert/accessibility): Alerts display a short important message in a way that attracts attention without interrupting the current task.
-- [Badge](https://design.sis.gov.uk/components/badge/accessibility): Badges are attached to other components to provide an indication that something new is available, or that something has changed.
+- [Accordion](https://design.sis.gov.uk/components/accordion/accessibility): Accordions are expandable and collapsible sections that are used to show and hide additional content. 
 - [Back to top](https://design.sis.gov.uk/components/back-to-top/accessibility): The back to top component helps people quickly return to the top of a long page.
 - [Breadcrumb](https://design.sis.gov.uk/components/breadcrumb/accessibility): Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages.
+- [Badge](https://design.sis.gov.uk/components/badge/accessibility): Badges are attached to other components to provide an indication that something new is available, or that something has changed.
 - [Button](https://design.sis.gov.uk/components/button/accessibility): Buttons are used to allow or encourage people to take an action.
 - [Card](https://design.sis.gov.uk/components/card/accessibility): Cards are containers used to display structured information or interactive content.
 - [Checkbox](https://design.sis.gov.uk/components/checkbox/accessibility): Use checkboxes as part of a form, in dialogs and in control areas such as filters or settings.
@@ -148,18 +148,18 @@
 - [Skeleton](https://design.sis.gov.uk/components/skeleton/accessibility): Skeleton loading states are representations of the shape of content that help inform users that a specific type of component is loading.
 - [Status tag](https://design.sis.gov.uk/components/status-tag/accessibility): Status tags are short, clear and digestible ways to display the status of something on the page.
 - [Stepper](https://design.sis.gov.uk/components/stepper/accessibility): A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process.
-- [Tabs](https://design.sis.gov.uk/components/tabs/accessibility): Tabs let users navigate between content within the same context. Tabs organise complex layouts by moving content into multiple sections.
 - [Switch](https://design.sis.gov.uk/components/switch/accessibility): Switches are used to quickly toggle an option on or off.
+- [Tabs](https://design.sis.gov.uk/components/tabs/accessibility): Tabs let users navigate between content within the same context. Tabs organise complex layouts by moving content into multiple sections.
 - [Text field](https://design.sis.gov.uk/components/text-field/accessibility): Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text.
 - [Toast](https://design.sis.gov.uk/components/toast/accessibility): Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'.
 - [Toast](https://design.sis.gov.uk/components/toast): Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'.
 - [Toggle button](https://design.sis.gov.uk/components/toggle-button/accessibility): Toggle buttons provide an action capable of indicating a state. They are commonly used for turning settings either ‘on’ or ‘off’.
-- [Tooltip](https://design.sis.gov.uk/components/tooltip/accessibility): Tooltips provide helpful information when the cursor hovers over an element or when focus is applied.
 - [Top navigation](https://design.sis.gov.uk/components/top-navigation/accessibility): Top navigation sits across the top of the page. It includes the app name, search bar, main navigation and secondary links.  
+- [Tooltip](https://design.sis.gov.uk/components/tooltip/accessibility): Tooltips provide helpful information when the cursor hovers over an element or when focus is applied.
 - [Typography](https://design.sis.gov.uk/components/typography/accessibility): Use the typography component for consistent styling across typographical elements.
 - [Glossary of terms](https://design.sis.gov.uk/community/glossary-of-terms): A glossary of the most common prop/slot names used throughout the Intelligence Community Design System.
-- [Top navigation layout](https://design.sis.gov.uk/patterns/navigation-patterns/top-navigation-layout): Use the top navigation layout to quickly set up a page where the top navigation menu is the primary form of navigation.
 - [Side navigation layout](https://design.sis.gov.uk/patterns/navigation-patterns/side-navigation-layout): Use the side navigation layout to quickly set up a page where the side navigation is the primary form of navigation.
+- [Top navigation layout](https://design.sis.gov.uk/patterns/navigation-patterns/top-navigation-layout): Use the top navigation layout to quickly set up a page where the top navigation menu is the primary form of navigation.
 - [Toggle button](https://design.sis.gov.uk/components/toggle-button): Toggle buttons provide an action capable of indicating a state. They are commonly used for turning settings either ‘on’ or ‘off’.
 - [Chip](https://design.sis.gov.uk/components/chip): Chips are used to filter and present data.
 - [Navigation patterns](https://design.sis.gov.uk/patterns/navigation-patterns): Navigation patterns are ready-made pages with built-in components to help get you started.
@@ -184,8 +184,8 @@
 - [Breadcrumb](https://design.sis.gov.uk/components/breadcrumb): Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages.
 - [Card](https://design.sis.gov.uk/components/card): Cards are containers used to display structured information or interactive content.
 - [Checkbox](https://design.sis.gov.uk/components/checkbox): Use checkboxes as part of a form, in dialogs or in control areas such as filters or settings.
-- [Data entity](https://design.sis.gov.uk/components/data-entity): The data entity component displays a group of related data in a consistent and easy to consume way.
 - [Classification banner](https://design.sis.gov.uk/components/classification-banner): Classification banners are used to show the data classification (also known as protective marking) of an app.
+- [Data entity](https://design.sis.gov.uk/components/data-entity): The data entity component displays a group of related data in a consistent and easy to consume way.
 - [Footer](https://design.sis.gov.uk/components/footer): Footers are placed at the bottom of the page and can be used for additional links not found in the main navigation.
 - [Hero](https://design.sis.gov.uk/components/hero): A large banner found at the top of page used to introduce page content, provide key actions and add personality.
 - [Loading indicator](https://design.sis.gov.uk/components/loading-indicator): Loading indicators help inform users that a request is being processed. Radial and linear indicators provide flexibility in design.
@@ -195,16 +195,16 @@
 - [Stepper](https://design.sis.gov.uk/components/stepper): A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process.
 - [Switch](https://design.sis.gov.uk/components/switch): Switches are used to quickly toggle an option on or off.
 - [Tabs](https://design.sis.gov.uk/components/tabs): Tabs let users navigate between content within the same context. Tabs organise complex layouts by separating content into multiple sections.
-- [Top navigation](https://design.sis.gov.uk/components/top-navigation): Top navigation sits across the top of the page. It includes the app name, search bar, main navigation and secondary links.
 - [Tooltip](https://design.sis.gov.uk/components/tooltip): Tooltips provide helpful information when the cursor hovers over an element or when focus is applied.
+- [Top navigation](https://design.sis.gov.uk/components/top-navigation): Top navigation sits across the top of the page. It includes the app name, search bar, main navigation and secondary links.
 - [Cookies Policy](https://design.sis.gov.uk/icds/cookies-policy): Cookies Policy for the Intelligence Community Design System.
 - [Design principles](https://design.sis.gov.uk/get-started/design-principles): Follow our community design principles.
 - [Get started](https://design.sis.gov.uk/get-started): Use the Design System and UI Kit to create accessible, usable and consistent apps and services for the United Kingdom Intelligence Community.
 - [Privacy Policy](https://design.sis.gov.uk/icds/privacy-policy): Privacy Policy for the Intelligence Community Design System.
-- [Form layout](https://design.sis.gov.uk/patterns/form-layout): A simple layout for a form helps to make it easier to complete and allows users to focus on the content of the questions.
 - [App errors](https://design.sis.gov.uk/patterns/app-errors): App errors are shown when a problem occurs that the user has no control over.
-- [Patterns](https://design.sis.gov.uk/patterns): This section introduces our common design patterns.
+- [Form layout](https://design.sis.gov.uk/patterns/form-layout): A simple layout for a form helps to make it easier to complete and allows users to focus on the content of the questions.
 - [Form validation](https://design.sis.gov.uk/patterns/form-validation): Form validation checks that the information provided is correct and helps the user to fix any problems.
+- [Patterns](https://design.sis.gov.uk/patterns): This section introduces our common design patterns.
 - [Success messages](https://design.sis.gov.uk/patterns/success): Success messages inform the user of a successful outcome.
 - [Elevation](https://design.sis.gov.uk/styles/elevation)
 - [Focus indicator](https://design.sis.gov.uk/styles/focus-indicator)
