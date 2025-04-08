@@ -1,20 +1,17 @@
 import clsx from "clsx";
 import React from "react";
-
 import { ColorConfig } from "./colours.config";
 import "./index.css";
 
-const PaletteRow: React.FC<{
-  hex: string;
-  dark?: boolean;
-}> = ({ hex, dark }) => (
-  <div className={clsx("palette", dark && "dark")}>
-    <div style={{ backgroundColor: hex }} className="circle">
-      &nbsp;
+const ColorRow: React.FC<{ token: string; dark?: boolean }> = ({
+  token,
+  dark,
+}) => (
+  <div className="color-row">
+    <div className={clsx("color-swatch", dark && "dark")}>
+      <div style={{ backgroundColor: `var(${token})` }} className="color" />
     </div>
-    <ic-typography variant="code-large" theme={dark ? "dark" : "light"}>
-      {hex}
-    </ic-typography>
+    <ic-typography variant="code-small">{token}</ic-typography>
   </div>
 );
 
@@ -22,14 +19,11 @@ const ColorTable: React.FC<{
   config: ColorConfig[];
 }> = ({ config }) => (
   <ic-data-list>
-    {config.map(({ hex, hexDark, name, token }) => (
+    {config.map(({ name, token, darkToken }) => (
       <ic-data-row key={name} label={name}>
-        <ic-typography slot="value" variant="code-small">
-          {token}
-        </ic-typography>
-        <div className="color-circles" slot="end-component">
-          <PaletteRow hex={hex} />
-          {hexDark && <PaletteRow hex={hexDark} dark />}
+        <div slot="value">
+          <ColorRow token={token} />
+          {darkToken && <ColorRow token={darkToken} dark />}
         </div>
       </ic-data-row>
     ))}
