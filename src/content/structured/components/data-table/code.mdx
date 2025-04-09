@@ -16,7 +16,11 @@ tabs:
   ]
 ---
 
-import { IcDataTable, IcDataTableTitleBar } from "@ukic/canary-react";
+import {
+  IcDataTable,
+  IcDataTableTitleBar,
+  IcPaginationBar,
+} from "@ukic/canary-react";
 import {
   IcEmptyState,
   IcButton,
@@ -24,7 +28,7 @@ import {
   SlottedSVG,
   IcTypography,
 } from "@ukic/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { mdiImage, mdiCakeVariantOutline } from "@mdi/js";
 import {
   COLUMNS,
@@ -2013,6 +2017,490 @@ return (
       showItemsPerPageControl: true,
     }}
   />
+</ComponentPreview>
+
+### Slotted pagination
+
+export const snippetsSlottedPagination = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Slotted pagination bar">
+  <ic-pagination-bar slot="pagination-bar" show-items-per-page-control="true"></ic-pagination-bar>
+</ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const long_columns = [
+    {
+      key: "orderNumber",
+      title: "Order number",
+      dataType: "number",
+      columnAlignment: { horizontal: "left" },
+    },
+    {
+      key: "name",
+      title: "Name",
+      dataType: "string",
+    },
+    {
+      key: "coffeeOrder",
+      title: "Coffee order",
+      dataType: "string",
+    },
+  ];
+  const long_data = [
+    {
+      orderNumber: 1,
+      name: "Joe Bloggs",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 2,
+      name: "Sarah Jones",
+      coffeeOrder: "Mocha",
+    },
+    {
+      orderNumber: 3,
+      name: "Mark Owens",
+      coffeeOrder: "Espresso",
+    },
+    {
+      orderNumber: 4,
+      name: "Naomi Thomas",
+      coffeeOrder: "Cappuccino",
+    },
+    {
+      orderNumber: 5,
+      name: "Luke Ashford",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 6,
+      name: "Dave Smith",
+      coffeeOrder: "Flat white",
+    },
+    {
+      orderNumber: 7,
+      name: "Amy Fox",
+      coffeeOrder: "Macchiato",
+    },
+    {
+      orderNumber: 8,
+      name: "Mary Cooper",
+      coffeeOrder: "Affogato",
+    },
+    {
+      orderNumber: 9,
+      name: "Alice Cole",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 10,
+      name: "Ben Fields",
+      coffeeOrder: "Mocha",
+    },
+    {
+      orderNumber: 11,
+      name: "Pete Norton",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 12,
+      name: "Ashley Langford",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 13,
+      name: "Michael Hall",
+      coffeeOrder: "Espresso",
+    },
+    {
+      orderNumber: 14,
+      name: "David Frank",
+      coffeeOrder: "Flat white",
+    },
+    {
+      orderNumber: 15,
+      name: "Mary Lincoln",
+      coffeeOrder: "Macchiato",
+    },
+    {
+      orderNumber: 16,
+      name: "Will Barns",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 17,
+      name: "Elizabeth Long",
+      coffeeOrder: "Cappuccino",
+    },
+    {
+      orderNumber: 18,
+      name: "Keith Jones",
+      coffeeOrder: "Affogato",
+    },
+    {
+      orderNumber: 19,
+      name: "Olivia Brown",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 20,
+      name: "Tim Green",
+      coffeeOrder: "Mocha",
+    },
+  ];
+  dataTable.columns = long_columns;
+  dataTable.data = long_data;
+  const paginationBar = document.querySelector("ic-pagination-bar");
+  paginationBar.itemsPerPageOptions = [
+      { label: "5", value: "5" },
+      { label: "10", value: "10" },
+      { label: "15", value: "15" },
+  ];
+  paginationBar.totalItems = long_data.length;
+  paginationBar.addEventListener("icItemsPerPageChange", (ev) => {
+    itemsPerPage = ev.detail.value;
+    dataTable.data = long_data.slice(0, itemsPerPage);
+  });
+  paginationBar.addEventListener("icPageChange", (ev) => {
+    const fromRow = (ev.detail.value - 1) * itemsPerPage;
+    dataTable.data = long_data.slice(fromRow, fromRow + itemsPerPage);
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Slotted pagination bar" columns={long_columns} data={data}>
+    <IcPaginationBar
+      slot="pagination-bar"
+      showItemsPerPageControl
+      totalItems={long_data.length}
+      itemsPerPageOptions={[
+        { label: "5", value: "5" },
+        { label: "10", value: "10" },
+      ]}
+      selectedItemsPerPage={itemsPerPage}
+      onIcItemsPerPageChange={icItemsPerPageChangeHandler}
+      onIcPageChange={pageChangeHandler}
+    />
+</IcDataTable>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const long_columns: IcDataTableColumnObject[] = [
+  {
+    key: "orderNumber",
+    title: "Order number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+];
+const long_data = [
+  {
+    orderNumber: 1,
+    name: "Joe Bloggs",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 2,
+    name: "Sarah Jones",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 3,
+    name: "Mark Owens",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 4,
+    name: "Naomi Thomas",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 5,
+    name: "Luke Ashford",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 6,
+    name: "Dave Smith",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 7,
+    name: "Amy Fox",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 8,
+    name: "Mary Cooper",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 9,
+    name: "Alice Cole",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 10,
+    name: "Ben Fields",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 11,
+    name: "Pete Norton",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 12,
+    name: "Ashley Langford",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 13,
+    name: "Michael Hall",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 14,
+    name: "David Frank",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 15,
+    name: "Mary Lincoln",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 16,
+    name: "Will Barns",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 17,
+    name: "Elizabeth Long",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 18,
+    name: "Keith Jones",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 19,
+    name: "Olivia Brown",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 20,
+    name: "Tim Green",
+    coffeeOrder: "Mocha",
+  },
+];
+const [data, setData] = useState(long_data);
+const [itemsPerPage, setItemsPerPage] = useState(5);
+const icItemsPerPageChangeHandler = (ev: CustomEvent) => {
+  setItemsPerPage(ev.detail.value);
+  setData(long_data.slice(0, itemsPerPage));
+}
+const pageChangeHandler = (ev: CustomEvent) => {
+  const fromRow = (ev.detail.value - 1) * itemsPerPage;
+  setData(long_data.slice(fromRow, fromRow + itemsPerPage));
+}
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const long_columns = [
+  {
+    key: "orderNumber",
+    title: "Order number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+];
+const long_data = [
+  {
+    orderNumber: 1,
+    name: "Joe Bloggs",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 2,
+    name: "Sarah Jones",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 3,
+    name: "Mark Owens",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 4,
+    name: "Naomi Thomas",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 5,
+    name: "Luke Ashford",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 6,
+    name: "Dave Smith",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 7,
+    name: "Amy Fox",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 8,
+    name: "Mary Cooper",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 9,
+    name: "Alice Cole",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 10,
+    name: "Ben Fields",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 11,
+    name: "Pete Norton",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 12,
+    name: "Ashley Langford",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 13,
+    name: "Michael Hall",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 14,
+    name: "David Frank",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 15,
+    name: "Mary Lincoln",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 16,
+    name: "Will Barns",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 17,
+    name: "Elizabeth Long",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 18,
+    name: "Keith Jones",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 19,
+    name: "Olivia Brown",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 20,
+    name: "Tim Green",
+    coffeeOrder: "Mocha",
+  },
+];
+const [data, setData] = useState(long_data);
+const [itemsPerPage, setItemsPerPage] = useState(5);
+const icItemsPerPageChangeHandler = (ev) => {
+  setItemsPerPage(ev.detail.value);
+  setData(long_data.slice(0, itemsPerPage));
+}
+const pageChangeHandler = (ev) => {
+  const fromRow = (ev.detail.value - 1) * itemsPerPage;
+  setData(long_data.slice(fromRow, fromRow + itemsPerPage));
+}
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const SlottedPaginationDataTable = () => {
+  const [data, setData] = useState(LONG_DATA);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const icItemsPerPageChangeHandler = (ev) => {
+    setItemsPerPage(ev.detail.value);
+    setData(LONG_DATA.slice(0, itemsPerPage));
+  };
+  const pageChangeHandler = (ev) => {
+    const fromRow = (ev.detail.value - 1) * itemsPerPage;
+    setData(LONG_DATA.slice(fromRow, fromRow + itemsPerPage));
+  };
+  return (
+    <IcDataTable
+      caption="Slotted pagination bar"
+      columns={LONG_COLUMNS}
+      data={data}
+    >
+      <IcPaginationBar
+        slot="pagination-bar"
+        showItemsPerPageControl
+        totalItems={LONG_DATA.length}
+        itemsPerPageOptions={[
+          { label: "5", value: "5" },
+          { label: "10", value: "10" },
+        ]}
+        selectedItemsPerPage={itemsPerPage}
+        onIcItemsPerPageChange={icItemsPerPageChangeHandler}
+        onIcPageChange={pageChangeHandler}
+      />
+    </IcDataTable>
+  );
+};
+
+<ComponentPreview snippets={snippetsSlottedPagination}>
+  <SlottedPaginationDataTable />
 </ComponentPreview>
 
 ### Column overrides
