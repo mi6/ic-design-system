@@ -163,8 +163,13 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       return isOverviewSelected || isAnyChildSelected;
     };
 
+    const [isExpanded, setIsExpanded] = useState(
+      hasChildren && isChildSelected(item)
+    );
+
     const handleParentClick = () => {
       setTreeChange(true);
+      setIsExpanded(!isExpanded);
     };
 
     return (
@@ -179,7 +184,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
             : handleNavigation(item.data.fields.slug);
         }}
         onKeyUp={hasChildren ? handleKeyUpParent : handleKeyUp}
-        {...(hasChildren && isChildSelected(item) && { expanded: true })}
+        expanded={isExpanded}
       >
         {hasChildren && (
           <IcTreeItem

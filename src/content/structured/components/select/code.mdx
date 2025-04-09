@@ -1,7 +1,7 @@
 ---
 path: "/components/select/code"
 
-date: "2024-07-02"
+date: "2025-03-24"
 
 title: "Select"
 
@@ -19,6 +19,7 @@ tabs:
   ]
 ---
 
+import { useEffect, useRef } from "react";
 import { IcSelect } from "@ukic/react";
 
 ## Component demo
@@ -1495,7 +1496,7 @@ export const SearchableSelectExample = () => (
   <SearchableSelectExample />
 </ComponentPreview>
 
-### Searchable &ndash; with descriptions included in search
+### Searchable - with descriptions included in search
 
 export const snippetsSearchableWithDescriptions = [
   {
@@ -1640,7 +1641,7 @@ export const SearchableSelectWithDescriptionsExample = () => (
   <SearchableSelectWithDescriptionsExample />
 </ComponentPreview>
 
-### Searchable &ndash; with group titles included in search
+### Searchable - with group titles included in search
 
 export const snippetsSearchableWithGroups = [
   {
@@ -1912,7 +1913,7 @@ return (
   />
 </ComponentPreview>
 
-### Multi-select &ndash; Read-only
+### Multi-select - Read-only
 
 Make the multi-select read-only by using the `readonly` prop.
 Use the `value` prop to set which options are selected and will be displayed when it is read-only.
@@ -2015,27 +2016,37 @@ return (
   },
 ];
 
+export const ReadonlyMulti = () => {
+  const readonlyMultiSelectEl = useRef(null);
+  useEffect(() => {
+    readonlyMultiSelectEl.current.setAttribute("readonly", "true");
+  }, []);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <IcSelect
+        label="What are your favourite types of coffee?"
+        multiple
+        options={[
+          { label: "Cappuccino", value: "Cap" },
+          { label: "Latte", value: "Lat" },
+          { label: "Americano", value: "Ame" },
+          { label: "Filter", value: "Fil" },
+          { label: "Flat white", value: "Fla" },
+          { label: "Mocha", value: "Moc" },
+          { label: "Macchiato", value: "Mac" },
+        ]}
+        value={["Cap", "Fla", "Moc"]}
+        ref={readonlyMultiSelectEl}
+      />
+    </div>
+  );
+};
+
 <ComponentPreview snippets={read}>
-  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-    <IcSelect
-      label="What are your favourite types of coffee?"
-      multiple
-      readonly
-      options={[
-        { label: "Cappuccino", value: "Cap" },
-        { label: "Latte", value: "Lat" },
-        { label: "Americano", value: "Ame" },
-        { label: "Filter", value: "Fil" },
-        { label: "Flat white", value: "Fla" },
-        { label: "Mocha", value: "Moc" },
-        { label: "Macchiato", value: "Mac" },
-      ]}
-      value={["Cap", "Fla", "Moc"]}
-    />
-  </div>
+  <ReadonlyMulti />
 </ComponentPreview>
 
-### Multi-select &ndash; Groups
+### Multi-select - Groups
 
 Display options in groups by passing an array of child options to the `children` property of a parent option.
 The parent option will be rendered as the title of the group.
@@ -2180,7 +2191,7 @@ return (
   </div>
 </ComponentPreview>
 
-### Multi-select &ndash; Disabled options
+### Multi-select - Disabled options
 
 Disable certain options by setting the `disabled` property to `true` for each option.
 
@@ -2314,7 +2325,6 @@ export const customFiltering = [
   debounce="300"
   disable-auto-filtering="true"
   id="external-filter-select"
-  characters-until-suggestions="2"
 ></ic-select>`,
       long: `{shortCode}
 <script>
@@ -2337,11 +2347,12 @@ export const customFiltering = [
   select.addEventListener("icOptionSelect", function (event) {
     selectedValue = event.detail.value;
   });
-  select.addEventListener("icChange", function (event) {
+  select.addEventListener("icInput", function (event) {
     const value = event.detail.value;
     console.log(value);
     if (value !== selectedValue) {
       if (value && value.length > 1) {
+        select.loading = true;
         mockAPI = (query) => {
           filteredResults = mockData.filter((item) =>
             item.label.toLowerCase().includes(query.toLowerCase())
@@ -2351,6 +2362,7 @@ export const customFiltering = [
           );
         };
         mockAPI(value).then((results) => {
+          select.loading = false;
           select.options = results;
         });
       } else {
@@ -2373,7 +2385,8 @@ export const customFiltering = [
    options={results} 
    onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
    onIcClear={() => setResults([])}
-   onIcChange={changeHandler}
+   onIcInput={inputHandler}
+   loading={loading}
 />`,
       long: [
         {
@@ -2389,13 +2402,15 @@ export const customFiltering = [
   { label: "Mocha", value: "Moc" },
   { label: "Macchiato", value: "Mac" },
 ];
+const [loading, setLoading] = useState(false);
 const [results, setResults] = useState([]);
 const [selectedValue, setSelectedValue] = useState("");
-const changeHandler = (event) => {
+const inputHandler = (event) => {
   const newValue = event.detail.value;
   console.log(newValue);
   if (newValue !== selectedValue) {
     if (newValue && newValue.length > 1) {
+      setLoading(true);
       const mockAPI = (query) => {
         const filteredResults = mockData.filter((item) => 
           item.label.toLowerCase().includes(query.toLowerCase()));
@@ -2403,7 +2418,10 @@ const changeHandler = (event) => {
           setTimeout(() => resolve(filteredResults), 1000)
         });
       };
-      mockAPI(newValue).then((results) => setResults(results));
+      mockAPI(newValue).then((newResults) => { 
+        setLoading(false);
+        setResults(newResults);
+      });
     } else {
       setResults([]);
     }
@@ -2428,13 +2446,15 @@ return(
   { label: "Mocha", value: "Moc" },
   { label: "Macchiato", value: "Mac" },
 ];
+const [loading, setLoading] = useState(false);
 const [results, setResults] = useState([]);
 const [selectedValue, setSelectedValue] = useState("");
-const changeHandler = (event) => {
+const inputHandler = (event) => {
   const newValue = event.detail.value;
   console.log(newValue);
   if (newValue !== selectedValue) {
     if (newValue && newValue.length > 1) {
+      setLoading(true);
       const mockAPI = (query) => {
         const filteredResults = mockData.filter((item) => 
           item.label.toLowerCase().includes(query.toLowerCase()));
@@ -2442,7 +2462,10 @@ const changeHandler = (event) => {
           setTimeout(() => resolve(filteredResults), 1000)
         });
       };
-      mockAPI(newValue).then((results) => setResults(results));
+      mockAPI(newValue).then((newResults) => { 
+        setLoading(false);
+        setResults(newResults);
+      });
     } else {
       setResults([]);
     }
@@ -2471,13 +2494,15 @@ export const CustomFilterExample = () => {
     { label: "Mocha", value: "Moc" },
     { label: "Macchiato", value: "Mac" },
   ];
+  const [loading, setLoading] = React.useState(false);
   const [results, setResults] = React.useState([]);
   const [selectedValue, setSelectedValue] = React.useState("");
-  const changeHandler = (event) => {
+  const inputHandler = (event) => {
     const newValue = event.detail.value;
     console.log(newValue);
     if (newValue !== selectedValue) {
       if (newValue && newValue.length > 1) {
+        setLoading(true);
         const mockAPI = (query) => {
           const filteredResults = mockData.filter((item) =>
             item.label.toLowerCase().includes(query.toLowerCase())
@@ -2486,7 +2511,10 @@ export const CustomFilterExample = () => {
             setTimeout(() => resolve(filteredResults), 1000);
           });
         };
-        mockAPI(newValue).then((newResults) => setResults(newResults));
+        mockAPI(newValue).then((newResults) => {
+          setLoading(false);
+          setResults(newResults);
+        });
       } else {
         setResults([]);
       }
@@ -2494,7 +2522,7 @@ export const CustomFilterExample = () => {
   };
   return (
     <IcSelect
-      placeholder="Select an option…"
+      placeholder="Select an option..."
       label="What is your favourite coffee?"
       debounce="300"
       searchable
@@ -2502,7 +2530,8 @@ export const CustomFilterExample = () => {
       options={results}
       onIcOptionSelect={(event) => setSelectedValue(event.detail.value)}
       onIcClear={() => setResults([])}
-      onIcChange={changeHandler}
+      onIcInput={inputHandler}
+      loading={loading}
     />
   );
 };

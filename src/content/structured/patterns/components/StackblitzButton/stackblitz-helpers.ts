@@ -75,11 +75,13 @@ export const packageJson = (
         ],
         [
           "@ukic/react",
-          `${designSystemPackageJson.dependencies["@ukic/react"]}`,
+          `${designSystemPackageJson.dependencies["@ukic/react"]}`.slice(1),
         ],
         [
           "@ukic/web-components",
-          `${designSystemPackageJson.dependencies["@ukic/web-components"]}`,
+          `${designSystemPackageJson.dependencies["@ukic/web-components"]}`.slice(
+            1
+          ),
         ],
         ["react", "^18.2.0"],
         ["react-dom", "^18.2.0"],
@@ -89,7 +91,7 @@ export const packageJson = (
   if (getCanaryReactImports(codeSnippet).length > 0) {
     dependenciesArray.splice(1, 0, [
       "@ukic/canary-react",
-      `${designSystemPackageJson.dependencies["@ukic/canary-react"]}`,
+      `${designSystemPackageJson.dependencies["@ukic/canary-react"]}`.slice(1),
     ]);
   }
 

@@ -16,7 +16,11 @@ tabs:
   ]
 ---
 
-import { IcDataTable, IcDataTableTitleBar } from "@ukic/canary-react";
+import {
+  IcDataTable,
+  IcDataTableTitleBar,
+  IcPaginationBar,
+} from "@ukic/canary-react";
 import {
   IcEmptyState,
   IcButton,
@@ -24,7 +28,7 @@ import {
   SlottedSVG,
   IcTypography,
 } from "@ukic/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { mdiImage, mdiCakeVariantOutline } from "@mdi/js";
 import {
   COLUMNS,
@@ -63,31 +67,31 @@ export const snippetsDefault = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -109,31 +113,31 @@ export const snippetsDefault = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -149,31 +153,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -213,31 +217,31 @@ export const snippetsEmbedded = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -264,31 +268,31 @@ export const snippetsEmbedded = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -304,31 +308,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -362,31 +366,31 @@ export const snippetsDense = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -413,31 +417,31 @@ export const snippetsDense = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -453,31 +457,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -511,31 +515,31 @@ export const snippetsSpacious = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -562,31 +566,31 @@ export const snippetsSpacious = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -602,31 +606,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -667,8 +671,8 @@ export const snippetsStickyColumnHeaders = [
     const dataTable = document.querySelector("ic-data-table");
     const long_columns = [
       {
-        key: "employeeNumber",
-        title: "Employee number",
+        key: "orderNumber",
+        title: "Order number",
         dataType: "number",
         columnAlignment: { horizontal: "left" },
       },
@@ -678,111 +682,111 @@ export const snippetsStickyColumnHeaders = [
         dataType: "string",
       },
       {
-        key: "age",
-        title: "Age",
-        dataType: "number",
+        key: "coffeeOrder",
+        title: "Coffee order",
+        dataType: "string",
       },
     ];
     const long_data = [
       {
-        employeeNumber: 1,
+        orderNumber: 1,
         name: "Joe Bloggs",
-        age: 30,
+        coffeeOrder: "Latte",
       },
       {
-        employeeNumber: 2,
+        orderNumber: 2,
         name: "Sarah Jones",
-        age: 28,
+        coffeeOrder: "Mocha",
       },
       {
-        employeeNumber: 3,
+        orderNumber: 3,
         name: "Mark Owens",
-        age: 45,
+        coffeeOrder: "Espresso",
       },
       {
-        employeeNumber: 4,
+        orderNumber: 4,
         name: "Naomi Thomas",
-        age: 32,
+        coffeeOrder: "Cappuccino",
       },
       {
-        employeeNumber: 5,
+        orderNumber: 5,
         name: "Luke Ashford",
-        age: 18,
+        coffeeOrder: "Americano",
       },
       {
-        employeeNumber: 6,
+        orderNumber: 6,
         name: "Dave Smith",
-        age: 33,
+        coffeeOrder: "Flat white",
       },
       {
-        employeeNumber: 7,
+        orderNumber: 7,
         name: "Amy Fox",
-        age: 27,
+        coffeeOrder: "Macchiato",
       },
       {
-        employeeNumber: 8,
+        orderNumber: 8,
         name: "Mary Cooper",
-        age: 31,
+        coffeeOrder: "Affogato",
       },
       {
-        employeeNumber: 9,
+        orderNumber: 9,
         name: "Alice Cole",
-        age: 38,
+        coffeeOrder: "Latte",
       },
       {
-        employeeNumber: 10,
+        orderNumber: 10,
         name: "Ben Fields",
-        age: 40,
+        coffeeOrder: "Mocha",
       },
       {
-        employeeNumber: 11,
+        orderNumber: 11,
         name: "Pete Norton",
-        age: 32,
+        coffeeOrder: "Americano",
       },
       {
-        employeeNumber: 12,
+        orderNumber: 12,
         name: "Ashley Langford",
-        age: 29,
+        coffeeOrder: "Latte",
       },
       {
-        employeeNumber: 13,
+        orderNumber: 13,
         name: "Michael Hall",
-        age: 35,
+        coffeeOrder: "Espresso",
       },
       {
-        employeeNumber: 14,
+        orderNumber: 14,
         name: "David Frank",
-        age: 28,
+        coffeeOrder: "Flat white",
       },
       {
-        employeeNumber: 15,
+        orderNumber: 15,
         name: "Mary Lincoln",
-        age: 23,
+        coffeeOrder: "Macchiato",
       },
       {
-        employeeNumber: 16,
+        orderNumber: 16,
         name: "Will Barns",
-        age: 36,
+        coffeeOrder: "Americano",
       },
       {
-        employeeNumber: 17,
+        orderNumber: 17,
         name: "Elizabeth Long",
-        age: 43,
+        coffeeOrder: "Cappuccino",
       },
       {
-        employeeNumber: 18,
+        orderNumber: 18,
         name: "Keith Jones",
-        age: 37,
+        coffeeOrder: "Affogato",
       },
       {
-        employeeNumber: 19,
+        orderNumber: 19,
         name: "Olivia Brown",
-        age: 19,
+        coffeeOrder: "Latte",
       },
       {
-        employeeNumber: 20,
+        orderNumber: 20,
         name: "Tim Green",
-        age: 50,
+        coffeeOrder: "Mocha",
       },
     ];
     dataTable.columns = long_columns;
@@ -810,8 +814,8 @@ const stickHeader = (sticky: boolean) => {
 };
 const long_columns: IcDataTableColumnObject[] = [
   {
-    key: "employeeNumber",
-    title: "Employee number",
+    key: "orderNumber",
+    title: "Order number",
     dataType: "number",
     columnAlignment: { horizontal: "left" },
   },
@@ -821,111 +825,111 @@ const long_columns: IcDataTableColumnObject[] = [
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
-    dataType: "number",
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
   },
 ];
 const long_data = [
   {
-    employeeNumber: 1,
+    orderNumber: 1,
     name: "Joe Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 2,
+    orderNumber: 2,
     name: "Sarah Jones",
-    age: 28,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 3,
+    orderNumber: 3,
     name: "Mark Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 4,
+    orderNumber: 4,
     name: "Naomi Thomas",
-    age: 32,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 5,
+    orderNumber: 5,
     name: "Luke Ashford",
-    age: 18,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 6,
+    orderNumber: 6,
     name: "Dave Smith",
-    age: 33,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 7,
+    orderNumber: 7,
     name: "Amy Fox",
-    age: 27,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 8,
+    orderNumber: 8,
     name: "Mary Cooper",
-    age: 31,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 9,
+    orderNumber: 9,
     name: "Alice Cole",
-    age: 38,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 10,
+    orderNumber: 10,
     name: "Ben Fields",
-    age: 40,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 11,
+    orderNumber: 11,
     name: "Pete Norton",
-    age: 32,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 12,
+    orderNumber: 12,
     name: "Ashley Langford",
-    age: 29,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 13,
+    orderNumber: 13,
     name: "Michael Hall",
-    age: 35,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 14,
+    orderNumber: 14,
     name: "David Frank",
-    age: 28,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 15,
+    orderNumber: 15,
     name: "Mary Lincoln",
-    age: 23,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 16,
+    orderNumber: 16,
     name: "Will Barns",
-    age: 36,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 17,
+    orderNumber: 17,
     name: "Elizabeth Long",
-    age: 43,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 18,
+    orderNumber: 18,
     name: "Keith Jones",
-    age: 37,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 19,
+    orderNumber: 19,
     name: "Olivia Brown",
-    age: 19,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 20,
+    orderNumber: 20,
     name: "Tim Green",
-    age: 50,
+    coffeeOrder: "Mocha",
   },
 ];
 const useStyles = createUseStyles({
@@ -950,8 +954,8 @@ const stickHeader = (sticky) => {
 };
 const long_columns = [
   {
-    key: "employeeNumber",
-    title: "Employee number",
+    key: "orderNumber",
+    title: "Order number",
     dataType: "number",
     columnAlignment: { horizontal: "left" },
   },
@@ -961,111 +965,111 @@ const long_columns = [
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
-    dataType: "number",
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
   },
 ];
 const long_data = [
   {
-    employeeNumber: 1,
+    orderNumber: 1,
     name: "Joe Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 2,
+    orderNumber: 2,
     name: "Sarah Jones",
-    age: 28,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 3,
+    orderNumber: 3,
     name: "Mark Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 4,
+    orderNumber: 4,
     name: "Naomi Thomas",
-    age: 32,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 5,
+    orderNumber: 5,
     name: "Luke Ashford",
-    age: 18,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 6,
+    orderNumber: 6,
     name: "Dave Smith",
-    age: 33,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 7,
+    orderNumber: 7,
     name: "Amy Fox",
-    age: 27,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 8,
+    orderNumber: 8,
     name: "Mary Cooper",
-    age: 31,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 9,
+    orderNumber: 9,
     name: "Alice Cole",
-    age: 38,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 10,
+    orderNumber: 10,
     name: "Ben Fields",
-    age: 40,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 11,
+    orderNumber: 11,
     name: "Pete Norton",
-    age: 32,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 12,
+    orderNumber: 12,
     name: "Ashley Langford",
-    age: 29,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 13,
+    orderNumber: 13,
     name: "Michael Hall",
-    age: 35,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 14,
+    orderNumber: 14,
     name: "David Frank",
-    age: 28,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 15,
+    orderNumber: 15,
     name: "Mary Lincoln",
-    age: 23,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 16,
+    orderNumber: 16,
     name: "Will Barns",
-    age: 36,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 17,
+    orderNumber: 17,
     name: "Elizabeth Long",
-    age: 43,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 18,
+    orderNumber: 18,
     name: "Keith Jones",
-    age: 37,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 19,
+    orderNumber: 19,
     name: "Olivia Brown",
-    age: 19,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 20,
+    orderNumber: 20,
     name: "Tim Green",
-    age: 50,
+    coffeeOrder: "Mocha",
   },
 ];
 const useStyles = createUseStyles({
@@ -1124,8 +1128,8 @@ export const snippetsRowHeaders = [
   const columns = [
     {
       key: "header",
-      title: "Job type",
-      dataType: "string",
+      title: "Order number",
+      dataType: "number",
     },
     {
       key: "firstName",
@@ -1136,10 +1140,10 @@ export const snippetsRowHeaders = [
   const data = [
     {
       // Each data row requires a 'header' key/value pair like below
-      header: { title: 'Employee' },
+      header: { title: 1 },
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
   ];
   dataTable.columns = columns;
@@ -1166,31 +1170,31 @@ export const snippetsRowHeaders = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -1207,31 +1211,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -1272,31 +1276,31 @@ export const snippetsSortable = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -1325,31 +1329,31 @@ export const snippetsSortable = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -1366,31 +1370,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -1434,31 +1438,31 @@ export const snippetsSortOptions = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -1490,31 +1494,31 @@ export const snippetsSortOptions = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -1531,31 +1535,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -1590,18 +1594,18 @@ export const snippetsPagination = [
       long: `{shortCode}
 <script>
   const dataTable = document.querySelector("ic-data-table");
-  dataTable.paginationOptions = {
-    itemsPerPage: [
+  dataTable.paginationBarOptions = {
+    itemsPerPageOptions: [
       { label: "5", value: "5" },
       { label: "10", value: "10" },
       { label: "15", value: "15" },
     ],
-    itemsPerPageControl: true,
+    showItemsPerPageControl: true,
   };
   const long_columns = [
     {
-      key: "employeeNumber",
-      title: "Employee number",
+      key: "orderNumber",
+      title: "Order number",
       dataType: "number",
       columnAlignment: { horizontal: "left" },
     },
@@ -1611,111 +1615,111 @@ export const snippetsPagination = [
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
-      dataType: "number",
+      key: "coffeeOrder",
+      title: "Coffee order",
+      dataType: "string",
     },
   ];
   const long_data = [
     {
-      employeeNumber: 1,
+      orderNumber: 1,
       name: "Joe Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
     },
     {
-      employeeNumber: 2,
+      orderNumber: 2,
       name: "Sarah Jones",
-      age: 28,
+      coffeeOrder: "Mocha",
     },
     {
-      employeeNumber: 3,
+      orderNumber: 3,
       name: "Mark Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
     },
     {
-      employeeNumber: 4,
+      orderNumber: 4,
       name: "Naomi Thomas",
-      age: 32,
+      coffeeOrder: "Cappuccino",
     },
     {
-      employeeNumber: 5,
+      orderNumber: 5,
       name: "Luke Ashford",
-      age: 18,
+      coffeeOrder: "Americano",
     },
     {
-      employeeNumber: 6,
+      orderNumber: 6,
       name: "Dave Smith",
-      age: 33,
+      coffeeOrder: "Flat white",
     },
     {
-      employeeNumber: 7,
+      orderNumber: 7,
       name: "Amy Fox",
-      age: 27,
+      coffeeOrder: "Macchiato",
     },
     {
-      employeeNumber: 8,
+      orderNumber: 8,
       name: "Mary Cooper",
-      age: 31,
+      coffeeOrder: "Affogato",
     },
     {
-      employeeNumber: 9,
+      orderNumber: 9,
       name: "Alice Cole",
-      age: 38,
+      coffeeOrder: "Latte",
     },
     {
-      employeeNumber: 10,
+      orderNumber: 10,
       name: "Ben Fields",
-      age: 40,
+      coffeeOrder: "Mocha",
     },
     {
-      employeeNumber: 11,
+      orderNumber: 11,
       name: "Pete Norton",
-      age: 32,
+      coffeeOrder: "Americano",
     },
     {
-      employeeNumber: 12,
+      orderNumber: 12,
       name: "Ashley Langford",
-      age: 29,
+      coffeeOrder: "Latte",
     },
     {
-      employeeNumber: 13,
+      orderNumber: 13,
       name: "Michael Hall",
-      age: 35,
+      coffeeOrder: "Espresso",
     },
     {
-      employeeNumber: 14,
+      orderNumber: 14,
       name: "David Frank",
-      age: 28,
+      coffeeOrder: "Flat white",
     },
     {
-      employeeNumber: 15,
+      orderNumber: 15,
       name: "Mary Lincoln",
-      age: 23,
+      coffeeOrder: "Macchiato",
     },
     {
-      employeeNumber: 16,
+      orderNumber: 16,
       name: "Will Barns",
-      age: 36,
+      coffeeOrder: "Americano",
     },
     {
-      employeeNumber: 17,
+      orderNumber: 17,
       name: "Elizabeth Long",
-      age: 43,
+      coffeeOrder: "Cappuccino",
     },
     {
-      employeeNumber: 18,
+      orderNumber: 18,
       name: "Keith Jones",
-      age: 37,
+      coffeeOrder: "Affogato",
     },
     {
-      employeeNumber: 19,
+      orderNumber: 19,
       name: "Olivia Brown",
-      age: 19,
+      coffeeOrder: "Latte",
     },
     {
-      employeeNumber: 20,
+      orderNumber: 20,
       name: "Tim Green",
-      age: 50,
+      coffeeOrder: "Mocha",
     },
   ];
   dataTable.columns = long_columns;
@@ -1731,13 +1735,13 @@ export const snippetsPagination = [
   columns={long_columns}
   data={long_data}
   showPagination
-  paginationOptions={{
-    itemsPerPage: [
+  paginationBarOptions={{
+    itemsPerPageOptions: [
       { label: "5", value: "5" },
       { label: "10", value: "10" },
       { label: "15", value: "15" },
     ],
-    itemsPerPageControl: true,
+    showItemsPerPageControl: true,
   }}
 />`,
       long: [
@@ -1745,8 +1749,8 @@ export const snippetsPagination = [
           language: "Typescript",
           snippet: `const long_columns: IcDataTableColumnObject[] = [
   {
-    key: "employeeNumber",
-    title: "Employee number",
+    key: "orderNumber",
+    title: "Order number",
     dataType: "number",
     columnAlignment: { horizontal: "left" },
   },
@@ -1756,111 +1760,111 @@ export const snippetsPagination = [
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
-    dataType: "number",
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
   },
 ];
 const long_data = [
   {
-    employeeNumber: 1,
+    orderNumber: 1,
     name: "Joe Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 2,
+    orderNumber: 2,
     name: "Sarah Jones",
-    age: 28,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 3,
+    orderNumber: 3,
     name: "Mark Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 4,
+    orderNumber: 4,
     name: "Naomi Thomas",
-    age: 32,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 5,
+    orderNumber: 5,
     name: "Luke Ashford",
-    age: 18,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 6,
+    orderNumber: 6,
     name: "Dave Smith",
-    age: 33,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 7,
+    orderNumber: 7,
     name: "Amy Fox",
-    age: 27,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 8,
+    orderNumber: 8,
     name: "Mary Cooper",
-    age: 31,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 9,
+    orderNumber: 9,
     name: "Alice Cole",
-    age: 38,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 10,
+    orderNumber: 10,
     name: "Ben Fields",
-    age: 40,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 11,
+    orderNumber: 11,
     name: "Pete Norton",
-    age: 32,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 12,
+    orderNumber: 12,
     name: "Ashley Langford",
-    age: 29,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 13,
+    orderNumber: 13,
     name: "Michael Hall",
-    age: 35,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 14,
+    orderNumber: 14,
     name: "David Frank",
-    age: 28,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 15,
+    orderNumber: 15,
     name: "Mary Lincoln",
-    age: 23,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 16,
+    orderNumber: 16,
     name: "Will Barns",
-    age: 36,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 17,
+    orderNumber: 17,
     name: "Elizabeth Long",
-    age: 43,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 18,
+    orderNumber: 18,
     name: "Keith Jones",
-    age: 37,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 19,
+    orderNumber: 19,
     name: "Olivia Brown",
-    age: 19,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 20,
+    orderNumber: 20,
     name: "Tim Green",
-    age: 50,
+    coffeeOrder: "Mocha",
   },
 ];
 return (
@@ -1871,8 +1875,8 @@ return (
           language: "Javascript",
           snippet: `const long_columns = [
   {
-    key: "employeeNumber",
-    title: "Employee number",
+    key: "orderNumber",
+    title: "Order number",
     dataType: "number",
     columnAlignment: { horizontal: "left" },
   },
@@ -1882,111 +1886,111 @@ return (
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
-    dataType: "number",
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
   },
 ];
 const long_data = [
   {
-    employeeNumber: 1,
+    orderNumber: 1,
     name: "Joe Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 2,
+    orderNumber: 2,
     name: "Sarah Jones",
-    age: 28,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 3,
+    orderNumber: 3,
     name: "Mark Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 4,
+    orderNumber: 4,
     name: "Naomi Thomas",
-    age: 32,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 5,
+    orderNumber: 5,
     name: "Luke Ashford",
-    age: 18,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 6,
+    orderNumber: 6,
     name: "Dave Smith",
-    age: 33,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 7,
+    orderNumber: 7,
     name: "Amy Fox",
-    age: 27,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 8,
+    orderNumber: 8,
     name: "Mary Cooper",
-    age: 31,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 9,
+    orderNumber: 9,
     name: "Alice Cole",
-    age: 38,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 10,
+    orderNumber: 10,
     name: "Ben Fields",
-    age: 40,
+    coffeeOrder: "Mocha",
   },
   {
-    employeeNumber: 11,
+    orderNumber: 11,
     name: "Pete Norton",
-    age: 32,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 12,
+    orderNumber: 12,
     name: "Ashley Langford",
-    age: 29,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 13,
+    orderNumber: 13,
     name: "Michael Hall",
-    age: 35,
+    coffeeOrder: "Espresso",
   },
   {
-    employeeNumber: 14,
+    orderNumber: 14,
     name: "David Frank",
-    age: 28,
+    coffeeOrder: "Flat white",
   },
   {
-    employeeNumber: 15,
+    orderNumber: 15,
     name: "Mary Lincoln",
-    age: 23,
+    coffeeOrder: "Macchiato",
   },
   {
-    employeeNumber: 16,
+    orderNumber: 16,
     name: "Will Barns",
-    age: 36,
+    coffeeOrder: "Americano",
   },
   {
-    employeeNumber: 17,
+    orderNumber: 17,
     name: "Elizabeth Long",
-    age: 43,
+    coffeeOrder: "Cappuccino",
   },
   {
-    employeeNumber: 18,
+    orderNumber: 18,
     name: "Keith Jones",
-    age: 37,
+    coffeeOrder: "Affogato",
   },
   {
-    employeeNumber: 19,
+    orderNumber: 19,
     name: "Olivia Brown",
-    age: 19,
+    coffeeOrder: "Latte",
   },
   {
-    employeeNumber: 20,
+    orderNumber: 20,
     name: "Tim Green",
-    age: 50,
+    coffeeOrder: "Mocha",
   },
 ];
 return (
@@ -2004,15 +2008,499 @@ return (
     columns={LONG_COLUMNS}
     data={LONG_DATA}
     showPagination
-    paginationOptions={{
-      itemsPerPage: [
+    paginationBarOptions={{
+      itemsPerPageOptions: [
         { label: "5", value: "5" },
         { label: "10", value: "10" },
         { label: "15", value: "15" },
       ],
-      itemsPerPageControl: true,
+      showItemsPerPageControl: true,
     }}
   />
+</ComponentPreview>
+
+### Slotted pagination
+
+export const snippetsSlottedPagination = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Slotted pagination bar">
+  <ic-pagination-bar slot="pagination-bar" show-items-per-page-control="true"></ic-pagination-bar>
+</ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const long_columns = [
+    {
+      key: "orderNumber",
+      title: "Order number",
+      dataType: "number",
+      columnAlignment: { horizontal: "left" },
+    },
+    {
+      key: "name",
+      title: "Name",
+      dataType: "string",
+    },
+    {
+      key: "coffeeOrder",
+      title: "Coffee order",
+      dataType: "string",
+    },
+  ];
+  const long_data = [
+    {
+      orderNumber: 1,
+      name: "Joe Bloggs",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 2,
+      name: "Sarah Jones",
+      coffeeOrder: "Mocha",
+    },
+    {
+      orderNumber: 3,
+      name: "Mark Owens",
+      coffeeOrder: "Espresso",
+    },
+    {
+      orderNumber: 4,
+      name: "Naomi Thomas",
+      coffeeOrder: "Cappuccino",
+    },
+    {
+      orderNumber: 5,
+      name: "Luke Ashford",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 6,
+      name: "Dave Smith",
+      coffeeOrder: "Flat white",
+    },
+    {
+      orderNumber: 7,
+      name: "Amy Fox",
+      coffeeOrder: "Macchiato",
+    },
+    {
+      orderNumber: 8,
+      name: "Mary Cooper",
+      coffeeOrder: "Affogato",
+    },
+    {
+      orderNumber: 9,
+      name: "Alice Cole",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 10,
+      name: "Ben Fields",
+      coffeeOrder: "Mocha",
+    },
+    {
+      orderNumber: 11,
+      name: "Pete Norton",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 12,
+      name: "Ashley Langford",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 13,
+      name: "Michael Hall",
+      coffeeOrder: "Espresso",
+    },
+    {
+      orderNumber: 14,
+      name: "David Frank",
+      coffeeOrder: "Flat white",
+    },
+    {
+      orderNumber: 15,
+      name: "Mary Lincoln",
+      coffeeOrder: "Macchiato",
+    },
+    {
+      orderNumber: 16,
+      name: "Will Barns",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 17,
+      name: "Elizabeth Long",
+      coffeeOrder: "Cappuccino",
+    },
+    {
+      orderNumber: 18,
+      name: "Keith Jones",
+      coffeeOrder: "Affogato",
+    },
+    {
+      orderNumber: 19,
+      name: "Olivia Brown",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 20,
+      name: "Tim Green",
+      coffeeOrder: "Mocha",
+    },
+  ];
+  dataTable.columns = long_columns;
+  dataTable.data = long_data;
+  const paginationBar = document.querySelector("ic-pagination-bar");
+  paginationBar.itemsPerPageOptions = [
+      { label: "5", value: "5" },
+      { label: "10", value: "10" },
+      { label: "15", value: "15" },
+  ];
+  paginationBar.totalItems = long_data.length;
+  paginationBar.addEventListener("icItemsPerPageChange", (ev) => {
+    itemsPerPage = ev.detail.value;
+    dataTable.data = long_data.slice(0, itemsPerPage);
+  });
+  paginationBar.addEventListener("icPageChange", (ev) => {
+    const fromRow = (ev.detail.value - 1) * itemsPerPage;
+    dataTable.data = long_data.slice(fromRow, fromRow + itemsPerPage);
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Slotted pagination bar" columns={long_columns} data={data}>
+    <IcPaginationBar
+      slot="pagination-bar"
+      showItemsPerPageControl
+      totalItems={long_data.length}
+      itemsPerPageOptions={[
+        { label: "5", value: "5" },
+        { label: "10", value: "10" },
+      ]}
+      selectedItemsPerPage={itemsPerPage}
+      onIcItemsPerPageChange={icItemsPerPageChangeHandler}
+      onIcPageChange={pageChangeHandler}
+    />
+</IcDataTable>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const long_columns: IcDataTableColumnObject[] = [
+  {
+    key: "orderNumber",
+    title: "Order number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+];
+const long_data = [
+  {
+    orderNumber: 1,
+    name: "Joe Bloggs",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 2,
+    name: "Sarah Jones",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 3,
+    name: "Mark Owens",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 4,
+    name: "Naomi Thomas",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 5,
+    name: "Luke Ashford",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 6,
+    name: "Dave Smith",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 7,
+    name: "Amy Fox",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 8,
+    name: "Mary Cooper",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 9,
+    name: "Alice Cole",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 10,
+    name: "Ben Fields",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 11,
+    name: "Pete Norton",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 12,
+    name: "Ashley Langford",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 13,
+    name: "Michael Hall",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 14,
+    name: "David Frank",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 15,
+    name: "Mary Lincoln",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 16,
+    name: "Will Barns",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 17,
+    name: "Elizabeth Long",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 18,
+    name: "Keith Jones",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 19,
+    name: "Olivia Brown",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 20,
+    name: "Tim Green",
+    coffeeOrder: "Mocha",
+  },
+];
+const [data, setData] = useState(long_data);
+const [itemsPerPage, setItemsPerPage] = useState(5);
+const icItemsPerPageChangeHandler = (ev: CustomEvent) => {
+  setItemsPerPage(ev.detail.value);
+  setData(long_data.slice(0, itemsPerPage));
+}
+const pageChangeHandler = (ev: CustomEvent) => {
+  const fromRow = (ev.detail.value - 1) * itemsPerPage;
+  setData(long_data.slice(fromRow, fromRow + itemsPerPage));
+}
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const long_columns = [
+  {
+    key: "orderNumber",
+    title: "Order number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+];
+const long_data = [
+  {
+    orderNumber: 1,
+    name: "Joe Bloggs",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 2,
+    name: "Sarah Jones",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 3,
+    name: "Mark Owens",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 4,
+    name: "Naomi Thomas",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 5,
+    name: "Luke Ashford",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 6,
+    name: "Dave Smith",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 7,
+    name: "Amy Fox",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 8,
+    name: "Mary Cooper",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 9,
+    name: "Alice Cole",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 10,
+    name: "Ben Fields",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 11,
+    name: "Pete Norton",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 12,
+    name: "Ashley Langford",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 13,
+    name: "Michael Hall",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 14,
+    name: "David Frank",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 15,
+    name: "Mary Lincoln",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 16,
+    name: "Will Barns",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 17,
+    name: "Elizabeth Long",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 18,
+    name: "Keith Jones",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 19,
+    name: "Olivia Brown",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 20,
+    name: "Tim Green",
+    coffeeOrder: "Mocha",
+  },
+];
+const [data, setData] = useState(long_data);
+const [itemsPerPage, setItemsPerPage] = useState(5);
+const icItemsPerPageChangeHandler = (ev) => {
+  setItemsPerPage(ev.detail.value);
+  setData(long_data.slice(0, itemsPerPage));
+}
+const pageChangeHandler = (ev) => {
+  const fromRow = (ev.detail.value - 1) * itemsPerPage;
+  setData(long_data.slice(fromRow, fromRow + itemsPerPage));
+}
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const SlottedPaginationDataTable = () => {
+  const [data, setData] = useState(LONG_DATA);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const icItemsPerPageChangeHandler = (ev) => {
+    setItemsPerPage(ev.detail.value);
+    setData(LONG_DATA.slice(0, itemsPerPage));
+  };
+  const pageChangeHandler = (ev) => {
+    const fromRow = (ev.detail.value - 1) * itemsPerPage;
+    setData(LONG_DATA.slice(fromRow, fromRow + itemsPerPage));
+  };
+  return (
+    <IcDataTable
+      caption="Slotted pagination bar"
+      columns={LONG_COLUMNS}
+      data={data}
+    >
+      <IcPaginationBar
+        slot="pagination-bar"
+        showItemsPerPageControl
+        totalItems={LONG_DATA.length}
+        itemsPerPageOptions={[
+          { label: "5", value: "5" },
+          { label: "10", value: "10" },
+        ]}
+        selectedItemsPerPage={itemsPerPage}
+        onIcItemsPerPageChange={icItemsPerPageChangeHandler}
+        onIcPageChange={pageChangeHandler}
+      />
+    </IcDataTable>
+  );
+};
+
+<ComponentPreview snippets={snippetsSlottedPagination}>
+  <SlottedPaginationDataTable />
 </ComponentPreview>
 
 ### Column overrides
@@ -2034,31 +2522,31 @@ export const snippetsColumnOverrides = [
       emphasis: 'high',
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -2086,31 +2574,31 @@ export const snippetsColumnOverrides = [
     emphasis: 'high',
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -2128,31 +2616,31 @@ return (
     emphasis: 'high',
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -2185,8 +2673,8 @@ export const snippetsRowOverrides = [
   const columns = [
     {
       key: "header",
-      title: "Job Title",
-      dataType: "string",
+      title: "Order number",
+      dataType: "number",
     },
     {
       key: "firstName",
@@ -2194,34 +2682,34 @@ export const snippetsRowOverrides = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
-      header: { title: "Employee" },
+      header: { title: 1 },
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
-      header: { title: "Employee" },
+      header: { title: 2 },
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
-      header: { title: "Manager" },
+      header: { title: 3 },
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -2243,8 +2731,8 @@ export const snippetsRowOverrides = [
           snippet: `const columns: IcDataTableColumnObject[] = [
   {
     key: "header",
-    title: "Job Title",
-    dataType: "string",
+    title: "Order number",
+    dataType: "number",
   },
   {
     key: "firstName",
@@ -2252,34 +2740,34 @@ export const snippetsRowOverrides = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
-    header: { title: "Employee" },
+    header: { title: 1 },
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
-    header: { title: "Employee" },
+    header: { title: 2 },
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
-    header: { title: "Manager" },
+    header: { title: 3 },
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -2291,8 +2779,8 @@ return (
           snippet: `const columns = [
   {
     key: "header",
-    title: "Job Title",
-    dataType: "string",
+    title: "Order number",
+    dataType: "number",
   },
   {
     key: "firstName",
@@ -2300,34 +2788,34 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
-    header: { title: "Employee" },
+    header: { title: 1 },
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
-    header: { title: "Employee" },
+    header: { title: 2 },
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
-    header: { title: "Manager" },
+    header: { title: 3 },
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -2365,13 +2853,13 @@ export const snippetsCellOverrides = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
@@ -2382,18 +2870,18 @@ export const snippetsCellOverrides = [
         cellAlignment: { horizontal: "center", vertical: "middle" },
         emphasis: "high",
       },
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -2420,13 +2908,13 @@ export const snippetsCellOverrides = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -2437,18 +2925,18 @@ const data = [
       cellAlignment: { horizontal: "center", vertical: "middle" },
       emphasis: "high",
     },
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -2465,13 +2953,13 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -2482,18 +2970,18 @@ const data = [
       cellAlignment: { horizontal: "center", vertical: "middle" },
       emphasis: "high",
     },
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -2531,13 +3019,13 @@ export const snippetsDefaultEmptyState = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
@@ -2560,13 +3048,13 @@ export const snippetsDefaultEmptyState = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -2584,13 +3072,13 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -2633,13 +3121,13 @@ export const snippetsSlottedEmptyState = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
@@ -2669,13 +3157,13 @@ export const snippetsSlottedEmptyState = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -2693,13 +3181,13 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -2743,41 +3231,41 @@ export const snippetsLoadingState = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
     {
       firstName: "Naomi",
-      lastName: "Thomas",
-      age: 32,
+      coffeeOrder: "Cappuccino",
+      quantity: 4,
     },
     {
       firstName: "Luke",
-      lastName: "Ashford",
-      age: 18,
+      coffeeOrder: "Americano",
+      quantity: 2,
     },
   ];
   dataTable.columns = columns;
@@ -2806,41 +3294,41 @@ export const snippetsLoadingState = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
   {
     firstName: "Naomi",
-    lastName: "Thomas",
-    age: 32,
+    coffeeOrder: "Cappuccino",
+    quantity: 4,
   },
   {
     firstName: "Luke",
-    lastName: "Ashford",
-    age: 18,
+    coffeeOrder: "Americano",
+    quantity: 2,
   },
 ];
 return (
@@ -2857,41 +3345,41 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 {
     firstName: "Naomi",
-    lastName: "Thomas",
-    age: 32,
+    coffeeOrder: "Cappuccino",
+    quantity: 32,
   },
   {
     firstName: "Luke",
-    lastName: "Ashford",
-    age: 18,
+    coffeeOrder: "Americano",
+    quantity: 18,
   },
 ];
 return (
@@ -2931,31 +3419,31 @@ export const snippetsUpdatingState = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -2984,31 +3472,31 @@ export const snippetsUpdatingState = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -3025,31 +3513,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -3088,13 +3576,13 @@ export const snippetsElements = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
     {
@@ -3110,20 +3598,20 @@ export const snippetsElements = [
         data: "Joe",
         href: "#",
       },
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
       actions: \`<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>\`,
     },
     {
       firstName: 'Sarah',
-      lastName: 'Smith',
-      age: 28,
+      coffeeOrder: 'Mocha',
+      quantity: 2,
       actions: \`<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>\`,
     },
     {
       firstName: 'Mark',
-      lastName: 'Owens',
-      age: 45,
+      coffeeOrder: 'Espresso',
+      quantity: 1,
       actions: \`<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>\`,
     },
   ];
@@ -3161,13 +3649,13 @@ export const snippetsElements = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
   {
@@ -3183,18 +3671,18 @@ const data = [
       data: "Joe",
       href: "#",
     },
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: 'Sarah',
-    lastName: 'Smith',
-    age: 28,
+    coffeeOrder: 'Mocha',
+    quantity: 2,
   },
   {
     firstName: 'Mark',
-    lastName: 'Owens',
-    age: 45,
+    coffeeOrder: 'Espresso',
+    quantity: 1,
   },
 ];
 return (
@@ -3210,13 +3698,13 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
   {
@@ -3232,18 +3720,18 @@ const data = [
       data: "Joe",
       href: "#",
     },
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: 'Sarah',
-    lastName: 'Smith',
-    age: 28,
+    coffeeOrder: 'Mocha',
+    quantity: 2,
   },
   {
     firstName: 'Mark',
-    lastName: 'Owens',
-    age: 45,
+    coffeeOrder: 'Espresso',
+    quantity: 1,
   },
 ];
 return (
@@ -3310,15 +3798,15 @@ export const snippetsCustomIcons = [
       },
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
       cellAlignment: "center",
       columnAlignment: { horizontal: "center", vertical: "bottom" },
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
@@ -3328,21 +3816,21 @@ export const snippetsCustomIcons = [
         data: "Joe",
         icon: accountSVG,
       },
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: {
         data: "Mark",
         icon: accountSVG,
       },
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -3374,15 +3862,15 @@ const columns: IcDataTableColumnObject[] = [
     },
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
     cellAlignment: "center",
     columnAlignment: { horizontal: "center", vertical: "bottom" },
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -3392,21 +3880,21 @@ const data = [
       data: "Joe",
       icon: accountSVG,
     },
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: {
       data: "Mark",
       icon: accountSVG,
     },
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -3430,15 +3918,15 @@ const columns = [
     },
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
     cellAlignment: "center",
     columnAlignment: { horizontal: "center", vertical: "bottom" },
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
@@ -3448,21 +3936,21 @@ const data = [
       data: "Joe",
       icon: accountSVG,
     },
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: {
       data: "Mark",
       icon: accountSVG,
     },
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -3497,37 +3985,37 @@ export const snippetsRowHeights = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
   dataTable.data = data;
   dataTable.globalRowHeight = 80;
-  dataTable.variableRowHeight = ({ firstName, lastName }) => firstName === "Joe" || lastName === "Owens" ? 200 : null;
+  dataTable.variableRowHeight = ({ firstName, coffeeOrder }) => firstName === "Joe" || coffeeOrder === "Espresso" ? 200 : null;
 </script>`,
     },
   },
@@ -3551,34 +4039,34 @@ export const snippetsRowHeights = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
-const rowHeightFunc = ({ firstName, lastName }) => firstName === "Joe" || lastName === "Owens" ? 200 : null;
+const rowHeightFunc = ({ firstName, coffeeOrder }) => firstName === "Joe" || coffeeOrder === "Espresso" ? 200 : null;
 return (
   {shortCode}
 )`,
@@ -3592,34 +4080,34 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
-const rowHeightFunc = ({ firstName, lastName }) => firstName === "Joe" || lastName === "Owens" ? 200 : null;
+const rowHeightFunc = ({ firstName, coffeeOrder }) => firstName === "Joe" || coffeeOrder === "Espresso" ? 200 : null;
 return (
   {shortCode}
 )`,
@@ -3629,8 +4117,8 @@ return (
   },
 ];
 
-export const rowHeightFunc = ({ firstName, lastName }) =>
-  firstName === "Joe" || lastName === "Owens" ? 200 : null;
+export const rowHeightFunc = ({ firstName, coffeeOrder }) =>
+  firstName === "Joe" || coffeeOrder === "Espresso" ? 200 : null;
 
 <ComponentPreview snippets={snippetsRowHeights}>
   <IcDataTable
@@ -3648,13 +4136,14 @@ export const snippetsTitleBar = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-data-table id="data-table" caption="Custom Title Bar">
+      short: `<ic-data-table id="data-table" caption="Coffee Orders">
   <ic-data-table-title-bar
-    description="Data table description that describes the purpose of the table."
-    metadata="128 items | 32gb | Updated: 01/02/03"
+    slot="title-bar"
+    description="A list of all coffee orders in the last year."
+    metadata="3 items | Updated: 20/03/25"
   >
-    <ic-button slot="primary-action">Primary</ic-button>
-    <ic-button slot="custom-actions" variant="icon" aria-label="Icon 1">
+    <ic-button slot="primary-action">Add new order</ic-button>
+    <ic-button slot="custom-actions" variant="icon" aria-label="Coffee 1">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"
@@ -3666,19 +4155,7 @@ export const snippetsTitleBar = [
         />
       </svg>
     </ic-button>
-    <ic-button slot="custom-actions" variant="icon" aria-label="Icon 2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        viewBox="0 -960 960 960"
-        width="24"
-      >
-        <path
-          d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"
-        />
-      </svg>
-    </ic-button>
-    <ic-button slot="custom-actions" variant="icon" aria-label="Icon 3">
+    <ic-button slot="custom-actions" variant="icon" aria-label="Coffee 2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"
@@ -3692,8 +4169,8 @@ export const snippetsTitleBar = [
     </ic-button>
     <ic-typography slot="description" variant="body">
       <p>
-        This is some text and{' '}
-        <ic-link href="#">this is an inline link</ic-link> within the text.
+        A log kept of all{' '}
+        <ic-link href="#">coffee orders</ic-link> to refer back to.
       </p>
     </ic-typography>
   </ic-data-table-title-bar>
@@ -3708,31 +4185,31 @@ export const snippetsTitleBar = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "age",
-      title: "Age",
+      key: "quantity",
+      title: "Quantity",
       dataType: "number",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      age: 30,
+      coffeeOrder: "Latte",
+      quantity: 3,
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      age: 28,
+      coffeeOrder: "Mocha",
+      quantity: 2,
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      age: 45,
+      coffeeOrder: "Espresso",
+      quantity: 1,
     },
   ];
   dataTable.columns = columns;
@@ -3743,26 +4220,23 @@ export const snippetsTitleBar = [
   {
     technology: "React",
     snippets: {
-      short: `<IcDataTable caption="Custom Title Bar" columns={columns} data={data}>
+      short: `<IcDataTable caption="Coffee orders" columns={columns} data={data}>
   <IcDataTableTitleBar
     slot="title-bar"
-    description="Data table description that describes the purpose of the table."
-    metadata="128 items | 32gb | Updated: 01/02/03"
+    description="A list of all coffee orders in the last year."
+    metadata="3 items | Updated: 20/03/25"
   >
-    <IcButton slot="primary-action">Primary</IcButton>
-    <IcButton slot="custom-actions" variant="icon" aria-label="Icon 1">
+    <IcButton slot="primary-action">Add new order</IcButton>
+    <IcButton slot="custom-actions" variant="icon" aria-label="Coffee 1">
       <SlottedSVG path={mdiImage} viewBox="0 0 24 24" />
     </IcButton>
-    <IcButton slot="custom-actions" variant="icon" aria-label="Icon 2">
-      <SlottedSVG path={mdiImage} viewBox="0 0 24 24" />
-    </IcButton>
-    <IcButton slot="custom-actions" variant="icon" aria-label="Icon 3">
+    <IcButton slot="custom-actions" variant="icon" aria-label="Coffee 2">
       <SlottedSVG path={mdiImage} viewBox="0 0 24 24" />
     </IcButton>
     <IcTypography slot="description" variant="body">
       <p>
-        This is some text and{' '}
-        <IcLink href="#">this is an inline link</IcLink> within the text.
+        A log kept of all{' '}
+        <IcLink href="#">coffee orders</IcLink> to refer back to.
       </p>
     </IcTypography>
   </IcDataTableTitleBar>
@@ -3777,31 +4251,31 @@ export const snippetsTitleBar = [
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -3817,31 +4291,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "age",
-    title: "Age",
+    key: "quantity",
+    title: "Quantity",
     dataType: "number",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    age: 30,
+    coffeeOrder: "Latte",
+    quantity: 3,
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    age: 28,
+    coffeeOrder: "Mocha",
+    quantity: 2,
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    age: 45,
+    coffeeOrder: "Espresso",
+    quantity: 1,
   },
 ];
 return (
@@ -3854,26 +4328,23 @@ return (
 ];
 
 <ComponentPreview snippets={snippetsTitleBar}>
-  <IcDataTable caption="Custom Title Bar" columns={COLUMNS} data={DATA}>
+  <IcDataTable caption="Coffee orders" columns={COLUMNS} data={DATA}>
     <IcDataTableTitleBar
       slot="title-bar"
-      description="Data table description that describes the purpose of the table."
-      metadata="128 items | 32gb | Updated: 01/02/03"
+      description="A list of all coffee orders in the last year."
+      metadata="3 items | Updated: 20/03/25"
     >
-      <IcButton slot="primary-action">Primary</IcButton>
-      <IcButton slot="custom-actions" variant="icon" aria-label="Icon 1">
+      <IcButton slot="primary-action">Add new order</IcButton>
+      <IcButton slot="custom-actions" variant="icon" aria-label="Coffee 1">
         <SlottedSVG path={mdiImage} viewBox="0 0 24 24" />
       </IcButton>
-      <IcButton slot="custom-actions" variant="icon" aria-label="Icon 2">
-        <SlottedSVG path={mdiImage} viewBox="0 0 24 24" />
-      </IcButton>
-      <IcButton slot="custom-actions" variant="icon" aria-label="Icon 3">
+      <IcButton slot="custom-actions" variant="icon" aria-label="Coffee 2">
         <SlottedSVG path={mdiImage} viewBox="0 0 24 24" />
       </IcButton>
       <IcTypography slot="description" variant="body">
         <p>
-          This is some text and <IcLink href="#">this is an inline link</IcLink>{" "}
-          within the text.
+          A log kept of all <IcLink href="#">coffee orders</IcLink> to refer
+          back to.
         </p>
       </IcTypography>
     </IcDataTableTitleBar>
@@ -3898,31 +4369,31 @@ export const snippetsTooltip = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "jobTitle",
-      title: "Job title",
+      key: "coffeeDescription",
+      title: "Coffee description",
       dataType: "string",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      jobTitle: "Senior Software Developer, Site Reliability Engineering",
+      coffeeOrder: "Latte",
+      coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      jobTitle: "Junior developer",
+      coffeeOrder: "Mocha",
+      coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      jobTitle: "Team lead",
+      coffeeOrder: "Espresso",
+      coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
     },
   ];
   dataTable.columns = columns;
@@ -3945,31 +4416,31 @@ export const snippetsTooltip = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "jobTitle",
-      title: "Job title",
+      key: "coffeeDescription",
+      title: "Coffee description",
       dataType: "string",
     },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    coffeeOrder: "Latte",
+    coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    jobTitle: "Junior developer",
+    coffeeOrder: "Mocha",
+    coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    jobTitle: "Team lead",
+    coffeeOrder: "Espresso",
+    coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
   },
 ];
 return (
@@ -3985,31 +4456,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "jobTitle",
-    title: "Job title",
+    key: "coffeeDescription",
+    title: "Coffee description",
     dataType: "string",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    coffeeOrder: "Latte",
+    coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    jobTitle: "Junior developer",
+    coffeeOrder: "Mocha",
+    coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    jobTitle: "Team lead",
+    coffeeOrder: "Espresso",
+    coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
   },
 ];
 return (
@@ -4049,31 +4520,31 @@ export const snippetsShowHide = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "jobTitle",
-      title: "Job title",
+      key: "coffeeDescription",
+      title: "Coffee description",
       dataType: "string",
     },
   ];
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      jobTitle: "Senior Software Developer, Site Reliability Engineering",
+      coffeeOrder: "Latte",
+      coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      jobTitle: "Junior developer",
+      coffeeOrder: "Mocha",
+      coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      jobTitle: "Team lead",
+      coffeeOrder: "Espresso",
+      coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
     },
   ];
   dataTable.columns = columns;
@@ -4096,31 +4567,31 @@ export const snippetsShowHide = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "jobTitle",
-      title: "Job title",
+      key: "coffeeDescription",
+      title: "Coffee description",
       dataType: "string",
     },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    coffeeOrder: "Latte",
+    coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    jobTitle: "Junior developer",
+    coffeeOrder: "Mocha",
+    coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    jobTitle: "Team lead",
+    coffeeOrder: "Espresso",
+    coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
   },
 ];
 return (
@@ -4136,31 +4607,31 @@ return (
     dataType: "string",
   },
   {
-    key: "lastName",
-    title: "Last name",
+    key: "coffeeOrder",
+    title: "Coffee order",
     dataType: "string",
   },
   {
-    key: "jobTitle",
-    title: "Job title",
+    key: "coffeeDescription",
+    title: "Coffee description",
     dataType: "string",
   },
 ];
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    coffeeOrder: "Latte",
+    coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    jobTitle: "Junior developer",
+    coffeeOrder: "Mocha",
+    coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    jobTitle: "Team lead",
+    coffeeOrder: "Espresso",
+    coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
   },
 ];
 return (
@@ -4200,13 +4671,13 @@ export const snippetsTextWrap = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "jobTitle",
-      title: "Job title",
+      key: "coffeeDescription",
+      title: "Coffee description",
       dataType: "string",
       textWrap: true,
     },
@@ -4214,18 +4685,18 @@ export const snippetsTextWrap = [
   const data = [
     {
       firstName: "Joe",
-      lastName: "Bloggs",
-      jobTitle: "Senior Software Developer, Site Reliability Engineering",
+      coffeeOrder: "Latte",
+      coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
     },
     {
       firstName: "Sarah",
-      lastName: "Smith",
-      jobTitle: "Junior developer",
+      coffeeOrder: "Mocha",
+      coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
     },
     {
       firstName: "Mark",
-      lastName: "Owens",
-      jobTitle: "Team lead",
+      coffeeOrder: "Espresso",
+      coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
     },
   ];
   dataTable.globalRowHeight = 40;
@@ -4246,13 +4717,13 @@ export const snippetsTextWrap = [
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "jobTitle",
-      title: "Job title",
+      key: "coffeeDescription",
+      title: "Coffee description",
       dataType: "string",
       textWrap: true,
     },
@@ -4260,18 +4731,18 @@ export const snippetsTextWrap = [
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    coffeeOrder: "Latte",
+    coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    jobTitle: "Junior developer",
+    coffeeOrder: "Mocha",
+    coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    jobTitle: "Team lead",
+    coffeeOrder: "Espresso",
+    coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
   },
 ];
 return (
@@ -4287,13 +4758,13 @@ return (
       dataType: "string",
     },
     {
-      key: "lastName",
-      title: "Last name",
+      key: "coffeeOrder",
+      title: "Coffee order",
       dataType: "string",
     },
     {
-      key: "jobTitle",
-      title: "Job title",
+      key: "coffeeDescription",
+      title: "Coffee description",
       dataType: "string",
       textWrap: true,
     },
@@ -4301,18 +4772,18 @@ return (
 const data = [
   {
     firstName: "Joe",
-    lastName: "Bloggs",
-    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+    coffeeOrder: "Latte",
+    coffeeDescription: "A latte is a coffee drink made with espresso and steamed milk.",
   },
   {
     firstName: "Sarah",
-    lastName: "Smith",
-    jobTitle: "Junior developer",
+    coffeeOrder: "Mocha",
+    coffeeDescription: "A mocha is a chocolate-flavoured variant of a caffè latte.",
   },
   {
     firstName: "Mark",
-    lastName: "Owens",
-    jobTitle: "Team lead",
+    coffeeOrder: "Espresso",
+    coffeeDescription: "An espresso is a concentrated form of coffee served in small, strong shots.",
   },
 ];
 return (
