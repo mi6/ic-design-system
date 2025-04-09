@@ -54,7 +54,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
     blockquote: WrappedBlockquote,
     DoDontCaution,
     DoubleDoDontCaution,
-    ThemedVideo
+    ThemedVideo,
   };
 
   const pageTitleValue = useMemo(
