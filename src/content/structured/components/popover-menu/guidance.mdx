@@ -23,9 +23,12 @@ tabs:
 
 import { IcPopoverMenu, IcMenuItem, IcButton } from "@ukic/react";
 import { useState } from "react";
-import popoverVid1 from "./images/anim-1-popover-menu-interaction.mp4";
-import popoverVid2 from "./images/anim-2-sub-menu-interaction.mp4";
-import popoverVid3 from "./images/anim-3-avoid-nested-sub-menus.mp4";
+import popoverVid1Light from "./images/anim-1-popover-menu-interaction.mp4";
+import popoverVid1Dark from "./images/anim-1-popover-menu-interaction-dark.mp4";
+import popoverVid2Light from "./images/anim-2-sub-menu-interaction.mp4";
+import popoverVid2Dark from "./images/anim-2-sub-menu-interaction-dark.mp4";
+import popoverVid3Light from "./images/anim-3-avoid-nested-sub-menus.mp4";
+import popoverVid3Dark from "./images/anim-3-avoid-nested-sub-menus-dark.mp4";
 import {
   Fig1PopoverDark,
   Fig1PopoverLight,
@@ -135,15 +138,15 @@ When you click a trigger element, a popover menu appears. Make sure to associate
 
 When you click a menu item within a popover menu, the popover menu will hide and the menu item’s associated action will be triggered.
 
-<video
-  class="half-width"
+<ThemedVideo
+  width="50%"
   muted
   controls
   loop
   title="An animation showing a popover menu that appears after clicking a ‘more’ button. The menu is closed when a menu item is clicked."
->
-  <source src={popoverVid1} type="video/mp4" />
-</video>
+  src={[popoverVid1Light, popoverVid1Dark]}
+  type="video/mp4"
+/>
 
 ### Sizing
 
@@ -240,15 +243,15 @@ Use menu groups to organise menu items into sections within the popover menu. Pr
 
 Use a parent menu item to open sub-menus that include more menu items. Use this to contain similar actions or options relating to the menu group name.
 
-<video
-  class="half-width"
+<ThemedVideo
+  width="50%"
   muted
   controls
   loop
   title="An animation showing a popover menu with a parent menu item titled ‘Zoom’. A sub-menu containing menu items for different zoom levels is opened after the ‘zoom’ parent menu item is clicked. After the back button is clicked in the sub-menu the main menu is displayed again."
->
-  <source src={popoverVid2} type="video/mp4" />
-</video>
+  src={[popoverVid2Light, popoverVid2Dark]}
+  type="video/mp4"
+/>
 
 ### Sub-menus
 
@@ -258,15 +261,15 @@ The sub-menu displays the same label as the parent menu item. Clicking the back 
 
 Use menu items, toggle menu items, menu groups or parent menu items in a sub-menu but avoid nesting too many levels of sub-menus as this can be confusing to navigate.
 
-<video
-  class="half-width"
+<ThemedVideo
+  width="50%"
   muted
   controls
   loop
   title="An animation showing a popover menu that contains four parent menu items each with nested parent menu items in their sub-menus. The user clicks ‘help options’ to go into the sub-menu, then clicks ‘information’ to go into a second sub-menu, then clicks ‘tutorials’ to go into a third sub-menu."
->
-  <source src={popoverVid3} type="video/mp4" />
-</video>
+  src={[popoverVid3Light, popoverVid3Dark]}
+  type="video/mp4"
+/>
 
 ## Accessibility considerations
 
