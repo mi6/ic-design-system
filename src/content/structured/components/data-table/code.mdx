@@ -43,6 +43,10 @@ import {
   LOADING_DATA,
   TRUNCATION_COLUMNS,
   TRUNCATION_DATA,
+  COLS_WIDTH,
+  DATA_WITH_DESCRIPTIONS,
+  COLS_DESCRIPTIONS,
+  DATA_WITH_EMPTY_VALUES,
 } from "./story-data";
 
 ## Component demo
@@ -4228,6 +4232,8 @@ export const snippetsTextWrap = [
       jobTitle: "Team lead",
     },
   ];
+  dataTable.columns = columns;
+  dataTable.data = data;
   dataTable.globalRowHeight = 40;
 </script>`,
     },
@@ -4330,5 +4336,650 @@ return (
     columns={TRUNCATION_COLUMNS}
     data={TRUNCATION_DATA}
     globalRowHeight={40}
+  />
+</ComponentPreview>
+
+### Columns widths and table sizing
+
+export const snippetsColumnWidths = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Columns widths and table sizing" table-layout="auto" width="800px"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+      columnWidth: "15%",
+    },
+    {
+      key: "lastName",
+      title: "Last name",
+      dataType: "string",
+      columnWidth: "300px",
+    },
+    {
+      key: "age",
+      title: "Age",
+      dataType: "number",
+      columnWidth: {
+        maxWidth: "100px",
+      },
+    }
+  ];
+  const data = [
+    {
+      firstName: "Joe",
+      lastName: "Bloggs",
+      age: 30,
+    },
+    {
+      firstName: "Sarah",
+      lastName: "Smith",
+      age: 28,
+    },
+    {
+      firstName: "Mark",
+      lastName: "Owens",
+      age: 45,
+    },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Columns widths and table sizing" columns={columns} data={data} width="800px" tableLayout="auto"/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+    {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: "15%",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+    columnWidth: "300px",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      maxWidth: "100px",
+    },
+  },
+];
+const data = [
+  {
+      firstName: "Joe",
+      lastName: "Bloggs",
+      age: 30,
+    },
+    {
+      firstName: "Sarah",
+      lastName: "Smith",
+      age: 28,
+    },
+    {
+      firstName: "Mark",
+      lastName: "Owens",
+      age: 45,
+    },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: "15%",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+    columnWidth: "300px",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      maxWidth: "100px",
+    },
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    lastName: "Bloggs",
+    age: 30,
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: 28,
+  },
+  {
+    firstName: "Mark",
+    lastName: "Owens",
+    age: 45,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsColumnWidths}>
+  <IcDataTable
+    caption="Columns widths and table sizing"
+    columns={COLS_WIDTH}
+    data={DATA}
+    width="800px"
+    tableLayout="auto"
+  />
+</ComponentPreview>
+
+### Description and icons within cells
+
+export const snippetsDescriptionAndIcons = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Description and icons within cells" table-layout="auto"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+  ];
+  const data = [
+    {
+    firstName: {
+      data: "Joe",
+      description: {
+        data: "The name of Joe",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+  },
+  {
+    firstName: {
+      data: "Sarah",
+      description: {
+        data: "The name of Sarah",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: {
+      data: "Mark",
+      description: {
+        data: "The name of Mark",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+  },
+  {
+    firstName: {
+      data: "Naomi",
+      description: {
+        data: "The name of Naomi",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Analyst",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: {
+      data: 18,
+      description: {
+        data: "The age of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    jobTitle: {
+      data: "Junior Developer",
+      description: {
+        data: "The job title of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+  },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Description and icons within cells" columns={columns} data={data} tableLayout="auto"/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+];
+const data = [
+  {
+    firstName: {
+      data: "Joe",
+      description: {
+        data: "The name of Joe",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+  },
+  {
+    firstName: {
+      data: "Sarah",
+      description: {
+        data: "The name of Sarah",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: {
+      data: "Mark",
+      description: {
+        data: "The name of Mark",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+  },
+  {
+    firstName: {
+      data: "Naomi",
+      description: {
+        data: "The name of Naomi",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Analyst",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: {
+      data: 18,
+      description: {
+        data: "The age of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    jobTitle: {
+      data: "Junior Developer",
+      description: {
+        data: "The job title of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+    columnWidth: {
+      minWidth: "200px",
+    },
+  },
+  {
+    key: "jobTitle",
+    title: "Job title",
+    dataType: "string",
+  },
+];
+const data = [
+  {
+    firstName: {
+      data: "Joe",
+      description: {
+        data: "The name of Joe",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Bloggs",
+    age: 30,
+    jobTitle: "Developer",
+  },
+  {
+    firstName: {
+      data: "Sarah",
+      description: {
+        data: "The name of Sarah",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Smith",
+    age: 28,
+    jobTitle: "Senior Software Developer, Site Reliability Engineering",
+  },
+  {
+    firstName: {
+      data: "Mark",
+      description: {
+        data: "The name of Mark",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Owens",
+    age: 45,
+    jobTitle: "Team Lead",
+  },
+  {
+    firstName: {
+      data: "Naomi",
+      description: {
+        data: "The name of Naomi",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    lastName: "Thomas",
+    age: 32,
+    jobTitle: "Analyst",
+  },
+  {
+    firstName: "Luke",
+    lastName: "Ashford",
+    age: {
+      data: 18,
+      description: {
+        data: "The age of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+    jobTitle: {
+      data: "Junior Developer",
+      description: {
+        data: "The job title of Luke",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm56-97h489L578-473 446-302l-93-127-117 152Zm-56 97v-600 600Z"/></svg>',
+      },
+    },
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDescriptionAndIcons}>
+  <IcDataTable
+    caption="Description and icons within cells"
+    columns={COLS_DESCRIPTIONS}
+    data={DATA_WITH_DESCRIPTIONS}
+    tableLayout="auto"
+  />
+</ComponentPreview>
+
+### Missing cell data
+
+export const snippetsMissingCellData = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Missing cell data"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+  ];
+  const data = [
+    {
+    firstName: "Nigel",
+    lastName: null,
+    age: 62,
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: undefined,
+  },
+  {
+    firstName: "",
+    lastName: "Owens",
+    age: 45,
+  },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable caption="Missing cell data" columns={columns} data={data}/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+   {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+];
+const data = [
+{
+    firstName: "Nigel",
+    lastName: null,
+    age: 62,
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: undefined,
+  },
+  {
+    firstName: "",
+    lastName: "Owens",
+    age: 45,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "lastName",
+    title: "Last name",
+    dataType: "string",
+  },
+  {
+    key: "age",
+    title: "Age",
+    dataType: "number",
+  },
+];
+const data = [
+  {
+    firstName: "Nigel",
+    lastName: null,
+    age: 62,
+  },
+  {
+    firstName: "Sarah",
+    lastName: "Smith",
+    age: undefined,
+  },
+  {
+    firstName: "",
+    lastName: "Owens",
+    age: 45,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsMissingCellData}>
+  <IcDataTable
+    caption="Missing cell data"
+    columns={COLUMNS}
+    data={DATA_WITH_EMPTY_VALUES}
   />
 </ComponentPreview>
