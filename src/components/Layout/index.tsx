@@ -85,6 +85,21 @@ const Layout: React.FC<LayoutProps> = ({
     description = subTitle;
   }
 
+  const [isNearBottom, setIsNearBottom] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined") {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const threshold = document.body.offsetHeight - 300;
+        setIsNearBottom(scrollPosition >= threshold);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // meta info for Open Graph & Twitter
   const metas = [
     {
@@ -318,7 +333,16 @@ const Layout: React.FC<LayoutProps> = ({
                   {" "}
                 </a>
                 {cloneElement(children, { location: location.pathname })}
-                <ic-back-to-top target="main" />
+                <ic-back-to-top
+                  target="main"
+                  style={
+                    !homepage && isNearBottom
+                      ? ({
+                          "--footer-offset": "6.75rem",
+                        } as React.CSSProperties)
+                      : undefined
+                  }
+                />
               </main>
             </div>
             <div className="footer">

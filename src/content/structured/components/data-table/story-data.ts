@@ -454,3 +454,80 @@ export const TRUNCATION_DATA = [
       "An espresso is a concentrated form of coffee served in small, strong shots.",
   },
 ];
+
+export const COLS_WIDTH = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+    columnWidth: "15%",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+    columnWidth: "300px",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+    columnWidth: {
+      maxWidth: "100px",
+    },
+  },
+];
+
+export const DATA_WITH_DESCRIPTIONS = [
+  {
+    firstName: "Joe",
+    coffeeOrder: {
+      data: "Latte",
+      description: {
+        data: "A latte is a coffee drink made with espresso and steamed milk.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 1,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: {
+      data: "Mocha",
+      description: {
+        data: "A mocha is a chocolate-flavoured variant of a caffè latte.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 6,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: {
+      data: "Espresso",
+      description: {
+        data: "An espresso is a concentrated form of coffee served in small, strong shots.",
+        icon: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Coffee</title><path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" /></svg>',
+      },
+    },
+    quantity: 2,
+  },
+];
+
+export const DATA_WITH_EMPTY_VALUES = [
+  {
+    firstName: "Joe",
+    coffeeOrder: null,
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: undefined,
+  },
+  {
+    firstName: "",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+];
