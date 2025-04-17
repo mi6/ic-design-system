@@ -7,10 +7,16 @@ import { IcButtonVariants } from "@ukic/web-components";
 import icdsHero from "../../../static/icds-hero.png";
 import backgroundImage from "../../../static/background-image.png";
 import backgroundImageDarkMode from "../../../static/background-image-dark-mode.png";
-import accessibility from "../../assets/png/accessibility.png";
-import components from "../../assets/png/components.png";
-import patterns from "../../assets/png/patterns.png";
-import styles from "../../assets/png/styles.png";
+import {
+  Accessibility,
+  AccessibilityDark,
+  Components,
+  ComponentsDark,
+  Patterns,
+  PatternsDark,
+  Styles,
+  StylesDark,
+} from "../../content/structured/get-started/images/card-icons";
 import { DesignImage, DevImage } from "../../assets/svg";
 
 import "./index.css";
@@ -26,6 +32,8 @@ interface homepageCardItem {
 }
 
 const Homepage: React.FC = () => {
+  const { theme } = useTheme();
+
   const renderImage = (image: string) => {
     const viewportWidth = useViewportWidth();
     const isSmallViewport: boolean = viewportWidth < 577;
@@ -34,7 +42,7 @@ const Homepage: React.FC = () => {
         return (
           !isSmallViewport && (
             <img
-              src={accessibility}
+              src={theme === "light" ? Accessibility : AccessibilityDark}
               alt="An accessibility icon"
               loading="lazy"
               slot="image"
@@ -46,7 +54,7 @@ const Homepage: React.FC = () => {
         return (
           !isSmallViewport && (
             <img
-              src={styles}
+              src={theme === "light" ? Styles : StylesDark}
               alt="A h1, h2 and h3 element"
               loading="lazy"
               slot="image"
@@ -58,7 +66,7 @@ const Homepage: React.FC = () => {
         return (
           !isSmallViewport && (
             <img
-              src={components}
+              src={theme === "light" ? Components : ComponentsDark}
               alt="A diamond shape split into four sections"
               loading="lazy"
               slot="image"
@@ -70,7 +78,7 @@ const Homepage: React.FC = () => {
         return (
           !isSmallViewport && (
             <img
-              src={patterns}
+              src={theme === "light" ? Patterns : PatternsDark}
               alt="A collection of elements on a page"
               loading="lazy"
               slot="image"
@@ -82,8 +90,6 @@ const Homepage: React.FC = () => {
         return null;
     }
   };
-
-  const { theme } = useTheme();
 
   return (
     <div className="homepage">

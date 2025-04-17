@@ -12,8 +12,12 @@ subTitle: "Reusable and flexible Figma components used to design, prototype and 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/design/figma.mdx"
 ---
 
-import figmaFig1 from "./images/assets2x.png";
-import figmaFig2 from "./images/libraries2x.png";
+import {
+  Fig1AssetsDark,
+  Fig1AssetsLight,
+  FigmaLibrary,
+  FigmaLibraryDark,
+} from "./images";
 
 ## About the Figma UI Kit
 
@@ -29,21 +33,19 @@ The UI Kit is turned on by default for all projects within our community. Check 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={figmaFig1}
+    imageSrc={[Fig1AssetsLight, Fig1AssetsDark]}
     imageAlt="Image of the left-hand side panel in Figma with the 'Assets' tab open and icon buttons on the right of the panel including the 'Team library' button."
     state="none"
   />
 </DoubleDoDontCaution>
 
-2. Make sure the Intelligence Community Design System library is turned on.
+2. Make sure the latest Intelligence Community Design System library is added.
 
-<DoubleDoDontCaution>
-  <DoDontCaution
-    imageSrc={figmaFig2}
-    imageAlt="Image of the Libraries menu in Figma with the Intelligence Community Design System library turned on."
-    state="none"
-  />
-</DoubleDoDontCaution>
+<DoDontCaution
+  imageSrc={[FigmaLibrary, FigmaLibraryDark]}
+  imageAlt="Image of the Libraries menu in Figma with the Intelligence Community Design System library turned on."
+  state="none"
+/>
 
 ## Not part of the Intelligence Community?
 

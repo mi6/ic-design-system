@@ -1,6 +1,6 @@
 export { default as Fig1DateInputLight } from "./fig-1-do-use-date-input-to-collect-distant-dates.png";
 export { default as Fig1DateInputDark } from "./fig-1-do-use-date-input-to-collect-distant-dates-dark.png";
-export { default as Fig2DateInputLight } from "./fig-2-do-use-seperate-date-input-when-capturing-partial-dates.png";
+export { default as Fig2DateInputLight } from "./fig-2-do-use-separate-date-input-when-capturing-partial-dates.png";
 export { default as Fig2DateInputDark } from "./fig-2-do-use-separate-date-input-when-capturing-partial-dates-dark.png";
 export { default as Fig3DateInputLight } from "./fig-3-with-helper-text.png";
 export { default as Fig3DateInputDark } from "./fig-3-with-helper-text-dark.png";
