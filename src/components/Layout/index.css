@@ -107,6 +107,14 @@ ic-top-navigation form.not-loaded {
   display: none;
 }
 
+.ic-back-to-top.default {
+  display: block;
+}
+
+.ic-back-to-top.icon {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .content {
     padding: var(--ic-space-md);
@@ -138,6 +146,15 @@ ic-top-navigation form.not-loaded {
 
   ic-top-navigation form {
     width: 100%;
+  }
+
+  .ic-back-to-top.default {
+    display: none;
+  }
+
+  .ic-back-to-top.icon {
+    display: block;
+    --ic-z-index-back-to-top: calc(var(--ic-z-index-classification-banner) + 1);
   }
 }
 
