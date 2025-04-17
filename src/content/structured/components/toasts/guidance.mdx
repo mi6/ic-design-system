@@ -25,8 +25,10 @@ tags: ["Snackbar"]
 
 import { IcTypography, IcToast, IcToastRegion, IcButton } from "@ukic/react";
 import { useRef } from "react";
-import toastVid1 from "./images/anim-1-auto-dismiss-toast.mp4";
-import toastVid2 from "./images/anim-2-manual-dismiss-toast.mp4";
+import toastVid1Light from "./images/anim-1-auto-dismiss-toast.mp4";
+import toastVid1Dark from "./images/anim-1-auto-dismiss-toast-dark.mp4";
+import toastVid2Light from "./images/anim-2-manual-dismiss-toast.mp4";
+import toastVid2Dark from "./images/anim-2-manual-dismiss-toast-dark.mp4";
 import {
   Fig1ToastDark,
   Fig1ToastLight,
@@ -114,9 +116,14 @@ Use a single action in a toast. A button or link can be provided, but the toast 
 
 Toasts can be set to auto-dismiss after an adjustable length of time. Make sure that auto-dismissing toasts are displayed for long enough for their content to be read. Make sure the toast content is non-critical so it doesn’t matter if it's missed.
 
-<video width="100%" muted controls loop>
-  <source src={toastVid1} type="video/mp4" />
-</video>
+<ThemedVideo
+  width="100%"
+  muted
+  controls
+  loop
+  src={[toastVid1Light, toastVid1Dark]}
+  type="video/mp4"
+/>
 
 <IcTypography
   variant="label"
@@ -130,9 +137,14 @@ Toasts that contain an action or link can’t be set to auto-dismiss.
 
 Toasts that don’t auto-dismiss will have a close button.
 
-<video width="100%" muted controls loop>
-  <source src={toastVid2} type="video/mp4" />
-</video>
+<ThemedVideo
+  width="100%"
+  muted
+  controls
+  loop
+  src={[toastVid2Light, toastVid2Dark]}
+  type="video/mp4"
+/>
 
 <IcTypography
   variant="label"

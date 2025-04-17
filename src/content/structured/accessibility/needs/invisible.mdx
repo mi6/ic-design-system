@@ -19,6 +19,7 @@ import {
   Fig5BadErrorDark,
 } from "./images";
 import toastAnimation from "./images/toast-example-ten-seconds.mp4";
+import toastAnimationDark from "./images/toast-example-ten-seconds-dark.mp4";
 
 ## Introduction
 
@@ -134,12 +135,12 @@ Components like toasts can be auto dismissed, meaning they can sometimes disappe
 
 The toast component displayed in the video below dismisses after 10 seconds, which allows plenty of time for the toast to be read.
 
-<video
+<ThemedVideo
   width="50%"
   muted
   controls
   loop
   title="A graphic of a toast showing a success message that will dismiss after 10 seconds."
->
-  <source src={toastAnimation} type="video/mp4" />
-</video>
+  src={[toastAnimation, toastAnimationDark]}
+  type="video/mp4"
+/>
