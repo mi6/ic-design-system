@@ -30,7 +30,8 @@
     "IcDataTableRowHeights",
     "IcDataTableTruncationTypes",
     "truncWrapperDetailsTypes",
-    "IcDataTableDataType"
+    "IcDataTableDataType",
+    "IcTreeItemOptions"
   ],
   "reactComponentNames": [
     "IcAccordion",
