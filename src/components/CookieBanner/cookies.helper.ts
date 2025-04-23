@@ -1,7 +1,7 @@
 // One year
 const EXPIRY_IN_SECONDS = 31104000000;
 // policyDate should mirror the date the policy was last updated, which triggers a new cookie, to force users to re-accept the updated policy
-const policyDate = "2025-01-13";
+const policyDate = "2025-04-22";
 
 export const setCookie = (value: string) => {
   if (typeof document !== "undefined") {
@@ -21,7 +21,7 @@ export const consentCookieApproved = () =>
   consentCookieActioned() &&
   document.cookie.indexOf(`ICDSPREF_${policyDate}=true`) !== -1;
 
-const deleteDomainCookies = () => {
+export const deleteDomainCookies = () => {
   if (typeof window !== "undefined") {
     document.cookie.split("; ").forEach((cookie) => {
       const d = window.location.hostname.split(".");
@@ -43,7 +43,7 @@ const deleteDomainCookies = () => {
   }
 };
 
-const deleteLocalStorage = () => {
+export const deleteLocalStorage = () => {
   if (typeof window !== "undefined") {
     localStorage.clear();
   }
