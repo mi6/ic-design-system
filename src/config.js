@@ -2,7 +2,7 @@ const SITE_URL = process.env.GATSBY_ICDS_WEBSITE_BASE
   ? process.env.GATSBY_ICDS_WEBSITE_BASE
   : "https://design.sis.gov.uk/";
 
-const V3_SITE_URL = "https://mi6.github.io/ic-design-system-githubpages/v3";
+const V3_SITE_URL = "https://design.sis.gov.uk/";
 
 const pkg = require("../package.json");
 

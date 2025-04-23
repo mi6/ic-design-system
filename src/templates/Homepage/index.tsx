@@ -78,8 +78,8 @@ const Homepage: React.FC = () => {
       <ic-section-container aligned="center" full-height>
         <div className="section">
           <ic-alert
-            heading="Design System and UI Kit v3.0 now in pre-release"
-            message="Start experimenting with Dark Mode, new components and more today!"
+            heading="Design System and UI Kit v3.0 now in stable release"
+            message="Start working with Dark Mode, new components and more today!"
             variant="info"
           >
             <ic-link
