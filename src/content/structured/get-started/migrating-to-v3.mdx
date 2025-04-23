@@ -3,13 +3,11 @@ path: "/get-started/migrating-to-v3"
 
 navPriority: 4
 
-date: "2025-02-13"
+date: "2025-04-23"
 
 title: "Migrating to V3"
 
 subTitle: "This guide is intended to help you migrate from ICDS 2.x components to ICDS 3.x components."
-
-contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/migrating-to-v3.mdx"
 ---
 
 ## Introduction
@@ -94,6 +92,7 @@ Given a directory, it will scan over files and find any relevant ICDS components
 - The `max-length/maxLength` and `max-length-message/maxLengthMessage` props have been removed from `ic-text-field` (`IcTextField`). Instead, use the `max-characters/maxCharacters` prop and the `hide-char-count/hideCharCount` prop to hide the character count visually. It is not possible for the input to exceed the number of characters provided via the `max-characters/maxCharacters` prop.
 - The `small` prop has been removed. Please use `size="small"` instead.
 - The `size=”default”` prop has been removed. Please use `size="medium"` instead.
+- The `buttons` prop for `ic-dialog` (`IcDialog`) has been removed. Please use the new `hide-default-controls/hideDefaultControls` prop (This new prop defaults to `false`).
 - The `button-props/buttonProps` prop has been removed from the `ic-dialog` (`IcDialog`) component and replaced with the `dialog-controls` slot.
 - The `show-state/showState` prop has been removed from the `ic-switch` (`IcSwitch`) component.
 - Form props (`formaction`, `formenctype`, `formmethod`, `formnovalidate`, and `formtarget`) have been removed from `ic-checkbox` (`IcCheckbox`), `ic-radio-option` (`IcRadioOption`) and `ic-select` (`IcSelect`).

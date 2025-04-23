@@ -37,7 +37,7 @@ const CookieBanner: React.FC = () => {
       window.dispatchEvent(new Event("resize"));
     }
   }, [visible, submitted]);
-  
+
   useEffect(() => {
     // Deletes cookies and local storage if banner is re-triggered, after previously accepting, to assume non-consent
     if (visible) {
