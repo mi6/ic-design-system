@@ -120,6 +120,23 @@ const Homepage: React.FC = () => {
       </ic-hero>
       <ic-section-container aligned="center" full-height="true">
         <div className="section">
+          <ic-alert
+            heading="Not what you were expecting?"
+            message="v3.0 is now live, featuring dark mode and new components. Start experimenting now! If you'd prefer, you can still access our v2.0 site."
+            variant="info"
+          >
+            <ic-link
+              slot="action"
+              monochrome
+              href="https://mi6.github.io/ic-design-system-githubpages/v2"
+              target="_blank"
+              rel="noreferer noopener nofollow"
+            >
+              Go to v2.0
+            </ic-link>
+          </ic-alert>
+        </div>
+        <div className="section">
           <ul className={clsx("cards-container", "explore-cards")}>
             {homepage.cards.content &&
               homepage.cards.content.map((item: homepageCardItem) => (
