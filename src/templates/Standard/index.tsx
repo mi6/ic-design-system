@@ -77,7 +77,6 @@ export const pageQuery = graphql`
         title
         subTitle
         status
-        contribute
         date
         tabs {
           title
