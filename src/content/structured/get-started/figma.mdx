@@ -3,7 +3,7 @@ path: "/get-started/design/figma"
 
 navPriority: 1
 
-date: "2024-11-14"
+date: "2025-04-24"
 
 title: "Figma UI Kit"
 
@@ -17,6 +17,10 @@ import {
   Fig1AssetsLight,
   FigmaLibrary,
   FigmaLibraryDark,
+  Fig3CompProperties,
+  Fig3CompPropertiesDark,
+  Fig4Appearance,
+  Fig4AppearanceDark,
 } from "./images";
 
 ## About the Figma UI Kit
@@ -34,7 +38,7 @@ The UI Kit is turned on by default for all projects within our community. Check 
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={[Fig1AssetsLight, Fig1AssetsDark]}
-    imageAlt="Image of the left-hand side panel in Figma with the 'Assets' tab open and icon buttons on the right of the panel including the 'Team library' button."
+    imageAlt="Figma screen showing Assets with ICDS libraries listed."
     state="none"
   />
 </DoubleDoDontCaution>
@@ -47,6 +51,34 @@ The UI Kit is turned on by default for all projects within our community. Check 
   state="none"
 />
 
+## Enabling dark mode on components
+
+ICDS has dark mode variants for each component, which you can toggle between in your Figma designs.
+
+You can achieve this as follows;
+
+1. Select the component in the design.
+2. On the right-hand side, under component properties, locate the `Theme` dropdown.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3CompProperties, Fig3CompPropertiesDark]}
+    imageAlt="Figma properties for a component showing Theme dropdown."
+    state="none"
+  />
+</DoubleDoDontCaution>
+
+3. Change the selected value from `Light` to `Dark`.
+4. The appearance of the component will change to utilise associated dark mode component tokens.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig4Appearance, Fig4AppearanceDark]}
+    imageAlt="Figma Appearance properties showing Component Tokens are set to Dark Mode."
+    state="none"
+  />
+</DoubleDoDontCaution>
+
 ## Not part of the Intelligence Community?
 
 <p>
@@ -56,9 +88,10 @@ The UI Kit is turned on by default for all projects within our community. Check 
     href="https://www.figma.com/community/file/1392159713403656562"
     rel="noreferrer noopener nofollow"
   >
-    Figma UI Kit
+    V2 Figma UI Kit
   </ic-link>{" "}
-  to the Figma Community so that everyone can use our resources.
+  to the Figma Community so that everyone can use our resources. At this current
+  time, the V3 version is not available outside the Intelligence Community.
 </p>
 <p>
   You can make a copy of it in your local files and use the components in your
