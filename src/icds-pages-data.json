@@ -156,6 +156,11 @@
       "subTitle": "Skeleton loading states are representations of the shape of content that help inform users that a specific type of component is loading."
     },
     {
+      "path": "/components/skip-link",
+      "title": "Skip link",
+      "subTitle": "Skip links are used to bypass repetitive blocks of content and interface and go directly to the main content of a page."
+    },
+    {
       "path": "/components/status-tag",
       "title": "Status tag",
       "subTitle": "Status tags are short, clear and digestible ways to display the status of something on the page."
