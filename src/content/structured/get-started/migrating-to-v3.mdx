@@ -119,6 +119,7 @@ Given a directory, it will scan over files and find any relevant ICDS components
 - `ic-select-with-multi` (`IcSelectWithMulti`) is no longer a standalone component. The multi-select functionality can now be achieved using the `ic-select` (`IcSelect`) component and its `multiple` prop.
 - The `ic-select` (`IcSelect`) component's searchable variant now clears the input field when it loses focus if the value does not match any of the items in the list of options.
 - The `ic-select` (`IcSelect`) component's `onIcChange/icChange` event is no longer emitted on each keystroke or controlled by the `debounce` prop. The `onIcInput/icInput` event should be used for handling changes based on keystrokes and is controlled by the `debounce` prop.
+- The `ic-select` (`IcSelect`) component's `onIcChange/icChange` event now emits a value of type `string | string[] | null`. Previously the value was of type `string`.
 - The `ic-loading-indicator` (`IcLoadingIndicator`) component's `label` prop now dynamically changes the label value by passing an array of strings, instead of a string separated by `/`. For example, `["Loading", "Still loading"]`.
 - The `<a>` used internally within `ic-footer-link` (`IcFooterLink`) has been replaced with `<ic-link>` and may affect current tests.
 - The heading hierarchy within `ic-hero` (`IcHero`) has been updated, which may affect accessiblity compliance. The `heading` prop is now semantically a `h2` element, and the `secondary-heading/secondaryHeading` prop is now semantically a `h3` element.
