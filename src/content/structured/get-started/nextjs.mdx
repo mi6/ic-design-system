@@ -23,7 +23,7 @@ Set the following in the `next.config.js` file.
 ```jsx
 const nextConfig = {
   //other configuration
-  transpilePackages: ["@ukic/react"],
+  transpilePackages: ["@ukic/react@v2-latest"],
 };
 
 module.exports = nextConfig;
@@ -52,7 +52,7 @@ const nextConfig = {
   //other configuration
 };
 
-const withTM = require("next-transpile-modules")(["@ukic/react"]);
+const withTM = require("next-transpile-modules")(["@ukic/react@v2-latest"]);
 module.exports = withTM(nextConfig);
 ```
 
