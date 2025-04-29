@@ -1,7 +1,7 @@
 ---
 path: "/components/skip-link/code"
 
-date: "2024-04-15"
+date: "2024-04-29"
 
 title: "Skip link"
 
@@ -18,3 +18,127 @@ tabs:
     { title: "Accessibility", path: "/components/skip-link/accessibility" },
   ]
 ---
+
+import { IcSkipLink, IcTypography } from "@ukic/react";
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skip-link target="main" inline></ic-skip-link>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSkipLink target="main" inline />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+## Component demo
+
+<ComponentPreview snippets={snippets}>
+  <div>
+    <IcTypography>
+      <p>Tab to this component preview to view the skip link component.</p>
+    </IcTypography>
+    <IcSkipLink target="main" inline />
+  </div>
+</ComponentPreview>
+
+## Skip link details
+
+<ComponentDetails component="ic-skip-link" />
+
+### Full width
+
+export const snippetsFullWidth = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skip-link target="main" inline full-width></ic-skip-link>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSkipLink target="main" inline fullWidth />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsFullWidth}>
+  <div>
+    <IcTypography>
+      <p>Tab to this component preview to view the skip link component.</p>
+    </IcTypography>
+    <IcSkipLink target="main" inline fullWidth />
+  </div>
+</ComponentPreview>
+
+### Monochrome
+
+export const snippetsMonochrome = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skip-link target="main" inline theme="light" monochrome></ic-skip-link>
+<ic-skip-link target="main" inline theme="dark" monochrome></ic-skip-link>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSkipLink target="main" inline theme="light" monochrome />
+<IcSkipLink target="main" inline theme="dark" monochrome />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsMonochrome}>
+  <div>
+    <IcTypography>
+      <p>Tab to this component preview to view the skip link components.</p>
+    </IcTypography>
+    <IcSkipLink target="main" inline theme="light" monochrome />
+    <IcSkipLink target="main" inline theme="dark" monochrome />
+  </div>
+</ComponentPreview>
