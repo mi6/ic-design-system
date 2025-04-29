@@ -21,6 +21,8 @@ tabs:
   ]
 ---
 
+import { IcSkipLink, IcTypography } from "@ukic/react";
+
 import {
   Fig1DefaultVariantLight,
   Fig1DefaultVariantDark,
@@ -33,11 +35,12 @@ import {
 ## Introduction
 
 <ComponentPreview>
-  <ic-typography>
-    To view the skip link component, tab to this component preview, or click
-    inside this component preview and press the Tab key.
-  </ic-typography>
-  {/* insert skip link here */}
+  <div>
+    <IcTypography>
+      <p>Tab to this component preview to view the skip link component.</p>
+    </IcTypography>
+    <IcSkipLink target="main" inline />
+  </div>
 </ComponentPreview>
 
 ## Component variants

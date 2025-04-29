@@ -262,9 +262,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   return (
     <>
-      <ic-link id="skip-page-content-link" href="#page-content">
-        Skip to page content
-      </ic-link>
+      <ic-skip-link label="Skip to page content" target="page-content" inline />
       <ic-button
         variant="secondary"
         id="nav-section-button"
