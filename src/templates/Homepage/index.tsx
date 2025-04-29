@@ -35,56 +35,48 @@ const Homepage: React.FC = () => {
   const { theme } = useTheme();
 
   const renderImage = (image: string) => {
-    const viewportWidth = useViewportWidth();
-    const isSmallViewport: boolean = viewportWidth < 577;
+    if (useViewportWidth() < 577) return null;
+
     switch (image) {
       case "Accessibility":
         return (
-          !isSmallViewport && (
-            <img
-              src={theme === "light" ? Accessibility : AccessibilityDark}
-              alt="An accessibility icon"
-              loading="lazy"
-              slot="image"
-              aria-hidden="true"
-            />
-          )
+          <img
+            src={theme === "light" ? Accessibility : AccessibilityDark}
+            alt="An accessibility icon"
+            loading="lazy"
+            slot="image"
+            aria-hidden="true"
+          />
         );
       case "Styles":
         return (
-          !isSmallViewport && (
-            <img
-              src={theme === "light" ? Styles : StylesDark}
-              alt="A h1, h2 and h3 element"
-              loading="lazy"
-              slot="image"
-              aria-hidden="true"
-            />
-          )
+          <img
+            src={theme === "light" ? Styles : StylesDark}
+            alt="A h1, h2 and h3 element"
+            loading="lazy"
+            slot="image"
+            aria-hidden="true"
+          />
         );
       case "Components":
         return (
-          !isSmallViewport && (
-            <img
-              src={theme === "light" ? Components : ComponentsDark}
-              alt="A diamond shape split into four sections"
-              loading="lazy"
-              slot="image"
-              aria-hidden="true"
-            />
-          )
+          <img
+            src={theme === "light" ? Components : ComponentsDark}
+            alt="A diamond shape split into four sections"
+            loading="lazy"
+            slot="image"
+            aria-hidden="true"
+          />
         );
       case "Patterns":
         return (
-          !isSmallViewport && (
-            <img
-              src={theme === "light" ? Patterns : PatternsDark}
-              alt="A collection of elements on a page"
-              loading="lazy"
-              slot="image"
-              aria-hidden="true"
-            />
-          )
+          <img
+            src={theme === "light" ? Patterns : PatternsDark}
+            alt="A collection of elements on a page"
+            loading="lazy"
+            slot="image"
+            aria-hidden="true"
+          />
         );
       default:
         return null;
@@ -138,30 +130,29 @@ const Homepage: React.FC = () => {
         </div>
         <div className="section">
           <ul className={clsx("cards-container", "explore-cards")}>
-            {homepage.cards.content &&
-              homepage.cards.content.map((item: homepageCardItem) => (
-                <li key={item.title}>
-                  <GatsbyLink to={item.path}>
-                    <ic-card-horizontal>
-                      <ic-typography
-                        slot="heading"
-                        variant="h4"
-                        aria-label={`${item.title}.`}
-                      >
-                        <h4>{item.title}</h4>
-                      </ic-typography>
-                      <ic-typography
-                        slot="message"
-                        variant="body"
-                        aria-label={`${item.description}.`}
-                      >
-                        <p>{item.description}</p>
-                      </ic-typography>
-                      {renderImage(item.title)}
-                    </ic-card-horizontal>
-                  </GatsbyLink>
-                </li>
-              ))}
+            {homepage.cards.content?.map((item: homepageCardItem) => (
+              <li key={item.title}>
+                <GatsbyLink to={item.path}>
+                  <ic-card-horizontal>
+                    <ic-typography
+                      slot="heading"
+                      variant="h4"
+                      aria-label={`${item.title}.`}
+                    >
+                      <h4>{item.title}</h4>
+                    </ic-typography>
+                    <ic-typography
+                      slot="message"
+                      variant="body"
+                      aria-label={`${item.description}.`}
+                    >
+                      <p>{item.description}</p>
+                    </ic-typography>
+                    {renderImage(item.title)}
+                  </ic-card-horizontal>
+                </GatsbyLink>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="section">
