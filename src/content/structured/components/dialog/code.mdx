@@ -656,8 +656,8 @@ return (
         },
         {
           language: "Javascript",
-          snippet: `const [termsAgreed, setTermsAgreed] = useState<boolean>(false);
-const [openDialog, setOpenDialog] = useState<boolean>(false);
+          snippet: `const [termsAgreed, setTermsAgreed] = useState(false);
+const [openDialog, setOpenDialog] = useState(false);
 const handleDialogOpen = () => setOpenDialog(true);
 const handleDialogClose = () => setOpenDialog(false);
 const toggleTermsAgreed = () => {
@@ -676,6 +676,7 @@ const useStyles = createUseStyles({
     marginTop: "var(--ic-space-xs)",
   },
 });
+const classes = useStyles();
 return (
   <div className={classes.parentContainer}>
     {shortCode}
