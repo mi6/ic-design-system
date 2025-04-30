@@ -1,10 +1,10 @@
-name: V3 Deploy
+name: V2 Deploy
 permissions: read-all
 
 on:
   push:
     branches:
-      - v3.0.0/main
+      - v2.0.0/main
 
 jobs:
   ic-design-system-static-analysis-tests:
@@ -42,16 +42,17 @@ jobs:
           node-version: 18
       - name: Build
         run: |
-          export ICDS_PREFIX=/ic-design-system-githubpages/v3  
+          export ICDS_PREFIX=/ic-design-system-githubpages/v2  
           npm ci
           echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_DEV }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
-          npm run build:v3-prefixed
+          npm run build:v2-prefixed
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e #v4
         with:
           repository-name: mi6/ic-design-system-githubpages
           folder: ./public
-          target-folder: ./v3
+          target-folder: ./v2
           token: ${{ secrets.IC_DESIGN_SYSTEM_QA }}
+          

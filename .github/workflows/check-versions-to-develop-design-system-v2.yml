@@ -1,13 +1,13 @@
-name: Check Versions V3
+name: Check Versions V2
 permissions: read-all
 
 on:
   repository_dispatch:
-    types: design-system-release-v3
+    types: design-system-release-v2
 
 jobs:
   ic-design-system-install-comps:
-    name: "IC Design System Install Comps V3"
+    name: "IC Design System Install Comps V2"
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -15,27 +15,28 @@ jobs:
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 #v3
         with:
-          ref: v3.0.0/develop
+          ref: v2.0.0/develop
       - uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 #v3
         with:
           node-version: 16
       - uses: browser-actions/setup-chrome@latest
       - name: Install latest components
         run: |
-          DOCS_VERSION=$(npm view @ukic/docs@next version)
-          FONTS_VERSION=$(npm view @ukic/fonts@next verion)
-          REACT_VERSION=$(npm view @ukic/react@next version)
-          WEB_COMPS_VERSION=$(npm view @ukic/web-components@next version)
-          CANARY_DOCS_VERSION=$(npm view @ukic/canary-docs@next version)
-          CANARY_WEB_COMPS_VERSION=$(npm view @ukic/canary-web-components@next version)
-          CANARY_REACT_VERSION=$(npm view @ukic/canary-react@next version)
+          DOCS_VERSION=$(npm view @ukic/docs@v2-latest version)
+          FONTS_VERSION=$(npm view @ukic/fonts@v2-latest version)
+          REACT_VERSION=$(npm view @ukic/react@v2-latest version)
+          WEB_COMPS_VERSION=$(npm view @ukic/web-components@v2-latest version)
+          CANARY_DOCS_VERSION=$(npm view @ukic/canary-docs@v2-latest version)
+          CANARY_WEB_COMPS_VERSION=$(npm view @ukic/canary-web-components@v2-latest version)
+          CANARY_REACT_VERSION=$(npm view @ukic/canary-react@v2-latest version)
           npm install @ukic/docs@$DOCS_VERSION @ukic/fonts@$FONTS_VERSION @ukic/react@$REACT_VERSION @ukic/web-components@$WEB_COMPS_VERSION @ukic/canary-docs@$CANARY_DOCS_VERSION @ukic/canary-react@$CANARY_REACT_VERSION @ukic/canary-web-components@$CANARY_WEB_COMPS_VERSION
       - name: Create check-versions Pull Request
         uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5 #v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          title: "check-versions-v3 -> v3.0.0/develop"
+          title: "check-versions-v2 -> v2.0.0/develop"
           commit-message: "chore(root): Update to latest versions"
           body: "Github action updated package versions"
-          branch: check-versions-v3
-          base: v3.0.0/develop
+          branch: check-versions-v2
+          base: v2.0.0/develop
+          
