@@ -1,21 +1,3 @@
-#skip-main-content-link {
-  position: absolute;
-  left: -9999px;
-}
-
-#skip-main-content-link:hover {
-  text-decoration: none;
-}
-
-#skip-main-content-link:focus {
-  background: var(--ic-color-background-primary);
-  position: absolute;
-  z-index: 100;
-  top: var(--ic-space-sm);
-  left: var(--ic-space-sm);
-  padding: var(--ic-space-sm);
-}
-
 .index {
   padding: 0 0 0 0 !important;
   max-width: none !important;

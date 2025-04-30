@@ -333,9 +333,10 @@ const Layout: React.FC<LayoutProps> = ({
                 GATSBY_GA_TRACKING_ID && <CookieBanner />}
             </ClientOnly>
             <div className="main-page-container">
-              <ic-link href="#main-content" id="skip-main-content-link">
-                Skip to main content
-              </ic-link>
+              <ic-skip-link
+                label="Skip to main content"
+                target="main-content"
+              />
               <TopNavWrapper
                 appTitle={TITLE}
                 status={STATUS}
