@@ -1,7 +1,7 @@
 ---
 path: "/components/switch"
 
-navPriority: 34
+navPriority: 35
 
 date: "2023-02-03"
 
@@ -24,8 +24,10 @@ tags: ["Toggle", "Lightswitch"]
 ---
 
 import { IcSwitch, IcTypography } from "@ukic/react";
-import switchVid1 from "./images/anim-1-avoid-change-a-switch-state-from-a-different-trigger.mp4";
-import switchVid2 from "./images/anim-2-dont-change-switch-label-at-same-time-as-switch-state.mp4";
+import switchVid1Light from "./images/anim-1-avoid-change-a-switch-state-from-a-different-trigger.mp4";
+import switchVid1Dark from "./images/anim-1-avoid-change-a-switch-state-from-a-different-trigger-dark.mp4";
+import switchVid2Light from "./images/anim-2-dont-change-switch-label-at-same-time-as-switch-state.mp4";
+import switchVid2Dark from "./images/anim-2-dont-change-switch-label-at-same-time-as-switch-state-dark.mp4";
 import {
   Fig1SwitchDark,
   Fig1SwitchLight,
@@ -93,9 +95,14 @@ Don't use a switch for 'yes' or 'no' answers. Use two [radio buttons](/component
 
 Avoid automatically altering a switch's state based on another trigger. A change in a switch's state should always be the user's decision.
 
-<video width="50%" muted controls loop>
-  <source src={switchVid1} type="video/mp4" />
-</video>
+<ThemedVideo
+  width="50%"
+  muted
+  controls
+  loop
+  src={[switchVid1Light, switchVid1Dark]}
+  type="video/mp4"
+/>
 
 <IcTypography
   variant="label"
@@ -133,9 +140,14 @@ For example, a switch to turn notifications 'on' or 'off', with a label that say
 
 Avoid using additional labels that say 'on' or 'off' in the switch label. The position of the switch describes this itself. Changing the label between state changes makes it difficult to understand the current state.
 
-<video width="50%" muted controls loop>
-  <source src={switchVid2} type="video/mp4" />
-</video>
+<ThemedVideo
+  width="50%"
+  muted
+  controls
+  loop
+  src={[switchVid2Light, switchVid2Dark]}
+  type="video/mp4"
+/>
 
 <IcTypography
   variant="label"

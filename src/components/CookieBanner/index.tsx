@@ -8,6 +8,8 @@ import {
   isBotOrDoNotTrack,
   setCookieConsent,
   setLocalStorageConsent,
+  deleteLocalStorage,
+  deleteDomainCookies,
 } from "./cookies.helper";
 import CookieConsentContext from "../../context/CookieConsentContext";
 
@@ -35,6 +37,14 @@ const CookieBanner: React.FC = () => {
       window.dispatchEvent(new Event("resize"));
     }
   }, [visible, submitted]);
+
+  useEffect(() => {
+    // Deletes cookies and local storage if banner is re-triggered, after previously accepting, to assume non-consent
+    if (visible) {
+      deleteLocalStorage();
+      deleteDomainCookies();
+    }
+  }, [visible]);
 
   if (!visible || isBotOrDoNotTrack()) {
     return null;

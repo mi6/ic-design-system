@@ -262,6 +262,21 @@ const Layout: React.FC<LayoutProps> = ({
 
   const isLocalStorageEnabled = () => localStorageConsent;
 
+  const getBackToTopStyle = () =>
+    !homepage && isNearBottom
+      ? ({
+          "--footer-offset": "6.75rem",
+        } as React.CSSProperties)
+      : undefined;
+
+  const defaultBackToTop = () => (
+    <ic-back-to-top target="main" style={getBackToTopStyle()} />
+  );
+
+  const iconBackToTop = () => (
+    <ic-back-to-top target="main" variant="icon" style={getBackToTopStyle()} />
+  );
+
   return (
     <>
       <Helmet>
@@ -318,9 +333,10 @@ const Layout: React.FC<LayoutProps> = ({
                 GATSBY_GA_TRACKING_ID && <CookieBanner />}
             </ClientOnly>
             <div className="main-page-container">
-              <ic-link href="#main-content" id="skip-main-content-link">
-                Skip to main content
-              </ic-link>
+              <ic-skip-link
+                label="Skip to main content"
+                target="main-content"
+              />
               <TopNavWrapper
                 appTitle={TITLE}
                 status={STATUS}
@@ -333,16 +349,10 @@ const Layout: React.FC<LayoutProps> = ({
                   {" "}
                 </a>
                 {cloneElement(children, { location: location.pathname })}
-                <ic-back-to-top
-                  target="main"
-                  style={
-                    !homepage && isNearBottom
-                      ? ({
-                          "--footer-offset": "6.75rem",
-                        } as React.CSSProperties)
-                      : undefined
-                  }
-                />
+                <div className="ic-back-to-top default">
+                  {defaultBackToTop()}
+                </div>
+                <div className="ic-back-to-top icon">{iconBackToTop()}</div>
               </main>
             </div>
             <div className="footer">

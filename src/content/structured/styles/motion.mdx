@@ -10,10 +10,14 @@ title: "Motion"
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/styles/motion.mdx"
 ---
 
-import motionVid1 from "./images/slide-animation-between-steps.mp4";
-import motionVid2 from "./images/expand-animation-on-cards.mp4";
-import motionVid3 from "./images/entry-and-exit.mp4";
-import motionVid4 from "./images/button-state-transitions.mp4";
+import motionVid1Light from "./images/slide-animation-between-steps.mp4";
+import motionVid1Dark from "./images/slide-animation-between-steps-dark.mp4";
+import motionVid2Light from "./images/expand-animation-on-cards.mp4";
+import motionVid2Dark from "./images/expand-animation-on-cards-dark.mp4";
+import motionVid3Light from "./images/entry-and-exit.mp4";
+import motionVid3Dark from "./images/entry-and-exit-dark.mp4";
+import motionVid4Light from "./images/button-state-transitions.mp4";
+import motionVid4Dark from "./images/button-state-transitions-dark.mp4";
 
 ## Using motion
 
@@ -49,27 +53,27 @@ Don't create new animations where a standard one exists, such as a progress bar.
 
 When navigating between pages, or in multi-step processes and other complex layouts, animating the transition can make it more obvious what has changed.
 
-<video
+<ThemedVideo
   width="100%"
   muted
   controls
   loop
   title="A slide and fade animation used to highlight navigation through a multi-stepped process."
->
-  <source src={motionVid1} type="video/mp4" />
-</video>
+  src={[motionVid1Light, motionVid1Dark]}
+  type="video/mp4"
+/>
 
 It can also help to hint towards where you've come from and where you might go based on your next navigation action.
 
-<video
+<ThemedVideo
   width="50%"
   muted
   controls
   loop
+  src={[motionVid2Light, motionVid2Dark]}
   title="An expand animation helps to link the overlay to the component that it's related to. It also provides an indication to where the close button would take the user."
->
-  <source src={motionVid2} type="video/mp4" />
-</video>
+  type="video/mp4"
+/>
 
 #### Establish relationships
 
@@ -79,15 +83,15 @@ Defining the order in which elements appear can help to afford hierarchy or impo
 
 Starting entrance animations from specific positions can create parent/child relationships between elements.
 
-<video
+<ThemedVideo
   width="50%"
   muted
   controls
   loop
   title="Entry and exit transitions can establish relationships between content before a user even reads the content."
->
-  <source src={motionVid3} type="video/mp4" />
-</video>
+  src={[motionVid3Light, motionVid3Dark]}
+  type="video/mp4"
+/>
 
 ### Feedback
 
@@ -97,15 +101,15 @@ This type of motion should be quick so not to distract or delay the completion o
 
 When elements change state, animation can help to emphasize the transformation by grabbing the user's attention.
 
-<video
+<ThemedVideo
   width="50%"
   muted
   controls
   loop
+  src={[motionVid4Light, motionVid4Dark]}
   title="Animating the transitions between component states emphasise the transition."
->
-  <source src={motionVid4} type="video/mp4" />
-</video>
+  type="video/mp4"
+/>
 
 ### Loading placeholders
 

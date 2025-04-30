@@ -3,13 +3,11 @@ path: "/get-started/migrating-to-v3"
 
 navPriority: 4
 
-date: "2025-02-13"
+date: "2025-04-23"
 
 title: "Migrating to V3"
 
 subTitle: "This guide is intended to help you migrate from ICDS 2.x components to ICDS 3.x components."
-
-contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/migrating-to-v3.mdx"
 ---
 
 ## Introduction
@@ -21,7 +19,7 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
   read the{" "}
   <ic-link
     target="_blank"
-    href="https://github.com/mi6/ic-ui-kit/blob/v3.0.0/main/packages/web-components/CHANGELOG.md"
+    href="https://github.com/mi6/ic-ui-kit/blob/main/packages/web-components/CHANGELOG.md"
     rel="noreferrer noopener"
   >
     changelog
@@ -49,7 +47,7 @@ Given a directory, it will scan over files and find any relevant ICDS components
   information and examples can be found in the{" "}
   <ic-link
     target="_blank"
-    href="https://github.com/mi6/ic-ui-kit/blob/v3.0.0/main/packages/codemod/README.md"
+    href="https://github.com/mi6/ic-ui-kit/blob/main/packages/codemod/README.md"
     rel="noreferrer noopener"
   >
     codemod package README
@@ -58,9 +56,9 @@ Given a directory, it will scan over files and find any relevant ICDS components
 </p>
 
 ```console
-- npm i @ukic/react@next
-- npm i @ukic/web-components@next
-- npx @ukic/codemod@next <dir> <test>
+- npm i @ukic/react
+- npm i @ukic/web-components
+- npx @ukic/codemod <dir> <test>
 ```
 
 ## Breaking changes
@@ -82,6 +80,7 @@ Given a directory, it will scan over files and find any relevant ICDS components
 - The `small=”true”` prop has been replaced with `size=”small”` in `ic-select` (`IcSelect`).
 - The `theme` prop has been renamed to `brand` in `ic-theme` (`IcTheme`).
 - The `keyboard-shortcut/keyboardShortcut` prop has been renamed to `keyboard-shortcut-label/keyboardShortcutLabel` in `ic-menu-item` (`IcMenuItem`).
+- The `buttons` prop in `ic-dialog`, which defaulted to `true`, has been renamed to `hide-default-buttons/hideDefaultButtons`, with a default value of `false`.
 
 ### 2. Component renaming
 
@@ -91,14 +90,18 @@ Given a directory, it will scan over files and find any relevant ICDS components
 ### 3. Removed props/slots/events/methods
 
 - Deprecated props, slots, events, and methods have been removed entirely.
-- The `max-length/maxLength` prop has been removed. Instead, use the `max-characters/maxCharacters` prop and the `hide-char-count/hideCharCount` prop to hide the character count visually.
+- The `max-length/maxLength` and `max-length-message/maxLengthMessage` props have been removed from `ic-text-field` (`IcTextField`). Instead, use the `max-characters/maxCharacters` prop and the `hide-char-count/hideCharCount` prop to hide the character count visually. It is not possible for the input to exceed the number of characters provided via the `max-characters/maxCharacters` prop.
 - The `small` prop has been removed. Please use `size="small"` instead.
 - The `size=”default”` prop has been removed. Please use `size="medium"` instead.
+- The `buttons` prop for `ic-dialog` (`IcDialog`) has been removed. Please use the new `hide-default-controls/hideDefaultControls` prop (This new prop defaults to `false`).
 - The `button-props/buttonProps` prop has been removed from the `ic-dialog` (`IcDialog`) component and replaced with the `dialog-controls` slot.
+- The `show-state/showState` prop has been removed from the `ic-switch` (`IcSwitch`) component.
+- Form props (`formaction`, `formenctype`, `formmethod`, `formnovalidate`, and `formtarget`) have been removed from `ic-checkbox` (`IcCheckbox`), `ic-radio-option` (`IcRadioOption`) and `ic-select` (`IcSelect`).
 
 ### 4. Class name changes
 
 - Class names on the host for most components have been updated to include the component name in the class name. For example, `disabled` has been updated to `ic-select-disabled`.
+- Other class names have also changed and may affect current tests.
 
 ### 5. Event name changes
 
@@ -113,9 +116,14 @@ Given a directory, it will scan over files and find any relevant ICDS components
 
 - The `ic-toast` (`IcToast`) component now shows a dismiss button when the toast is hovered over or focused.
 - The shadow DOM has been removed from `ic-radio` (`IcRadio`) and may affect current tests.
-- `ic-multi-select` (`IcMultiSelect`) is no longer a standalone component. The multi-select functionality can now be achieved using the `ic-select` (`IcSelect`) component and its `multiple` prop.
+- `ic-select-with-multi` (`IcSelectWithMulti`) is no longer a standalone component. The multi-select functionality can now be achieved using the `ic-select` (`IcSelect`) component and its `multiple` prop.
 - The `ic-select` (`IcSelect`) component's searchable variant now clears the input field when it loses focus if the value does not match any of the items in the list of options.
 - The `ic-select` (`IcSelect`) component's `onIcChange/icChange` event is no longer emitted on each keystroke or controlled by the `debounce` prop. The `onIcInput/icInput` event should be used for handling changes based on keystrokes and is controlled by the `debounce` prop.
+- The `ic-select` (`IcSelect`) component's `onIcChange/icChange` event now emits a value of type `string | string[] | null`. Previously the value was of type `string`.
+- The `ic-loading-indicator` (`IcLoadingIndicator`) component's `label` prop now dynamically changes the label value by passing an array of strings, instead of a string separated by `/`. For example, `["Loading", "Still loading"]`.
+- The `<a>` used internally within `ic-footer-link` (`IcFooterLink`) has been replaced with `<ic-link>` and may affect current tests.
+- The heading hierarchy within `ic-hero` (`IcHero`) has been updated, which may affect accessiblity compliance. The `heading` prop is now semantically a `h2` element, and the `secondary-heading/secondaryHeading` prop is now semantically a `h3` element.
+- The hidden input has been removed from `ic-radio-group` (`IcRadioGroup`) and may affect current tests.
 
 ```tsx
 // v2
@@ -140,14 +148,14 @@ Given a directory, it will scan over files and find any relevant ICDS components
 
 ### 2. Monochrome prop
 
-- A new `monochrome` prop has been added to components like `ic-toggle-button` (`IcToggleButton`) and `ic-toggle-button-group` (`IcToggleButtonGroup`).
+- A new `monochrome` prop has been added to many components.
 
 ## Manual migration steps
 
 1. **Update Prop Names**: Replace all instances of the old prop names with the new ones.
 2. **Update Component Names**: Rename components according to the new names.
 3. **Remove Deprecated Props/Slots/Events/Methods**: Remove any usage of deprecated props, slots, events, and methods.
-4. **Update Class Names**: Update class names to the new format.
+4. **Update Class Names**: If you use class names to reference elements in tests, then update class names to the new format.
 5. **Update Event Names**: Replace old event names with the new ones.
 6. **Update CSS Tokens**: Update any CSS tokens that have been renamed.
 7. **Test Your Application**: Thoroughly test your application to ensure that all changes have been applied correctly and that there are no regressions.

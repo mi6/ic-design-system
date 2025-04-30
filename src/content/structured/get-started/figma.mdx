@@ -3,7 +3,7 @@ path: "/get-started/design/figma"
 
 navPriority: 1
 
-date: "2024-11-14"
+date: "2025-04-24"
 
 title: "Figma UI Kit"
 
@@ -12,8 +12,16 @@ subTitle: "Reusable and flexible Figma components used to design, prototype and 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/design/figma.mdx"
 ---
 
-import figmaFig1 from "./images/assets2x.png";
-import figmaFig2 from "./images/libraries2x.png";
+import {
+  Fig1AssetsDark,
+  Fig1AssetsLight,
+  FigmaLibrary,
+  FigmaLibraryDark,
+  Fig3CompProperties,
+  Fig3CompPropertiesDark,
+  Fig4Appearance,
+  Fig4AppearanceDark,
+} from "./images";
 
 ## About the Figma UI Kit
 
@@ -29,18 +37,44 @@ The UI Kit is turned on by default for all projects within our community. Check 
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={figmaFig1}
-    imageAlt="Image of the left-hand side panel in Figma with the 'Assets' tab open and icon buttons on the right of the panel including the 'Team library' button."
+    imageSrc={[Fig1AssetsLight, Fig1AssetsDark]}
+    imageAlt="Figma screen showing Assets with ICDS libraries listed."
     state="none"
   />
 </DoubleDoDontCaution>
 
-2. Make sure the Intelligence Community Design System library is turned on.
+2. Make sure the latest Intelligence Community Design System library is added.
+
+<DoDontCaution
+  imageSrc={[FigmaLibrary, FigmaLibraryDark]}
+  imageAlt="Image of the Libraries menu in Figma with the Intelligence Community Design System library turned on."
+  state="none"
+/>
+
+## Enabling dark mode on components
+
+ICDS has dark mode variants for each component, which you can toggle between in your Figma designs.
+
+You can achieve this as follows;
+
+1. Select the component in the design.
+2. On the right-hand side, under component properties, locate the `Theme` dropdown.
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={figmaFig2}
-    imageAlt="Image of the Libraries menu in Figma with the Intelligence Community Design System library turned on."
+    imageSrc={[Fig3CompProperties, Fig3CompPropertiesDark]}
+    imageAlt="Figma properties for a component showing Theme dropdown."
+    state="none"
+  />
+</DoubleDoDontCaution>
+
+3. Change the selected value from `Light` to `Dark`.
+4. The appearance of the component will change to utilise associated dark mode component tokens.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig4Appearance, Fig4AppearanceDark]}
+    imageAlt="Figma Appearance properties showing Component Tokens are set to Dark Mode."
     state="none"
   />
 </DoubleDoDontCaution>
@@ -51,10 +85,10 @@ The UI Kit is turned on by default for all projects within our community. Check 
   We've published our{" "}
   <ic-link
     target="_blank"
-    href="https://www.figma.com/community/file/1392159713403656562"
+    href="https://www.figma.com/community/file/1498958950039853080"
     rel="noreferrer noopener nofollow"
   >
-    Figma UI Kit
+    V3 Figma UI Kit
   </ic-link>{" "}
   to the Figma Community so that everyone can use our resources.
 </p>
@@ -70,7 +104,7 @@ The UI Kit is turned on by default for all projects within our community. Check 
     Navigate to the{" "}
     <ic-link
       target="_blank"
-      href="https://www.figma.com/community/file/1392159713403656562"
+      href="https://www.figma.com/community/file/1498958950039853080"
       rel="noreferrer noopener nofollow"
     >
       Intelligence Community UI Kit on Figma Community
@@ -105,4 +139,20 @@ The UI Kit is turned on by default for all projects within our community. Check 
   . For more information please read <a href="/community/contribute#contribute-to-the-figma-ui-kit">
     how to contribute to the Figma UI Kit
   </a>.
+</p>
+
+## Data table Figma UI Kit
+
+<p>
+  We have released our <a href="/components/data-table">data table</a> component
+  in a seperate library to the main UI Kit. To access those
+  resources, follow the steps above using the{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.figma.com/community/file/1498962049358219292"
+    rel="noreferrer noopener nofollow"
+  >
+    additional libary
+  </ic-link>
+  .
 </p>

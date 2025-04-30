@@ -11,9 +11,14 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.get-started-vertical-cards ic-card-vertical svg,
 .get-started-horizontal-cards ic-card-horizontal svg {
   fill: none;
+}
+
+.get-started-vertical-cards ic-card-vertical,
+.get-started-vertical-cards ic-card-vertical img {
+  width: 100%;
+  height: 100%;
 }
 
 .ag-theme-icds {
@@ -23,7 +28,7 @@
 
 @media screen and (max-width: 992px) {
   .ag-theme-icds .ag-paging-panel {
-    display:none;
+    display: none;
   }
 }
 

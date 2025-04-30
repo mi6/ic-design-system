@@ -656,8 +656,8 @@ return (
         },
         {
           language: "Javascript",
-          snippet: `const [termsAgreed, setTermsAgreed] = useState<boolean>(false);
-const [openDialog, setOpenDialog] = useState<boolean>(false);
+          snippet: `const [termsAgreed, setTermsAgreed] = useState(false);
+const [openDialog, setOpenDialog] = useState(false);
 const handleDialogOpen = () => setOpenDialog(true);
 const handleDialogClose = () => setOpenDialog(false);
 const toggleTermsAgreed = () => {
@@ -676,6 +676,7 @@ const useStyles = createUseStyles({
     marginTop: "var(--ic-space-xs)",
   },
 });
+const classes = useStyles();
 return (
   <div className={classes.parentContainer}>
     {shortCode}
@@ -1235,6 +1236,118 @@ export const DialogWithPopout = () => {
 
 <ComponentPreview snippets={popoutElements}>
   <DialogWithPopout />
+</ComponentPreview>
+
+### Hide controls
+
+export const snippetsHiddenControls = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button onclick="showDialog()">Launch hidden controls dialog</ic-button>
+<ic-dialog
+  id="hidden-controls-dialog"
+  heading="Americano"
+  label="About this product"
+  hide-default-controls="true"
+>
+  <ic-typography>
+    Caffè Americano is a type of coffee drink prepared by diluting an
+    espresso with hot water, giving it a similar strength to, but
+    different flavor from, traditionally brewed coffee. Its strength
+    varies with the number of shots of espresso and amount of water added.
+  </ic-typography>
+</ic-dialog>`,
+      long: `{shortCode}
+<script>
+  const dialog = document.querySelector("#hidden-controls-dialog");
+  function showDialog() {    
+    dialog.open = true;
+  }
+  function hideDialog() { 
+    if (dialog.open) {
+      dialog.open = false;
+    }   
+  }
+  dialog.addEventListener("icDialogClosed", hideDialog);
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton onClick={handleDialogOpen}>Launch hidden controls dialog</IcButton>
+<IcDialog
+  label="Americano"
+  heading="About this product"
+  hideDefaultControls
+  open={openDialog}
+  onIcDialogClosed={openDialog && handleDialogClose}
+>
+  <IcTypography>
+    Caffè Americano is a type of coffee drink prepared by diluting an
+    espresso with hot water, giving it a similar strength to, but
+    different flavor from, traditionally brewed coffee. Its strength
+    varies with the number of shots of espresso and amount of water added.
+  </IcTypography>
+</IcDialog>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [openDialog, setOpenDialog] = useState(false);
+const handleDialogOpen = () => setOpenDialog(true);
+const handleDialogClose = () => setOpenDialog(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+      ],
+    },
+  },
+];
+
+export const DialogWithHiddenControls = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
+  return (
+    <>
+      <IcButton onClick={handleDialogOpen}>
+        Launch hidden controls dialog
+      </IcButton>
+      <IcDialog
+        label="Americano"
+        heading="About this product"
+        hideDefaultControls
+        open={openDialog}
+        onIcDialogClosed={openDialog && handleDialogClose}
+      >
+        <IcTypography>
+          Caffè Americano is a type of coffee drink prepared by diluting an
+          espresso with hot water, giving it a similar strength to, but
+          different flavor from, traditionally brewed coffee. Its strength
+          varies with the number of shots of espresso and amount of water added.
+        </IcTypography>
+      </IcDialog>
+    </>
+  );
+};
+
+<ComponentPreview snippets={snippetsHiddenControls}>
+  <DialogWithHiddenControls />
 </ComponentPreview>
 
 ### Theme

@@ -125,6 +125,18 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
     });
   };
 
+  const handleKeyUp = (
+    // eslint-disable-next-line no-undef
+    e: React.KeyboardEvent<HTMLIcTreeItemElement>,
+    treeItem: TreeItem
+  ) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      e.stopPropagation();
+      handleNavigation(treeItem.data.fields.slug);
+    }
+  };
+
   const renderTreeItems = (item: TreeItem) => {
     let hasChildren = item.children && item.children.length > 0;
 
@@ -132,35 +144,31 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       hasChildren = false;
     }
 
-    // eslint-disable-next-line no-undef
-    const handleKeyUp = (e: React.KeyboardEvent<HTMLIcTreeItemElement>) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        handleNavigation(item.data.fields.slug);
-      }
-    };
-
     const handleKeyUpParent = (
       // eslint-disable-next-line no-undef
       e: React.KeyboardEvent<HTMLIcTreeItemElement>
     ) => {
-      if (e.key === "Enter") {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
+        e.stopPropagation();
         setTreeChange(true);
+        setIsExpanded(!isExpanded);
       }
     };
+
+    const isAnyChildSelected = (treeItem: TreeItem): boolean =>
+      treeItem.children.some(
+        (child: any) =>
+          isCurrentPage(child.data.fields.slug, false) ||
+          (hasChildren && isAnyChildSelected(child))
+      );
 
     const isChildSelected = (treeItem: TreeItem) => {
       const isOverviewSelected = isCurrentPage(
         treeItem.data.fields.slug,
         false
       );
-
-      const isAnyChildSelected = treeItem.children.some((child: any) =>
-        isCurrentPage(child.data.fields.slug, false)
-      );
-
-      return isOverviewSelected || isAnyChildSelected;
+      return isOverviewSelected || isAnyChildSelected(treeItem);
     };
 
     const [isExpanded, setIsExpanded] = useState(
@@ -179,11 +187,14 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
         selected={!hasChildren && isCurrentPage(item.data.fields.slug, false)}
         onClick={(e) => {
           e.preventDefault();
+          e.stopPropagation(); // Prevent click on child firing parent click handler
           return hasChildren
             ? handleParentClick()
             : handleNavigation(item.data.fields.slug);
         }}
-        onKeyUp={hasChildren ? handleKeyUpParent : handleKeyUp}
+        onKeyUp={(e) =>
+          hasChildren ? handleKeyUpParent(e) : handleKeyUp(e, item)
+        }
         expanded={isExpanded}
       >
         {hasChildren && (
@@ -194,9 +205,10 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
             selected={isCurrentPage(item.data.fields.slug, true)}
             onClick={(e) => {
               e.preventDefault();
+              e.stopPropagation();
               handleNavigation(item.data.fields.slug);
             }}
-            onKeyUp={handleKeyUp}
+            onKeyUp={(e) => handleKeyUp(e, item)}
           />
         )}
         {hasChildren &&
@@ -250,9 +262,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   return (
     <>
-      <ic-link id="skip-page-content-link" href="#page-content">
-        Skip to page content
-      </ic-link>
+      <ic-skip-link label="Skip to page content" target="page-content" inline />
       <ic-button
         variant="secondary"
         id="nav-section-button"
@@ -298,6 +308,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
               e.preventDefault();
               handleNavigation(currentNavSection.data.fields.slug);
             }}
+            onKeyUp={(e) => handleKeyUp(e, currentNavSection)}
             selected={isCurrentPage(currentNavSection.data.fields.slug, true)}
           />
         )}
