@@ -2506,6 +2506,444 @@ export const SlottedPaginationDataTable = () => {
   <SlottedPaginationDataTable />
 </ComponentPreview>
 
+### Pagination – with setToFirstPageOnPaginationChange
+
+export const snippetsPaginationWithPageReset = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Pagination with page reset on items per page change" show-pagination="true"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  dataTable.paginationBarOptions = {
+    itemsPerPageOptions: [
+      { label: "5", value: "5" },
+      { label: "10", value: "10" },
+      { label: "15", value: "15" },
+    ],
+    showItemsPerPageControl: true,
+    setToFirstPageOnPaginationChange: true,
+  };
+  const long_columns = [
+    {
+      key: "orderNumber",
+      title: "Order number",
+      dataType: "number",
+      columnAlignment: { horizontal: "left" },
+    },
+    {
+      key: "name",
+      title: "Name",
+      dataType: "string",
+    },
+    {
+      key: "coffeeOrder",
+      title: "Coffee order",
+      dataType: "string",
+    },
+  ];
+  const long_data = [
+    {
+      orderNumber: 1,
+      name: "Joe Bloggs",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 2,
+      name: "Sarah Jones",
+      coffeeOrder: "Mocha",
+    },
+    {
+      orderNumber: 3,
+      name: "Mark Owens",
+      coffeeOrder: "Espresso",
+    },
+    {
+      orderNumber: 4,
+      name: "Naomi Thomas",
+      coffeeOrder: "Cappuccino",
+    },
+    {
+      orderNumber: 5,
+      name: "Luke Ashford",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 6,
+      name: "Dave Smith",
+      coffeeOrder: "Flat white",
+    },
+    {
+      orderNumber: 7,
+      name: "Amy Fox",
+      coffeeOrder: "Macchiato",
+    },
+    {
+      orderNumber: 8,
+      name: "Mary Cooper",
+      coffeeOrder: "Affogato",
+    },
+    {
+      orderNumber: 9,
+      name: "Alice Cole",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 10,
+      name: "Ben Fields",
+      coffeeOrder: "Mocha",
+    },
+    {
+      orderNumber: 11,
+      name: "Pete Norton",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 12,
+      name: "Ashley Langford",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 13,
+      name: "Michael Hall",
+      coffeeOrder: "Espresso",
+    },
+    {
+      orderNumber: 14,
+      name: "David Frank",
+      coffeeOrder: "Flat white",
+    },
+    {
+      orderNumber: 15,
+      name: "Mary Lincoln",
+      coffeeOrder: "Macchiato",
+    },
+    {
+      orderNumber: 16,
+      name: "Will Barns",
+      coffeeOrder: "Americano",
+    },
+    {
+      orderNumber: 17,
+      name: "Elizabeth Long",
+      coffeeOrder: "Cappuccino",
+    },
+    {
+      orderNumber: 18,
+      name: "Keith Jones",
+      coffeeOrder: "Affogato",
+    },
+    {
+      orderNumber: 19,
+      name: "Olivia Brown",
+      coffeeOrder: "Latte",
+    },
+    {
+      orderNumber: 20,
+      name: "Tim Green",
+      coffeeOrder: "Mocha",
+    },
+  ];
+  dataTable.columns = long_columns;
+  dataTable.data = long_data;
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable
+  caption="Pagination with page reset on items per page change"
+  columns={long_columns}
+  data={long_data}
+  showPagination
+  paginationBarOptions={{
+    itemsPerPageOptions: [
+      { label: "5", value: "5" },
+      { label: "10", value: "10" },
+      { label: "15", value: "15" },
+    ],
+    showItemsPerPageControl: true,
+    setToFirstPageOnPaginationChange: true,
+  }}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const long_columns: IcDataTableColumnObject[] = [
+  {
+    key: "orderNumber",
+    title: "Order number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+];
+const long_data = [
+  {
+    orderNumber: 1,
+    name: "Joe Bloggs",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 2,
+    name: "Sarah Jones",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 3,
+    name: "Mark Owens",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 4,
+    name: "Naomi Thomas",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 5,
+    name: "Luke Ashford",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 6,
+    name: "Dave Smith",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 7,
+    name: "Amy Fox",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 8,
+    name: "Mary Cooper",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 9,
+    name: "Alice Cole",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 10,
+    name: "Ben Fields",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 11,
+    name: "Pete Norton",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 12,
+    name: "Ashley Langford",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 13,
+    name: "Michael Hall",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 14,
+    name: "David Frank",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 15,
+    name: "Mary Lincoln",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 16,
+    name: "Will Barns",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 17,
+    name: "Elizabeth Long",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 18,
+    name: "Keith Jones",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 19,
+    name: "Olivia Brown",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 20,
+    name: "Tim Green",
+    coffeeOrder: "Mocha",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const long_columns = [
+  {
+    key: "orderNumber",
+    title: "Order number",
+    dataType: "number",
+    columnAlignment: { horizontal: "left" },
+  },
+  {
+    key: "name",
+    title: "Name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+];
+const long_data = [
+  {
+    orderNumber: 1,
+    name: "Joe Bloggs",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 2,
+    name: "Sarah Jones",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 3,
+    name: "Mark Owens",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 4,
+    name: "Naomi Thomas",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 5,
+    name: "Luke Ashford",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 6,
+    name: "Dave Smith",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 7,
+    name: "Amy Fox",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 8,
+    name: "Mary Cooper",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 9,
+    name: "Alice Cole",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 10,
+    name: "Ben Fields",
+    coffeeOrder: "Mocha",
+  },
+  {
+    orderNumber: 11,
+    name: "Pete Norton",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 12,
+    name: "Ashley Langford",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 13,
+    name: "Michael Hall",
+    coffeeOrder: "Espresso",
+  },
+  {
+    orderNumber: 14,
+    name: "David Frank",
+    coffeeOrder: "Flat white",
+  },
+  {
+    orderNumber: 15,
+    name: "Mary Lincoln",
+    coffeeOrder: "Macchiato",
+  },
+  {
+    orderNumber: 16,
+    name: "Will Barns",
+    coffeeOrder: "Americano",
+  },
+  {
+    orderNumber: 17,
+    name: "Elizabeth Long",
+    coffeeOrder: "Cappuccino",
+  },
+  {
+    orderNumber: 18,
+    name: "Keith Jones",
+    coffeeOrder: "Affogato",
+  },
+  {
+    orderNumber: 19,
+    name: "Olivia Brown",
+    coffeeOrder: "Latte",
+  },
+  {
+    orderNumber: 20,
+    name: "Tim Green",
+    coffeeOrder: "Mocha",
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsPaginationWithPageReset}>
+  <IcDataTable
+    caption="Pagination with page reset on items per page change"
+    columns={LONG_COLUMNS}
+    data={LONG_DATA}
+    showPagination
+    paginationBarOptions={{
+      itemsPerPageOptions: [
+        { label: "5", value: "5" },
+        { label: "10", value: "10" },
+        { label: "15", value: "15" },
+      ],
+      showItemsPerPageControl: true,
+      setToFirstPageOnPaginationChange: true,
+    }}
+  />
+</ComponentPreview>
+
 ### Column overrides
 
 export const snippetsColumnOverrides = [
