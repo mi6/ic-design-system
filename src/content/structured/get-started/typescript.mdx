@@ -1,0 +1,65 @@
+---
+path: "/get-started/development/install-components/typescript"
+
+navPriority: 10
+
+date: "2024-12-23"
+
+title: "Typescript"
+
+subTitle: "How to make use of custom types in a Typescript application"
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/typescript.mdx"
+---
+
+## Typescript
+
+If your project is making use of Typescript, you can import the custom types used in the ICDS component library.
+For details on the types implemented in each component, refer to the Props table on the Code page for each Component.
+
+### Web Components and React
+
+Types can be imported from the `@ukic/web-components` package as per the below example.
+
+> NOTE:
+> If you're using react, you do not have to add web-components as a dependency to your project, it is already installed as a dependency of `@ukic/react`.
+
+```ts
+import { IcSelectTypes, IcMenuOption } from "@ukic/web-components";
+
+const selectType: IcSelectTypes = "single";
+
+const options: IcMenuOption[] = [
+  {
+    label: "Americano",
+    value: "ame",
+    description: "Classic black coffee",
+  },
+  {
+    label: "Latte",
+    value: "lat",
+    description: "This coffee has milk in, we know that much",
+    disabled: true,
+  },
+];
+```
+
+### Canary
+
+In the same manner as the main components packages, types can be imported from the `@ukic/canary-web-components` package as per the below example.
+
+> NOTE:
+> If you're using react, you do not have to add `canary-web-components` as a dependency to your project, it is already installed as a dependency of `@ukic/canary-react`.
+
+```ts
+import { IcPaginationBarOptions } from "@ukic/canary-web-components";
+
+let paginationConfig: IcPaginationBarOptions = {
+  itemsPerPageOptions: [
+    { label: "5", value: "5" },
+    { label: "10", value: "10" },
+  ],
+  showItemsPerPageControl: true,
+  selectedItemsPerPage: 5,
+};
+```
