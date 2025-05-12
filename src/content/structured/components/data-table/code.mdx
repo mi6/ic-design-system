@@ -28,7 +28,7 @@ import {
   SlottedSVG,
   IcTypography,
 } from "@ukic/react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { mdiImage, mdiCakeVariantOutline } from "@mdi/js";
 import {
   COLUMNS,
@@ -2156,12 +2156,15 @@ export const snippetsSlottedPagination = [
   ];
   dataTable.columns = long_columns;
   dataTable.data = long_data;
+  let itemsPerPage=5;
   const paginationBar = document.querySelector("ic-pagination-bar");
   paginationBar.itemsPerPageOptions = [
       { label: "5", value: "5" },
       { label: "10", value: "10" },
       { label: "15", value: "15" },
   ];
+  paginationBar.selectedItemsPerPage=itemsPerPage;
+  paginationBar.setToFirstPageOnPaginationChange=true;
   paginationBar.totalItems = long_data.length;
   paginationBar.addEventListener("icItemsPerPageChange", (ev) => {
     itemsPerPage = ev.detail.value;
@@ -2178,18 +2181,20 @@ export const snippetsSlottedPagination = [
     technology: "React",
     snippets: {
       short: `<IcDataTable caption="Slotted pagination bar" columns={long_columns} data={data}>
-    <IcPaginationBar
-      slot="pagination-bar"
-      showItemsPerPageControl
-      totalItems={long_data.length}
-      itemsPerPageOptions={[
-        { label: "5", value: "5" },
-        { label: "10", value: "10" },
-      ]}
-      selectedItemsPerPage={itemsPerPage}
-      onIcItemsPerPageChange={icItemsPerPageChangeHandler}
-      onIcPageChange={pageChangeHandler}
-    />
+  <IcPaginationBar
+    slot="pagination-bar"
+    showItemsPerPageControl
+    totalItems={long_data.length}
+    itemsPerPageOptions={[
+      { label: "5", value: "5" },
+      { label: "10", value: "10" },
+      { label: "15", value: "15" },
+    ]}
+    selectedItemsPerPage={itemsPerPage}
+    setToFirstPageOnPaginationChange
+    onIcItemsPerPageChange={icItemsPerPageChangeHandler}
+    onIcPageChange={pageChangeHandler}
+  />
 </IcDataTable>`,
       long: [
         {
@@ -2316,14 +2321,25 @@ const long_data = [
 ];
 const [data, setData] = useState(long_data);
 const [itemsPerPage, setItemsPerPage] = useState(5);
+const [dataStart, setDataStart] = useState(0);
+const [updateData, setUpdateData] = useState(false);
 const icItemsPerPageChangeHandler = (ev: CustomEvent) => {
   setItemsPerPage(ev.detail.value);
-  setData(long_data.slice(0, itemsPerPage));
+  setDataStart(0);
+  setUpdateData(true);
 }
 const pageChangeHandler = (ev: CustomEvent) => {
-  const fromRow = (ev.detail.value - 1) * itemsPerPage;
-  setData(long_data.slice(fromRow, fromRow + itemsPerPage));
+  if (ev.detail.fromItemsPerPage !== true) {
+    setDataStart((ev.detail.value - 1) * itemsPerPage);
+    setUpdateData(true);
+  }
 }
+useEffect(() => {
+  if (updateData) {
+    setData(long_data.slice(dataStart, dataStart + itemsPerPage));
+    setUpdateData(false);
+  }      
+}, [updateData, itemsPerPage, dataStart]);
 return (
   {shortCode}
 )`,
@@ -2452,14 +2468,25 @@ const long_data = [
 ];
 const [data, setData] = useState(long_data);
 const [itemsPerPage, setItemsPerPage] = useState(5);
+const [dataStart, setDataStart] = useState(0);
+const [updateData, setUpdateData] = useState(false);
 const icItemsPerPageChangeHandler = (ev) => {
   setItemsPerPage(ev.detail.value);
-  setData(long_data.slice(0, itemsPerPage));
-}
+  setDataStart(0);
+  setUpdateData(true);
+};
 const pageChangeHandler = (ev) => {
-  const fromRow = (ev.detail.value - 1) * itemsPerPage;
-  setData(long_data.slice(fromRow, fromRow + itemsPerPage));
-}
+  if (ev.detail.fromItemsPerPage !== true) {
+    setDataStart((ev.detail.value - 1) * itemsPerPage);
+    setUpdateData(true);
+  }
+};
+useEffect(() => {
+  if (updateData) {
+    setData(long_data.slice(dataStart, dataStart + itemsPerPage));
+    setUpdateData(false);
+  }      
+}, [updateData, itemsPerPage, dataStart]);
 return (
   {shortCode}
 )`,
@@ -2472,14 +2499,25 @@ return (
 export const SlottedPaginationDataTable = () => {
   const [data, setData] = useState(LONG_DATA);
   const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [dataStart, setDataStart] = useState(0);
+  const [updateData, setUpdateData] = useState(false);
   const icItemsPerPageChangeHandler = (ev) => {
     setItemsPerPage(ev.detail.value);
-    setData(LONG_DATA.slice(0, itemsPerPage));
+    setDataStart(0);
+    setUpdateData(true);
   };
   const pageChangeHandler = (ev) => {
-    const fromRow = (ev.detail.value - 1) * itemsPerPage;
-    setData(LONG_DATA.slice(fromRow, fromRow + itemsPerPage));
+    if (ev.detail.fromItemsPerPage !== true) {
+      setDataStart((ev.detail.value - 1) * itemsPerPage);
+      setUpdateData(true);
+    }
   };
+  useEffect(() => {
+    if (updateData) {
+      setData(LONG_DATA.slice(dataStart, dataStart + itemsPerPage));
+      setUpdateData(false);
+    }
+  }, [updateData, itemsPerPage, dataStart]);
   return (
     <IcDataTable
       caption="Slotted pagination bar"
@@ -2493,8 +2531,10 @@ export const SlottedPaginationDataTable = () => {
         itemsPerPageOptions={[
           { label: "5", value: "5" },
           { label: "10", value: "10" },
+          { label: "15", value: "15" },
         ]}
         selectedItemsPerPage={itemsPerPage}
+        setToFirstPageOnPaginationChange
         onIcItemsPerPageChange={icItemsPerPageChangeHandler}
         onIcPageChange={pageChangeHandler}
       />
