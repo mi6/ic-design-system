@@ -1,7 +1,7 @@
 ---
 path: "/components/date-input/code"
 
-date: "2024-05-31"
+date: "2025-05-21"
 
 title: "Date input"
 
@@ -17,6 +17,7 @@ tabs:
   ]
 ---
 
+import { useState } from "react";
 import { IcButton } from "@ukic/react";
 import { IcDateInput } from "@ukic/canary-react";
 
@@ -312,6 +313,38 @@ export const snippetsRequired = [
   <IcDateInput label="When would you like to collect your coffee?" required />
 </ComponentPreview>
 
+### Hide label
+
+export const snippetsHideLabel = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input label="When would you like to collect your coffee?" hide-label="true"></ic-date-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput label="When would you like to collect your coffee?" hideLabel />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsHideLabel}>
+  <IcDateInput label="When would you like to collect your coffee?" hideLabel />
+</ComponentPreview>
+
 ### Disabled
 
 export const snippetsDisabled = [
@@ -469,6 +502,50 @@ export const snippetsCustomHelperText = [
   <IcDateInput
     label="When would you like to collect your coffee?"
     helperText="We will have your order ready for you on this date"
+  />
+</ComponentPreview>
+
+### Hide helper text
+
+export const snippetsHideHelperText = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input
+  label="When would you like to collect your coffee?"
+  helper-text="We will have your order ready for you on this date"
+  hide-helper-text="true"
+></ic-date-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDateInput
+  label="When would you like to collect your coffee?"
+  helperText="We will have your order ready for you on this date"
+  hideHelperText
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsHideHelperText}>
+  <IcDateInput
+    label="When would you like to collect your coffee?"
+    helperText="We will have your order ready for you on this date"
+    hideHelperText
   />
 </ComponentPreview>
 
@@ -735,4 +812,116 @@ export const FormDateInput = () => {
 
 <ComponentPreview snippets={snippetsForm}>
   <FormDateInput />
+</ComponentPreview>
+
+### With clearing value
+
+export const snippetsClearingValue = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-input
+  id="date-input-clear-value"
+  label="When would you like to collect your coffee?"
+  date-format="DD/MM/YYYY"
+  value="21/01/2001"
+></ic-date-input>
+<ic-button id="update">Update date</ic-button>
+<ic-button id="null-btn">set null</ic-button>
+<ic-button id="empty-btn">set empty string</ic-button>
+<ic-button id="undef-btn">set undefined</ic-button>`,
+      long: `{shortCode}
+<script>
+  var input = document.querySelector("#date-input-clear-value");
+  var btn = document.querySelector("#update");
+  btn.addEventListener("click", () => {
+    input.value = new Date("05 May 2005");
+  });
+  var btn2 = document.querySelector("#null-btn");
+  btn2.addEventListener("click", () => {
+    input.value = null;
+  });
+  var btn3 = document.querySelector("#empty-btn");
+  btn3.addEventListener("click", () => {
+    input.value = "";
+  });
+  var btn4 = document.querySelector("#undef-btn");
+  btn4.addEventListener("click", () => {
+    input.value = undefined;
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `const [value, setValue] = useState("21/01/2001");
+const handleUpdate = () => {
+  setValue(new Date("05 May 2005"));
+};
+const handleClearValue = (newValue) => {
+  setValue(newValue);
+};
+return (
+  <>
+    <IcDateInput
+      label="When would you like to collect your coffee?"
+      value={value}
+    />
+    <div style={{ display: "flex", gap: "8px" }}>
+      <IcButton onClick={() => handleUpdate()}>Update date</IcButton>
+      <IcButton onClick={() => handleClearValue(null)}>Set null</IcButton>
+      <IcButton onClick={() => handleClearValue("")}>
+        Set Empty String
+      </IcButton>
+      <IcButton onClick={() => handleClearValue(undefined)}>
+        Set undefined
+      </IcButton>
+    </div>
+  </>
+);`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+export const WithClearingValue = () => {
+  const [value, setValue] = useState("21/01/2001");
+  const handleUpdate = () => {
+    setValue(new Date("05 May 2005"));
+  };
+  const handleClearValue = (newValue) => {
+    setValue(newValue);
+  };
+  return (
+    <>
+      <IcDateInput
+        label="When would you like to collect your coffee?"
+        value={value}
+      />
+      <div style={{ display: "flex", gap: "8px" }}>
+        <IcButton onClick={() => handleUpdate()}>Update date</IcButton>
+        <IcButton onClick={() => handleClearValue(null)}>Set null</IcButton>
+        <IcButton onClick={() => handleClearValue("")}>
+          Set Empty String
+        </IcButton>
+        <IcButton onClick={() => handleClearValue(undefined)}>
+          Set undefined
+        </IcButton>
+      </div>
+    </>
+  );
+};
+
+<ComponentPreview snippets={snippetsClearingValue}>
+  <WithClearingValue />
 </ComponentPreview>
