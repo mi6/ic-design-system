@@ -262,6 +262,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   const tabContextRef = useRef<HTMLIcTabContextElement | null>(null);
   const typescriptToggleBtnRef = useRef<HTMLIcToggleButtonElement>(null);
   const javascriptToggleBtnRef = useRef<HTMLIcToggleButtonElement>(null);
+  const prevTabContextTopRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (tabContextRef.current) {
@@ -283,6 +284,11 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   >("Typescript");
 
   const tabSelectCallback = (ev: CustomEvent) => {
+    if (tabContextRef.current) {
+      prevTabContextTopRef.current =
+        tabContextRef.current.getBoundingClientRect().top;
+    }
+
     setSelectedTab(ev.detail.tabLabel);
     if (isLocalStorageEnabled()) {
       localStorage.setItem("selectedTab", ev.detail.tabLabel);
@@ -293,6 +299,25 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     });
     window.dispatchEvent(event);
   };
+
+  useEffect(() => {
+    // Reset scroll position when switching tabs
+    if (prevTabContextTopRef.current && tabContextRef.current) {
+      setTimeout(() => {
+        const topDiff =
+          tabContextRef.current!.getBoundingClientRect().top -
+          prevTabContextTopRef.current!;
+        window.scrollTo({
+          top: window.scrollY + topDiff,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+            .matches
+            ? "instant"
+            : "smooth",
+        });
+        prevTabContextTopRef.current = null;
+      }, 0);
+    }
+  }, [selectedTab]);
 
   useEffect(() => {
     if (isLocalStorageEnabled()) {
