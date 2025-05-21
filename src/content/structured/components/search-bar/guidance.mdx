@@ -79,6 +79,8 @@ Search for an ‘espresso’ below in the search bar example.
   />
 </ComponentPreview>
 
+By default, the search bar uses `searchMode="navigation"`, which is optimised for selecting from a predefined list of options. In this mode, if there are no matching options, a "No results found" message is shown and the submit button is disabled.
+
 ### Search bar with suggested options
 
 Use the search bar with suggested options to provide search term suggestions in the drop-list. Use this type of search when you don't want to show actual search results, but instead possible or common search terms that will form the search query when submitted.
@@ -94,6 +96,8 @@ Use a search bar without a drop-list when you want to handle the search operatio
 <ComponentPreview>
   <IcSearchBar label="What is your favourite coffee?" />
 </ComponentPreview>
+
+Set `searchMode="query"` to allow users to submit any search term, even if it does not match a predefined option. This is useful for free-form searching, such as when querying a database or API, as the search bar will always allow submission regardless of the available options.
 
 ## When not to use
 
