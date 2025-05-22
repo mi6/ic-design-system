@@ -4,5 +4,11 @@ export { default as Fig2DatePickerLight } from "./fig2-avoid-using-for-distant-d
 export { default as Fig2DatePickerDark } from "./fig2-avoid-using-for-distant-dates-dark.png";
 export { default as Fig3DatePickerLight } from "./fig3-custom-width.png";
 export { default as Fig3DatePickerDark } from "./fig3-custom-width-dark.png";
-export { default as Fig4DatePickerLight } from "./fig4-clear-error-message.png";
-export { default as Fig4DatePickerDark } from "./fig4-clear-error-message-dark.png";
+export { default as Fig4DatePickerLight } from "./fig4-date-picker-anatomy.png";
+export { default as Fig4DatePickerDark } from "./fig4-date-picker-anatomy-dark.png";
+export { default as Fig5DatePickerLight } from "./fig5-date-picker.png";
+export { default as Fig5DatePickerDark } from "./fig5-date-picker-dark.png";
+export { default as Fig6DatePickerLight } from "./fig6-clear-error-message.png";
+export { default as Fig6DatePickerDark } from "./fig6-clear-error-message-dark.png";
+export { default as Fig7DatePickerLight } from "./fig7-date-picker-displaying-correct-usage-of-error-on-invalid-date.png";
+export { default as Fig7DatePickerDark } from "./fig7-date-picker-displaying-correct-usage-of-error-on-invalid-date-dark.png";
