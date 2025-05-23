@@ -1,7 +1,7 @@
 ---
 path: "/components/card-vertical/code"
 
-date: "2024-05-31"
+date: "2025-05-23"
 
 title: "Card (vertical)"
 
@@ -900,7 +900,21 @@ return (
         },
         {
           language: "Javascript",
-          snippet: `{shortCode}`,
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "22.5rem",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
         },
       ],
     },
@@ -1171,6 +1185,120 @@ return (
       <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
       <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </svg>
+  </IcCardVertical>
+</ComponentPreview>
+
+### Non-svg image
+
+export const nonSVGImageSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card-vertical 
+  heading="Americano order" 
+  subheading="Name: Michael" 
+  message="Extras: Double espresso shot and oat milk."
+>
+  <img
+    slot="image-top"
+    class="card-image"
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+  />
+  <ic-status-tag slot="adornment" status="warning" label="In Progress" size="small"></ic-status-tag>
+</ic-card-vertical>`,
+      long: `ic-card-vertical {
+        width: 22.5rem;
+    }
+    .card-image {
+      height: 100%;
+      width: 100%;
+      maxHeight: 20.375rem;
+      maxWidth: 20.375rem;
+    }
+    </style>
+    <body>
+      {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcCardVertical
+  heading="Americano order" 
+  subheading="Name: Michael" 
+  message="Extras: Double espresso shot and oat milk."
+  className={classes.card}
+>
+  <img
+    slot="image-top"
+    className={classes.cardImage}
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+  />
+  <IcStatusTag slot="adornment" status="warning" label="In Progress" size="small" />
+</IcCardVertical>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "22.5rem",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  card: {
+    width: "22.5rem",
+  },
+  cardImage: {
+    height: "100%",
+    width: "100%",
+    maxHeight: "20.375rem",
+    maxWidth: "20.375rem",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={nonSVGImageSnippets}>
+  <IcCardVertical
+    heading="Americano order"
+    subheading="Name: Michael"
+    message="Extras: Double espresso shot and oat milk."
+  >
+    <IcStatusTag
+      slot="adornment"
+      status="warning"
+      label="In Progress"
+      size="small"
+    />
+    <div slot="image-top">
+      <SimpleImage
+        imageSrc="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+        imageAlt="Coffee illustration"
+        imageStyle={{ maxWidth: "20.375rem", maxHeight: "20.375rem" }}
+      />
+    </div>
   </IcCardVertical>
 </ComponentPreview>
 
