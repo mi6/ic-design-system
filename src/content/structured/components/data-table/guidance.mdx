@@ -3,7 +3,7 @@ path: "/components/data-table"
 
 navPriority: 13
 
-date: "2024-04-30"
+date: "2025-05-14"
 
 title: "Data table"
 
@@ -15,6 +15,7 @@ tabs:
   [
     { title: "Guidance", path: "/components/data-table" },
     { title: "Code", path: "/components/data-table/code" },
+    { title: "Accessibility", path: "/components/data-table/accessibility" },
   ]
 
 tags: ["Table"]
@@ -23,6 +24,20 @@ tags: ["Table"]
 import { IcAlert, IcLink } from "@ukic/react";
 import { IcDataTable } from "@ukic/canary-react";
 import { COLUMNS, DATA } from "./story-data";
+import {
+  Fig1DataTableDark,
+  Fig1DataTableLight,
+  Fig2DataTableDark,
+  Fig2DataTableLight,
+  Fig3DataTableDark,
+  Fig3DataTableLight,
+  Fig4DataTableDark,
+  Fig4DataTableLight,
+  Fig5DataTableDark,
+  Fig5DataTableLight,
+  Fig6DataTableDark,
+  Fig6DataTableLight,
+} from "./images";
 
 <IcAlert
   heading="Canary component"
@@ -64,3 +79,116 @@ For more information on Canary components, read our approach to [releases and ve
 <ComponentPreview>
   <IcDataTable caption="Basic" columns={COLUMNS} data={DATA} />
 </ComponentPreview>
+
+## When to use
+
+Use a data table when you need to display structured data clearly and efficiently in rows and columns, allowing users to scan, compare, and understand large amounts of information.
+
+Use a data table when users need to interact with the data, such as sorting columns, selecting rows for bulk actions, or navigating through large datasets with pagination controls.
+
+<DoDontCaution
+  imageSrc={[Fig1DataTableLight, Fig1DataTableDark]}
+  imageAlt="A table with pagination showing the first 10 rows with first names, coffee orders and quantities."
+  state="good"
+  caption="Add pagination to a data table to make complex information easier for users to digest."
+/>
+
+Use a data table when providing a visual structure helps contextualise complex data, making it easier to identify trends, relationships, or anomalies.
+
+Use additional components like the `ic-data-table-title-bar` (`IcDataTableTitleBar`) to supply context, metadata, or related actions, helping users understand the purpose or scope of the data without leaving the page.
+
+<DoDontCaution
+  imageSrc={[Fig2DataTableLight, Fig2DataTableDark]}
+  imageAlt="A table and title bar showing 7 rows with first names, coffee orders and quantities."
+  state="good"
+  caption="Add a title bar to a data table to provide additional information to users."
+/>
+
+Use the `loading` and `updating` props for asynchronous data fetching to inform users of loading states.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3DataTableLight, Fig3DataTableDark]}
+    imageAlt="A table in a loading state with no rows."
+    state="good"
+    caption="Use the loading state for passive loading, for example when loading data into the table initially."
+  />
+  <DoDontCaution
+    imageSrc={[Fig4DataTableLight, Fig4DataTableDark]}
+    imageAlt="A table showing 7 rows and an updating state."
+    state="good"
+    caption="Use the updating state for active loading, for example adding or removing a row from the data."
+  />
+</DoubleDoDontCaution>
+
+## When not to use
+
+Avoid using a data table when presenting simple data where tabular structure adds unnecessary complexity.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5DataTableLight, Fig5DataTableDark]}
+    imageAlt="A table showing 2 rows with coffees and their serving temperatures."
+    state="bad"
+    caption="Avoid using a data table for simple information that can be displayed another way."
+  />
+</DoubleDoDontCaution>
+
+Similarly, avoid using pagination for very small datasets, where all data fits comfortably on one page, as this adds unnecessary navigation.
+
+<DoDontCaution
+  imageSrc={[Fig6DataTableLight, Fig6DataTableDark]}
+  imageAlt="A table with pagination showing 8 rows with first names, coffee orders, and quantities."
+  state="bad"
+  caption="Avoid adding pagination for smaller datasets that can fit on a single page."
+/>
+
+## Interaction behaviour
+
+Data table rows can be selected interactively by enabling row selection, which adds checkboxes in the leftmost column and header. Clicking a checkbox selects that row, and selecting the header checkbox selects all visible rows on the current page.
+
+Sorting controls appear next to column headers when `sortable` is enabled, allowing users to toggle between ascending, descending, and unsorted states.
+
+The default pagination bar includes controls to change the current page, select items per page, and jump directly to specific pages.
+
+Custom action elements can be added within cells, with keyboard-accessible interactive components like buttons that respond to user clicks.
+
+Content in cells may be expanded or truncated using configurable truncation patterns such as tooltip hovers or "See more/See less" toggles.
+
+## Sizing
+
+By default, the table width is 100% to fill its container, but you can specify exact dimensions for the table using the `width` and `height` props in px, %, or rem.
+
+Use the `density` prop to adjust the table's padding and font size, choosing from dense for a compact view, default for standard spacing, or spacious for a more open and readable style.
+
+Individual column widths are controlled via the columnWidth property in each column definition.
+
+The table layout is fixed by default to prioritise set column widths over cell content, but it can be switched to auto for column widths to be dictated by content size.
+
+Row heights can be customised globally using `global-row-height` (`globalRowHeight`) or on a per-row basis with `variable-row-height` (`variableRowHeight`).
+
+## Layout and placement
+
+Position the data table as a main content element on the page where tabular data presentation is key.
+
+Use the `embedded` prop to display the table as a standalone component with its own border when it should not span the entire width of a section.
+
+Pagination controls are placed under the table by default to facilitate navigation through large datasets.
+
+Sticky column headers improve usability when the table is tall and requires vertical scrolling.
+
+## Content
+
+The data table supports a wide range of content including:
+
+- Text with optional wrapping or truncation controlled through the `truncation-pattern` (`truncationPattern`) prop.
+- Row and column headers which have their own icon slots. Custom icons can be added per cell, per column, or within headers.
+- Custom column and row styling via `alignment` and `emphasis` props to highlight important data or improve readability.
+- Descriptions can be added inside cells, positioned beneath the main data text to provide additional context.
+- Action elements can be displayed to the right side of cell content, supporting keyboard accessibility.
+- Checkboxes for row selection appear in a dedicated column when enabled.
+- Loading and empty states to display data status.
+
+## Accessibility considerations
+
+Use the `description` property in `loading-options` (`loadingOptions`) to ensure a meaningful ARIA label is provided for screen readers whilst the data table is in a loading state.

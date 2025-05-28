@@ -11,11 +11,10 @@ import { useTheme } from "../../context/ThemeContext";
 import { passImage } from "../../utils/helpers";
 
 interface DoDontCautionProps {
-  imageSrc?: Array<string> | string;
+  imageSrc: Array<string> | string;
   imageAlt: string;
   state?: "good" | "bad" | "none" | "caution";
   caption?: string;
-  videoSrc?: string;
 }
 interface ImageFile {
   node: {
@@ -33,16 +32,15 @@ const STATE_VALUES = {
 };
 
 const DoDontCaution: React.FC<DoDontCautionProps> = ({
-  imageSrc = "",
-  videoSrc = "",
+  imageSrc,
   imageAlt,
   state = "none",
-  caption = "",
+  caption,
 }) => {
   const { theme } = useTheme();
   const transformedImageSrc = passImage(imageSrc, theme);
 
-  const imageData = useStaticQuery(graphql`
+  const imageData: ImageFile[] = useStaticQuery(graphql`
     query {
       allFile(filter: { ext: { in: [".jpg", ".png"] } }) {
         edges {
@@ -56,39 +54,32 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
         }
       }
     }
-  `);
-  const isBase64: boolean = transformedImageSrc?.includes(
-    "data:image/png;base64"
-  );
-  const imageObject: ImageFile[] = imageData.allFile.edges;
+  `).allFile.edges;
 
-  const filterImageData: any = (imagePath: string) => {
-    if (imagePath !== "" && imageObject !== undefined) {
-      const croppedImagePath = imagePath.substring(
-        imagePath.lastIndexOf("/"),
-        imagePath.lastIndexOf("-")
-      );
+  const filterImageData = () => {
+    if (!imageData) {
+      // eslint-disable-next-line no-console
+      console.warn("No images found by gatsby-source-filesystem.");
+      return undefined;
+    }
 
-      const gatsbyFileObjMatches = imageObject.filter((image: ImageFile) =>
-        image.node.relativePath.includes(croppedImagePath)
-      );
+    const imageMatches = imageData.filter((image) =>
+      image.node.relativePath.includes(
+        transformedImageSrc.substring(
+          transformedImageSrc.lastIndexOf("/"),
+          transformedImageSrc.lastIndexOf("-")
+        )
+      )
+    );
 
-      let gatsbyFileObj;
-
-      if (gatsbyFileObjMatches) {
-        if (gatsbyFileObjMatches.length > 1) {
-          gatsbyFileObj = gatsbyFileObjMatches.find(
+    const imageFile =
+      imageMatches.length > 1
+        ? imageMatches.find(
             (image) => !image.node.relativePath.endsWith("dark.png")
-          );
-        } else {
-          [gatsbyFileObj] = gatsbyFileObjMatches;
-        }
-      }
+          )
+        : imageMatches[0];
 
-      if (gatsbyFileObj !== undefined) {
-        return gatsbyFileObj.node.childImageSharp.gatsbyImageData;
-      }
-
+    if (!imageFile) {
       // eslint-disable-next-line no-console
       console.warn(
         "Image file could not be found by gatsby-source-filesystem."
@@ -96,16 +87,10 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
       return undefined;
     }
 
-    if (imageObject === undefined) {
-      // eslint-disable-next-line no-console
-      console.warn("No images found by gatsby-source-filesystem.");
-    }
-    if (imagePath === "") {
-      // eslint-disable-next-line no-console
-      console.warn("No image path given to DoDontCaution");
-    }
-    return undefined;
+    return imageFile.node.childImageSharp.gatsbyImageData;
   };
+
+  const filteredImageData = filterImageData();
 
   return (
     <div
@@ -124,26 +109,21 @@ const DoDontCaution: React.FC<DoDontCautionProps> = ({
           <Icon path={STATE_VALUES[state].icon} aria-hidden="true" />
         </div>
       )}
-      {transformedImageSrc &&
-        (isBase64 ? (
-          <img
-            src={transformedImageSrc}
-            alt={imageAlt}
-            className="image-wide"
-            loading="lazy"
-          />
-        ) : (
+      {transformedImageSrc.includes("data:image/png;base64") ? (
+        <img
+          src={transformedImageSrc}
+          alt={imageAlt}
+          className="image-wide"
+          loading="lazy"
+        />
+      ) : (
+        filteredImageData && (
           <GatsbyImage
-            image={filterImageData(transformedImageSrc)}
+            image={filteredImageData}
             alt={imageAlt}
             className="image-wide"
           />
-        ))}
-      {videoSrc && (
-        // eslint-disable-next-line jsx-a11y/media-has-caption
-        <video controls loop className="image-wide">
-          <source src={videoSrc} type="video/mp4" />
-        </video>
+        )
       )}
       {caption && <ic-typography variant="label">{caption}</ic-typography>}
     </div>

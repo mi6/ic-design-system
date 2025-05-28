@@ -1,7 +1,7 @@
 ---
 path: "/components/data-table/code"
 
-date: "2024-08-21"
+date: "2025-05-20"
 
 title: "Data table"
 
@@ -13,6 +13,7 @@ tabs:
   [
     { title: "Guidance", path: "/components/data-table" },
     { title: "Code", path: "/components/data-table/code" },
+    { title: "Accessibility", path: "/components/data-table/accessibility" },
   ]
 ---
 
@@ -5797,5 +5798,168 @@ return (
     caption="Missing cell data"
     columns={COLUMNS}
     data={DATA_WITH_EMPTY_VALUES}
+  />
+</ComponentPreview>
+
+### Select rows
+
+export const snippetsSelectRows = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-table caption="Select rows with checkbox" row-selection="true"></ic-data-table>`,
+      long: `{shortCode}
+<script>
+  const dataTable = document.querySelector("ic-data-table");
+  const columns = [
+    {
+      key: "firstName",
+      title: "First name",
+      dataType: "string",
+    },
+    {
+      key: "coffeeOrder",
+      title: "Coffee order",
+      dataType: "string",
+    },
+    {
+      key: "quantity",
+      title: "Quantity",
+      dataType: "number",
+    },
+  ];
+  const data = [
+    {
+      firstName: "Joe",
+      coffeeOrder: "Latte",
+      quantity: 3,
+    },
+    {
+      firstName: "Sarah",
+      coffeeOrder: "Mocha",
+      quantity: 2,
+    },
+    {
+      firstName: "Mark",
+      coffeeOrder: "Espresso",
+      quantity: 1,
+    },
+  ];
+  dataTable.columns = columns;
+  dataTable.data = data;
+  dataTable.addEventListener("icSelectedRowChange", (ev) => {
+    console.log("Row selected", ev.detail);
+  });
+  dataTable.addEventListener("icSelectAllRows", (ev) => {
+    console.log("All rows selected", ev.detail);
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataTable
+  caption="Select rows with checkbox"
+  columns={columns}
+  data={data}
+  rowSelection 
+  onIcSelectedRowChange={(ev) => console.log("Row selected", ev.detail)}
+  onIcSelectAllRows={(ev) => console.log("All rows selected", ev.detail)}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const columns: IcDataTableColumnObject[] = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: "Latte",
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: 2,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const columns = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+];
+const data = [
+  {
+    firstName: "Joe",
+    coffeeOrder: "Latte",
+    quantity: 3,
+  },
+  {
+    firstName: "Sarah",
+    coffeeOrder: "Mocha",
+    quantity: 2,
+  },
+  {
+    firstName: "Mark",
+    coffeeOrder: "Espresso",
+    quantity: 1,
+  },
+];
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsSelectRows}>
+  <IcDataTable
+    caption="Select rows with checkbox"
+    columns={COLUMNS}
+    data={DATA}
+    rowSelection
+    onIcSelectedRowChange={(ev) => console.log(ev.detail)}
+    onIcSelectAllRows={(ev) => console.log(ev.detail)}
   />
 </ComponentPreview>
