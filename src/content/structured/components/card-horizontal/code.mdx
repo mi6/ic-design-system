@@ -3,7 +3,7 @@ path: "/components/card-horizontal/code"
 
 navPriority: 7
 
-date: "2024-08-30"
+date: "2025-05-23"
 
 title: "Card (horizontal)"
 
@@ -449,6 +449,103 @@ export const snippetsWithImage = [
       <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
       <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </svg>
+  </IcCardHorizontal>
+</ComponentPreview>
+
+### Non-svg image
+
+export const snippetsWithImageNonSVG = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card-horizontal 
+  heading="Americano order" 
+  message="Extras: Double espresso shot and oat milk."
+>
+  <svg
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </svg>
+  <img
+    slot="image"
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+    style="object-fit:cover"
+  />
+</ic-card-horizontal>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcCardHorizontal
+  heading="Americano order"
+  message="Extras: Double espresso shot and oat milk."
+>
+  <SlottedSVG
+    slot="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+  >
+    <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
+  </SlottedSVG>
+  <img
+    slot="image"
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+    style={{ objectFit: "cover" }}
+  />
+</IcCardHorizontal>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsWithImageNonSVG}>
+  <IcCardHorizontal
+    heading="Americano order"
+    message="Extras: Double espresso shot and oat milk."
+  >
+    <svg
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </svg>
+    <div slot="image">
+      <SimpleImage
+        imageSrc="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+        imageAlt="Coffee illustration"
+        imageStyle={{
+          height: "var(--image-size)",
+          width: "var(--image-size)",
+          objectFit: "cover",
+        }}
+      />
+    </div>
   </IcCardHorizontal>
 </ComponentPreview>
 

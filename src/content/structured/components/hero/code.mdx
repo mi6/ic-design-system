@@ -1,7 +1,7 @@
 ---
 path: "/components/hero/code"
 
-date: "2024-05-31"
+date: "2025-05-23"
 
 title: "Hero"
 
@@ -694,5 +694,112 @@ return (
       <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
       <polygon fill="#880088" points="943 900 1210 900 971 687" />
     </svg>
+  </IcHero>
+</ComponentPreview>
+
+### Non-svg image
+
+export const snippetsImageJpg = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-hero
+  heading="Everything I brew, I brew it for you"
+  subheading="This news is hot off the French press."
+  aligned="full-width"
+>
+  <ic-button variant="primary" slot="interaction">Explore</ic-button>
+  <ic-button variant="secondary" slot="interaction">Check out our new drinks</ic-button>
+  <img
+    slot="secondary"
+    class="card-image"
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+  />
+</ic-hero>`,
+      long: `.card-image {
+  width: 18.75rem;
+}
+ic-hero {
+  height: fit-content;
+}
+</style>
+<body>
+  {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcHero
+  heading="Everything I brew, I brew it for you"
+  subheading="This news is hot off the French press."
+  aligned="full-width"
+  class={classes.hero}
+>
+  <IcButton variant="primary" slot="interaction">Explore</IcButton>
+  <IcButton variant="secondary" slot="interaction">Check out our new drinks</IcButton>
+  <img
+    slot="secondary"
+    className={classes.cardImage}
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+  />
+</IcHero>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  cardImage: {
+    width: "18.75rem",
+  },
+  hero: {
+    height: "fit-content",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  cardImage: {
+    width: "18.75rem",
+  },
+  hero: {
+    height: "fit-content",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsImageJpg}>
+  <IcHero
+    heading="Everything I brew, I brew it for you"
+    subheading="This news is hot off the French press."
+    aligned="full-width"
+  >
+    <IcButton variant="primary" slot="interaction">
+      Explore
+    </IcButton>
+    <IcButton variant="secondary" slot="interaction">
+      Check out our new drinks
+    </IcButton>
+    <div slot="secondary">
+      <SimpleImage
+        imageSrc="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+        imageAlt="Coffee illustration"
+        imageStyle={{ width: "18.75rem" }}
+      />
+    </div>
   </IcHero>
 </ComponentPreview>

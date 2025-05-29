@@ -1,7 +1,7 @@
 ---
 path: "/components/empty-state/code"
 
-date: "2024-05-31"
+date: "2025-05-23"
 
 title: "Empty state"
 
@@ -747,5 +747,79 @@ return (
     >
       Customer support
     </IcLink>
+  </IcEmptyState>
+</ComponentPreview>
+
+### Non-svg image
+
+export const jpgImageSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-empty-state 
+  image-size="large" 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+>
+  <img
+    slot="image"
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+    style="object-fit:cover"
+  />
+</ic-empty-state>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcEmptyState 
+  imageSize="large" 
+  heading="Hmm...there's nothing here" 
+  subheading="We don't currently have any favourite teas, probably because coffee is much better." 
+  body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+>
+  <img
+    slot="image"
+    src="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+    alt="Coffee illustration"
+    style={{ objectFit: "cover" }}
+  />
+</IcEmptyState>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={jpgImageSnippets}>
+  <IcEmptyState
+    imageSize="large"
+    heading="Hmm...there's nothing here"
+    subheading="We don't currently have any favourite teas, probably because coffee is much better."
+    body="Take a look at our favourite coffees instead, there's much more of those, or try again."
+  >
+    <div slot="image">
+      <SimpleImage
+        imageSrc="https://images.freeimages.com/image/large-previews/334/a-cup-of-coffee-5696540.jpeg"
+        imageAlt="Coffee illustration"
+        imageStyle={{
+          width: "calc(4 * var(--ic-space-xl))",
+          height: "calc(4 * var(--ic-space-xl))",
+          objectFit: "cover",
+          borderRadius: "var(--ic-space-xxs)",
+        }}
+      />
+    </div>
   </IcEmptyState>
 </ComponentPreview>
