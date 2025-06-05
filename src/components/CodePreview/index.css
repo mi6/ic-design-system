@@ -77,15 +77,28 @@
   justify-content: flex-start !important;
 }
 
-.code-window:focus-within {
+.code-tab-panel {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.code-tab-panel:focus-within {
   box-shadow: var(--ic-border-focus);
   border-radius: var(--ic-border-radius) !important;
+}
+
+.code-tab-panel.hidden {
+  visibility: hidden;
+  position: absolute;
 }
 
 .snippet {
   margin: 0 !important;
   border-radius: 0 !important;
   padding-bottom: var(--ic-space-sm);
+  overflow: visible !important;
+  min-width: fit-content;
 }
 
 .snippet:focus {
