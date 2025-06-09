@@ -158,7 +158,7 @@ const ToggleShowButton: React.FC<ToggleShowProps> = ({
 };
 
 const CodeWindow: React.FC<CodeWindowProps> = ({ code, show, language }) => (
-  <div className="code-window">
+  <div>
     {/* eslint-disable jsx-a11y/no-noninteractive-tabindex */}
     {show && (
       <Highlight
@@ -260,6 +260,8 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 
   const [tabCount, setTabCount] = useState<number>(2);
   const tabContextRef = useRef<HTMLIcTabContextElement | null>(null);
+  const webComponentTabPanelRef = useRef<HTMLIcTabPanelElement | null>(null);
+  const reactTabPanelRef = useRef<HTMLIcTabPanelElement | null>(null);
   const typescriptToggleBtnRef = useRef<HTMLIcToggleButtonElement>(null);
   const javascriptToggleBtnRef = useRef<HTMLIcToggleButtonElement>(null);
 
@@ -277,10 +279,10 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   const [selectedTab, setSelectedTab] = useState<"Web component" | "React">(
     tabCount === 1 ? "React" : "Web component"
   );
-
   const [selectedLanguage, setSelectedLanguage] = useState<
     "Typescript" | "Javascript"
   >("Typescript");
+  const [codeHeight, setCodeHeight] = useState<string>("auto");
 
   const tabSelectCallback = (ev: CustomEvent) => {
     setSelectedTab(ev.detail.tabLabel);
@@ -293,6 +295,26 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     });
     window.dispatchEvent(event);
   };
+
+  const updateCodeWindowHeight = (delay: number) =>
+    // Make web component and React code examples same height
+    // to prevent page movement while switching
+    setTimeout(() => {
+      if (webComponentTabPanelRef.current && reactTabPanelRef.current) {
+        setCodeHeight("auto"); // Reset height for measurement
+        setCodeHeight(
+          `${Math.min(
+            webComponentTabPanelRef.current?.offsetHeight,
+            reactTabPanelRef.current?.offsetHeight
+          )}px`
+        );
+      }
+    }, delay);
+
+  useEffect(() => {
+    const codeHeightTimeout = updateCodeWindowHeight(0);
+    return () => clearTimeout(codeHeightTimeout);
+  }, [selectedTab, selectedLanguage, show, showMore]);
 
   useEffect(() => {
     if (isLocalStorageEnabled()) {
@@ -308,11 +330,15 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
 
     window.addEventListener("tabSelectionChanged", handleTabSelectionChange);
 
+    // Wait on first load to ensure tab panels are rendered before updating their height
+    const codeHeightTimeout = updateCodeWindowHeight(300);
+
     return () => {
       window.removeEventListener(
         "tabSelectionChanged",
         handleTabSelectionChange
       );
+      clearTimeout(codeHeightTimeout);
     };
   }, []);
 
@@ -458,7 +484,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     let shortCodeSnippet: string | undefined = "";
     if (type !== "pattern") shortCodeSnippet = snippet.snippets.short;
 
-    if (selectedTab === "Web component" && snippet.technology !== "React") {
+    if (snippet.technology !== "React") {
       return getCodeSnippetForWebComponent(snippet, shortCodeSnippet);
     }
     // For React code snippets
@@ -646,7 +672,20 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
             />
           </div>
           {snippets.map((snippet, index) => (
-            <IcTabPanel key={snippet.technology} tab-position={index}>
+            <IcTabPanel
+              ref={
+                snippet.technology === "Web component"
+                  ? webComponentTabPanelRef
+                  : reactTabPanelRef
+              }
+              className={clsx(
+                "code-tab-panel",
+                snippet.technology !== selectedTab && tabCount === 2 && "hidden"
+              )}
+              key={snippet.technology}
+              tab-position={index}
+              style={{ height: codeHeight }}
+            >
               <CodeWindow
                 code={getCodeSnippet(snippet)?.codeSnippet || ""}
                 show={show}
