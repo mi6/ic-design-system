@@ -34,7 +34,7 @@ module.exports = {
         text: "Privacy Policy",
         key: "privacy-policy",
       },
-      process.env.GATSBY_GA_TRACKING_ID
+      (process.env.GATSBY_MTM_SITE_ID && process.env.GATSBY_MTM_DOMAIN)
         ? {
             link: "/icds/cookies-and-storage-policy",
             text: "Cookies and Storage Policy",

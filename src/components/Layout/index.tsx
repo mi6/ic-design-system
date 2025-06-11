@@ -62,6 +62,12 @@ const ClientOnly: React.FC<any> = ({ children, ...delegated }) => {
   return hasMounted ? <div {...delegated}>{children}</div> : null;
 };
 
+// Destructuring GATSBY_ env variables client side returns an empty value. Full reference required.
+// eslint-disable-next-line prefer-destructuring
+const GATSBY_MTM_SITE_ID = process.env.GATSBY_MTM_SITE_ID;
+// eslint-disable-next-line prefer-destructuring
+const GATSBY_MTM_DOMAIN = process.env.GATSBY_MTM_DOMAIN;
+
 const Layout: React.FC<LayoutProps> = ({
   imageUrl = "https://user-images.githubusercontent.com/113986285/206001840-854f0997-ab9d-4c33-a39f-05c2327b02f7.png",
   imageAltText = "Intelligence Community Design System",
@@ -169,10 +175,6 @@ const Layout: React.FC<LayoutProps> = ({
     },
   ];
 
-  // Destructing GATSBY_ env variables client side returns an empty value. Full reference required.
-  // eslint-disable-next-line prefer-destructuring
-  const GATSBY_GA_TRACKING_ID = process.env.GATSBY_GA_TRACKING_ID;
-
   // document object is not available during SSR so a check is in place.
   // document.cookie is required for consentCookieApproved method
   const defaultCookieConsentValue =
@@ -186,11 +188,9 @@ const Layout: React.FC<LayoutProps> = ({
     }
     return false;
   });
-  const defaultConsent = cookieConsent ? "granted" : "denied";
 
   const handleCookieConsent = (consent: boolean) => {
-    setCookieConsent(true);
-    updateConsent(consent);
+    setCookieConsent(consent);
   };
 
   const handleLocalStorageConsent = (consent: boolean) => {
@@ -217,15 +217,49 @@ const Layout: React.FC<LayoutProps> = ({
     ]
   );
 
-  const updateConsent = (consentGranted: boolean) => {
-    const consent = consentGranted ? "granted" : "denied";
-    if (typeof window !== "undefined") {
-      window.gtag("consent", "update", {
-        ad_storage: consent,
-        analytics_storage: consent,
-      });
+  // Only show banner and Matomo if env vars are set
+  const matomoEnabled = !!GATSBY_MTM_SITE_ID && !!GATSBY_MTM_DOMAIN;
+
+  function loadMatomoScript() {
+    const matomoBaseUrl = "//www.sis.gov.uk/matomo/";
+    const matomoScriptUrl = `${matomoBaseUrl}matomo.js`;
+    const matomoTrackerUrl = `${matomoBaseUrl}matomo.php`;
+    if (typeof window !== "undefined" && !window._paq) {
+      window._paq = [];
     }
-  };
+    window._paq!.push(["setTrackerUrl", matomoTrackerUrl]);
+    window._paq!.push(["setSiteId", GATSBY_MTM_SITE_ID]);
+    if (!document.querySelector(`script[src='${matomoScriptUrl}']`)) {
+      const matomoScriptElement = document.createElement('script');
+      matomoScriptElement.async = true;
+      matomoScriptElement.src = matomoScriptUrl;
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      if (firstScriptTag && firstScriptTag.parentNode) {
+        firstScriptTag.parentNode.insertBefore(matomoScriptElement, firstScriptTag);
+      } else {
+        document.head.appendChild(matomoScriptElement);
+      }
+    }
+  }
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      cookieConsent &&
+      matomoEnabled
+    ) {
+      if (!window._paq) window._paq = [];
+      window._paq.push(["setDocumentTitle", `${document.domain}/${document.title}`]);
+      window._paq.push(["setCookieDomain", `*.${GATSBY_MTM_DOMAIN}`]);
+      window._paq.push(["setDomains", [`*.${GATSBY_MTM_DOMAIN}`]]);
+      window._paq.push(["setDoNotTrack", true]);
+      window._paq.push(["setExcludedQueryParams", [
+        "account","accountnum","address","address1","address2","address3","addressline1","addressline2","adres","adresse","age","alter","auth","authpw","bic","billingaddress","billingaddress1","billingaddress2","calle","cardnumber","cc","ccc","cccsc","cccvc","cccvv","ccexpiry","ccexpmonth","ccexpyear","ccname","ccnumber","cctype","cell","cellphone","city","clientid","clientsecret","company","consumerkey","consumersecret","contrasenya","contrase\u00f1a","creditcard","creditcardnumber","cvc","cvv","dateofbirth","debitcard","direcci\u00f3n","dob","domain","ebost","email","emailaddress","emailadresse","epos","epost","eposta","exp","familyname","firma","firstname","formlogin","fullname","gender","geschlecht","gst","gstnumber","handynummer","has\u0142o","heslo","iban","ibanaccountnum","ibanaccountnumber","id","identifier","indirizzo","kartakredytowa","kennwort","keyconsumerkey","keyconsumersecret","konto","kontonr","kontonummer","kredietkaart","kreditkarte","kreditkort","lastname","login","mail","mobiili","mobile","mobilne","nachname","name","nickname","osoite","parole","pass","passord","password","passwort","pasword","paswort","paword","phone","pin","plz","postalcode","postcode","postleitzahl","privatekey","publickey","pw","pwd","pword","pwrd","rue","secret","secretq","secretquestion","shippingaddress","shippingaddress1","shippingaddress2","socialsec","socialsecuritynumber","socsec","sokak","ssn","steuernummer","strasse","street","surname","swift","tax","taxnumber","tel","telefon","telefonnr","telefonnummer","telefono","telephone","token","token_auth","tokenauth","t\u00e9l\u00e9phone","ulica","user","username","vat","vatnumber","via","vorname","wachtwoord","wagwoord","webhooksecret","website","zip","zipcode"
+      ]]);
+      window._paq.push(["trackPageView"]);
+      window._paq.push(["enableLinkTracking"]);
+      loadMatomoScript();
+    }
+  }, [cookieConsent, matomoEnabled]);
 
   const [theme, setTheme] = useState<Theme>("light");
 
@@ -293,27 +327,11 @@ const Layout: React.FC<LayoutProps> = ({
             content={content}
           />
         ))}
-        <script
-          async
-          src={
-            GATSBY_GA_TRACKING_ID
-              ? `https://www.googletagmanager.com/gtag/js?id=${GATSBY_GA_TRACKING_ID}`
-              : undefined
-          }
-        />
-        <script>
-          {GATSBY_GA_TRACKING_ID &&
-            `
-            window.dataLayer = window.dataLayer || [  ];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              'ad_storage': '${defaultConsent}',
-              'analytics_storage': '${defaultConsent}',
-            });
-            gtag('js', new Date());
-            gtag('config', '${GATSBY_GA_TRACKING_ID}');
-          `}
-        </script>
+        {cookieConsent && matomoEnabled && (
+          <noscript>{
+            `<p><img referrerPolicy="no-referrer-when-downgrade" src="//www.sis.gov.uk/matomo/matomo.php?idsite=${GATSBY_MTM_SITE_ID}&rec=1" style="border:0;" alt="" /></p>`
+          }</noscript>
+        )}
         <meta
           name="google-site-verification"
           content={process.env.GATSBY_GOOGLE_SEARCH_TOKEN}
@@ -321,7 +339,7 @@ const Layout: React.FC<LayoutProps> = ({
       </Helmet>
       <ThemeProvider theme={theme} toggleTheme={toggleTheme}>
         <ic-theme id="theme-wrapper" theme={theme}>
-          {!GATSBY_GA_TRACKING_ID && (
+          {!matomoEnabled && (
             <ic-classification-banner
               id="site-banner"
               classification="official"
@@ -329,8 +347,7 @@ const Layout: React.FC<LayoutProps> = ({
           )}
           <CookieConsentContext.Provider value={value}>
             <ClientOnly>
-              {pageTitle !== "Cookies and Storage Policy" &&
-                GATSBY_GA_TRACKING_ID && <CookieBanner />}
+              {pageTitle !== "Cookies and Storage Policy" && matomoEnabled && <CookieBanner />}
             </ClientOnly>
             <div className="main-page-container">
               <ic-skip-link
