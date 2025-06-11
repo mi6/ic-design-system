@@ -49,7 +49,9 @@ const InlineCookiesManager: React.FC = () => {
           checked={cookiesApproved}
           label="Optional analytics cookies"
           onIcChange={() => handleCookiesChange()}
-          disabled={!process.env.GATSBY_GA_TRACKING_ID}
+          disabled={
+            !process.env.GATSBY_MTM_SITE_ID || !process.env.GATSBY_MTM_DOMAIN
+          }
         />
       </div>
       <br />

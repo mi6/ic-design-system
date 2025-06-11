@@ -10,6 +10,7 @@ import ComponentGallery from "../../components/ComponentGallery";
 import ComponentDetails from "../../components/ComponentDetails";
 import DoDontCaution from "../../components/DoDontCaution";
 import DoubleDoDontCaution from "../../components/DoubleDoDontCaution";
+import SimpleImage from "../../components/SlottedImage";
 import Header from "../../components/Header";
 import WrappedAlert from "../../components/WrappedAlert";
 import WrappedBlockquote from "../../components/WrappedBlockquote";
@@ -54,6 +55,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
     blockquote: WrappedBlockquote,
     DoDontCaution,
     DoubleDoDontCaution,
+    SimpleImage,
     ThemedVideo,
   };
 

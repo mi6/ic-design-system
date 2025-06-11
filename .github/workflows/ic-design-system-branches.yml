@@ -59,7 +59,8 @@ jobs:
           BRANCH=${{ steps.extract_branch.outputs.branch }}
           export ICDS_PREFIX=/ic-design-system-githubpages/branches/$BRANCH
           npm ci
-          echo GATSBY_GA_TRACKING_ID=${{ secrets.GA_TRACKING_ID_DEV }} >> .env.production
+          echo GATSBY_MTM_DOMAIN=${{ secrets.GATSBY_MTM_DOMAIN_DEV }} >> .env.production
+          echo GATSBY_MTM_SITE_ID=${{ secrets.GATSBY_MTM_SITE_ID_DEV }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
           npm run build:prefixed
 
@@ -71,4 +72,3 @@ jobs:
           folder: ./public
           target-folder: ./branches/${{ steps.extract_branch.outputs.branch }}
           token: ${{ secrets.IC_DESIGN_SYSTEM_QA }}
-          
