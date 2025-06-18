@@ -1,7 +1,7 @@
 // One year
 const EXPIRY_IN_SECONDS = 31104000000;
 // policyDate should mirror the date the policy was last updated, which triggers a new cookie, to force users to re-accept the updated policy
-const policyDate = "2025-06-10";
+const policyDate = "2025-06-16";
 
 export const setCookie = (value: string) => {
   if (typeof document !== "undefined") {
