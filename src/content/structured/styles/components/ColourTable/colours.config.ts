@@ -1,7 +1,7 @@
 export interface ColorConfig {
   name: string;
   token: string;
-  darkToken?: string;
+  darkMode?: boolean;
 }
 
 /** Primitive tokens */
@@ -650,58 +650,58 @@ export const ColoursYellow: ColorConfig[] = [
 export const ColoursAction: ColorConfig[] = [
   {
     name: "Action default",
-    token: "--ic-action-default-light",
-    darkToken: "--ic-action-default-dark",
+    token: "--ic-action-default",
+    darkMode: true,
   },
   {
     name: "Action hover",
     token: "--ic-action-default-hover-light",
-    darkToken: "--ic-action-default-hover-dark",
+    darkMode: true,
   },
   {
     name: "Action pressed",
     token: "--ic-action-default-pressed-light",
-    darkToken: "--ic-action-default-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Action selected",
     token: "--ic-action-default-selected-light",
-    darkToken: "--ic-action-default-selected-dark",
+    darkMode: true,
   },
   {
     name: "Action destructive default",
     token: "--ic-action-destructive-light",
-    darkToken: "--ic-action-destructive-dark",
+    darkMode: true,
   },
   {
     name: "Action destructive hover",
     token: "--ic-action-destructive-hover-light",
-    darkToken: "--ic-action-destructive-hover-dark",
+    darkMode: true,
   },
   {
     name: "Action destructive pressed",
     token: "--ic-action-destructive-pressed-light",
-    darkToken: "--ic-action-destructive-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Action monochrome",
     token: "--ic-action-monochrome",
-    darkToken: "--ic-action-monochrome-dark",
+    darkMode: true,
   },
   {
     name: "Action monochrome hover",
     token: "--ic-action-monochrome-hover",
-    darkToken: "--ic-action-monochrome-hover-dark",
+    darkMode: true,
   },
   {
     name: "Action monochrome pressed",
     token: "--ic-action-monochrome-pressed",
-    darkToken: "--ic-action-monochrome-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Action neutral",
     token: "--ic-action-neutral-light",
-    darkToken: "--ic-action-neutral-dark",
+    darkMode: true,
   },
 ];
 
@@ -709,12 +709,12 @@ export const ColoursBackgrounds: ColorConfig[] = [
   {
     name: "Background primary",
     token: "--ic-color-background-primary-light",
-    darkToken: "--ic-color-background-primary-dark",
+    darkMode: true,
   },
   {
     name: "Background secondary",
     token: "--ic-color-background-secondary-light",
-    darkToken: "--ic-color-background-secondary-dark",
+    darkMode: true,
   },
   {
     name: "Background hover",
@@ -723,7 +723,7 @@ export const ColoursBackgrounds: ColorConfig[] = [
   {
     name: "Background hover monochrome",
     token: "--ic-color-background-hover-light",
-    darkToken: "--ic-color-background-hover-dark",
+    darkMode: true,
   },
   {
     name: "Background pressed",
@@ -732,7 +732,7 @@ export const ColoursBackgrounds: ColorConfig[] = [
   {
     name: "Background pressed monochrome",
     token: "--ic-color-background-pressed-light",
-    darkToken: "--ic-color-background-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Background selected",
@@ -741,42 +741,42 @@ export const ColoursBackgrounds: ColorConfig[] = [
   {
     name: "Background active",
     token: "--ic-color-background-active-light",
-    darkToken: "--ic-color-background-active-dark",
+    darkMode: true,
   },
   {
     name: "Background neutral",
     token: "--ic-color-background-neutral-light",
-    darkToken: "--ic-color-background-neutral-dark",
+    darkMode: true,
   },
   {
     name: "Background success",
     token: "--ic-color-background-success-light",
-    darkToken: "--ic-color-background-success-dark",
+    darkMode: true,
   },
   {
     name: "Background warning",
     token: "--ic-color-background-warning-light",
-    darkToken: "--ic-color-background-warning-dark",
+    darkMode: true,
   },
   {
     name: "Background destructive",
     token: "--ic-color-background-destructive-light",
-    darkToken: "--ic-color-background-destructive-dark",
+    darkMode: true,
   },
   {
     name: "Background destructive hover",
     token: "--ic-color-background-destructive-hover-light",
-    darkToken: "--ic-color-background-destructive-hover-dark",
+    darkMode: true,
   },
   {
     name: "Background destructive pressed",
     token: "--ic-color-background-destructive-pressed-light",
-    darkToken: "--ic-color-background-destructive-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Background disabled",
     token: "--ic-color-background-disabled-default",
-    darkToken: "--ic-color-background-disabled-dark",
+    darkMode: true,
   },
 ];
 
@@ -784,87 +784,87 @@ export const ColoursBorders: ColorConfig[] = [
   {
     name: "Border action default",
     token: "--ic-color-border-action-default",
-    darkToken: "--ic-color-border-action-default-dark",
+    darkMode: true,
   },
   {
     name: "Border action hover",
     token: "--ic-color-border-action-hover-light",
-    darkToken: "--ic-color-border-action-hover-dark",
+    darkMode: true,
   },
   {
     name: "Border action pressed",
     token: "--ic-color-border-action-pressed-light",
-    darkToken: "--ic-color-border-action-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Border error default",
     token: "--ic-color-border-error-default",
-    darkToken: "--ic-color-border-error-default-dark",
+    darkMode: true,
   },
   {
     name: "Border error hover",
     token: "--ic-color-border-error-hover-light",
-    darkToken: "--ic-color-border-error-hover-dark",
+    darkMode: true,
   },
   {
     name: "Border error pressed",
     token: "--ic-color-border-error-pressed-light",
-    darkToken: "--ic-color-border-error-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Border neutral default",
     token: "--ic-color-border-neutral-default",
-    darkToken: "--ic-color-border-neutral-default-dark",
+    darkMode: true,
   },
   {
     name: "Border neutral hover",
     token: "--ic-color-border-neutral-hover-default",
-    darkToken: "--ic-color-border-neutral-hover-dark",
+    darkMode: true,
   },
   {
     name: "Border neutral pressed",
     token: "--ic-color-border-neutral-pressed-default",
-    darkToken: "--ic-color-border-neutral-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Border neutral disabled",
     token: "--ic-color-border-neutral-disabled-light",
-    darkToken: "--ic-color-border-neutral-disabled-dark",
+    darkMode: true,
   },
   {
     name: "Border neutral grey",
     token: "--ic-color-border-neutral-grey-light",
-    darkToken: "--ic-color-border-neutral-grey-dark",
+    darkMode: true,
   },
   {
     name: "Border success default",
     token: "--ic-color-border-success-default",
-    darkToken: "--ic-color-border-success-default-dark",
+    darkMode: true,
   },
   {
     name: "Border success hover",
     token: "--ic-color-border-success-hover-light",
-    darkToken: "--ic-color-border-success-hover-dark",
+    darkMode: true,
   },
   {
     name: "Border success pressed",
     token: "--ic-color-border-success-pressed-light",
-    darkToken: "--ic-color-border-success-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Border warning default",
     token: "--ic-color-border-warning-default",
-    darkToken: "--ic-color-border-warning-default-dark",
+    darkMode: true,
   },
   {
     name: "Border warning hover",
     token: "--ic-color-border-warning-hover-light",
-    darkToken: "--ic-color-border-warning-hover-dark",
+    darkMode: true,
   },
   {
     name: "Border warning pressed",
     token: "--ic-color-border-warning-pressed-light",
-    darkToken: "--ic-color-border-warning-pressed-dark",
+    darkMode: true,
   },
 ];
 
@@ -907,17 +907,17 @@ export const ColoursIcons: ColorConfig[] = [
   {
     name: "Icon hover",
     token: "--ic-color-icon-hover-light",
-    darkToken: "--ic-color-icon-hover-dark",
+    darkMode: true,
   },
   {
     name: "Icon pressed",
     token: "--ic-color-icon-pressed-light",
-    darkToken: "--ic-color-icon-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Icon disabled",
     token: "--ic-color-icon-disabled-light",
-    darkToken: "--ic-color-icon-disabled-dark",
+    darkMode: true,
   },
   {
     name: "Icon disabled mid",
@@ -946,22 +946,22 @@ export const ColoursIcons: ColorConfig[] = [
   {
     name: "Icon action default",
     token: "--ic-color-icon-action-default-light",
-    darkToken: "--ic-color-icon-action-default-dark",
+    darkMode: true,
   },
   {
     name: "Icon action hover",
     token: "--ic-color-icon-action-hover",
-    darkToken: "--ic-color-icon-action-hover-dark",
+    darkMode: true,
   },
   {
     name: "Icon action pressed",
     token: "--ic-color-icon-action-pressed",
-    darkToken: "--ic-color-icon-action-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Icon error",
     token: "--ic-color-icon-error-light",
-    darkToken: "--ic-color-icon-error-dark",
+    darkMode: true,
   },
   {
     name: "Icon action dark",
@@ -992,17 +992,17 @@ export const ColoursLinks: ColorConfig[] = [
   {
     name: "Hyperlink default",
     token: "--ic-color-hyperlink-default-light",
-    darkToken: "--ic-color-hyperlink-default-dark",
+    darkMode: true,
   },
   {
     name: "Hyperlink visited",
     token: "--ic-color-hyperlink-visited-light",
-    darkToken: "--ic-color-hyperlink-visited-dark",
+    darkMode: true,
   },
   {
     name: "Hyperlink visited monochrome",
     token: "--ic-color-hyperlink-visited-monochrome-light",
-    darkToken: "--ic-color-hyperlink-visited-monochrome-dark",
+    darkMode: true,
   },
   {
     name: "Hyperlink brand",
@@ -1014,7 +1014,7 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status anomalous default",
     token: "--ic-status-anomalous-default",
-    darkToken: "--ic-status-anomalous-default-dm",
+    darkMode: true,
   },
   {
     name: "Status anomalous contrast",
@@ -1023,12 +1023,12 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status anomalous",
     token: "--ic-status-anomalous-light",
-    darkToken: "--ic-status-anomalous-dark",
+    darkMode: true,
   },
   {
     name: "Status error default",
     token: "--ic-status-error-default",
-    darkToken: "--ic-status-error-default-dm",
+    darkMode: true,
   },
   {
     name: "Status error contrast",
@@ -1041,7 +1041,7 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status error dark",
     token: "--ic-status-error-dark",
-    darkToken: "--ic-status-error-dark-dm",
+    darkMode: true,
   },
   {
     name: "Status error outlined",
@@ -1058,17 +1058,17 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status info light",
     token: "--ic-status-info-light",
-    darkToken: "--ic-status-info-light-dm",
+    darkMode: true,
   },
   {
     name: "Status info dark",
     token: "--ic-status-info-dark",
-    darkToken: "--ic-status-info-dark-dm",
+    darkMode: true,
   },
   {
     name: "Status neutral default",
     token: "--ic-status-unknown-default",
-    darkToken: "--ic-status-unknown-default-dm",
+    darkMode: true,
   },
   {
     name: "Status neutral contrast",
@@ -1077,7 +1077,7 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status neutral light",
     token: "--ic-status-unknown-light",
-    darkToken: "--ic-status-unknown-light-dm",
+    darkMode: true,
   },
   {
     name: "Status neutral mid",
@@ -1086,7 +1086,7 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status neutral dark",
     token: "--ic-status-unknown-dark",
-    darkToken: "--ic-status-unknown-dark-dm",
+    darkMode: true,
   },
   {
     name: "Status neutral outlined",
@@ -1095,17 +1095,17 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status success default",
     token: "--ic-status-success-default",
-    darkToken: "--ic-status-success-default-dm",
+    darkMode: true,
   },
   {
     name: "Status success contrast",
     token: "--ic-status-success-contrast",
-    darkToken: "--ic-status-success-contrast-dm",
+    darkMode: true,
   },
   {
     name: "Status success",
     token: "--ic-status-success-light",
-    darkToken: "--ic-status-success-dark",
+    darkMode: true,
   },
   {
     name: "Status success outlined",
@@ -1114,7 +1114,7 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status warning default",
     token: "--ic-status-warning-default",
-    darkToken: "--ic-status-warning-default-dm",
+    darkMode: true,
   },
   {
     name: "Status warning contrast",
@@ -1127,7 +1127,7 @@ export const ColoursStatus: ColorConfig[] = [
   {
     name: "Status warning dark",
     token: "--ic-status-warning-dark",
-    darkToken: "--ic-status-warning-dark-dm",
+    darkMode: true,
   },
   {
     name: "Status warning outlined",
@@ -1143,17 +1143,17 @@ export const ColoursText: ColorConfig[] = [
   {
     name: "Primary text",
     token: "--ic-color-text-primary-light",
-    darkToken: "--ic-color-text-primary-dark",
+    darkMode: true,
   },
   {
     name: "Secondary text",
     token: "--ic-color-text-secondary-light",
-    darkToken: "--ic-color-text-secondary-dark",
+    darkMode: true,
   },
   {
     name: "Tertiary text",
     token: "--ic-color-text-tertiary-light",
-    darkToken: "--ic-color-text-tertiary-dark",
+    darkMode: true,
   },
   {
     name: "Inverted text",
@@ -1162,7 +1162,7 @@ export const ColoursText: ColorConfig[] = [
   {
     name: "Disabled text",
     token: "--ic-color-text-disabled-light",
-    darkToken: "--ic-color-text-disabled-dark",
+    darkMode: true,
   },
   {
     name: "Disabled mid text",
@@ -1175,21 +1175,21 @@ export const ColoursText: ColorConfig[] = [
   {
     name: "Action text",
     token: "--ic-color-text-action-light",
-    darkToken: "--ic-color-text-action-dark",
+    darkMode: true,
   },
   {
     name: "Action hover text",
     token: "--ic-color-text-action-hover-light",
-    darkToken: "--ic-color-text-action-hover-dark",
+    darkMode: true,
   },
   {
     name: "Action pressed text",
     token: "--ic-color-text-action-pressed-light",
-    darkToken: "--ic-color-text-action-pressed-dark",
+    darkMode: true,
   },
   {
     name: "Error text",
     token: "--ic-color-text-error-dark",
-    darkToken: "--ic-color-text-error-light",
+    darkMode: true,
   },
 ];

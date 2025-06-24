@@ -1,23 +1,17 @@
-.color {
+.color-swatch > div {
   height: var(--ic-space-lg);
   width: calc(var(--ic-space-lg) * 3);
   border-radius: var(--ic-border-radius);
   border: 1px solid var(--ic-color-border-neutral-default);
 }
 
-.color-row {
-  display: flex;
-  align-items: center;
-  gap: var(--ic-space-lg);
-}
-
 .color-swatch {
   padding: var(--ic-space-xs);
   border-radius: var(--ic-border-radius);
-  background-color: var(--ic-color-background-primary-light);
+  background-color: var(--ic-color-background-primary);
 }
 
-.color-swatch.dark {
+ic-theme.ic-theme-dark > .color-swatch {
   background-color: var(--ic-architectural-900);
 }
 
