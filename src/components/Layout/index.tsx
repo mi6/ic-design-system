@@ -230,31 +230,193 @@ const Layout: React.FC<LayoutProps> = ({
     window._paq!.push(["setTrackerUrl", matomoTrackerUrl]);
     window._paq!.push(["setSiteId", GATSBY_MTM_SITE_ID]);
     if (!document.querySelector(`script[src='${matomoScriptUrl}']`)) {
-      const matomoScriptElement = document.createElement('script');
+      const matomoScriptElement = document.createElement("script");
       matomoScriptElement.async = true;
       matomoScriptElement.src = matomoScriptUrl;
-      const firstScriptTag = document.getElementsByTagName('script')[0];
+      const firstScriptTag = document.getElementsByTagName("script")[0];
       if (firstScriptTag && firstScriptTag.parentNode) {
-        firstScriptTag.parentNode.insertBefore(matomoScriptElement, firstScriptTag);
+        firstScriptTag.parentNode.insertBefore(
+          matomoScriptElement,
+          firstScriptTag
+        );
       } else {
         document.head.appendChild(matomoScriptElement);
       }
     }
   }
   useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      cookieConsent &&
-      matomoEnabled
-    ) {
+    if (typeof window !== "undefined" && cookieConsent && matomoEnabled) {
       if (!window._paq) window._paq = [];
-      window._paq.push(["setDocumentTitle", `${document.domain}/${document.title}`]);
+      window._paq.push([
+        "setDocumentTitle",
+        `${document.domain}/${document.title}`,
+      ]);
       window._paq.push(["setCookieDomain", `*.${GATSBY_MTM_DOMAIN}`]);
       window._paq.push(["setDomains", [`*.${GATSBY_MTM_DOMAIN}`]]);
       window._paq.push(["setDoNotTrack", true]);
-      window._paq.push(["setExcludedQueryParams", [
-        "account","accountnum","address","address1","address2","address3","addressline1","addressline2","adres","adresse","age","alter","auth","authpw","bic","billingaddress","billingaddress1","billingaddress2","calle","cardnumber","cc","ccc","cccsc","cccvc","cccvv","ccexpiry","ccexpmonth","ccexpyear","ccname","ccnumber","cctype","cell","cellphone","city","clientid","clientsecret","company","consumerkey","consumersecret","contrasenya","contrase\u00f1a","creditcard","creditcardnumber","cvc","cvv","dateofbirth","debitcard","direcci\u00f3n","dob","domain","ebost","email","emailaddress","emailadresse","epos","epost","eposta","exp","familyname","firma","firstname","formlogin","fullname","gender","geschlecht","gst","gstnumber","handynummer","has\u0142o","heslo","iban","ibanaccountnum","ibanaccountnumber","id","identifier","indirizzo","kartakredytowa","kennwort","keyconsumerkey","keyconsumersecret","konto","kontonr","kontonummer","kredietkaart","kreditkarte","kreditkort","lastname","login","mail","mobiili","mobile","mobilne","nachname","name","nickname","osoite","parole","pass","passord","password","passwort","pasword","paswort","paword","phone","pin","plz","postalcode","postcode","postleitzahl","privatekey","publickey","pw","pwd","pword","pwrd","rue","secret","secretq","secretquestion","shippingaddress","shippingaddress1","shippingaddress2","socialsec","socialsecuritynumber","socsec","sokak","ssn","steuernummer","strasse","street","surname","swift","tax","taxnumber","tel","telefon","telefonnr","telefonnummer","telefono","telephone","token","token_auth","tokenauth","t\u00e9l\u00e9phone","ulica","user","username","vat","vatnumber","via","vorname","wachtwoord","wagwoord","webhooksecret","website","zip","zipcode"
-      ]]);
+      window._paq.push([
+        "setExcludedQueryParams",
+        [
+          "account",
+          "accountnum",
+          "address",
+          "address1",
+          "address2",
+          "address3",
+          "addressline1",
+          "addressline2",
+          "adres",
+          "adresse",
+          "age",
+          "alter",
+          "auth",
+          "authpw",
+          "bic",
+          "billingaddress",
+          "billingaddress1",
+          "billingaddress2",
+          "calle",
+          "cardnumber",
+          "cc",
+          "ccc",
+          "cccsc",
+          "cccvc",
+          "cccvv",
+          "ccexpiry",
+          "ccexpmonth",
+          "ccexpyear",
+          "ccname",
+          "ccnumber",
+          "cctype",
+          "cell",
+          "cellphone",
+          "city",
+          "clientid",
+          "clientsecret",
+          "company",
+          "consumerkey",
+          "consumersecret",
+          "contrasenya",
+          "contrase\u00f1a",
+          "creditcard",
+          "creditcardnumber",
+          "cvc",
+          "cvv",
+          "dateofbirth",
+          "debitcard",
+          "direcci\u00f3n",
+          "dob",
+          "domain",
+          "ebost",
+          "email",
+          "emailaddress",
+          "emailadresse",
+          "epos",
+          "epost",
+          "eposta",
+          "exp",
+          "familyname",
+          "firma",
+          "firstname",
+          "formlogin",
+          "fullname",
+          "gender",
+          "geschlecht",
+          "gst",
+          "gstnumber",
+          "handynummer",
+          "has\u0142o",
+          "heslo",
+          "iban",
+          "ibanaccountnum",
+          "ibanaccountnumber",
+          "id",
+          "identifier",
+          "indirizzo",
+          "kartakredytowa",
+          "kennwort",
+          "keyconsumerkey",
+          "keyconsumersecret",
+          "konto",
+          "kontonr",
+          "kontonummer",
+          "kredietkaart",
+          "kreditkarte",
+          "kreditkort",
+          "lastname",
+          "login",
+          "mail",
+          "mobiili",
+          "mobile",
+          "mobilne",
+          "nachname",
+          "name",
+          "nickname",
+          "osoite",
+          "parole",
+          "pass",
+          "passord",
+          "password",
+          "passwort",
+          "pasword",
+          "paswort",
+          "paword",
+          "phone",
+          "pin",
+          "plz",
+          "postalcode",
+          "postcode",
+          "postleitzahl",
+          "privatekey",
+          "publickey",
+          "pw",
+          "pwd",
+          "pword",
+          "pwrd",
+          "rue",
+          "secret",
+          "secretq",
+          "secretquestion",
+          "shippingaddress",
+          "shippingaddress1",
+          "shippingaddress2",
+          "socialsec",
+          "socialsecuritynumber",
+          "socsec",
+          "sokak",
+          "ssn",
+          "steuernummer",
+          "strasse",
+          "street",
+          "surname",
+          "swift",
+          "tax",
+          "taxnumber",
+          "tel",
+          "telefon",
+          "telefonnr",
+          "telefonnummer",
+          "telefono",
+          "telephone",
+          "token",
+          "token_auth",
+          "tokenauth",
+          "t\u00e9l\u00e9phone",
+          "ulica",
+          "user",
+          "username",
+          "vat",
+          "vatnumber",
+          "via",
+          "vorname",
+          "wachtwoord",
+          "wagwoord",
+          "webhooksecret",
+          "website",
+          "zip",
+          "zipcode",
+        ],
+      ]);
       window._paq.push(["trackPageView"]);
       window._paq.push(["enableLinkTracking"]);
       loadMatomoScript();
@@ -328,9 +490,7 @@ const Layout: React.FC<LayoutProps> = ({
           />
         ))}
         {cookieConsent && matomoEnabled && (
-          <noscript>{
-            `<p><img referrerPolicy="no-referrer-when-downgrade" src="//www.sis.gov.uk/matomo/matomo.php?idsite=${GATSBY_MTM_SITE_ID}&rec=1" style="border:0;" alt="" /></p>`
-          }</noscript>
+          <noscript>{`<p><img referrerPolicy="no-referrer-when-downgrade" src="//www.sis.gov.uk/matomo/matomo.php?idsite=${GATSBY_MTM_SITE_ID}&rec=1" style="border:0;" alt="" /></p>`}</noscript>
         )}
         <meta
           name="google-site-verification"
@@ -347,7 +507,9 @@ const Layout: React.FC<LayoutProps> = ({
           )}
           <CookieConsentContext.Provider value={value}>
             <ClientOnly>
-              {pageTitle !== "Cookies and Storage Policy" && matomoEnabled && <CookieBanner />}
+              {pageTitle !== "Cookies and Storage Policy" && matomoEnabled && (
+                <CookieBanner />
+              )}
             </ClientOnly>
             <div className="main-page-container">
               <ic-skip-link
