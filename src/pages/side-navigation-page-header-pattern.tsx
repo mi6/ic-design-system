@@ -13,6 +13,7 @@ import {
   IcPageHeader,
   IcSectionContainer,
   IcSideNavigation,
+  IcSkipLink,
   IcTextField,
   IcTypography,
   SlottedSVG,
@@ -76,6 +77,7 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
     <div id="side-nav-page-header-pattern-root">
       <div className={classes.parentDiv}>
         <IcClassificationBanner />
+        <IcSkipLink target="main" />
         <IcSideNavigation
           appTitle="[Enter your application name]"
           status="alpha"
@@ -274,7 +276,7 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
               <IcButton>Submit</IcButton>
             </div>
           </IcPageHeader>
-          <main className={classes.main}>
+          <main id="main" className={classes.main}>
             <IcSectionContainer
               aligned={alignment}
               className={classes.mainSectionContainer}

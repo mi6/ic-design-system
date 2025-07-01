@@ -5,6 +5,7 @@ import { SlottedSVG } from "@ukic/react";
 const SideNavigationLayout: React.FC<PageProps> = () => (
   <div id="side-nav-example-root">
     <div style={{ display: "flex", height: "100%" }}>
+      <ic-skip-link target="main" />
       <ic-side-navigation
         app-title="ACME coffee shop"
         version="v0.0.7"
@@ -84,7 +85,7 @@ const SideNavigationLayout: React.FC<PageProps> = () => (
           flexGrow: "1",
         }}
       >
-        <main style={{ height: "100vh" }}>
+        <main id="main" style={{ height: "100vh" }}>
           <ic-section-container>
             <ic-typography>
               <p>
