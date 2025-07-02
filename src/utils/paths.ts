@@ -9,6 +9,8 @@ const paths = [
   "/top-navigation-back-to-top-pattern/",
   "/top-navigation-mega-menu-pattern/",
   "/dark-mode-pattern/",
+  "/brand-example/",
+  "/brand-hex-example/",
 ];
 
 export default paths;

@@ -186,6 +186,11 @@
       "subTitle": "Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text."
     },
     {
+      "path": "/components/theme",
+      "title": "Theme",
+      "subTitle": "How to change the theme and brand colours of some components."
+    },
+    {
       "path": "/components/toast",
       "title": "Toast",
       "subTitle": "Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'."

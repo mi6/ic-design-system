@@ -380,42 +380,19 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   };
 
   const addNewLines = (
-    lineSeparatedCode: string[] | undefined,
-    reactWhitespace: string | undefined = "",
-    longCode: boolean = false
+    lineSeparatedCode?: string[],
+    reactWhitespace = "",
+    longCode = false
   ) => {
     const newLines = lineSeparatedCode ? [...lineSeparatedCode] : [];
-    const findOpeningScriptTagIndex = (lines: string[]) =>
-      lines.findIndex((line) => line.trim().startsWith("<script>"));
-    const findClosingScriptTagIndex = (lines: string[]) =>
-      lines.findIndex((line) => line.trim().startsWith("</script>"));
-    // const findBodyIndex = (lines: string[]) =>
-    //   lines.findIndex((line) => line.trim().startsWith("<body>")) + 3;
-    // const findStyleIndex = (lines: string[]) =>
-    //   lines.findIndex((line) => line.trim().startsWith("</style>"));
-    const openingScriptTagIndex = findOpeningScriptTagIndex(newLines);
-    const closingScriptTagIndex = findClosingScriptTagIndex(newLines);
-    // const bodyIndex = findBodyIndex(newLines);
-    // const styleIndex = findStyleIndex(newLines);
-    // const extraWhitespace = openingScriptTagIndex === -1 && bodyIndex === -1 ? "  " : "";
+    const openingScriptTagIndex = newLines.findIndex((line) =>
+      line.trim().startsWith("<script>")
+    );
 
-    let webComponentsWhitespace: string;
-    // if (selectedTab === "Web component" && !longCode){
-    //   webComponentsWhitespace = webComponentsWhitespace + "  "
-    // }
-    if (lineSeparatedCode?.includes("</style>")) {
-      webComponentsWhitespace = "";
-    } else {
-      webComponentsWhitespace = "";
-    }
-
-    const index = longCode ? 0 : 1;
     if (newLines.length > 0) {
-      for (let i = index; i < newLines.length; i += 1) {
+      for (let i = longCode ? 0 : 1; i < newLines.length; i += 1) {
         newLines[i] = `${
-          selectedTab === "Web component"
-            ? `${webComponentsWhitespace}`
-            : reactWhitespace
+          selectedTab === "Web component" ? "" : reactWhitespace
         }${newLines[i]}`;
       }
     }
@@ -423,43 +400,33 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     if (openingScriptTagIndex !== -1) {
       for (
         let i = openingScriptTagIndex;
-        i < closingScriptTagIndex + 1;
+        i <
+        newLines.findIndex((line) => line.trim().startsWith("</script>")) + 1;
         i += 1
       ) {
         newLines[i] = ` ${newLines[i]}`;
       }
     }
-    // if (openingScriptTagIndex !== -1) {
-    //   for (let i = bodyIndex; i < openingScriptTagIndex - 1; i += 1) {
-    //     newLines[i] = `   ${newLines[i]}`;
-    //   }
-    // }
-    // need to account for if the code starts with styling as opposed to a tag
-
-    // else if (scriptIndex === -1 && bodyIndex === -1) {
-    // }
     return newLines.join("\n");
   };
 
   const getCodeSnippetForWebComponent = (
     snippet: Snippet,
-    shortCodeSnippet: string | undefined
+    shortCodeSnippet?: string
   ) => {
     let longCode = "";
     if (
       !Array.isArray(snippet.snippets.long) &&
-      typeof snippet.snippets.long === "string" &&
-      !!shortCodeSnippet
+      typeof snippet.snippets.long === "string"
     ) {
       const code = snippet.snippets.long.replace(
         "{shortCode}",
         `${addNewLines(shortCodeSnippet?.split("\n"))}`
       );
-      if (type === "pattern") {
-        longCode = code;
-      } else {
-        longCode = addNewLines(code.split("\n"), undefined, true);
-      }
+      longCode =
+        type === "pattern"
+          ? code
+          : addNewLines(code.split("\n"), undefined, true);
     }
 
     let codeSnippet;
@@ -479,50 +446,47 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   };
 
   const getCodeSnippet = (snippet: Snippet) => {
-    const isLongCode = showMore || type === "pattern";
     const longCodeIndex = selectedLanguage === "Typescript" ? 0 : 1;
-    let shortCodeSnippet: string | undefined = "";
-    if (type !== "pattern") shortCodeSnippet = snippet.snippets.short;
+    let shortCodeSnippet = type !== "pattern" ? snippet.snippets.short : "";
 
-    if (snippet.technology !== "React") {
+    if (snippet.technology !== "React")
       return getCodeSnippetForWebComponent(snippet, shortCodeSnippet);
-    }
+
     // For React code snippets
-    if (Array.isArray(snippet.snippets.long)) {
-      let longCode = "";
-      if (
-        !Array.isArray(snippet.snippets.long[longCodeIndex].snippet) &&
-        typeof snippet.snippets.long[longCodeIndex].snippet === "string"
-      ) {
-        longCode = snippet.snippets.long[longCodeIndex].snippet;
-        if (longCode !== "{shortCode}" && !!shortCodeSnippet) {
-          const reactShortCodeWhitespace = longCode.includes("return")
-            ? "    "
-            : "  ";
-          shortCodeSnippet = addNewLines(
-            shortCodeSnippet.split("\n"),
-            reactShortCodeWhitespace
-          );
-        }
-        // Replace {shortCode} variable with the short code snippet
-        longCode = longCode.replace("{shortCode}", `${shortCodeSnippet}`);
-        if (longCode.includes("return")) {
-          longCode = addNewLines(longCode.split("\n"), "  ", true);
-        }
-        longCode = createReactAppTsx(
-          longCode,
-          pageMetadata.pageTitle,
-          longCodeIndex === 0 ? "tsx" : "jsx"
+    if (!Array.isArray(snippet.snippets.long))
+      return {
+        longCode: "error",
+        codeSnippet: "error",
+      };
+
+    let longCode = "";
+    const longCodeSnippet = snippet.snippets.long[longCodeIndex].snippet;
+    if (
+      !Array.isArray(longCodeSnippet) &&
+      typeof longCodeSnippet === "string"
+    ) {
+      longCode = longCodeSnippet;
+      if (longCode !== "{shortCode}" && !!shortCodeSnippet) {
+        shortCodeSnippet = addNewLines(
+          shortCodeSnippet.split("\n"),
+          longCode.includes("return") ? "    " : "  "
         );
       }
-      return {
+      // Replace {shortCode} variable with the short code snippet
+      longCode = longCode.replace("{shortCode}", `${shortCodeSnippet}`);
+      if (longCode.includes("return")) {
+        longCode = addNewLines(longCode.split("\n"), "  ", true);
+      }
+      longCode = createReactAppTsx(
         longCode,
-        codeSnippet: isLongCode ? longCode : snippet.snippets.short,
-      };
+        pageMetadata.pageTitle,
+        longCodeIndex === 0 ? "tsx" : "jsx"
+      );
     }
     return {
-      longCode: "error",
-      codeSnippet: "error",
+      longCode,
+      codeSnippet:
+        showMore || type === "pattern" ? longCode : snippet.snippets.short,
     };
   };
 
