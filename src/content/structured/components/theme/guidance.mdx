@@ -1,0 +1,79 @@
+---
+path: "/components/theme"
+
+navPriority: 38
+
+date: "2025-07-02"
+
+title: "Theme"
+
+subTitle: "How to change the theme and brand colours of some components."
+
+status: "BETA"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/theme" },
+    { title: "Code", path: "/components/theme/code" },
+  ]
+---
+
+import { IcButton } from "@ukic/react";
+
+## Customising component colours
+
+Some components can have their 'brand' colour changed by using either of the methods below. When the 'brand' colour is changed, components will automatically update.
+
+Other styles on affected components will also adapt accordingly, such as the colour of text or icons.
+
+Components that follow the 'brand' colour will not update in the same way as other components when adapting to dark mode. Instead their appearance will only adjust to match the contrast of the 'brand' colour.
+
+Branding is not the same as theming. With theming, component colours can be modified using a more fine-grained approach, allowing total control over their appearance. Branding focuses on the core structural components of an application, and creates an appearance that is recognisable to a user.
+
+### Setting the brand
+
+You can set the 'brand' colour by using the three CSS variables (one for each of the RGB values for the colour) shown below:
+
+```css
+:root {
+  --ic-brand-color-primary-r: 92;
+  --ic-brand-color-primary-g: 9;
+  --ic-brand-color-primary-b: 72;
+}
+```
+
+Or alternatively you can use the `ic-theme` component.
+
+```jsx
+// Web components
+<ic-theme brand-color="rgb(92, 9, 72)"></ic-theme>
+
+// React
+<IcTheme brandColor="rgb(92, 9, 72)"></IcTheme>
+```
+
+The components that use the 'brand' colour are:
+
+- [Footer](/components/footer)
+- [Hero](/components/hero)
+- [Side navigation](/components/side-navigation)
+- [Top navigation](/components/top-navigation)
+
+## Dark mode as a theme
+
+Most component's variants can be displayed using dark mode colours. This creates better colour contrast with backgrounds, borders and text for when components need to be used on dark backgrounds.
+
+When implementing dark mode into an app without an `ic-theme` wrapper, the components will default to the browser/system settings unless overridden manually. If using a fixed background colour, this will need to be considered as user's system settings may cause dark components to render on a light background.
+
+These components have been given a `theme` prop, taking values of `inherit` (default), `light` and `dark`. By setting the value to either `light` or `dark` at the component level, those components will display using the corresponding theme, independent of any higher level themes or system settings.
+
+By leaving the theme prop as the default value (`inherit`), it will decide the colours based on either a high-level `ic-theme` component, or if one does not exist, the browser/system settings.
+
+## Monochrome
+
+The `monochrome` prop can be set to `true` to remove the colour from components to help them display on certain backgrounds. It will display as either black or white, switching between the two based on the dark mode preference mentioned above.
+
+<ComponentPreview style={{ gap: "var(--ic-space-sm)" }}>
+  <IcButton>Regular</IcButton>
+  <IcButton monochrome>Monochrome</IcButton>
+</ComponentPreview>
