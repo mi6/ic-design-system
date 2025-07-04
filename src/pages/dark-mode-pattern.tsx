@@ -3,6 +3,7 @@ import {
   IcAlert,
   IcNavigationButton,
   IcSectionContainer,
+  IcSkipLink,
   IcTheme,
   IcTopNavigation,
   IcTypography,
@@ -74,6 +75,7 @@ const TopNavigation: React.FC<PageProps> = () => {
 
   return (
     <IcTheme id="theme-wrapper" theme={theme}>
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -98,7 +100,7 @@ const TopNavigation: React.FC<PageProps> = () => {
           {theme === "light" ? <DarkIcon /> : <LightIcon />}
         </IcNavigationButton>
       </IcTopNavigation>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer}>
           <div className={classes.mainContentDiv}>
             <IcAlert heading="See how the content changes!" variant="info" />

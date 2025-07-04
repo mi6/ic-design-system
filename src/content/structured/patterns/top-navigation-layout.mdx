@@ -25,6 +25,7 @@ export const snippetsTopNav = [
     technology: "Web component",
     snippets: {
       long: `<ic-classification-banner></ic-classification-banner>
+<ic-skip-link target="main"></ic-skip-link>
 <ic-top-navigation
   app-title="[Enter your application name]"
   status="alpha"
@@ -120,7 +121,7 @@ export const snippetsTopNav = [
     href="#"
   ></ic-navigation-item>
 </ic-top-navigation>
-<main>
+<main id="main">
   <ic-section-container class="main-section-container" aligned="center">
     <div class="main-content-div">
       <ic-typography variant="h2">
@@ -185,6 +186,7 @@ export const snippetsTopNav = [
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -245,7 +247,7 @@ export const snippetsTopNav = [
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
       </IcTopNavigation>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
           <div className={classes.mainContentDiv}>
             <IcTypography variant="h2">
@@ -321,6 +323,7 @@ export const snippetsTopNav = [
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -381,7 +384,7 @@ export const snippetsTopNav = [
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
       </IcTopNavigation>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
           <div className={classes.mainContentDiv}>
             <IcTypography variant="h2">
@@ -511,6 +514,7 @@ export const snippetsTopNavPageHeader = [
     technology: "Web component",
     snippets: {
       long: `<ic-classification-banner></ic-classification-banner>
+<ic-skip-link target="main"></ic-skip-link>
 <ic-top-navigation
   app-title="[Enter your application name]"
   status="alpha"
@@ -647,7 +651,7 @@ export const snippetsTopNavPageHeader = [
     <ic-button>Submit</ic-button>
   </div>
 </ic-page-header>
-<main>
+<main id="main">
   <ic-section-container class="main-section-container" aligned="center">
     <div class="main-content-div">
       <ic-typography variant="h2">
@@ -729,6 +733,7 @@ export const snippetsTopNavPageHeader = [
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -828,7 +833,7 @@ export const snippetsTopNavPageHeader = [
           <IcButton>Submit</IcButton>
         </div>
       </IcPageHeader>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
           <div className={classes.mainContentDiv}>
             <IcTypography variant="h2">
@@ -921,6 +926,7 @@ export const snippetsTopNavPageHeader = [
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -1020,7 +1026,7 @@ export const snippetsTopNavPageHeader = [
           <IcButton>Submit</IcButton>
         </div>
       </IcPageHeader>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
           <div className={classes.mainContentDiv}>
             <IcTypography variant="h2">
@@ -1110,6 +1116,7 @@ export const snippetsTopNavMegaMenu = [
     technology: "Web component",
     snippets: {
       long: `<ic-classification-banner></ic-classification-banner>
+    <ic-skip-link target="main"></ic-skip-link>
     <ic-top-navigation
       app-title="[Enter your application name]"
       status="alpha"
@@ -1221,7 +1228,7 @@ export const snippetsTopNavMegaMenu = [
         href="#"
       ></ic-navigation-item>
     </ic-top-navigation>
-    <main>
+    <main id="main">
       <ic-section-container class="main-section-container" aligned="center">
         <div class="main-content-div">
           <ic-typography variant="h2">
@@ -1286,6 +1293,7 @@ const classes = useStyles();
 return (
   <>
     <IcClassificationBanner />
+    <IcSkipLink target="main" />
     <IcTopNavigation
       contentAligned={alignment}
       appTitle="[Enter your application name]"
@@ -1359,7 +1367,7 @@ return (
       <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
       <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
     </IcTopNavigation>
-    <main className={classes.main}>
+    <main id="main" className={classes.main}>
       <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
         <div className={classes.mainContentDiv}>
           <IcTypography variant="h2">
@@ -1434,6 +1442,7 @@ const classes = useStyles();
 return (
   <>
     <IcClassificationBanner />
+    <IcSkipLink target="main" />
     <IcTopNavigation
       contentAligned={alignment}
       appTitle="[Enter your application name]"
@@ -1507,7 +1516,7 @@ return (
       <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
       <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
     </IcTopNavigation>
-    <main className={classes.main}>
+    <main id="main" className={classes.main}>
       <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
         <div className={classes.mainContentDiv}>
           <IcTypography variant="h2">
@@ -1601,6 +1610,7 @@ export const snippetsTopNavBackToTop = [
     technology: "Web component",
     snippets: {
       long: `<ic-classification-banner></ic-classification-banner>
+<ic-skip-link target="main"></ic-skip-link>
 <ic-top-navigation
   app-title="[Enter your application name]"
   status="alpha"
@@ -1762,6 +1772,7 @@ export const snippetsTopNavBackToTop = [
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -1822,7 +1833,7 @@ export const snippetsTopNavBackToTop = [
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
       </IcTopNavigation>
-      <main className={classes.main} id="main">
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
           <div className={classes.mainContentDiv}>
             <IcTypography variant="h2">
@@ -1899,6 +1910,7 @@ export const snippetsTopNavBackToTop = [
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -1959,7 +1971,7 @@ export const snippetsTopNavBackToTop = [
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
         <IcNavigationItem slot="navigation" label="[navigationOption]" href="#" />
       </IcTopNavigation>
-      <main className={classes.main} id="main">
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer} aligned={alignment}>
           <div className={classes.mainContentDiv}>
             <IcTypography variant="h2">
