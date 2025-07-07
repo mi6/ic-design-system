@@ -12,15 +12,16 @@ const ComponentDetails: React.FC<{ component: string; canary?: boolean }> = ({
   canary,
 }) => {
   const componentDetailsJson = canary ? canaryComponentJson : componentJson;
-  const componentDetails = componentDetailsJson.components.find(
-    ({ tag }) => tag === component
-  )!;
+  const { components, typeLibrary } = componentDetailsJson;
+  const componentDetails = components.find(({ tag }) => tag === component)!;
 
   const { props, slots, events, methods, styles } = componentDetails;
 
   return (
     <>
-      {props.length > 0 && <PropTable propData={props} />}
+      {props.length > 0 && (
+        <PropTable propData={props} typeLibrary={typeLibrary} />
+      )}
       {slots.length > 0 && <SlotTable slotData={slots} />}
       {styles.length > 0 && <StyleTable styleData={styles} />}
       {events.length > 0 && <EventTable eventData={events} />}

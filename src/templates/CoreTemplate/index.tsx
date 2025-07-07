@@ -23,6 +23,7 @@ import WrappedLi from "../../components/WrappedLi";
 import WrappedLink from "../../components/WrappedLink";
 import WrappedP from "../../components/WrappedP";
 import ThemedVideo from "../../components/ThemedVideo";
+import TypeLibrary from "../../components/TypeLibrary";
 import PageMetadataContext from "../../context/PageMetadata";
 
 const { MDXProvider } = require("@mdx-js/react");
@@ -52,6 +53,7 @@ const CoreMDXLayout: React.FC<CoreMDXLayoutProps> = ({
     ComponentPreview,
     ComponentTesting,
     ComponentGallery,
+    TypeLibrary,
     blockquote: WrappedBlockquote,
     DoDontCaution,
     DoubleDoDontCaution,
