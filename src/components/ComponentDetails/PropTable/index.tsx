@@ -7,23 +7,48 @@ import PropDescription from "./PropDescription";
 
 interface PropTableProps {
   propData: JsonDocsProp[];
+  typeLibrary: any;
 }
 
-const PropTable: React.FC<PropTableProps> = ({ propData }) => {
+const resolveTypeEntry = (
+  typeLibrary: any,
+  typeName: string | undefined,
+  resolved: string | undefined
+) => {
+  if (!typeName || typeName !== resolved) return resolved;
+
+  const icIndex = typeName.indexOf("Ic");
+  let cleanedTypeName = icIndex !== -1 ? typeName.slice(icIndex) : typeName;
+  if (cleanedTypeName.endsWith("[]"))
+    cleanedTypeName = cleanedTypeName.slice(0, -2);
+
+  let typeEntry = typeLibrary[cleanedTypeName];
+  if (!typeEntry) {
+    const foundKey = Object.keys(typeLibrary).find((key) =>
+      key.endsWith(`::${cleanedTypeName}`)
+    );
+    typeEntry = foundKey ? typeLibrary[foundKey] : undefined;
+  }
+
+  if (
+    typeEntry &&
+    typeof typeEntry === "object" &&
+    "declaration" in typeEntry
+  ) {
+    return (typeEntry as { declaration: string }).declaration;
+  }
+  if (typeof typeEntry === "string") {
+    return typeEntry;
+  }
+  return resolved;
+};
+
+const PropTable: React.FC<PropTableProps> = ({ propData, typeLibrary }) => {
   const columns = useMemo(
     () => [
-      {
-        Header: "Name",
-        accessor: "name",
-      },
-      {
-        Header: "Description",
-        accessor: "description",
-      },
-      {
-        Header: "Default",
-        accessor: "default",
-      },
+      { Header: "Name", accessor: "name" },
+      { Header: "Description", accessor: "description" },
+      { Header: "Default", accessor: "default" },
     ],
     []
   );
@@ -40,30 +65,35 @@ const PropTable: React.FC<PropTableProps> = ({ propData }) => {
             required,
             default: defaultValue,
             deprecation,
-          }) => ({
-            name: (
-              <AttributeName
-                name={["Property", "Attribute"]}
-                value={[name, attr]}
-              />
-            ),
-            description: (
-              <PropDescription
-                description={docs}
-                typeName={complexType?.original}
-                type={complexType?.resolved}
-                required={required}
-                deprecation={deprecation}
-              />
-            ),
-            default: defaultValue,
-            key: name,
-          })
+          }) => {
+            const typeName = complexType?.original;
+            const resolved = complexType?.resolved;
+            const type = resolveTypeEntry(typeLibrary, typeName, resolved);
+            return {
+              name: (
+                <AttributeName
+                  name={["Property", "Attribute"]}
+                  value={[name, attr]}
+                />
+              ),
+              description: (
+                <PropDescription
+                  description={docs}
+                  typeName={typeName}
+                  type={type}
+                  required={required}
+                  deprecation={deprecation}
+                />
+              ),
+              default: defaultValue,
+              key: name,
+            };
+          }
         )
         .sort(
           (a, b) => b.description.props.required - a.description.props.required
         ),
-    []
+    [propData, typeLibrary]
   );
 
   return (
