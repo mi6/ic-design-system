@@ -8,6 +8,7 @@ import {
   IcNavigationItem,
   IcSearchBar,
   IcSectionContainer,
+  IcSkipLink,
   IcTopNavigation,
   IcTypography,
   SlottedSVG,
@@ -33,6 +34,7 @@ const TopNavigationWithMegaMenu: React.FC<PageProps> = () => {
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         contentAligned={alignment}
         appTitle="[Enter your application name]"
@@ -126,7 +128,7 @@ const TopNavigationWithMegaMenu: React.FC<PageProps> = () => {
           href="#"
         />
       </IcTopNavigation>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer
           className={classes.mainSectionContainer}
           aligned={alignment}

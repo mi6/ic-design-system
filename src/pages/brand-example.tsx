@@ -1,13 +1,15 @@
 import React from "react";
 import {
+  IcButton,
   IcClassificationBanner,
   IcFooter,
   IcFooterLink,
+  IcHero,
   IcNavigationButton,
   IcNavigationItem,
   IcSearchBar,
   IcSectionContainer,
-  IcSkipLink,
+  IcTheme,
   IcTopNavigation,
   IcTypography,
   SlottedSVG,
@@ -20,7 +22,11 @@ import { PageProps } from "gatsby";
 const TopNavigation: React.FC<PageProps> = () => {
   const alignment = "center";
   const useStyles = createUseStyles({
-    main: { minHeight: "100vh", display: "flex" },
+    main: {
+      minHeight: "100vh",
+      display: "flex",
+      backgroundColor: "var(--ic-color-background-primary-light)",
+    },
     mainContentDiv: {
       border: "var(--ic-border-width) dashed var(--ic-architectural-400)",
       padding: "var(--ic-space-md)",
@@ -30,9 +36,8 @@ const TopNavigation: React.FC<PageProps> = () => {
   });
   const classes = useStyles();
   return (
-    <>
+    <IcTheme brandColor="rgb(92, 9, 72)">
       <IcClassificationBanner />
-      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -113,7 +118,19 @@ const TopNavigation: React.FC<PageProps> = () => {
           href="#"
         />
       </IcTopNavigation>
-      <main id="main" className={classes.main}>
+      <IcHero
+        heading="Example hero"
+        subheading="Showing the custom brand colour"
+        aligned={alignment}
+      >
+        <IcButton variant="primary" slot="interaction">
+          Primary
+        </IcButton>
+        <IcButton variant="secondary" slot="interaction">
+          Secondary
+        </IcButton>
+      </IcHero>
+      <main className={classes.main}>
         <IcSectionContainer
           className={classes.mainSectionContainer}
           aligned={alignment}
@@ -170,7 +187,7 @@ const TopNavigation: React.FC<PageProps> = () => {
           </SlottedSVG>
         </IcFooterLink>
       </IcFooter>
-    </>
+    </IcTheme>
   );
 };
 export default TopNavigation;

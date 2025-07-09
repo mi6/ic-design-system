@@ -172,7 +172,11 @@ const ComponentTesting: React.FC<ComponentTestingProps> = ({
           />
         </div>
         {snippetArray.map((snippet, index) => (
-          <IcTabPanel key={snippet.fileName} tab-position={index}>
+          <IcTabPanel
+            className="component-testing-panel"
+            key={snippet.fileName}
+            tab-position={index}
+          >
             <CodeWindow
               code={
                 showMore

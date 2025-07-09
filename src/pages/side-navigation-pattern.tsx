@@ -8,6 +8,7 @@ import {
   IcNavigationItem,
   IcSectionContainer,
   IcSideNavigation,
+  IcSkipLink,
   IcTypography,
   SlottedSVG,
 } from "@ukic/react";
@@ -53,6 +54,7 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
     <div id="side-nav-pattern-root">
       <div className={classes.parentDiv}>
         <IcClassificationBanner />
+        <IcSkipLink target="main" />
         <IcSideNavigation
           appTitle="[Enter your application name]"
           status="alpha"
@@ -212,7 +214,7 @@ const SideNavigationPattern: React.FC<PageProps> = () => {
           </IcNavigationItem>
         </IcSideNavigation>
         <div className={classes.contentDivContainer}>
-          <main className={classes.main}>
+          <main id="main" className={classes.main}>
             <IcSectionContainer
               aligned={alignment}
               className={classes.mainSectionContainer}

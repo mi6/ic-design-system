@@ -22,6 +22,7 @@ export const snippetsTopNav = [
     technology: "Web component",
     snippets: {
       long: `<ic-theme id="theme-wrapper" theme="light">
+    <ic-skip-link target="main"></ic-skip-link>
     <ic-top-navigation
       app-title="[Enter your application name]"
       status="alpha"
@@ -60,7 +61,7 @@ export const snippetsTopNav = [
         </svg>
       </ic-navigation-button>
     </ic-top-navigation>
-    <main>
+    <main id="main">
       <ic-section-container class="main-section-container" aligned="center">
         <div class="main-content-div">
           <ic-alert heading="See how the content changes" variant="info"></ic-alert>
@@ -177,6 +178,7 @@ export const snippetsTopNav = [
   const classes = useStyles(); 
   return (
     <IcTheme id="theme-wrapper" theme={theme}>
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -197,7 +199,7 @@ export const snippetsTopNav = [
           {theme === "light" ? <DarkIcon /> : <LightIcon />}
         </IcNavigationButton>
       </IcTopNavigation>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer}>
           <div className={classes.mainContentDiv}>
             <IcAlert heading="See how the content changes" variant="info" />
@@ -272,6 +274,7 @@ export const snippetsTopNav = [
   const classes = useStyles(); 
   return (
     <IcTheme id="theme-wrapper" theme={theme}>
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -292,7 +295,7 @@ export const snippetsTopNav = [
           {theme === "light" ? <DarkIcon /> : <LightIcon />}
         </IcNavigationButton>
       </IcTopNavigation>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer className={classes.mainSectionContainer}>
           <div className={classes.mainContentDiv}>
             <IcAlert heading="See how the content changes" variant="info" />

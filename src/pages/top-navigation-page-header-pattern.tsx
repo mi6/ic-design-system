@@ -12,6 +12,7 @@ import {
   IcPageHeader,
   IcSearchBar,
   IcSectionContainer,
+  IcSkipLink,
   IcTextField,
   IcTopNavigation,
   IcTypography,
@@ -54,6 +55,7 @@ const TopNavigationWithPageHeader: React.FC<PageProps> = () => {
   return (
     <>
       <IcClassificationBanner />
+      <IcSkipLink target="main" />
       <IcTopNavigation
         appTitle="[Enter your application name]"
         status="alpha"
@@ -173,7 +175,7 @@ const TopNavigationWithPageHeader: React.FC<PageProps> = () => {
           <IcButton>Submit</IcButton>
         </div>
       </IcPageHeader>
-      <main className={classes.main}>
+      <main id="main" className={classes.main}>
         <IcSectionContainer
           className={classes.mainSectionContainer}
           aligned={alignment}

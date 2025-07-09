@@ -4,7 +4,7 @@ const testFiles = {
     disableMoreButton: false,
     snippets: {
       short: `// StackBlitz cannot currently run Cypress tests
-  it("should fill the form with no errors/validation", () => {
+it("should fill the form with no errors/validation", () => {
   mount(<Subscription />);
   // checkHydrated will wait until the component is hydrated and ensures it is ready to test
   checkHydrated(IC_PAGE_HEADER);
@@ -60,7 +60,7 @@ const testFiles = {
   // Agree to terms
   cy.get(IC_RADIO_OPTION).find(RADIO+'[name="agree"]').check({ force: true });
   cy.get(IC_RADIO_OPTION + '[name="agree"]').should(HAVE_ATTR, SELECTED);
-  
+
   // Submit and check the logged formValues
   cy.get(IC_BUTTON).contains("Submit order").click();
   let date = new Date();
@@ -72,11 +72,11 @@ const testFiles = {
 
 import { mount } from "cypress/react";
 import {
-BE_VISIBLE,
-HAVE_ATTR,
-HAVE_BEEN_CALLED_WITH,
-NOT_HAVE_ATTR,
-HAVE_CLASS
+  BE_VISIBLE,
+  HAVE_ATTR,
+  HAVE_BEEN_CALLED_WITH,
+  NOT_HAVE_ATTR,
+  HAVE_CLASS
 } from "../../src/utils/cyConstants";
 import Subscription from "../../src/components/Subscription/Subscription";
 
@@ -119,13 +119,13 @@ const ERROR = "error";
 
 //* METHODS
 const checkHydrated = (element: string): void => {
-cy.get(\`\${element}\`).should(HAVE_CLASS, "hydrated");
+  cy.get(\`\${element}\`).should(HAVE_CLASS, "hydrated");
 };
 const checkCurrentStep = (step: number) => {
-cy.get(IC_STEP)
-  .eq(step)
-  .should(BE_VISIBLE)
-  .should(HAVE_ATTR, STEP_TYPE, CURRENT);
+  cy.get(IC_STEP)
+    .eq(step)
+    .should(BE_VISIBLE)
+    .should(HAVE_ATTR, STEP_TYPE, CURRENT);
 };
 
 const findShadowEl = (
@@ -139,7 +139,7 @@ element: string,
 selector: string,
 order: number = 0
 ): void => {
-cy.get(element).shadow().find(selector)?.eq(order).click();
+  cy.get(element).shadow().find(selector)?.eq(order).click();
 };
 
 const checkDateInputValue = (date: Date | null) => {
@@ -182,13 +182,13 @@ let yearVal: number;
 };
 
 const formValues = {
-grind: 'aeropress',
-variety: 'house',
-size: '250',
-name: 'Java the Hutt',
-email: 'javadahutt@tattooine.com',
-phone: '1234567890',
-contact: ['sms', 'email'],
+  grind: 'aeropress',
+  variety: 'house',
+  size: '250',
+  name: 'Java the Hutt',
+  email: 'javadahutt@tattooine.com',
+  phone: '1234567890',
+  contact: ['sms', 'email'],
 }
 
 const filledForm = (page?: string): {} => {
@@ -319,43 +319,43 @@ describe("Coffee subscription form", () => {
     disableMoreButton: false,
     snippets: {
       short: `it('fills out values on the chooseCoffee page, tests for an error, and submits', async () => {
-        container.addEventListener("icChange", callbackFn);
+  container.addEventListener("icChange", callbackFn);
 
-        // Check the current form step
-        const stepOne = container.querySelector('ic-step[heading="Choose coffee"]') as HTMLIcStepElement;
-        expect(stepOne.type).toBe(stepStates.current);
+  // Check the current form step
+  const stepOne = container.querySelector('ic-step[heading="Choose coffee"]') as HTMLIcStepElement;
+  expect(stepOne.type).toBe(stepStates.current);
 
-        // Select radio-option from ic-radio-group
-        const coffeeRadio = container.querySelector(
-            'ic-radio-option[value="house"]'
-        ) as HTMLIcRadioOptionElement;
+  // Select radio-option from ic-radio-group
+  const coffeeRadio = container.querySelector(
+      'ic-radio-option[value="house"]'
+  ) as HTMLIcRadioOptionElement;
 
-        await user.click(coffeeRadio);
+  await user.click(coffeeRadio);
 
-        expect(callbackFn).toHaveBeenCalled();
-        expect(coffeeRadio.selected).toBe(true);
+  expect(callbackFn).toHaveBeenCalled();
+  expect(coffeeRadio.selected).toBe(true);
 
-        // Try submitting to see error state
-        const coffeeSubmit = screen.getByShadowTestId("coffee-submit-btn") as HTMLIcButtonElement;
-        await user.click(coffeeSubmit);
+  // Try submitting to see error state
+  const coffeeSubmit = screen.getByShadowTestId("coffee-submit-btn") as HTMLIcButtonElement;
+  await user.click(coffeeSubmit);
 
-        // ic-alert should be visible
-        const alert = container.querySelector('ic-alert') as HTMLIcAlertElement;
-        expect(alert).not.toBeNull();
+  // ic-alert should be visible
+  const alert = container.querySelector('ic-alert') as HTMLIcAlertElement;
+  expect(alert).not.toBeNull();
 
-        // Select size from ic-select
-        const sizeSelect = container.querySelector('ic-select[label="Size"]') as HTMLIcSelectElement;
-        // await user.click(sizeSelect);
+  // Select size from ic-select
+  const sizeSelect = container.querySelector('ic-select[label="Size"]') as HTMLIcSelectElement;
+  // await user.click(sizeSelect);
 
-        // find ic-menu in the shadowRoot of ic-select
-        const sizeMenuOption = await findByShadowLabelText(sizeSelect, "250g")
-        await user.click(sizeMenuOption);
-        expect(callbackFn).toHaveBeenCalled();
+  // find ic-menu in the shadowRoot of ic-select
+  const sizeMenuOption = await findByShadowLabelText(sizeSelect, "250g")
+  await user.click(sizeMenuOption);
+  expect(callbackFn).toHaveBeenCalled();
 
-        // Submit first page of form
-        await user.click(coffeeSubmit);
-        expect(logSpy).toHaveBeenNthCalledWith(2, filledForm());
-    });`,
+  // Submit first page of form
+  await user.click(coffeeSubmit);
+  expect(logSpy).toHaveBeenNthCalledWith(2, filledForm());
+});`,
       long: `import Subscription from '../Subscription.tsx';
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -514,896 +514,896 @@ describe('Subscription component', () => {
     disableMoreButton: false,
     snippets: {
       short: `<IcPageHeader
-    heading="Customise your coffee subscription"
-    subheading="Choose your coffee, enter your details and checkout, easy as 1... 2... 3!"
-    size="small"
-    id="top"
-    sticky
-    aligned="center"
-  >
-    <IcChip slot="heading-adornment" label="V0.0.01" size="large" />
-    <IcStepper slot="stepper">
-      <IcStep
-        heading="Choose coffee"
-        type={handleSteps(formSteps.chooseCoffee)}
-      />
-      <IcStep
-        heading="Enter Details"
-        type={handleSteps(formSteps.enterDetails)}
-      />
-      <IcStep
-        heading="Checkout"
-        type={handleSteps(formSteps.checkout)}
-      />
-    </IcStepper>
-  </IcPageHeader>
-  <IcBackToTop target="top" />
-  <form onSubmit={handleSubmit}>
-    {formSteps.chooseCoffee.current && (
-      <IcSectionContainer aligned="left">
-        {formValidation && (
-          <IcAlert
-            variant="error"
-            heading="Error"
-            message="Please fill in all required fields"
-            announced
-          />
-        )}
-        <IcTypography variant="subtitle-large">
-          Please choose your coffee
-        </IcTypography>
-        <IcTypography variant="body" maxLines={2}>
-          Sip back and relax as we embark on a journey through the aromatic
-          fields of coffee-inspired lorem ipsum. In the heart of a lush,
-          verdant valley kissed by the golden hues of dawn, there lies a
-          quaint little plantation where the beans of legend are nurtured.
-          Each bean, a tiny vessel of dreams and whispers of faraway lands,
-          cradled in the earth's embrace until it bursts forth with a
-          promise of warmth and vigor.
-        </IcTypography>
-        <div className="input-container">
-          <IcRadioGroup
-            name="radio-group-1"
-            label="What variety of coffee would you like?"
-            helperText="House blend is the default option"
-            size="small"
-            required
-            onIcChange={(ev) =>
-              handleChange("coffeeForm", "variety", ev.detail.value)
-            }
-            {...(formValidation &&
-              formValues.coffeeForm.variety === "" && {
-                validationText: "Please choose an option",
-                validationStatus: "error",
-              })}
-          >
-            <IcRadioOption
-              value="house"
-              label="House Blend"
-              selected={formValues.coffeeForm.variety === "house"}
-            />
-            <IcRadioOption
-              value="liberica"
-              label="Liberica"
-              selected={formValues.coffeeForm.variety === "liberica"}
-            />
-            <IcRadioOption
-              value="arabica"
-              label="Arabica"
-              selected={formValues.coffeeForm.variety === "arabica"}
-            />
-            <IcRadioOption
-              value="mundo"
-              label="Mundo Nova"
-              selected={formValues.coffeeForm.variety === "mundo"}
-            />
-          </IcRadioGroup>
-        </div>
-        <div className="input-container">
-          <IcSelect
-            label="Grind"
-            helperText="Please select a grind type"
-            name="grind-select"
-            options={grindOptions}
-            size="small"
-            className="input"
-            value={formValues.coffeeForm.grind}
-            onIcChange={(ev) =>
-              handleChange("coffeeForm", "grind", ev.detail.value)
-            }
-            {...(formValidation &&
-              formValues.coffeeForm.grind === "" && {
-                validationText: "Please choose a grind size",
-                validationStatus: "error",
-              })}
-          />
-          <IcSelect
-            label="Size"
-            helperText="Please select a bag size"
-            name="size-select"
-            required
-            options={sizeOptions}
-            size="small"
-            className="input"
-            value={formValues.coffeeForm.size}
-            onIcChange={(ev) =>
-              handleChange("coffeeForm", "size", ev.detail.value)
-            }
-            {...(formValidation &&
-              formValues.coffeeForm.size === "" && {
-                validationText: "Please choose a size",
-                validationStatus: "error",
-              })}
-          />
-        </div>
-        <div className="input-container">
-          <IcButton
-            variant="primary"
-            className="button"
-            onClick={(ev) => handleClick(ev, next)}
-            data-testid="coffee-submit-btn"
-          >
-            Add to order
-          </IcButton>
-        </div>
-      </IcSectionContainer>
-    )}
-    {formSteps.enterDetails.current && (
-      <IcSectionContainer aligned="left">
-        {formValidation && (
-          <IcAlert
-            variant="error"
-            heading="Error"
-            message="Please fill in all required fields"
-            announced
-          />
-        )}
-        <IcTypography variant="subtitle-large">
-          Please enter your details
-        </IcTypography>
-        <IcTypography variant="body">
-          Nearly there, we just need a few more details. Purchases must be
-          made by an adult over the age of 18. We will never share your
-          details with fourth parties.
-        </IcTypography>
-        <div className="input-container">
-          <IcTextField
-            label="Name"
-            name="name"
-            required
-            className="input"
-            size="small"
-            value={formValues.detailForm.name}
-            onIcChange={(ev) =>
-              handleChange("detailForm", "name", ev.detail.value)
-            }
-            {...(formValidation &&
-              formValues.detailForm.name === "" && {
-                validationText: "Please enter your name",
-                validationStatus: "error",
-            })}
-            autoFocus
-          />
-          <IcTextField
-            label="Email"
-            name="email"
-            type="email"
-            required
-            size="small"
-            className="input"
-            value={formValues.detailForm.email}
-            onIcInput={(ev) =>
-              handleChange("detailForm", "email", ev.detail.value)
-            }
-            {...(formValidation &&
-              (formValues.detailForm.email === "" ||
-                !formValues.detailForm.email.includes("@")) && {
-                validationText: "Please enter an email",
-                validationStatus: "error",
-            })}
-            data-test-id="email-text-field"
-          />
-          <IcTextField
-            label="Phone"
-            name="phone"
-            type="number"
-            required
-            size="small"
-            className="input"
-            value={formValues.detailForm.phone}
-            onIcInput={(ev) =>
-              handleChange("detailForm", "phone", ev.detail.value)
-            }
-            {...(formValidation &&
-              formValues.detailForm.phone === "" && {
-                validationText:
-                  "Please enter a number on which we can contact you",
-                validationStatus: "error",
-              })}
-          />
-        </div>
-        <div className="input-container">
-          <IcCheckboxGroup
-            name="signup"
-            onIcChange={(ev) =>
-              handleChange("detailForm", "contact", ev.detail.value)
-            }
-            label="Sign up for notifications about future products?"
-            className="input"
-          >
-            <IcCheckbox
-              label="SMS"
-              name="sms"
-              value="sms"
-              checked={formValues.detailForm.contact.includes("sms")}
-            />
-            <IcCheckbox
-              label="Email"
-              name="email"
-              value="email"
-              checked={formValues.detailForm.contact.includes("email")}
-            />
-          </IcCheckboxGroup>
-        </div>
-        <div className="input-container"></div>
-        <div className="input-container">
-          <IcButton
-            variant="secondary"
-            onClick={(ev) => handleClick(ev, back)}
-            className="button"
-          >
-            Go Back
-          </IcButton>
-          <IcButton
-            variant="primary"
-            onClick={(ev) => handleClick(ev, next)}
-            className="button"
-            data-testid="details-submit-btn"
-          >
-            Add to order
-          </IcButton>
-        </div>
-      </IcSectionContainer>
-    )}
-    {formSteps.checkout.current && (
-      <IcSectionContainer aligned="left">
-        {formValidation && (
-          <IcAlert
-            variant="error"
-            heading="Error"
-            message="Please fill in all required fields"
-            announced
-          />
-        )}
-        <IcTypography variant="subtitle-large">Last step!</IcTypography>
-        <IcTypography variant="body">
-          Please choose a start date for your subscription and agree to the
-          terms and conditions. Feel free to cancel your subscriptions at any time.
-        </IcTypography>
-        <div className="input-container">
-          <IcDatePicker
-            label="When would you like your subscription to start?"
-            className="input"
-            disablePast
-            required
-            size="small"
-            data-testid="date-picker"
-            value={formValues.checkoutForm.dateToStart}
-            onIcChange={(ev) =>
-              handleChange("checkoutForm", "dateToStart", ev.detail.value)
-            }
-            {...(formValidation &&
-              formValues.checkoutForm.dateToStart === "" && {
-                validationText: "Please choose a date",
-                validationStatus: "error",
-              })}
-          />
-          </div>
-          <div className="input-container">
-          <IcRadioGroup
-            label="Please agree to the terms and conditions"
-            name="terms"
-            required
-            className="input"
-            size="small"
-            onIcChange={(ev) =>
-              handleChange("checkoutForm", "terms", ev.detail.value)
-            }
-            {...(((formValidation &&
-              formValues.checkoutForm.terms === "") ||
-              (formValidation &&
-                formValues.checkoutForm.terms === "decline")) && {
-              validationText: "Please agree to the terms and conditions",
+  heading="Customise your coffee subscription"
+  subheading="Choose your coffee, enter your details and checkout, easy as 1... 2... 3!"
+  size="small"
+  id="top"
+  sticky
+  aligned="center"
+>
+  <IcChip slot="heading-adornment" label="V0.0.01" size="large" />
+  <IcStepper slot="stepper">
+    <IcStep
+      heading="Choose coffee"
+      type={handleSteps(formSteps.chooseCoffee)}
+    />
+    <IcStep
+      heading="Enter Details"
+      type={handleSteps(formSteps.enterDetails)}
+    />
+    <IcStep
+      heading="Checkout"
+      type={handleSteps(formSteps.checkout)}
+    />
+  </IcStepper>
+</IcPageHeader>
+<IcBackToTop target="top" />
+<form onSubmit={handleSubmit}>
+  {formSteps.chooseCoffee.current && (
+    <IcSectionContainer aligned="left">
+      {formValidation && (
+        <IcAlert
+          variant="error"
+          heading="Error"
+          message="Please fill in all required fields"
+          announced
+        />
+      )}
+      <IcTypography variant="subtitle-large">
+        Please choose your coffee
+      </IcTypography>
+      <IcTypography variant="body" maxLines={2}>
+        Sip back and relax as we embark on a journey through the aromatic
+        fields of coffee-inspired lorem ipsum. In the heart of a lush,
+        verdant valley kissed by the golden hues of dawn, there lies a
+        quaint little plantation where the beans of legend are nurtured.
+        Each bean, a tiny vessel of dreams and whispers of faraway lands,
+        cradled in the earth's embrace until it bursts forth with a
+        promise of warmth and vigor.
+      </IcTypography>
+      <div className="input-container">
+        <IcRadioGroup
+          name="radio-group-1"
+          label="What variety of coffee would you like?"
+          helperText="House blend is the default option"
+          size="small"
+          required
+          onIcChange={(ev) =>
+            handleChange("coffeeForm", "variety", ev.detail.value)
+          }
+          {...(formValidation &&
+            formValues.coffeeForm.variety === "" && {
+              validationText: "Please choose an option",
               validationStatus: "error",
             })}
-          >
-            <IcRadioOption
-              label="Agree"
-              name="agree"
-              value="agree"
-              selected={formValues.checkoutForm.terms === "agree"}
-            />
-            <IcRadioOption
-              label="Decline"
-              name="decline"
-              value="decline"
-              selected={formValues.checkoutForm.terms === "decline"}
-            />
-          </IcRadioGroup>
+        >
+          <IcRadioOption
+            value="house"
+            label="House Blend"
+            selected={formValues.coffeeForm.variety === "house"}
+          />
+          <IcRadioOption
+            value="liberica"
+            label="Liberica"
+            selected={formValues.coffeeForm.variety === "liberica"}
+          />
+          <IcRadioOption
+            value="arabica"
+            label="Arabica"
+            selected={formValues.coffeeForm.variety === "arabica"}
+          />
+          <IcRadioOption
+            value="mundo"
+            label="Mundo Nova"
+            selected={formValues.coffeeForm.variety === "mundo"}
+          />
+        </IcRadioGroup>
+      </div>
+      <div className="input-container">
+        <IcSelect
+          label="Grind"
+          helperText="Please select a grind type"
+          name="grind-select"
+          options={grindOptions}
+          size="small"
+          className="input"
+          value={formValues.coffeeForm.grind}
+          onIcChange={(ev) =>
+            handleChange("coffeeForm", "grind", ev.detail.value)
+          }
+          {...(formValidation &&
+            formValues.coffeeForm.grind === "" && {
+              validationText: "Please choose a grind size",
+              validationStatus: "error",
+            })}
+        />
+        <IcSelect
+          label="Size"
+          helperText="Please select a bag size"
+          name="size-select"
+          required
+          options={sizeOptions}
+          size="small"
+          className="input"
+          value={formValues.coffeeForm.size}
+          onIcChange={(ev) =>
+            handleChange("coffeeForm", "size", ev.detail.value)
+          }
+          {...(formValidation &&
+            formValues.coffeeForm.size === "" && {
+              validationText: "Please choose a size",
+              validationStatus: "error",
+            })}
+        />
+      </div>
+      <div className="input-container">
+        <IcButton
+          variant="primary"
+          className="button"
+          onClick={(ev) => handleClick(ev, next)}
+          data-testid="coffee-submit-btn"
+        >
+          Add to order
+        </IcButton>
+      </div>
+    </IcSectionContainer>
+  )}
+  {formSteps.enterDetails.current && (
+    <IcSectionContainer aligned="left">
+      {formValidation && (
+        <IcAlert
+          variant="error"
+          heading="Error"
+          message="Please fill in all required fields"
+          announced
+        />
+      )}
+      <IcTypography variant="subtitle-large">
+        Please enter your details
+      </IcTypography>
+      <IcTypography variant="body">
+        Nearly there, we just need a few more details. Purchases must be
+        made by an adult over the age of 18. We will never share your
+        details with fourth parties.
+      </IcTypography>
+      <div className="input-container">
+        <IcTextField
+          label="Name"
+          name="name"
+          required
+          className="input"
+          size="small"
+          value={formValues.detailForm.name}
+          onIcChange={(ev) =>
+            handleChange("detailForm", "name", ev.detail.value)
+          }
+          {...(formValidation &&
+            formValues.detailForm.name === "" && {
+              validationText: "Please enter your name",
+              validationStatus: "error",
+          })}
+          autoFocus
+        />
+        <IcTextField
+          label="Email"
+          name="email"
+          type="email"
+          required
+          size="small"
+          className="input"
+          value={formValues.detailForm.email}
+          onIcInput={(ev) =>
+            handleChange("detailForm", "email", ev.detail.value)
+          }
+          {...(formValidation &&
+            (formValues.detailForm.email === "" ||
+              !formValues.detailForm.email.includes("@")) && {
+              validationText: "Please enter an email",
+              validationStatus: "error",
+          })}
+          data-test-id="email-text-field"
+        />
+        <IcTextField
+          label="Phone"
+          name="phone"
+          type="number"
+          required
+          size="small"
+          className="input"
+          value={formValues.detailForm.phone}
+          onIcInput={(ev) =>
+            handleChange("detailForm", "phone", ev.detail.value)
+          }
+          {...(formValidation &&
+            formValues.detailForm.phone === "" && {
+              validationText:
+                "Please enter a number on which we can contact you",
+              validationStatus: "error",
+            })}
+        />
+      </div>
+      <div className="input-container">
+        <IcCheckboxGroup
+          name="signup"
+          onIcChange={(ev) =>
+            handleChange("detailForm", "contact", ev.detail.value)
+          }
+          label="Sign up for notifications about future products?"
+          className="input"
+        >
+          <IcCheckbox
+            label="SMS"
+            name="sms"
+            value="sms"
+            checked={formValues.detailForm.contact.includes("sms")}
+          />
+          <IcCheckbox
+            label="Email"
+            name="email"
+            value="email"
+            checked={formValues.detailForm.contact.includes("email")}
+          />
+        </IcCheckboxGroup>
+      </div>
+      <div className="input-container"></div>
+      <div className="input-container">
+        <IcButton
+          variant="secondary"
+          onClick={(ev) => handleClick(ev, back)}
+          className="button"
+        >
+          Go Back
+        </IcButton>
+        <IcButton
+          variant="primary"
+          onClick={(ev) => handleClick(ev, next)}
+          className="button"
+          data-testid="details-submit-btn"
+        >
+          Add to order
+        </IcButton>
+      </div>
+    </IcSectionContainer>
+  )}
+  {formSteps.checkout.current && (
+    <IcSectionContainer aligned="left">
+      {formValidation && (
+        <IcAlert
+          variant="error"
+          heading="Error"
+          message="Please fill in all required fields"
+          announced
+        />
+      )}
+      <IcTypography variant="subtitle-large">Last step!</IcTypography>
+      <IcTypography variant="body">
+        Please choose a start date for your subscription and agree to the
+        terms and conditions. Feel free to cancel your subscriptions at any time.
+      </IcTypography>
+      <div className="input-container">
+        <IcDatePicker
+          label="When would you like your subscription to start?"
+          className="input"
+          disablePast
+          required
+          size="small"
+          data-testid="date-picker"
+          value={formValues.checkoutForm.dateToStart}
+          onIcChange={(ev) =>
+            handleChange("checkoutForm", "dateToStart", ev.detail.value)
+          }
+          {...(formValidation &&
+            formValues.checkoutForm.dateToStart === "" && {
+              validationText: "Please choose a date",
+              validationStatus: "error",
+            })}
+        />
         </div>
         <div className="input-container">
-          <IcButton
-            variant="secondary"
-            onClick={(ev) => handleClick(ev, back)}
-            className="button"
-          >
-            Go Back
-          </IcButton>
-          <IcButton
-            variant="primary"
-            onClick={handleSubmit}
-            className="button"
-          >
-            Submit order
-          </IcButton>
-          <IcToastRegion ref={toastRegionEl}>
-            <IcToast
-              heading="Thanks for your order!"
-              ref={toastEl}
-              dismissMode="automatic"
-              autoDismissTimeout={3000}
-              variant="success"
-              onIcDismiss={() => resetForm()}
-            />
-          </IcToastRegion>
-        </div>
-      </IcSectionContainer>
-    )}
-    </form>`,
+        <IcRadioGroup
+          label="Please agree to the terms and conditions"
+          name="terms"
+          required
+          className="input"
+          size="small"
+          onIcChange={(ev) =>
+            handleChange("checkoutForm", "terms", ev.detail.value)
+          }
+          {...(((formValidation &&
+            formValues.checkoutForm.terms === "") ||
+            (formValidation &&
+              formValues.checkoutForm.terms === "decline")) && {
+            validationText: "Please agree to the terms and conditions",
+            validationStatus: "error",
+          })}
+        >
+          <IcRadioOption
+            label="Agree"
+            name="agree"
+            value="agree"
+            selected={formValues.checkoutForm.terms === "agree"}
+          />
+          <IcRadioOption
+            label="Decline"
+            name="decline"
+            value="decline"
+            selected={formValues.checkoutForm.terms === "decline"}
+          />
+        </IcRadioGroup>
+      </div>
+      <div className="input-container">
+        <IcButton
+          variant="secondary"
+          onClick={(ev) => handleClick(ev, back)}
+          className="button"
+        >
+          Go Back
+        </IcButton>
+        <IcButton
+          variant="primary"
+          onClick={handleSubmit}
+          className="button"
+        >
+          Submit order
+        </IcButton>
+        <IcToastRegion ref={toastRegionEl}>
+          <IcToast
+            heading="Thanks for your order!"
+            ref={toastEl}
+            dismissMode="automatic"
+            autoDismissTimeout={3000}
+            variant="success"
+            onIcDismiss={() => resetForm()}
+          />
+        </IcToastRegion>
+      </div>
+    </IcSectionContainer>
+  )}
+</form>`,
       long: `import React, { useState, useRef, useCallback } from "react";
-  import "./index.css";
-  import {
-    IcCheckbox,
-    IcCheckboxGroup,
-    IcRadioGroup,
-    IcRadioOption,
-    IcSelect,
-    IcTextField,
-    IcButton,
-    IcSectionContainer,
-    IcPageHeader,
-    IcChip,
-    IcStepper,
-    IcStep,
-    IcTypography,
-    IcBackToTop,
-    IcToastRegion,
-    IcToast,
-    IcAlert,
-  } from "@ukic/react";
-  import { IcDatePicker } from "@ukic/canary-react";
-  import {
-    grindOptions,
-    sizeOptions,
-    next,
-    back,
-    initialFormValues,
-    initialFormSteps,
-  } from "./constants";
-  import { handleSteps } from "./methods";
-  import { FormValues, FormSteps } from "./types";
+import "./index.css";
+import {
+  IcCheckbox,
+  IcCheckboxGroup,
+  IcRadioGroup,
+  IcRadioOption,
+  IcSelect,
+  IcTextField,
+  IcButton,
+  IcSectionContainer,
+  IcPageHeader,
+  IcChip,
+  IcStepper,
+  IcStep,
+  IcTypography,
+  IcBackToTop,
+  IcToastRegion,
+  IcToast,
+  IcAlert,
+} from "@ukic/react";
+import { IcDatePicker } from "@ukic/canary-react";
+import {
+  grindOptions,
+  sizeOptions,
+  next,
+  back,
+  initialFormValues,
+  initialFormSteps,
+} from "./constants";
+import { handleSteps } from "./methods";
+import { FormValues, FormSteps } from "./types";
 
-  const Subscription: React.FC = () => {
-    const [formValues, setFormValues] = useState<FormValues>(initialFormValues);
-    const [formSteps, setFormSteps] = useState<FormSteps>(initialFormSteps);
-    const [formValidation, setFormValidation] = useState<boolean>(false);
+const Subscription: React.FC = () => {
+  const [formValues, setFormValues] = useState<FormValues>(initialFormValues);
+  const [formSteps, setFormSteps] = useState<FormSteps>(initialFormSteps);
+  const [formValidation, setFormValidation] = useState<boolean>(false);
 
-    const handleNextStep = () => {
-      let updatedFormSteps = { ...formSteps };
+  const handleNextStep = () => {
+    let updatedFormSteps = { ...formSteps };
 
-      if (formSteps.chooseCoffee.current) {
-        const { variety, grind, size } = formValues.coffeeForm;
-        if ([variety, grind, size].some((value) => value === "")) {
-          setFormValidation(true);
-          return;
-        }
-        setFormValidation(false);
-        updatedFormSteps.chooseCoffee = {
-          ...formSteps.chooseCoffee,
-          active: true,
-          completed: true,
-          current: false,
-        };
-        updatedFormSteps.enterDetails = {
-          ...formSteps.enterDetails,
-          active: true,
-          completed: false,
-          current: true,
-        };
-      } else if (formSteps.enterDetails.current) {
-        const { name, email, phone } = formValues.detailForm;
-        if (
-          [name, email, phone].some((value) => value === "") ||
-          !email.includes("@")
-        ) {
-          setFormValidation(true);
-          return;
-        }
-        setFormValidation(false);
-        updatedFormSteps.chooseCoffee = {
-          ...formSteps.chooseCoffee,
-          active: true,
-          completed: true,
-          current: false,
-        };
-        updatedFormSteps.enterDetails = {
-          ...formSteps.enterDetails,
-          active: true,
-          completed: true,
-          current: false,
-        };
-        updatedFormSteps.checkout = {
-          ...formSteps.checkout,
-          active: true,
-          completed: false,
-          current: true,
-        };
-      } else {
-        throw new Error("Invalid action");
+    if (formSteps.chooseCoffee.current) {
+      const { variety, grind, size } = formValues.coffeeForm;
+      if ([variety, grind, size].some((value) => value === "")) {
+        setFormValidation(true);
+        return;
       }
-      setFormSteps(updatedFormSteps);
-    };
-
-    const handleBackStep = () => {
-      let updatedFormSteps = { ...formSteps };
-
-      if (formSteps.enterDetails.current) {
-        updatedFormSteps.chooseCoffee = {
-          ...formSteps.chooseCoffee,
-          active: true,
-          completed: false,
-          current: true,
-        };
-        updatedFormSteps.enterDetails = {
-          ...formSteps.enterDetails,
-          active: true,
-          completed: false,
-          current: false,
-        };
-      } else if (formSteps.checkout.current) {
-        updatedFormSteps.chooseCoffee = {
-          ...formSteps.chooseCoffee,
-          active: true,
-          completed: true,
-          current: false,
-        };
-        updatedFormSteps.enterDetails = {
-          ...formSteps.enterDetails,
-          active: true,
-          completed: false,
-          current: true,
-        };
-        updatedFormSteps.checkout = {
-          ...formSteps.checkout,
-          active: true,
-          completed: false,
-          current: false,
-        };
-      } else {
-        throw new Error("Invalid action");
-      }
-      setFormSteps(updatedFormSteps);
-    };
-
-    const handleClick = useCallback(
-      (ev: React.MouseEvent, action: string) => {
-        ev.preventDefault();
-        console.log(formValues);
-
-        if (action === "next") {
-          handleNextStep();
-        } else if (action === "back") {
-          handleBackStep();
-        } else {
-          throw new Error("Invalid action");
-        }
-      },
-      [formSteps, formValues]
-    );
-
-    const handleChange = (
-      formSection: string,
-      formValue: string,
-      eventDetail: string | string[] | Date
-    ) => {
-      setFormValues({
-        ...formValues,
-        [formSection]: {
-          ...formValues[formSection as keyof FormValues],
-          [formValue]: eventDetail,
-        },
-      });
-    };
-
-    const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
-    const toastEl = useRef<HTMLIcToastElement | null>(null);
-
-    const resetForm = () => {
-      setFormValues(initialFormValues);
-      setFormSteps(initialFormSteps);
-    };
-
-    const handleSubmit = () => {
-      console.log(formValues);
-      const { dateToStart, terms } = formValues.checkoutForm;
+      setFormValidation(false);
+      updatedFormSteps.chooseCoffee = {
+        ...formSteps.chooseCoffee,
+        active: true,
+        completed: true,
+        current: false,
+      };
+      updatedFormSteps.enterDetails = {
+        ...formSteps.enterDetails,
+        active: true,
+        completed: false,
+        current: true,
+      };
+    } else if (formSteps.enterDetails.current) {
+      const { name, email, phone } = formValues.detailForm;
       if (
-        [dateToStart, terms].some((value) => value === "" || value === "decline")
+        [name, email, phone].some((value) => value === "") ||
+        !email.includes("@")
       ) {
         setFormValidation(true);
         return;
       }
       setFormValidation(false);
-      if (toastRegionEl.current && toastEl.current) {
-        toastRegionEl.current.openToast = toastEl.current;
-      }
-    };
-
-    //* This app was originally intended to be used in testing guidance, hence no atomisation of components, keeping the app to a single file
-
-    return (
-      <>
-        <IcPageHeader
-          heading="Customise your coffee subscription"
-          subheading="Choose your coffee, enter your details and checkout, easy as 1... 2... 3!"
-          size="small"
-          id="top"
-          sticky
-          aligned="center"
-        >
-          <IcChip slot="heading-adornment" label="V0.0.01" size="large" />
-          <IcStepper slot="stepper">
-            <IcStep
-              heading="Choose coffee"
-              type={handleSteps(formSteps.chooseCoffee)}
-            />
-            <IcStep
-              heading="Enter Details"
-              type={handleSteps(formSteps.enterDetails)}
-            />
-            <IcStep
-              heading="Checkout"
-              type={handleSteps(formSteps.checkout)}
-            />
-          </IcStepper>
-        </IcPageHeader>
-        <IcBackToTop target="top" />
-        <form onSubmit={handleSubmit}>
-          {formSteps.chooseCoffee.current && (
-            <IcSectionContainer aligned="left">
-              {formValidation && (
-                <IcAlert
-                  variant="error"
-                  heading="Error"
-                  message="Please fill in all required fields"
-                  announced
-                />
-              )}
-              <IcTypography variant="subtitle-large">
-                Please choose your coffee
-              </IcTypography>
-              <IcTypography variant="body" maxLines={2}>
-                Sip back and relax as we embark on a journey through the aromatic
-                fields of coffee-inspired lorem ipsum. In the heart of a lush,
-                verdant valley kissed by the golden hues of dawn, there lies a
-                quaint little plantation where the beans of legend are nurtured.
-                Each bean, a tiny vessel of dreams and whispers of faraway lands,
-                cradled in the earth's embrace until it bursts forth with a
-                promise of warmth and vigor.
-              </IcTypography>
-              <div className="input-container">
-                <IcRadioGroup
-                  name="radio-group-1"
-                  label="What variety of coffee would you like?"
-                  helperText="House blend is the default option"
-                  size="small"
-                  required
-                  onIcChange={(ev) =>
-                    handleChange("coffeeForm", "variety", ev.detail.value)
-                  }
-                  {...(formValidation &&
-                    formValues.coffeeForm.variety === "" && {
-                      validationText: "Please choose an option",
-                      validationStatus: "error",
-                    })}
-                >
-                  <IcRadioOption
-                    value="house"
-                    label="House Blend"
-                    selected={formValues.coffeeForm.variety === "house"}
-                  />
-                  <IcRadioOption
-                    value="liberica"
-                    label="Liberica"
-                    selected={formValues.coffeeForm.variety === "liberica"}
-                  />
-                  <IcRadioOption
-                    value="arabica"
-                    label="Arabica"
-                    selected={formValues.coffeeForm.variety === "arabica"}
-                  />
-                  <IcRadioOption
-                    value="mundo"
-                    label="Mundo Nova"
-                    selected={formValues.coffeeForm.variety === "mundo"}
-                  />
-                </IcRadioGroup>
-              </div>
-              <div className="input-container">
-                <IcSelect
-                  label="Grind"
-                  helperText="Please select a grind type"
-                  name="grind-select"
-                  options={grindOptions}
-                  size="small"
-                  className="input"
-                  value={formValues.coffeeForm.grind}
-                  onIcChange={(ev) =>
-                    handleChange("coffeeForm", "grind", ev.detail.value)
-                  }
-                  {...(formValidation &&
-                    formValues.coffeeForm.grind === "" && {
-                      validationText: "Please choose a grind size",
-                      validationStatus: "error",
-                    })}
-                />
-                <IcSelect
-                  label="Size"
-                  helperText="Please select a bag size"
-                  name="size-select"
-                  required
-                  options={sizeOptions}
-                  size="small"
-                  className="input"
-                  value={formValues.coffeeForm.size}
-                  onIcChange={(ev) =>
-                    handleChange("coffeeForm", "size", ev.detail.value)
-                  }
-                  {...(formValidation &&
-                    formValues.coffeeForm.size === "" && {
-                      validationText: "Please choose a size",
-                      validationStatus: "error",
-                    })}
-                />
-              </div>
-              <div className="input-container">
-                <IcButton
-                  variant="primary"
-                  className="button"
-                  onClick={(ev) => handleClick(ev, next)}
-                  data-testid="coffee-submit-btn"
-                >
-                  Add to order
-                </IcButton>
-              </div>
-            </IcSectionContainer>
-          )}
-          {formSteps.enterDetails.current && (
-            <IcSectionContainer aligned="left">
-              {formValidation && (
-                <IcAlert
-                  variant="error"
-                  heading="Error"
-                  message="Please fill in all required fields"
-                  announced
-                />
-              )}
-              <IcTypography variant="subtitle-large">
-                Please enter your details
-              </IcTypography>
-              <IcTypography variant="body">
-                Nearly there, we just need a few more details. Purchases must be
-                made by an adult over the age of 18. We will never share your
-                details with fourth parties.
-              </IcTypography>
-              <div className="input-container">
-                <IcTextField
-                  label="Name"
-                  name="name"
-                  required
-                  className="input"
-                  size="small"
-                  value={formValues.detailForm.name}
-                  onIcChange={(ev) =>
-                    handleChange("detailForm", "name", ev.detail.value)
-                  }
-                  {...(formValidation &&
-                    formValues.detailForm.name === "" && {
-                      validationText: "Please enter your name",
-                      validationStatus: "error",
-                  })}
-                  autoFocus
-                />
-                <IcTextField
-                  label="Email"
-                  name="email"
-                  type="email"
-                  required
-                  size="small"
-                  className="input"
-                  value={formValues.detailForm.email}
-                  onIcInput={(ev) =>
-                    handleChange("detailForm", "email", ev.detail.value)
-                  }
-                  {...(formValidation &&
-                    (formValues.detailForm.email === "" ||
-                      !formValues.detailForm.email.includes("@")) && {
-                      validationText: "Please enter an email",
-                      validationStatus: "error",
-                  })}
-                  data-test-id="email-text-field"
-                />
-                <IcTextField
-                  label="Phone"
-                  name="phone"
-                  type="number"
-                  required
-                  size="small"
-                  className="input"
-                  value={formValues.detailForm.phone}
-                  onIcInput={(ev) =>
-                    handleChange("detailForm", "phone", ev.detail.value)
-                  }
-                  {...(formValidation &&
-                    formValues.detailForm.phone === "" && {
-                      validationText:
-                        "Please enter a number on which we can contact you",
-                      validationStatus: "error",
-                    })}
-                />
-              </div>
-              <div className="input-container">
-                <IcCheckboxGroup
-                  name="signup"
-                  onIcChange={(ev) =>
-                    handleChange("detailForm", "contact", ev.detail.value)
-                  }
-                  label="Sign up for notifications about future products?"
-                  className="input"
-                >
-                  <IcCheckbox
-                    label="SMS"
-                    name="sms"
-                    value="sms"
-                    checked={formValues.detailForm.contact.includes("sms")}
-                  />
-                  <IcCheckbox
-                    label="Email"
-                    name="email"
-                    value="email"
-                    checked={formValues.detailForm.contact.includes("email")}
-                  />
-                </IcCheckboxGroup>
-              </div>
-              <div className="input-container"></div>
-              <div className="input-container">
-                <IcButton
-                  variant="secondary"
-                  onClick={(ev) => handleClick(ev, back)}
-                  className="button"
-                >
-                  Go Back
-                </IcButton>
-                <IcButton
-                  variant="primary"
-                  onClick={(ev) => handleClick(ev, next)}
-                  className="button"
-                  data-testid="details-submit-btn"
-                >
-                  Add to order
-                </IcButton>
-              </div>
-            </IcSectionContainer>
-          )}
-          {formSteps.checkout.current && (
-            <IcSectionContainer aligned="left">
-              {formValidation && (
-                <IcAlert
-                  variant="error"
-                  heading="Error"
-                  message="Please fill in all required fields"
-                  announced
-                />
-              )}
-              <IcTypography variant="subtitle-large">Last step!</IcTypography>
-              <IcTypography variant="body">
-                Please choose a start date for your subscription and agree to the
-                terms and conditions. Feel free to cancel your subscriptions at any time.
-              </IcTypography>
-              <div className="input-container">
-                <IcDatePicker
-                  label="When would you like your subscription to start?"
-                  className="input"
-                  disablePast
-                  required
-                  size="small"
-                  data-testid="date-picker"
-                  value={formValues.checkoutForm.dateToStart}
-                  onIcChange={(ev) =>
-                    handleChange("checkoutForm", "dateToStart", ev.detail.value)
-                  }
-                  {...(formValidation &&
-                    formValues.checkoutForm.dateToStart === "" && {
-                      validationText: "Please choose a date",
-                      validationStatus: "error",
-                    })}
-                />
-                </div>
-                <div className="input-container">
-                <IcRadioGroup
-                  label="Please agree to the terms and conditions"
-                  name="terms"
-                  required
-                  className="input"
-                  size="small"
-                  onIcChange={(ev) =>
-                    handleChange("checkoutForm", "terms", ev.detail.value)
-                  }
-                  {...(((formValidation &&
-                    formValues.checkoutForm.terms === "") ||
-                    (formValidation &&
-                      formValues.checkoutForm.terms === "decline")) && {
-                    validationText: "Please agree to the terms and conditions",
-                    validationStatus: "error",
-                  })}
-                >
-                  <IcRadioOption
-                    label="Agree"
-                    name="agree"
-                    value="agree"
-                    selected={formValues.checkoutForm.terms === "agree"}
-                  />
-                  <IcRadioOption
-                    label="Decline"
-                    name="decline"
-                    value="decline"
-                    selected={formValues.checkoutForm.terms === "decline"}
-                  />
-                </IcRadioGroup>
-              </div>
-              <div className="input-container">
-                <IcButton
-                  variant="secondary"
-                  onClick={(ev) => handleClick(ev, back)}
-                  className="button"
-                >
-                  Go Back
-                </IcButton>
-                <IcButton
-                  variant="primary"
-                  onClick={handleSubmit}
-                  className="button"
-                >
-                  Submit order
-                </IcButton>
-                <IcToastRegion ref={toastRegionEl}>
-                  <IcToast
-                    heading="Thanks for your order!"
-                    ref={toastEl}
-                    dismissMode="automatic"
-                    autoDismissTimeout={3000}
-                    variant="success"
-                    onIcDismiss={() => resetForm()}
-                  />
-                </IcToastRegion>
-              </div>
-            </IcSectionContainer>
-          )}
-        </form>
-      </>
-    );
+      updatedFormSteps.chooseCoffee = {
+        ...formSteps.chooseCoffee,
+        active: true,
+        completed: true,
+        current: false,
+      };
+      updatedFormSteps.enterDetails = {
+        ...formSteps.enterDetails,
+        active: true,
+        completed: true,
+        current: false,
+      };
+      updatedFormSteps.checkout = {
+        ...formSteps.checkout,
+        active: true,
+        completed: false,
+        current: true,
+      };
+    } else {
+      throw new Error("Invalid action");
+    }
+    setFormSteps(updatedFormSteps);
   };
 
-    export default Subscription;`,
+  const handleBackStep = () => {
+    let updatedFormSteps = { ...formSteps };
+
+    if (formSteps.enterDetails.current) {
+      updatedFormSteps.chooseCoffee = {
+        ...formSteps.chooseCoffee,
+        active: true,
+        completed: false,
+        current: true,
+      };
+      updatedFormSteps.enterDetails = {
+        ...formSteps.enterDetails,
+        active: true,
+        completed: false,
+        current: false,
+      };
+    } else if (formSteps.checkout.current) {
+      updatedFormSteps.chooseCoffee = {
+        ...formSteps.chooseCoffee,
+        active: true,
+        completed: true,
+        current: false,
+      };
+      updatedFormSteps.enterDetails = {
+        ...formSteps.enterDetails,
+        active: true,
+        completed: false,
+        current: true,
+      };
+      updatedFormSteps.checkout = {
+        ...formSteps.checkout,
+        active: true,
+        completed: false,
+        current: false,
+      };
+    } else {
+      throw new Error("Invalid action");
+    }
+    setFormSteps(updatedFormSteps);
+  };
+
+  const handleClick = useCallback(
+    (ev: React.MouseEvent, action: string) => {
+      ev.preventDefault();
+      console.log(formValues);
+
+      if (action === "next") {
+        handleNextStep();
+      } else if (action === "back") {
+        handleBackStep();
+      } else {
+        throw new Error("Invalid action");
+      }
+    },
+    [formSteps, formValues]
+  );
+
+  const handleChange = (
+    formSection: string,
+    formValue: string,
+    eventDetail: string | string[] | Date
+  ) => {
+    setFormValues({
+      ...formValues,
+      [formSection]: {
+        ...formValues[formSection as keyof FormValues],
+        [formValue]: eventDetail,
+      },
+    });
+  };
+
+  const toastRegionEl = useRef<HTMLIcToastRegionElement | null>(null);
+  const toastEl = useRef<HTMLIcToastElement | null>(null);
+
+  const resetForm = () => {
+    setFormValues(initialFormValues);
+    setFormSteps(initialFormSteps);
+  };
+
+  const handleSubmit = () => {
+    console.log(formValues);
+    const { dateToStart, terms } = formValues.checkoutForm;
+    if (
+      [dateToStart, terms].some((value) => value === "" || value === "decline")
+    ) {
+      setFormValidation(true);
+      return;
+    }
+    setFormValidation(false);
+    if (toastRegionEl.current && toastEl.current) {
+      toastRegionEl.current.openToast = toastEl.current;
+    }
+  };
+
+  //* This app was originally intended to be used in testing guidance, hence no atomisation of components, keeping the app to a single file
+
+  return (
+    <>
+      <IcPageHeader
+        heading="Customise your coffee subscription"
+        subheading="Choose your coffee, enter your details and checkout, easy as 1... 2... 3!"
+        size="small"
+        id="top"
+        sticky
+        aligned="center"
+      >
+        <IcChip slot="heading-adornment" label="V0.0.01" size="large" />
+        <IcStepper slot="stepper">
+          <IcStep
+            heading="Choose coffee"
+            type={handleSteps(formSteps.chooseCoffee)}
+          />
+          <IcStep
+            heading="Enter Details"
+            type={handleSteps(formSteps.enterDetails)}
+          />
+          <IcStep
+            heading="Checkout"
+            type={handleSteps(formSteps.checkout)}
+          />
+        </IcStepper>
+      </IcPageHeader>
+      <IcBackToTop target="top" />
+      <form onSubmit={handleSubmit}>
+        {formSteps.chooseCoffee.current && (
+          <IcSectionContainer aligned="left">
+            {formValidation && (
+              <IcAlert
+                variant="error"
+                heading="Error"
+                message="Please fill in all required fields"
+                announced
+              />
+            )}
+            <IcTypography variant="subtitle-large">
+              Please choose your coffee
+            </IcTypography>
+            <IcTypography variant="body" maxLines={2}>
+              Sip back and relax as we embark on a journey through the aromatic
+              fields of coffee-inspired lorem ipsum. In the heart of a lush,
+              verdant valley kissed by the golden hues of dawn, there lies a
+              quaint little plantation where the beans of legend are nurtured.
+              Each bean, a tiny vessel of dreams and whispers of faraway lands,
+              cradled in the earth's embrace until it bursts forth with a
+              promise of warmth and vigor.
+            </IcTypography>
+            <div className="input-container">
+              <IcRadioGroup
+                name="radio-group-1"
+                label="What variety of coffee would you like?"
+                helperText="House blend is the default option"
+                size="small"
+                required
+                onIcChange={(ev) =>
+                  handleChange("coffeeForm", "variety", ev.detail.value)
+                }
+                {...(formValidation &&
+                  formValues.coffeeForm.variety === "" && {
+                    validationText: "Please choose an option",
+                    validationStatus: "error",
+                  })}
+              >
+                <IcRadioOption
+                  value="house"
+                  label="House Blend"
+                  selected={formValues.coffeeForm.variety === "house"}
+                />
+                <IcRadioOption
+                  value="liberica"
+                  label="Liberica"
+                  selected={formValues.coffeeForm.variety === "liberica"}
+                />
+                <IcRadioOption
+                  value="arabica"
+                  label="Arabica"
+                  selected={formValues.coffeeForm.variety === "arabica"}
+                />
+                <IcRadioOption
+                  value="mundo"
+                  label="Mundo Nova"
+                  selected={formValues.coffeeForm.variety === "mundo"}
+                />
+              </IcRadioGroup>
+            </div>
+            <div className="input-container">
+              <IcSelect
+                label="Grind"
+                helperText="Please select a grind type"
+                name="grind-select"
+                options={grindOptions}
+                size="small"
+                className="input"
+                value={formValues.coffeeForm.grind}
+                onIcChange={(ev) =>
+                  handleChange("coffeeForm", "grind", ev.detail.value)
+                }
+                {...(formValidation &&
+                  formValues.coffeeForm.grind === "" && {
+                    validationText: "Please choose a grind size",
+                    validationStatus: "error",
+                  })}
+              />
+              <IcSelect
+                label="Size"
+                helperText="Please select a bag size"
+                name="size-select"
+                required
+                options={sizeOptions}
+                size="small"
+                className="input"
+                value={formValues.coffeeForm.size}
+                onIcChange={(ev) =>
+                  handleChange("coffeeForm", "size", ev.detail.value)
+                }
+                {...(formValidation &&
+                  formValues.coffeeForm.size === "" && {
+                    validationText: "Please choose a size",
+                    validationStatus: "error",
+                  })}
+              />
+            </div>
+            <div className="input-container">
+              <IcButton
+                variant="primary"
+                className="button"
+                onClick={(ev) => handleClick(ev, next)}
+                data-testid="coffee-submit-btn"
+              >
+                Add to order
+              </IcButton>
+            </div>
+          </IcSectionContainer>
+        )}
+        {formSteps.enterDetails.current && (
+          <IcSectionContainer aligned="left">
+            {formValidation && (
+              <IcAlert
+                variant="error"
+                heading="Error"
+                message="Please fill in all required fields"
+                announced
+              />
+            )}
+            <IcTypography variant="subtitle-large">
+              Please enter your details
+            </IcTypography>
+            <IcTypography variant="body">
+              Nearly there, we just need a few more details. Purchases must be
+              made by an adult over the age of 18. We will never share your
+              details with fourth parties.
+            </IcTypography>
+            <div className="input-container">
+              <IcTextField
+                label="Name"
+                name="name"
+                required
+                className="input"
+                size="small"
+                value={formValues.detailForm.name}
+                onIcChange={(ev) =>
+                  handleChange("detailForm", "name", ev.detail.value)
+                }
+                {...(formValidation &&
+                  formValues.detailForm.name === "" && {
+                    validationText: "Please enter your name",
+                    validationStatus: "error",
+                })}
+                autoFocus
+              />
+              <IcTextField
+                label="Email"
+                name="email"
+                type="email"
+                required
+                size="small"
+                className="input"
+                value={formValues.detailForm.email}
+                onIcInput={(ev) =>
+                  handleChange("detailForm", "email", ev.detail.value)
+                }
+                {...(formValidation &&
+                  (formValues.detailForm.email === "" ||
+                    !formValues.detailForm.email.includes("@")) && {
+                    validationText: "Please enter an email",
+                    validationStatus: "error",
+                })}
+                data-test-id="email-text-field"
+              />
+              <IcTextField
+                label="Phone"
+                name="phone"
+                type="number"
+                required
+                size="small"
+                className="input"
+                value={formValues.detailForm.phone}
+                onIcInput={(ev) =>
+                  handleChange("detailForm", "phone", ev.detail.value)
+                }
+                {...(formValidation &&
+                  formValues.detailForm.phone === "" && {
+                    validationText:
+                      "Please enter a number on which we can contact you",
+                    validationStatus: "error",
+                  })}
+              />
+            </div>
+            <div className="input-container">
+              <IcCheckboxGroup
+                name="signup"
+                onIcChange={(ev) =>
+                  handleChange("detailForm", "contact", ev.detail.value)
+                }
+                label="Sign up for notifications about future products?"
+                className="input"
+              >
+                <IcCheckbox
+                  label="SMS"
+                  name="sms"
+                  value="sms"
+                  checked={formValues.detailForm.contact.includes("sms")}
+                />
+                <IcCheckbox
+                  label="Email"
+                  name="email"
+                  value="email"
+                  checked={formValues.detailForm.contact.includes("email")}
+                />
+              </IcCheckboxGroup>
+            </div>
+            <div className="input-container"></div>
+            <div className="input-container">
+              <IcButton
+                variant="secondary"
+                onClick={(ev) => handleClick(ev, back)}
+                className="button"
+              >
+                Go Back
+              </IcButton>
+              <IcButton
+                variant="primary"
+                onClick={(ev) => handleClick(ev, next)}
+                className="button"
+                data-testid="details-submit-btn"
+              >
+                Add to order
+              </IcButton>
+            </div>
+          </IcSectionContainer>
+        )}
+        {formSteps.checkout.current && (
+          <IcSectionContainer aligned="left">
+            {formValidation && (
+              <IcAlert
+                variant="error"
+                heading="Error"
+                message="Please fill in all required fields"
+                announced
+              />
+            )}
+            <IcTypography variant="subtitle-large">Last step!</IcTypography>
+            <IcTypography variant="body">
+              Please choose a start date for your subscription and agree to the
+              terms and conditions. Feel free to cancel your subscriptions at any time.
+            </IcTypography>
+            <div className="input-container">
+              <IcDatePicker
+                label="When would you like your subscription to start?"
+                className="input"
+                disablePast
+                required
+                size="small"
+                data-testid="date-picker"
+                value={formValues.checkoutForm.dateToStart}
+                onIcChange={(ev) =>
+                  handleChange("checkoutForm", "dateToStart", ev.detail.value)
+                }
+                {...(formValidation &&
+                  formValues.checkoutForm.dateToStart === "" && {
+                    validationText: "Please choose a date",
+                    validationStatus: "error",
+                  })}
+              />
+              </div>
+              <div className="input-container">
+              <IcRadioGroup
+                label="Please agree to the terms and conditions"
+                name="terms"
+                required
+                className="input"
+                size="small"
+                onIcChange={(ev) =>
+                  handleChange("checkoutForm", "terms", ev.detail.value)
+                }
+                {...(((formValidation &&
+                  formValues.checkoutForm.terms === "") ||
+                  (formValidation &&
+                    formValues.checkoutForm.terms === "decline")) && {
+                  validationText: "Please agree to the terms and conditions",
+                  validationStatus: "error",
+                })}
+              >
+                <IcRadioOption
+                  label="Agree"
+                  name="agree"
+                  value="agree"
+                  selected={formValues.checkoutForm.terms === "agree"}
+                />
+                <IcRadioOption
+                  label="Decline"
+                  name="decline"
+                  value="decline"
+                  selected={formValues.checkoutForm.terms === "decline"}
+                />
+              </IcRadioGroup>
+            </div>
+            <div className="input-container">
+              <IcButton
+                variant="secondary"
+                onClick={(ev) => handleClick(ev, back)}
+                className="button"
+              >
+                Go Back
+              </IcButton>
+              <IcButton
+                variant="primary"
+                onClick={handleSubmit}
+                className="button"
+              >
+                Submit order
+              </IcButton>
+              <IcToastRegion ref={toastRegionEl}>
+                <IcToast
+                  heading="Thanks for your order!"
+                  ref={toastEl}
+                  dismissMode="automatic"
+                  autoDismissTimeout={3000}
+                  variant="success"
+                  onIcDismiss={() => resetForm()}
+                />
+              </IcToastRegion>
+            </div>
+          </IcSectionContainer>
+        )}
+      </form>
+    </>
+  );
+};
+
+export default Subscription;`,
     },
   },
   types: {
@@ -1411,119 +1411,119 @@ describe('Subscription component', () => {
     disableMoreButton: true,
     snippets: {
       short: `interface CoffeeForm {
-          variety: string;
-          grind: string;
-          size: string;
-        }
+  variety: string;
+  grind: string;
+  size: string;
+}
 
-        interface DetailForm {
-          name: string;
-          email: string;
-          phone: string;
-          contact: string[];
-        }
+interface DetailForm {
+  name: string;
+  email: string;
+  phone: string;
+  contact: string[];
+}
 
-        interface CheckoutForm {
-          dateToStart: string;
-          terms: string;
-        }
+interface CheckoutForm {
+  dateToStart: string;
+  terms: string;
+}
 
-        export interface FormValues {
-          coffeeForm: CoffeeForm;
-          detailForm: DetailForm;
-          checkoutForm: CheckoutForm;
-        }
+export interface FormValues {
+  coffeeForm: CoffeeForm;
+  detailForm: DetailForm;
+  checkoutForm: CheckoutForm;
+}
 
-        export interface chooseCoffee {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface chooseCoffee {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface enterDetails {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface enterDetails {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface checkout {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface checkout {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface stepTypes {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface stepTypes {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface FormSteps {
-          chooseCoffee: chooseCoffee;
-          enterDetails: enterDetails;
-          checkout: checkout;
-        }`,
+export interface FormSteps {
+  chooseCoffee: chooseCoffee;
+  enterDetails: enterDetails;
+  checkout: checkout;
+}`,
       long: `interface CoffeeForm {
-          variety: string;
-          grind: string;
-          size: string;
-        }
+  variety: string;
+  grind: string;
+  size: string;
+}
 
-        interface DetailForm {
-          name: string;
-          email: string;
-          phone: string;
-          contact: string[];
-        }
+interface DetailForm {
+  name: string;
+  email: string;
+  phone: string;
+  contact: string[];
+}
 
-        interface CheckoutForm {
-          dateToStart: string;
-          terms: string;
-        }
+interface CheckoutForm {
+  dateToStart: string;
+  terms: string;
+}
 
-        export interface FormValues {
-          coffeeForm: CoffeeForm;
-          detailForm: DetailForm;
-          checkoutForm: CheckoutForm;
-        }
+export interface FormValues {
+  coffeeForm: CoffeeForm;
+  detailForm: DetailForm;
+  checkoutForm: CheckoutForm;
+}
 
-        export interface chooseCoffee {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface chooseCoffee {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface enterDetails {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface enterDetails {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface checkout {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface checkout {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface stepTypes {
-          active: boolean;
-          completed: boolean;
-          current: boolean;
-          disabled: boolean;
-        }
+export interface stepTypes {
+  active: boolean;
+  completed: boolean;
+  current: boolean;
+  disabled: boolean;
+}
 
-        export interface FormSteps {
-          chooseCoffee: chooseCoffee;
-          enterDetails: enterDetails;
-          checkout: checkout;
-        }`,
+export interface FormSteps {
+  chooseCoffee: chooseCoffee;
+  enterDetails: enterDetails;
+  checkout: checkout;
+}`,
     },
   },
   constants: {
@@ -1599,7 +1599,7 @@ export const initialFormSteps: FormSteps = {
     current: false,
     disabled: false,
   },
-    };`,
+};`,
       long: `import { FormValues, FormSteps } from "./types";
 
 export const grindOptions = [
@@ -1669,7 +1669,7 @@ export const initialFormSteps: FormSteps = {
     current: false,
     disabled: false,
   },
-    };`,
+};`,
     },
   },
   methods: {
