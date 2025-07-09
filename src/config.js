@@ -48,7 +48,7 @@ module.exports = {
       },
     ],
     content:
-      "The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and partners.",
+      "The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators.",
     caption:
       "All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.",
   },

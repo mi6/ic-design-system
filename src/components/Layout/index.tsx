@@ -10,7 +10,7 @@ import { Link as GatsbyLink } from "gatsby";
 
 import { Helmet } from "react-helmet";
 
-import { GCHQLogo, MI5Logo, SISLogo } from "../../assets/svg";
+import { GCHQLogo, MI5Logo, SISLogo, HMGCCLogo } from "../../assets/svg";
 import CookieBanner from "../CookieBanner";
 import TopNavWrapper from "../TopNavWrapper";
 import "./index.css";
@@ -565,6 +565,10 @@ const Layout: React.FC<LayoutProps> = ({
                   <ic-footer-link href="https://gchq.gov.uk">
                     <GCHQLogo aria-hidden="true" />
                     <span className="link-text">Go to GCHQ website</span>
+                  </ic-footer-link>
+                  <ic-footer-link href="https://www.hmgcc.gov.uk">
+                    <HMGCCLogo aria-hidden="true" />
+                    <span className="link-text">Go to HMGCC website</span>
                   </ic-footer-link>
                 </div>
               </ic-footer>

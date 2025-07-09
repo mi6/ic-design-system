@@ -7,9 +7,9 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mi6/ic-design-system/tree/main/LICENSE)
 
-The [Intelligence Community Design System](https://design.sis.gov.uk) helps the United Kingdom's Intelligence Community (MI6, GCHQ, MI5, and partners) to quickly build powerful capabilities that are accessible and easy to use.
+The [Intelligence Community Design System](https://design.sis.gov.uk) helps the United Kingdom's Intelligence Community (MI6, GCHQ, MI5, and HMGCC, our national security partner, and additional partners) to quickly build powerful capabilities that are accessible and easy to use.
 
-This is a joint project led by [MI6](https://www.sis.gov.uk), working with [GCHQ](https://www.gchq.gov.uk) and [MI5](https://www.mi5.gov.uk).
+This is a joint project led by [MI6](https://www.sis.gov.uk), working with [GCHQ](https://www.gchq.gov.uk), [MI5](https://www.mi5.gov.uk) and [HMGCC](https://www.hmgcc.gov.uk) (our national security partner).
 
 <p align="center">
   <img src="/static/icds-orgs.png" alt="SIS (MI6), GCHQ and MI5 Logos" loading="lazy">
@@ -71,6 +71,7 @@ Visit our websites to learn more about:
 - The [Secret Intelligence Service (MI6)](https://www.sis.gov.uk).
 - The [Government Communications Headquarters (GCHQ)](https://www.gchq.gov.uk).
 - The [Security Service (MI5)](https://www.mi5.gov.uk).
+- [His Majesty's Government Communications Centre (HMGCC)](https://www.hmgcc.gov.uk)- our national security partner.
 
 ## License
 
