@@ -140,7 +140,7 @@ ic-top-navigation form.not-loaded {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 690px) {
   .logo-wrapper {
     gap: var(--ic-space-lg);
   }
@@ -171,10 +171,14 @@ ic-top-navigation form.not-loaded {
   }
 
   .logo-wrapper > ic-footer-link:nth-child(3) {
-    width: 2.875rem;
+    width: 2.75rem;
   }
 
   .logo-wrapper > ic-footer-link:nth-child(3) svg {
     transform: translate(0, -1px);
+  }
+
+  .logo-wrapper > ic-footer-link:nth-child(4) {
+    width: 3rem;
   }
 }
