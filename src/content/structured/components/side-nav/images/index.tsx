@@ -1,5 +1,5 @@
-export { default as Fig1SideNavLight } from "./fig-1-dont-use-both-side-and-top-navigation.png";
-export { default as Fig1SideNavDark } from "./fig-1-dont-use-both-side-and-top-navigation-dark.png";
+export { default as Fig1SideNavLight } from "./fig-1-dont-use-side-and-top-navigation-at-same-time.png";
+export { default as Fig1SideNavDark } from "./fig-1-dont-use-side-and-top-navigation-at-same-time-dark.png";
 export { default as Fig2SideNavLight } from "./fig-2-avoid-side-navigation-for-complex-app-structures.png";
 export { default as Fig2SideNavDark } from "./fig-2-avoid-side-navigation-for-complex-app-structures-dark.png";
 export { default as Fig3SideNavLight } from "./fig-3-set-side-navigation-default-display.png";
