@@ -129,7 +129,7 @@
   "9885-0501ac434aa2b96886f0.js": "9885-0501ac434aa2b96886f0.js",
   "989-7a1e468da9afd485cb07.js": "989-7a1e468da9afd485cb07.js",
   "9c7f719c.js": "9c7f719c-6507a62dce7d12aafc63.js",
-  "app.js": "app-a90a37f0da609e35d551.js",
+  "app.js": "app-68b5a9425774f7ffdedc.js",
   "b2e984c5.js": "b2e984c5-b15b35264398bdbebb01.js",
   "b4796e1746ba922b24429d1b2dd3b6869930dace.js": "b4796e1746ba922b24429d1b2dd3b6869930dace-03172e95b12dd5c3db5b.js",
   "commons.js": "commons-cc787aab384ae3d1c205.js",
@@ -149,8 +149,6 @@
   "component---src-pages-top-navigation-pattern-tsx.js": "component---src-pages-top-navigation-pattern-tsx-d44999144242694539f4.js",
   "component---src-templates-standard-index-tsx.js": "component---src-templates-standard-index-tsx-c0e2583323b204593274.js",
   "f54b42984bfe4d114461fcea2710af414ac1fe74.js": "f54b42984bfe4d114461fcea2710af414ac1fe74-c82e0a5c303179be67ee.js",
-  "fig-1-dont-use-both-side-and-top-navigation-dark.png": "static/fig-1-dont-use-both-side-and-top-navigation-dark-e7455579ea7abc18f14f42c3aecefa63.png",
-  "fig-1-dont-use-both-side-and-top-navigation.png": "static/fig-1-dont-use-both-side-and-top-navigation-b973f63d6942b50ad7dcb0efea36deb7.png",
   "framework.js": "framework-665892820f6016a74c78.js",
   "static/Fig-1-section-containers-align-content-dark.png": "static/Fig-1-section-containers-align-content-dark-780722ed7efc6f9a16017c72bbcb7d10.png",
   "static/Fig-1-section-containers-align-content.png": "static/Fig-1-section-containers-align-content-38300fde1ec8b01c3915b62b58b6b99d.png",
@@ -255,6 +253,8 @@
   "static/fig-1-dont-place-hero-banners-in-middle-of-page.png": "static/fig-1-dont-place-hero-banners-in-middle-of-page-82a8b75866bb952121ce76bc50445b05.png",
   "static/fig-1-dont-use-both-side-and-top-navigation-dark.png": "static/fig-1-dont-use-both-side-and-top-navigation-dark-ac2e5952c334a32b431945f8c62f6cdc.png",
   "static/fig-1-dont-use-both-side-and-top-navigation.png": "static/fig-1-dont-use-both-side-and-top-navigation-8174efe03641e093eaeaf78fd4036ea8.png",
+  "static/fig-1-dont-use-side-and-top-navigation-at-same-time-dark.png": "static/fig-1-dont-use-side-and-top-navigation-at-same-time-dark-e7455579ea7abc18f14f42c3aecefa63.png",
+  "static/fig-1-dont-use-side-and-top-navigation-at-same-time.png": "static/fig-1-dont-use-side-and-top-navigation-at-same-time-b973f63d6942b50ad7dcb0efea36deb7.png",
   "static/fig-1-example-of-theming-applied-to-side-navigation-layout-dark.png": "static/fig-1-example-of-theming-applied-to-side-navigation-layout-dark-fe578dd1c0669a66a36cb4393ac120e7.png",
   "static/fig-1-example-of-theming-applied-to-side-navigation-layout.png": "static/fig-1-example-of-theming-applied-to-side-navigation-layout-613ec79c8cc5e1dda85d5de89868ec14.png",
   "static/fig-1-example-of-theming-applied-to-top-navigation-layout-dark@2x.png": "static/fig-1-example-of-theming-applied-to-top-navigation-layout-dark@2x-48e9b0e694733f3eb9c1de59364705a9.png",
@@ -971,6 +971,6 @@
   "static/use-the-monochromatic-variant-when-listing-links.png": "static/use-the-monochromatic-variant-when-listing-links-f8e87bdd1351faad384405825cfc0aba.png",
   "static/when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text-dark.png": "static/when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text-dark-8f483105b6c5687a9b2aff0b3d151494.png",
   "static/when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text.png": "static/when-using-inline-links-always-use-a-different-colour-to-the-adjacent-text-ed384d7e04d4dd3e7bfea75bd770c6b9.png",
-  "styles.css": "styles.1ee3f1ee7eafd8a62414.css",
-  "webpack-runtime.js": "webpack-runtime-9aee2d0b3ab6a56bdc4d.js"
+  "styles.css": "styles.1717378662fce7dcc7b6.css",
+  "webpack-runtime.js": "webpack-runtime-72739f2dff2cd2911a01.js"
 }
