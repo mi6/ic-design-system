@@ -1,3 +1,9 @@
+.color-swatch {
+  padding: var(--ic-space-xs);
+  border-radius: var(--ic-border-radius);
+  background-color: var(--ic-color-page-background);
+}
+
 .color-swatch > div {
   height: var(--ic-space-lg);
   width: calc(var(--ic-space-lg) * 3);
@@ -5,18 +11,8 @@
   border: 1px solid var(--ic-color-border-neutral-default);
 }
 
-.color-swatch {
-  padding: var(--ic-space-xs);
-  border-radius: var(--ic-border-radius);
-  background-color: var(--ic-color-background-primary);
-}
-
-ic-theme.ic-theme-dark > .color-swatch {
-  background-color: var(--ic-architectural-900);
-}
-
 @media (forced-colors: active) {
-  .color {
+  .color-swatch > div {
     forced-color-adjust: none;
   }
 }

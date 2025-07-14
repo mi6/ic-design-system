@@ -225,7 +225,7 @@ export const snippetsThemeDark = [
       long: `.dark-background {
       flex-direction: column; 
       gap: var(--ic-space-xs); 
-      background: #17191c;
+      background: var(--ic-color-page-background-dark);
     }
   </style>
     <body>
@@ -247,7 +247,7 @@ export const snippetsThemeDark = [
     display: "flex",
     flexDirection: "column", 
     gap: "var(--ic-space-xs)", 
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -264,7 +264,7 @@ return (
     display: "flex",
     flexDirection: "column", 
     gap: "var(--ic-space-xs)", 
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -281,7 +281,11 @@ return (
 
 <ComponentPreview
   snippets={snippetsThemeDark}
-  style={{ flexDirection: "column", gap: "0.5rem", background: "#17191c" }}
+  style={{
+    flexDirection: "column",
+    gap: "0.5rem",
+    background: "var(--ic-color-page-background-dark)",
+  }}
 >
   <IcLoadingIndicator type="circular" label="Loading" theme="dark" />
   <IcLoadingIndicator type="linear" label="Loading" theme="dark" />

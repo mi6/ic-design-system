@@ -471,7 +471,7 @@ export const snippetsThemeDark = [
   ></ic-radio-option>
 </ic-radio-group>`,
       long: `.parent-container {
-    background: #17191c;
+    background: var(--ic-color-page-background-dark);
   }
 </style>
 <body>
@@ -502,7 +502,7 @@ export const snippetsThemeDark = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -516,7 +516,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -532,7 +532,7 @@ return (
 ];
 
 <ComponentPreview
-  style={{ background: "#17191c" }}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
   snippets={snippetsThemeDark}
 >
   <IcRadioGroup
