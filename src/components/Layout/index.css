@@ -15,10 +15,7 @@
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - var(--ic-space-lg));
-}
-
-.ic-theme-dark .main-page-container {
-  background-color: #17191c;
+  background-color: var(--ic-color-page-background);
 }
 
 .main-page-container ic-top-navigation ic-section-container {

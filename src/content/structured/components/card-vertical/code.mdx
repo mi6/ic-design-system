@@ -2290,7 +2290,7 @@ export const snippetsThemeDark = [
     max-width: 20.375rem;
   }
   .parent-container {
-    background: #17191c;
+    background: var(--ic-color-page-background-dark);
   }
 </style>
 <body>
@@ -2378,7 +2378,7 @@ export const snippetsThemeDark = [
     gap: "var(--ic-space-md)",
   },
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -2405,7 +2405,7 @@ return (
     gap: "var(--ic-space-md)",
   },
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -2422,7 +2422,7 @@ return (
 
 <ComponentPreview
   snippets={snippetsThemeDark}
-  style={{ background: "#17191c" }}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
 >
   <IcCardVertical
     heading="Americano order"

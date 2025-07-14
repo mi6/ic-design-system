@@ -541,7 +541,7 @@ export const snippetsThemeDark = [
       long: `.dark-background {
     display: flex;
     flex-wrap: wrap;
-    background-color: #17191c;
+    background-color: var(--ic-color-page-background-dark);
     padding: var(--ic-space-md);
     gap: var(--ic-space-xs);
   }
@@ -570,7 +570,7 @@ export const snippetsThemeDark = [
   darkBackground: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#17191c",
+    backgroundColor: "var(--ic-color-page-background-dark)",
     padding: "var(--ic-space-md)",
     gap: "var(--ic-space-xs)",
   },
@@ -588,7 +588,7 @@ return (
   darkBackground: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#17191c",
+    backgroundColor: "var(--ic-color-page-background-dark)",
     padding: "var(--ic-space-md)",
     gap; "var(--ic-space-xs)",
   },
@@ -606,7 +606,10 @@ return (
 ];
 
 <ComponentPreview
-  style={{ backgroundColor: "#17191c", gap: "0.5rem" }}
+  style={{
+    backgroundColor: "var(--ic-color-page-background-dark)",
+    gap: "0.5rem",
+  }}
   snippets={snippetsThemeDark}
 >
   <IcToggleButton label="Switch to oat milk" theme="dark" />

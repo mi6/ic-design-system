@@ -687,7 +687,7 @@ export const snippetsThemeDark = [
 ></ic-search-bar>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
-    background: #17191c;
+    background: var(--ic-color-page-background-dark);
   }
 </style>
 <body>
@@ -730,7 +730,7 @@ export const snippetsThemeDark = [
 const useStyles = createUseStyles({
   parentContainer: {
     padding: "var(--ic-space-md)",
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -753,7 +753,7 @@ return (
 const useStyles = createUseStyles({
   parentContainer: {
     padding: "var(--ic-space-md)",
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -770,7 +770,7 @@ return (
 
 <ComponentPreview
   snippets={snippetsThemeDark}
-  style={{ background: "#17191c" }}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
 >
   <IcSearchBar
     label="What is your favourite coffee?"

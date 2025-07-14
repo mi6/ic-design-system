@@ -336,7 +336,7 @@ export const snippetsThemeDark = [
   <ic-step heading="Collect" type="disabled"></ic-step>
 </ic-stepper>`,
       long: `.parent-container {
-    background: #17191c;
+    background: var(--ic-color-page-background-dark);
   }
 </style>
 <body>
@@ -358,7 +358,7 @@ export const snippetsThemeDark = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -372,7 +372,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -389,7 +389,7 @@ return (
 
 <ComponentPreview
   snippets={snippetsThemeDark}
-  style={{ background: "#17191c" }}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
 >
   <IcStepper theme="dark">
     <IcStep heading="Order coffee" type="completed" />
