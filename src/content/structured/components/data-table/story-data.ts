@@ -178,22 +178,28 @@ export const ROW_HEADER_COLUMNS = [
 ];
 export const ROW_HEADER_DATA = [
   {
-    header: { title: 1 },
     firstName: "Joe",
     coffeeOrder: "Latte",
     quantity: 3,
+    rowOptions: {
+      header: 1,
+    },
   },
   {
-    header: { title: 2 },
     firstName: "Sarah",
     coffeeOrder: "Mocha",
     quantity: 2,
+    rowOptions: {
+      header: 2,
+    },
   },
   {
-    header: { title: 3 },
     firstName: "Mark",
     coffeeOrder: "Espresso",
     quantity: 1,
+    rowOptions: {
+      header: 3,
+    },
   },
 ];
 export const COLUMN_OVERRIDES = [
@@ -217,26 +223,30 @@ export const COLUMN_OVERRIDES = [
 ];
 export const ROW_OVERRIDES_DATA = [
   {
-    header: {
-      title: 1,
-      rowAlignment: "middle",
-      emphasis: "high",
-    },
     firstName: "Joe",
     coffeeOrder: "Latte",
     quantity: 3,
+    rowOptions: {
+      header: 1,
+      rowAlignment: "middle",
+      emphasis: "high",
+    },
   },
   {
-    header: { title: 2 },
     firstName: "Sarah",
     coffeeOrder: "Mocha",
     quantity: 2,
+    rowOptions: {
+      header: 2,
+    },
   },
   {
-    header: { title: 3 },
     firstName: "Mark",
     coffeeOrder: "Espresso",
     quantity: 1,
+    rowOptions: {
+      header: 3,
+    },
   },
 ];
 export const CELL_OVERRIDES_DATA = [
@@ -529,5 +539,41 @@ export const DATA_WITH_EMPTY_VALUES = [
     firstName: "",
     coffeeOrder: "Espresso",
     quantity: 1,
+  },
+];
+export const COLUMNS_HIDDEN = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+    hidden: true,
+  },
+];
+export const COLUMNS_EXCLUDE_FROM_SORT = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+    excludeColumnFromSort: true,
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
   },
 ];
