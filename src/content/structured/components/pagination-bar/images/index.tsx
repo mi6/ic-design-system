@@ -1,0 +1,10 @@
+export { default as Fig1PaginationBarLight } from "./fig-1-data-table-with-pagination-bar.png";
+export { default as Fig1PaginationBarDark } from "./fig-1-data-table-with-pagination-bar-dark.png";
+export { default as Fig2PaginationBarLight } from "./fig-2-use-colour-variants.png";
+export { default as Fig2PaginationBarDark } from "./fig-2-use-colour-variants-dark.png";
+export { default as Fig3PaginationBarLight } from "./fig-3-place-pagination-bar-at-bottom.png";
+export { default as Fig3PaginationBarDark } from "./fig-3-place-pagination-bar-at-bottom-dark.png";
+export { default as Fig4PaginationBarLight } from "./fig-4-place-pagination-at-top-and-bottom.png";
+export { default as Fig4PaginationBarDark } from "./fig-4-place-pagination-at-top-and-bottom-dark.png";
+export { default as Fig5PaginationBarLight } from "./fig-5-pagination-bars-with-different-elements.png";
+export { default as Fig5PaginationBarDark } from "./fig-5-pagination-bars-with-different-elements-dark.png";
