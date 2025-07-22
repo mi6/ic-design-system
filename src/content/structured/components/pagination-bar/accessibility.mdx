@@ -1,29 +1,36 @@
 ---
-path: "/components/pagination/accessibility"
+path: "/components/pagination-bar/accessibility"
 
 date: "2025-07-21"
 
-title: "Pagination"
+title: "Pagination bar"
 
 status: "BETA"
 
-subTitle: "Use pagination to split large amounts of content into pages and navigate between them."
+subTitle: "Use the pagination bar when large amounts of content are split across multiple pages and various pagination options are required."
 
-contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/pagination"
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/pagination-bar"
 
 tabs:
   [
-    { title: "Guidance", path: "/components/pagination" },
-    { title: "Code", path: "/components/pagination/code" },
-    { title: "Accessibility", path: "/components/pagination/accessibility" },
+    { title: "Guidance", path: "/components/pagination-bar" },
+    { title: "Code", path: "/components/pagination-bar/code" },
+    {
+      title: "Accessibility",
+      path: "/components/pagination-bar/accessibility",
+    },
   ]
 ---
 
 ## Easy to use for everyone
 
+The elements within a pagination bar follow a logical tabbing order when moving through them. Buttons are triggered using either the ‘enter’ or ‘space’ key.
+
 The current page is always displayed in the component so that the user knows where in the data set they are.
 
 When the user is at the start or end of the data, the navigation buttons are disabled so that it is clear there is no more data past that point.
+
+Using the items per page selector in the pagination bar allows users to control how much information is available per page. This can help to either simplify complex pages or to increase the information density.
 
 ## For Assistive Technology
 
@@ -37,7 +44,7 @@ The pagination components use the `<nav>` element so that they become navigation
 
 ## Based on
 
-The pagination component has been based on the following resources:
+The pagination bar component has been based on the following resources:
 
 <ul>
   <li>
