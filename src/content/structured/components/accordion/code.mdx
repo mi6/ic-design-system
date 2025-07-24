@@ -399,7 +399,7 @@ export const themeDark = [
   </ic-accordion>
 </ic-accordion-group>`,
       long: `.parent-container {
-    background: #17191c;
+    background: var(--ic-color-page-background-dark);
   }
 </style>
 <body>
@@ -448,7 +448,7 @@ export const themeDark = [
           language: "Typescript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -462,7 +462,7 @@ return (
           language: "Javascript",
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -479,7 +479,10 @@ return (
 
 <ComponentPreview
   snippets={themeDark}
-  style={{ flexDirection: "column", background: "#17191c" }}
+  style={{
+    flexDirection: "column",
+    background: "var(--ic-color-page-background-dark)",
+  }}
 >
   <IcAccordionGroup label="Coffee" theme="dark">
     <IcAccordion heading="English Breakfast">

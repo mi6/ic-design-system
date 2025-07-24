@@ -774,7 +774,7 @@ export const snippetsThemeDark = [
 </ic-data-list>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
-    background: #17191c;
+    background: var(--ic-color-page-background-dark);
   }
 </style>
 <body>
@@ -814,7 +814,7 @@ export const snippetsThemeDark = [
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
     padding: "var(--ic-space-md)",
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -829,7 +829,7 @@ return (
           snippet: `const useStyles = createUseStyles({
   parentContainer: {
     padding: "var(--ic-space-md)",
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -846,7 +846,7 @@ return (
 
 <ComponentPreview
   snippets={snippetsThemeDark}
-  style={{ background: "#17191c" }}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
 >
   <IcDataList heading="Order details" style={{ width: "90%" }} theme="dark">
     <IcDataRow label="Drink" value="Americano">

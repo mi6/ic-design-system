@@ -44,7 +44,6 @@ export const CardIcon = () => (
 
 export const InteractionIcon = () => (
   <svg
-    slot="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
@@ -79,7 +78,6 @@ export const snippets = [
   </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -160,7 +158,6 @@ export const snippets = [
   </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
     <SlottedSVG
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -266,7 +263,6 @@ return (
     />
     <IcButton variant="icon" title="More information" slot="interaction-button">
       <svg
-        slot="icon"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
@@ -592,7 +588,6 @@ export const interactionButton = [
   </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -625,7 +620,7 @@ export const interactionButton = [
     <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"/>
   </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
-    <SlottedSVG slot="icon"
+    <SlottedSVG
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -800,7 +795,6 @@ export const topImage = [
   </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -867,7 +861,6 @@ export const topImage = [
   </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
     <SlottedSVG
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -997,7 +990,6 @@ export const midImage = [
   </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -1063,7 +1055,6 @@ export const midImage = [
   </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
     <SlottedSVG
-        slot="icon"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
@@ -2245,7 +2236,6 @@ export const snippetsThemeDark = [
   </svg>
   <ic-button variant="icon" title="More information" slot="interaction-button">
     <svg
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -2300,7 +2290,7 @@ export const snippetsThemeDark = [
     max-width: 20.375rem;
   }
   .parent-container {
-    background: #17191c;
+    background: var(--ic-color-page-background-dark);
   }
 </style>
 <body>
@@ -2331,7 +2321,6 @@ export const snippetsThemeDark = [
   </SlottedSVG>
   <IcButton variant="icon" title="More information" slot="interaction-button">
     <SlottedSVG
-      slot="icon"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -2389,7 +2378,7 @@ export const snippetsThemeDark = [
     gap: "var(--ic-space-md)",
   },
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -2416,7 +2405,7 @@ return (
     gap: "var(--ic-space-md)",
   },
   parentContainer: {
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -2433,7 +2422,7 @@ return (
 
 <ComponentPreview
   snippets={snippetsThemeDark}
-  style={{ background: "#17191c" }}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
 >
   <IcCardVertical
     heading="Americano order"
@@ -2452,7 +2441,6 @@ return (
     />
     <IcButton variant="icon" title="More information" slot="interaction-button">
       <svg
-        slot="icon"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"

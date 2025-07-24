@@ -569,7 +569,7 @@ export const snippetsTheme = [
       long: `.dark-background {
       flex-direction: column; 
       gap: var(--ic-space-xs); 
-      background: #17191c;
+      background: var(--ic-color-page-background-dark);
     }
   </style>
     <body>
@@ -625,7 +625,7 @@ export const snippetsTheme = [
     display: "flex",
     flexDirection: "column", 
     gap: "var(--ic-space-xs)", 
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -642,7 +642,7 @@ return (
     display: "flex",
     flexDirection: "column", 
     gap: "var(--ic-space-xs)", 
-    background: "#17191c",
+    background: "var(--ic-color-page-background-dark)",
   },
 });
 const classes = useStyles();
@@ -657,7 +657,10 @@ return (
   },
 ];
 
-<ComponentPreview snippets={snippetsTheme} style={{ background: "#17191c" }}>
+<ComponentPreview
+  snippets={snippetsTheme}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
+>
   <div style={{ width: "250px" }}>
     <IcTreeView heading="Menu" theme="dark">
       <SlottedSVG
