@@ -531,3 +531,39 @@ export const DATA_WITH_EMPTY_VALUES = [
     quantity: 1,
   },
 ];
+export const COLUMNS_HIDDEN = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+    hidden: true,
+  },
+];
+export const COLUMNS_EXCLUDE_FROM_SORT = [
+  {
+    key: "firstName",
+    title: "First name",
+    dataType: "string",
+  },
+  {
+    key: "coffeeOrder",
+    title: "Coffee order",
+    dataType: "string",
+    excludeColumnFromSort: true,
+  },
+  {
+    key: "quantity",
+    title: "Quantity",
+    dataType: "number",
+  },
+];
