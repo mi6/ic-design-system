@@ -28,7 +28,7 @@ const StackblitzButtonTestApp: FC<StackblitzButtonTestAppProps> = ({
   const isLargeViewport: boolean = viewportWidth > 992;
 
   const createStackblitzProject = () => {
-    const url = "https://stackblitz.com/github/mi6/ui-kit-test-app";
+    const url = "https://stackblitz.com/github/mi6/ic-ui-kit-test-app";
     const branchName = `${branch}`;
     const projectTitle = `?title='${title}'`;
     const startScript = `&startScript=${test}`;
