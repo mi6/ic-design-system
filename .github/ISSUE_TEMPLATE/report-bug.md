@@ -28,7 +28,7 @@ If you can, add screenshots to show the problem. If you need to show a code exam
 
 - Type: [e.g. Desktop, mobile]
 - Device: [e.g. iPhone, MacBook, ThinkPad]
-- OS version: [e.g. macOS13, iOS16, Android 13]
+- OS version: [e.g. macOS 13, iOS 16, Android 13]
 - Browser version: [e.g. Chrome 115, Safari 16]
 
 ### 🧐 Expected behaviour
