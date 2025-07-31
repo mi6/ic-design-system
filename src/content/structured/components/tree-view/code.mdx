@@ -3,7 +3,7 @@ path: "/components/tree-view/code"
 
 navPriority: 43
 
-date: "2024-08-23"
+date: "2025-07-22"
 
 title: "Tree view"
 
@@ -275,6 +275,8 @@ export const snippetsIcons = [
 </ComponentPreview>
 
 ### Small
+
+Small and large styling will be passed down from the tree view to tree items and nested tree items.
 
 export const snippetsSmall = [
   {
@@ -701,6 +703,8 @@ return (
 
 ### Disabled tree items
 
+Individual tree-items can be disabled using the `disabled` prop.
+
 export const snippetsDisabled = [
   {
     technology: "Web component",
@@ -830,6 +834,8 @@ export const snippetsDisabled = [
 
 ### Slotted content
 
+Custom content can be passed to both the tree view (using the `heading` slot) and tree-items (using the `label` slot).
+
 export const snippetsSlotted = [
   {
     technology: "Web component",
@@ -887,11 +893,13 @@ export const snippetsSlotted = [
 
 ### Truncated
 
+When the heading exceeds the width of the container, the text will wrap unless `truncateTreeItem` or `truncateHeading` are set to `true`.
+
 export const snippetsTruncated = [
   {
     technology: "Web component",
     snippets: {
-      short: `<ic-tree-view heading="Menu with nested options">
+      short: `<ic-tree-view heading="Menu with nested options" truncate-heading="true">
   <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
@@ -911,7 +919,7 @@ export const snippetsTruncated = [
     <ic-tree-item label="Earl Grey"></ic-tree-item>
     <ic-tree-item label="Chai"></ic-tree-item>
   </ic-tree-item>
-  <ic-tree-item label="Hot chocolate with marshmallows"></ic-tree-item>
+  <ic-tree-item label="Hot chocolate with marshmallows" truncate-tree-item="true"></ic-tree-item>
 </ic-tree-view>`,
       long: `{shortCode}`,
     },
@@ -919,7 +927,7 @@ export const snippetsTruncated = [
   {
     technology: "React",
     snippets: {
-      short: `<IcTreeView heading="Menu with nested options">
+      short: `<IcTreeView heading="Menu with nested options" truncateHeading>
   <SlottedSVG slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"
@@ -943,7 +951,7 @@ export const snippetsTruncated = [
     <IcTreeItem label="Earl Grey" />
     <IcTreeItem label="Chai" />
   </IcTreeItem>
-  <IcTreeItem label="Hot chocolate with marshmallows" />
+  <IcTreeItem label="Hot chocolate with marshmallows" truncateTreeItem />
 </IcTreeView>`,
       long: [
         {
@@ -961,7 +969,7 @@ export const snippetsTruncated = [
 
 <ComponentPreview snippets={snippetsTruncated}>
   <div style={{ width: "250px" }}>
-    <IcTreeView heading="Menu with nested options">
+    <IcTreeView heading="Menu with nested options" truncateHeading>
       <SlottedSVG
         slot="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -985,12 +993,14 @@ export const snippetsTruncated = [
         <IcTreeItem label="Earl Grey" />
         <IcTreeItem label="Chai" />
       </IcTreeItem>
-      <IcTreeItem label="Hot chocolate with marshmallows" />
+      <IcTreeItem label="Hot chocolate with marshmallows" truncateTreeItem />
     </IcTreeView>
   </div>
 </ComponentPreview>
 
 ### Link
+
+When setting the `href` attribute, the tree-item will function as a link.
 
 export const snippetsLink = [
   {

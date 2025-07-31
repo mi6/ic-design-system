@@ -1,7 +1,7 @@
 ---
 path: "/components/date-input/code"
 
-date: "2025-05-21"
+date: "2025-07-22"
 
 title: "Date input"
 
@@ -283,6 +283,8 @@ export const snippetsEpoch = [
 
 ### Required
 
+To set the date input as a required field, set the `required` prop to `true`. This will add an asterisk at the end of the date input label.
+
 export const snippetsRequired = [
   {
     technology: "Web component",
@@ -315,6 +317,8 @@ export const snippetsRequired = [
 
 ### Hide label
 
+To hide the label, set the `hideLabel` prop to `true`. The required `label` will still be read out by screen readers.
+
 export const snippetsHideLabel = [
   {
     technology: "Web component",
@@ -346,6 +350,8 @@ export const snippetsHideLabel = [
 </ComponentPreview>
 
 ### Disabled
+
+Set the `disabled` prop to `true` to prevent interaction with the date input.
 
 export const snippetsDisabled = [
   {
@@ -466,6 +472,8 @@ return (
 
 ### Custom helper text
 
+Use the helper text to add additional detail for the date input. Display custom content using the `helper-text` slot.
+
 export const snippetsCustomHelperText = [
   {
     technology: "Web component",
@@ -551,6 +559,16 @@ export const snippetsHideHelperText = [
 
 ### Custom validation
 
+Validation on date input is set via the `validationStatus` and `validationText` props.
+
+`validationStatus` will set the style of the validation message. `validationStatus` accepts:
+
+- `error`
+- `warning`
+- `success`
+
+`validationStatus` is required for the `validationText` to appear.
+
 export const snippetsValidation = [
   {
     technology: "Web component",
@@ -633,6 +651,10 @@ export const snippetsValidation = [
 
 ### Disabled past dates
 
+Validation can be set on the date input if a date in the past has been set by setting the `disablePast` prop to `true`.
+
+Enter a date in the past to view the validation message:
+
 export const snippetsDisabledPastDates = [
   {
     technology: "Web component",
@@ -668,6 +690,10 @@ export const snippetsDisabledPastDates = [
 
 ### Disabled future dates
 
+Validation can be set on the date input if a date in the future has been set by setting the `disableFuture` prop to `true`.
+
+Enter a date in the future to view the validation message:
+
 export const snippetsDisabledFutureDates = [
   {
     technology: "Web component",
@@ -702,6 +728,10 @@ export const snippetsDisabledFutureDates = [
 </ComponentPreview>
 
 ### Min and max
+
+It is possible to set a minimum and maximum date range using the `min` and `max` props. If a date is set and it is before the minimum or after the maximum date, a validation error will appear.
+
+The `min` and `max` props accept the same date formats as the `value` prop.
 
 export const snippetsMinMax = [
   {
@@ -815,6 +845,12 @@ export const FormDateInput = () => {
 </ComponentPreview>
 
 ### With clearing value
+
+The date input can be cleared by setting the `value` attribute to one of the following:
+
+- empty string
+- `null`
+- `undefined`
 
 export const snippetsClearingValue = [
   {
