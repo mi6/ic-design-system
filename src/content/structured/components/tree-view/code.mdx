@@ -21,6 +21,7 @@ tabs:
 
 import { IcTreeView, IcTreeItem } from "@ukic/canary-react";
 import { IcTypography, SlottedSVG } from "@ukic/react";
+import { MemoryRouter, NavLink, useLocation } from "react-router-dom";
 
 ## Component demo
 
@@ -1044,4 +1045,108 @@ export const snippetsLink = [
       <IcTreeItem label="Hot chocolate" disabled href="#" />
     </IcTreeView>
   </div>
+</ComponentPreview>
+
+### With React Router
+
+export const withReactRouter = [
+  {
+    technology: "React",
+    snippets: {
+      short: `<div style={{ display: "flex", flexDirection: "row", gap: "16px" }}>
+    <div style={{ width: "250px" }}>
+      <IcTreeView heading="Menu">
+        <IcTreeItem selected={isSelected("/")}>
+          <NavLink slot="router-item" to="/">
+            Home
+          </NavLink>
+        </IcTreeItem>
+        <IcTreeItem selected={isSelected("/coffee")}>
+          <NavLink slot="router-item" to="/coffee">
+            Coffee
+          </NavLink>
+        </IcTreeItem>
+        <IcTreeItem selected={isSelected("/tea")}>
+          <NavLink slot="router-item" to="/tea">
+            Tea
+          </NavLink>
+        </IcTreeItem>
+      </IcTreeView>
+    </div>
+    <div style={{ marginTop: "16px" }}>
+      <Routes>
+        <Route path="/" element={<IcTypography>Home Page</IcTypography>} />
+        <Route path="/coffee" element={<IcTypography>Coffee Page</IcTypography>} />
+        <Route path="/tea" element={<IcTypography>Tea Page</IcTypography>} />
+      </Routes>
+    </div>
+  </div>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const TreeViewContent = () => {
+const location = useLocation();
+const isSelected = (path) => location.pathname === path;
+  return(
+    {shortCode}
+  );
+}
+return (
+  <MemoryRouter initialEntries={['/']}>
+    <TreeViewContent />
+  </MemoryRouter>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const TreeViewContent = () => {
+const location = useLocation();
+const isSelected = (path) => location.pathname === path;
+  return(
+    {shortCode}
+  );
+}
+return (
+  <MemoryRouter initialEntries={['/']}>
+    <TreeViewContent />
+  </MemoryRouter>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const ReactRouterExample = () => {
+  const location = useLocation();
+  const isSelected = (path) => location.pathname === path;
+  return (
+    <div style={{ display: "flex", flexDirection: "row", gap: "16px" }}>
+      <div style={{ width: "250px" }}>
+        <IcTreeView heading="Menu">
+          <IcTreeItem selected={isSelected("/")}>
+            <NavLink slot="router-item" to="/">
+              Home
+            </NavLink>
+          </IcTreeItem>
+          <IcTreeItem selected={isSelected("/coffee")}>
+            <NavLink slot="router-item" to="/coffee">
+              Coffee
+            </NavLink>
+          </IcTreeItem>
+          <IcTreeItem selected={isSelected("/tea")}>
+            <NavLink slot="router-item" to="/tea">
+              Tea
+            </NavLink>
+          </IcTreeItem>
+        </IcTreeView>
+      </div>
+    </div>
+  );
+};
+
+<ComponentPreview snippets={withReactRouter}>
+  <MemoryRouter initialEntries={["/"]}>
+    <ReactRouterExample />
+  </MemoryRouter>
 </ComponentPreview>

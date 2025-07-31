@@ -418,7 +418,13 @@ export const createReactAppTsx = (
 
   // Check if codeSnippet contains any React Router imports
   const getReactRouterImports = (code: string) => {
-    const imports = ["MemoryRouter", "Route", "Routes", "NavLink"];
+    const imports = [
+      "MemoryRouter",
+      "Route",
+      "Routes",
+      "NavLink",
+      "useLocation",
+    ];
     const foundImports = imports.filter((importName) =>
       code.includes(importName)
     );
