@@ -116,9 +116,14 @@
       "subTitle": "A page header defines the top of the page content and is a consistent way to show page context, key actions and secondary navigation."
     },
     {
+      "path": "/components/pagination-bar",
+      "title": "Pagination bar",
+      "subTitle": "Use the pagination bar when large amounts of content are split across multiple pages and various pagination options are required."
+    },
+    {
       "path": "/components/pagination",
       "title": "Pagination",
-      "subTitle": "Use the Pagination components to split large amounts of content into pages and navigate between them."
+      "subTitle": "Use pagination to split large amounts of content into pages and navigate between them."
     },
     {
       "path": "/components/popover-menu",
