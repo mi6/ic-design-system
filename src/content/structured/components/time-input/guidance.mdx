@@ -1,0 +1,102 @@
+---
+path: "/components/time-input"
+
+navPriority: 42
+
+date: "2025-08-06"
+
+title: "Time input"
+
+status: "CANARY"
+
+subTitle: "A time input is a field that allows people to select a time."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/time-input"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/time-input" },
+    { title: "Code", path: "/components/time-input/code" },
+    { title: "Accessibility", path: "/components/time-input/accessibility" },
+  ]
+---
+
+import { IcTimeInput } from "@ukic/canary-react";
+
+## Component demo
+
+An example of the time input component.
+
+<ComponentPreview>
+  <IcTimeInput
+    label="Select coffee collection time"
+    helperText="Enter in format HH:MM:SS"
+  />
+</ComponentPreview>
+
+## Introduction
+
+Use a time input when asking people to input a specific time. It is used on its own as well as within a [date time picker] (../components/date-time-picker). By default, people are asked to input hours and minutes, but this can be expanded to include seconds and milliseconds.
+
+## When to use
+
+Use a time input when selecting a time value. For example, when setting an alarm.
+
+Use a time input when there is a need to select a very accurate time, such as when selecting a parking start time.
+
+Use a time input in a form to display scheduling options.
+
+## When not to use
+
+Do not use a time input when accurate time selection is not required. For more generic time selections, such as 30- or 15-minute intervals, use time picker.
+
+Do not use a time input when there are a set number of slots or appointments available.
+
+## Sizing
+
+Use the time input size properties to change its vertical size and achieve compact or spacious layouts.
+
+Change the time input horizontal size to match other elements of a form.
+
+## Content
+
+### Labels, helper text, validation messages
+
+Use labels and helper text to help people understand the information they need to enter. It should clearly describe the information the person is expected to input, for example ‘Enter start time.’
+
+Use a default value to set the initial selection of a time. For example, with default value set to 12:00, the placeholder time will be replaced with 12:00.
+
+Use ‘sentence case’ for all labels, error text and helper text.
+Use the time input properties to edit specificity and placeholder time.
+Use helper text to indicate restrictions in a time input. Such as operating hours.
+Use error text to explain why an error has occurred and how it is fixed.
+Do not use error or helper text to repeat the input label.
+Do not add helper text solely to mirror other input fields. It should provide clarity or add value to the input.
+Do not use periods in labels, error text and helper text unless more than one sentence is used.
+
+## Validation
+
+For validations in the date input, take care to always show the correct validation and validation message for each situation.
+
+### Standard
+
+Use the ‘error’ validation state within a time input to signify that the selected time is invalid. For example, when the date selections are outside of the specified “allowed” range.
+
+User the ‘error’ validation state within a time input when presented with an illogical time. For example, if a selected time reads “26:65”. Alternatively, round the values to the nearest maximum or minimum integer.
+
+Use the ‘error’ validation state within a time input to signify that there is an issue in time selection. For example, when the time selections are partially complete or left blank.
+
+Use the ‘success’ validation state within a time input to signify that the selected time has been checked against available times and is valid. For example, when the appointment time is available.
+
+## Interaction behaviour
+
+Do not enable past times when using a time input to gather information about times in the future, such as meeting time. Enable past times when using the time input to gather information about past times, such as time of birth.
+Use `html autofocus` to automatically focus a time input when it is the only input on a page.
+Do not use `html autofocus` on a time input when it is part of a form with other inputs.
+A time input will autofocus between the micro-inputs when an input is taking place. Micro-inputs are split between the ‘HH’ ‘MM’ ‘SS’ and ‘MMS’ inputs.
+
+## Accessibility considerations
+
+The time input has accessibility considerations for the following situations:
+Considerations for hour, minute, second and millisecond selection
+Selecting future or past times only.

@@ -1,0 +1,42 @@
+---
+path: "/components/time-input/accessibility"
+
+date: "2025-08-06"
+
+title: "Time input"
+
+status: "CANARY"
+
+subTitle: "A time input is a field that allows people to select a time."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/time-input" },
+    { title: "Code", path: "/components/time-input/code" },
+    { title: "Accessibility", path: "/components/time-input/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+### Keyboard navigation
+
+The hour, minute and second values can be updated using the up and down arrow keys. Depending on the input focussed, the max value differs. For example, if hour is focussed, the max value is 12 or 24, respective of your 24-hour clock preference. With minute and second focus, this maximum value is 59.
+
+Pressing `tab` will move the cursor between hour, minutes, and seconds.
+
+## For assistive technology
+
+### Screen readers
+
+The label, helper text and time input description is initially read out. The description announced for the time input includes the time format (if there is custom helper text) and how to add values.
+
+When selecting the time using the arrow keys, the time and then the am/pm is announced, for example 04 pm reads “four PM or 13 reads “one PM”.
+
+When the arrow keys are initially moved to the minute or second micro input, the VO will read “minute input” or “seconds input” respectively.
+
+When using the arrow keys on minutes or seconds, the following VO announcement is made, '[hour] [minute] [AM/PM]’ for example, when selecting 05:55, VO reads “five fifty-five AM”.
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.
