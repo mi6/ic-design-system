@@ -87,7 +87,7 @@ Cypress allows for end-to-end testing, replicating how "users interact with your
 
 ## Cypress and the Shadow DOM
 
-Cypress gives two ways in which to test `@ukic` components in the [shadow DOM](/get-started/test-components#how-weve-built-the-components).
+Cypress gives two ways in which to test `@ukic` components in the [shadow DOM](/get-started/development/test-components#how-weve-built-the-components).
 
 ### Configuring at test level
 
@@ -129,14 +129,14 @@ This allows traversing the shadow DOM using assertions without having to explici
 
 ## Example: Component testing
 
-Below are examples of component tests on the `@ukic/react` components `IcTextfield` and `IcButton`. Component tests are normally located adjacent to the component they are testing and are rendered on a development server.
+Below are examples of component tests on the `@ukic/react` components `IcTextField` and `IcButton`. Component tests are normally located adjacent to the component they are testing and are rendered on a development server.
 
 ```tsx
-// Textfield.tsx
+// TextField.tsx
 import { IcTextField, IcButton } from "@ukic/react";
 import React, { useState } from "react";
 
-function Textfield() {
+function TextField() {
   const [favouriteCoffee, setFavouriteCoffee] = useState<String>("");
 
   const handleChange = (event) => {
@@ -164,21 +164,21 @@ function Textfield() {
   );
 }
 
-export default Textfield;
+export default TextField;
 ```
 
 ```tsx
-// Textfield.cy.tsx
+// TextField.cy.tsx
 import React from "react";
-import Textfield from "./Textfield.tsx";
+import TextField from "./TextField.tsx";
 
-describe("<Textfield />", () => {
+describe("<TextField />", () => {
   it("renders", () => {
-    cy.mount(<Textfield />).should("have.property", "component");
+    cy.mount(<TextField />).should("have.property", "component");
   });
   it("takes a value in the textfield and prints to console when the button is clicked", () => {
     // Render the component
-    cy.mount(<Textfield />);
+    cy.mount(<TextField />);
     // Capture the log to check later
     cy.stub(window.console, "log").as("consoleLog");
 
