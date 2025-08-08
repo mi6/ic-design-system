@@ -3,11 +3,11 @@ path: "/components/pagination-bar"
 
 navPriority: 27
 
-date: "2025-07-21"
+date: "2025-08-07"
 
 title: "Pagination bar"
 
-status: "BETA"
+status: "CANARY"
 
 subTitle: "Use the pagination bar when large amounts of content are split across multiple pages and various pagination options are required."
 
@@ -24,6 +24,7 @@ tabs:
   ]
 ---
 
+import { IcAlert, IcLink } from "@ukic/react";
 import { IcPaginationBar } from "@ukic/canary-react";
 import {
   Fig1PaginationBarDark,
@@ -38,17 +39,48 @@ import {
   Fig5PaginationBarLight,
 } from "./images";
 
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and its guidance will be updated over time."
+/>
+
+## Canary components
+
+Canary components are unstable components that are released for testing purposes.
+
+We value any feedback from users willing to try them in their applications.
+
+These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
+
+For more information on Canary components, read our approach to [releases and versions](/get-started/releases-versions).
+
+<p>
+  Additional details on the props and events for this component can be found in
+  the{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/canary/main/web-components/?path=/docs/web-components-horizontal-card--docs"
+    target="_blank"
+  >
+    Canary web components
+  </IcLink>{" "}
+  and{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/canary/main/react/?path=/docs/react-components-horizontal-card--docs"
+    target="_blank"
+  >
+    Canary React
+  </IcLink>{" "}
+  storybooks.
+</p>
+
 ## Introduction
 
 Pagination bar utilises the pagination component and provides further control over the display of additional information and actions.
 
 <ComponentPreview>
   <div style={{ margin: "auto", width: "fit-content" }}>
-    <IcPaginationBar
-      type="complex"
-      showGoToPageControl
-      totalItems={20}
-    />
+    <IcPaginationBar type="complex" showGoToPageControl totalItems={20} />
   </div>
 </ComponentPreview>
 
