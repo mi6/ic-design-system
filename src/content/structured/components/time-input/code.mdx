@@ -1,0 +1,934 @@
+---
+path: "/components/time-input/code"
+
+date: "2025-08-06"
+
+title: "Time input"
+
+status: "CANARY"
+
+subTitle: "A time input is a field that allows people to select a time."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/time-input" },
+    { title: "Code", path: "/components/time-input/code" },
+    { title: "Accessibility", path: "/components/time-input/accessibility" },
+  ]
+---
+
+import { useState } from "react";
+import { IcButton } from "@ukic/react";
+import { IcTimeInput } from "@ukic/canary-react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input
+  label="What time would you like to collect your coffee?"
+></ic-time-input>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  label="What time would you like to collect your coffee?"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsDefault}
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.5rem",
+    alignItems: "center",
+  }}
+>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    onChange={({ detail }) => console.log(detail.value)}
+  />
+</ComponentPreview>
+
+## Date input details
+
+<ComponentDetails component="ic-time-input" canary />
+
+## Variants
+
+### With values
+
+#### String
+
+export const snippetsStringValue = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input 
+  label="What time would you like to collect your coffee?"
+  value="13:45:00"
+></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  value="13:45:00"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsStringValue}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    value="13:45:00"
+  />
+</ComponentPreview>
+
+#### Date object
+
+export const snippetsDateObject = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input
+  id="time-input-default-time-date"
+  label="What time would you like to collect your coffee?"
+></ic-time-input>`,
+      long: `{shortCode}
+<script>
+  let timeInputDate = document.querySelector(
+    "#time-input-default-time-date"
+  );
+  timeInputDate.value = new Date("2025-07-14T15:30:45");
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  value={new Date("2025-07-14T15:30:45")}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDateObject}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    value={new Date("2025-07-14T15:30:45")}
+  />
+</ComponentPreview>
+
+#### Zulu time
+
+export const snippetsZulu = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?"></ic-time-input>`,
+      long: `{shortCode}
+<script>
+  let timeInputDate = document.querySelector(
+    "#time-input-default-zulu-time"
+  );
+  timeInputDate.value = "15:30:45Z";
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  id="time-input-default-zulu-time"
+  label="What time would you like to collect your coffee?"
+  value="15:30:45Z"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsZulu}>
+  <IcTimeInput
+    id="time-input-default-zulu-time"
+    label="What time would you like to collect your coffee?"
+    value="15:30:45Z"
+  />
+</ComponentPreview>
+
+### Required
+
+To set the time input as a required field, set the `required` prop to `true`. This will add an asterisk at the end of the time input label.
+
+export const snippetsRequired = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" required="true"></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" required />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsRequired}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    required
+  />
+</ComponentPreview>
+
+### Hide label
+
+To hide the label, set the `hideLabel` prop to `true`. The required `label` will still be read out by screen readers.
+
+export const snippetsHideLabel = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" hide-label="true"></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" hideLabel />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsHideLabel}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    hideLabel
+  />
+</ComponentPreview>
+
+### Disabled
+
+Set the `disabled` prop to `true` to prevent interaction with the time input.
+
+export const snippetsDisabled = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" disabled="true"></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" disabled />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabled}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    disabled
+  />
+</ComponentPreview>
+
+### Sizes
+
+export const snippetsSizes = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" size="small"></ic-time-input>
+<ic-time-input label="What time would you like to collect your coffee?"></ic-time-input>
+<ic-time-input label="What time would you like to collect your coffee?" size="large"></ic-time-input>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-md);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" size="small" />
+<IcTimeInput label="What time would you like to collect your coffee?" />
+<IcTimeInput label="What time would you like to collect your coffee?" size="large" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsSizes}
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.5rem",
+    alignItems: "center",
+  }}
+>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    size="small"
+  />
+  <IcTimeInput label="What time would you like to collect your coffee?" />
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    size="large"
+  />
+</ComponentPreview>
+
+### Custom helper text
+
+Use the helper text to add additional detail for the time input. Display custom content using the `helper-text` slot.
+
+export const snippetsCustomHelperText = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input
+  label="What time would you like to collect your coffee?"
+  helper-text="We will have your order ready for you on this date"
+></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  helperText="We will have your order ready for you on this date"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsCustomHelperText}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    helperText="We will have your order ready for you on this date"
+  />
+</ComponentPreview>
+
+### Hide helper text
+
+export const snippetsHideHelperText = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input
+  label="What time would you like to collect your coffee?"
+  helper-text="We will have your order ready for you on this date"
+  hide-helper-text="true"
+></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  helperText="We will have your order ready for you on this date"
+  hideHelperText
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsHideHelperText}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    helperText="We will have your order ready for you on this date"
+    hideHelperText
+  />
+</ComponentPreview>
+
+### Custom validation
+
+Validation on time input is set via the `validationStatus` and `validationText` props.
+
+`validationStatus` will set the style of the validation message. `validationStatus` accepts:
+
+- `error`
+- `warning`
+- `success`
+
+`validationStatus` is required for the `validationText` to appear.
+
+export const snippetsValidation = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input
+  label="What time would you like to collect your coffee?"
+  validation-status="error"
+  validation-text="There is a coffee shortage forecast for that day. Please choose a different date."
+></ic-time-input>
+<ic-time-input
+  label="What time would you like to collect your coffee?"
+  validation-status="warning"
+  validation-text="Please be aware that there may be a coffee shortage on that day."
+></ic-time-input>
+<ic-time-input
+  label="What time would you like to collect your coffee?"
+  validation-status="success"
+  validation-text="Your coffee will be available for you to collect on this day."
+></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  validationStatus="error"
+  validationText="There is a coffee shortage forecast for that day. Please choose a different date."
+/>
+<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  validationStatus="warning"
+  validationText="Please be aware that there may be a coffee shortage on that day."
+/>
+<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  validationStatus="success"
+  validationText="Your coffee will be available for you to collect on this day."
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsValidation}
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.5rem",
+    alignItems: "center",
+  }}
+>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    validationStatus="error"
+    validationText="There is a coffee shortage forecast for that day. Please choose a different date."
+  />
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    validationStatus="warning"
+    validationText="Please be aware that there may be a coffee shortage on that day."
+  />
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    validationStatus="success"
+    validationText="Your coffee will be available for you to collect on this day."
+  />
+</ComponentPreview>
+
+### Disabled past dates
+
+Validation can be set on the time input if a date in the past has been set by setting the `disablePast` prop to `true`.
+
+Enter a date in the past to view the validation message:
+
+export const snippetsDisabledPastDates = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" disable-past="true"></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" disablePast />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabledPastDates}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    disablePast
+  />
+</ComponentPreview>
+
+### Disabled future dates
+
+Validation can be set on the time input if a date in the future has been set by setting the `disableFuture` prop to `true`.
+
+Enter a date in the future to view the validation message:
+
+export const snippetsDisabledFutureDates = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" disable-future="true"></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" disableFuture />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabledFutureDates}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    disableFuture
+  />
+</ComponentPreview>
+
+### Min and max
+
+It is possible to set a minimum and maximum date range using the `min` and `max` props. If a date is set and it is before the minimum or after the maximum date, a validation error will appear.
+
+The `min` and `max` props accept the same date formats as the `value` prop.
+
+export const snippetsMinMax = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input
+  label="What time would you like to collect your coffee?"
+  min="02/01/2023"
+  max="20-07-2023"
+></ic-time-input>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput
+  label="What time would you like to collect your coffee?"
+  min="02/01/2023"
+  max="20-07-2023"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsMinMax}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    min="02/01/2023"
+    max="20-07-2023"
+  />
+</ComponentPreview>
+
+### Form
+
+export const snippetsForm = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<form>
+  <ic-time-input label="What time would you like to collect your coffee?" value="13/03/1951"></ic-time-input>
+  <ic-button type="submit" value="Submit"></ic-button>
+  <ic-button type="reset" value="Reset"></ic-button>
+</form>`,
+      long: `{shortCode}
+<script>
+  document.querySelector("form").addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    console.log(ev);
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `const formSubmit = (ev) => {
+  ev.preventDefault();
+  console.log(ev);
+};
+return (
+  <form onSubmit={formSubmit}>
+    <IcTimeInput label="What time would you like to collect your coffee?" value="13/03/1951" />
+    <IcButton type="submit">Submit</IcButton>
+    <IcButton type="reset">Reset</IcButton>
+  </form>
+);`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+export const FormTimeInput = () => {
+  const formSubmit = (ev) => {
+    ev.preventDefault();
+    console.log(ev);
+  };
+  return (
+    <form onSubmit={formSubmit}>
+      <IcTimeInput
+        label="What time would you like to collect your coffee?"
+        value="13/03/1951"
+      />
+      <IcButton type="submit">Submit</IcButton>
+      <IcButton type="reset">Reset</IcButton>
+    </form>
+  );
+};
+
+<ComponentPreview snippets={snippetsForm}>
+  <FormTimeInput />
+</ComponentPreview>
+
+### With clearing value
+
+The time input can be cleared by setting the `value` attribute to one of the following:
+
+- empty string
+- `null`
+- `undefined`
+
+export const snippetsClearingValue = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input
+  id="time-input-clear-value"
+  label="What time would you like to collect your coffee?"
+  date-format="DD/MM/YYYY"
+  value="13:45:00"
+></ic-time-input>
+<ic-button id="update">Update date</ic-button>
+<ic-button id="null-btn">set null</ic-button>
+<ic-button id="empty-btn">set empty string</ic-button>
+<ic-button id="undef-btn">set undefined</ic-button>`,
+      long: `{shortCode}
+<script>
+  var input = document.querySelector("#time-input-clear-value");
+  var btn = document.querySelector("#update");
+  btn.addEventListener("click", () => {
+    input.value = new Date("05 May 2005");
+  });
+  var btn2 = document.querySelector("#null-btn");
+  btn2.addEventListener("click", () => {
+    input.value = null;
+  });
+  var btn3 = document.querySelector("#empty-btn");
+  btn3.addEventListener("click", () => {
+    input.value = "";
+  });
+  var btn4 = document.querySelector("#undef-btn");
+  btn4.addEventListener("click", () => {
+    input.value = undefined;
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `const [value, setValue] = useState("13:45:00");
+const handleUpdate = () => {
+  setValue(new Date("05 May 2005"));
+};
+const handleClearValue = (newValue) => {
+  setValue(newValue);
+};
+return (
+  <>
+    <IcTimeInput
+      label="What time would you like to collect your coffee?"
+      value={value}
+    />
+    <div style={{ display: "flex", gap: "8px" }}>
+      <IcButton onClick={() => handleUpdate()}>Update time</IcButton>
+      <IcButton onClick={() => handleClearValue(null)}>Set null</IcButton>
+      <IcButton onClick={() => handleClearValue("")}>
+        Set Empty String
+      </IcButton>
+      <IcButton onClick={() => handleClearValue(undefined)}>
+        Set undefined
+      </IcButton>
+    </div>
+  </>
+);`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+export const WithClearingValue = () => {
+  const [value, setValue] = useState("13:45:00");
+  const handleUpdate = () => {
+    setValue(new Date("05 May 2005"));
+  };
+  const handleClearValue = (newValue) => {
+    setValue(newValue);
+  };
+  return (
+    <>
+      <IcTimeInput
+        label="What time would you like to collect your coffee?"
+        value={value}
+      />
+      <div style={{ display: "flex", gap: "8px" }}>
+        <IcButton onClick={() => handleUpdate()}>Update date</IcButton>
+        <IcButton onClick={() => handleClearValue(null)}>Set null</IcButton>
+        <IcButton onClick={() => handleClearValue("")}>
+          Set Empty String
+        </IcButton>
+        <IcButton onClick={() => handleClearValue(undefined)}>
+          Set undefined
+        </IcButton>
+      </div>
+    </>
+  );
+};
+
+<ComponentPreview snippets={snippetsClearingValue}>
+  <WithClearingValue />
+</ComponentPreview>
