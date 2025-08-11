@@ -3,7 +3,7 @@ path: "/components/toast"
 
 navPriority: 42
 
-date: "2024-04-15"
+date: "2025-08-11"
 
 title: "Toast"
 
@@ -21,7 +21,7 @@ tabs:
 tags: ["Snackbar"]
 ---
 
-import { IcTypography, IcToast, IcToastRegion, IcButton } from "@ukic/react";
+import { IcToast, IcToastRegion, IcButton } from "@ukic/react";
 import { useRef } from "react";
 import toastVid1Light from "./images/anim-1-auto-dismiss-toast.mp4";
 import toastVid1Dark from "./images/anim-1-auto-dismiss-toast-dark.mp4";
@@ -120,16 +120,8 @@ Toasts can be set to auto-dismiss after an adjustable length of time. Make sure 
   controls
   loop
   src={[toastVid1Light, toastVid1Dark]}
-  type="video/mp4"
+  caption="A page with a toast that appears at the bottom center of the screen and disappears after a short delay."
 />
-
-<IcTypography
-  variant="label"
-  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
->
-  A page with a toast that appears at the bottom center of the screen and
-  disappears after a short delay.
-</IcTypography>
 
 Toasts that contain an action or link can’t be set to auto-dismiss.
 
@@ -141,16 +133,8 @@ Toasts that don’t auto-dismiss will have a close button.
   controls
   loop
   src={[toastVid2Light, toastVid2Dark]}
-  type="video/mp4"
+  caption="A page with a toast, that has a close button, that appears at the bottom center of the screen and disappears only when the dismiss button is clicked."
 />
-
-<IcTypography
-  variant="label"
-  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
->
-  A page with a toast, that has a close button, that appears at the bottom
-  center of the screen and disappears only when the dismiss button is clicked.
-</IcTypography>
 
 ### Layout and placement
 
