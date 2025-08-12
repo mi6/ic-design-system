@@ -6,6 +6,7 @@
     "IcDateInput",
     "IcDatePicker",
     "IcPaginationBar",
+    "IcTimeInput",
     "IcTreeItem",
     "IcTreeView"
   ],
@@ -16,6 +17,7 @@
     "ic-date-input",
     "ic-date-picker",
     "ic-pagination-bar",
+    "ic-time-input",
     "ic-tree-item",
     "ic-tree-view"
   ],
@@ -25,17 +27,20 @@
     "IcDataTableDensityOptions",
     "IcDataTableColumnDataTypes",
     "IcDataTableColumnWidthTypes",
+    "IcDataTableAlignmentOptions",
     "IcDataTableColumnObject",
     "IcLoadingOptions",
     "IcDataTableRowHeights",
     "IcDataTableTruncationTypes",
     "truncWrapperDetailsTypes",
+    "IcDataTableRowOptions",
     "IcDataTableDataType",
     "IcTreeItemOptions"
   ],
   "reactComponentNames": [
     "IcAccordion",
     "IcAccordionGroup",
+    "IcActionChip",
     "IcAlert",
     "IcBackToTop",
     "IcBadge",
