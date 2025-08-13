@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { JsonDocsProp } from "@ukic/docs";
+import { IcTypography } from "@ukic/react";
 import AttributeTable from "../../AttributeTable";
 import AttributeCards from "../../AttributeCards";
 import AttributeName from "../AttributeName";
@@ -53,6 +54,23 @@ const PropTable: React.FC<PropTableProps> = ({ propData, typeLibrary }) => {
     []
   );
 
+  const typeOfDefaultValue = (
+    value: any,
+    startCharacter: string,
+    endCharacter: string
+  ) =>
+    typeof value === "string" &&
+    value.trim().startsWith(startCharacter) &&
+    value.trim().endsWith(endCharacter);
+
+  const hasObjectDefaultValue = useMemo(
+    () =>
+      propData.some(({ default: defaultValue }) =>
+        typeOfDefaultValue(defaultValue, "{", "}")
+      ),
+    [propData]
+  );
+
   const data = useMemo(
     () =>
       propData
@@ -83,9 +101,34 @@ const PropTable: React.FC<PropTableProps> = ({ propData, typeLibrary }) => {
                   type={type}
                   required={required}
                   deprecation={deprecation}
+                  compact={hasObjectDefaultValue}
                 />
               ),
-              default: defaultValue,
+              default: (() => {
+                if (typeOfDefaultValue(defaultValue, "{", "}")) {
+                  return (
+                    <IcTypography
+                      style={{
+                        whiteSpace: "pre-wrap",
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        fontSize: "0.82em",
+                        margin: 0,
+                      }}
+                    >
+                      {defaultValue}
+                    </IcTypography>
+                  );
+                }
+                if (typeOfDefaultValue(defaultValue, "`", "`")) {
+                  return (
+                    <code className="language-text">
+                      {defaultValue ? defaultValue.trim().slice(1, -1) : ""}
+                    </code>
+                  );
+                }
+                return defaultValue;
+              })(),
               key: name,
             };
           }
@@ -93,7 +136,7 @@ const PropTable: React.FC<PropTableProps> = ({ propData, typeLibrary }) => {
         .sort(
           (a, b) => b.description.props.required - a.description.props.required
         ),
-    [propData, typeLibrary]
+    [propData, typeLibrary, hasObjectDefaultValue]
   );
 
   return (
