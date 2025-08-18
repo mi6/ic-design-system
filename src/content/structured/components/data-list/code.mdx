@@ -994,7 +994,10 @@ export const snippetsLabelWidth = [
 ];
 
 <ComponentPreview snippets={snippetsLabelWidth}>
-  <IcDataList heading="Order details" style={{ width: "90%", "--data-row-label-width": "30rem" }}>
+  <IcDataList
+    heading="Order details"
+    style={{ width: "90%", "--data-row-label-width": "30rem" }}
+  >
     <IcDataRow label="Order name" value="Michael">
       <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
         Edit

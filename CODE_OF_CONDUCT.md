@@ -8,7 +8,7 @@ The Intelligence Community Design System (ICDS) has adopted the [Contributor Cov
 
 - Be inclusive.
 - Be respectful to others and considerate of their different viewpoints and opinions.
-- Keep all activity relevant to software development. Please do not discuss/provide opinions on MI6, GCHQ, MI5 or the Intelligence Community.
+- Keep all activity relevant to software development. Please do not discuss/provide opinions on MI6, GCHQ, MI5, HMGCC or the Intelligence Community.
 - Be thoughtful and conscious of how you would like your comments to be interpreted.
 - Be friendly and welcoming. We want to grow our community and gain other perspectives. We can't do it without the support from you.
 - Be open and try not to be disheartened if your contribution doesn't get approved.

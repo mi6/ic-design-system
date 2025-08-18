@@ -60,7 +60,7 @@ module.exports = {
   homepage: {
     hero: {
       title: "Create powerful apps and services that work for everyone.",
-      text: "Use and contribute to MI6, MI5, and GCHQ's Design System to create accessible, usable and consistent capabilities like those used across the UK's Intelligence Community.",
+      text: "Use and contribute to MI6, MI5, GCHQ, and HMGCC's Design System to create accessible, usable and consistent capabilities like those used across the UK's Intelligence Community.",
       secondaryHeading: null,
       secondarySubHeading: null,
       button: {
@@ -99,7 +99,7 @@ module.exports = {
     about: {
       title: "The UK Intelligence Community's Design System",
       content: [
-        "This Design System helps you to design and build complex, specialised apps and services. It's used by MI6, MI5, GCHQ and our partners to construct tools that keep the UK safe and prosperous.",
+        "This Design System helps you to design and build complex, specialised apps and services. It's used by MI6, MI5, GCHQ, HMGCC, our national security partner, and our additional partners to construct tools that keep the UK safe and prosperous.",
         "The Design System empowers through accessibility-by-design, a diverse and inclusive community, and flexible tech and implementation options.",
         "To find out more, delve into our story on how we support people and organisations develop valuable apps and services accessible for everyone.",
       ],
