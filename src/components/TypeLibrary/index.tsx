@@ -41,7 +41,9 @@ const TypeLibrary: React.FC = () => {
   });
 
   return (
-    <ic-data-list>
+    <ic-data-list
+      style={{ "--data-row-label-width": "18rem" } as React.CSSProperties}
+    >
       {sortedEntries.map(([key, value]) => {
         const typeName = getTypeName(key);
         let raw = "";
