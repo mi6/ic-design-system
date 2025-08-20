@@ -1,7 +1,7 @@
 ---
 path: "/components/alert/code"
 
-date: "2024-05-31"
+date: "2025-08-11"
 
 title: "Alert"
 
@@ -44,12 +44,17 @@ export const snippetsDefault = [
 <ic-alert
   variant="warning"
   heading="Hot drink"
-  message="Please be careful the drink is hot."
+  message="Please be careful, the drink is hot."
 ></ic-alert>
 <ic-alert
   variant="success"
   heading="Americano order complete"
   message="Success, your coffee is good to go."
+></ic-alert>
+<ic-alert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
 ></ic-alert>`,
       long: `{shortCode}`,
     },
@@ -74,12 +79,17 @@ export const snippetsDefault = [
 <IcAlert
   variant="warning"
   heading="Hot drink"
-  message="Please be careful the drink is hot."
+  message="Please be careful, the drink is hot."
 />
 <IcAlert
   variant="success"
   heading="Americano order complete"
   message="Success, your coffee is good to go."
+/>
+<IcAlert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
 />`,
       long: [
         {
@@ -121,13 +131,19 @@ export const snippetsDefault = [
     style={{ marginBottom: "1rem" }}
     variant="warning"
     heading="Hot drink"
-    message="Please be careful the drink is hot."
+    message="Please be careful, the drink is hot."
   />
   <IcAlert
     style={{ marginBottom: "1rem" }}
     variant="success"
     heading="Americano order complete"
     message="Success, your coffee is good to go."
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="ai"
+    heading="AI Barista"
+    message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
   />
 </ComponentPreview>
 
@@ -530,7 +546,7 @@ export const snippetsThemeDark = [
 <ic-alert
   variant="warning"
   heading="Hot drink"
-  message="Please be careful the drink is hot."
+  message="Please be careful, the drink is hot."
   theme="dark"
   dismissible="true"
 ></ic-alert>
@@ -538,6 +554,13 @@ export const snippetsThemeDark = [
   variant="success"
   heading="Americano order complete"
   message="Success, your coffee is good to go."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
   theme="dark"
   dismissible="true"
 ></ic-alert>`,
@@ -570,7 +593,7 @@ export const snippetsThemeDark = [
 <IcAlert
   variant="warning"
   heading="Hot drink"
-  message="Please be careful the drink is hot."
+  message="Please be careful, the drink is hot."
   theme="dark"
   dismissible
 />
@@ -578,6 +601,13 @@ export const snippetsThemeDark = [
   variant="success"
   heading="Americano order complete"
   message="Success, your coffee is good to go."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
   theme="dark"
   dismissible
 />`,
@@ -633,7 +663,7 @@ export const snippetsThemeDark = [
     style={{ marginBottom: "1rem" }}
     variant="warning"
     heading="Hot drink"
-    message="Please be careful the drink is hot."
+    message="Please be careful, the drink is hot."
     theme="dark"
     dismissible
   />
@@ -642,6 +672,14 @@ export const snippetsThemeDark = [
     variant="success"
     heading="Americano order complete"
     message="Success, your coffee is good to go."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="ai"
+    heading="AI Barista"
+    message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
     theme="dark"
     dismissible
   />

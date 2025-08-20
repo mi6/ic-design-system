@@ -12,7 +12,7 @@ The [Intelligence Community Design System](https://design.sis.gov.uk) helps the 
 This is a joint project led by [MI6](https://www.sis.gov.uk), working with [GCHQ](https://www.gchq.gov.uk), [MI5](https://www.mi5.gov.uk) and [HMGCC](https://www.hmgcc.gov.uk) (our national security partner).
 
 <p align="center">
-  <img src="/static/icds-orgs.png" alt="SIS (MI6), GCHQ and MI5 Logos" loading="lazy">
+  <img src="/static/icds-orgs.png" alt="SIS (MI6), GCHQ, MI5 and HMGCC logos" loading="lazy">
 </p>
 
 This repo holds the website at [`design.sis.gov.uk`](https://design.sis.gov.uk), look at the [`ic-ui-kit` repo](https://github.com/mi6/ic-ui-kit) for the ICDS UI Kit components.
@@ -71,7 +71,7 @@ Visit our websites to learn more about:
 - The [Secret Intelligence Service (MI6)](https://www.sis.gov.uk).
 - The [Government Communications Headquarters (GCHQ)](https://www.gchq.gov.uk).
 - The [Security Service (MI5)](https://www.mi5.gov.uk).
-- [His Majesty's Government Communications Centre (HMGCC)](https://www.hmgcc.gov.uk)- our national security partner.
+- [His Majesty's Government Communications Centre (HMGCC)](https://www.hmgcc.gov.uk) - our national security partner.
 
 ## License
 

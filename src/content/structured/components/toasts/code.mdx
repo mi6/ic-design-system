@@ -1038,10 +1038,12 @@ export const toastWithoutRefsSnippet = [
   {
     technology: "React",
     snippets: {
-      short: `
-<IcToastRegion>
+      short: `<IcToastRegion>
   <IcToast
+    variant="ai"
     heading="Your coffee is ready"
+    message="Enjoy your personalised cup, courtesy of AI Barista!"
+    id="toast"
   />
 </IcToastRegion>`,
       long: [
@@ -1062,9 +1064,7 @@ export const toastWithoutRefsSnippet = [
   return (
     <>
       <IcButton onClick={handleClick}>Display toast</IcButton>
-      <IcToastRegion>
-        <IcToast heading="Your coffee is ready" id="toast" />
-      </IcToastRegion>
+      {shortCode}
     </>
   );`,
         },
@@ -1085,9 +1085,7 @@ export const toastWithoutRefsSnippet = [
   return (
     <>
       <IcButton onClick={handleClick}>Display toast</IcButton>
-      <IcToastRegion>
-        <IcToast heading="Your coffee is ready" id="toast" />
-      </IcToastRegion>
+      {shortCode}
     </>
   );`,
         },
@@ -1108,7 +1106,12 @@ export const ToastComponentWithoutRefs = () => {
     <>
       <IcButton onClick={handleClick}>Display toast</IcButton>
       <IcToastRegion>
-        <IcToast heading="Your coffee is ready" id="toast" />
+        <IcToast
+          variant="ai"
+          heading="Your coffee is ready"
+          message="Enjoy your personalised cup, courtesy of AI Barista!"
+          id="toast"
+        />
       </IcToastRegion>
     </>
   );

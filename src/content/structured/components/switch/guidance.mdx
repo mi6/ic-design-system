@@ -3,7 +3,7 @@ path: "/components/switch"
 
 navPriority: 38
 
-date: "2023-02-03"
+date: "2025-08-11"
 
 title: "Switch"
 
@@ -23,7 +23,7 @@ tabs:
 tags: ["Toggle", "Lightswitch"]
 ---
 
-import { IcSwitch, IcTypography } from "@ukic/react";
+import { IcSwitch } from "@ukic/react";
 import switchVid1Light from "./images/anim-1-avoid-change-a-switch-state-from-a-different-trigger.mp4";
 import switchVid1Dark from "./images/anim-1-avoid-change-a-switch-state-from-a-different-trigger-dark.mp4";
 import switchVid2Light from "./images/anim-2-dont-change-switch-label-at-same-time-as-switch-state.mp4";
@@ -101,15 +101,8 @@ Avoid automatically altering a switch's state based on another trigger. A change
   controls
   loop
   src={[switchVid1Light, switchVid1Dark]}
-  type="video/mp4"
+  caption="Avoid changing a switch's state without the user’s specific instruction."
 />
-
-<IcTypography
-  variant="label"
-  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
->
-  Avoid changing a switch's state without the user’s specific instruction.
-</IcTypography>
 
 ## Sizing
 
@@ -146,15 +139,8 @@ Avoid using additional labels that say 'on' or 'off' in the switch label. The po
   controls
   loop
   src={[switchVid2Light, switchVid2Dark]}
-  type="video/mp4"
+  caption="Don't change the switch's label at the same time as the state changes."
 />
-
-<IcTypography
-  variant="label"
-  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
->
-  Don’t change the switch’s label at the same time as the state changes.
-</IcTypography>
 
 Use an icon with a switch label only if it aids the recognition of the option.
 

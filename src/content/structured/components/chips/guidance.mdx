@@ -3,7 +3,7 @@ path: "/components/chip"
 
 navPriority: 12
 
-date: "2024-02-28"
+date: "2025-08-11"
 
 title: "Chip"
 
@@ -125,29 +125,25 @@ Don't use dismissible chips where the user can't re-select the item presented in
 
 For example, if used to show a selected filter, after dismissing the chip and clearing the filter, it can be applied again later.
 
-<video
+<ThemedVideo
   width="100%"
   muted
   controls
   loop
   title="An animation showing the user dismissing a chip labelled 'Roasted' and the option not re-appearing in the filter section."
->
-  <source src={chipsVid1} type="video/mp4" />
-</video>
+  caption="Don't use dismissible chips when the user will not be able to re-select the dismissed item."
+  src={chipsVid1}
+/>
 
-Don't use dismissible chips when the user will not be able to re-select the dismissed item.
-
-<video
+<ThemedVideo
   width="100%"
   muted
   controls
   loop
   title="An animation showing the behaviour of a dismissible chip as it re-appears in the filter section when the user dismisses it."
->
-  <source src={chipsVid2} type="video/mp4" />
-</video>
-
-Allow users to re-select the item after it has been dismissed.
+  caption="Allow users to re-select the item after it has been dismissed."
+  src={chipsVid2}
+/>
 
 ### Static chips
 
