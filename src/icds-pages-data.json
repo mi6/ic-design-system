@@ -186,6 +186,11 @@
       "subTitle": "Switches are used to quickly toggle an option on or off."
     },
     {
+      "path": "/components/table-of-contents",
+      "title": "Table of contents",
+      "subTitle": "A table of contents allows navigation through a page’s contents using links to its headings."
+    },
+    {
       "path": "/components/tabs",
       "title": "Tabs",
       "subTitle": "Tabs let users navigate between content within the same context. Tabs organise complex layouts by separating content into multiple sections."
