@@ -140,7 +140,8 @@
     "prepare": "husky install",
     "verify-ts": "tsc --noEmit",
     "audit": "audit-ci -m --config audit-ci.json",
-    "mdx-to-json": "node mdx-to-json.js"
+    "mdx-to-json": "node mdx-to-json.js",
+    "update-nav-priority": "node updateNavPriority.js"
   },
   "size-limit": [
     {
