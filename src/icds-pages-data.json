@@ -196,6 +196,11 @@
       "subTitle": "How to change the theme and brand colours of some components."
     },
     {
+      "path": "/components/time-input",
+      "title": "Time input",
+      "subTitle": "Time input allows users to enter a specific time in a standardised format for scheduling or time-based tasks."
+    },
+    {
       "path": "/components/toast",
       "title": "Toast",
       "subTitle": "Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'."
