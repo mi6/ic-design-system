@@ -36,6 +36,8 @@ Icon-only menu options have accessible labels that are announced by a screen rea
 
 Collapsible option groups use `aria-expanded` to indicate whether the group is open or closed. If closed, focus skips over the group's content to the next elements. If open, each menu item in the group is included in the tab order. Collapsible option groups can be opened or closed using the **enter** or **space** key.
 
+The `<title>` HTML tag in `SlottedSVG` components should be avoided to prevent it from being announced by screen readers, since the `label` attribute of `IcNavigationItem` already provides this information.
+
 ## Based on
 
 The side navigation component has been based on the following resources:
