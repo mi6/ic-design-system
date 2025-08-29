@@ -139,7 +139,7 @@ const Homepage: React.FC = () => {
                       variant="h4"
                       aria-label={`${item.title}.`}
                     >
-                      <h4>{item.title}</h4>
+                      <p>{item.title}</p>
                     </ic-typography>
                     <ic-typography
                       slot="message"
