@@ -3,20 +3,33 @@ import CodeAttribute from "../../../CodeAttribute";
 import "./index.css";
 import { backtickToCodeBlock } from "../../../../utils/helpers";
 
-const PropDescription: React.FC<{
+interface PropDescriptionProps {
   description: string;
   typeName?: string;
   type?: string;
   required: boolean;
-  deprecation: string | undefined;
-}> = ({ description, type, typeName, required, deprecation }) => {
+  deprecation?: string;
+  compact?: boolean;
+}
+
+const PropDescription: React.FC<PropDescriptionProps> = ({
+  description,
+  type,
+  typeName,
+  required,
+  deprecation,
+  compact,
+}) => {
   let displayedType: string | null = null;
   if (type) {
     displayedType =
       typeName && typeName !== type ? `${typeName} - ${type}` : type;
   }
   return (
-    <div className="prop-description">
+    <div
+      className="prop-description"
+      style={compact ? { maxWidth: 240 } : undefined}
+    >
       {!!description && (
         <ic-typography>{backtickToCodeBlock(description)}</ic-typography>
       )}
