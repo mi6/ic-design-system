@@ -66,6 +66,8 @@
     "IcInputContainer",
     "IcInputLabel",
     "IcInputValidation",
+    "IcLayoutGrid",
+    "IcLayoutGridItem",
     "IcLink",
     "IcLoadingIndicator",
     "IcMenu",

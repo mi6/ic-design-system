@@ -1,0 +1,108 @@
+---
+path: "/components/layout-grid"
+
+navPriority: 23
+
+date: "2025-08-20"
+
+title: "Layout grid"
+
+status: "BETA"
+
+subTitle: "Layout grids arrange content into a flexible, consistent structure that adapts across screen sizes."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/layout-grid"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout-grid" },
+    { title: "Code", path: "/components/layout-grid/code" },
+    { title: "Accessibility", path: "/components/layout-grid/accessibility" },
+  ]
+---
+
+import { IcLayoutGrid } from "@ukic/react";
+
+## Introduction
+
+The layout grid is a responsive framework that organises child elements into rows and columns. By default, any component slotted into the grid is positioned automatically using its default column span, column width, and grid spacing.
+
+The layout grid ensures consistent alignment and spacing without the need for manual width or margin calculations.
+
+<ComponentPreview>
+  <IcLayoutGrid
+    columns={2}
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 1
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 2
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>
+
+For greater control over placement, the layout grid item lets you define a specific column span or row span, as well as a starting column or starting row.
+
+This combination allows you to create simple layouts quickly, while still having the flexibility to fine-tune individual item positions when needed.
+
+## When to use
+
+Use the layout grid when you need to arrange content in a clear, consistent structure that adapts to different screen sizes.
+
+The layout grid works well for organising related content into rows and columns, such as sets of cards, images, or form fields, while ensuring the layout remains readable and balanced at all breakpoints.
+
+Use the layout grid item when you need explicit control over an element's column or row span, or its starting column or row, rather than relying on the default automatic placement.
+
+## When not to use
+
+Avoid using the layout grid for very simple layouts that can be achieved with a single column and standard spacing utilities, as the extra structure may be unnecessary.
+
+It may also not be the best choice for highly bespoke designs where precise positioning or unconventional spacing falls outside the grid's responsive rules.
+
+In components or sections that already have a fixed internal layout, adding a grid can introduce complexity without improving clarity. Similarly, if a basic flex or stack arrangement is sufficient to align content, using the full layout grid may create more code and configuration than needed.
+
+It is not necessary to use a layout grid item to position an element which already automatically gets positioned correctly, using the default width, default column span, and default positioning.
+
+## Layout and placement
+
+The layout grid acts as the main container, arranging its child elements into responsive rows and columns. You can set the number of columns using the `columns` property, and the spacing using the `grid-spacing` property. When customising the columns and spacing, you should follow the [layout and spacing guidance](/styles/layout-spacing).
+
+Items are automatically positioned within the grid. For fluid grids, this means reflowing as the screen size changes – for example, stacking vertically on small screens and displaying in multiple columns on larger displays.
+
+The layout grid item can be used when you need precise control over how an element sits within the grid. It allows you to define a specific column span or row span, and choose the starting column or row for that element. This is useful for creating more complex arrangements, such as highlighting a feature block that spans multiple columns, or positioning an item in a specific spot within the grid.

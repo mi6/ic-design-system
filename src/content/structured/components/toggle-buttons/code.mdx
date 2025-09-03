@@ -308,6 +308,7 @@ export const snippetsSizing = [
     flex-wrap: wrap;
     padding: var(--ic-space-md);
     gap: var(--ic-space-xs);
+    align-items: center;
   }
 </style>
 <body>
@@ -331,6 +332,7 @@ export const snippetsSizing = [
     flexWrap: "wrap",
     padding: "var(--ic-space-md)",
     gap: "var(--ic-space-xs)",
+    alignItems: "center",
   },
 });
 const classes = useStyles();
@@ -348,6 +350,7 @@ return (
     flexWrap: "wrap",
     padding: "var(--ic-space-md)",
     gap: "var(--ic-space-xs)",
+    alignItems: "center",
   },
 });
 const classes = useStyles();
@@ -362,7 +365,10 @@ return (
   },
 ];
 
-<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsSizing}>
+<ComponentPreview
+  style={{ gap: "0.5rem", alignItems: "center" }}
+  snippets={snippetsSizing}
+>
   <IcToggleButton label="Switch to oat milk" size="small" />
   <IcToggleButton label="Switch to oat milk" size="medium" />
   <IcToggleButton label="Switch to oat milk" size="large" />

@@ -101,6 +101,11 @@
       "subTitle": "A large banner found at the top of page used to introduce page content, provide key actions and add personality."
     },
     {
+      "path": "/components/layout-grid",
+      "title": "Layout grid",
+      "subTitle": "Layout grids arrange content into a flexible, consistent structure that adapts across screen sizes."
+    },
+    {
       "path": "/components/link",
       "title": "Link",
       "subTitle": "Links can be used to navigate to different pages or sections of a page."
@@ -194,6 +199,11 @@
       "path": "/components/theme",
       "title": "Theme",
       "subTitle": "How to change the theme and brand colours of some components."
+    },
+    {
+      "path": "/components/time-input",
+      "title": "Time input",
+      "subTitle": "Time input allows users to enter a specific time in a standardised format for scheduling or time-based tasks."
     },
     {
       "path": "/components/toast",
