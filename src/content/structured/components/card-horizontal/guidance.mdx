@@ -3,23 +3,32 @@ path: "/components/card-horizontal"
 
 navPriority: 9
 
-date: "2024-08-30"
+date: "2025-09-09"
 
 title: "Card (horizontal)"
 
 status: "CANARY"
 
-subTitle: "Horizontal cards are containers used to display structured information or link to new information."
+subTitle: "Horizontal cards are containers used to display structured information or link to new information in a horizontal layout."
 
 tabs:
   [
     { title: "Guidance", path: "/components/card-horizontal" },
     { title: "Code", path: "/components/card-horizontal/code" },
+    { title: "Accessibility", path: "/components/card-horizontal/accessibility" },
   ]
 ---
 
 import { IcAlert, IcLink } from "@ukic/react";
 import { IcCardHorizontal } from "@ukic/canary-react";
+import {
+  Fig1HorizontalCardLight,
+  Fig1HorizontalCardDark,
+  Fig2HorizontalCardLight,
+  Fig2HorizontalCardDark,
+  Fig3HorizontalCardLight,
+  Fig3HorizontalCardDark,
+} from "./images";
 
 <IcAlert
   heading="Canary component"
@@ -56,6 +65,12 @@ For more information on Canary components, read our approach to [releases and ve
   storybooks.
 </p>
 
+## Introduction
+
+A horizontal card uses the same structure as clickable and static vertical cards, although presenting the content in a horizontal layout with the image on either the left or right.
+
+Horizontal cards do not currently contain an interaction area.
+
 ## Component demo
 
 <ComponentPreview>
@@ -87,3 +102,83 @@ For more information on Canary components, read our approach to [releases and ve
     </svg>
   </IcCardHorizontal>
 </ComponentPreview>
+
+## When to use
+
+Use a horizontal card when vertical space is limited and you need to display information about an item in a visually pleasing way.
+
+## When not to use
+
+Don’t use a horizontal card to display large amounts of content about an item, consider using a [Data Table](/components/data-table) instead.
+
+## Interaction behaviour
+
+Horizontal cards utilise a heading area which controls interactions with the card. The heading area can be either static or clickable. If you need a card to contain an interaction area, consider using a vertical instead of horizontal card.
+
+### Static
+
+Interaction with a horizontal card containing a static heading is limited to the card menu.
+
+### Clickable
+
+A horizontal card with a clickable heading contains the card heading as a clickable link element.
+
+Clickable cards contain one interaction, therefore text in the card body cannot be hidden.
+
+## Sizing
+
+Use the size options to resize the horizontal card to fit your design space. Match the selected size to other components in the same section so that they are aligned.
+
+<DoDontCaution
+  imageSrc={[Fig1HorizontalCardLight, Fig1HorizontalCardDark]}
+  imageAlt="Three horizontal cards displayed with different sizing of small, medium and large. Each card contains an image on the left, a clickable heading labelled ‘Macchiato’ and content describing Macchiato coffee. These use a default layout, so the image is flush with the edges of the card."
+  state="none"
+  caption="Horizontal cards come in three different sizes."
+/>
+
+Use the small size when available width is limited and use the large size for a wide horizontal card display.
+
+<DoDontCaution
+  imageSrc={[Fig2HorizontalCardLight, Fig2HorizontalCardDark]}
+  imageAlt="An image of five horizontal cards in two columns, the columns containing different width cards to show poor layout. The horizontal cards show mixed content relating to coffee. The first column shows; a small clickable card with no image, a medium clickable card with spacious layout and an image to the left, and finally a large clickable card with a default layout and image to the left. The second column shows a small clickable card and a medium clickable card."
+  state="bad"
+  caption="Don’t vertically align horizontal cards of different sizes."
+/>
+
+## Layout
+
+A horizontal card with a default layout has no margin between the image and card border, for a more compact styling.
+
+<DoDontCaution
+  imageSrc={[Fig3HorizontalCardLight, Fig3HorizontalCardDark]}
+  imageAlt="Horizontal card with a default layout, an image of a Latte is displayed on the left which meets the border edge of the card with no margin. To the right is a heading and content describing a Latte coffee."
+  state="none"
+  caption="Default layout does not include a margin around an image."
+/>
+
+## Content
+
+Horizontal card content is similar to the static and clickable variants of [Vertical card](/components/card-vertical); however, it does not include an interaction area.
+
+### 1. Heading area
+
+The default horizontal card layout cannot contain a subheading or adornment due to space limitations.
+
+The heading area can contain:
+
+- A: Icon/Avatar
+- B: Heading
+
+### 2. Image
+
+If an image is displayed, it can be placed to the left or right of the content.
+
+### 3. Content area
+
+Add a descriptive message within the card content section. Static cards can include a 'see more' link to expand hidden content.
+
+Since clickable cards can only contain one interaction, text can't be hidden.
+
+## Related components
+
+- [Vertical card](/Components/card-vertical)
