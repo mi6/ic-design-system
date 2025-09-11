@@ -33,7 +33,7 @@
     {
       "path": "/components/card-horizontal",
       "title": "Card (horizontal)",
-      "subTitle": "Horizontal cards are containers used to display structured information or link to new information."
+      "subTitle": "Horizontal cards are containers used to display structured information or link to new information in a horizontal layout."
     },
     {
       "path": "/components/card-vertical",
