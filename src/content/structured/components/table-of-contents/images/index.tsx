@@ -1,0 +1,10 @@
+export { default as Fig1TOCLight } from "./fig-1-a-table-of-contents-in-the-side-position.png";
+export { default as Fig1TOCDark } from "./fig-1-a-table-of-contents-in-the-side-position-dark.png";
+export { default as Fig2TOCLight } from "./fig-2-avoid-using-table-of-contents-when-you-have-less-than-two-headings.png";
+export { default as Fig2TOCDark } from "./fig-2-avoid-using-table-of-contents-when-you-have-less-than-two-headings-dark.png";
+export { default as Fig3TOCLight } from "./fig-3-use-the-default-size-variant-to-achieve-more-compact-layouts.png";
+export { default as Fig3TOCDark } from "./fig-3-use-the-default-size-variant-to-achieve-more-compact-layouts-dark.png";
+export { default as Fig4TOCLight } from "./fig-4-use-the-large-size-variant-to-achieve-more-spacious-layouts.png";
+export { default as Fig4TOCDark } from "./fig-4-use-the-large-size-variant-to-achieve-more-spacious-layouts-dark.png";
+export { default as Fig5TOCLight } from "./fig-5-on-small-screen-sizes-use-the-anchor-navigation-in-the-top-position.png";
+export { default as Fig5TOCDark } from "./fig-5-on-small-screen-sizes-use-the-anchor-navigation-in-the-top-position-dark.png";

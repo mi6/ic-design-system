@@ -1,0 +1,600 @@
+---
+path: "/components/table-of-contents/code"
+
+date: "2025-08-26"
+
+title: "Table of contents"
+
+status: "CANARY"
+
+subTitle: "A table of contents allows users to quickly navigate through a page's content using links to its headings."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/table-of-contents"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/table-of-contents" },
+    { title: "Code", path: "/components/table-of-contents/code" },
+    {
+      title: "Accessibility",
+      path: "/components/table-of-contents/accessibility",
+    },
+  ]
+---
+
+import { IcAlert } from "@ukic/react";
+import { IcTableOfContents } from "@ukic/canary-react";
+import WrappedH2 from "../../../../components/WrappedH2";
+import WrappedH3 from "../../../../components/WrappedH3";
+import WrappedH4 from "../../../../components/WrappedH4";
+
+<IcAlert
+  heading="Expected functionality"
+  variant="info"
+  message="Please note: due to the number of IcTableOfContents on this page, the component previews may not work as expected. Please use the Stackblitz button on the example to see full expected behaviour."
+/>
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-table-of-contents position="right">
+  <div id="content" style="width:80%;">
+    <div style="height:200px; background:gray">
+      <h2>Latte</h2>
+      <p>A coffee drink made with a shot or two of espresso, a larger portion of steamed milk, and a thin layer of milk foam on top.</p>
+    </div>
+    <div style="height:200px; background:darkgray">
+      <h2>Cappuccino</h2>
+      <p>A coffee drink traditionally made from an espresso base, hot steamed milk, and a thick layer of milk foam.</p>
+    </div>
+    <div style="height:200px; background:gray">
+      <h2>Espresso</h2>
+      <p>A concentrated coffee beverage produced by forcing hot, high-pressure water through finely ground coffee beans.</p>
+    </div>
+  </div>
+</ic-table-of-contents>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTableOfContents position="right">
+  <div id="content" style={{ width: "80%" }}>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Latte</h2>
+      <p>A coffee drink made with a shot or two of espresso, a larger portion of steamed milk, and a thin layer of milk foam on top.</p>
+    </div>
+    <div style={{ height: "200px", background: "darkgray" }}>
+      <h2>Cappuccino</h2>
+      <p>A coffee drink traditionally made from an espresso base, hot steamed milk, and a thick layer of milk foam.</p>
+    </div>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Espresso</h2>
+      <p>A concentrated coffee beverage produced by forcing hot, high-pressure water through finely ground coffee beans.</p>
+    </div>
+  </div>
+</IcTableOfContents>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault}>
+  <IcTableOfContents position="right" setScrollHeight={45}>
+    <div id="content" style={{ width: "80%" }}>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Latte</WrappedH2>
+        <p>
+          A coffee drink made with a shot or two of espresso, a larger portion
+          of steamed milk, and a thin layer of milk foam on top.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "darkgray" }}>
+        <WrappedH2 preview>Cappuccino</WrappedH2>
+        <p>
+          A coffee drink traditionally made from an espresso base, hot steamed
+          milk, and a thick layer of milk foam.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Espresso</WrappedH2>
+        <p>
+          A concentrated coffee beverage produced by forcing hot, high-pressure
+          water through finely ground coffee beans.
+        </p>
+      </div>
+    </div>
+  </IcTableOfContents>
+</ComponentPreview>
+
+## Table of contents details
+
+<ComponentDetails component="ic-table-of-contents" canary />
+
+## Variants
+
+### Heading
+
+export const snippetsHeading = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-table-of-contents heading="Coffee table" position="right">
+  <div id="content" style="width:80%;">
+    <div style="height:200px; background:gray">
+      <h2>Flat White</h2>
+      <p>A velvety coffee made with a shot of espresso and steamed milk, featuring a thin layer of microfoam for a smooth texture.</p>
+    </div>
+    <div style="height:200px; background:darkgray">
+      <h2>Mocha</h2>
+      <p>A rich blend of espresso, steamed milk, and chocolate, often topped with whipped cream or cocoa powder.</p>
+    </div>
+    <div style="height:200px; background:gray">
+      <h2>Affogato</h2>
+      <p>A dessert-style coffee where a shot of hot espresso is poured over a scoop of vanilla ice cream.</p>
+    </div>
+  </div>
+</ic-table-of-contents>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTableOfContents heading="Coffee table" position="right">
+  <div id="content" style={{ width: "80%" }}>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Flat White</h2>
+      <p>A velvety coffee made with a shot of espresso and steamed milk, featuring a thin layer of microfoam for a smooth texture.</p>
+    </div>
+    <div style={{ height: "200px", background: "darkgray" }}>
+      <h2>Mocha</h2>
+      <p>A rich blend of espresso, steamed milk, and chocolate, often topped with whipped cream or cocoa powder.</p>
+    </div>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Affogato</h2>
+      <p>A dessert-style coffee where a shot of hot espresso is poured over a scoop of vanilla ice cream.</p>
+    </div>
+  </div>
+</IcTableOfContents>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsHeading}>
+  <IcTableOfContents heading="Coffee table" position="right">
+    <div id="content" style={{ width: "80%" }}>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Flat White</WrappedH2>
+        <p>
+          A velvety coffee made with a shot of espresso and steamed milk,
+          featuring a thin layer of microfoam for a smooth texture.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "darkgray" }}>
+        <WrappedH2 preview>Mocha</WrappedH2>
+        <p>
+          A rich blend of espresso, steamed milk, and chocolate, often topped
+          with whipped cream or cocoa powder.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Affogato</WrappedH2>
+        <p>
+          A dessert-style coffee where a shot of hot espresso is poured over a
+          scoop of vanilla ice cream.
+        </p>
+      </div>
+    </div>
+  </IcTableOfContents>
+</ComponentPreview>
+
+### Small
+
+export const snippetsSmall = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-table-of-contents heading="Coffee table" size="small" position="right">
+  <div id="content" style="width:80%;">
+    <div style="height:200px; background:gray">
+      <h2>Cortado</h2>
+      <p>A balanced coffee drink made with equal parts espresso and warm milk, resulting in a smooth, mellow flavor.</p>
+    </div>
+    <div style="height:200px; background:darkgray">
+      <h2>Ristretto</h2>
+      <p>A short shot of espresso made with less water, producing a more intense and concentrated flavor profile.</p>
+    </div>
+    <div style="height:200px; background:gray">
+      <h2>Irish Coffee</h2>
+      <p>A warming beverage combining hot coffee, Irish whiskey, sugar, and a layer of cream on top.</p>
+    </div>
+  </div>
+</ic-table-of-contents>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTableOfContents heading="Coffee table" size="small" position="right">
+  <div id="content" style={{ width: "80%" }}>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Cortado</h2>
+      <p>A balanced coffee drink made with equal parts espresso and warm milk, resulting in a smooth, mellow flavor.</p>
+    </div>
+    <div style={{ height: "200px", background: "darkgray" }}>
+      <h2>Ristretto</h2>
+      <p>A short shot of espresso made with less water, producing a more intense and concentrated flavor profile.</p>
+    </div>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Irish Coffee</h2>
+      <p>A warming beverage combining hot coffee, Irish whiskey, sugar, and a layer of cream on top.</p>
+    </div>
+  </div>
+</IcTableOfContents>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsSmall}>
+  <IcTableOfContents heading="Coffee table" size="small" position="right">
+    <div id="content" style={{ width: "80%" }}>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Cortado</WrappedH2>
+        <p>
+          A balanced coffee drink made with equal parts espresso and warm milk,
+          resulting in a smooth, mellow flavor.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "darkgray" }}>
+        <WrappedH2 preview>Ristretto</WrappedH2>
+        <p>
+          A short shot of espresso made with less water, producing a more
+          intense and concentrated flavor profile.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Irish Coffee</WrappedH2>
+        <p>
+          A warming beverage combining hot coffee, Irish whiskey, sugar, and a
+          layer of cream on top.
+        </p>
+      </div>
+    </div>
+  </IcTableOfContents>
+</ComponentPreview>
+
+### Large
+
+export const snippetsLarge = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-table-of-contents heading="Coffee table" size="large" position="right">
+  <div id="content" style="width:80%;">
+    <div style="height:200px; background:gray">
+      <h2>Macchiato</h2>
+      <p>An espresso "stained" with a small amount of milk or foam, offering a bold coffee flavor with a hint of creaminess.</p>
+    </div>
+    <div style="height:200px; background:darkgray">
+      <h2>Café au Lait</h2>
+      <p>A French classic made with equal parts brewed coffee and steamed milk, resulting in a smooth and mild beverage.</p>
+    </div>
+    <div style="height:200px; background:gray">
+      <h2>Doppio</h2>
+      <p>A double shot of espresso, providing a strong and robust coffee experience for those who love intensity.</p>
+    </div>
+  </div>
+</ic-table-of-contents>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTableOfContents heading="Coffee table" size="large" position="right">
+  <div id="content" style={{ width: "80%" }}>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Macchiato</h2>
+      <p>An espresso "stained" with a small amount of milk or foam, offering a bold coffee flavor with a hint of creaminess.</p>
+    </div>
+    <div style={{ height: "200px", background: "darkgray" }}>
+      <h2>Café au Lait</h2>
+      <p>A French classic made with equal parts brewed coffee and steamed milk, resulting in a smooth and mild beverage.</p>
+    </div>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Doppio</h2>
+      <p>A double shot of espresso, providing a strong and robust coffee experience for those who love intensity.</p>
+    </div>
+  </div>
+</IcTableOfContents>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLarge}>
+  <IcTableOfContents heading="Coffee table" size="large" position="right">
+    <div id="content" style={{ width: "80%" }}>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Macchiato</WrappedH2>
+        <p>
+          An espresso "stained" with a small amount of milk or foam, offering a
+          bold coffee flavor with a hint of creaminess.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "darkgray" }}>
+        <WrappedH2 preview>Café au Lait</WrappedH2>
+        <p>
+          A French classic made with equal parts brewed coffee and steamed milk,
+          resulting in a smooth and mild beverage.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Doppio</WrappedH2>
+        <p>
+          A double shot of espresso, providing a strong and robust coffee
+          experience for those who love intensity.
+        </p>
+      </div>
+    </div>
+  </IcTableOfContents>
+</ComponentPreview>
+
+### Maximum heading level
+
+export const snippetsMaximumHeadingLevel = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-table-of-contents heading="Drinks table" maximumHeadingLevel="4" position="right">
+  <div id="content" style="width:80%;">
+    <div style="height:300px; background:gray">
+      <h2>Coffee</h2>
+      <h3>Americano</h3>
+      <h4>With milk</h4>
+      <p>
+        A coffee drink made by diluting a shot of espresso with hot water,
+        resulting in a larger, less intense drink than a straight espresso.
+      </p>
+      <h4>With oat milk</h4>
+      <p>A vegan alternative.</p>
+      <h3>Iced coffee</h3>
+    </div>
+    <div style="height:300px; background:darkgray">
+      <h2>Tea</h2>
+      <h3>Green Tea</h3>
+      <h4>Matcha</h4>
+      <p>
+        A finely ground powder made from specially grown and processed green
+        tea leaves (tencha), known for its vibrant emerald color, umami
+        flavor, and higher nutritional content than steeped tea.
+      </p>
+      <h3>Black Tea</h3>
+      <p>
+        A type of tea made from the Camellia sinensis plant that undergoes
+        full oxidation, a process that turns the leaves dark brown, gives the
+        tea its characteristic bold and brisk flavor, and results in a
+        dark-colored infusion.
+      </p>
+    </div>
+  </div>
+</ic-table-of-contents>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTableOfContents heading="Drinks table" maximumHeadingLevel={4} position="right">
+  <div id="content" style={{ width: "80%" }}>
+    <div style={{ height: "300px", background: "gray" }}>
+      <h2>Coffee</h2>
+      <h3>Americano</h3>
+      <h4>With milk</h4>
+      <p>
+        A coffee drink made by diluting a shot of espresso with hot water,
+        resulting in a larger, less intense drink than a straight espresso.
+      </p>
+      <h4>With oat milk</h4>
+      <p>A vegan alternative.</p>
+      <h3>Iced coffee</h3>
+    </div>
+    <div style={{ height: "300px", background: "darkgray" }}>
+      <h2>Tea</h2>
+      <h3>Green Tea</h3>
+      <h4>Matcha</h4>
+      <p>
+        A finely ground powder made from specially grown and processed green
+        tea leaves (tencha), known for its vibrant emerald color, umami
+        flavor, and higher nutritional content than steeped tea.
+      </p>
+      <h3>Black Tea</h3>
+      <p>
+        A type of tea made from the Camellia sinensis plant that undergoes
+        full oxidation, a process that turns the leaves dark brown, gives the
+        tea its characteristic bold and brisk flavor, and results in a
+        dark-colored infusion.
+      </p>
+    </div>
+  </div>
+</IcTableOfContents>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsMaximumHeadingLevel}>
+  <IcTableOfContents
+    heading="Drinks table"
+    maximumHeadingLevel={4}
+    position="right"
+  >
+    <div id="content" style={{ width: "80%" }}>
+      <div style={{ height: "300px", background: "gray" }}>
+        <WrappedH2 preview>Coffee</WrappedH2>
+        <WrappedH3 preview>Americano</WrappedH3>
+        <WrappedH4 preview>With milk</WrappedH4>
+        <p>
+          A coffee drink made by diluting a shot of espresso with hot water,
+          resulting in a larger, less intense drink than a straight espresso.
+        </p>
+        <WrappedH4 preview>With oat milk</WrappedH4>
+        <p>A vegan alternative.</p>
+        <WrappedH3 preview>Iced coffee</WrappedH3>
+      </div>
+      <div style={{ height: "300px", background: "darkgray" }}>
+        <WrappedH2 preview>Tea</WrappedH2>
+        <WrappedH3 preview>Green Tea</WrappedH3>
+        <WrappedH4 preview>Matcha</WrappedH4>
+        <p>
+          A finely ground powder made from specially grown and processed green
+          tea leaves (tencha), known for its vibrant emerald color, umami
+          flavor, and higher nutritional content than steeped tea.
+        </p>
+        <WrappedH3 preview>Black Tea</WrappedH3>
+        <p>
+          A type of tea made from the Camellia sinensis plant that undergoes
+          full oxidation, a process that turns the leaves dark brown, gives the
+          tea its characteristic bold and brisk flavor, and results in a
+          dark-colored infusion.
+        </p>
+      </div>
+    </div>
+  </IcTableOfContents>
+</ComponentPreview>
+
+### Monochrome
+
+export const snippetsMonochrome = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-table-of-contents monochrome="true" position="right">
+  <div id="content" style="width:80%;">
+    <div style="height:200px; background:gray">
+      <h2>Coffee selection</h2>
+      <p>Our finest selection of coffees with a different variety of milks catering to all requirements.</p>
+    </div>
+    <div style="height:200px; background:darkgray">
+      <h2>Tea selection</h2>
+      <p>Our finest selection of teas with a different variety of milks catering to all requirements.</p>
+    </div>
+    <div style="height:200px; background:gray">
+      <h2>Other drinks</h2>
+      <p>We also have a selection of soft drinks.</p>
+    </div>
+  </div>
+</ic-table-of-contents>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTableOfContents monochrome position="right">
+  <div id="content" style={{ width: "80%" }}>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Coffee selection</h2>
+      <p>Our finest selection of coffees with a different variety of milks catering to all requirements.</p>
+    </div>
+    <div style={{ height: "200px", background: "darkgray" }}>
+      <h2>Tea selection</h2>
+      <p>Our finest selection of teas with a different variety of milks catering to all requirements.</p>
+    </div>
+    <div style={{ height: "200px", background: "gray" }}>
+      <h2>Other drinks</h2>
+      <p>We also have a selection of soft drinks.</p>
+    </div>
+  </div>
+</IcTableOfContents>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsMonochrome}>
+  <IcTableOfContents monochrome position="right">
+    <div id="content" style={{ width: "80%" }}>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Coffee selection</WrappedH2>
+        <p>
+          Our finest selection of coffees with a different variety of milks
+          catering to all requirements.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "darkgray" }}>
+        <WrappedH2 preview>Tea selection</WrappedH2>
+        <p>
+          Our finest selection of teas with a different variety of milks
+          catering to all requirements.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Other drinks</WrappedH2>
+        <p>We also have a selection of soft drinks.</p>
+      </div>
+    </div>
+  </IcTableOfContents>
+</ComponentPreview>

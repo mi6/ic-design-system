@@ -1,0 +1,179 @@
+---
+path: "/components/table-of-contents"
+
+navPriority: 40
+
+date: "2025-08-26"
+
+title: "Table of contents"
+
+status: "CANARY"
+
+subTitle: "A table of contents allows users to quickly navigate through a page's content using links to its headings."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/table-of-contents"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/table-of-contents" },
+    { title: "Code", path: "/components/table-of-contents/code" },
+    {
+      title: "Accessibility",
+      path: "/components/table-of-contents/accessibility",
+    },
+  ]
+
+tags:
+  [
+    "Navigation menu",
+    "Anchor navigation",
+    "Vertical navigation",
+    "In page navigation",
+    "Anchor link menu",
+  ]
+---
+
+import { IcAlert } from "@ukic/react";
+import { IcTableOfContents } from "@ukic/canary-react";
+import WrappedH2 from "../../../../components/WrappedH2";
+
+import {
+  Fig1TOCDark,
+  Fig1TOCLight,
+  Fig2TOCLight,
+  Fig2TOCDark,
+  Fig3TOCLight,
+  Fig3TOCDark,
+  Fig4TOCLight,
+  Fig4TOCDark,
+  Fig5TOCLight,
+  Fig5TOCDark,
+} from "./images";
+
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and its guidance will be updated over time."
+/>
+
+## Introduction
+
+Use a table of contents to provide quick access to different sections of a page’s content.
+
+A table of contents uses heading tags within the page to outline its content.
+
+<ComponentPreview>
+  <IcTableOfContents position="right" setScrollHeight={45}>
+    <div id="content" style={{ width: "80%" }}>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Latte</WrappedH2>
+        <p>
+          A coffee drink made with a shot or two of espresso, a larger portion
+          of steamed milk, and a thin layer of milk foam on top.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "darkgray" }}>
+        <WrappedH2 preview>Cappuccino</WrappedH2>
+        <p>
+          A coffee drink traditionally made from an espresso base, hot steamed
+          milk, and a thick layer of milk foam.
+        </p>
+      </div>
+      <div style={{ height: "200px", background: "gray" }}>
+        <WrappedH2 preview>Espresso</WrappedH2>
+        <p>
+          A concentrated coffee beverage produced by forcing hot, high-pressure
+          water through finely ground coffee beans.
+        </p>
+      </div>
+    </div>
+  </IcTableOfContents>
+</ComponentPreview>
+
+## When to use
+
+Use a table of contents to provide a secondary method to navigate through the page’s headings instead of needing to scroll.
+
+Use a table of contents only when the page contains a lot of content with many defined headings.
+
+Display multiple heading levels in a table of contents for particularly content rich pages.
+
+<DoDontCaution
+  imageSrc={[Fig1TOCLight, Fig1TOCDark]}
+  imageAlt="A page of content describing a latte recipe that includes a table of contents on the right-hand side of the page."
+  state="good"
+  caption="A table of contents offering quick access to the page’s headings on the side of the page."
+/>
+
+## When not to use
+
+Do not use a table of contents as a primary form of navigation. Table of contents links should not be used to navigate to different pages.
+
+Do not use a table of contents if you have fewer than two headings on a page.
+
+<DoDontCaution
+  imageSrc={[Fig2TOCLight, Fig2TOCDark]}
+  imageAlt="A page of content showing a latte recipe that includes a table of contents with one list item on the right-hand side of the page."
+  state="caution"
+  caption="A table of contents showing only one item."
+/>
+
+Avoid using a table of contents to display the page's entire heading structure, as this can be navigated by simply scrolling through the page. Instead, provide links to the top-level headings for quick access to key sections.
+
+## Interaction behaviour
+
+A table of contents that is longer than the viewport height will be scrollable independent to the page scroll. However, try to avoid including so many headings that it causes the table of contents to exceed the viewport height. Set only the top-level heading types to display to keep the table of contents short.
+
+Headings in the table of contents become automatically selected as they are scrolled into view. Set the selection threshold from the bottom of the viewport to change the point at which the next heading in the table of contents becomes selected.
+
+When a table of contents is positioned at the side of the page, it is sticky on page scroll to keep it in view and provide a constant method to move between page content.
+
+When a table of contents is positioned at the top of the page, it will scroll along with the page content.
+
+## Colour
+
+Use the dark or light variants to achieve colour contrast compliance when placed on different coloured backgrounds.
+
+### Sizing
+
+Use the large size variant to create more spacious layouts for your table of contents. Only use this when there is sufficient screen space to avoid the table of contents scrolling.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3TOCLight, Fig3TOCDark]}
+    imageAlt="A table of contents showing a page’s headings in the default size variant."
+    state="good"
+    caption="A default sized table of contents."
+  />
+  <DoDontCaution
+    imageSrc={[Fig4TOCLight, Fig4TOCDark]}
+    imageAlt="A table of contents showing a page’s headings in the large size variant."
+    state="good"
+    caption="A large sized table of contents."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+On larger screen sizes, place the table of contents to the right of the page content it controls.
+
+Do not place table of contents on the side of a screen when using smaller screen sizes, place it at the top of the page.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5TOCLight, Fig5TOCDark]}
+    imageAlt="A page displaying ‘Our coffees’ and a table of contents showing Milky coffees and Shot based coffees, at the top of the page on a smaller screen-size."
+    state="good"
+    caption="A table of contents on a mobile screen in the top position showing the page’s headings."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+Use a maximum of three heading levels within the table of contents, from H2 to H4. Going beyond this can lead to an overly long table of contents that doesn't aid the navigation of the page as well.
+
+When titling a table of contents, make sure that the title is relevant to the page content. For example, use the page’s title or the term ‘Table of contents’.
+
+Always make sure each heading within your page structure is relevant to the content it includes.
+
+Relevant headings within the page content allow people to navigate using the table of contents to skip over content if it is not relevant. A good page table of contents can be understood by simply reading through its headings.

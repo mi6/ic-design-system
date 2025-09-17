@@ -33,7 +33,7 @@
     {
       "path": "/components/card-horizontal",
       "title": "Card (horizontal)",
-      "subTitle": "Horizontal cards are containers used to display structured information or link to new information."
+      "subTitle": "Horizontal cards are containers used to display structured information or link to new information in a horizontal layout."
     },
     {
       "path": "/components/card-vertical",
@@ -184,6 +184,11 @@
       "path": "/components/switch",
       "title": "Switch",
       "subTitle": "Switches are used to quickly toggle an option on or off."
+    },
+    {
+      "path": "/components/table-of-contents",
+      "title": "Table of contents",
+      "subTitle": "A table of contents allows navigation through a page’s contents using links to its headings."
     },
     {
       "path": "/components/tabs",
