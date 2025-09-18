@@ -8,3 +8,11 @@ export { default as Fig4ChipsLight } from "./fig-4-do-use-status-tags-to-display
 export { default as Fig4ChipsDark } from "./fig-4-do-use-status-tags-to-display-status-dark.png";
 export { default as Fig5ChipsLight } from "./fig-5-avoid-using-long-labels-as-it-will-force-the-text-to-wrap.png";
 export { default as Fig5ChipsDark } from "./fig-5-avoid-using-long-labels-as-it-will-force-the-text-to-wrap-dark.png";
+export { default as Fig6ChipsLight } from "./fig-6-do-use-action-chips-to-display-smart-or-automated-actions.png";
+export { default as Fig6ChipsDark } from "./fig-6-do-use-action-chips-to-display-smart-or-automated-actions-dark.png";
+export { default as Fig7ChipsLight } from "./fig-7-use-action-chips-in-conjunction-with-other-chips.png";
+export { default as Fig7ChipsDark } from "./fig-7-use-action-chips-in-conjunction-with-other-chips-dark.png";
+export { default as Fig8ChipsLight } from "./fig-8-use-chips-to-enhance-the-experience.png";
+export { default as Fig8ChipsDark } from "./fig-8-use-chips-to-enhance-the-experience-dark.png";
+export { default as Fig9ChipsLight } from "./fig-9-do-not-use-chips-to-progress-through-a-process-or-perform-significant-actions.png";
+export { default as Fig9ChipsDark } from "./fig-9-do-not-use-chips-to-progress-through-a-process-or-perform-significant-actions-dark.png";
