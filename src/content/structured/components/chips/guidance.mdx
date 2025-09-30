@@ -1,7 +1,7 @@
 ---
 path: "/components/chip"
 
-navPriority: 12
+navPriority: 13
 
 date: "2025-08-11"
 
@@ -9,7 +9,7 @@ title: "Chip"
 
 status: "BETA"
 
-subTitle: "Chips are used to filter and present data."
+subTitle: "Chips help people view summary information, filter data or trigger actions."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/chip"
 
@@ -20,12 +20,14 @@ tabs:
     { title: "Accessibility", path: "/components/chip/accessibility" },
   ]
 
-tags: ["Tags"]
+tags: ["Pill", "Tag", "Lozenge"]
 ---
 
-import { IcChip } from "@ukic/react";
-import chipsVid1 from "./images/anim-1-do-allow-users-to-re-select-the-item-after-it-has-been-dismissed.mp4";
-import chipsVid2 from "./images/anim-2-do-not-use-dismissible-chips-when-the-user-will-not-be-able-to-re-select-the-dismissed-item.mp4";
+import { IcActionChip, IcChip } from "@ukic/react";
+import chipsVid1Light from "./images/anim-1-do-not-use.mp4";
+import chipsVid1Dark from "./images/anim-1-dark.mp4";
+import chipsVid2Light from "./images/anim-2-do-allow.mp4";
+import chipsVid2Dark from "./images/anim-2-dark.mp4";
 import {
   Fig1ChipsDark,
   Fig1ChipsLight,
@@ -38,6 +40,11 @@ import {
   Fig5ChipsDark,
   Fig5ChipsLight,
 } from "./images";
+
+## Introduction
+
+Chips are compact, rounded elements on a page. They display a label and can contain a leading icon. Chips can be used for several purposes and are useful to quickly understand content and context of a page.
+The heavily rounded edge on Chips makes them easily distinguishable from Buttons. They are always displayed in a dedicated section of the page, for example above a data table.
 
 ## Component variants
 
@@ -62,21 +69,32 @@ import {
       <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
     </svg>
   </IcChip>
+  <IcActionChip label="+2 more" />
 </ComponentPreview>
 
-There are two types of chip: dismissible chips and static chips. Dismissible chips have both filled and outline variants and are interactive, whereas static chips simply present information and aren't actionable.
+There are three types of chip: Action, Dismissible and Static. Action and Dismissible chips are interactive, whereas Static chips simply present information and aren't actionable.
+
+[Action Chip guidance](/components/action-chip) can be found on a dedicated page.
+
+### Style
+
+Chip has two style variants.
+
+#### Filled
+
+Use filled chips to provide high emphasis on the displayed information.
+
+#### Outlined
+
+Use outlined chips to provide low emphasis on the displayed information.
+
+### Size
+
+Chip has three size variants: small, medium, and large.
 
 ### Dismissible chips
 
 Use a dismissible chip to show selected data from a user action that can be cleared by dismissing the chip. This is often used in the context of filtering and selection.
-
-#### Filled
-
-Use filled dismissible chips to provide high emphasis on the displayed information.
-
-#### Outlined
-
-Use outlined dismissible chips to provide low emphasis on the displayed information.
 
 ### Static chips
 
@@ -132,7 +150,8 @@ For example, if used to show a selected filter, after dismissing the chip and cl
   loop
   title="An animation showing the user dismissing a chip labelled 'Roasted' and the option not re-appearing in the filter section."
   caption="Don't use dismissible chips when the user will not be able to re-select the dismissed item."
-  src={chipsVid1}
+  src={[chipsVid1Light, chipsVid1Dark]}
+  type="video/mp4"
 />
 
 <ThemedVideo
@@ -142,7 +161,8 @@ For example, if used to show a selected filter, after dismissing the chip and cl
   loop
   title="An animation showing the behaviour of a dismissible chip as it re-appears in the filter section when the user dismisses it."
   caption="Allow users to re-select the item after it has been dismissed."
-  src={chipsVid2}
+  src={[chipsVid2Light, chipsVid2Dark]}
+  type="video/mp4"
 />
 
 ### Static chips
@@ -189,11 +209,11 @@ Use concise labels for better readability. Longer labels will force the text to 
 
 ### Icons
 
-Use an icon on the left of a dismissible or static chip to provide additional meaning.
+Use an icon on the left of a chip to provide additional meaning.
 
 When including an icon in a chip make sure that the icon is understandable and relevant to the information presented.
 
-Always provide alternative descriptions for icons, or mark them as decorative. Don't use icons if they aren't necessary.
+Always provide alternative descriptions for icons or mark them as decorative. Don't use icons if they aren't necessary.
 
 ## Related components
 
