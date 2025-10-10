@@ -6,6 +6,7 @@
     "IcDateInput",
     "IcDatePicker",
     "IcPaginationBar",
+    "IcTableOfContents",
     "IcTimeInput",
     "IcTreeItem",
     "IcTreeView"
@@ -17,12 +18,12 @@
     "ic-date-input",
     "ic-date-picker",
     "ic-pagination-bar",
+    "ic-table-of-contents",
     "ic-time-input",
     "ic-tree-item",
     "ic-tree-view"
   ],
   "canaryTypes": [
-    "IcCardSizes",
     "IcDataTableSortOrderOptions",
     "IcDataTableDensityOptions",
     "IcDataTableColumnDataTypes",
