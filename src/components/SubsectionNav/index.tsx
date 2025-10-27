@@ -99,18 +99,13 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
 
   const isBrowser = () => typeof window !== "undefined";
 
-  const isCurrentPage = (url: string, isParentPage: boolean) => {
+  const isCurrentPage = (url: string) => {
     if (!isBrowser()) return false;
 
-    const currentPath = window.location.pathname;
-
-    if (!isParentPage) {
-      return currentPage.split("/").pop() === url.split("/").pop();
-    }
     return (
-      currentPath === url ||
-      currentPath === `${url}/` ||
-      new RegExp(`${url}$`).test(currentPath)
+      currentPage === url ||
+      currentPage === `${url}/code` ||
+      currentPage === `${url}/accessibility`
     );
   };
 
@@ -159,15 +154,12 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
     const isAnyChildSelected = (treeItem: TreeItem): boolean =>
       treeItem.children.some(
         (child: any) =>
-          isCurrentPage(child.data.fields.slug, false) ||
+          isCurrentPage(child.data.fields.slug) ||
           (hasChildren && isAnyChildSelected(child))
       );
 
     const isChildSelected = (treeItem: TreeItem) => {
-      const isOverviewSelected = isCurrentPage(
-        treeItem.data.fields.slug,
-        false
-      );
+      const isOverviewSelected = isCurrentPage(treeItem.data.fields.slug);
       return isOverviewSelected || isAnyChildSelected(treeItem);
     };
 
@@ -184,7 +176,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       <IcTreeItem
         key={item.data.id}
         label={item.data.frontmatter.title}
-        selected={!hasChildren && isCurrentPage(item.data.fields.slug, false)}
+        selected={!hasChildren && isCurrentPage(item.data.fields.slug)}
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation(); // Prevent click on child firing parent click handler
@@ -202,7 +194,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
             key={item.data.id}
             label="Overview"
             aria-label={`Overview of ${item.data.frontmatter.title}`}
-            selected={isCurrentPage(item.data.fields.slug, true)}
+            selected={isCurrentPage(item.data.fields.slug)}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -308,7 +300,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
               handleNavigation(currentNavSection.data.fields.slug);
             }}
             onKeyUp={(e) => handleKeyUp(e, currentNavSection)}
-            selected={isCurrentPage(currentNavSection.data.fields.slug, true)}
+            selected={isCurrentPage(currentNavSection.data.fields.slug)}
           />
         )}
         {currentNavSection &&
