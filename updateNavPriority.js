@@ -15,7 +15,10 @@ files.forEach((file, idx) => {
   const expectedPriority = idx + 3;
   const navPriorityMatch = content.match(/navPriority: (\d+)/);
   if (navPriorityMatch && Number(navPriorityMatch[1]) !== expectedPriority) {
-    content = content.replace(/navPriority: \d+/, `navPriority: ${expectedPriority}`);
+    content = content.replace(
+      /navPriority: \d+/,
+      `navPriority: ${expectedPriority}`
+    );
     fs.writeFileSync(file, content);
     console.log(`Updated ${file} to navPriority ${expectedPriority}`);
   }
