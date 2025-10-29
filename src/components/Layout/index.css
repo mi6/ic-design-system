@@ -151,12 +151,8 @@ ic-top-navigation form.not-loaded {
     overflow: hidden;
   }
 
-  .logo-wrapper > ic-footer-link:nth-child(1) svg {
-    transform: translate(-0.219rem, var(--ic-space-xxxs));
-  }
-
   .logo-wrapper > ic-footer-link:nth-child(1) {
-    width: 4.25rem;
+    width: 4.52rem;
   }
 
   .logo-wrapper > ic-footer-link:nth-child(2) {
@@ -168,7 +164,7 @@ ic-top-navigation form.not-loaded {
   }
 
   .logo-wrapper > ic-footer-link:nth-child(3) {
-    width: 2.75rem;
+    width: 2.68rem;
   }
 
   .logo-wrapper > ic-footer-link:nth-child(3) svg {
