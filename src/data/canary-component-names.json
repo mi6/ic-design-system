@@ -24,7 +24,6 @@
     "ic-tree-view"
   ],
   "canaryTypes": [
-    "IcCardSizes",
     "IcDataTableSortOrderOptions",
     "IcDataTableDensityOptions",
     "IcDataTableColumnDataTypes",
