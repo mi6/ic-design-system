@@ -42,7 +42,7 @@ const Homepage: React.FC = () => {
         return (
           <img
             src={theme === "light" ? Accessibility : AccessibilityDark}
-            alt="An accessibility icon"
+            alt=""
             loading="lazy"
             slot="image"
             aria-hidden="true"
@@ -52,7 +52,7 @@ const Homepage: React.FC = () => {
         return (
           <img
             src={theme === "light" ? Styles : StylesDark}
-            alt="A h1, h2 and h3 element"
+            alt=""
             loading="lazy"
             slot="image"
             aria-hidden="true"
@@ -62,7 +62,7 @@ const Homepage: React.FC = () => {
         return (
           <img
             src={theme === "light" ? Components : ComponentsDark}
-            alt="A diamond shape split into four sections"
+            alt=""
             loading="lazy"
             slot="image"
             aria-hidden="true"
@@ -72,7 +72,7 @@ const Homepage: React.FC = () => {
         return (
           <img
             src={theme === "light" ? Patterns : PatternsDark}
-            alt="A collection of elements on a page"
+            alt=""
             loading="lazy"
             slot="image"
             aria-hidden="true"
