@@ -12,3 +12,15 @@ export { default as Fig4StepperSplitLight } from "./fig-4-a-stepper-can-split-up
 export { default as Fig4StepperSplitDark } from "./fig-4-a-stepper-can-split-up-complex-forms-dark.png";
 export { default as Fig5StepperManageLight } from "./fig-5-a-stepper-can-help-you-manage-complex-validation.png";
 export { default as Fig5StepperManageDark } from "./fig-5-a-stepper-can-help-you-manage-complex-validation-dark.png";
+export { default as Fig1AILight } from "./fig-1-ai-alerts-with-a-suggested-action-and-next-steps-button.png";
+export { default as Fig1AIDark } from "./fig-1-ai-alerts-with-a-suggested-action-and-next-steps-button-dark.png";
+export { default as Fig2AILight } from "./fig-2-simple-specific-guidance-over-AI.png";
+export { default as Fig2AIDark } from "./fig-2-simple-specific-guidance-over-AI-dark.png";
+export { default as Fig4AILight } from "./fig-4-ai-icon.png";
+export { default as Fig4AIDark } from "./fig-4-ai-icon-dark.png";
+export { default as Fig5AILight } from "./fig-5-ai-alert-to-make-it-clear-the-output-is-AI-processed.png";
+export { default as Fig5AIDark } from "./fig-5-ai-alert-to-make-it-clear-the-output-is-AI-processed-dark.png";
+export { default as Fig6AILight } from "./fig-6-actionable-information-toast.png";
+export { default as Fig6AIDark } from "./fig-6-actionable-information-toast-dark.png";
+export { default as Fig7AILight } from "./fig-7-badge-positioning.png";
+export { default as Fig7AIDark } from "./fig-7-badge-positioning-dark.png";
