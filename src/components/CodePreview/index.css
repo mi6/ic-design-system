@@ -167,3 +167,9 @@
     forced-color-adjust: none;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .comp-zone.centered {
+    display: block
+  }
+}
