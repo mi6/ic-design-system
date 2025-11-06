@@ -6,13 +6,13 @@
   justify-content: space-between;
 }
 
-.wrapper {
+.component-testing-wrapper {
+  position: relative;
   border: 1px solid var(--ic-architectural-300);
   border-radius: var(--ic-border-radius);
   display: flex;
   flex-direction: column;
   margin-bottom: var(--ic-space-lg);
-  position: relative;
 }
 
 .link-zone:nth-child(2) {
@@ -159,5 +159,19 @@
 @media (forced-colors: active) {
   .snippet {
     forced-color-adjust: none;
+  }
+}
+
+/* Screen width when there is sidebar but ToC is above the page content */
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+  .component-testing-wrapper {
+    width: calc(100vw - 16rem - 3rem);
+  }
+}
+
+/* Screen width when sidebar and toc are either side of page content */
+@media screen and (min-width: 1200px) and (max-width: 1380px) {
+  .component-testing-wrapper {
+    width: calc(100vw - 32rem - 6rem);
   }
 }
