@@ -208,7 +208,7 @@ const ComponentGallery: React.FC = () => {
                     ] || passImage([PlaceHolderLight, PlaceHolderDark], theme)
                   }
                   slot="image-top"
-                  alt={title}
+                  alt=""
                   width="100%"
                   height="100%"
                 />
