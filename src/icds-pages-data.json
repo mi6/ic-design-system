@@ -6,6 +6,11 @@
       "subTitle": "Accordions are expandable and collapsible sections that are used to show and hide additional content."
     },
     {
+      "path": "/components/action-chip",
+      "title": "Action chip",
+      "subTitle": "Action chips are functional versions of Chips."
+    },
+    {
       "path": "/components/alert",
       "title": "Alert",
       "subTitle": "Alerts display a short important message in a way that attracts attention without interrupting the current task."
@@ -48,7 +53,7 @@
     {
       "path": "/components/chip",
       "title": "Chip",
-      "subTitle": "Chips are used to filter and present data."
+      "subTitle": "Chips help people view summary information, filter data or trigger actions."
     },
     {
       "path": "/components/classification-banner",
@@ -188,7 +193,7 @@
     {
       "path": "/components/table-of-contents",
       "title": "Table of contents",
-      "subTitle": "A table of contents allows navigation through a page’s contents using links to its headings."
+      "subTitle": "A table of contents allows users to quickly navigate through a page's content using links to its headings."
     },
     {
       "path": "/components/tabs",
