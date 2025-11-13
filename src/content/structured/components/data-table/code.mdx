@@ -4301,7 +4301,7 @@ return (
 
 ### Links and Elements in data
 
-Custom HTML elements can be slotted or passed via the `data` prop to display in certain cells. When using the slotted method, the slot name follows the format of `{COLUMN_TAG}-{ROW_INDEX}`.
+Custom HTML elements can be slotted into cells. The slot name follows the format of `{COLUMN_TAG}-{ROW_INDEX}`.
 
 export const snippetsElements = [
   {
@@ -4342,23 +4342,30 @@ export const snippetsElements = [
       },
       coffeeOrder: "Latte",
       quantity: 3,
-      actions: \`<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>\`,
     },
     {
       firstName: 'Sarah',
       coffeeOrder: 'Mocha',
       quantity: 2,
-      actions: \`<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>\`,
     },
     {
       firstName: 'Mark',
       coffeeOrder: 'Espresso',
       quantity: 1,
-      actions: \`<ic-button variant='destructive' onClick='this.closest("tr").remove()'>Delete</ic-button>\`,
     },
   ];
   dataTable.columns = columns;
-  dataTable.data = data;
+  dataTable.data = data;  
+  data.map((_, index) => {
+    const button = document.createElement("ic-button");
+    button.setAttribute("slot", "actions-" + index);
+    button.setAttribute("variant", "destructive");
+    button.innerHTML = "Delete";
+    dataTable.appendChild(button);
+    button.addEventListener("click", (e) => {
+      console.log("Delete");
+    });
+  })  
 </script>`,
     },
   },
@@ -4375,7 +4382,7 @@ export const snippetsElements = [
       key={index}
       slot={\`actions-\${index}\`}
       variant="destructive"
-      onClick={() => _.closest('Delete')}
+      onClick={() => console.log("Delete")}
     >
       Delete
     </IcButton>
