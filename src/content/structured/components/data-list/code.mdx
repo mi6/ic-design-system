@@ -427,10 +427,42 @@ export const smallSnippet = [
 
 <ComponentPreview snippets={smallSnippet}>
   <IcDataList heading="Personal details" size="small" style={{ width: "90%" }}>
-    <IcDataRow label="Name" value="Michael Johnson" />
-    <IcDataRow label="Date of birth" value="16 October 1995" />
-    <IcDataRow label="Telephone" value="07449 7654873" />
-    <IcDataRow label="Email" value="mjohnson@coffee.gov" />
+    <IcDataRow label="Name" value="Michael Johnson">
+      <IcStatusTag
+        status="success"
+        label="confirmed"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+    <IcDataRow label="Date of birth" value="16 October 1995">
+      <IcStatusTag
+        status="warning"
+        label="in review"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+    <IcDataRow label="Telephone" value="07449 7654873">
+      <IcStatusTag
+        status="warning"
+        label="in review"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+      <IcStatusTag
+        status="success"
+        label="confirmed"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
     <IcDataRow label="Address">
       <IcTypography variant="body" slot="value">
         383 Coffee Drive
@@ -441,6 +473,12 @@ export const smallSnippet = [
         <br />
         United Kingdom
       </IcTypography>
+      <IcStatusTag
+        label="not confirmed"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
     </IcDataRow>
   </IcDataList>
 </ComponentPreview>
