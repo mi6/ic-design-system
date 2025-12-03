@@ -39,4 +39,3 @@ jobs:
           body: "Github action updated package versions"
           branch: check-versions-v2
           base: v2.0.0/develop
-          

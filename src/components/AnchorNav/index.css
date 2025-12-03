@@ -133,7 +133,6 @@
     border-left: 0.063rem solid var(--ic-color-border-neutral-white);
     padding-bottom: 0;
   }
-
 }
 
 @media (forced-colors: active) {
