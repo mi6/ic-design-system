@@ -61,7 +61,21 @@ video.half-width {
   width: 48.5%;
 }
 
+ic-typography.ic-typography-h3 {
+  overflow-wrap: break-word;
+}
+
 @media screen and (max-width: 768px) {
+  #page-section-container,
+  #page-section-container-large-font {
+    display: inherit;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
   .page-container {
     margin-bottom: var(--ic-space-xxl);
   }
