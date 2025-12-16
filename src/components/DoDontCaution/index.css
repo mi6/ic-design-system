@@ -1,3 +1,30 @@
+:root,
+ic-theme,
+.ic-theme-light {
+  --ic-do-color: var(--ic-status-success-default);
+  --ic-dont-color: var(--ic-status-error-default);
+  --ic-caution-color: var(--ic-status-warning-default);
+  --ic-do-dont-caution-icon-color: var(--ic-color-text-primary-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ic-do-color: var(--ic-status-success-contrast);
+    --ic-dont-color: var(--ic-status-error-contrast);
+    --ic-caution-color: var(--ic-status-warning-contrast);
+    --ic-do-dont-caution-icon-color: var(--ic-color-text-primary-light);
+  }
+}
+
+.ic-theme-dark {
+  color-scheme: dark;
+  --ic-do-color: var(--ic-status-success-contrast);
+  --ic-dont-color: var(--ic-status-error-contrast);
+  --ic-caution-color: var(--ic-status-warning-contrast);
+  --ic-do-dont-caution-icon-color: var(--ic-color-text-primary-light);
+}
+
 .none {
   position: relative;
   margin-bottom: var(--ic-space-lg);
@@ -5,21 +32,21 @@
 }
 
 .caution {
-  border-top: var(--ic-space-xs) solid var(--ic-status-warning-default);
+  border-top: var(--ic-space-xs) solid var(--ic-caution-color);
   position: relative;
   margin-bottom: var(--ic-space-lg);
   display: inline-block;
 }
 
 .dont {
-  border-top: var(--ic-space-xs) solid var(--ic-status-error-default);
+  border-top: var(--ic-space-xs) solid var(--ic-dont-color);
   position: relative;
   margin-bottom: var(--ic-space-lg);
   display: inline-block;
 }
 
 .do {
-  border-top: var(--ic-space-xs) solid var(--ic-status-success-default);
+  border-top: var(--ic-space-xs) solid var(--ic-do-color);
   position: relative;
   margin-bottom: var(--ic-space-lg);
   display: inline-block;
@@ -31,8 +58,8 @@
   left: var(--ic-space-xs);
   height: var(--ic-space-xl);
   width: var(--ic-space-xl);
-  color: var(--ic-architectural-white);
-  border: var(--ic-space-xxxs) solid var(--ic-architectural-white);
+  color: var(--ic-do-dont-caution-icon-color);
+  border: var(--ic-space-xxxs) solid var(--ic-do-dont-caution-icon-color);
   border-radius: 50%;
   box-shadow: var(--ic-elevation-overlay);
   text-align: center;
@@ -45,7 +72,7 @@
 }
 
 .caution-icon {
-  background: var(--ic-status-warning-default);
+  background: var(--ic-caution-color);
 }
 
 .caution-icon > svg {
@@ -53,7 +80,7 @@
 }
 
 .dont-icon {
-  background: var(--ic-status-error-default);
+  background: var(--ic-dont-color);
 }
 
 .dont-icon > svg {
@@ -61,7 +88,7 @@
 }
 
 .do-icon {
-  background: var(--ic-status-success-default);
+  background: var(--ic-do-color);
 }
 
 .do-icon > svg {
