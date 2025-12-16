@@ -7,6 +7,7 @@ export interface TypographyConfig {
   title: string;
   fontFamily: "Nunito sans" | "Open sans" | "Source Code Pro";
   fontWeight: "ExtraBold" | "Bold" | "Regular" | "SemiBold";
+  textDecoration?: "strikethrough" | "bold" | "italic" | "underline";
 
   /** Value expected in `rem` units */
   fontSize: number;
@@ -130,6 +131,47 @@ export const TypographyText: TypographyConfig[] = [
     fontSize: 0.75,
     lineHeight: 1.5,
     letterSpacing: "0.025rem",
+  },
+  // body strikethrough
+  {
+    variant: "body",
+    title: "Body Strikethrough",
+    fontFamily: "Open sans",
+    fontWeight: "Regular",
+    textDecoration: "strikethrough",
+    fontSize: 1,
+    lineHeight: 1.5,
+    letterSpacing: "0.005rem",
+  },
+  {
+    variant: "body",
+    title: "Body Underline",
+    fontFamily: "Open sans",
+    fontWeight: "Regular",
+    textDecoration: "underline",
+    fontSize: 1,
+    lineHeight: 1.5,
+    letterSpacing: "0.005rem",
+  },
+  {
+    variant: "body",
+    title: "Body Italic",
+    fontFamily: "Open sans",
+    fontWeight: "Regular",
+    textDecoration: "italic",
+    fontSize: 1,
+    lineHeight: 1.5,
+    letterSpacing: "0.005rem",
+  },
+  {
+    variant: "body",
+    title: "Body Bold",
+    fontFamily: "Open sans",
+    fontWeight: "Regular",
+    textDecoration: "bold",
+    fontSize: 1,
+    lineHeight: 1.5,
+    letterSpacing: "0.005rem",
   },
 ];
 

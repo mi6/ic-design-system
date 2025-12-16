@@ -6,7 +6,8 @@ import { TypographyConfig, TypographyVariant } from "./typography.config";
 const ExampleElement: React.FC<{
   variant: TypographyVariant;
   title: string;
-}> = ({ variant, title }) => {
+  textDecoration?: string;
+}> = ({ variant, title, textDecoration }) => {
   if (variant === "link")
     return (
       <ic-typography variant="body" data-class="additional-padding">
@@ -22,7 +23,35 @@ const ExampleElement: React.FC<{
         {title}
       </ic-button>
     );
-  return <ic-typography variant={variant}>{title}</ic-typography>;
+
+  switch (textDecoration) {
+    case "underline":
+      return (
+        <ic-typography variant={variant} underline>
+          {title}
+        </ic-typography>
+      );
+    case "strikethrough":
+      return (
+        <ic-typography variant={variant} strikethrough>
+          {title}
+        </ic-typography>
+      );
+    case "bold":
+      return (
+        <ic-typography variant={variant} bold>
+          {title}
+        </ic-typography>
+      );
+    case "italic":
+      return (
+        <ic-typography variant={variant} italic>
+          {title}
+        </ic-typography>
+      );
+    default:
+      return <ic-typography variant={variant}>{title}</ic-typography>;
+  }
 };
 
 const TypographicScale: React.FC<{
@@ -38,9 +67,14 @@ const TypographicScale: React.FC<{
         fontWeight,
         letterSpacing,
         lineHeight,
+        textDecoration,
       }) => (
         <>
-          <ExampleElement variant={variant} title={title} />
+          <ExampleElement
+            variant={variant}
+            title={title}
+            textDecoration={textDecoration}
+          />
           <ic-typography variant="caption" data-class="internal-caption">
             {`${fontFamily} • ${fontWeight} • ${fontSize}rem • Line-height: ${lineHeight}rem • Letter-spacing: ${letterSpacing}`}
           </ic-typography>
