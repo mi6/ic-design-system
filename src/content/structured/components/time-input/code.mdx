@@ -1049,7 +1049,7 @@ return (
 
 ### Disabled times
 
-To disable specific times in the time input, set the `disableTimes` prop. The `disableTimes` prop accepts an array of time objects or strings. Each time object can have a `start` and `end` property to define a range of disabled times, or it can be a single time string to disable that specific time. The time can be in any format supported as `timeFormat`, in ISO 8601 time string format (HH:MM:SS) or as a JavaScript Date object.
+To disable specific times in the time input, set the `disableTimes` prop. The `disableTimes` prop accepts an array of time objects. Each time object can have a `start` and `end` property to define a range of disabled times. The time can be in any format supported as `timeFormat`, in ISO 8601 time string format (HH:MM:SS) or as a JavaScript Date object.
 
 export const snippetsDisabledTimes = [
   {
@@ -1058,6 +1058,7 @@ export const snippetsDisabledTimes = [
       short: `<ic-time-input 
   id="time-input-default-disable-time" 
   label="What time would you like to collect your coffee?"
+  helper-text="We're closed between 8am and 10am."
 ></ic-time-input>`,
       long: `.parent-container {
     padding: var(--ic-space-md);
@@ -1071,7 +1072,7 @@ export const snippetsDisabledTimes = [
     const timeInputDate = document.querySelector(
       "#time-input-default-disable-time"
     );
-    timeInputDate.disableTimes = [{ start: "08:00", end: "10:00" }, "13:20"];
+    timeInputDate.disableTimes = [{ start: "08:00", end: "10:00" }];
   </script>`,
     },
   },
@@ -1081,12 +1082,12 @@ export const snippetsDisabledTimes = [
       short: `<IcTimeInput
     id="time-input-default-disable-time"
     label="What time would you like to collect your coffee?"
+    helperText="We're closed between 8am and 10am."
     disableTimes={[
       {
         start: "08:00",
         end: "10:00",
       },
-      "13:20",
     ]}
   />`,
       long: [
@@ -1127,12 +1128,12 @@ return (
   <IcTimeInput
     id="time-input-default-disable-time"
     label="What time would you like to collect your coffee?"
+    helperText="We're closed between 8am and 10am."
     disableTimes={[
       {
         start: "08:00",
         end: "10:00",
       },
-      "13:20",
     ]}
   />
 </ComponentPreview>
@@ -1196,6 +1197,67 @@ return (
   <IcTimeInput label="12-hour time" timePeriod="12" />
 </ComponentPreview>
 
+### Time period (with toggle)
+
+With 12 hour time you can also optionally show an AM/PM toggle.
+
+export const snippetsTimePeriodToggle = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" time-period="12" show-am-pm-toggle="true"></ic-time-input>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" timePeriod="12" showAmPmToggle/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTimePeriodToggle}>
+  <IcTimeInput label="12-hour time" timePeriod="12" showAmPmToggle />
+</ComponentPreview>
+
 ### Time format (HH:MM)
 
 export const snippetsTimeFormat = [
@@ -1255,6 +1317,68 @@ return (
   <IcTimeInput
     label="What time would you like to collect your coffee?"
     timeFormat="HH:MM"
+  />
+</ComponentPreview>
+
+### Time format (HH:MM:SS.SSS)
+
+export const snippetsTimeFormatMilliseconds = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-time-input label="What time would you like to collect your coffee?" time-format="HH:MM:SS.SSS" ></ic-time-input>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTimeInput label="What time would you like to collect your coffee?" timeFormat="HH:MM:SS.SSS" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTimeFormatMilliseconds}>
+  <IcTimeInput
+    label="What time would you like to collect your coffee?"
+    timeFormat="HH:MM:SS.SSS"
   />
 </ComponentPreview>
 
