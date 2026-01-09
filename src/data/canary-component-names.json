@@ -1,5 +1,6 @@
 {
   "canaryReactComponentNames": [
+    "IcCalendar",
     "IcCardHorizontal",
     "IcDataTable",
     "IcDataTableTitleBar",
@@ -8,10 +9,12 @@
     "IcPaginationBar",
     "IcTableOfContents",
     "IcTimeInput",
+    "IcTimeSelector",
     "IcTreeItem",
     "IcTreeView"
   ],
   "canaryWebComponentsNames": [
+    "ic-calendar",
     "ic-card-horizontal",
     "ic-data-table",
     "ic-data-table-title-bar",
@@ -20,11 +23,11 @@
     "ic-pagination-bar",
     "ic-table-of-contents",
     "ic-time-input",
+    "ic-time-selector",
     "ic-tree-item",
     "ic-tree-view"
   ],
   "canaryTypes": [
-    "IcCardSizes",
     "IcDataTableSortOrderOptions",
     "IcDataTableDensityOptions",
     "IcDataTableColumnDataTypes",
@@ -37,6 +40,7 @@
     "truncWrapperDetailsTypes",
     "IcDataTableRowOptions",
     "IcDataTableDataType",
+    "IcTimePeriods",
     "IcTreeItemOptions"
   ],
   "reactComponentNames": [
