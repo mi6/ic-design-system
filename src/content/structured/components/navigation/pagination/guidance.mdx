@@ -1,0 +1,150 @@
+---
+path: "/components/navigation/pagination"
+
+navPriority: 6
+
+date: "2025-07-21"
+
+title: "Pagination"
+
+status: "BETA"
+
+subTitle: "Use pagination to split large amounts of content into pages and navigate between them."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/pagination"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/pagination" },
+    { title: "Code", path: "/components/navigation/pagination/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/pagination/accessibility",
+    },
+  ]
+---
+
+import { IcPagination } from "@ukic/react";
+import {
+  Fig1PaginationDark,
+  Fig1PaginationLight,
+  Fig2PaginationDark,
+  Fig2PaginationLight,
+  Fig3PaginationDark,
+  Fig3PaginationLight,
+  Fig4PaginationDark,
+  Fig4PaginationLight,
+  Fig5PaginationDark,
+  Fig5PaginationLight,
+  Fig6PaginationDark,
+  Fig6PaginationLight,
+} from "./images";
+
+## Introduction
+
+Pagination enables large amounts of content to be split across multiple pages so that it is more manageable and doesn’t require overly long page lengths.
+
+<ComponentPreview>
+  <div style={{ margin: "auto", width: "fit-content" }}>
+    <IcPagination pages={15} type="complex" />
+  </div>
+</ComponentPreview>
+
+## Component variants
+
+There are two types of pagination that can be used to control pages of content:
+
+- Complex pagination: Contains buttons for navigating to next, previous, first and last pages as well as individual page buttons for adjacent and boundary pages.
+- Simple pagination: Contains only buttons for navigating to next, previous, first and last pages. Displays the current page as a label.
+
+If you need further pagination controls, consider using a pagination bar.
+
+## When to use
+
+Use pagination when you have a large, known amount of content that can be split across pages. Order the content so the most relevant appears on the first page. Pagination works best for lists of content such as search results and data items.
+
+Try to create an understandable order to the content split across pages. This way it is easier to understand what content might appear on a later page.
+
+For example, if content is ordered alphabetically, then it becomes obvious that entries beginning with a ‘Z’ would appear on the last few pages.
+
+<DoDontCaution
+  imageSrc={[Fig1PaginationLight, Fig1PaginationDark]}
+  imageAlt="An example application showing a list of hot drink products split across pages. A pagination component provides access to navigate through the list of products."
+  state="good"
+  caption="Use pagination to split content across multiple pages."
+/>
+
+Use pagination for content when there are other elements on the page that can be scrolled to. This means all elements on the page can easily be navigated to without scrolling through a large amount of content.
+
+Pagination provides full control over the content; it allows navigation to any page of content quickly and gives an indication of the total amount of content available.
+
+Use complex pagination to allow people to easily navigate between pages without having to move sequentially through content. This allows people to quickly skip around between pages to search for specific content.
+
+Use simple pagination to navigate sequentially between pages using the ‘next’ and ‘previous’ buttons.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig2PaginationLight, Fig2PaginationDark]}
+    imageAlt="An image showing two pagination components. Complex pagination provides numbered buttons for each page. Simple pagination simply provides next, previous, first and last buttons."
+    state="none"
+    caption="Use complex or simple pagination variants for different implementations."
+  />
+</DoubleDoDontCaution>
+
+## When not to use
+
+Avoid using pagination to split up linear content such as articles or blogs. Scrolling down the page makes it easier to consume this content.
+
+Avoid using pagination when the size of the content is unknown or if it frequently changes. This causes the number of pages to change frequently and means it is hard to create a ‘last page’ option.
+
+Use an infinite scrolling pattern when navigating content should be explorative, or when there is a near infinite amount of content. For example, newsfeeds and comments threads can be near endless and infinite scrolling allows exploration by simply continuing to scroll.
+
+Avoid using simple pagination when it is important to be able to move between specific pages; complex pagination is better for this as it shows more adjacent pages, allowing one click navigation.
+
+## Interaction behaviour
+
+Pagination components fire an event when a new page is selected. Use this to trigger the switch of pages in the app.
+
+## Colour
+
+Use the default, dark and light theme pagination with `monochrome={true}` when placing them on different coloured backgrounds to ensure the correct contrast ratios are met.
+
+<DoDontCaution
+  imageSrc={[Fig3PaginationLight, Fig3PaginationDark]}
+  imageAlt="Three pagination examples on different coloured backgrounds. The default theme pagination is used on a white background. The monochrome dark theme pagination is used on a light yellow background. The monochrome light theme pagination is used on a dark grey background."
+  state="good"
+  caption="Use colour contrast variants when placing pagination components on different coloured backgrounds."
+/>
+
+## Layout and placement
+
+Place the pagination component so that it is obvious what it controls. Match the width of a pagination bar to the width of the page.
+
+Try to place pagination at the bottom of the page it controls, as this encourages the user to read through the page before moving to the next. However, placing pagination at the top of the page is still a valid option.
+
+<DoDontCaution
+  imageSrc={[Fig4PaginationLight, Fig4PaginationDark]}
+  imageAlt="An example product grid showing hot beverages. A pagination control appears below the drinks grid that it controls."
+  state="good"
+  caption="Try to place pagination at the bottom of the container it controls."
+/>
+
+For large page containers that require scrolling, use two pagination components at the top and bottom of the page container to provide easy access to navigation when at either the top or bottom of the page.
+
+<DoDontCaution
+  imageSrc={[Fig5PaginationLight, Fig5PaginationDark]}
+  imageAlt="An example product grid showing hot beverages. A complex pagination control appears below the drinks grid that it controls. A simple pagination control is displayed in the top-right above the product grid."
+  state="good"
+  caption="Place pagination controls at the top and bottom of the page container to provide additional navigation functionality."
+/>
+
+## Content
+
+When using complex pagination, specify the number of adjacent pages to display next to the current page. Also specify the number of boundary pages to display at the start and end of the page range.
+
+<DoDontCaution
+  imageSrc={[Fig6PaginationLight, Fig6PaginationDark]}
+  imageAlt="Three complex pagination components with different settings for adjacent and boundary items. Increasing boundary items shows more page buttons at the start and end of the range. Increasing the adjacent items shows more page buttons next to the current page."
+  state="none"
+  caption="Set the adjacent and boundary items to change which page buttons are displayed."
+/>

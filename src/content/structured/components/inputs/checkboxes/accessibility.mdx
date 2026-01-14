@@ -1,0 +1,88 @@
+---
+path: "/components/inputs/checkbox/accessibility"
+
+date: "2024-04-15"
+
+title: "Checkbox"
+
+status: "BETA"
+
+subTitle: "Use checkboxes as part of a form, in dialogs and in control areas such as filters or settings."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/checkbox"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/checkbox" },
+    { title: "Code", path: "/components/inputs/checkbox/code" },
+    {
+      title: "Accessibility",
+      path: "/components/inputs/checkbox/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+When interacting with checkboxes on a keyboard, the **tab** key moves the focus to each checkbox within a checklist. The checkbox is then checked using the **space** key when the field is focused.
+
+When child fields are displayed beneath checkboxes, the field acts as the child of the checkbox. The field should be included within the focus order so that it's focused directly after the checkbox it belongs to.
+
+When a child field is dynamically displayed after checking a checkbox, then it should be announced as required due to the user’s selection.
+
+## For Assistive Technology
+
+The label of a checkbox group is announced by a screen reader before the checkbox options are announced.
+
+Screen readers will read out the label of the checkbox as well as whether it's checked or not. Checking the checkbox will result in it being read out again.
+
+## Based on
+
+The checkbox component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.a11ymatters.com/pattern/checkbox/"
+      rel="noreferrer noopener nofollow"
+    >
+      Accessible Checkbox
+    </ic-link>
+    , A11y Matters, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox"
+      rel="noreferrer noopener nofollow"
+    >
+      Input type = checkbox
+    </ic-link>
+    , MDN web docs, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/checkbox_role"
+      rel="noreferrer noopener nofollow"
+    >
+      ARIA Checkbox role
+    </ic-link>
+    , MDN Web docs, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.scottohara.me/blog/2018/11/02/tabbing-into-tabs.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Trouble tabbing to tabs and cheeky checking checkboxes
+    </ic-link>
+    , Scott O’hara, accessed March 2022.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

@@ -10,8 +10,8 @@ try {
     .use(filter("**/guidance.mdx"))
     .use((files) => {
       const data = Object.keys(files).map((key) => {
-        const { path, title, subTitle } = files[key];
-        return { path, title, subTitle };
+        const { path, status, title, subTitle } = files[key];
+        return { path, status, title, subTitle };
       });
       writeJsonSync("src/icds-pages-data.json", { data }, { spaces: 2 });
     })

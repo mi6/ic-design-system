@@ -135,7 +135,22 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
   const renderTreeItems = (item: TreeItem) => {
     let hasChildren = item.children && item.children.length > 0;
 
-    if (item.data.fields.navSection === "components" && hasChildren) {
+    const getNavDepth = (treeItem: TreeItem, depth = 0): number => {
+      if (
+        !treeItem.data.fields.navParent ||
+        treeItem.data.fields.navParent === "NONE"
+      )
+        return depth;
+      const { slug } = treeItem.data.fields;
+      const match = slug.match(/^\/components\/(.+)/);
+      if (match) {
+        return match[1].split("/").length;
+      }
+      return depth;
+    };
+
+    const navDepth = getNavDepth(item);
+    if (navDepth >= 2 && hasChildren) {
       hasChildren = false;
     }
 

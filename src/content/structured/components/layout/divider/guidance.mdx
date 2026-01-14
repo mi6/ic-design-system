@@ -1,0 +1,181 @@
+---
+path: "/components/layout/divider"
+
+navPriority: 4
+
+date: "2024-12-02"
+
+title: "Divider"
+
+status: "BETA"
+
+subTitle: "Dividers are used to separate different elements in groups of content. Visually, they look like rules or lines."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/divider" },
+    { title: "Code", path: "/components/layout/divider/code" },
+    {
+      title: "Accessibility",
+      path: "/components/layout/divider/accessibility",
+    },
+  ]
+
+tags: ["Separator", "Horizontal rule", "Vertical rule", "Thematic break"]
+---
+
+import { IcDivider } from "@ukic/react";
+import {
+  Fig1DividerDark,
+  Fig1DividerLight,
+  Fig2DividerDark,
+  Fig2DividerLight,
+  Fig3DividerDark,
+  Fig3DividerLight,
+  Fig4DividerDark,
+  Fig4DividerLight,
+  Fig5DividerDark,
+  Fig5DividerLight,
+  Fig6DividerDark,
+  Fig6DividerLight,
+  Fig7DividerDark,
+  Fig7DividerLight,
+  Fig8DividerDark,
+  Fig8DividerLight,
+  Fig9DividerDark,
+  Fig9DividerLight,
+} from "./images";
+
+## Introduction
+
+Dividers are used to separate different elements in groups of content. They make it easier for people to understand and navigate the interface.
+
+<ComponentPreview>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "var(--ic-space-md)",
+      width: "100%",
+    }}
+  >
+    <IcDivider />
+    <IcDivider borderStyle="dashed" />
+    <IcDivider label="Coffee options" labelPlacement="center" />
+  </div>
+</ComponentPreview>
+
+Colour, white space, images, lines, and shadows are all great examples of visual dividers. An example of a functional divider is 'full-width' which uses the entire length of a layout, whilst 'inset' dividers align with the leading edge of the screen.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig1DividerLight, Fig1DividerDark]}
+    imageAlt="Full-width dividers being used to group a person's messages."
+    state="good"
+    caption="Add full-width dividers to help group content."
+  />
+  <DoDontCaution
+    imageSrc={[Fig2DividerLight, Fig2DividerDark]}
+    imageAlt="An inset divider used to clearly separate the description of a mug and the list of the colours in which it is available."
+    state="good"
+    caption="Add inset dividers to help group content."
+  />
+</DoubleDoDontCaution>
+
+## Component variants
+
+There are five types of variants which display dividers in diverse ways.
+
+### Border style
+
+Use a default divider for a simple way to group content. For a decorative approach, use the dashed divider.
+
+<DoDontCaution
+  imageSrc={[Fig3DividerLight, Fig3DividerDark]}
+  imageAlt="Light, dashed divider with 4px weight used to define sections of a web page."
+  state="good"
+  caption="Use a dashed divider to make the page feel more textured."
+/>
+
+### Weight
+
+The divider component has four weights to choose from. These are thin, medium, thick and very thick.
+
+Alter the weight of the divider to create a clear and logical structure of the page; for example, using a thicker divider to clearly separate unrelated content, whilst using thinner dividers to group together less important content.
+
+<DoDontCaution
+  imageSrc={[Fig4DividerLight, Fig4DividerDark]}
+  imageAlt="Divider in 'light' theme colour and 8px weight used to separate two sections of a page, whilst various monochrome dividers with 1px weight separate less important content."
+  state="good"
+  caption="Use different weights of dividers to show the structure of a page."
+/>
+
+### Label and orientation
+
+Pair dividers with labels to help define content groupings. Place the label within the divider to reinforce the label's connection to the content below the divider.
+
+For the horizontal divider, the alignment of the label can be left-aligned, centred, or right-aligned. For the vertical divider, the label can also be centred, or placed at the top or bottom of the divider.
+
+Make sure the text in the label is brief so that it clearly aids navigation and page structure. If not, the divider component becomes overwhelming. When the text reaches a certain amount, it will go onto multiple lines which disregards the divider's purpose. The information placed here should be non-essential with textual content placed inside the page content itself.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5DividerLight, Fig5DividerDark]}
+    imageAlt="Divider with left-aligned 'Advanced' label being used to separate sections in Settings."
+    state="good"
+    caption="Divider being placed to the right of the label to reinforce the label's connection to the content."
+  />
+  <DoDontCaution
+    imageSrc={[Fig6DividerLight, Fig6DividerDark]}
+    imageAlt="Divider with left-aligned label that has a word count which is not recommended. Multiple lines are required to show the lengthy label."
+    state="bad"
+    caption="Divider with label text that is too long."
+  />
+</DoubleDoDontCaution>
+
+Use horizontal or vertical dividers to create any necessary sections between content. Pair the vertical divider with text to create a title when you want to draw attention to a paragraph.
+
+<DoDontCaution
+  imageSrc={[Fig7DividerLight, Fig7DividerDark]}
+  imageAlt="Vertical dividers used to create sections of related content."
+  state="good"
+  caption="Use the vertical divider to create sections of related content."
+/>
+
+## When to use
+
+Use dividers when you want to group a similar type of content together and create a visual hierarchy between the content.
+
+For example, apply dividers between sections of content to make groups and create the appearance of containers. Try to avoid mixing the different divider variants to ensure a smooth design.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig8DividerLight, Fig8DividerDark]}
+    imageAlt="An inset divider used to break up alphabetical sections."
+    state="good"
+    caption="Use dividers when you want to group a similar type of content together."
+  />
+</DoubleDoDontCaution>
+
+## When not to use
+
+Do not use dividers to separate individual items when it is not necessary. Use dividers to group items instead.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig9DividerLight, Fig9DividerDark]}
+    imageAlt="Inset dividers being used to separate individual contacts rather than separating by alphabetical sections."
+    state="bad"
+    caption="Do not use dividers to separate individual items when it is not necessary."
+  />
+</DoubleDoDontCaution>
+
+It is important not to over-use dividers. This is because you can often achieve the same effect with a change in background colour or sensible margins.
+
+## Hierarchy
+
+Default dividers may be used to separate main sections of content, whereas monochrome, small-sized or even dashed dividers may be better suited to separating lists of elements.
+
+## Accessibility considerations
+
+As dividers are commonly a decorative element, they do not need to obey the same colour contrast rules as text or other interface components. Consider setting the divider's appearance so that it blends nicely with the rest of your application.

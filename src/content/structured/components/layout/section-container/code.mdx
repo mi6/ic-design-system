@@ -1,0 +1,435 @@
+---
+path: "/components/layout/section-container/code"
+
+date: "2024-05-31"
+
+title: "Section container"
+
+status: "BETA"
+
+subTitle: "Use the section container component to consistently align content within an app."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/layout/section-container"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/section-container" },
+    { title: "Code", path: "/components/layout/section-container/code" },
+    {
+      title: "Accessibility",
+      path: "/components/layout/section-container/accessibility",
+    },
+  ]
+---
+
+import { IcChip, IcSectionContainer } from "@ukic/react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-section-container>
+  <div class="content-container">
+    <ic-chip label="Americano"></ic-chip>
+    <ic-chip label="Cappuccino"></ic-chip>
+    <ic-chip label="Latte"></ic-chip>
+  </div>
+</ic-section-container>`,
+      long: `ic-section-container {
+    border: 0.0625rem solid var(--ic-color-text-primary);
+    margin: var(--ic-space-xxs);
+  }
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--ic-space-xs);
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSectionContainer className={classes.sectionContainer}>
+  <div className={classes.contentContainer}>
+    <IcChip label="Americano"/>
+    <IcChip label="Cappuccino"/>
+    <IcChip label="Latte"/>
+  </div>
+</IcSectionContainer>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDefault} style={{ display: "contents" }}>
+  <IcSectionContainer
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
+  >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "0.5rem",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
+    </div>
+  </IcSectionContainer>
+</ComponentPreview>
+
+## Section container details
+
+<ComponentDetails component="ic-section-container" />
+
+## Variants
+
+### Center align
+
+export const snippetsCenter = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-section-container aligned="center">
+  <div class="content-container">
+    <ic-chip label="Americano"></ic-chip>
+    <ic-chip label="Cappuccino"></ic-chip>
+    <ic-chip label="Latte"></ic-chip>
+  </div>
+</ic-section-container>`,
+      long: `ic-section-container {
+    border: 0.0625rem solid var(--ic-color-text-primary);
+    margin: var(--ic-space-xxs);
+    width: 60%;
+  }
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--ic-space-xs);
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSectionContainer 
+  aligned="center"
+  className={classes.sectionContainer}
+>
+  <div className={classes.contentContainer}>
+    <IcChip label="Americano"/>
+    <IcChip label="Cappuccino"/>
+    <IcChip label="Latte"/>
+  </div>
+</IcSectionContainer>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsCenter}>
+  <IcSectionContainer
+    aligned="center"
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
+  >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "0.5rem",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
+    </div>
+  </IcSectionContainer>
+</ComponentPreview>
+
+### Full-width align
+
+export const snippetsFullWidth = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-section-container aligned="full-width">
+  <div class="content-container">
+    <ic-chip label="Americano"></ic-chip>
+    <ic-chip label="Cappuccino"></ic-chip>
+    <ic-chip label="Latte"></ic-chip>
+  </div>
+</ic-section-container>`,
+      long: `ic-section-container {
+    border: 0.0625rem solid var(--ic-color-text-primary);
+    margin: var(--ic-space-xxs);
+    width: 60%;
+  }
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--ic-space-xs);
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSectionContainer 
+  aligned="full-width"
+  className={classes.sectionContainer}
+>
+  <div className={classes.contentContainer}>
+      <IcChip label="Americano"/>
+      <IcChip label="Cappuccino"/>
+      <IcChip label="Latte"/>
+  </div>
+</IcSectionContainer>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsFullWidth} style={{ display: "block" }}>
+  <IcSectionContainer
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
+    aligned="full-width"
+  >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "0.5rem",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
+    </div>
+  </IcSectionContainer>
+</ComponentPreview>
+
+### Full height
+
+export const snippetsFullHeight = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-section-container aligned="center" full-height="true">
+  <div class="content-container">
+    <ic-chip label="Americano"></ic-chip>
+    <ic-chip label="Cappuccino"></ic-chip>
+    <ic-chip label="Latte"></ic-chip>
+  </div>
+</ic-section-container>`,
+      long: `ic-section-container {
+    border: 0.0625rem solid var(--ic-color-text-primary);
+    margin: var(--ic-space-xxs);
+    width: 60%;
+  }
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--ic-space-xs);
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSectionContainer 
+  aligned="center"
+  fullHeight
+>
+  <div className={classes.contentContainer}>
+    <IcChip label="Americano"/>
+    <IcChip label="Cappuccino"/>
+    <IcChip label="Latte"/>
+  </div>
+</IcSectionContainer>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  sectionContainer: {
+    border: "0.0625rem solid var(--ic-color-text-primary)",
+    margin: "var(--ic-space-xxs)",
+  },
+  contentContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsFullHeight}>
+  <IcSectionContainer
+    aligned="center"
+    fullHeight
+    style={{ border: "0.0625rem solid var(--ic-color-text-primary)" }}
+  >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "0.5rem",
+      }}
+    >
+      <IcChip label="Americano" />
+      <IcChip label="Cappuccino" />
+      <IcChip label="Latte" />
+    </div>
+  </IcSectionContainer>
+</ComponentPreview>

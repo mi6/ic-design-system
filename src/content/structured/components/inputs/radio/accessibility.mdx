@@ -1,0 +1,95 @@
+---
+path: "/components/inputs/radio/accessibility"
+
+date: "2024-04-15"
+
+title: "Radio button"
+
+status: "BETA"
+
+subTitle: "Radio buttons let people select a single option from a list."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/radio"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/radio" },
+    { title: "Code", path: "/components/inputs/radio/code" },
+    { title: "Accessibility", path: "/components/inputs/radio/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+When interacting with a radio button on a keyboard, the **tab** key moves the focus to the radio group. Once focus is on the radio group, the **arrow** keys move between the radio options. When tabbing to a radio group with an option already selected, the focus is applied to the selected option. Moving through the other radio options using the arrow keys automatically selects the focused option.
+
+When tabbing to a radio group with no option selected, the focus is applied to the first option in the group without selecting the option. The unselected radio button can be selected using the **space** key when the radio button is focused.
+
+When conditional fields are displayed beneath radio buttons, the conditional field acts as the child of the radio button. When the field is dynamically displayed after selecting a radio button, then it should be announced by the screen reader as required based on the user’s current selection. Tabbing on from the radio group should move focus to the dynamically displayed field, and then onwards through the rest of the tab index.
+
+## For Assistive Technology
+
+A container of radio buttons uses the aria role `radiogroup`, with each individual radio identified as `radio`, and uses the `aria-checked` property to denote selection.
+
+Radio buttons always use a label to ensure that their visible text label is announced alongside the radio button.
+
+## Based on
+
+The radio component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/radio/radio.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Aria radio practices examples
+    </ic-link>
+    , W3, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.a11y-101.com/development/radio-buttons"
+      rel="noreferrer noopener nofollow"
+    >
+      Radio buttons
+    </ic-link>
+    , a11y-101, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/radio_role#keyboard_interactions"
+      rel="noreferrer noopener nofollow"
+    >
+      Aria radio role
+    </ic-link>
+    , MDN web docs, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://design-system.service.gov.uk/components/radios/"
+      rel="noreferrer noopener nofollow"
+    >
+      Radio button component
+    </ic-link>
+    , Government Design System, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.nngroup.com/articles/radio-buttons-default-selection/"
+      rel="noreferrer noopener nofollow"
+    >
+      Radio buttons: Select one by default or leave all unselected
+    </ic-link>
+    , Nielsen Norman Group, accessed June 2014.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

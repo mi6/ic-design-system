@@ -1,0 +1,160 @@
+---
+path: "/components/inputs/search-bar"
+
+navPriority: 6
+
+date: "2023-02-03"
+
+title: "Search bar"
+
+status: "BETA"
+
+subTitle: "A search bar is a special input field that allows users to search for information using keywords or phrases."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/search-bar"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/search-bar" },
+    { title: "Code", path: "/components/inputs/search-bar/code" },
+    {
+      title: "Accessibility",
+      path: "/components/inputs/search-bar/accessibility",
+    },
+  ]
+
+tags: ["Search input"]
+---
+
+import { IcSearchBar } from "@ukic/react";
+import {
+  Fig1SearchDark,
+  Fig1SearchLight,
+  Fig3SearchDark,
+  Fig3SearchLight,
+  Fig4SearchDark,
+  Fig4SearchLight,
+  Fig5SearchLight,
+  Fig6SearchDark,
+  Fig6SearchLight,
+} from "./images";
+
+## Introduction
+
+An example of the search bar component.
+
+<ComponentPreview>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+    onIcChange={(ev) => console.log("onIcChange", ev.detail.value)}
+    onIcSubmitSearch={(ev) => console.log("onIcSubmitSearch", ev.detail.value)}
+    placeholder="Start typing to search…"
+  />
+</ComponentPreview>
+
+## When to use
+
+### Search bar with results
+
+Use the search bar with search results for automatically displaying search results relating to the input query in the input field. Use this for searching through a known data set, such as a site search displaying individual pages as the search results (like the search on this website).
+
+Search for an ‘espresso’ below in the search bar example.
+
+<ComponentPreview>
+  <IcSearchBar
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+</ComponentPreview>
+
+By default, the search bar uses `searchMode="navigation"`, which is optimised for selecting from a predefined list of options. In this mode, if there are no matching options, a "No results found" message is shown and the submit button is disabled.
+
+### Search bar with suggested options
+
+Use the search bar with suggested options to provide search term suggestions in the drop-list. Use this type of search when you don't want to show actual search results, but instead possible or common search terms that will form the search query when submitted.
+
+Users may select a suggested option or they may continue with searching on the term they have entered.
+
+When displaying suggested options, order them in the most helpful way and use the same formatting for each option presented.
+
+### Search bar only
+
+Use a search bar without a drop-list when you want to handle the search operation yourself. Use this to capture a search term and then direct a user to a custom search results page for the input query.
+
+<ComponentPreview>
+  <IcSearchBar label="What is your favourite coffee?" />
+</ComponentPreview>
+
+Set `searchMode="query"` to allow users to submit any search term, even if it does not match a predefined option. This is useful for free-form searching, such as when querying a database or API, as the search bar will always allow submission regardless of the available options.
+
+## When not to use
+
+Don't use a search bar with search results if you are likely to need additional filters and advanced search settings. It's better to use a search bar with a custom search results page in this case.
+
+Take care when using a search bar with search results when you have large, complex data sets that take time to load. This can cause excessive loading times and it's best to use a custom search results page to handle and display large numbers of results.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig1SearchLight, Fig1SearchDark]}
+    imageAlt="A search bar with a large number of results causing long scroll length."
+    state="bad"
+    caption="Avoid showing long lists of results in a search bar's search results."
+  />
+</DoubleDoDontCaution>
+
+Don't use a search bar on its own, or a search bar with suggested options, if you don't have a method of displaying the results. Always include a search results page if you aren't using the search bar with search results.
+
+## Sizing
+
+Use the medium and small size options for search bars to match their size to other components in your app.
+
+## Content
+
+Use clear and specific placeholder text that informs the user on the context and scope of the search.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3SearchLight, Fig3SearchDark]}
+    imageAlt="An example of helpful search placeholder text outlining 'search coffee drinks'."
+    state="good"
+    caption="Use helpful placeholder text within a search bar to describe what the user is searching for."
+  />
+  <DoDontCaution
+    imageSrc={[Fig4SearchLight, Fig4SearchDark]}
+    imageAlt="An example of unhelpful search placeholder text outlining 'coffee'."
+    state="bad"
+    caption="Don't use generic placeholder text."
+  />
+</DoubleDoDontCaution>
+
+For searches that take time to load results or suggestions, display the loading state whilst the search is loading. Use the empty state for searches that have no results or suggested options.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5SearchLight, Fig6SearchDark]}
+    imageAlt="A search bar with an entered search term that displays a loading indicator whilst the search is occurring."
+    state="good"
+    caption="Use the loading state whilst results load."
+  />
+  <DoDontCaution
+    imageSrc={[Fig6SearchLight, Fig6SearchDark]}
+    imageAlt="A search bar with an entered search term that has no search results."
+    state="good"
+    caption="Tell the user when their search term yields no results."
+  />
+</DoubleDoDontCaution>

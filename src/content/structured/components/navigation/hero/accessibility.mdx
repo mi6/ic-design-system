@@ -1,0 +1,56 @@
+---
+path: "/components/navigation/hero/accessibility"
+
+date: "2024-04-15"
+
+title: "Hero"
+
+status: "BETA"
+
+subTitle: "A large banner found at the top of page used to introduce page content, provide key actions and add personality."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/hero"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/hero" },
+    { title: "Code", path: "/components/navigation/hero/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/hero/accessibility",
+    },
+  ]
+---
+
+import { Fig17HeroLight, Fig17HeroDark } from "./images";
+
+## Easy to use for everyone
+
+Hero images use text elements that use semantic headings to provide proper order to the page content.
+
+As hero banners can have different colour backgrounds, we've made sure that the foreground colours adjust automatically to ensure that the correct colour contrast standards are met.
+
+Where images are used, alt-text should always be provided to give a description of the image content.
+
+When using images as the background of the hero, safe areas describe where to leave space in an image so that the foreground content is not interfered with.
+
+## For Assistive Technology
+
+The hero banner uses slots to allow different components to be added. Where these components are interactive, then their normal focus behaviour is used.
+
+The hero's content is ordered for focus in the following way:
+
+- Title section including any subtitles
+- Interaction area
+- Right-hand section
+
+<DoDontCaution
+  imageSrc={[Fig17HeroLight, Fig17HeroDark]}
+  imageAlt="A diagram of the hero banners main sections. The title section is labelled as first, the interaction section as second and the right-hand section as third."
+  state="none"
+  caption="The hero's content is ordered with the title section first, then the interaction section, then the right-hand section."
+/>
+
+## Testing
+
+We've tested this component against WCAG 2.2 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

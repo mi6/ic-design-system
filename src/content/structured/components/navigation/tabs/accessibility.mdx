@@ -1,0 +1,88 @@
+---
+path: "/components/navigation/tabs/accessibility"
+
+date: "2024-04-15"
+
+title: "Tabs"
+
+status: "BETA"
+
+subTitle: "Tabs let users navigate between content within the same context. Tabs organise complex layouts by moving content into multiple sections."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/tabs"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/tabs" },
+    { title: "Code", path: "/components/navigation/tabs/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/tabs/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+We’ve made sure that tabs are easy to use for people who use a keyboard to navigate. The tab bar acts as a single focusable element, whilst its tabs can be individually focused using the **arrow** keys. This avoids the user having to move focus through every tab in order to reach the content.
+
+Instead, they move focus into the tab bar, focus on the tab they wish to view using the **arrow** keys, select it using the **space** or **enter** key, and can then directly move focus to the content within the selected tab. Using **shift+tab** moves focus back to the tab bar and highlights the currently selected tab.
+
+Using the **home** key moves focus to the first tab in the tab bar, and the **end** key moves focus to the last tab.
+
+When a compact version of a tab bar is displayed, the tabs can be accessed using the same keyboard functionality described above. When focus is moved to different tabs, the compact tab bar automatically scrolls to show the currently focused tab in the visible area.
+
+## For Assistive Technology
+
+Using the arrow keys in screen readers allows people to move between all elements of the page. When a selected tab is focused on, the down arrow key would tell the screen reader to move to the first element within the tab's content. Each tab container is labelled by the tab it relates to so that the relationship between them is clear when using a screen reader.
+
+## Based on
+
+This tabs component is based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://inclusive-components.design/tabbed-interfaces/"
+      rel="noreferrer noopener nofollow"
+    >
+      Tabbed Interfaces, Inclusive Components
+    </ic-link>
+    , Heydon Pickering, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs-1/tabs.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Example of tabs with automatic activation
+    </ic-link>
+    , w3, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs-2/tabs.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Example of tabs with manual activation
+    </ic-link>
+    , w3, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/TR/wai-aria-practices/#kbd_selection_follows_focus"
+      rel="noreferrer noopener nofollow"
+    >
+      Deciding when to make selection automatically follow focus
+    </ic-link>
+    , WAI Aria Practices, accessed March 2022.
+  </li>
+</ul>
+
+## Testing
+
+We've tested this component against WCAG 2.2 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

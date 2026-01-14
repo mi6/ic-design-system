@@ -1,247 +1,296 @@
 {
   "data": [
     {
-      "path": "/components/accordion",
-      "title": "Accordion",
-      "subTitle": "Accordions are expandable and collapsible sections that are used to show and hide additional content."
-    },
-    {
-      "path": "/components/action-chip",
-      "title": "Action chip",
-      "subTitle": "Action chips are functional versions of Chips."
-    },
-    {
-      "path": "/components/alert",
-      "title": "Alert",
-      "subTitle": "Alerts display a short important message in a way that attracts attention without interrupting the current task."
-    },
-    {
-      "path": "/components/back-to-top",
-      "title": "Back to top",
-      "subTitle": "The back to top component helps people quickly return to the top of a long page."
-    },
-    {
-      "path": "/components/badge",
-      "title": "Badge",
-      "subTitle": "Badges are attached to other components to provide an indication that something new is available, or that something has changed."
-    },
-    {
-      "path": "/components/breadcrumb",
-      "title": "Breadcrumb",
-      "subTitle": "Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages."
-    },
-    {
-      "path": "/components/button",
-      "title": "Button",
-      "subTitle": "Buttons are used to allow or encourage people to take an action."
-    },
-    {
-      "path": "/components/card-horizontal",
-      "title": "Card (horizontal)",
-      "subTitle": "Horizontal cards are containers used to display structured information or link to new information in a horizontal layout."
-    },
-    {
-      "path": "/components/card-vertical",
-      "title": "Card (vertical)",
-      "subTitle": "Cards are containers used to display structured information or interactive content."
-    },
-    {
-      "path": "/components/checkbox",
-      "title": "Checkbox",
-      "subTitle": "Use checkboxes as part of a form, in dialogs or in control areas such as filters or settings."
-    },
-    {
-      "path": "/components/chip",
-      "title": "Chip",
-      "subTitle": "Chips help people view summary information, filter data or trigger actions."
-    },
-    {
-      "path": "/components/classification-banner",
-      "title": "Classification banner",
-      "subTitle": "Classification banners are used to show the data classification (also known as protective marking) of an app."
-    },
-    {
-      "path": "/components/data-list",
+      "path": "/components/data-display/data-list",
+      "status": "BETA",
       "title": "Data list",
       "subTitle": "The data list component displays a group of related data in a consistent and easy to consume way."
     },
     {
-      "path": "/components/data-table",
+      "path": "/components/data-display/data-table",
+      "status": "CANARY",
       "title": "Data table",
       "subTitle": "Use a data table to organise and display large quantities of related data."
     },
     {
-      "path": "/components/date-input",
-      "title": "Date input",
-      "subTitle": "A date input is used when gathering a specific date in a text-based format."
+      "path": "/components/feedback-progress/action-chip",
+      "status": "BETA",
+      "title": "Action chip",
+      "subTitle": "Action chips are functional versions of Chips."
     },
     {
-      "path": "/components/date-picker",
-      "title": "Date picker",
-      "subTitle": "A date picker is a type of drop-down control that allows people to easily view and select dates."
+      "path": "/components/feedback-progress/alert",
+      "status": "BETA",
+      "title": "Alert",
+      "subTitle": "Alerts display a short important message in a way that attracts attention without interrupting the current task."
     },
     {
-      "path": "/components/dialog",
+      "path": "/components/feedback-progress/badge",
+      "status": "BETA",
+      "title": "Badge",
+      "subTitle": "Badges are attached to other components to provide an indication that something new is available, or that something has changed."
+    },
+    {
+      "path": "/components/feedback-progress/chip",
+      "status": "BETA",
+      "title": "Chip",
+      "subTitle": "Chips help people view summary information, filter data or trigger actions."
+    },
+    {
+      "path": "/components/feedback-progress/dialog",
+      "status": "BETA",
       "title": "Dialog",
       "subTitle": "Dialogs are modal windows that interrupt the user's current task to bring something important to attention."
     },
     {
-      "path": "/components/divider",
-      "title": "Divider",
-      "subTitle": "Dividers are used to separate different elements in groups of content. Visually, they look like rules or lines."
-    },
-    {
-      "path": "/components/empty-state",
+      "path": "/components/feedback-progress/empty-state",
+      "status": "BETA",
       "title": "Empty state",
       "subTitle": "Use the empty state component when there is no content to display. It provides a consistent way of communicating to people what to do next."
     },
     {
-      "path": "/components/footer",
-      "title": "Footer",
-      "subTitle": "Footers are placed at the bottom of the page and can be used for additional links not found in the main navigation."
-    },
-    {
-      "path": "/components/hero",
-      "title": "Hero",
-      "subTitle": "A large banner found at the top of page used to introduce page content, provide key actions and add personality."
-    },
-    {
-      "path": "/components/layout-grid",
-      "title": "Layout grid",
-      "subTitle": "Layout grids arrange content into a flexible, consistent structure that adapts across screen sizes."
-    },
-    {
-      "path": "/components/link",
-      "title": "Link",
-      "subTitle": "Links can be used to navigate to different pages or sections of a page."
-    },
-    {
-      "path": "/components/loading-indicator",
+      "path": "/components/feedback-progress/loading-indicator",
+      "status": "BETA",
       "title": "Loading indicator",
       "subTitle": "Loading indicators help inform users that a request is being processed. Radial and linear indicators provide flexibility in design."
     },
     {
-      "path": "/components/page-header",
-      "title": "Page header",
-      "subTitle": "A page header defines the top of the page content and is a consistent way to show page context, key actions and secondary navigation."
-    },
-    {
-      "path": "/components/pagination-bar",
-      "title": "Pagination bar",
-      "subTitle": "Use the pagination bar when large amounts of content are split across multiple pages and various pagination options are required."
-    },
-    {
-      "path": "/components/pagination",
-      "title": "Pagination",
-      "subTitle": "Use pagination to split large amounts of content into pages and navigate between them."
-    },
-    {
-      "path": "/components/popover-menu",
-      "title": "Popover menu",
-      "subTitle": "Use popover menus to place actions inside a menu that overlays other page content when opened."
-    },
-    {
-      "path": "/components/radio",
-      "title": "Radio button",
-      "subTitle": "Radio buttons let people select a single option from a list."
-    },
-    {
-      "path": "/components/search-bar",
-      "title": "Search bar",
-      "subTitle": "A search bar is a special input field that allows users to search for information using keywords or phrases."
-    },
-    {
-      "path": "/components/section-container",
-      "title": "Section container",
-      "subTitle": "Use the section container component to consistently align content within an app."
-    },
-    {
-      "path": "/components/select",
-      "title": "Select",
-      "subTitle": "Selects allow users to select one or more values from a list of options."
-    },
-    {
-      "path": "/components/side-navigation",
-      "title": "Side navigation",
-      "subTitle": "Side navigation provides an app's main navigation and is fixed on the left-hand side of the app. It includes the app's name, main navigation and optional secondary links."
-    },
-    {
-      "path": "/components/skeleton",
+      "path": "/components/feedback-progress/skeleton",
+      "status": "BETA",
       "title": "Skeleton",
       "subTitle": "Skeleton loading states are representations of the shape of content that help inform users that a specific type of component is loading."
     },
     {
-      "path": "/components/skip-link",
-      "title": "Skip link",
-      "subTitle": "Skip links are used to bypass repetitive blocks of content and interface and go directly to the main content of a page."
-    },
-    {
-      "path": "/components/status-tag",
+      "path": "/components/feedback-progress/status-tag",
+      "status": "BETA",
       "title": "Status tag",
       "subTitle": "Status tags are short, clear and digestible ways to display the status of something on the page."
     },
     {
-      "path": "/components/stepper",
+      "path": "/components/feedback-progress/stepper",
+      "status": "BETA",
       "title": "Stepper",
       "subTitle": "A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process."
     },
     {
-      "path": "/components/switch",
-      "title": "Switch",
-      "subTitle": "Switches are used to quickly toggle an option on or off."
-    },
-    {
-      "path": "/components/table-of-contents",
-      "title": "Table of contents",
-      "subTitle": "A table of contents allows users to quickly navigate through a page's content using links to its headings."
-    },
-    {
-      "path": "/components/tabs",
-      "title": "Tabs",
-      "subTitle": "Tabs let users navigate between content within the same context. Tabs organise complex layouts by separating content into multiple sections."
-    },
-    {
-      "path": "/components/text-field",
-      "title": "Text field",
-      "subTitle": "Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text."
-    },
-    {
-      "path": "/components/theme",
-      "title": "Theme",
-      "subTitle": "How to change the theme and brand colours of some components."
-    },
-    {
-      "path": "/components/time-input",
-      "title": "Time input",
-      "subTitle": "Time input allows users to enter a specific time in a standardised format for scheduling or time-based tasks."
-    },
-    {
-      "path": "/components/toast",
+      "path": "/components/feedback-progress/toast",
+      "status": "BETA",
       "title": "Toast",
       "subTitle": "Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'."
     },
     {
-      "path": "/components/toggle-button",
-      "title": "Toggle button",
-      "subTitle": "Toggle buttons provide an action capable of indicating a state. They are commonly used for turning settings either ‘on’ or ‘off’."
-    },
-    {
-      "path": "/components/tooltip",
+      "path": "/components/feedback-progress/tooltip",
+      "status": "BETA",
       "title": "Tooltip",
       "subTitle": "Tooltips provide helpful information when the cursor hovers over an element or when focus is applied."
     },
     {
-      "path": "/components/top-navigation",
+      "path": "/components/inputs/button",
+      "status": "BETA",
+      "title": "Button",
+      "subTitle": "Buttons are used to allow or encourage people to take an action."
+    },
+    {
+      "path": "/components/inputs/checkbox",
+      "status": "BETA",
+      "title": "Checkbox",
+      "subTitle": "Use checkboxes as part of a form, in dialogs or in control areas such as filters or settings."
+    },
+    {
+      "path": "/components/inputs/date-input",
+      "status": "CANARY",
+      "title": "Date input",
+      "subTitle": "A date input is used when gathering a specific date in a text-based format."
+    },
+    {
+      "path": "/components/inputs/date-picker",
+      "status": "CANARY",
+      "title": "Date picker",
+      "subTitle": "A date picker is a type of drop-down control that allows people to easily view and select dates."
+    },
+    {
+      "path": "/components/inputs/radio",
+      "status": "BETA",
+      "title": "Radio button",
+      "subTitle": "Radio buttons let people select a single option from a list."
+    },
+    {
+      "path": "/components/inputs/search-bar",
+      "status": "BETA",
+      "title": "Search bar",
+      "subTitle": "A search bar is a special input field that allows users to search for information using keywords or phrases."
+    },
+    {
+      "path": "/components/inputs/select",
+      "status": "BETA",
+      "title": "Select",
+      "subTitle": "Selects allow users to select one or more values from a list of options."
+    },
+    {
+      "path": "/components/inputs/switch",
+      "status": "BETA",
+      "title": "Switch",
+      "subTitle": "Switches are used to quickly toggle an option on or off."
+    },
+    {
+      "path": "/components/inputs/text-field",
+      "status": "BETA",
+      "title": "Text field",
+      "subTitle": "Text fields let users input and edit text. Text fields capture a single line of text and text areas capture multiple lines of text."
+    },
+    {
+      "path": "/components/inputs/time-input",
+      "status": "CANARY",
+      "title": "Time input",
+      "subTitle": "Time input allows users to enter a specific time in a standardised format for scheduling or time-based tasks."
+    },
+    {
+      "path": "/components/inputs/toggle-button",
+      "status": "BETA",
+      "title": "Toggle button",
+      "subTitle": "Toggle buttons provide an action capable of indicating a state. They are commonly used for turning settings either ‘on’ or ‘off’."
+    },
+    {
+      "path": "/components/layout/accordion",
+      "status": "BETA",
+      "title": "Accordion",
+      "subTitle": "Accordions are expandable and collapsible sections that are used to show and hide additional content."
+    },
+    {
+      "path": "/components/layout/card-horizontal",
+      "status": "CANARY",
+      "title": "Card (horizontal)",
+      "subTitle": "Horizontal cards are containers used to display structured information or link to new information in a horizontal layout."
+    },
+    {
+      "path": "/components/layout/card-vertical",
+      "status": "BETA",
+      "title": "Card (vertical)",
+      "subTitle": "Cards are containers used to display structured information or interactive content."
+    },
+    {
+      "path": "/components/layout/divider",
+      "status": "BETA",
+      "title": "Divider",
+      "subTitle": "Dividers are used to separate different elements in groups of content. Visually, they look like rules or lines."
+    },
+    {
+      "path": "/components/layout/footer",
+      "status": "BETA",
+      "title": "Footer",
+      "subTitle": "Footers are placed at the bottom of the page and can be used for additional links not found in the main navigation."
+    },
+    {
+      "path": "/components/layout/layout-grid",
+      "status": "BETA",
+      "title": "Layout grid",
+      "subTitle": "Layout grids arrange content into a flexible, consistent structure that adapts across screen sizes."
+    },
+    {
+      "path": "/components/layout/section-container",
+      "status": "BETA",
+      "title": "Section container",
+      "subTitle": "Use the section container component to consistently align content within an app."
+    },
+    {
+      "path": "/components/navigation/back-to-top",
+      "status": "BETA",
+      "title": "Back to top",
+      "subTitle": "The back to top component helps people quickly return to the top of a long page."
+    },
+    {
+      "path": "/components/navigation/breadcrumb",
+      "status": "BETA",
+      "title": "Breadcrumb",
+      "subTitle": "Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages."
+    },
+    {
+      "path": "/components/navigation/hero",
+      "status": "BETA",
+      "title": "Hero",
+      "subTitle": "A large banner found at the top of page used to introduce page content, provide key actions and add personality."
+    },
+    {
+      "path": "/components/navigation/link",
+      "status": "BETA",
+      "title": "Link",
+      "subTitle": "Links can be used to navigate to different pages or sections of a page."
+    },
+    {
+      "path": "/components/navigation/page-header",
+      "status": "BETA",
+      "title": "Page header",
+      "subTitle": "A page header defines the top of the page content and is a consistent way to show page context, key actions and secondary navigation."
+    },
+    {
+      "path": "/components/navigation/pagination-bar",
+      "status": "CANARY",
+      "title": "Pagination bar",
+      "subTitle": "Use the pagination bar when large amounts of content are split across multiple pages and various pagination options are required."
+    },
+    {
+      "path": "/components/navigation/pagination",
+      "status": "BETA",
+      "title": "Pagination",
+      "subTitle": "Use pagination to split large amounts of content into pages and navigate between them."
+    },
+    {
+      "path": "/components/navigation/popover-menu",
+      "status": "BETA",
+      "title": "Popover menu",
+      "subTitle": "Use popover menus to place actions inside a menu that overlays other page content when opened."
+    },
+    {
+      "path": "/components/navigation/side-navigation",
+      "status": "BETA",
+      "title": "Side navigation",
+      "subTitle": "Side navigation provides an app's main navigation and is fixed on the left-hand side of the app. It includes the app's name, main navigation and optional secondary links."
+    },
+    {
+      "path": "/components/navigation/skip-link",
+      "status": "BETA",
+      "title": "Skip link",
+      "subTitle": "Skip links are used to bypass repetitive blocks of content and interface and go directly to the main content of a page."
+    },
+    {
+      "path": "/components/navigation/table-of-contents",
+      "status": "CANARY",
+      "title": "Table of contents",
+      "subTitle": "A table of contents allows users to quickly navigate through a page's content using links to its headings."
+    },
+    {
+      "path": "/components/navigation/tabs",
+      "status": "BETA",
+      "title": "Tabs",
+      "subTitle": "Tabs let users navigate between content within the same context. Tabs organise complex layouts by separating content into multiple sections."
+    },
+    {
+      "path": "/components/navigation/top-navigation",
+      "status": "BETA",
       "title": "Top navigation",
       "subTitle": "Top navigation sits across the top of the page. It includes the app name, search bar, main navigation and secondary links."
     },
     {
-      "path": "/components/tree-view",
+      "path": "/components/navigation/tree-view",
+      "status": "CANARY",
       "title": "Tree view",
       "subTitle": "Use the tree view component to display hierarchical data, or provide navigation, within a tree structure."
     },
     {
-      "path": "/components/typography",
+      "path": "/components/theme-customisation/theme",
+      "status": "BETA",
+      "title": "Theme",
+      "subTitle": "How to change the theme and brand colours of some components."
+    },
+    {
+      "path": "/components/utility/classification-banner",
+      "status": "BETA",
+      "title": "Classification banner",
+      "subTitle": "Classification banners are used to show the data classification (also known as protective marking) of an app."
+    },
+    {
+      "path": "/components/utility/typography",
+      "status": "BETA",
       "title": "Typography",
       "subTitle": "Use the typography component for consistent styling across typographical elements."
     }

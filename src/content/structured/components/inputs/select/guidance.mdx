@@ -1,0 +1,226 @@
+---
+path: "/components/inputs/select"
+
+navPriority: 7
+
+date: "2024-05-02"
+
+title: "Select"
+
+status: "BETA"
+
+subTitle: "Selects allow users to select one or more values from a list of options."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/select"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/select" },
+    { title: "Code", path: "/components/inputs/select/code" },
+    { title: "Accessibility", path: "/components/inputs/select/accessibility" },
+  ]
+
+tags:
+  [
+    "Dropdown",
+    "Select input",
+    "Combobox",
+    "Autocomplete",
+    "Autosuggest",
+    "Dropdown menu",
+  ]
+---
+
+import { IcSelect } from "@ukic/react";
+import {
+  Fig1SelectDark,
+  Fig1SelectLight,
+  Fig2SelectDark,
+  Fig2SelectLight,
+  Fig3SelectDark,
+  Fig3SelectLight,
+  Fig4SelectDark,
+  Fig4SelectLight,
+  Fig5SelectDark,
+  Fig5SelectLight,
+  Fig6SelectDark,
+  Fig6SelectLight,
+} from "./images";
+
+## Component variants
+
+There are two types of select component:
+
+- Single-select
+- Multi-select
+
+### Single-select
+
+An example of the single-select component.
+
+export const SelectExample = () => (
+  <IcSelect
+    placeholder="Select an option..."
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Espresso", value: "espresso" },
+      { label: "Double Espresso", value: "doubleespresso" },
+      { label: "Flat White", value: "flatwhite" },
+      { label: "Cappuccino", value: "cappuccino" },
+      { label: "Americano", value: "americano" },
+      { label: "Mocha", value: "mocha" },
+    ]}
+  />
+);
+
+<ComponentPreview>
+  <SelectExample />
+</ComponentPreview>
+
+### Multi-select
+
+An example of a multi-select component.
+
+<ComponentPreview>
+  <IcSelect
+    label="What are your favourite types of coffee?"
+    options={[
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Filter", value: "Fil" },
+      { label: "Flat white", value: "Fla" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+    ]}
+    multiple
+  />
+</ComponentPreview>
+
+## When to use
+
+Use the select component to allow the user to choose one or more options from four or more items. For less than four, use a [radio group](/components/inputs/radio) or a [checkbox group](/components/inputs/checkbox).
+When more than ten options are available, consider using the [searchable variant](/components/inputs/select#searchable-single-select) of select to allow users to search the options, rather than scroll through the dropdown list.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig1SelectLight, Fig1SelectDark]}
+    imageAlt="A graphic of a radio group labelled 'Single or double shot?' with two radio buttons labelled 'Single' and 'Double'."
+    state="good"
+    caption="Use radio or checkbox groups when less than four options are available."
+  />
+  <DoDontCaution
+    imageSrc={[Fig2SelectLight, Fig2SelectDark]}
+    imageAlt="A graphic of a select component labelled 'Single or double shot?' with two options 'Single' and 'Double' in the dropdown list."
+    state="bad"
+    caption="Don’t use select when displaying a limited number of options."
+  />
+</DoubleDoDontCaution>
+
+## Validation
+
+Real-time validation helps the user streamline their process and efficiently complete a form. All error validation should be accompanied by an error label.
+
+## Content
+
+### Option list
+
+The options display a label by default for the option list, which can also include a description or custom elements. Any custom elements used should be non-interactive, such as status tags or icons.
+
+Use a default option list to display all options without any grouping or recommendations.
+
+#### Recommended
+
+Use an option list with recommendations to display specific options at the top of the list for quick access.
+
+#### Groups
+
+Use an option list with groups to combine the options into groups with descriptive headings.
+
+### Labels
+
+Clear labels help users understand what information they should provide.
+
+Labels should always be visible regardless of the state of the field and should be announced by a screen reader on focus.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3SelectLight, Fig3SelectDark]}
+    imageAlt="A graphic of a select component with the label 'Coffee type' and placeholder text 'Select one'."
+    state="good"
+    caption="Use labels to indicate the title of the field."
+  />
+  <DoDontCaution
+    imageSrc={[Fig4SelectLight, Fig4SelectDark]}
+    imageAlt="A graphic of a select component with no label and the placeholder text 'Coffee type'."
+    state="bad"
+    caption="Don't replace labels with placeholder text."
+  />
+</DoubleDoDontCaution>
+
+### Helper text
+
+Helper text should be included when additional information can help the user to either provide the right information or understand why or how the information will be used.
+
+Make sure any helper text that appears under an input is read when an assistive technology user stops at an input using ARIA.
+
+### Dismissible inputs
+
+Always allow the user to clear their selection by including a clear button inside the input field.
+
+## Searchable (single-select)
+
+export const SearchableSelectExample = () => (
+  <IcSelect
+    label="What is your favourite coffee?"
+    options={[
+      { label: "Cappuccino", value: "Cap" },
+      { label: "Latte", value: "Lat" },
+      { label: "Americano", value: "Ame" },
+      { label: "Flat white", value: "Fla" },
+      { label: "Mocha", value: "Moc" },
+      { label: "Macchiato", value: "Mac" },
+      { label: "Café au lait", value: "Caf" },
+      { label: "Espresso", value: "Esp" },
+      { label: "Cortado", value: "Cor" },
+      { label: "Latte macchiato", value: "Lam" },
+    ]}
+    searchable
+    onIcChange={(event) => console.log(event.detail.value)}
+  />
+);
+
+<ComponentPreview>
+  <SearchableSelectExample />
+</ComponentPreview>
+
+The single-select component can be set to be searchable to filter options in the option list. A user can open the option list to view the available options, but can also type into the input field to filter the option list to more easily find the desired option.
+
+Use the searchable variant when including several options in the option list, so that the user can quickly filter their desired selection.
+
+Don’t use the searchable variant when providing less than ten options. The added functionality for short lists may confuse users while providing no benefit to their experience.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5SelectLight, Fig5SelectDark]}
+    imageAlt="A graphic of a select component with the label 'What’s your favourite type of coffee' and five options in the dropdown list."
+    state="good"
+    caption="Use a standard select when providing less than ten options."
+  />
+  <DoDontCaution
+    imageSrc={[Fig6SelectLight, Fig6SelectDark]}
+    imageAlt="A graphic of a select component with searchable functionality with the label 'What’s your favourite type of coffee' and five options in the dropdown list. Focus is on the input field rather than the dropdown list."
+    state="bad"
+    caption="Don’t use the searchable variant when providing less than ten options."
+  />
+</DoubleDoDontCaution>
+
+### Content
+
+The component can be configured to show values that either match the search term, or show values that contain the search term. For example, United Kingdom matches the search term ‘Un’, and Tunisia contains the search term ‘Un’.
+
+For searches that take time to load results or suggestions, display the loading state whilst the search is loading. Use the empty state for searches that have no results or suggested options.
+
+## Related components
+
+- [Search bar](/components/inputs/search-bar)

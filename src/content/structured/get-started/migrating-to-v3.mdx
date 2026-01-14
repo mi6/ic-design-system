@@ -29,7 +29,7 @@ subTitle: "This guide is intended to help you migrate from ICDS 2.x components t
 
 ## Theming and dark mode
 
-With V3's arrival comes an improved `ic-theme` component. This component was initially responsible for managing the theme of the UI Kit. In addition to the existing functionality, you can now use the `ic-theme` component to set whether a component responds to changes in the system's light and dark theme or whether it always appears in a particular mode. Guidance on implementing the `ic-theme` component can be found in the [custom theme guidance](/components/theme).
+With V3's arrival comes an improved `ic-theme` component. This component was initially responsible for managing the theme of the UI Kit. In addition to the existing functionality, you can now use the `ic-theme` component to set whether a component responds to changes in the system's light and dark theme or whether it always appears in a particular mode. Guidance on implementing the `ic-theme` component can be found in the [custom theme guidance](/components/theme-customisation/theme).
 
 ## Codemod
 
@@ -65,7 +65,7 @@ Given a directory, it will scan over files and find any relevant ICDS components
 
 ### 1. Prop renaming
 
-- The `appearance` prop has been replaced with the `theme` and `monochrome` [props](/components/theme#dark-mode-as-a-theme).
+- The `appearance` prop has been replaced with the `theme` and `monochrome` [props](/components/theme-customisation/theme#dark-mode-as-a-theme).
 - In `ic-text-field` (`IcTextField`) the `auto-focus` prop has been renamed to `autofocus`and the `max-length/maxLength` prop has been renamed to `max-characters/maxCharacters`.
 - The `color` prop in `ic-hero` (`IcHero`), `ic-top-navigation` (`IcTopNavigation`), `ic-side-navigation` (`IcSideNavigation`), `ic-footer` (`IcFooter`) and `ic-theme` (`IcTheme`) has been renamed to `brand-color/brandColor`.
 - The `group-title/groupTitle` prop in `ic-accordion-group` (`IcAccordionGroup`) and `ic-footer-link-group` (`IcFooterLinkGroup`) has been renamed to `label`.

@@ -1,0 +1,203 @@
+---
+path: "/components/feedback-progress/toast"
+
+navPriority: 11
+
+date: "2025-08-11"
+
+title: "Toast"
+
+status: "BETA"
+
+subTitle: "Toasts give brief, non-critical updates about events that happen in an app. Toasts are sometimes called 'snackbars'."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/toast" },
+    { title: "Code", path: "/components/feedback-progress/toast/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/toast/accessibility",
+    },
+  ]
+
+tags: ["Snackbar"]
+---
+
+import { IcToast, IcToastRegion, IcButton } from "@ukic/react";
+import { useRef } from "react";
+import toastVid1Light from "./images/anim-1-auto-dismiss-toast.mp4";
+import toastVid1Dark from "./images/anim-1-auto-dismiss-toast-dark.mp4";
+import toastVid2Light from "./images/anim-2-manual-dismiss-toast.mp4";
+import toastVid2Dark from "./images/anim-2-manual-dismiss-toast-dark.mp4";
+import {
+  Fig1ToastDark,
+  Fig1ToastLight,
+  Fig2ToastDark,
+  Fig2ToastLight,
+  Fig3ToastLight,
+  Fig4ToastDark,
+  Fig4ToastLight,
+  Fig5ToastDark,
+  Fig5ToastLight,
+  Fig6ToastDark,
+  Fig6ToastLight,
+} from "./images";
+
+## Introduction
+
+An example of the toast component.
+
+export const IntroToast = () => {
+  const toastRegionEl = useRef(null);
+  const toastEl = useRef(null);
+  const handleClick = () => {
+    toastRegionEl.current.openToast = toastEl.current;
+  };
+  return (
+    <>
+      <IcButton onClick={handleClick}>Display toast component</IcButton>
+      <IcToastRegion ref={toastRegionEl}>
+        <IcToast id="toast-01" heading="Your coffee is ready" ref={toastEl} />
+      </IcToastRegion>
+    </>
+  );
+};
+
+<ComponentPreview>
+  <IntroToast />
+</ComponentPreview>
+
+## When to use
+
+Use toasts to provide non-essential information relating to a user’s current task.
+
+Use toasts to provide an additional method of feedback about a user action. Avoid using toasts as the only method of conveying information to the user.
+
+Toasts can be set to disappear on their own, or remain visible on screen until actioned. Toasts that automatically disappear should not contain any essential information.
+
+An action, such as a link or button, can be included but isn’t recommended. Try to place actions in the main content of the page instead. If an action is included, then the toast can't be set to automatically dismiss.
+
+<DoDontCaution
+  imageSrc={[Fig1ToastLight, Fig1ToastDark]}
+  imageAlt="A comments section with a toast message that says ‘Comment added’ with an ‘undo’ button and a dismiss button."
+  state="caution"
+  caption="A toast message containing an action button. The toast has to be manually dismissed."
+/>
+
+<DoDontCaution
+  imageSrc={[Fig2ToastLight, Fig2ToastDark]}
+  imageAlt="A comments section with a toast message that says ‘Comment added’ with a link that reads ‘View our privacy statement’, and a dismiss button."
+  state="caution"
+  caption="A toast message containing a link. The toast has to be manually dismissed."
+/>
+
+It's best to use toasts for passive success messages, for example 'document saved'. This provides useful additional feedback about the completion of a process, without being the only method of conveying this information.
+
+## When not to use
+
+If the message must be seen, use an [alert](/components/feedback-progress/alert) or dialog depending on the severity of the problem.
+
+<DoDontCaution
+  imageSrc={[Fig3ToastLight, Fig4ToastDark]}
+  imageAlt="A comments section with a toast message displaying an error that reads ‘Your comment couldn’t be saved’."
+  state="bad"
+  caption="Don’t use toast messages to display errors."
+/>
+
+Use a dialog to display messages a user must see or acknowledge.
+
+## Interaction behaviour
+
+### Action
+
+Use a single action in a toast. A button or link can be provided, but the toast can't automatically dismiss if an action is included.
+
+### Auto-dismiss
+
+Toasts can be set to auto-dismiss after an adjustable length of time. Make sure that auto-dismissing toasts are displayed for long enough for their content to be read. Make sure the toast content is non-critical so it doesn’t matter if it's missed.
+
+<ThemedVideo
+  width="100%"
+  muted
+  controls
+  loop
+  src={[toastVid1Light, toastVid1Dark]}
+  caption="A page with a toast that appears at the bottom center of the screen and disappears after a short delay."
+/>
+
+Toasts that contain an action or link can’t be set to auto-dismiss.
+
+Toasts that don’t auto-dismiss will have a close button.
+
+<ThemedVideo
+  width="100%"
+  muted
+  controls
+  loop
+  src={[toastVid2Light, toastVid2Dark]}
+  caption="A page with a toast, that has a close button, that appears at the bottom center of the screen and disappears only when the dismiss button is clicked."
+/>
+
+### Layout and placement
+
+Toasts always appear centred at the bottom of the screen. Positioning toasts here makes sure that they don't obscure key content or navigation that might be positioned at the top of the screen.
+
+Only one toast can be displayed at a time. If multiple toasts are required, they are queued one after the other.
+
+<DoDontCaution
+  imageSrc={[Fig4ToastLight, Fig4ToastDark]}
+  imageAlt="An app called ‘Better latte than never’ displaying an article page and showing a toast message positioned at the bottom and centre of the screen that reads ‘Comment added’.  "
+  state="good"
+  caption="Position toast message at the centre and bottom of the screen.  "
+/>
+
+<DoDontCaution
+  imageSrc={[Fig5ToastLight, Fig5ToastDark]}
+  imageAlt="An app whose title is obscured by a toast message positioned at the top of the screen that reads ‘Comment added’."
+  state="bad"
+  caption="Don’t position toasts at the top of the screen as they may interfere with important content.  "
+/>
+
+## Content
+
+Use short messages in toasts. Use the optional description text in addition to the toast title for additional content.
+
+<DoDontCaution
+  imageSrc={[Fig6ToastLight, Fig6ToastDark]}
+  imageAlt="An app called ‘Better latte than never’ showing an article page with comments that displays a toast message with a title that says ‘Comment added’ and a description that says ‘Thanks for letting us know.’."
+  state="good"
+  caption="Use the optional toast description to provide more information on the toast message."
+/>
+
+Use one of the following statuses to provide additional meaning to the message:
+
+- Success
+- Warning
+- Error
+- Info
+- Artificial Intelligence (AI)
+- Status unknown
+
+Specify a custom icon when using status unknown. Make sure that the icon is related to the toast’s content and that an alt-text description is provided.
+
+## Accessibility considerations
+
+<p>
+  When using an auto-dismissible toast message, the app needs to provide a
+  method to extend the duration of the message. This is to satisfy the{" "}
+  <ic-link
+    target="_blank"
+    href="https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html"
+    rel="noreferrer noopener nofollow"
+  >
+    WCAG 2.2 success criterion 2.2.1 Timing Adjustable
+  </ic-link>
+  .
+</p>
+
+## Related components
+
+- [Alert](/components/feedback-progress/alert)
+- [App errors](/patterns/app-errors)
+- [Success messages](/patterns/success)
