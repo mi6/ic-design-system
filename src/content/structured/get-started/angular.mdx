@@ -14,6 +14,8 @@ contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/struc
 
 import { IcAlert, IcLink } from "@ukic/react";
 
+## Native Components
+
 <IcAlert
   variant="info"
   heading="Experimental Component support"
@@ -21,3 +23,139 @@ import { IcAlert, IcLink } from "@ukic/react";
 />
 
 GitHub Docs: <IcLink href="https://github.com/mi6/ic-ui-kit/blob/main/packages/angular/README.md" rel="noreferrer noopener nofollow">ICDS UI Kit - Angular</IcLink>
+
+## Using Web Components
+
+<IcAlert
+  variant="info"
+  heading="Version check"
+  message="These instructions were used with Angular version 17.3.0."
+/>
+
+### Step one
+
+In the root of your project:
+
+```shell
+# using npm
+npm install @ukic/web-components @ukic/fonts
+
+# using yarn
+rm package-lock.json
+yarn add @ukic/web-components @ukic/fonts
+```
+
+### Step two
+
+Import the `CUSTOM_ELEMENTS_SCHEMA`:
+
+#### For modules
+
+Into the `app.module.ts` file:
+
+```jsx
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+```
+
+#### For standalone components
+
+Into the `app.component.ts` file:
+
+```jsx
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from "@angular/core";
+```
+
+### Step three
+
+Include `CUSTOM_ELEMENTS_SCHEMA` in the decorator object in the same file:
+
+#### For modules
+
+```jsx
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+```
+
+#### For standalone components
+
+```jsx
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+```
+
+### Step four
+
+Set skipLibCheck to `true` in your `tsconfig.json` file.
+
+```jsx
+"compilerOptions": {
+  "skipLibCheck": true
+},
+```
+
+### Step five
+
+Import defineCustomElements in your `main.ts` file.
+
+```jsx
+import { defineCustomElements } from "@ukic/web-components/loader";
+```
+
+### Step six
+
+Call defineCustomElements at the bottom of `main.ts`:
+
+```jsx
+//other configuration
+...
+defineCustomElements();
+```
+
+### Step seven
+
+Add the following into the top level CSS file for your project. For newly generated Angular projects this will be `src/styles.css`.
+
+```css
+@import "@ukic/fonts/dist/fonts.css";
+@import "@ukic/web-components/dist/core/core.css";
+```
+
+<br />
+
+<p>
+  In order to be rendered consistently across browsers and in line with modern
+  standards, each of the components uses styles from a global CSS file based on{" "}
+  <ic-link
+    target="_blank"
+    href="https://necolas.github.io/normalize.css/"
+    rel="noreferrer noopener nofollow"
+  >
+    Normalize.css
+  </ic-link>
+  .
+</p>
+
+If you would like to import these styles to apply them to the rest of your project and slotted elements used within any of the components, add the following into the top level CSS file as well.
+
+```css
+@import "@ukic/web-components/dist/core/normalize.css";
+```
+
+## Step eight
+
+Declare the component in your `app.component.html` file.
+
+```html
+<ic-status-tag label="Neutral"></ic-status-tag>
+```
