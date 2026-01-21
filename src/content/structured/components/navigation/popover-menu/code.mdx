@@ -1,0 +1,737 @@
+---
+path: "/components/navigation/popover-menu/code"
+
+date: "2024-05-31"
+
+title: "Popover menu"
+
+status: "BETA"
+
+subTitle: "Use popover menus to place actions inside a menu that overlays other page content when opened."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/popover-menu"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/popover-menu" },
+    { title: "Code", path: "/components/navigation/popover-menu/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/popover-menu/accessibility",
+    },
+  ]
+---
+
+import { IcPopoverMenu, IcMenuItem, IcMenuGroup, IcButton } from "@ukic/react";
+import { useState } from "react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button 
+  id="button-1" 
+  variant="icon"
+  title="More information" 
+  onclick="handleClick()"
+  aria-expanded="false"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</ic-button>
+<div>
+  <ic-popover-menu anchor="button-1" aria-label="popover" id="popover-menu">
+    <ic-menu-item label="Copy code"></ic-menu-item>
+    <ic-menu-item label="Paste code"></ic-menu-item>
+    <ic-menu-item
+      label="Actions"
+      submenu-trigger-for="actions"
+    ></ic-menu-item>
+  </ic-popover-menu>
+  <ic-popover-menu submenu-id="actions">
+    <ic-menu-item label="Edit"></ic-menu-item>
+    <ic-menu-item label="Find"></ic-menu-item>
+    <ic-menu-item label="Delete" variant="destructive"></ic-menu-item>
+  </ic-popover-menu>
+</div>`,
+      long: `{shortCode}
+<script>
+  var icPopover = document.querySelector("#popover-menu");
+  var anchorButton = document.querySelector("#button-1");
+  function handleClick() {
+    icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
+  }
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  variant="icon"
+  title="More information"
+  id="button-1"
+  onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
+>
+  <SlottedSVG
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    className="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </SlottedSVG>
+</IcButton>
+<IcPopoverMenu anchor="button-1" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
+  <IcMenuItem label="Copy code" />
+  <IcMenuItem label="Paste code" />
+  <IcMenuItem label="Actions" submenuTriggerFor="actions" />
+</IcPopoverMenu>
+<IcPopoverMenu submenuId="actions" aria-label="popover">
+  <IcMenuItem label="Edit" />
+  <IcMenuItem label="Find" />
+  <IcMenuItem label="Delete" variant="destructive" />
+</IcPopoverMenu>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+      ],
+    },
+  },
+];
+
+export const DemoPopover = () => {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
+  return (
+    <>
+      <IcButton
+        variant="icon"
+        title="More information"
+        id="button-1"
+        onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-three-dots-vertical"
+          viewBox="0 0 16 16"
+        >
+          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+        </svg>
+      </IcButton>
+      <IcPopoverMenu
+        anchor="button-1"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
+        <IcMenuItem label="Copy code" />
+        <IcMenuItem label="Paste code" />
+        <IcMenuItem label="Actions" submenuTriggerFor="actions" />
+      </IcPopoverMenu>
+      <IcPopoverMenu submenuId="actions" aria-label="popover">
+        <IcMenuItem label="Edit" />
+        <IcMenuItem label="Find" />
+        <IcMenuItem label="Delete" variant="destructive" />
+      </IcPopoverMenu>
+    </>
+  );
+};
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "center",
+  }}
+  snippets={snippets}
+>
+  <DemoPopover />
+</ComponentPreview>
+
+## Popover menu details
+
+<ComponentDetails component="ic-popover-menu" />
+
+## Menu item details
+
+<ComponentDetails component="ic-menu-item" />
+
+## Menu group details
+
+<ComponentDetails component="ic-menu-group" />
+
+## Variants
+
+### With button variations
+
+export const snippetsButtons = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button 
+  id="button-2" 
+  variant="icon"
+  title="More information" 
+  onclick="handleClick()"
+  aria-expanded="false"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</ic-button>
+<div>
+  <ic-popover-menu anchor="button-2" aria-label="popover" id="popover-menu-2">
+    <ic-menu-item label="Copy" disabled="true"></ic-menu-item>
+    <ic-menu-item label="Paste" keyboard-shortcut-label="Cmd + V"></ic-menu-item>
+    <ic-menu-item label="Edit" description="This is used to edit the original."></ic-menu-item>
+    <ic-menu-item label="Show/Hide" variant="toggle"></ic-menu-item>
+    <ic-menu-item label="Find icons">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path
+          d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+        />
+      </svg>
+    </ic-menu-item>
+    <ic-menu-item label="Delete" disabled="true" variant="destructive"></ic-menu-item>
+    <ic-menu-item label="Log out" variant="destructive"></ic-menu-item>
+  </ic-popover-menu>
+</div>`,
+      long: `{shortCode}
+<script>
+  var icPopover = document.querySelector("#popover-menu-2");
+  var anchorButton = document.querySelector("#button-2");
+  function handleClick() {
+    icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
+  }
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  variant="icon"
+  title="More information"
+  id="button-2"
+  onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    className="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</IcButton>
+<IcPopoverMenu anchor="button-2" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
+  <IcMenuItem label="Copy" disabled />
+  <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
+  <IcMenuItem label="Edit" description="This is used to edit the original." />
+  <IcMenuItem label="Show/Hide" variant="toggle" />
+  <IcMenuItem label="Find icons">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path
+        d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+      />
+    </SlottedSVG>
+  </IcMenuItem>
+  <IcMenuItem label="Delete" disabled variant="destructive" />
+  <IcMenuItem label="Log out" variant="destructive" />
+</IcPopoverMenu>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const ButtonsPopover = () => {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
+  return (
+    <>
+      <IcButton
+        variant="icon"
+        title="More information"
+        id="button-2"
+        onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-three-dots-vertical"
+          viewBox="0 0 16 16"
+        >
+          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+        </svg>
+      </IcButton>
+      <IcPopoverMenu
+        anchor="button-2"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
+        <IcMenuItem label="Copy" disabled />
+        <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
+        <IcMenuItem
+          label="Edit"
+          description="This is used to edit the original."
+        />
+        <IcMenuItem label="Show/Hide" variant="toggle" />
+        <IcMenuItem label="Find icons">
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+          </svg>
+        </IcMenuItem>
+        <IcMenuItem label="Delete" disabled variant="destructive" />
+        <IcMenuItem label="Log out" variant="destructive" />
+      </IcPopoverMenu>
+    </>
+  );
+};
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "center",
+  }}
+  snippets={snippetsButtons}
+>
+  <ButtonsPopover />
+</ComponentPreview>
+
+### With menu groups
+
+export const snippetsGroups = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button 
+  id="button-3" 
+  variant="icon"
+  title="More information" 
+  onclick="handleClick()"
+  aria-expanded="false"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</ic-button>
+<div>
+  <ic-popover-menu anchor="button-3" aria-label="popover" id="popover-menu-3">
+    <ic-menu-group label="Edit options">
+      <ic-menu-item label="Copy" disabled="true"></ic-menu-item>
+      <ic-menu-item label="Paste" keyboard-shortcut-label="Cmd + V"></ic-menu-item>
+    </ic-menu-group>
+    <ic-menu-group>
+      <ic-menu-item label="Format"></ic-menu-item>
+      <ic-menu-item label="Help"></ic-menu-item>
+    </ic-menu-group>
+  </ic-popover-menu>
+</div>`,
+      long: `{shortCode}
+<script>
+  var icPopover = document.querySelector("#popover-menu-3");
+  var anchorButton = document.querySelector("#button-3");
+  function handleClick() {
+    icPopover.open = !icPopover.open;
+    anchorButton.setAttribute('aria-expanded', icPopover.open);
+  }
+  icPopover.addEventListener('icPopoverClosed', handleClose);
+  function handleClose() {
+    anchorButton.setAttribute('aria-expanded', 'false');
+  }
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  variant="icon"
+  title="More information"
+  id="button-3"
+  onClick={handlePopoverToggled}
+  aria-expanded={popoverOpen}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    className="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</IcButton>
+<IcPopoverMenu anchor="button-3" aria-label="popover" open={popoverOpen} onIcPopoverClosed={handlePopoverClosed}>
+  <IcMenuGroup label="Edit options">
+    <IcMenuItem label="Copy" disabled />
+    <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
+  </IcMenuGroup>
+  <IcMenuGroup>
+    <IcMenuItem label="Format" />
+    <IcMenuItem label="Help" />
+  </IcMenuGroup>
+</IcPopoverMenu>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+      ],
+    },
+  },
+];
+
+export const GroupsPopover = () => {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
+  return (
+    <>
+      <IcButton
+        variant="icon"
+        title="More information"
+        id="button-3"
+        onClick={handlePopoverToggled}
+        aria-expanded={popoverOpen}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-three-dots-vertical"
+          viewBox="0 0 16 16"
+        >
+          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+        </svg>
+      </IcButton>
+      <IcPopoverMenu
+        anchor="button-3"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
+        <IcMenuGroup label="Edit options">
+          <IcMenuItem label="Copy" disabled />
+          <IcMenuItem label="Paste" keyboardShortcutLabel="Cmd + V" />
+        </IcMenuGroup>
+        <IcMenuGroup>
+          <IcMenuItem label="Format" />
+          <IcMenuItem label="Help" />
+        </IcMenuGroup>
+      </IcPopoverMenu>
+    </>
+  );
+};
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "center",
+  }}
+  snippets={snippetsGroups}
+>
+  <GroupsPopover />
+</ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button 
+  id="button-4" 
+  variant="icon"
+  title="More information" 
+  onclick="handleClick()"
+  theme="dark"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</ic-button>
+<div>
+  <ic-popover-menu theme="dark" anchor="button-4" aria-label="popover" id="popover-menu">
+    <ic-menu-item label="Copy code"></ic-menu-item>
+    <ic-menu-item label="Paste code"></ic-menu-item>
+    <ic-menu-item
+      label="Actions"
+      submenu-trigger-for="actions"
+    ></ic-menu-item>
+  </ic-popover-menu>
+  <ic-popover-menu submenu-id="actions">
+    <ic-menu-item label="Edit"></ic-menu-item>
+    <ic-menu-item label="Find"></ic-menu-item>
+    <ic-menu-item label="Delete" variant="destructive"></ic-menu-item>
+  </ic-popover-menu>
+</div>`,
+      long: `{shortCode}
+<script>
+  var icPopover = document.querySelector("#popover-menu");
+  function handleClick() {
+    icPopover.open = !icPopover.open;
+  }
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  variant="icon"
+  title="More information"
+  id="button-4"
+  onClick={handlePopoverToggled}
+  theme="dark"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    className="bi bi-three-dots-vertical"
+    viewBox="0 0 16 16"
+  >
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+  </svg>
+</IcButton>
+<IcPopoverMenu 
+  theme="dark" 
+  anchor="button-4" 
+  aria-label="popover" 
+  open={popoverOpen} 
+  onIcPopoverClosed={handlePopoverClosed}
+>
+  <IcMenuItem label="Copy code" />
+  <IcMenuItem label="Paste code" />
+  <IcMenuItem label="Actions" submenuTriggerFor="actions" />
+</IcPopoverMenu>
+<IcPopoverMenu submenuId="actions" aria-label="popover">
+  <IcMenuItem label="Edit" />
+  <IcMenuItem label="Find" />
+  <IcMenuItem label="Delete" variant="destructive" />
+</IcPopoverMenu>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+);`,
+        },
+      ],
+    },
+  },
+];
+
+export const ThemeDarkPopover = () => {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
+  return (
+    <>
+      <IcButton
+        variant="icon"
+        title="More information"
+        id="button-4"
+        onClick={handlePopoverToggled}
+        theme="dark"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-three-dots-vertical"
+          viewBox="0 0 16 16"
+        >
+          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+        </svg>
+      </IcButton>
+      <IcPopoverMenu
+        anchor="button-4"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+        theme="dark"
+      >
+        <IcMenuItem label="Copy code" />
+        <IcMenuItem label="Paste code" />
+        <IcMenuItem label="Actions" submenuTriggerFor="actions" />
+      </IcPopoverMenu>
+      <IcPopoverMenu submenuId="actions" aria-label="popover">
+        <IcMenuItem label="Edit" />
+        <IcMenuItem label="Find" />
+        <IcMenuItem label="Delete" variant="destructive" />
+      </IcPopoverMenu>
+    </>
+  );
+};
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    background: "var(--ic-color-page-background-dark)",
+  }}
+  snippets={snippetsThemeDark}
+>
+  <ThemeDarkPopover />
+</ComponentPreview>

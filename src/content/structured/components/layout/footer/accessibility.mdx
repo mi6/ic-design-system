@@ -1,0 +1,63 @@
+---
+path: "/components/layout/footer/accessibility"
+
+date: "2024-04-15"
+
+title: "Footer"
+
+status: "BETA"
+
+subTitle: "Footers are placed at the bottom of the page and can be used for additional links not found in the main navigation."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/layout/footer"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/footer" },
+    { title: "Code", path: "/components/layout/footer/code" },
+    { title: "Accessibility", path: "/components/layout/footer/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+The footer acts as a container for additional information and links. All footer content needs to align to that component's accessibility guidelines.
+
+## For Assistive Technology
+
+As above, all content of the footer should follow their relevant assistive technology guidelines.
+
+Any logos that are included in the footer need to have alt-text assigned. The alt-text should simply be the name of the organisation or entity that the logo describes.
+
+The footer uses the HTML footer page region to allow quick navigation between page regions when using assistive technology. It assigns the `contentinfo` ARIA landmark to adhere to proper page structure and semantics.
+
+## Based on
+
+The footer component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/tutorials/page-structure/regions/"
+      rel="noreferrer noopener nofollow"
+    >
+      Page Regions
+    </ic-link>
+    , W3, accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/contentinfo_role"
+      rel="noreferrer noopener nofollow"
+    >
+      ARIA: contentinfo role
+    </ic-link>
+    , MDN web docs, accessed March 2022.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

@@ -1,0 +1,83 @@
+---
+path: "/components/inputs/select/accessibility"
+
+date: "2024-04-15"
+
+title: "Select"
+
+status: "BETA"
+
+subTitle: "Select allows users to select one or more values from a list of options."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/select"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/select" },
+    { title: "Code", path: "/components/inputs/select/code" },
+    { title: "Accessibility", path: "/components/inputs/select/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+We've made sure that you can use the select component with a keyboard, including **home** and **end**, as well as the **esc** key. Options in the dropdown list can be accessed with the **up** and **down** arrow keys.
+
+For the searchable variant, we have included options that allow you to decide the minimum number of characters required before results are returned. This can help show relevant options only. When the query length is less than the required the `aria status` region provides helpful text informing the user they should type in more.
+
+## For Assistive Technology
+
+When focus is received on the component, the screen-reader will announce a hint explaining how you can navigate up and down in the dropdown list (with the **up** and **down** arrow keys).
+
+When the search (asynchronous or otherwise) is complete, there is an `aria-live` announcement to announce the number of results in the list.
+
+## Based on
+
+The select component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.24a11y.com/2019/select-your-poison/"
+      rel="noreferrer noopener nofollow"
+    >
+      Select your poison
+    </ic-link>
+    , 24 Accessibility, accessed July 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/listbox_role"
+      rel="noreferrer noopener nofollow"
+    >
+      ARIA: listbox role
+    </ic-link>
+    , Mozilla, accessed July 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://inclusive-components.design/menus-menu-buttons/"
+      rel="noreferrer noopener nofollow"
+    >
+      Menus & Menu Buttons
+    </ic-link>
+    , Inclusive Components, accessed July 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-autocomplete"
+      rel="noreferrer noopener nofollow"
+    >
+      aria-autocomplete
+    </ic-link>
+    , Mozilla, accessed July 2022.
+  </li>
+</ul>
+
+## Testing
+
+We've tested this component against WCAG 2.2 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

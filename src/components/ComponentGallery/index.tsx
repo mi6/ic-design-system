@@ -241,32 +241,66 @@ const ComponentGallery: React.FC = () => {
   return (
     pagesData?.data && (
       <ul className="card-container">
-        {pagesData.data.map(({ path, subTitle, title }) => (
-          <li key={title}>
-            <GatsbyLink to={path}>
-              <ic-card-vertical message={subTitle} full-width clickable>
-                <img
-                  src={
-                    ComponentImages[
-                      title.replace(/[- ()]/g, "") + capitalisedTheme
-                    ] || passImage([PlaceHolderLight, PlaceHolderDark], theme)
-                  }
-                  slot="image-top"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
-                <ic-typography
-                  slot="heading"
-                  variant="h4"
-                  aria-label={`${title} component.`}
-                >
-                  <h4>{title}</h4>
-                </ic-typography>
-              </ic-card-vertical>
-            </GatsbyLink>
-          </li>
-        ))}
+        {pagesData.data
+          .slice()
+          .sort((a, b) => a.title.localeCompare(b.title))
+          .map(({ path, subTitle, status, title }) => {
+            const folderMatch = path.match(/^\/components\/([^/]+)/);
+            const folderSlug = folderMatch ? folderMatch[1] : "";
+            const folderMap: Record<string, string> = {
+              "data-display": "Data display",
+              "feedback-progress": "Feedback and progress",
+              inputs: "Inputs",
+              layout: "Layout",
+              navigation: "Navigation",
+              "theme-customisation": "Theme and customisation",
+              utility: "Utility",
+            };
+            const folderLabel =
+              folderMap[folderSlug] || folderSlug.replace(/-/g, " ");
+            return (
+              <li key={title}>
+                <GatsbyLink to={path}>
+                  <ic-card-vertical message={subTitle} full-width clickable>
+                    <img
+                      src={
+                        ComponentImages[
+                          title.replace(/[- ()]/g, "") + capitalisedTheme
+                        ] ||
+                        passImage([PlaceHolderLight, PlaceHolderDark], theme)
+                      }
+                      slot="image-top"
+                      alt=""
+                      width="100%"
+                      height="100%"
+                    />
+                    <ic-typography
+                      slot="heading"
+                      variant="h4"
+                      aria-label={`${title} component.`}
+                    >
+                      <h4>{title}</h4>
+                    </ic-typography>
+                    <ic-status-tag
+                      slot="adornment"
+                      variant="outlined"
+                      label={folderLabel}
+                      size="small"
+                    />
+                    {status === "CANARY" && (
+                      <ic-status-tag
+                        style={{ paddingLeft: "2px" }}
+                        slot="adornment"
+                        label={status}
+                        size="small"
+                        status="warning"
+                      />
+                    )}
+                  </ic-card-vertical>
+                </GatsbyLink>
+              </li>
+            );
+          })}
       </ul>
     )
   );

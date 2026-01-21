@@ -1,0 +1,1280 @@
+---
+path: "/components/inputs/date-picker/code"
+
+date: "2025-07-22"
+
+title: "Date picker"
+
+status: "CANARY"
+
+subTitle: "A date picker is a type of drop-down control that allows people to easily view and select dates."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/date-picker" },
+    { title: "Code", path: "/components/inputs/date-picker/code" },
+    {
+      title: "Accessibility",
+      path: "/components/inputs/date-picker/accessibility",
+    },
+  ]
+---
+
+import { IcDatePicker } from "@ukic/canary-react";
+import { useState } from "react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker
+  label="When would you like to collect your coffee?"
+></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcDatePicker label="When would you like to collect your coffee?" />
+</ComponentPreview>
+
+## Date picker details
+
+<ComponentDetails component="ic-date-picker" canary />
+
+## Variants
+
+### Sizes
+
+Set the size of the date picker by using the `size` prop. This prop takes the values `small`, `medium` or `large`. Depending on the chosen size, the prop will apply styling to increase or decrease the amount of spacing within the component.
+
+export const sizes = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker
+  label="When would you like to collect your coffee?"
+  size="small"
+></ic-date-picker>
+<ic-date-picker
+  label="When would you like to collect your coffee?"
+  size="medium"
+></ic-date-picker>
+<ic-date-picker
+  label="When would you like to collect your coffee?"
+  size="large"
+></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `IcDatePicker
+  label="When would you like to collect your coffee?"
+  size="small"
+/>
+<IcDatePicker label="When would you like to collect your coffee?" />
+<IcDatePicker
+  label="When would you like to collect your coffee?"
+  size="large"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={sizes} style={{ flexDirection: "column" }}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "1rem",
+      maxWidth: "100%",
+      overflowX: "auto",
+      paddingLeft: "0.5rem",
+      paddingBottom: "1rem",
+    }}
+  >
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      size="small"
+    />
+    <IcDatePicker label="When would you like to collect your coffee?" />
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      size="large"
+    />
+  </div>
+</ComponentPreview>
+
+### Max width
+
+Set the size of the input field by using the `--input-width` CSS custom property. The picker will grow, but not exceed its maximum supported width.
+
+export const maxWidth = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker
+  label="When would you like to collect your coffee?"
+  size="small"
+></ic-date-picker>
+<ic-date-picker
+  label="When would you like to collect your coffee?"
+  size="medium"
+></ic-date-picker>
+<ic-date-picker
+  label="When would you like to collect your coffee?"
+  size="large"
+></ic-date-picker>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-md);
+    padding: var(--ic-space-md);
+  }
+  ic-date-picker {
+    --input-width: 25.25rem;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker
+  className={classes.datePicker}
+  label="When would you like to collect your coffee?"
+  size="small"
+/>
+<IcDatePicker
+  className={classes.datePicker}
+  label="When would you like to collect your coffee?"
+/>
+<IcDatePicker
+  className={classes.datePicker}
+  label="When would you like to collect your coffee?"
+  size="large"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+  datePicker: {
+    "--input-width": "25.25rem",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+  datePicker: {
+    "--input-width": "25.25rem",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={maxWidth} style={{ flexDirection: "column" }}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "1rem",
+      maxWidth: "100%",
+      overflowX: "auto",
+      paddingLeft: "0.5rem",
+      paddingBottom: "1rem",
+    }}
+  >
+    <IcDatePicker
+      style={{ "--input-width": "25.25rem" }}
+      label="When would you like to collect your coffee?"
+      size="small"
+    />
+    <IcDatePicker
+      style={{ "--input-width": "25.25rem" }}
+      label="When would you like to collect your coffee?"
+    />
+    <IcDatePicker
+      style={{ "--input-width": "25.25rem" }}
+      label="When would you like to collect your coffee?"
+      size="large"
+    />
+  </div>
+</ComponentPreview>
+
+### Disabled
+
+Disable the date picker and prevent user interaction by using the `disabled` prop.
+
+export const disabled = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker
+  label="When would you like to collect your coffee?"
+  disabled="true"
+></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker
+  label="When would you like to collect your coffee?"
+  disabled
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={disabled} style={{ flexDirection: "column" }}>
+  <IcDatePicker label="When would you like to collect your coffee?" disabled />
+</ComponentPreview>
+
+### Date formats
+
+The `dateFormat` prop determines how dates are displayed. The supported formats are `DD/MM/YYYY`, `MM/DD/YYYY` or `YYYY/MM/DD`.
+The default format is `DD/MM/YYYY`.
+
+export const dateFormats = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?"></ic-date-picker>
+<ic-date-picker label="When would you like to collect your coffee?" date-format="MM/DD/YYYY"></ic-date-picker>
+<ic-date-picker label="When would you like to collect your coffee?" date-format="YYYY/MM/DD"></ic-date-picker>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-md);
+    padding: var(--ic-space-md);
+  }
+  ic-date-picker {
+    --input-width: 25.25rem;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" />
+<IcDatePicker label="When would you like to collect your coffee?" dateFormat="MM/DD/YYYY" />
+<IcDatePicker label="When would you like to collect your coffee?" dateFormat="YYYY/MM/DD" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-md)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={dateFormats} style={{ flexDirection: "column" }}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <IcDatePicker label="When would you like to collect your coffee?" />
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      dateFormat="MM/DD/YYYY"
+    />
+    <IcDatePicker
+      label="When would you like to collect your coffee?"
+      dateFormat="YYYY/MM/DD"
+    />
+  </div>
+</ComponentPreview>
+
+### Value
+
+The `value` prop sets the date in the input field. The value can be in any format supported by the `dateFormat` prop, in ISO 8601 date string format (yyyy-mm-dd) or as a JavaScript Date object.
+
+export const valueSnippet = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" value="01/01/2024"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" value="01/01/2024" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={valueSnippet} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    value="01/01/2024"
+  />
+</ComponentPreview>
+
+### Open at date
+
+If no `value` is set, the `openAtDate` prop can be used to specify the date in view when the calendar view is opened. If not set to a value, the calendar will default to showing the current date.
+
+The supported formats are the same as for the `value` prop.
+
+export const openDate = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" helper-text="The calendar will open showing 25th December 2024, if no date selected" open-at-date="2024-12-25"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" helperText="The calendar will open showing 25th December 2024, if no date selected" openAtDate="2024-12-25" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={openDate} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    helperText="The calendar will open showing 25th December 2024, if no date selected"
+    openAtDate="2024-12-25"
+  />
+</ComponentPreview>
+
+### Start of week
+
+The first day of the week can be changed by setting the `startOfWeek` prop. This is a numeric value where 0 = Sunday, 1 = Monday, etc. up to 6 = Saturday.
+
+export const startWeek = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" start-of-week="0"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" startOfWeek={0} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={startWeek} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    startOfWeek="0"
+  />
+</ComponentPreview>
+
+### Disable days of week
+
+Specific days of the week can be disabled from selection by setting the `disableDays` prop. The value can be set as an array of numeric values where 0 = Sunday, 1 = Monday, etc. up to 6 = Saturday.
+
+export const disabledDaysOfWeek = [0, 6];
+
+export const disableDays = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker id="weekday-picker" label="When would you like to collect your coffee?"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    document.querySelector("#weekday-picker").disableDays = [0, 6];
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" disableDays={disabledDaysOfWeek} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const disabledDaysOfWeek = [0, 6]
+const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const disabledDaysOfWeek = [0, 6];
+const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={disableDays} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    disableDays={disabledDaysOfWeek}
+  />
+</ComponentPreview>
+
+### Max and min
+
+The `max` and `min` props can be used to limit the range of dates available for selection. Values can be in any format supported by the `dateFormat` prop, in ISO 8601 date string format (yyyy-mm-dd) or as a JavaScript Date object.
+
+export const maxMin = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" helper-text="Choose a date between the 1st and 31st of July" min="2024-07-01" max="2024-07-31" show-picker-today-button="false"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" helperText="Choose a date between the 1st and 31st of July" min="2024-07-01" max="2024-07-31" showPickerTodayButton={false} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={maxMin} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    helperText="Choose a date between the 1st and 31st of July"
+    min="2024-07-01"
+    max="2024-07-31"
+    showPickerTodayButton="false"
+  />
+</ComponentPreview>
+
+### Disable dates in past
+
+Dates before today can be disabled with the `disablePast` prop.
+
+export const disablePast = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" disable-past="true"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" disablePast />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={disablePast} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    disablePast
+  />
+</ComponentPreview>
+
+### Disable dates in future
+
+Dates after today can be disabled with the `disableFuture` prop.
+
+export const disableFuture = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" disable-future="true"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" disableFuture />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={disableFuture} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    disableFuture
+  />
+</ComponentPreview>
+
+### Days outside month hidden
+
+Days outside of the current month in view can be hidden by setting the `showDaysOutsideMonth` prop to `false`.
+
+export const dayHidden = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" show-days-outside-month="false"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" showDaysOutsideMonth={false} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={dayHidden} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    showDaysOutsideMonth="false"
+  />
+</ComponentPreview>
+
+### Today and clear buttons hidden
+
+The 'Go to today' and 'Clear' buttons can be hidden from the calendar view by setting the `showPickerTodayButton` and `showPickerClearButton` props to `false`.
+
+export const btnHidden = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker label="When would you like to collect your coffee?" show-picker-today-button="false" show-picker-clear-button="false"></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker label="When would you like to collect your coffee?" showPickerTodayButton={false} showPickerClearButton={false} />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={btnHidden} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    showPickerTodayButton="false"
+    showPickerClearButton="false"
+  />
+</ComponentPreview>
+
+### JavaScript dates
+
+Any prop that accepts a date value can be set to a JavaScript Date object. The following example sets the `value`, `max` and `min` props.
+
+export const jsDates = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker
+  id="js-date-picker"
+  label="When would you like to collect your coffee?"
+  helper-text="Choose a date between the 1st and 31st of July"
+  show-picker-today-button="false"
+></ic-date-picker>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const datePicker = document.querySelector("#js-date-picker");
+    datePicker.min = new Date(2024, 6, 1);
+    datePicker.max = new Date(2024, 6, 31);
+    datePicker.value = new Date(2024, 6, 15);
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker
+  label="When would you like to collect your coffee?"
+  min={new Date(2024, 6, 1)}
+  max={new Date(2024, 6, 31)}
+  value={new Date(2024, 6, 15)}
+  helperText="Choose a date between the 1st and 31st of July"
+  showPickerTodayButton={false}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={jsDates} style={{ flexDirection: "column" }}>
+  <IcDatePicker
+    label="When would you like to collect your coffee?"
+    min={new Date(2024, 6, 1)}
+    max={new Date(2024, 6, 31)}
+    value={new Date(2024, 6, 15)}
+    helperText="Choose a date between the 1st and 31st of July"
+    showPickerTodayButton="false"
+  />
+</ComponentPreview>
+
+### IcChange Event
+
+The `IcChange` event is emitted by the date picker when the selected date changes.
+
+export const change = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-date-picker
+  id="ic-change-date-picker"
+  label="When would you like to collect your coffee?"
+></ic-date-picker>
+<span id="selected-date">
+  Selected date:
+</span>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const updateSelectedDate = (ev) =>{
+      const el = document.querySelector("#selected-date");
+      el.innerHTML = "Selected date: " + ev.detail.value;
+    }
+    const datePicker = document.querySelector("#ic-change-date-picker");
+    datePicker.addEventListener("icChange", updateSelectedDate);
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDatePicker
+  label="When would you like to collect your coffee?"
+  onIcChange={dateChangedHandler}
+  value={value}
+/>
+<span>
+  {selectedDate}
+</span>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [selectedDate, setSelectedDate] = useState<string>("Selected date:");
+const [value, setValue] = useState<Date | undefined>();
+const dateChangedHandler = (event: { detail: { value: Date; }; }) => {
+  setValue(event.detail.value);
+  setSelectedDate("Selected date: " + event.detail.value);
+};
+const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "3.125rem",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [selectedDate, setSelectedDate] = useState("Selected date:");
+const [value, setValue] = useState();
+const dateChangedHandler = (event) => {
+  setValue(event.detail.value);
+  setSelectedDate("Selected date: " + event.detail.value);
+};
+const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "3.125rem",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const DatePickerWithIcChange = () => {
+  const [selectedDate, setSelectedDate] = useState("Selected date:");
+  const [value, setValue] = useState();
+  const dateChangedHandler = (event) => {
+    setValue(event.detail.value);
+    setSelectedDate(`Selected date: ${event.detail.value}`);
+  };
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "3.125rem" }}>
+      <IcDatePicker
+        label="When would you like to collect your coffee?"
+        onIcChange={dateChangedHandler}
+        value={value}
+      />
+      <span style={{ color: "var(--ic-color-text-primary)" }}>
+        {selectedDate}
+      </span>
+    </div>
+  );
+};
+
+<ComponentPreview snippets={change} style={{ flexDirection: "column" }}>
+  <DatePickerWithIcChange />
+</ComponentPreview>

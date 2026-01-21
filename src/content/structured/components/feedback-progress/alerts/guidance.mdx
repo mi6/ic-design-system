@@ -1,0 +1,137 @@
+---
+path: "/components/feedback-progress/alert"
+
+navPriority: 2
+
+date: "2025-08-11"
+
+title: "Alert"
+
+status: "BETA"
+
+subTitle: "Alerts display a short important message in a way that attracts attention without interrupting the current task."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/alert"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/alert" },
+    { title: "Code", path: "/components/feedback-progress/alert/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/alert/accessibility",
+    },
+  ]
+
+tags: ["Notification", "Feedback", "Message", "Banner", "Callout"]
+---
+
+import { IcAlert } from "@ukic/react";
+import {
+  Fig1AlertsDark,
+  Fig1AlertsLight,
+  Fig2AlertsDark,
+  Fig2AlertsLight,
+  Fig3AlertsDark,
+  Fig3AlertsLight,
+  Fig4AlertsDark,
+  Fig4AlertsLight,
+  Fig5AlertsDark,
+  Fig5AlertsLight,
+} from "./images";
+
+## Introduction
+
+Alerts are displayed inline with other page content and show status depending on the severity of the message.
+
+<ComponentPreview>
+  <IcAlert
+    heading="Hot drink"
+    message="Please be careful, your drink will be hot."
+    variant="warning"
+  />
+</ComponentPreview>
+
+Alerts have six status variants:
+
+- Neutral
+- Success
+- Warning
+- Error
+- Info
+- Artificial Intelligence (AI)
+
+## When to use
+
+Use an alert to notify a user without blocking or interrupting them.
+
+Position alerts in line with page content so that they are closely associated with the related content that follows them.
+
+<DoDontCaution
+  imageSrc={[Fig1AlertsLight, Fig1AlertsDark]}
+  imageAlt="An article titled ‘The perfect blend’ displaying a warning alert which reads ‘Take care. This article has yet to be reviewed and so may contain errors’. "
+  state="good"
+  caption="Use alerts in line with other associated page content. "
+/>
+
+Use alerts to:
+
+- Summarise [form validation](/patterns/form-validation) errors.
+- Inform of failures in a particular part of an app.
+- Inform of a success when returning to a homepage, confirmation page or starting location.
+- Make important information stand out from surrounding content.
+
+Include a button or link within an alert to provide related interactions.
+
+Include a dismiss button within an alert to allow the alert to be dismissed.
+
+<DoDontCaution
+  imageSrc={[Fig2AlertsLight, Fig2AlertsDark]}
+  imageAlt="An article titled ‘The perfect blend’ showing an information alert with an action button that says ‘Post comment’ and a dismiss button. The alert message says ‘This is a brand new post. Show your appreciation by leaving a comment below."
+  state="good"
+  caption="Include a button or link to provide actions on an alert. Use a dismiss button to allow the alert to be dismissed."
+/>
+
+## When not to use
+
+Don’t use alerts for passive feedback on a process, for example 'draft discarded' or 'email sent'. Use [toasts](/components/feedback-progress/toast) instead.
+
+Don’t overlay alerts on page content. Alerts are placed inline with the rest of the page content.
+
+<DoDontCaution
+  imageSrc={[Fig3AlertsLight, Fig3AlertsDark]}
+  imageAlt="An article titled ‘The perfect blend’ with an information alert overlaid on top of the page content."
+  state="bad"
+  caption="Don’t use alerts positioned above/on top of page content."
+/>
+
+Use the [form validation pattern](/patterns/form-validation) for errors on a text field or in a form.
+
+<DoDontCaution
+  imageSrc={[Fig4AlertsLight, Fig4AlertsDark]}
+  imageAlt="A form titled ‘The perfect blend’ that contains 2 skeletons. A success alert shows an error message that says ‘There was an error on this page. Please fix any errors highlighted before continuing.’"
+  state="bad"
+  caption="Do not use an alert variant that is not related to its message."
+/>
+
+## Content
+
+Avoid using lengthy message content in an alert. Use dialogs or a [full page error message](/patterns/form-validation) to display longer messages.
+
+Use a title on an alert to provide a short description of the alert content.
+
+<DoDontCaution
+  imageSrc={[Fig5AlertsLight, Fig5AlertsDark]}
+  imageAlt="An image of an article titled ‘The perfect blend’ showing an info alert with a lengthy message that takes a lot of room to display among other page content."
+  state="caution"
+  caption="Avoid using lengthy messages within an alert."
+/>
+
+Use the default icons with success, warning, error and info alerts.
+
+When using neutral alerts, specify an icon to be used from the [iconography guidance](/styles/icons). Always specify alt text when using any custom icon.
+
+## Related components
+
+- [Toasts](/components/feedback-progress/toast)
+- [Error validation](/patterns/form-validation)

@@ -1,0 +1,74 @@
+---
+path: "/components/inputs/toggle-button/accessibility"
+
+date: "2024-04-15"
+
+title: "Toggle button"
+
+status: "BETA"
+
+subTitle: "Toggle buttons provide an action capable of indicating a state. They are commonly used for turning settings either ‘on’ or ‘off’."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/toggle-button"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/toggle-button" },
+    { title: "Code", path: "/components/inputs/toggle-button/code" },
+    {
+      title: "Accessibility",
+      path: "/components/inputs/toggle-button/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+Toggle buttons provide another means of selecting an option. They work well where space is limited but this means they do not include other labels that can be used to explain their purpose. Therefore, it is always important to make sure that the visible label makes sense when in either the ‘on’ or ‘off’ position.
+
+It is important that the selected state can be clearly identified from the unselected state. To conform with the WCAG criteria <ic-link target="_blank" href="https://www.w3.org/TR/WCAG22/#use-of-color" rel="noreferrer noopener nofollow">1.4.1 Use of color</ic-link>, the toggle button does not solely rely on colour to indicate the selection state, but instead makes use of an additional shape added to the interior of the button to clearly distinguish it from its unselected state.
+
+The toggle button is based upon the [button component](../components/button) so that it inherits the accessibility functionality from that component.
+
+A toggle button group can be set to either single-select or multi-select, and has settings that allow automatic selection or manual selection of its options as each toggle button is navigated through. This helps to speed up selection in a single-select toggle button group. However, this does change the keyboard interaction.
+
+For a single select group, the whole group is focussed upon using the ‘tab’ key and the options are navigated using the ‘arrow’ keys, such as with a [radio button group](../components/radio). For a multi-select group each toggle button in the group is individually focusable with the ‘tab’ key.
+
+When an individual toggle button is focussed, either on its own or within a toggle button group, it can be actioned by using the ‘enter’ or ‘space’ keys.
+
+## For Assistive Technology
+
+When a toggle button is navigated to using a screen reader, its label is announced along with its selection status and its role. If an aria-label has been provided, then this will be announced instead of the visible label. This allows additional context to be provided for screen reader users who may not be able to pick up on visual cues elsewhere on the page.
+
+The selection state is also appended to the aria-label to make sure that it is correctly announced by all screen readers.
+
+When a toggle button is set to disabled, it uses aria-disabled so that it is still perceivable even though it is not editable.
+
+## Based on
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://inclusive-components.design/toggle-button/"
+      rel="noreferrer noopener nofollow"
+    >
+      Toggle button, Inclusive Components
+    </ic-link>
+    , published 31st March 2017, accessed February 2023.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role"
+      rel="noreferrer noopener nofollow"
+    >
+      ARIA: button role, MDN Web Docs
+    </ic-link>
+    , accessed February 2023.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

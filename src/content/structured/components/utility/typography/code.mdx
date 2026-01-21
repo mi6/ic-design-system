@@ -1,0 +1,390 @@
+---
+path: "/components/utility/typography/code"
+
+date: "2024-05-31"
+
+title: "Typography"
+
+status: "BETA"
+
+subTitle: "Use the typography component for consistent styling across typographical elements."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/utility/typography"
+
+hidden: false
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/utility/typography" },
+    { title: "Code", path: "/components/utility/typography/code" },
+    {
+      title: "Accessibility",
+      path: "/components/utility/typography/accessibility",
+    },
+  ]
+---
+
+import { IcTypography } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h1">
+  <h1>H1</h1>
+</ic-typography>
+<ic-typography variant="h2">
+  <h2>H2</h2>
+</ic-typography>
+<ic-typography variant="h3">
+  <h3>H3</h3>
+</ic-typography>
+<ic-typography variant="h4">
+  <h4>H4</h4>
+</ic-typography>
+<ic-typography>Body</ic-typography>
+<ic-typography variant="subtitle-large">Subtitle large</ic-typography>
+<ic-typography variant="subtitle-small">Subtitle small</ic-typography>
+<ic-typography variant="label">Label</ic-typography>
+<ic-typography variant="label-uppercase">Label uppercase</ic-typography>
+<ic-typography variant="caption">Caption</ic-typography>
+<ic-typography variant="caption-uppercase">Caption uppercase</ic-typography>
+<ic-typography variant="code-large">Code large</ic-typography>
+<ic-typography variant="code-small">Code small</ic-typography>
+<ic-typography variant="code-extra-small">Code extra small</ic-typography>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h1">
+  <h1>H1</h1>
+</IcTypography>
+<IcTypography variant="h2">
+  <h2>H2</h2>
+</IcTypography>
+<IcTypography variant="h3">
+  <h3>H3</h3>
+</IcTypography>
+<IcTypography variant="h4">
+  <h4>H4</h4>
+</IcTypography>
+<IcTypography>Body</IcTypography>
+<IcTypography variant="subtitle-large">Subtitle large</IcTypography>
+<IcTypography variant="subtitle-small">Subtitle small</IcTypography>
+<IcTypography variant="label">Label</IcTypography>
+<IcTypography variant="label-uppercase">Label uppercase</IcTypography>
+<IcTypography variant="caption">Caption</IcTypography>
+<IcTypography variant="caption-uppercase">Caption uppercase</IcTypography>
+<IcTypography variant="code-large">Code large</IcTypography>
+<IcTypography variant="code-small">Code small</IcTypography>
+<IcTypography variant="code-extra-small">Code extra small</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <div>
+    <IcTypography variant="h1">
+      <h1 preview>H1</h1>
+    </IcTypography>
+    <IcTypography variant="h2">
+      <h2 preview>H2</h2>
+    </IcTypography>
+    <IcTypography variant="h3">
+      <h3 preview>H3</h3>
+    </IcTypography>
+    <IcTypography variant="h4">
+      <h4 preview>H4</h4>
+    </IcTypography>
+    <IcTypography>Body</IcTypography>
+    <IcTypography variant="subtitle-large">Subtitle large</IcTypography>
+    <IcTypography variant="subtitle-small">Subtitle small</IcTypography>
+    <IcTypography variant="label">Label</IcTypography>
+    <IcTypography variant="label-uppercase">Label uppercase</IcTypography>
+    <IcTypography variant="caption">Caption</IcTypography>
+    <IcTypography variant="caption-uppercase">Caption uppercase</IcTypography>
+    <IcTypography variant="code-large">Code large</IcTypography>
+    <IcTypography variant="code-small">Code small</IcTypography>
+    <IcTypography variant="code-extra-small">Code extra small</IcTypography>
+  </div>
+</ComponentPreview>
+
+## Typography details
+
+<ComponentDetails component="ic-typography" />
+
+## Variants
+
+### Re-styled typography
+
+Add a variant to the typography element to change its style. This does not change the semantic level of the typography element.
+
+export const snippetsRestyled = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h2">
+  <h5>H5 with H2 styling</h5>
+</ic-typography>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h2">
+  <h5>H5 with H2 styling</h5>
+</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsRestyled}>
+  <IcTypography variant="h2">
+    <h5>H5 with H2 styling</h5>
+  </IcTypography>
+</ComponentPreview>
+
+### Vertical margins applied
+
+export const spacingSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography apply-vertical-margins>
+  <h5>H5 with margins applied</h5>
+</ic-typography>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography applyVerticalMargins>
+  <h5>H5 with margins applied</h5>
+</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={spacingSnippets}>
+  <IcTypography applyVerticalMargins>
+    <h5>H5 with margins applied</h5>
+  </IcTypography>
+</ComponentPreview>
+
+### Vertical margins applied on re-styled typography
+
+export const spacingRestyledSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h2" apply-vertical-margins>
+  <h5>H5 with H2 styling and margins applied</h5>
+</ic-typography>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h2" applyVerticalMargins>
+  <h5>H5 with H2 styling and margins applied</h5>
+</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={spacingRestyledSnippets}>
+  <IcTypography variant="h2" applyVerticalMargins>
+    <h5>H5 with H2 styling and margins applied</h5>
+  </IcTypography>
+</ComponentPreview>
+
+### Truncation
+
+Text can be truncated to a maximum number of lines when using `variant="body"`.
+
+export const truncationSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography max-lines="3" variant="body">
+  Body of text that is truncated to three lines. Click the 'See more' link
+  to expand the text, then click 'See less' to truncate the text once
+  more!
+  <br />
+  Dripper caramelization java saucer grounds galão, mocha, and robusta
+  kopi-luwak, percolator, instant, qui saucer latte in brewed café au
+  lait. Con panna, cup, cream, body americano affogato cup espresso, rich
+  milk seasonal saucer grinder spoon that cultivar strong redeye
+  frappuccino barista extraction redeye mazagran. Grounds, french press
+  dripper organic and foam id saucer, crema, black rich dark, grounds
+  breve coffee steamed caramelization percolator.
+</ic-typography>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography maxLines="3" variant="body">
+  Body of text that is truncated to three lines. Click the 'See more' link
+  to expand the text, then click 'See less' to truncate the text once
+  more!
+  <br />
+  Dripper caramelization java saucer grounds galão, mocha, and robusta
+  kopi-luwak, percolator, instant, qui saucer latte in brewed café au
+  lait. Con panna, cup, cream, body americano affogato cup espresso, rich
+  milk seasonal saucer grinder spoon that cultivar strong redeye
+  frappuccino barista extraction redeye mazagran. Grounds, french press
+  dripper organic and foam id saucer, crema, black rich dark, grounds
+  breve coffee steamed caramelization percolator.
+</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={truncationSnippets}>
+  <IcTypography maxLines="3" variant="body">
+    Body of text that is truncated to three lines. Click the 'See more' link to
+    expand the text, then click 'See less' to truncate the text once more!
+    <br />
+    Dripper caramelization java saucer grounds galão, mocha, and robusta
+    kopi-luwak, percolator, instant, qui saucer latte in brewed café au lait.
+    Con panna, cup, cream, body americano affogato cup espresso, rich milk
+    seasonal saucer grinder spoon that cultivar strong redeye frappuccino
+    barista extraction redeye mazagran. Grounds, french press dripper organic
+    and foam id saucer, crema, black rich dark, grounds breve coffee steamed
+    caramelization percolator.
+  </IcTypography>
+</ComponentPreview>
+
+### Additional styling
+
+export const additionalStylingSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h4" bold>
+  <h4>Bold</h4>
+</ic-typography>
+<ic-typography variant="h4" italic>
+  <h4>Italic</h4>
+</ic-typography>
+<ic-typography variant="h4" underline>
+  <h4>Underline</h4>
+</ic-typography>
+<ic-typography variant="h4" strikethrough>
+  <h4>Strikethrough</h4>
+</ic-typography>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h4" bold>
+  <h4>Bold</h4>
+</IcTypography>
+<IcTypography variant="h4" italic>
+  <h4>Italic</h4>
+</IcTypography>
+<IcTypography variant="h4" underline>
+  <h4>Underline</h4>
+</IcTypography>
+<IcTypography variant="h4" strikethrough>
+  <h4>Strikethrough</h4>
+</IcTypography>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={additionalStylingSnippets}>
+  <div>
+    <IcTypography variant="h4" bold>
+      <h4 preview>Bold</h4>
+    </IcTypography>
+    <IcTypography variant="h4" italic>
+      <h4 preview>Italic</h4>
+    </IcTypography>
+    <IcTypography variant="h4" underline>
+      <h4 preview>Underline</h4>
+    </IcTypography>
+    <IcTypography variant="h4" strikethrough>
+      <h4 preview>Strikethrough</h4>
+    </IcTypography>
+  </div>
+</ComponentPreview>

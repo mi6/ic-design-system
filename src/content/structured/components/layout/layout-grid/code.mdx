@@ -1,0 +1,790 @@
+---
+path: "/components/layout/layout-grid/code"
+
+date: "2025-08-20"
+
+title: "Layout grid"
+
+status: "BETA"
+
+subTitle: "Layout grids arrange content into a flexible, consistent structure that adapts across screen sizes."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/layout/layout-grid"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/layout-grid" },
+    { title: "Code", path: "/components/layout/layout-grid/code" },
+    {
+      title: "Accessibility",
+      path: "/components/layout/layout-grid/accessibility",
+    },
+  ]
+---
+
+import { IcLayoutGrid, IcLayoutGridItem } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-layout-grid columns="2" style="border: 1px dashed var(--ic-architectural-500);">
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 1
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 2
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 3
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 4
+    </div>
+</ic-layout-grid>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLayoutGrid columns={2} style={{ border: "1px dashed var(--ic-architectural-500)" }}>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 1
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 2
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 3
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 4
+    </div>
+</IcLayoutGrid>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcLayoutGrid
+    columns={2}
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 1
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 2
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>
+
+## Layout grid details
+
+<ComponentDetails component="ic-layout-grid" />
+
+## Layout grid item details
+
+<ComponentDetails component="ic-layout-grid-item" />
+
+## Variants
+
+### Aligned center
+
+export const alignedCenterSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-layout-grid columns="2" aligned="center" style="border: 1px dashed var(--ic-architectural-500);">
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 1
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 2
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 3
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 4
+    </div>
+</ic-layout-grid>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLayoutGrid columns={2} aligned="center" style={{ border: "1px dashed var(--ic-architectural-500)" }}>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 1
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 2
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 3
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 4
+    </div>
+</IcLayoutGrid>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={alignedCenterSnippets}>
+  <IcLayoutGrid
+    columns={2}
+    aligned="center"
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 1
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 2
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>
+
+### Aligned full width
+
+export const alignedFullWidthSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-layout-grid columns="2" aligned="full-width" style="border: 1px dashed var(--ic-architectural-500);">
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 1
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 2
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 3
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 4
+    </div>
+</ic-layout-grid>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLayoutGrid columns={2} aligned="full-width" style={{ border: "1px dashed var(--ic-architectural-500)" }}>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 1
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 2
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 3
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 4
+    </div>
+</IcLayoutGrid>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={alignedFullWidthSnippets}>
+  <IcLayoutGrid
+    columns={2}
+    aligned="full-width"
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 1
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 2
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>
+
+### Full height
+
+export const fullHeightSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-layout-grid columns="2" full-height="true" style="border: 1px dashed var(--ic-architectural-500);">
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 1
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 2
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 3
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 4
+    </div>
+</ic-layout-grid>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLayoutGrid columns={2} fullHeight style={{ border: "1px dashed var(--ic-architectural-500)" }}>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 1
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 2
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 3
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 4
+    </div>
+</IcLayoutGrid>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={fullHeightSnippets}>
+  <IcLayoutGrid
+    columns={2}
+    fullHeight
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 1
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 2
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>
+
+### Column object
+
+export const columnObjectSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-layout-grid style="border: 1px dashed var(--ic-architectural-500);">
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 1
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 2
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 3
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 4
+    </div>
+</ic-layout-grid>
+<script>
+    const grid = document.querySelector("ic-layout-grid");
+    grid.columns = { xs: 1, sm: 2, md: 4, lg: 4, xl: 6 };
+</script>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLayoutGrid columns={{ xs: 1, sm: 2, md: 4, lg: 4, xl: 6 }} style={{ border: "1px dashed var(--ic-architectural-500)" }}>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 1
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 2
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 3
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 4
+    </div>
+</IcLayoutGrid>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={columnObjectSnippets}>
+  <IcLayoutGrid
+    columns={{ xs: 1, sm: 2, md: 4, lg: 4, xl: 6 }}
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 1
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 2
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>
+
+### Default column width
+
+export const defaultColWidthSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-layout-grid columns="2" default-col-width="100px" style="border: 1px dashed var(--ic-architectural-500);">
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 1
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 2
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 3
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 4
+    </div>
+</ic-layout-grid>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLayoutGrid columns={2} defaultColWidth="100px" style={{ border: "1px dashed var(--ic-architectural-500)" }}>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 1
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 2
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 3
+    </div>
+    <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 4
+    </div>
+</IcLayoutGrid>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={defaultColWidthSnippets}>
+  <IcLayoutGrid
+    columns={2}
+    defaultColWidth="100px"
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 1
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 2
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>
+
+### Layout grid item
+
+export const layoutGridItemSnippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-layout-grid columns="3" style="border: 1px dashed var(--ic-architectural-500);">
+      <ic-layout-grid-item
+        col-start="2"
+        col-span="2"
+        row-start="2"
+        row-span="2"
+      >
+        <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+            Grid item 1
+        </div>
+    </ic-layout-grid-item>
+    <ic-layout-grid-item hide-in-mobile-mode="true">
+        <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+            Grid item 2
+        </div>
+    </ic-layout-grid-item>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 3
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 4
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid var(--ic-color-text-primary); color: var(--ic-color-text-primary);">
+        Grid item 5
+    </div>
+</ic-layout-grid>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcLayoutGrid columns={3} style={{ border: "1px dashed var(--ic-architectural-500)" }}>
+      <IcLayoutGridItem colStart={2} colSpan={2} rowStart={2} rowSpan={2}>
+        <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+          Grid item 1
+        </div>
+      </IcLayoutGridItem>
+      <IcLayoutGridItem hideInMobileMode>
+        <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+          Grid item 2
+        </div>
+      </IcLayoutGridItem>
+      <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 3
+      </div>
+      <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 4
+      </div>
+      <div style={{ width: "50px", height: "50px", border: "1px solid var(--ic-color-text-primary)", color: "var(--ic-color-text-primary)" }}>
+        Grid item 5
+      </div>
+    </IcLayoutGrid>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={layoutGridItemSnippets}>
+  <IcLayoutGrid
+    columns={3}
+    style={{ border: "1px dashed var(--ic-architectural-500)" }}
+  >
+    <IcLayoutGridItem colStart={2} colSpan={2} rowStart={2} rowSpan={2}>
+      <div
+        style={{
+          width: "50px",
+          height: "50px",
+          border: "1px solid var(--ic-color-text-primary)",
+          color: "var(--ic-color-text-primary)",
+        }}
+      >
+        Grid item 1
+      </div>
+    </IcLayoutGridItem>
+    <IcLayoutGridItem hideInMobileMode>
+      <div
+        style={{
+          width: "50px",
+          height: "50px",
+          border: "1px solid var(--ic-color-text-primary)",
+          color: "var(--ic-color-text-primary)",
+        }}
+      >
+        Grid item 2
+      </div>
+    </IcLayoutGridItem>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 3
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 4
+    </div>
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "1px solid var(--ic-color-text-primary)",
+        color: "var(--ic-color-text-primary)",
+      }}
+    >
+      Grid item 5
+    </div>
+  </IcLayoutGrid>
+</ComponentPreview>

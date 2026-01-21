@@ -1,0 +1,68 @@
+---
+path: "/components/feedback-progress/alert/accessibility"
+
+date: "2024-04-15"
+
+title: "Alert"
+
+status: "BETA"
+
+subTitle: "Alerts display a short important message in a way that attracts attention without interrupting the current task."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/alert"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/alert" },
+    { title: "Code", path: "/components/feedback-progress/alert/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/alert/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+Where alerts are added to a page content, they can be tabbed to follow the logical page content order.
+
+Where both an action button and a dismiss button are included on an alert, focus is first applied to the action button and then the dismiss button.
+
+## For Assistive Technology
+
+Alerts use the `alert` role, creating an `aria-live` region that's rendered on page load. If the alert appears on the page, it constitutes a status update. The `aria-live` region causes the alert to be brought to the attention of assistive technology users.
+
+By default, the alert uses an `aria-live` value of `assertive` to interrupt the user flow to call attention to the status change.
+
+If the alert content is not urgent, consider using an `aria-live` value of `polite` instead. This announces the alert contents after the current element announcement has been completed.
+
+## Based on
+
+The alert component is based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role"
+      rel="noreferrer noopener nofollow"
+    >
+      Alert role, MDN Web Docs
+    </ic-link>
+    , accessed March 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://hiddedevries.nl/en/blog/2017-04-04-how-to-make-inline-error-messages-accessible"
+      rel="noreferrer noopener nofollow"
+    >
+      How to make inline error messages accessible
+    </ic-link>
+    , accessed March 2022.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.
