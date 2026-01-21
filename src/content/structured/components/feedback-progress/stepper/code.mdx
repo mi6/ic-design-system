@@ -1,0 +1,402 @@
+---
+path: "/components/feedback-progress/stepper/code"
+
+date: "2024-05-31"
+
+title: "Stepper"
+
+status: "BETA"
+
+subTitle: "A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/stepper"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/stepper" },
+    { title: "Code", path: "/components/feedback-progress/stepper/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/stepper/accessibility",
+    },
+  ]
+---
+
+import { IcStepper, IcStep } from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper>
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step heading="Pay for order" type="current"></ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper>
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep heading="Pay for order" type="current" />
+  <IcStep heading="Collect" type="disabled" />
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcStepper>
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+## Step details
+
+<ComponentDetails component="ic-step" />
+
+## Stepper details
+
+<ComponentDetails component="ic-stepper" />
+
+## Variants
+
+### Compact stepper
+
+export const compactStepper = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper variant="compact">
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step heading="Pay for order" type="current"></ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper variant="compact">
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep heading="Pay for order" type="current" />
+  <IcStep heading="Collect" type="disabled" />
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={compactStepper}>
+  <IcStepper variant="compact">
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+### Left-aligned
+
+export const leftAligned = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper aligned="left">
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step heading="Pay for order" type="current"></ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper aligned="left">
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep heading="Pay for order" type="current" />
+  <IcStep heading="Collect" type="disabled" />
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={leftAligned}>
+  <IcStepper aligned="left">
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+### With hidden step information
+
+export const hiddenStepInfo = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper hide-step-info="true">
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step heading="Pay for order" type="current"></ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper hideStepInfo>
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep heading="Pay for order" type="current" />
+  <IcStep heading="Collect" type="disabled" />
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={hiddenStepInfo}>
+  <IcStepper hideStepInfo>
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+### With subtitles
+
+export const withSubtitles = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper>
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step 
+    heading="Customise your order" 
+    subheading="Optional" 
+    type="completed" 
+  >
+  </ic-step>
+  <ic-step 
+    heading="Pay for order" 
+    subheading="We accept all major debit/credit cards" 
+    type="current" 
+  >
+  </ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper>
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep 
+    heading="Customise your order" 
+    subheading="Optional" 
+    type="completed" 
+  />
+  <IcStep 
+    heading="Pay for order" 
+    subheading="We accept all major debit/credit cards" 
+    type="current" 
+  />
+  <IcStep heading="Collect" type="disabled"/>
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={withSubtitles}>
+  <IcStepper>
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep
+      heading="Customise your order"
+      subheading="Optional"
+      type="completed"
+    />
+    <IcStep
+      heading="Pay for order"
+      subheading="We accept all major debit/credit cards"
+      type="current"
+    />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+### Custom connector width
+
+export const customConnectorWidth = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper connector-width="150">
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step heading="Pay for order" type="current"></ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper aligned="left" connectorWidth={150}>
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep heading="Pay for order" type="current" />
+  <IcStep heading="Collect" type="disabled" />
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={customConnectorWidth}>
+  <IcStepper aligned="left" connectorWidth={150}>
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper theme="dark">
+  <ic-step heading="Order coffee" type="completed"></ic-step>
+  <ic-step heading="Pay for order" type="current"></ic-step>
+  <ic-step heading="Collect" type="disabled"></ic-step>
+</ic-stepper>`,
+      long: `.parent-container {
+    background: var(--ic-color-page-background-dark);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper theme="dark">
+  <IcStep heading="Order coffee" type="completed" />
+  <IcStep heading="Pay for order" type="current" />
+  <IcStep heading="Collect" type="disabled" />
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
+>
+  <IcStepper theme="dark">
+    <IcStep heading="Order coffee" type="completed" />
+    <IcStep heading="Pay for order" type="current" />
+    <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>

@@ -1,0 +1,132 @@
+---
+path: "/components/navigation/breadcrumb"
+
+navPriority: 2
+
+date: "2023-02-03"
+
+title: "Breadcrumb"
+
+status: "BETA"
+
+subTitle: "Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/breadcrumb"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/breadcrumb" },
+    { title: "Code", path: "/components/navigation/breadcrumb/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/breadcrumb/accessibility",
+    },
+  ]
+
+tags: ["Breadcrumb trail"]
+---
+
+import { IcBreadcrumbGroup, IcBreadcrumb } from "@ukic/react";
+import {
+  Fig1BreadcrumbsDark,
+  Fig1BreadcrumbsLight,
+  Fig2BreadcrumbsDark,
+  Fig2BreadcrumbsLight,
+  Fig3BreadcrumbsDark,
+  Fig3BreadcrumbsLight,
+  Fig4BreadcrumbsDark,
+  Fig4BreadcrumbsLight,
+} from "./images";
+
+## Introduction
+
+An example of the breadcrumbs component.
+
+<ComponentPreview>
+  <IcBreadcrumbGroup>
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current="true"
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+## When to use
+
+Use breadcrumbs to describe an app’s hierarchy and where the current page sits within it. Use breadcrumbs for apps that have a large number of pages within a complex structure.
+
+Show the current page’s parents, grandparents and other ancestors so that the user can easily move back up the hierarchy. Always show a link to the app’s homepage as the top-level link in the breadcrumb component.
+
+Use breadcrumbs as a secondary navigation option to supplement the app’s main navigation method.
+
+<DoDontCaution
+  imageSrc={[Fig1BreadcrumbsLight, Fig1BreadcrumbsDark]}
+  imageAlt="Above the page header is a breadcrumb component with links to parent pages for ‘Coffees’, ‘Beverages’ and ‘Home’. This is separate from the site navigation."
+  state="good"
+  caption="A breadcrumb providing a secondary method of navigation that supplements the main navigation from the top navigation."
+/>
+
+Use the ‘back breadcrumb’ for apps with simple structures that are only one or two levels deep. Show the current page’s immediate parent in the back breadcrumb link.
+
+Use a condensed breadcrumb to hide the middle steps between the page’s parent and the homepage. However, always allow the condensed breadcrumb to be expanded to show the full path.
+
+## When not to use
+
+Don’t use breadcrumbs as the primary method of navigating through an app’s pages. Always include a global navigation method to allow any page to be easily accessed from any other page.
+
+Don’t use breadcrumbs to show the history of recently visited pages. Only use breadcrumbs to show the location of the current page within an app’s structure.
+
+Don’t use breadcrumbs if the app’s structure is only one or two pages deep. Use the ‘back breadcrumb’ or use a different method to indicate the page’s position.
+
+<DoDontCaution
+  imageSrc={[Fig2BreadcrumbsLight, Fig2BreadcrumbsDark]}
+  imageAlt="Above the page header is a breadcrumb component with links to parent pages for ‘Coffee’ and ‘Home’."
+  state="bad"
+  caption="Don’t use breadcrumbs for apps with structures that are only one or two pages deep."
+/>
+
+Don’t include the current page as a link within the breadcrumbs. Instead use clear titling on the page itself to label the current page. If displaying the current page within the breadcrumb, then make sure it is not clickable.
+
+<DoDontCaution
+  imageSrc={[Fig3BreadcrumbsLight, Fig3BreadcrumbsDark]}
+  imageAlt="An example app called ‘A whole latte love’ showing a page titled ‘Latte’. A breadcrumb exists in the page header that includes links to the current page ‘Latte’, and its ancestors ‘Coffee’, ‘Beverages’ and ‘Home’."
+  state="bad"
+  caption="Don’t include the current page as a link within the breadcrumb."
+/>
+
+Avoid showing more than six levels in a breadcrumb. Consider your app’s information architecture and whether the site’s structure can be flattened. If this can’t be achieved, use hub pages as the first link in a breadcrumb, which themselves provide a method of returning back to the homepage.
+
+## Colour
+
+Always use the default theme of breadcrumbs to ensure that the links are recognisable as links. However, use the light or dark theme with `monochrome={true}` if breadcrumbs are positioned on different coloured backgrounds to ensure good colour contrast.
+
+<DoDontCaution
+  imageSrc={[Fig4BreadcrumbsLight, Fig4BreadcrumbsDark]}
+  imageAlt="An example app called ‘A whole latte love’ that shows a page titled ‘Latte’. A hero banner sits at the top of the page with a dark blue background. A breadcrumb component that sits on top of the dark hero banner uses white styled links to achieve high contrast."
+  state="good"
+  caption="Use contrast styling if using breadcrumbs on different coloured backgrounds."
+/>
+
+## Content
+
+Make sure that the breadcrumb label is the exact title of the page it links to.
+
+## Layout and placement
+
+Always position breadcrumbs at the top of page content but below main navigation components such as the [top navigation](/components/navigation/top-navigation).
+
+## Related components
+
+- [Page header](/components/navigation/page-header)

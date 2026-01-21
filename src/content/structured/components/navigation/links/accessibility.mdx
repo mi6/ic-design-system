@@ -1,0 +1,72 @@
+---
+path: "/components/navigation/link/accessibility"
+
+date: "2024-09-03"
+
+title: "Link"
+
+status: "BETA"
+
+subTitle: "Links can be used to navigate to different pages or sections of a page."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/link"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/link" },
+    { title: "Code", path: "/components/navigation/link/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/link/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+Links use the semantic `<a>` HTML element (anchor element) with an `href` attribute to create a hyperlink.
+
+## For Assistive Technology
+
+Most screen readers will announce “link” before reading out a link. For example, a link labelled “Components” will be read out as “link components”.
+
+## Based on
+
+The links component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://webaim.org/techniques/hypertext/"
+      rel="noreferrer noopener nofollow"
+    >
+      Links and Hypertext
+    </ic-link>
+    , WebAIM, accessed July 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://adrianroselli.com/2016/01/links-buttons-submits-and-divs-oh-hell.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Links, Buttons, Submits, and Divs, Oh Hell
+    </ic-link>
+    , Adrian Roselli, accessed July 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#accessibility"
+      rel="noreferrer noopener nofollow"
+    >
+      The Anchor element
+    </ic-link>
+    , Mozilla, accessed July 2022.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

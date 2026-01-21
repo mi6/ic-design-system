@@ -1,0 +1,100 @@
+---
+path: "/components/layout/accordion/accessibility"
+
+date: "2024-04-15"
+
+title: "Accordion"
+
+status: "BETA"
+
+subTitle: "Accordions are expandable and collapsible sections that are used to show and hide additional content. "
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/layout/accordion"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/accordion" },
+    { title: "Code", path: "/components/layout/accordion/code" },
+    {
+      title: "Accessibility",
+      path: "/components/layout/accordion/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+We have used `aria-expanded` and `aria-collapsed` so that a screen reader announces the state of the accordion.
+
+When navigating using the keyboard, use the tab button to move focus between accordions, and use the space and enter keys to open or close it.
+
+If an input or actionable functionality is contained within an accordion, this is only accessible when the accordion is open.
+
+If the accordion is closed, we make sure any functionality contained within the accordion is removed from the focus order.
+
+## For Assistive Technology
+
+The accordion component consists of a button and expanded area. The button uses `aria-expanded` so screen readers announce when the accordion panel is on display. `aria-controls` is also applied to the button to identify which expanded area is being controlled by the button.
+
+The expanded content uses `aria-hidden`, which is set to `false` when the accordion is collapsed and `true` when expanded. The expanded content also has a `role` of `region` and `aria-labelled`, which links to the accordion heading within the button.
+
+## Based on
+
+The accordion component is based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/"
+      rel="noreferrer noopener nofollow"
+    >
+      Accordion Pattern, Aria Authoring Practice Guide (APG)
+    </ic-link>
+    , accessed May 2023.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.scottohara.me/blog/2017/10/25/accordion-release.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Accessible ARIA Accordions, Scott O’Hara
+    </ic-link>
+    , accessed May 2023.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.nngroup.com/articles/accordion-icons/#:~:text=Using%20a%20caret%20is%20definitely,using%20no%20signifier%20at%20all"
+      rel="noreferrer noopener nofollow"
+    >
+      Accordion Icons: Which Signifiers Work Best?, Nielson Norman Group
+    </ic-link>
+    , accessed May 2023.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.aditus.io/patterns/accordion/"
+      rel="noreferrer noopener nofollow"
+    >
+      Accessible Accordion, Aditus
+    </ic-link>
+    , accessed May 2023.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://inclusive-components.design/collapsible-sections/ "
+      rel="noreferrer noopener nofollow"
+    >
+      Collapsible Sections, Inclusive Components
+    </ic-link>
+    , accessed May 2023.
+  </li>
+</ul>
+
+## Testing
+
+We’ve tested this component against WCAG 2.2 Level AA. It’s been tested with NVDA and VoiceOver, and several different users with different interaction methods.

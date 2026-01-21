@@ -1,0 +1,903 @@
+---
+path: "/components/feedback-progress/skeleton/code"
+
+date: "2024-05-31"
+
+title: "Skeleton"
+
+status: "BETA"
+
+subTitle: "Skeleton loading states are representations of the shape of content that help inform users that a specific type of component is loading."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/skeleton"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/skeleton" },
+    { title: "Code", path: "/components/feedback-progress/skeleton/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/skeleton/accessibility",
+    },
+  ]
+---
+
+import {
+  IcSkeleton,
+  IcTypography,
+  IcCardVertical,
+  IcButton,
+  SlottedSVG,
+} from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skeleton variant="circle"></ic-skeleton>
+<ic-typography variant="caption">
+  <ic-skeleton variant="text"></ic-skeleton>
+</ic-typography>
+<ic-skeleton></ic-skeleton>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSkeleton variant="circle" />
+<IcTypography variant="caption">
+  <IcSkeleton variant="text" />
+</IcTypography>
+<IcSkeleton />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+    <IcSkeleton variant="circle" />
+    <IcTypography variant="caption">
+      <IcSkeleton variant="text" />
+    </IcTypography>
+    <IcSkeleton />
+  </div>
+</ComponentPreview>
+
+## Skeleton details
+
+<ComponentDetails component="ic-skeleton" />
+
+## Variants
+
+### Inherited size from child
+
+export const snippetsInherited = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skeleton><div class="child">Test text</div></ic-skeleton>`,
+      long: `.child {
+    height: 12.5rem;
+    width: 25.125rem;
+  }
+</style>
+<body>
+  {shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSkeleton>
+  <div className={classes.child}>Test text</div>
+</IcSkeleton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  child: {
+    height: "12.5rem",
+    width: "25.125rem"
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  child: {
+    height: "12.5rem",
+    width: "25.125rem"
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsInherited}>
+  <IcSkeleton style={{ maxWidth: "100%" }}>
+    <div
+      style={{
+        height: "12.5rem",
+        width: "25.125rem",
+      }}
+    >
+      Test text
+    </div>
+  </IcSkeleton>
+</ComponentPreview>
+
+### Set width and height
+
+CSS changes directly to `Skeleton` must be applied with inline styling.
+
+export const snippetsSetWidthAndHeight = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h4">
+  <h4>Height and width set with styles</h4>
+</ic-typography>
+<ic-skeleton style="height: 12.5rem; width: 25.125rem"></ic-skeleton>
+<ic-typography variant="h4">
+  <h4>Height set with styles</h4>
+</ic-typography>
+<ic-skeleton style="height: 5rem"></ic-skeleton>
+<ic-typography variant="h4">
+  <h4>Width set with styles</h4>
+</ic-typography>
+<ic-skeleton style="width: 25.125rem"></ic-skeleton>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h4">
+  <h4>Height and width set with styles</h4>
+</IcTypography>
+<IcSkeleton
+  style={{
+    height: "12.5rem",
+    width: "12.5rem",
+  }}
+/>
+<IcTypography variant="h4">
+  <h4>Height set with styles</h4>
+</IcTypography>
+<IcSkeleton
+  style={{
+    height: "5rem",
+  }}
+/>
+<IcTypography variant="h4">
+  <h4>Width set with styles</h4>
+</IcTypography>
+<IcSkeleton
+  style={{
+    width: "25.125rem",
+  }}
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsSetWidthAndHeight}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "0.5rem",
+      maxWidth: "100%",
+    }}
+  >
+    <IcTypography variant="h4">
+      <h4>Height and width set with styles</h4>
+    </IcTypography>
+    <IcSkeleton
+      style={{
+        height: "12.5rem",
+        width: "12.5rem",
+      }}
+    />
+    <IcTypography variant="h4">
+      <h4>Height set with styles</h4>
+    </IcTypography>
+    <IcSkeleton
+      style={{
+        height: "5rem",
+      }}
+    />
+    <IcTypography variant="h4">
+      <h4>Width set with styles</h4>
+    </IcTypography>
+    <IcSkeleton
+      style={{
+        maxWidth: "25.125rem",
+      }}
+    />
+  </div>
+</ComponentPreview>
+
+### Theme
+
+export const snippetsTheme = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-skeleton variant="circle" theme="dark"></ic-skeleton>
+<ic-typography variant="caption">
+  <ic-skeleton variant="text" theme="dark"></ic-skeleton>
+</ic-typography>
+<ic-skeleton theme="dark"></ic-skeleton>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-xs);
+    background: var(--ic-color-page-background-dark);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcSkeleton variant="circle" theme="dark" />
+<IcTypography variant="caption">
+  <IcSkeleton variant="text" theme="dark" />
+</IcTypography>
+<IcSkeleton theme="dark" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--ic-space-xs)",
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsTheme}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
+>
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+    <IcSkeleton variant="circle" theme="dark" />
+    <IcTypography variant="caption">
+      <IcSkeleton variant="text" theme="dark" />
+    </IcTypography>
+    <IcSkeleton theme="dark" />
+  </div>
+</ComponentPreview>
+
+### Within IcCardVertical component
+
+export const snippetsInCard = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-card-vertical heading="Americano Order" subheading="Name: Michael">
+  <ic-skeleton
+    slot="icon"
+    variant="circle"
+    style="height: var(--ic-space-xl); width: var(--ic-space-xl);"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="heading"
+    variant="rectangle"
+    style="height: var(--ic-space-xl); width: 10.625rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="subheading"
+    variant="text"
+    style="height: 1.125rem; width: 6.25rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="message"
+    variant="rectangle"
+    style="height: var(--ic-space-lg); width: 18.75rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style="height: 2.5rem; width: 6.25rem;"
+  ></ic-skeleton>
+  <ic-skeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style="height: 2.5rem; width: 6.25rem;"
+  ></ic-skeleton>
+</ic-card-vertical>`,
+      long: `<body>
+        <div>
+          <div id="card-container"></div>
+          <br />
+          <ic-button variant="primary" onClick="refresh()" }}>
+           <svg
+             slot="icon"
+             xmlns="http://www.w3.org/2000/svg"
+             height="24"
+             viewBox="0 0 24 24"
+             width="24"
+             fill="#000000"
+           >
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+            />
+          </svg>
+          Refresh
+        </ic-button>
+      </div>
+    </body>
+    <script>
+    const skeletonContent = \`<ic-card-vertical heading="Americano Order" subheading="Name: Michael">
+      <ic-skeleton
+        slot="icon"
+        variant="circle"
+        style="height: var(--ic-space-xl); width: var(--ic-space-xl)"
+      ></ic-skeleton>
+      <ic-skeleton
+        slot="heading"
+        variant="rectangle"
+        style="height: var(--ic-space-xl); width: 10.625rem"
+      ></ic-skeleton>
+      <ic-skeleton
+        slot="subheading"
+        variant="text"
+        style="height: 1.125rem; width: 6.25rem"
+      ></ic-skeleton>
+      <ic-skeleton
+        slot="message"
+        variant="rectangle"
+        style="height: var(--ic-space-lg); width: 18.75rem"
+      ></ic-skeleton>
+      <ic-skeleton
+        slot="interaction-controls"
+        variant="rectangle"
+        style="height: 2.5rem; width: 6.25rem"
+      ></ic-skeleton>
+      <ic-skeleton
+        slot="interaction-controls"
+        variant="rectangle"
+        style="height: 2.5rem; width: 6.25rem"
+      ></ic-skeleton>
+    </ic-card-vertical>\`
+    const cardContent =\`<ic-card-vertical
+      heading="Americano Order"
+      subheading="Name: Michael"
+      message="Extras: double espresso shot & oat milk"
+    >
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        fill="#000000"
+      >
+        <path
+          d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z"
+        />
+      </svg>
+      <div slot="interaction-controls" style="display: flex; gap: 1rem">
+        <ic-button variant="primary">Accept</ic-button>
+        <ic-button variant="secondary">Cancel</ic-button>
+      </div>
+    </ic-card-vertical>\`   
+    function setContent(content) {
+      document.querySelector("#card-container").innerHTML=content;
+    }
+    function refresh() {
+      setContent(skeletonContent);
+      setTimeout(() => {
+        setContent(cardContent);
+      }, 3000);
+    }
+    refresh();
+    </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcCardVertical heading="Americano Order" subheading="Name: Michael">
+  <IcSkeleton
+    slot="icon"
+    variant="circle"
+    style={{
+      height: "var(--ic-space-xl)",
+      width: "var(--ic-space-xl)",
+    }}
+  />
+  <IcSkeleton
+    slot="heading"
+    variant="rectangle"
+    style={{
+      height: "var(--ic-space-xl)",
+      width: "10.625rem",
+    }}
+  />
+  <IcSkeleton
+    slot="subheading"
+    variant="text"
+    style={{
+      height: "1.125rem",
+      width: "6.25rem",
+    }}
+  />
+  <IcSkeleton
+    slot="message"
+    variant="rectangle"
+    style={{
+      height: "var(--ic-space-lg)",
+      width: "18.75rem",
+    }}
+  />
+  <IcSkeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style={{
+      height: "2.5rem",
+      width: "6.25rem",
+    }}
+  />
+  <IcSkeleton
+    slot="interaction-controls"
+    variant="rectangle"
+    style={{
+      height: "2.5rem",
+      width: "6.25rem",
+    }}
+  />
+</IcCardVertical>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const loading = () => (
+  <IcCardVertical heading="Americano Order" subheading="Name: Michael">
+    <IcSkeleton
+      slot="icon"
+      variant="circle"
+      style={{
+        height: "2rem",
+        width: "2rem",
+      }}
+    />
+    <IcSkeleton
+      slot="heading"
+      variant="rectangle"
+      style={{
+        height: "2rem",
+        width: "10.625rem",
+      }}
+    />
+    <IcSkeleton
+      slot="subheading"
+      variant="text"
+      style={{
+        height: "1.125rem",
+        width: "6.25rem",
+      }}
+    />
+    <IcSkeleton
+      slot="message"
+      variant="rectangle"
+      style={{
+        height: "1.5rem",
+        width: "18.75rem",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "2.5rem",
+        width: "6.25rem",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "2.5rem",
+        width: "6.25rem",
+      }}
+    />
+  </IcCardVertical>
+);
+  const loaded = () => (
+  <IcCardVertical
+    heading="Americano Order"
+    subheading="Name: Michael"
+    message="Extras: double espresso shot & oat milk"
+  >
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </SlottedSVG>
+    <div slot="interaction-controls" style={{ display: "flex", gap: "1rem" }}>
+      <IcButton variant="primary">Accept</IcButton>
+      <IcButton variant="secondary">Cancel</IcButton>
+    </div>
+  </IcCardVertical>
+);
+  const [content, setContent] = React.useState(loaded);
+  const loadFunc = () => {
+    setContent(loading);
+    setTimeout(() => {
+      setContent(loaded);
+    }, 3000);
+  };
+  return (
+    <div>
+      {content}
+      <br />
+      <IcButton
+        variant="primary"
+        onClick={() => {
+          loadFunc();
+        }}
+      >
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+        </SlottedSVG>
+        Refresh
+      </IcButton>
+    </div>
+  );`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const loading = () => (
+  <IcCardVertical heading="Americano Order" subheading="Name: Michael">
+    <IcSkeleton
+      slot="icon"
+      variant="circle"
+      style={{
+        height: "2rem",
+        width: "2rem",
+      }}
+    />
+    <IcSkeleton
+      slot="heading"
+      variant="rectangle"
+      style={{
+        height: "2rem",
+        width: "10.625rem",
+      }}
+    />
+    <IcSkeleton
+      slot="subheading"
+      variant="text"
+      style={{
+        height: "1.125rem",
+        width: "6.25rem",
+      }}
+    />
+    <IcSkeleton
+      slot="message"
+      variant="rectangle"
+      style={{
+        height: "1.5rem",
+        width: "18.75rem",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "2.5rem",
+        width: "6.25rem",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "2.5rem",
+        width: "6.25rem",
+      }}
+    />
+  </IcCardVertical>
+);
+  const loaded = () => (
+  <IcCardVertical
+    heading="Americano Order"
+    subheading="Name: Michael"
+    message="Extras: double espresso shot & oat milk"
+  >
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </SlottedSVG>
+    <div slot="interaction-controls" style={{ display: "flex", gap: "1rem" }}>
+      <IcButton variant="primary">Accept</IcButton>
+      <IcButton variant="secondary">Cancel</IcButton>
+    </div>
+  </IcCardVertical>
+);
+  const [content, setContent] = React.useState(loaded);
+  const loadFunc = () => {
+    setContent(loading);
+    setTimeout(() => {
+      setContent(loaded);
+    }, 3000);
+  };
+  return (
+    <div>
+      {content}
+      <br />
+      <IcButton
+        variant="primary"
+        onClick={() => {
+          loadFunc();
+        }}
+      >
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+        </SlottedSVG>
+        Refresh
+      </IcButton>
+    </div>
+  );`,
+        },
+      ],
+    },
+  },
+];
+
+export const loading = () => (
+  <IcCardVertical heading="Americano Order" subheading="Name: Michael">
+    <IcSkeleton
+      slot="icon"
+      variant="circle"
+      style={{
+        height: "2rem",
+        width: "2rem",
+      }}
+    />
+    <IcSkeleton
+      slot="heading"
+      variant="rectangle"
+      style={{
+        height: "2rem",
+        width: "10.625rem",
+      }}
+    />
+    <IcSkeleton
+      slot="subheading"
+      variant="text"
+      style={{
+        height: "1.125rem",
+        width: "6.25rem",
+      }}
+    />
+    <IcSkeleton
+      slot="message"
+      variant="rectangle"
+      style={{
+        height: "1.5rem",
+        width: "18.75rem",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "2.5rem",
+        width: "6.25rem",
+      }}
+    />
+    <IcSkeleton
+      slot="interaction-controls"
+      variant="rectangle"
+      style={{
+        height: "2.5rem",
+        width: "6.25rem",
+      }}
+    />
+  </IcCardVertical>
+);
+
+export const loaded = () => (
+  <IcCardVertical
+    heading="Americano Order"
+    subheading="Name: Michael"
+    message="Extras: double espresso shot & oat milk"
+  >
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M2,21V19H20V21H2M20,8V5H18V8H20M20,3A2,2 0 0,1 22,5V8A2,2 0 0,1 20,10H18V13A4,4 0 0,1 14,17H8A4,4 0 0,1 4,13V3H20M16,5H6V13A2,2 0 0,0 8,15H14A2,2 0 0,0 16,13V5Z" />
+    </SlottedSVG>
+    <div slot="interaction-controls" style={{ display: "flex", gap: "1rem" }}>
+      <IcButton variant="primary">Accept</IcButton>
+      <IcButton variant="secondary">Cancel</IcButton>
+    </div>
+  </IcCardVertical>
+);
+
+export const ContentFunction = () => {
+  const [content, setContent] = React.useState(loaded);
+  const loadFunc = () => {
+    setContent(loading);
+    setTimeout(() => {
+      setContent(loaded);
+    }, 3000);
+  };
+  return (
+    <div>
+      {content}
+      <br />
+      <IcButton
+        variant="primary"
+        onClick={() => {
+          loadFunc();
+        }}
+      >
+        <SlottedSVG
+          slot="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+        </SlottedSVG>
+        Refresh
+      </IcButton>
+    </div>
+  );
+};
+
+<ComponentPreview snippets={snippetsInCard}>
+  <ContentFunction />
+</ComponentPreview>

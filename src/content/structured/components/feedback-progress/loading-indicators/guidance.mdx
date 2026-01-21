@@ -1,0 +1,228 @@
+---
+path: "/components/feedback-progress/loading-indicator"
+
+navPriority: 7
+
+date: "2023-02-03"
+
+title: "Loading indicator"
+
+status: "BETA"
+
+subTitle: "Loading indicators help inform users that a request is being processed. Radial and linear indicators provide flexibility in design."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/loading-indicator"
+
+tabs:
+  [
+    {
+      title: "Guidance",
+      path: "/components/feedback-progress/loading-indicator",
+    },
+    {
+      title: "Code",
+      path: "/components/feedback-progress/loading-indicator/code",
+    },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/loading-indicator/accessibility",
+    },
+  ]
+
+tags: ["Progress bar", "Progress indicator", "Spinner"]
+---
+
+import { IcLoadingIndicator, IcTypography } from "@ukic/react";
+import {
+  Fig1LoadingDark,
+  Fig1LoadingLight,
+  Fig2LoadingDark,
+  Fig2LoadingLight,
+  Fig3LoadingDark,
+  Fig3LoadingLight,
+  Fig4LoadingDark,
+  Fig4LoadingLight,
+  Fig5LoadingDark,
+  Fig5LoadingLight,
+  Fig6LoadingDark,
+  Fig6LoadingLight,
+  Fig7LoadingDark,
+  Fig7LoadingLight,
+  Fig8LoadingDark,
+  Fig8LoadingLight,
+} from "./images";
+
+## Component variants
+
+Loading indicators have two variants: radial and linear.
+
+Loading indicators can either be determinate or indeterminate:
+
+- Use determinate loading indicators when the percentage of completion can be determined.
+- Use indeterminate loading indicators when the process completion rate can't be determined.
+
+## Radial
+
+Radial loading indicators have four sizes:
+
+- Small
+- Default
+- Large
+- Icon
+
+The icon size is available for use within other components.
+
+<ComponentPreview>
+  <IcLoadingIndicator type="circular" progress="50" max="100" label="50%" />
+</ComponentPreview>
+
+<IcTypography
+  variant="label"
+  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
+>
+  Radial determinate.
+</IcTypography>
+
+<ComponentPreview>
+  <IcLoadingIndicator type="circular" label="Loading..." />
+</ComponentPreview>
+
+<IcTypography
+  variant="label"
+  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
+>
+  Radial indeterminate.
+</IcTypography>
+
+## Linear
+
+Linear loading indicators have three sizes:
+
+- Small
+- Default
+- Large
+
+Linear loading indicators have two variants:
+
+- Default
+- Full-width
+
+Linear loading indicators can be set to full-width to span its container.
+
+<ComponentPreview>
+  <IcLoadingIndicator
+    style={{ width: "15rem" }}
+    type="linear"
+    label="50%"
+    progress="50"
+    max="100"
+  />
+</ComponentPreview>
+
+<IcTypography
+  variant="label"
+  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
+>
+  Linear determinate.
+</IcTypography>
+
+<ComponentPreview>
+  <IcLoadingIndicator
+    style={{ width: "15rem" }}
+    type="linear"
+    label="Loading..."
+    max="100"
+  />
+</ComponentPreview>
+
+<IcTypography
+  variant="label"
+  style={{ marginTop: "-1rem", marginBottom: "1.5rem" }}
+>
+  Linear indeterminate.
+</IcTypography>
+
+## When to use
+
+Use loading indicators when loading full pages or containers where the structure is unknown.
+
+Use determinate loading indicators wherever the percentage of completion can be calculated.
+
+## When not to use
+
+Avoid using loading indicators when loading full pages if the structure of the page loading is known. Instead, use the [skeleton](/components/feedback-progress/skeleton) component.
+
+## Content
+
+### Labels
+
+Determinate loading indicators feature the percentage completion rate in percentage points, 0 to 100%.
+
+Indeterminate loading indicators have a customisable label. The label can be set to change after a specified amount of time. Make sure to display each label for at least five seconds. Keep labels clear and concise. Where possible, provide specific labels to the process being performed.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig1LoadingLight, Fig1LoadingDark]}
+    imageAlt="A graphic of a radial loading indicator with the label of 'Submitting form...'."
+    state="good"
+    caption="Use clear, concise and specific labels."
+  />
+  <DoDontCaution
+    imageSrc={[Fig2LoadingLight, Fig2LoadingDark]}
+    imageAlt="A graphic of a radial loading indicator with the label of ‘The form is now being submitted... Please wait...’."
+    state="bad"
+    caption="Don’t make labels unnecessarily long."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+Loading indicators always appear centred within their container. If the whole page is loading, position the loading indicator at the centre of the page. If the loading indicator is used inside another component, like a card, position the loading indicator at the centre of the component.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3LoadingLight, Fig3LoadingDark]}
+    imageAlt="A graphic of a radial loading indicator positioned in the middle of a blank page."
+    state="good"
+    caption="Always centre the component."
+  />
+  <DoDontCaution
+    imageSrc={[Fig4LoadingLight, Fig4LoadingDark]}
+    imageAlt="A graphic of a radial loading indicator positioned in the top left corner of a blank page."
+    state="bad"
+    caption="Don’t position the loading indicators on other parts of the page or container."
+  />
+</DoubleDoDontCaution>
+
+When using the full-width variant of linear loading indicators, make sure to place this at the top of the component or page. Also, make sure that the loading indicator takes up the full width of the component or page.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5LoadingLight, Fig5LoadingDark]}
+    imageAlt="A graphic of a full width loading indicator at the top of a page."
+    state="good"
+    caption="Place the full width indicator at the top of the container."
+  />
+  <DoDontCaution
+    imageSrc={[Fig6LoadingLight, Fig6LoadingDark]}
+    imageAlt="A graphic of a full width loading indicator positioned in the centre of a container with a bigger width."
+    state="bad"
+    caption="Don’t position full width loading indicators on other parts of the container. Make sure it has the same width of this container."
+  />
+</DoubleDoDontCaution>
+
+If loading indicators are overlaid on other content, place them in a dialog.
+
+<DoDontCaution
+  imageSrc={[Fig7LoadingLight, Fig7LoadingDark]}
+  imageAlt="A loading indicator placed inside a modal dialog, overlaid on a page filled with content."
+  state="good"
+  caption="Place loading indicators in dialogs when overlaid on other content."
+/>
+
+<DoDontCaution
+  imageSrc={[Fig8LoadingLight, Fig8LoadingDark]}
+  imageAlt="A loading indicator overlaid on a page filled with content."
+  state="bad"
+  caption="Don’t place loading indicators over other content, even if changing the opacity of the background."
+/>

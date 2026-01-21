@@ -1,0 +1,1081 @@
+---
+path: "/components/data-display/data-list/code"
+
+date: "2024-05-31"
+
+title: "Data list"
+
+status: "BETA"
+
+subTitle: "The data list component displays a group of related data in a consistent and easy to consume way."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/data-display/data-list"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/data-display/data-list" },
+    { title: "Code", path: "/components/data-display/data-list/code" },
+    {
+      title: "Accessibility",
+      path: "/components/data-display/data-list/accessibility",
+    },
+  ]
+---
+
+import {
+  IcDataList,
+  IcDataRow,
+  IcLink,
+  IcTypography,
+  IcTextField,
+  IcButton,
+  IcStatusTag,
+} from "@ukic/react";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-list heading="Order details">
+  <ic-data-row label="Order name" value="Michael">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Drink" value="Americano">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Milk option" value="Soya milk">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Price" value="£3.25">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Payment method">
+    <ic-typography variant="body" slot="value">
+      VISA ending 5896
+    </ic-typography>
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <ic-button variant="icon" aria-label="Download" slot="end-component">
+      <svg viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </svg>
+    </ic-button>
+  </ic-data-row>
+</ic-data-list>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataList heading="Order details">
+  <IcDataRow label="Order name" value="Michael">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Drink" value="Americano">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Milk option" value="Soya milk">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Price" value="£3.25">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Payment method">
+    <IcTypography variant="body" slot="value">
+      VISA ending 5896
+    </IcTypography>
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <IcButton variant="icon" aria-label="Download" slot="end-component">
+      <SlottedSVG viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </SlottedSVG>
+    </IcButton>
+  </IcDataRow>
+</IcDataList>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcDataList heading="Order details" style={{ width: "90%" }}>
+    <IcDataRow label="Order name" value="Michael">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Drink" value="Americano">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Milk option" value="Soya milk">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Price" value="£3.25">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Payment method">
+      <IcTypography variant="body" slot="value">
+        VISA ending 5896
+      </IcTypography>
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+      <IcButton variant="icon" aria-label="Download" slot="end-component">
+        <svg viewBox="0 0 24 24" height="24" width="24">
+          <path
+            d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcButton>
+    </IcDataRow>
+  </IcDataList>
+</ComponentPreview>
+
+## Data row details
+
+<ComponentDetails component="ic-data-row" />
+
+## Data list details
+
+<ComponentDetails component="ic-data-list" />
+
+## Variants
+
+### With status tags
+
+export const withStatusTags = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-list heading="Order details">
+  <ic-data-row label="Order name" value="Michael">
+  </ic-data-row>
+  <ic-data-row label="Drink" value="Americano">
+    <ic-status-tag
+      status="warning"
+      label="In Progress"
+      variant="filled"
+      slot="end-component"
+    />
+  </ic-data-row>
+  <ic-data-row label="Milk option" value="Soya milk">
+  </ic-data-row>
+  <ic-data-row label="Price" value="£3.25">
+  </ic-data-row>
+  <ic-data-row label="Payment method">
+    <ic-typography variant="body" slot="value">
+      VISA ending 5896
+    </ic-typography>
+    <ic-status-tag
+      label="Not Confirmed"
+      variant="filled"
+      slot="end-component"
+    />
+  </ic-data-row>
+</ic-data-list>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataList heading="Order details">
+  <IcDataRow label="Order name" value="Michael" />
+  <IcDataRow label="Drink" value="Americano">
+    <IcStatusTag
+      status="warning"
+      label="In Progress"
+      variant="filled"
+      slot="end-component"
+    />
+  </IcDataRow>
+  <IcDataRow label="Milk option" value="Soya milk" />
+  <IcDataRow label="Price" value="£3.25" />
+  <IcDataRow label="Payment method">
+    <IcTypography variant="body" slot="value">
+      VISA ending 5896
+    </IcTypography>
+    <IcStatusTag
+      label="Not Confirmed"
+      variant="filled"
+      slot="end-component"
+    />
+  </IcDataRow>
+</IcDataList>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={withStatusTags}>
+  <IcDataList heading="Order details" style={{ width: "90%" }}>
+    <IcDataRow label="Order name" value="Michael" />
+    <IcDataRow label="Drink" value="Americano">
+      <IcStatusTag
+        status="warning"
+        label="In Progress"
+        variant="filled"
+        slot="end-component"
+      />
+    </IcDataRow>
+    <IcDataRow label="Milk option" value="Soya milk" />
+    <IcDataRow label="Price" value="£3.25" />
+    <IcDataRow label="Payment method">
+      <IcTypography variant="body" slot="value">
+        VISA ending 5896
+      </IcTypography>
+      <IcStatusTag
+        label="Not Confirmed"
+        variant="filled"
+        slot="end-component"
+      />
+    </IcDataRow>
+  </IcDataList>
+</ComponentPreview>
+
+### Size small
+
+export const smallSnippet = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-list heading="Personal details" size="small">
+  <ic-data-row label="Name" value="Michael Johnson">
+    <ic-status-tag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Date of birth" value="16 October 1995">
+    <ic-status-tag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Telephone" value="07449 7654873">
+    <ic-status-tag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Email" value="mjohnson@coffee.gov">
+    <ic-status-tag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+  <ic-data-row label="Address">
+    <ic-typography variant="body" slot="value">
+      383 Coffee Drive
+      <br />
+      London
+      <br />
+      SW7 988
+      <br />
+      United Kingdom
+    </ic-typography>
+    <ic-status-tag
+      label="not confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    ></ic-status-tag>
+  </ic-data-row>
+</ic-data-list>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataList heading="Personal details" size="small">
+  <IcDataRow label="Name" value="Michael Johnson">
+    <IcStatusTag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Date of birth" value="16 October 1995">
+    <IcStatusTag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Telephone" value="07449 7654873">
+    <IcStatusTag
+      status="warning"
+      label="in review"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Email" value="mjohnson@coffee.gov">
+    <IcStatusTag
+      status="success"
+      label="confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+  <IcDataRow label="Address">
+    <IcTypography variant="body" slot="value">
+      383 Coffee Drive
+      <br />
+      London
+      <br />
+      SW7 988
+      <br />
+      United Kingdom
+    </IcTypography>
+    <IcStatusTag
+      label="not confirmed"
+      variant="filled"
+      slot="end-component"
+      size="small"
+    />
+  </IcDataRow>
+</IcDataList>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={smallSnippet}>
+  <IcDataList heading="Personal details" size="small" style={{ width: "90%" }}>
+    <IcDataRow label="Name" value="Michael Johnson">
+      <IcStatusTag
+        status="success"
+        label="confirmed"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+    <IcDataRow label="Date of birth" value="16 October 1995">
+      <IcStatusTag
+        status="warning"
+        label="in review"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+    <IcDataRow label="Telephone" value="07449 7654873">
+      <IcStatusTag
+        status="warning"
+        label="in review"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+    <IcDataRow label="Email" value="mjohnson@coffee.gov">
+      <IcStatusTag
+        status="success"
+        label="confirmed"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+    <IcDataRow label="Address">
+      <IcTypography variant="body" slot="value">
+        383 Coffee Drive
+        <br />
+        London
+        <br />
+        SW7 988
+        <br />
+        United Kingdom
+      </IcTypography>
+      <IcStatusTag
+        label="not confirmed"
+        variant="filled"
+        slot="end-component"
+        size="small"
+      />
+    </IcDataRow>
+  </IcDataList>
+</ComponentPreview>
+
+### Editable example
+
+export const editableExample = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-list heading="Order details">
+  <ic-data-row label="Order name"> 
+    <ic-text-field 
+      slot="value" 
+      label="Order name" 
+      value="Michael"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
+    />
+  </ic-data-row>
+  <ic-data-row label="Drink">
+    <ic-text-field 
+      slot="value" 
+      label="Drink" 
+      value="Americano"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
+    />
+  </ic-data-row>
+  <ic-data-row label="Milk option">
+    <ic-text-field 
+      slot="value" 
+      label="Milk option" 
+      value="Soya milk"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
+    />
+  </ic-data-row>
+  <ic-data-row label="Price">
+    <ic-text-field 
+      slot="value" 
+      label="Price" 
+      value="£3.25"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
+    />
+  </ic-data-row>
+  <ic-data-row label="Payment method">
+    <ic-text-field 
+      slot="value" 
+      label="Payment method" 
+      value="VISA ending 5896"
+      readonly="true"
+      hide-label="true"
+      full-width="true"
+    />
+  </ic-data-row>
+</ic-data-list>
+<div class="btn-container">
+  <ic-button id="confirm-button">
+    Confirm
+  </ic-button>
+  <ic-button id="edit-button" variant="secondary">
+    Edit
+  </ic-button>
+</div>`,
+      long: `.btn-container {
+    display: flex;
+    gap: var(--ic-space-md);
+    padding-top: var(--ic-space-md);
+  }
+  .parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const textFields = document.querySelectorAll('ic-text-field');
+    const confirmBtn = document.querySelector('#confirm-button');
+    confirmBtn.addEventListener('click', () => {
+      textFields.forEach((textField) => {
+        textField.setAttribute('readonly', '');
+      });
+    });
+    const editBtn = document.querySelector('#edit-button');
+    editBtn.addEventListener('click', () => {
+      textFields.forEach((textField) => {
+        textField.removeAttribute('readonly');
+      });
+    });
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataList heading="Order details">
+  <IcDataRow label="Order name">
+    <IcTextField
+      slot="value"
+      label="Order name"
+      value="Michael"
+      readonly
+      hideLabel
+      fullWidth
+    />
+  </IcDataRow>
+  <IcDataRow label="Drink" value="Americano">
+    <IcTextField
+      slot="value"
+      label="Drink"
+      value="Americano"
+      readonly
+      hideLabel
+      fullWidth
+    />
+  </IcDataRow>
+  <IcDataRow label="Milk option" value="Soya milk">
+    <IcTextField
+      slot="value"
+      label="Milk option"
+      value="Soya milk"
+      readonly
+      hideLabel
+      fullWidth
+    />
+  </IcDataRow>
+  <IcDataRow label="Price" value="£3.25">
+    <IcTextField
+      slot="value"
+      label="Price"
+      value="£3.25"
+      readonly
+      hideLabel
+      fullWidth
+    />
+  </IcDataRow>
+  <IcDataRow label="Payment method">
+    <IcTextField
+      slot="value"
+      label="Payment method"
+      value="VISA ending 5896"
+      readonly
+      hideLabel
+      fullWidth
+    />
+  </IcDataRow>
+</IcDataList>
+<div className={classes.btnContainer}>
+  <IcButton
+    onClick={() => {
+      const textFields = document.querySelectorAll('ic-text-field');
+      textFields.forEach((textField) => {
+        textField.setAttribute('readonly', '');
+      });
+    }}
+  >
+    Confirm
+  </IcButton>
+  <IcButton
+    onClick={() => {
+      const textFields = document.querySelectorAll('ic-text-field');
+      textFields.forEach((textField) => {
+        textField.removeAttribute('readonly');
+      });
+    }}
+    variant="secondary"
+  >
+    Edit
+  </IcButton>
+</div>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    gap: "var(--ic-space-md)",
+    paddingTop: "var(--ic-space-md)",
+  },
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  btnContainer: {
+    display: "flex",
+    gap: "var(--ic-space-md)",
+    paddingTop: "var(--ic-space-md)",
+  },
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return ( 
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={editableExample} style={{ display: "block" }}>
+  <IcDataList heading="Order details" style={{ width: "90%" }}>
+    <IcDataRow label="Order name">
+      <IcTextField
+        slot="value"
+        label="Order name"
+        value="Michael"
+        readonly
+        hideLabel
+        fullWidth
+      />
+    </IcDataRow>
+    <IcDataRow label="Drink" value="Americano">
+      <IcTextField
+        slot="value"
+        label="Drink"
+        value="Americano"
+        readonly
+        hideLabel
+        fullWidth
+      />
+    </IcDataRow>
+    <IcDataRow label="Milk option" value="Soya milk">
+      <IcTextField
+        slot="value"
+        label="Milk option"
+        value="Soya milk"
+        readonly
+        hideLabel
+        fullWidth
+      />
+    </IcDataRow>
+    <IcDataRow label="Price" value="£3.25">
+      <IcTextField
+        slot="value"
+        label="Price"
+        value="£3.25"
+        readonly
+        hideLabel
+        fullWidth
+      />
+    </IcDataRow>
+    <IcDataRow label="Payment method">
+      <IcTextField
+        slot="value"
+        label="Payment method"
+        value="VISA ending 5896"
+        readonly
+        hideLabel
+        fullWidth
+      />
+    </IcDataRow>
+  </IcDataList>
+  <IcButton
+    onClick={() => {
+      const textFields = document.querySelectorAll("ic-text-field");
+      textFields.forEach((textField) => {
+        textField.setAttribute("readonly", "");
+      });
+    }}
+    style={{
+      marginRight: "var(--ic-space-md)",
+      marginTop: "var(--ic-space-lg)",
+    }}
+  >
+    Confirm
+  </IcButton>
+  <IcButton
+    onClick={() => {
+      const textFields = document.querySelectorAll("ic-text-field");
+      textFields.forEach((textField) => {
+        textField.removeAttribute("readonly");
+      });
+    }}
+    variant="secondary"
+    style={{ marginTop: "var(--ic-space-lg)" }}
+  >
+    Edit
+  </IcButton>
+</ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-list heading="Order details" theme="dark">
+  <ic-data-row label="Drink" value="Americano">
+    <ic-link href="#" slot="end-component" theme="dark">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Price" value="£3.25">
+    <ic-link href="#" slot="end-component" theme="dark">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <ic-button variant="icon" aria-label="Download" slot="end-component" theme="dark">
+      <svg viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </svg>
+    </ic-button>
+  </ic-data-row>
+</ic-data-list>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+    background: var(--ic-color-page-background-dark);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataList heading="Order details" theme="dark">
+  <IcDataRow label="Drink" value="Americano">
+    <IcLink href="#" slot="end-component" theme="dark">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Price" value="£3.25">
+    <IcLink href="#" slot="end-component" theme="dark">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <IcButton variant="icon" aria-label="Download" slot="end-component" theme="dark">
+      <SlottedSVG viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </SlottedSVG>
+    </IcButton>
+  </IcDataRow>
+</IcDataList>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
+>
+  <IcDataList heading="Order details" style={{ width: "90%" }} theme="dark">
+    <IcDataRow label="Drink" value="Americano">
+      <IcLink
+        href="#"
+        onClick={(e) => e.preventDefault()}
+        slot="end-component"
+        theme="dark"
+      >
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Price" value="£3.25">
+      <IcLink
+        href="#"
+        onClick={(e) => e.preventDefault()}
+        slot="end-component"
+        theme="dark"
+      >
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+      <IcButton
+        variant="icon"
+        aria-label="Download"
+        slot="end-component"
+        theme="dark"
+      >
+        <svg viewBox="0 0 24 24" height="24" width="24">
+          <path
+            d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcButton>
+    </IcDataRow>
+  </IcDataList>
+</ComponentPreview>
+
+### Label width CSS prop
+
+export const snippetsLabelWidth = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-data-list heading="Order details" style="--data-row-label-width:30rem">
+  <ic-data-row label="Order name" value="Michael">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Drink" value="Americano">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Milk option" value="Soya milk">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Price" value="£3.25">
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Payment method">
+    <ic-typography variant="body" slot="value">
+      VISA ending 5896
+    </ic-typography>
+    <ic-link href="#" slot="end-component">
+      Edit
+    </ic-link>
+  </ic-data-row>
+  <ic-data-row label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <ic-button variant="icon" aria-label="Download" slot="end-component">
+      <svg viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </svg>
+    </ic-button>
+  </ic-data-row>
+</ic-data-list>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcDataList heading="Order details" style={{ "--data-row-label-width": "30rem" }}>
+  <IcDataRow label="Order name" value="Michael">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Drink" value="Americano">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Milk option" value="Soya milk">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Price" value="£3.25">
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Payment method">
+    <IcTypography variant="body" slot="value">
+      VISA ending 5896
+    </IcTypography>
+    <IcLink href="#" slot="end-component">
+      Edit
+    </IcLink>
+  </IcDataRow>
+  <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+    <IcButton variant="icon" aria-label="Download" slot="end-component">
+      <SlottedSVG viewBox="0 0 24 24" height="24" width="24">
+        <path
+          d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+          fill="currentColor"
+        />
+      </SlottedSVG>
+    </IcButton>
+  </IcDataRow>
+</IcDataList>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLabelWidth}>
+  <IcDataList
+    heading="Order details"
+    style={{ width: "90%", "--data-row-label-width": "30rem" }}
+  >
+    <IcDataRow label="Order name" value="Michael">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Drink" value="Americano">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Milk option" value="Soya milk">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Price" value="£3.25">
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Payment method">
+      <IcTypography variant="body" slot="value">
+        VISA ending 5896
+      </IcTypography>
+      <IcLink href="#" onClick={(e) => e.preventDefault()} slot="end-component">
+        Edit
+      </IcLink>
+    </IcDataRow>
+    <IcDataRow label="Download receipt" value="CoffeeOrder_X46w32.pdf">
+      <IcButton variant="icon" aria-label="Download" slot="end-component">
+        <svg viewBox="0 0 24 24" height="24" width="24">
+          <path
+            d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcButton>
+    </IcDataRow>
+  </IcDataList>
+</ComponentPreview>

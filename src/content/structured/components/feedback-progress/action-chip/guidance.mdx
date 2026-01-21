@@ -1,0 +1,126 @@
+---
+path: "/components/feedback-progress/action-chip"
+
+navPriority: 1
+
+date: "2025-09-16"
+
+title: "Action chip"
+
+status: "BETA"
+
+subTitle: "Action chips are functional versions of Chips."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/action-chip"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/action-chip" },
+    { title: "Code", path: "/components/feedback-progress/action-chip/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/action-chip/accessibility",
+    },
+  ]
+
+tags: ["Chip", "Link", "Button", "Clickable"]
+---
+
+import { IcActionChip } from "@ukic/react";
+import {
+  Fig1ActionChipsDark,
+  Fig1ActionChipsLight,
+  Fig2ActionChipsDark,
+  Fig2ActionChipsLight,
+  Fig3ActionChipsDark,
+  Fig3ActionChipsLight,
+  Fig4ActionChipsDark,
+  Fig4ActionChipsLight,
+} from "./images";
+
+## Component variants
+
+<ComponentPreview style={{ gap: "0.5rem" }}>
+  <IcActionChip
+    label="Summon a coffee"
+    onClick={() => console.log("Coffee summoned")}
+  />
+  <IcActionChip label="See more beans" href="#" target="_blank" />
+</ComponentPreview>
+
+Action chips are an interactive variant of [Chips](/components/feedback-progress/chip). Action chips are sometimes referred to as “Clickable” or “Assist” chips. They use a similar colour scheme to Buttons. This means they are easy to identify when placed alongside other chip types and provide a visual indicator that an action will take place when clicked.
+
+### Style
+
+Action chip has two style variants.
+
+#### Filled
+
+Use filled chips to provide high emphasis on the displayed information.
+
+#### Outlined
+
+Use outlined chips to provide low emphasis on the displayed information.
+
+## When to use
+
+Use an Action chip to provide a clickable action when displayed alongside other chips. For example, 'Dismiss all' alongside a series of dismissible chips.
+Only use an Action chip when presented with other chip components. Use a Button instead if chips are not present.
+
+Common use cases include:
+
+- Dismissing all displayed dismissible chips at the same time.
+- Adding an event to a calendar.
+
+<DoDontCaution
+  imageSrc={[Fig1ActionChipsLight, Fig1ActionChipsDark]}
+  imageAlt="Five Action chips displayed in a row, each showing an icon and label to capture feedback on coffee. The options range from 'Very good' to 'Very bad'."
+  state="good"
+  caption="Use Action chips to display smart or automated actions."
+/>
+
+You can use Action chips in conjunction with other chip types to add smart or automated functions in context of the chip group.
+
+<DoDontCaution
+  imageSrc={[Fig2ActionChipsLight, Fig2ActionChipsDark]}
+  imageAlt="Three Dismissible chips, followed by an Action chip displayed in a row. The Dismissible chips show labels for different coffee types. The Action chip shows the label '+ five more'."
+  state="good"
+  caption="Use Action chips in conjunction with other chips."
+/>
+
+Action chips can be used as links to open content in a new window. In this case, an href must be provided and the “open in new window” icon displayed.
+
+## When not to use
+
+Don't use Action chips in isolation without other chips present.
+
+Don't use Action chips to perform significant tasks such as clearing or submitting a form, use a [button](/components/inputs/button) instead. Buttons should be used for familiar and consistent calls to action.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3ActionChipsLight, Fig3ActionChipsDark]}
+    imageAlt="A page of content showing three outlined Action chips in a row above. The Action chips are 'Add to calendar', 'Set reminder' and 'Rate us'."
+    state="good"
+    caption="Use Action chips to enhance the experience."
+  />
+  <DoDontCaution
+    imageSrc={[Fig4ActionChipsLight, Fig4ActionChipsDark]}
+    imageAlt="A page of content showing two Action chips below on the left. One Action chip is outlined and labelled 'Clear' while the other is filled and labelled 'Save order'."
+    state="bad"
+    caption="Don't use Action chips to progress through a process or for significant actions."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+For full guidance on content, please see the [Chip](/components/feedback-progress/chip) page.
+
+### Icons
+
+Use the `target="blank"` property on Action chips to display the corresponding icon on the right of the label, if the action will open a new window.
+
+## Related components
+
+- [Chips](/components/feedback-progress/chip)
+- [Buttons](/components/inputs/button)
+- [Links](/components/navigation/link)

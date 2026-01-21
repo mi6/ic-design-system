@@ -1,0 +1,62 @@
+---
+path: "/components/feedback-progress/stepper/accessibility"
+
+date: "2024-04-15"
+
+title: "Stepper"
+
+status: "BETA"
+
+subTitle: "A stepper is a visual representation of a user's progress through a predefined set of steps in a linear process."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/stepper"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/stepper" },
+    { title: "Code", path: "/components/feedback-progress/stepper/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/stepper/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+The stepper component is informational and non-interactive, acting as a visual aid to inform the user about their current progress within a form.
+
+## For Assistive Technology
+
+The stepper is a visual aid and is non-interactive. It's therefore included in the tab-indexing for keyboard navigation as individual list items, allowing it to be read out by screen readers using the aria-current attribute.
+
+## Based on
+
+The stepper component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/tutorials/forms/multi-page/"
+      rel="noreferrer noopener nofollow"
+    >
+      Multi-page Forms
+    </ic-link>
+    , W3C, accessed July 2022.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://a11y-guidelines.orange.com/en/web/components-examples/stepbar/"
+      rel="noreferrer noopener nofollow"
+    >
+      Stepbar or multi-step process
+    </ic-link>
+    , Orange, accessed July 2022.
+  </li>
+</ul>
+
+## Testing
+
+We've tested this component against WCAG 2.2 Level AA. It's been tested with NVDA and VoiceOver, and several different users with different interaction methods.

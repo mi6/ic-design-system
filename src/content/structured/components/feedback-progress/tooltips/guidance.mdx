@@ -1,0 +1,158 @@
+---
+path: "/components/feedback-progress/tooltip"
+
+navPriority: 12
+
+date: "2023-02-03"
+
+title: "Tooltip"
+
+status: "BETA"
+
+subTitle: "Tooltips provide helpful information when the cursor hovers over an element or when focus is applied."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/tooltip" },
+    { title: "Code", path: "/components/feedback-progress/tooltip/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/tooltip/accessibility",
+    },
+  ]
+---
+
+import { IcTooltip, IcButton } from "@ukic/react";
+import {
+  Fig1TooltipsDark,
+  Fig1TooltipsLight,
+  Fig2TooltipsDark,
+  Fig2TooltipsLight,
+  Fig3TooltipsDark,
+  Fig3TooltipsLight,
+  Fig4TooltipsDark,
+  Fig4TooltipsLight,
+  Fig5TooltipsDark,
+  Fig5TooltipsLight,
+  Fig6TooltipsDark,
+  Fig6TooltipsLight,
+} from "./images";
+
+## Introduction
+
+A tooltip wraps around a component and displays a message when the component is hovered over.
+
+Below is an example of the tooltip component on a button.
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+    <IcTooltip
+      label="Add Americano to favourites"
+      target="test-button-0"
+      placement="top"
+    >
+      <IcButton id="test-button-0" aria-describedby="ic-tooltip-test-button-0">
+        Add
+      </IcButton>
+    </IcTooltip>
+    <IcTooltip
+      label="Remove Americano from favourites"
+      target="test-button-1"
+      placement="bottom"
+    >
+      <IcButton id="test-button-1" aria-describedby="ic-tooltip-test-button-1">
+        Remove
+      </IcButton>
+    </IcTooltip>
+  </div>
+</ComponentPreview>
+
+## When to use
+
+When interacting with an element, use a tooltip to provide additional and helpful information.
+
+Always use tooltips on icon buttons to provide a textual alternative.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig1TooltipsLight, Fig1TooltipsDark]}
+    imageAlt="A focused icon button displaying a tooltip that says 'Search'."
+    state="good"
+    caption="Use tooltips to provide a text alternative to icon buttons."
+  />
+</DoubleDoDontCaution>
+
+## When not to use
+
+Don't use tooltips to provide information relating to anything other than the element the tooltip is attached to.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig2TooltipsLight, Fig2TooltipsDark]}
+    imageAlt="Three icon buttons with a cursor hovering over the search icon button. A tooltip is displayed that says 'Settings, inbox and search'."
+    state="bad"
+    caption="Don't use tooltips to contain information regarding another element."
+  />
+</DoubleDoDontCaution>
+
+Don't use tooltips to provide vital information to completing a task. Instead, include vital information on the page itself.
+
+Don't use tooltips if its content is unnecessary. Not every element needs to have a tooltip.
+
+## Interaction behaviour
+
+Tooltips are triggered by hovering over its associated element, or by focusing on it. Make sure the tooltip is displayed the whole time the associated element is focused or hovered over.
+
+Moving the pointer over the tooltip's content maintains the tooltip visibility even if the pointer has moved out of the associated element's area.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig3TooltipsLight, Fig3TooltipsDark]}
+    imageAlt="A button showing a tooltip with the cursor hovering over the button, and a second button showing a tooltip with the cursor hovering over the tooltip content."
+    state="good"
+    caption="Tooltips display when hovering over the triggering element or the tooltip itself."
+  />
+</DoubleDoDontCaution>
+
+## Sizing
+
+Set the width of a tooltip to contain the content. Adhere to readable line lengths when setting tooltip widths, and wrap content onto multiple lines if necessary.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig4TooltipsLight, Fig4TooltipsDark]}
+    imageAlt="Three icon buttons and a tooltip displayed. The tooltip says ‘Search for drinks, recipes and pairing suggestions’ and wraps onto two lines."
+    state="good"
+    caption="Size the tooltip so that its content adheres to readable line lengths."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+Avoid positioning tooltips so that they obscure other content. Use the directional options to place the tooltip on different sides of the associated element.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5TooltipsLight, Fig5TooltipsDark]}
+    imageAlt="A set of icon buttons that are obscured by a tooltip that is displayed."
+    state="caution"
+    caption="Avoid positioning tooltips so that they obscure other content."
+  />
+</DoubleDoDontCaution>
+
+## Content
+
+Use short, simple sentences within a tooltip. Don't provide more than one sentence in a tooltip. If a lot of information is required in a tooltip, consider placing it on the page content itself.
+
+Include an icon on a tooltip if it helps to provide additional meaning, but don't use icons if they don't add anything.
+
+Don't include links or other interactive content within a tooltip. If an interaction is useful, place it within the page content.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig6TooltipsLight, Fig6TooltipsDark]}
+    imageAlt="A tooltip that says 'For advanced search click here' where the word 'here' is a link."
+    state="bad"
+    caption="Don't use interactive content within a tooltip."
+  />
+</DoubleDoDontCaution>

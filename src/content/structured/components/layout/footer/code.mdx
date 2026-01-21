@@ -1,0 +1,602 @@
+---
+path: "/components/layout/footer/code"
+
+date: "2024-05-31"
+
+title: "Footer"
+
+status: "BETA"
+
+subTitle: "Footers are placed at the bottom of the page and can be used for additional links not found in the main navigation."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/layout/footer"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/footer" },
+    { title: "Code", path: "/components/layout/footer/code" },
+    { title: "Accessibility", path: "/components/layout/footer/accessibility" },
+  ]
+---
+
+import { IcFooter, IcFooterLink, IcFooterLinkGroup } from "@ukic/react";
+
+import { NavLink, MemoryRouter } from "react-router-dom";
+
+import LinkToNewWin from "../../../../../components/LinkToNewWin";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-footer
+  description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+  caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence."
+>
+  <ic-footer-link slot="link" href="#">
+    Accessibility
+  </ic-footer-link>
+  <ic-footer-link slot="link" href="#">
+    Styles
+  </ic-footer-link>
+  <ic-footer-link slot="link" href="#">
+    Components
+  </ic-footer-link>
+  <ic-footer-link slot="link" href="#">
+    Patterns
+  </ic-footer-link>
+</ic-footer>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcFooter
+  description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+  caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence."
+>
+  <IcFooterLink slot="link" href="#">
+    Accessibility
+  </IcFooterLink>
+  <IcFooterLink slot="link" href="#">
+    Styles
+  </IcFooterLink>
+  <IcFooterLink slot="link" href="#">
+    Components
+  </IcFooterLink>
+  <IcFooterLink slot="link" href="#">
+    Patterns
+  </IcFooterLink>
+</IcFooter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcFooter
+    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence."
+  >
+    <IcFooterLink slot="link" href="#">
+      Accessibility
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="#">
+      Styles
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="#">
+      Components
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="#">
+      Patterns
+    </IcFooterLink>
+  </IcFooter>
+</ComponentPreview>
+
+## Footer details
+
+<ComponentDetails component="ic-footer" />
+
+## Footer link details
+
+<ComponentDetails component="ic-footer-link" />
+
+## Footer link group details
+
+<ComponentDetails component="ic-footer-link-group" />
+
+## Variants
+
+### Grouped links
+
+export const snippetsGroupedLinks = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-footer
+  group-links="true"
+  description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+>
+  <ic-footer-link-group slot="link" label="Grouped heading">
+    <ic-footer-link href="#">Accessibility</ic-footer-link>
+    <ic-footer-link href="#">Styles</ic-footer-link>
+    <ic-footer-link href="#">Components</ic-footer-link>
+    <ic-footer-link href="#">Patterns</ic-footer-link>
+  </ic-footer-link-group>
+  <ic-footer-link-group slot="link" label="Grouped heading">
+    <ic-footer-link href="#">Accessibility</ic-footer-link>
+    <ic-footer-link href="#">Styles</ic-footer-link>
+    <ic-footer-link href="#">Components</ic-footer-link>
+    <ic-footer-link href="#">Patterns</ic-footer-link>
+  </ic-footer-link-group>
+  <ic-footer-link-group slot="link" label="Grouped heading">
+    <ic-footer-link href="#">Accessibility</ic-footer-link>
+    <ic-footer-link href="#">Styles</ic-footer-link>
+    <ic-footer-link href="#">Components</ic-footer-link>
+    <ic-footer-link href="#">Patterns</ic-footer-link>
+  </ic-footer-link-group>
+</ic-footer>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcFooter
+  groupLinks
+  description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+>
+  <IcFooterLinkGroup slot="link" label="Grouped heading">
+    <IcFooterLink href="#">Accessibility</IcFooterLink>
+    <IcFooterLink href="#">Styles</IcFooterLink>
+    <IcFooterLink href="#">Components</IcFooterLink>
+    <IcFooterLink href="#">Patterns</IcFooterLink>
+  </IcFooterLinkGroup>
+  <IcFooterLinkGroup slot="link" label="Grouped heading">
+    <IcFooterLink href="#">Accessibility</IcFooterLink>
+    <IcFooterLink href="#">Styles</IcFooterLink>
+    <IcFooterLink href="#">Components</IcFooterLink>
+    <IcFooterLink href="#">Patterns</IcFooterLink>
+  </IcFooterLinkGroup>
+  <IcFooterLinkGroup slot="link" label="Grouped heading">
+    <IcFooterLink href="#">Accessibility</IcFooterLink>
+    <IcFooterLink href="#">Styles</IcFooterLink>
+    <IcFooterLink href="#">Components</IcFooterLink>
+    <IcFooterLink href="#">Patterns</IcFooterLink>
+  </IcFooterLinkGroup>
+</IcFooter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsGroupedLinks}>
+  <IcFooter
+    groupLinks
+    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+  >
+    <IcFooterLinkGroup slot="link" label="Grouped heading">
+      <IcFooterLink href="#">Accessibility</IcFooterLink>
+      <IcFooterLink href="#">Styles</IcFooterLink>
+      <IcFooterLink href="#">Components</IcFooterLink>
+      <IcFooterLink href="#">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+    <IcFooterLinkGroup slot="link" label="Grouped heading">
+      <IcFooterLink href="#">Accessibility</IcFooterLink>
+      <IcFooterLink href="#">Styles</IcFooterLink>
+      <IcFooterLink href="#">Components</IcFooterLink>
+      <IcFooterLink href="#">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+    <IcFooterLinkGroup slot="link" label="Grouped heading">
+      <IcFooterLink href="#">Accessibility</IcFooterLink>
+      <IcFooterLink href="#">Styles</IcFooterLink>
+      <IcFooterLink href="#">Components</IcFooterLink>
+      <IcFooterLink href="#">Patterns</IcFooterLink>
+    </IcFooterLinkGroup>
+  </IcFooter>
+</ComponentPreview>
+
+### Logo links
+
+export const snippetsLogoLinks = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-footer description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators.">
+  <ic-footer-link slot="link" href="#">Accessibility</ic-footer-link>
+  <ic-footer-link slot="link" href="#">Styles</ic-footer-link>
+  <ic-footer-link slot="link" href="#">Components</ic-footer-link>
+  <ic-footer-link slot="link" href="#">Patterns</ic-footer-link>
+    <div slot="logo" role="list">
+      <ic-footer-link href="#">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          height="48"
+          viewBox="0 0 24 24"
+          width="48"
+          fill="#FFFFFF"
+        >
+          <path
+            d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+            fill="currentColor"
+          />
+      </svg>
+      </ic-footer-link>
+      <ic-footer-link href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48"
+          viewBox="0 0 24 24"
+          width="48"
+          fill="#FFFFFF"
+        >
+          <path
+            d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </ic-footer-link>
+    </div>
+</ic-footer>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcFooter description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators.">
+  <IcFooterLink slot="link" href="#">Accessibility</IcFooterLink>
+  <IcFooterLink slot="link" href="#">Styles</IcFooterLink>
+  <IcFooterLink slot="link" href="#">Components</IcFooterLink>
+  <IcFooterLink slot="link" href="#">Patterns</IcFooterLink>
+  <div slot="logo" role="list">
+    <IcFooterLink href="#">
+      <SlottedSVG
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        viewBox="0 0 24 24"
+        width="48"
+        fill="#FFFFFF"
+      >
+        <path
+          d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+          fill="currentColor"
+        />
+      </SlottedSVG>
+    </IcFooterLink>
+    <IcFooterLink href="#">
+      <SlottedSVG
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        viewBox="0 0 24 24"
+        width="48"
+        fill="#FFFFFF"
+      >
+        <path
+          d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+          fill="currentColor"
+        />
+      </SlottedSVG>
+    </IcFooterLink>
+  </div>
+</IcFooter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsLogoLinks}>
+  <IcFooter description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators.">
+    <IcFooterLink slot="link" href="#">
+      Accessibility
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="#">
+      Styles
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="#">
+      Components
+    </IcFooterLink>
+    <IcFooterLink slot="link" href="#">
+      Patterns
+    </IcFooterLink>
+    <div
+      slot="logo"
+      style={{
+        display: "flex",
+        gap: "var(--ic-space-lg)",
+      }}
+      role="list"
+    >
+      <IcFooterLink href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48"
+          viewBox="0 0 24 24"
+          width="48"
+          fill="#FFFFFF"
+        >
+          <path
+            d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcFooterLink>
+      <IcFooterLink href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48"
+          viewBox="0 0 24 24"
+          width="48"
+          fill="#FFFFFF"
+        >
+          <path
+            d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </IcFooterLink>
+    </div>
+  </IcFooter>
+</ComponentPreview>
+
+### With React Router
+
+export const withReactRouter = [
+  {
+    technology: "React",
+    snippets: {
+      short: `<MemoryRouter initialEntries={["/"]}>
+  <Routes>
+    <Route path="/" element={<IcTypography>This is the accessibility page</IcTypography>} />
+    <Route path="/Styles" element={<IcTypography>This page is about styles</IcTypography>} />
+  </Routes>
+  <IcFooter description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+  >
+    <IcFooterLink slot="link">
+      <NavLink to="#">Accessibility</NavLink>
+    </IcFooterLink>
+    <IcFooterLink slot="link">
+      <NavLink to="/Styles">Styles</NavLink>
+    </IcFooterLink>
+    <div slot="logo" className={classes.logoContainer}>
+      Logo
+    </div>
+  </IcFooter>
+</MemoryRouter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  logoContainer: {
+    width: "6.25rem",
+    height: "6.25rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "var(--ic-brand-color-primary)",
+    color: "var(--ic-brand-text-color)"
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  logoContainer: {
+    width: "6.25rem",
+    height: "6.25rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "var(--ic-brand-color-primary)",
+    color: "var(--ic-brand-text-color)"
+  },
+});
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={withReactRouter}
+  style={{ flexDirection: "column" }}
+>
+  <MemoryRouter initialEntries={["/"]}>
+    <IcFooter
+      description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+      caption="This information is exempt under the Freedom of Information Act 2000 (FOIA) and may be exempt under other UK information legislation."
+    >
+      <IcFooterLink slot="link">
+        <NavLink to="#">Accessibility</NavLink>
+      </IcFooterLink>
+      <IcFooterLink slot="link">
+        <NavLink to="/Styles">Styles</NavLink>
+      </IcFooterLink>
+      <div
+        slot="logo"
+        style={{
+          width: "6.25rem",
+          height: "6.25rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "var(--ic-brand-color-primary)",
+          color: "var(--ic-brand-text-color)",
+        }}
+      >
+        Logo
+      </div>
+    </IcFooter>
+  </MemoryRouter>
+</ComponentPreview>
+
+## Layout example
+
+Adding a `minHeight` of `100vh` ensures the footer appears below the page fold.
+
+export const footerLayoutExample = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<div class="footer-layout-root">
+  <ic-skip-link target="main"></ic-skip-link>
+  <div class="div-container">
+    <ic-top-navigation app-title="ICDS" status="alpha" version="v0.0.7">
+      <svg
+        slot="app-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="#000000"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+      </svg>
+    </ic-top-navigation>
+    <main id="main">
+      <ic-section-container>
+        <ic-typography>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          vestibulum venenatis facilisis. Nam tortor felis, auctor vel
+          ante quis, tempor interdum libero. In dictum sodales velit, eu
+          egestas arcu dignissim ac. Aliquam facilisis eros dolor, id
+          laoreet orci sagittis ut. Sed tempus, lacus in pretium molestie,
+          lectus magna interdum risus, vel fringilla libero ex eu dui.
+          Suspendisse ullamcorper vehicula lacinia. Phasellus congue velit
+          nisl, vitae congue ligula rutrum id.
+        </ic-typography>
+      </ic-section-container>
+    </main>
+  </div>
+  <ic-footer
+    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
+    <ic-footer-link slot="link" href="#">Accessibility</ic-footer-link>
+    <ic-footer-link slot="link" href="#">Styles</ic-footer-link>
+    <ic-footer-link slot="link" href="#">Components</ic-footer-link>
+    <ic-footer-link slot="link" href="#">Patterns</ic-footer-link>
+  </ic-footer>
+</div>
+    `,
+      long: `.div-container {
+    min-height: 100vh;
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<div className="footer-layout-root">
+  <div className={classes.divContainer}>
+    <IcTopNavigation appTitle="ICDS" status="alpha" version="v0.0.7">
+      <SlottedSVG
+        slot="app-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        fill="#000000"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z" />
+      </SlottedSVG>
+    </IcTopNavigation>
+    <main>
+      <IcSectionContainer>
+        <IcTypography>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          vestibulum venenatis facilisis. Nam tortor felis, auctor vel
+          ante quis, tempor interdum libero. In dictum sodales velit, eu
+          egestas arcu dignissim ac. Aliquam facilisis eros dolor, id
+          laoreet orci sagittis ut. Sed tempus, lacus in pretium molestie,
+          lectus magna interdum risus, vel fringilla libero ex eu dui.
+          Suspendisse ullamcorper vehicula lacinia. Phasellus congue velit
+          nisl, vitae congue ligula rutrum id.
+        </IcTypography>
+      </IcSectionContainer>
+    </main>
+  </div>
+  <IcFooter
+    description="The UK Intelligence Community Design System (ICDS) is a joint project by MI6, MI5, GCHQ, and HMGCC, our national security partner, along with other collaborators."
+    caption="All content is available under the Open Government Licence v3.0, except source code and code examples which are available under the MIT Licence.">
+    <IcFooterLink slot="link" href="#">Accessibility</IcFooterLink>
+    <IcFooterLink slot="link" href="#">Styles</IcFooterLink>
+    <IcFooterLink slot="link" href="#">Components</IcFooterLink>
+    <IcFooterLink slot="link" href="#">Patterns</IcFooterLink>
+  </IcFooter>
+</div>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  divContainer: {
+    minHeight: "100vh",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  divContainer: {
+    minHeight: "100vh",
+  },
+});
+const classes = useStyles();
+return (
+  {shortCode}
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={footerLayoutExample}>
+  <LinkToNewWin href="/footer-layout" />
+</ComponentPreview>

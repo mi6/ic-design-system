@@ -1,0 +1,130 @@
+---
+path: "/components/data-display/data-list"
+
+navPriority: 1
+
+date: "2023-02-03"
+
+title: "Data list"
+
+status: "BETA"
+
+subTitle: "The data list component displays a group of related data in a consistent and easy to consume way."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/data-display/data-list"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/data-display/data-list" },
+    { title: "Code", path: "/components/data-display/data-list/code" },
+    {
+      title: "Accessibility",
+      path: "/components/data-display/data-list/accessibility",
+    },
+  ]
+---
+
+import { IcDataList, IcDataRow } from "@ukic/react";
+import {
+  Fig1DataListDark,
+  Fig1DataListLight,
+  Fig2DataListDark,
+  Fig2DataListLight,
+  Fig3DataListDark,
+  Fig3DataListLight,
+  Fig4DataListDark,
+  Fig4DataListLight,
+  Fig5DataListDark,
+  Fig5DataListLight,
+  Fig6DataListDark,
+  Fig6DataListLight,
+  Fig7DataListDark,
+  Fig7DataListLight,
+} from "./images";
+
+## Introduction
+
+An example of the data list component.
+
+<ComponentPreview>
+  <IcDataList heading="Order details">
+    <IcDataRow label="Drink" value="Espresso" />
+    <IcDataRow label="Order name" value="Michael" />
+    <IcDataRow label="Price" value="£2.80" />
+  </IcDataList>
+</ComponentPreview>
+
+## Interaction behaviour
+
+Use the interaction area in a data list row to provide an action to that row's data. For example, providing an edit link could display an edit screen so that the value can be changed.
+
+To include interactions that affect the whole data list, design a pattern using buttons with clear labels.
+
+<DoDontCaution
+  imageSrc={[Fig1DataListLight, Fig1DataListDark]}
+  imageAlt="A data list titled ‘Personal details’ with six rows. The first five include an ‘edit’ link button, while the sixth includes a download icon button. At the end of the data table there are two buttons, one labelled ‘submit’, and the second labelled ‘edit’."
+  state="good"
+  caption="Assign interactions to individual rows within the interaction area, or the full data list by using buttons at the end of the table."
+/>
+
+## Content
+
+Cells display the following types of data in a specific format:
+
+- Text
+- Numbers
+- Date
+- Telephone
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig2DataListLight, Fig2DataListDark]}
+    imageAlt="A data list titled ‘details’ with four rows. The first row has a text entry in a text format, the second has a number in a number format, the third has a date in the correct date format, and the fourth has a telephone in the correct telephone format."
+    state="good"
+    caption="Make sure the data in the cell displays in its correct format."
+  />
+  <DoDontCaution
+    imageSrc={[Fig3DataListLight, Fig3DataListDark]}
+    imageAlt="A data list titled ‘details’ with four rows. All four rows are displayed in normal text formatting even though they display a date, number and telephone."
+    state="bad"
+    caption="Don’t pass non-text data in a text format."
+  />
+</DoubleDoDontCaution>
+
+## Sizing
+
+When multiple data lists are present on a page, make sure to size them all equally.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig4DataListLight, Fig4DataListDark]}
+    imageAlt="An image of two data lists. The top component, labelled ‘personal details’ is the same width as the bottom one, labelled ‘order details’."
+    state="good"
+    caption="Set the width of all data lists on a page to the same size."
+  />
+  <DoDontCaution
+    imageSrc={[Fig5DataListLight, Fig5DataListDark]}
+    imageAlt="An image of two data lists. The top component, labelled ‘personal details’ is wider than the bottom one, labelled ‘order details’."
+    state="bad"
+    caption="Don’t set different widths for different data lists."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+Always include a section header, even when using a single row.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig6DataListLight, Fig6DataListDark]}
+    imageAlt="An image of a data list titled ‘Payment details’ with three rows."
+    state="good"
+    caption="Make sure that a data list always has a section header."
+  />
+  <DoDontCaution
+    imageSrc={[Fig7DataListLight, Fig7DataListDark]}
+    imageAlt="An image of a data list with three rows, but no title."
+    state="bad"
+    caption="Don’t omit section headers from data lists."
+  />
+</DoubleDoDontCaution>

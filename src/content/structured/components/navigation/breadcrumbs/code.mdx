@@ -1,0 +1,578 @@
+---
+path: "/components/navigation/breadcrumb/code"
+
+date: "2024-05-31"
+
+title: "Breadcrumb"
+
+status: "BETA"
+
+subTitle: "Breadcrumbs show someone where they are in an app’s hierarchy and provide a secondary method of navigating back to parent pages."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/breadcrumb"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/breadcrumb" },
+    { title: "Code", path: "/components/navigation/breadcrumb/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/breadcrumb/accessibility",
+    },
+  ]
+---
+
+import { IcBreadcrumbGroup, IcBreadcrumb, IcLink } from "@ukic/react";
+
+import { NavLink, MemoryRouter } from "react-router-dom";
+
+## Component demo
+
+export const snippets = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group>
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup>
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="#" />
+  <IcBreadcrumb 
+    current 
+    pageTitle="Coffee"
+    href="#"
+  />
+</IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippets}>
+  <IcBreadcrumbGroup>
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+## Breadcrumb details
+
+<ComponentDetails component="ic-breadcrumb" />
+
+## Breadcrumb group details
+
+<ComponentDetails component="ic-breadcrumb-group" />
+
+## Variants
+
+### Back
+
+export const back = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group back-breadcrumb-only="true">
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup backBreadcrumbOnly>
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="#" />
+  <IcBreadcrumb 
+    current 
+    pageTitle="Coffee"
+    href="#"
+  />
+</IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={back}>
+  <IcBreadcrumbGroup backBreadcrumbOnly>
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+### With icons
+
+export const withIcons = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group>
+  <ic-breadcrumb page-title="Home" href="#">
+    <svg
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  </ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#">
+    <svg
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"
+        fill="currentColor"
+      />
+    </svg>
+  </ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+    <svg
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM16 5v3H6V5h10zm2.5 3H18V5h.5c.83 0 1.5.67 1.5 1.5S19.33 8 18.5 8zM4 19h16v2H4v-2z"
+        fill="currentColor"
+      />
+    </svg>
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup>
+  <IcBreadcrumb pageTitle="Home" href="#">
+    <SlottedSVG
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+        fill="currentColor"
+      />
+    </SlottedSVG>
+  </IcBreadcrumb>
+  <IcBreadcrumb pageTitle="Beverages" href="#">
+    <SlottedSVG
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"
+        fill="currentColor"
+      />
+    </SlottedSVG>
+  </IcBreadcrumb>
+  <IcBreadcrumb 
+    pageTitle="Coffee" 
+    current
+    href="#"
+  >
+    <SlottedSVG
+      slot="icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM16 5v3H6V5h10zm2.5 3H18V5h.5c.83 0 1.5.67 1.5 1.5S19.33 8 18.5 8zM4 19h16v2H4v-2z"
+        fill="currentColor"
+      />
+    </SlottedSVG>
+  </IcBreadcrumb>
+</IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={withIcons}>
+  <IcBreadcrumbGroup>
+    <IcBreadcrumb pageTitle="Home" href="#" onClick={(e) => e.preventDefault()}>
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 6.19L17 10.69V18.5H15V12.5H9V18.5H7V10.69L12 6.19ZM12 3.5L2 12.5H5V20.5H11V14.5H13V20.5H19V12.5H22L12 3.5Z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcBreadcrumb>
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    >
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcBreadcrumb>
+    <IcBreadcrumb
+      pageTitle="Coffee"
+      current
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    >
+      <svg
+        slot="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM16 5v3H6V5h10zm2.5 3H18V5h.5c.83 0 1.5.67 1.5 1.5S19.33 8 18.5 8zM4 19h16v2H4v-2z"
+          fill="currentColor"
+        />
+      </svg>
+    </IcBreadcrumb>
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+### Collapsed
+
+export const collapsed = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group collapsed="true">
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup collapsed>
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="#" />
+  <IcBreadcrumb 
+    pageTitle="Coffee" 
+    current
+    href="#"
+  />
+</IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={collapsed}>
+  <IcBreadcrumbGroup collapsed>
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Coffee"
+      current
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-breadcrumb-group theme="dark">
+  <ic-breadcrumb page-title="Home" href="#"></ic-breadcrumb>
+  <ic-breadcrumb page-title="Beverages" href="#"></ic-breadcrumb>
+  <ic-breadcrumb 
+    current="true" 
+    page-title="Coffee" 
+    href="#"
+  >
+  </ic-breadcrumb>
+</ic-breadcrumb-group>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+    background: var(--ic-color-page-background-dark);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcBreadcrumbGroup theme="dark">
+  <IcBreadcrumb pageTitle="Home" href="#" />
+  <IcBreadcrumb pageTitle="Beverages" href="#" />
+  <IcBreadcrumb 
+    current 
+    pageTitle="Coffee"
+    href="#"
+  />
+</IcBreadcrumbGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+    background: "var(--ic-color-page-background-dark)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  snippets={snippetsThemeDark}
+  style={{ background: "var(--ic-color-page-background-dark)" }}
+>
+  <IcBreadcrumbGroup theme="dark">
+    <IcBreadcrumb
+      pageTitle="Home"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      pageTitle="Beverages"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+    <IcBreadcrumb
+      current
+      pageTitle="Coffee"
+      href="#"
+      onClick={(e) => e.preventDefault()}
+    />
+  </IcBreadcrumbGroup>
+</ComponentPreview>
+
+### With React Router
+
+export const withReactRouter = [
+  {
+    technology: "React",
+    snippets: {
+      short: `<MemoryRouter initialEntries={["/"]}>
+  <IcBreadcrumbGroup>
+    <IcBreadcrumb pageTitle="Home">
+      <IcLink>
+        <NavLink slot="router-item" to="/">Home</NavLink>
+      </IcLink>
+    </IcBreadcrumb>
+    <IcBreadcrumb pageTitle="Beverages">
+      <IcLink>
+        <NavLink slot="router-item" to="/">Beverages</NavLink>
+      </IcLink>
+    </IcBreadcrumb>
+    <IcBreadcrumb pageTitle="Coffee" href="/" current />
+  </IcBreadcrumbGroup>
+</MemoryRouter>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={withReactRouter}>
+  <MemoryRouter initialEntries={["/"]}>
+    <IcBreadcrumbGroup>
+      <IcBreadcrumb pageTitle="Home">
+        <IcLink>
+          <NavLink slot="router-item" to="/">
+            Home
+          </NavLink>
+        </IcLink>
+      </IcBreadcrumb>
+      <IcBreadcrumb pageTitle="Beverages">
+        <IcLink>
+          <NavLink slot="router-item" to="/">
+            Beverages
+          </NavLink>
+        </IcLink>
+      </IcBreadcrumb>
+      <IcBreadcrumb pageTitle="Coffee" href="/" current />
+    </IcBreadcrumbGroup>
+  </MemoryRouter>
+</ComponentPreview>

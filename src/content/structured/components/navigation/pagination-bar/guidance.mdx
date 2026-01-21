@@ -1,0 +1,158 @@
+---
+path: "/components/navigation/pagination-bar"
+
+navPriority: 7
+
+date: "2025-08-07"
+
+title: "Pagination bar"
+
+status: "CANARY"
+
+subTitle: "Use the pagination bar when large amounts of content are split across multiple pages and various pagination options are required."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/navigation/pagination-bar"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/navigation/pagination-bar" },
+    { title: "Code", path: "/components/navigation/pagination-bar/code" },
+    {
+      title: "Accessibility",
+      path: "/components/navigation/pagination-bar/accessibility",
+    },
+  ]
+---
+
+import { IcAlert, IcLink } from "@ukic/react";
+import { IcPaginationBar } from "@ukic/canary-react";
+import {
+  Fig1PaginationBarDark,
+  Fig1PaginationBarLight,
+  Fig2PaginationBarDark,
+  Fig2PaginationBarLight,
+  Fig3PaginationBarDark,
+  Fig3PaginationBarLight,
+  Fig4PaginationBarDark,
+  Fig4PaginationBarLight,
+  Fig5PaginationBarDark,
+  Fig5PaginationBarLight,
+} from "./images";
+
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and its guidance will be updated over time."
+/>
+
+## Canary components
+
+Canary components are unstable components that are released for testing purposes.
+
+We value any feedback from users willing to try them in their applications.
+
+These components should not be used in production apps without understanding the risk that changes may occur in order to fix bugs or improve functionality.
+
+For more information on Canary components, read our approach to [releases and versions](/get-started/releases-versions).
+
+<p>
+  Additional details on the props and events for this component can be found in
+  the{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/canary/develop/web-components/?path=/docs/web-components-pagination-bar--docs"
+    target="_blank"
+  >
+    Canary web components
+  </IcLink>{" "}
+  and{" "}
+  <IcLink
+    href="https://mi6.github.io/ic-ui-kit/branches/canary/develop/react/?path=/docs/react-components-pagination-bar--docs"
+    target="_blank"
+  >
+    Canary React
+  </IcLink>{" "}
+  storybooks.
+</p>
+
+## Introduction
+
+Pagination bar utilises the pagination component and provides further control over the display of additional information and actions.
+
+<ComponentPreview>
+  <div style={{ margin: "auto", width: "fit-content" }}>
+    <IcPaginationBar type="complex" showGoToPageControl totalItems={20} />
+  </div>
+</ComponentPreview>
+
+## When to use
+
+Use a pagination bar to provide more navigation functionality through particularly complex data sets. For example, use pagination bars with data tables to navigate large data sets easily.
+
+<DoDontCaution
+  imageSrc={[Fig1PaginationBarLight, Fig1PaginationBarDark]}
+  imageAlt="An example nutritional data table for coffee products. Coffee products are displayed in a table and a pagination bar allows the number of items per page to be changed, displays the total number of items, and includes a simple pagination control allowing navigation through the pages."
+  state="good"
+  caption="Use a pagination bar to provide more functionality."
+/>
+
+A pagination bar includes either complex or simple pagination and provides additional controls over pagination including:
+
+- Items per page selector: Switch the number of content items visible per page.
+- Item count: Display the range of currently visible items as well as the total number of items.
+- Go to page shortcut: Allow quick access to any page number by typing the page number and hitting ‘go’.
+
+## When not to use
+
+Avoid using a pagination bar with linear content such as articles or blogs. Scrolling down the page makes it easier to consume this content.
+
+Avoid using a pagination bar when the size of the content is unknown or if it frequently changes. This causes the number of pages to change frequently and means it is hard to create a ‘last page’ option.
+
+Use an infinite scrolling pattern when navigating content should be explorative, or when there is a near infinite amount of content. For example, newsfeeds and comments threads can be near endless and infinite scrolling allows exploration by simply continuing to scroll.
+
+## Interaction behaviour
+
+In a pagination bar, when the number of items per page is changed, the pagination component and the item count updates to show the new number of pages. Make sure to update the pagination component if anything else on the page changes the number of pages. For example, setting a filter may reduce the number of pages required to display the filtered results.
+
+## Colour
+
+Use the default, dark and light theme pagination bars with `monochrome={true}` when placing them on different coloured backgrounds to ensure the correct contrast ratios are met.
+
+<DoDontCaution
+  imageSrc={[Fig2PaginationBarLight, Fig2PaginationBarDark]}
+  imageAlt="Examples of complex pagination on different backgrounds to show light, monochrome and dark colour variations."
+  state="good"
+  caption="Use colour contrast variants when placing pagination components on different coloured backgrounds."
+/>
+
+## Layout and placement
+
+Place the pagination bar component so that it is obvious what it controls. Match the width of a pagination bar to the width of the page.
+
+Try to place the pagination bar at the bottom of the page it controls, as this encourages the user to read through the page before moving to the next. However, placing another method of pagination at the top of the page is still a valid option.
+
+<DoDontCaution
+  imageSrc={[Fig3PaginationBarLight, Fig3PaginationBarDark]}
+  imageAlt="Pagination bar shown below a container."
+  state="good"
+  caption="Try to place the pagination bar at the bottom of the container it controls."
+/>
+
+For large page containers that require scrolling, use two pagination components at the top and bottom of the page container to provide easy access to navigation when at either the top or bottom of the page.
+
+<DoDontCaution
+  imageSrc={[Fig4PaginationBarLight, Fig4PaginationBarDark]}
+  imageAlt="Pagination bar below a container with simple pagination above the container for additional control."
+  state="good"
+  caption="Place pagination controls at the top and bottom of the page container to provide additional navigation functionality."
+/>
+
+## Content
+
+Select which elements within a pagination bar you want to display. Each element in the pagination bar can be toggled on or off except for the pagination component itself, which can be switched to use complex or simple pagination.
+
+<DoDontCaution
+  imageSrc={[Fig5PaginationBarLight, Fig5PaginationBarDark]}
+  imageAlt="Three example pagination bars with different elements displaying. The top shows the ‘items per page selector’ and ‘go to page button’ displayed, whilst the other examples have these elements hidden."
+  state="none"
+  caption="Select which elements to show within a pagination bar."
+/>

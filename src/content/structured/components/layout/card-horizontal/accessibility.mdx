@@ -1,0 +1,35 @@
+---
+path: "/components/layout/card-horizontal/accessibility"
+
+date: "2025-09-08"
+
+title: "Card (horizontal)"
+
+status: "CANARY"
+
+subTitle: "Horizontal cards are containers used to display structured information or link to new information in a horizontal layout."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/card-horizontal" },
+    { title: "Code", path: "/components/layout/card-horizontal/code" },
+    {
+      title: "Accessibility",
+      path: "/components/layout/card-horizontal/accessibility",
+    },
+  ]
+---
+
+## Easy to use for everyone
+
+Static cards inherit the accessibility features of the components within the card. Clickable cards act as links and therefore inherit the accessibility features of links.
+
+Screen readers should always read the heading first, even when an image is placed on the left of the card. To achieve this, we've re-ordered content using CSS Flexbox layout so that visually the image appears first but is placed after the heading section in HTML.
+
+In the case of clickable cards, since the whole area is interactive, then the whole container is focusable.
+
+Clickable cards inherit the accessibility features of the link style, using an `<a href="">` to wrap the whole component.
+
+Provide as much detail as possible to the purpose of the action of a clickable card. If you can't show this within the component, use the `class="visuallyhidden"` to add descriptive text about the purpose of the call to action(s).
+
+When cards are arranged in a group, these should be placed within an unordered list `<ul>`, with each card marked as a list item `<li>` to provide navigational cues for screen readers.

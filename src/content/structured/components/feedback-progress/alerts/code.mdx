@@ -1,0 +1,689 @@
+---
+path: "/components/feedback-progress/alert/code"
+
+date: "2025-08-11"
+
+title: "Alert"
+
+status: "BETA"
+
+subTitle: "Alerts display a short important message in a way that attracts attention without interrupting the current task."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/feedback-progress/alert"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/feedback-progress/alert" },
+    { title: "Code", path: "/components/feedback-progress/alert/code" },
+    {
+      title: "Accessibility",
+      path: "/components/feedback-progress/alert/accessibility",
+    },
+  ]
+---
+
+## Component demo
+
+import { IcAlert, IcButton, IcLink, IcTypography } from "@ukic/react";
+
+export const snippetsDefault = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+></ic-alert>
+<ic-alert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+></ic-alert>
+<ic-alert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+></ic-alert>
+<ic-alert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful, the drink is hot."
+></ic-alert>
+<ic-alert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+></ic-alert>
+<ic-alert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+/>
+<IcAlert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+/>
+<IcAlert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+/>
+<IcAlert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful, the drink is hot."
+/>
+<IcAlert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+/>
+<IcAlert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ display: "block" }} snippets={snippetsDefault}>
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    heading="Americano order"
+    message="Preparation status is unavailable."
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="info"
+    heading="Did you know?"
+    message="Coffee is a brewed drink prepared from roasted coffee beans."
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="error"
+    heading="Americano order error"
+    message="Americano couldn't be made, we ran out of beans."
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="warning"
+    heading="Hot drink"
+    message="Please be careful, the drink is hot."
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="success"
+    heading="Americano order complete"
+    message="Success, your coffee is good to go."
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="ai"
+    heading="AI Barista"
+    message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
+  />
+</ComponentPreview>
+
+## Alert details
+
+<ComponentDetails component="ic-alert" />
+
+## Variants
+
+### Dismissible
+
+export const snippetsDismissible = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert
+  heading="Americano order nearly ready"
+  message="Your coffee is nearly ready. We'll send you another alert once it is complete."
+  dismissible="true"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  heading="Americano order nearly ready" 
+  message="Your coffee is nearly ready. We'll send you another alert once it is complete." 
+  dismissible
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDismissible}>
+  <IcAlert
+    heading="Americano order nearly ready"
+    message="Your coffee is nearly ready. We'll send you another alert once it is complete."
+    dismissible
+  />
+</ComponentPreview>
+
+### With action
+
+export const snippetsWithAction = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert variant="info" heading="Did you know?" message="There is a new range of coffees to try.">
+  <ic-button slot="action" variant="secondary" monochrome="true">View Drinks</ic-button></ic-alert>`,
+      long: `{shortCode}
+<script>
+  const btn = document.querySelector('ic-button');
+  btn.addEventListener('click', (ev) => {
+    console.log(ev)
+  })
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  variant="info" 
+  heading="Did you know?" 
+  message="There is a new range of coffees to try."
+>
+  <IcButton 
+    slot="action" 
+    variant="secondary" 
+    monochrome
+    onClick={(ev) => console.log(ev)}
+  >
+    View Drinks
+  </IcButton>
+</IcAlert>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsWithAction}>
+  <IcAlert
+    variant="info"
+    heading="Did you know?"
+    message="There is a new range of coffees to try."
+  >
+    <IcButton
+      slot="action"
+      variant="secondary"
+      monochrome
+      onClick={(ev) => console.log(ev)}
+    >
+      View Drinks
+    </IcButton>
+  </IcAlert>
+</ComponentPreview>
+
+### Title above
+
+export const snippetsTitleAbove = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert 
+  heading="What is Coffee?" 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
+  title-above="true" 
+  variant="info"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  heading="What is Coffee?" 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus." 
+  titleAbove 
+  variant="info"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsTitleAbove}>
+  <IcAlert
+    heading="What is Coffee?"
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus."
+    titleAbove
+    variant="info"
+  />
+</ComponentPreview>
+
+### Responsive title
+
+export const snippetsResponsiveTitle = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert 
+  heading="Here you can find out lots more information about the world's favourite hot drink." 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee."
+  variant="info"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  heading="Here you can find out lots more information about the world's favourite hot drink." 
+  message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee." 
+  variant="info"
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsResponsiveTitle}>
+  <IcAlert
+    heading="Here you can find out lots more information about the world's favourite hot drink."
+    message="Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain flowering plants in the Coffea genus. From the coffee fruit, the seeds are separated to produce a stable, raw product: unroasted green coffee."
+    variant="info"
+  />
+</ComponentPreview>
+
+### Custom message
+
+export const snippetsCustomMessage = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert variant="info" heading="Want to know more about our coffee?">
+  <ic-typography slot="message"> Go to our <ic-link href="/">coffee page</ic-link> to learn more.</ic-typography></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert variant="info" heading="Want to know more about our coffee?">
+  <IcTypography slot="message"> Go to our <IcLink href="/">coffee page</IcLink> to learn more.</IcTypography>
+</IcAlert>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsCustomMessage}>
+  <IcAlert variant="info" heading="Want to know more about our coffee?">
+    <IcTypography slot="message">
+      Go to our{" "}
+      <IcLink href="#" onClick={(e) => e.preventDefault()}>
+        coffee page
+      </IcLink>{" "}
+      to learn more.
+    </IcTypography>
+  </IcAlert>
+</ComponentPreview>
+
+### With custom icon
+
+export const snippetsCustomIcon = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert 
+  variant="neutral" 
+  heading="Increased wait times" 
+  message="Due to unprecedented coffee demand, wait times may be longer than usual."
+>
+  <svg
+    slot="neutral-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+    >
+    <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+  </svg>
+</ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  variant="neutral" 
+  heading="Increased wait times" 
+  message="Due to unprecedented coffee demand, wait times may be longer than usual."
+>
+  <SlottedSVG
+    slot="neutral-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+    >
+    <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+  </SlottedSVG>
+</IcAlert>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsCustomIcon}>
+  <IcAlert
+    variant="neutral"
+    heading="Increased wait times"
+    message="Due to unprecedented coffee demand, wait times may be longer than usual."
+  >
+    <svg
+      slot="neutral-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+    </svg>
+  </IcAlert>
+</ComponentPreview>
+
+### With no icon
+
+export const snippetsNoIcon = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert 
+  heading="Order queued" 
+  show-default-icon="false"
+  message="Your coffee order is in the queue. We'll notify you when it's ready to be picked up."
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert 
+  heading="Order queued" 
+  showDefaultIcon="false"
+  message="Your coffee order is in the queue. We'll notify you when it's ready to be picked up."
+></IcAlert>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsNoIcon}>
+  <IcAlert
+    heading="Order queued"
+    showDefaultIcon="false"
+    message="Your coffee order is in the queue. We'll notify you when it's ready to be picked up."
+  />
+</ComponentPreview>
+
+### Theme
+
+export const snippetsThemeDark = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-alert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful, the drink is hot."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+  theme="dark"
+  dismissible="true"
+></ic-alert>
+<ic-alert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
+  theme="dark"
+  dismissible="true"
+></ic-alert>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcAlert
+  heading="Americano order"
+  message="Preparation status is unavailable."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="info"
+  heading="Did you know?"
+  message="Coffee is a brewed drink prepared from roasted coffee beans."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="error"
+  heading="Americano order error"
+  message="Americano couldn't be made, we ran out of beans."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="warning"
+  heading="Hot drink"
+  message="Please be careful, the drink is hot."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="success"
+  heading="Americano order complete"
+  message="Success, your coffee is good to go."
+  theme="dark"
+  dismissible
+/>
+<IcAlert
+  variant="ai"
+  heading="AI Barista"
+  message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
+  theme="dark"
+  dismissible
+/>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  style={{
+    display: "block",
+    background: "var(--ic-color-page-background-dark)",
+  }}
+  snippets={snippetsThemeDark}
+>
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    heading="Americano order"
+    message="Preparation status is unavailable."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="info"
+    heading="Did you know?"
+    message="Coffee is a brewed drink prepared from roasted coffee beans."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="error"
+    heading="Americano order error"
+    message="Americano couldn't be made, we ran out of beans."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="warning"
+    heading="Hot drink"
+    message="Please be careful, the drink is hot."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="success"
+    heading="Americano order complete"
+    message="Success, your coffee is good to go."
+    theme="dark"
+    dismissible
+  />
+  <IcAlert
+    style={{ marginBottom: "1rem" }}
+    variant="ai"
+    heading="AI Barista"
+    message="This coffee recommendation was brewed by artificial intelligence. Enjoy your personalized cup!"
+    theme="dark"
+    dismissible
+  />
+</ComponentPreview>

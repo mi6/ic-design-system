@@ -1,0 +1,1182 @@
+---
+path: "/components/inputs/button/code"
+
+date: "2024-05-31"
+
+title: "Button"
+
+status: "BETA"
+
+subTitle: "Buttons are used to allow or encourage people to take an action."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/button"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/button" },
+    { title: "Code", path: "/components/inputs/button/code" },
+    { title: "Accessibility", path: "/components/inputs/button/accessibility" },
+  ]
+---
+
+import { IcButton, IcMenuGroup, IcMenuItem, IcPopoverMenu } from "@ukic/react";
+import { useState } from "react";
+
+## Component demo
+
+export const snippetsDefault = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button id="my-button" variant="primary">Add to order</ic-button>
+<ic-button variant="secondary">View coffees</ic-button>
+<ic-button variant="tertiary">Find out more</ic-button>
+<ic-button variant="destructive">Cancel order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    const btn = document.querySelector('#my-button');
+    btn.addEventListener('click', (ev) => {
+      console.log(ev);
+    })
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" onClick={(ev) => console.log(ev)}>
+  Add to order
+</IcButton>
+<IcButton variant="secondary">View coffees</IcButton>
+<IcButton variant="tertiary">Find out more</IcButton>
+<IcButton variant="destructive">Cancel order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsDefault}>
+  <IcButton variant="primary" onClick={(ev) => console.log(ev)}>
+    Add to order
+  </IcButton>
+  <IcButton variant="secondary">View coffees</IcButton>
+  <IcButton variant="tertiary">Find out more</IcButton>
+  <IcButton variant="destructive">Cancel order</IcButton>
+</ComponentPreview>
+
+## Button details
+
+<ComponentDetails component="ic-button" />
+
+## Variants
+
+### Other states
+
+export const snippetsOtherStates = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary" disabled="true">Add to order</ic-button>
+<ic-button variant="secondary" loading="true">Loading button</ic-button>
+<ic-button variant="primary" dropdown="true">Add to order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" disabled>Add to order</IcButton>
+<IcButton variant="secondary" loading>Loading button</IcButton>
+<IcButton variant="primary" dropdown>Add to order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsOtherStates}>
+  <IcButton variant="primary" disabled>
+    Add to order
+  </IcButton>
+  <IcButton variant="secondary" loading>
+    Loading button
+  </IcButton>
+  <IcButton variant="primary" dropdown>
+    Add to order
+  </IcButton>
+</ComponentPreview>
+
+### With icon
+
+export const snippetsWithIcon = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary">
+  <svg
+    slot="left-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+    >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+  Refresh order status
+</ic-button>`,
+      long: `.parent-container {
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary">
+  <SlottedSVG
+    slot="left-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+    >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </SlottedSVG>
+  Refresh order status
+</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsWithIcon}>
+  <IcButton variant="primary">
+    Refresh order status
+    <svg
+      slot="left-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+  </IcButton>
+</ComponentPreview>
+
+### Icon Button
+
+When using an icon button, refer to the guidance of using [tooltips](/components/feedback-progress/tooltip/#when-to-use). When disabling tooltips, provide a suitable `aria-label` or `title` to provide context to screen readers.
+
+export const snippetsIcon = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button 
+  variant="icon-primary" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</ic-button>
+<ic-button 
+  variant="icon-secondary" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</ic-button>
+<ic-button 
+  variant="icon-tertiary" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</ic-button>
+<ic-button 
+  variant="icon-destructive" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</ic-button>
+`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton 
+  variant="icon-primary" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</IcButton>
+<IcButton 
+  variant="icon-secondary" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</IcButton>
+<IcButton 
+  variant="icon-tertiary" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</IcButton>
+<IcButton 
+  variant="icon-destructive" 
+  aria-label="refresh"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    fill="#000000"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
+  </svg>
+</IcButton>
+`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsIcon}>
+  <IcButton variant="icon-primary" aria-label="refresh">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+  </IcButton>
+  <IcButton
+    variant="icon-secondary"
+    aria-label="you can disable tooltips on icon buttons"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+  </IcButton>
+  <IcButton variant="icon-tertiary" aria-label="refresh">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+  </IcButton>
+  <IcButton variant="icon-destructive" aria-label="refresh">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#000000"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+    </svg>
+  </IcButton>
+</ComponentPreview>
+
+### Tooltip
+
+export const snippetsTooltip = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary" title="We can add tooltips to text buttons">Button With Title</ic-button>
+<ic-button
+  variant="primary"
+  title="the tooltipPlacement prop allows us to change the location of the tooltip"
+  tooltip-placement="right"
+>
+  Different positions
+</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" title="We can add tooltips to text buttons">
+  Button With Title
+</IcButton>
+<IcButton
+  variant="primary"
+  title="the tooltipPlacement prop allows us to change the location of the tooltip"
+  tooltipPlacement="right"
+>
+  Different positions
+</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview
+  style={{ gap: "var(--ic-space-xs)" }}
+  snippets={snippetsTooltip}
+>
+  <IcButton variant="primary" title="We can add tooltips to text buttons">
+    Button With Title
+  </IcButton>
+  <IcButton
+    variant="primary"
+    title="the tooltipPlacement prop allows us to change the location of the tooltip"
+    tooltipPlacement="right"
+  >
+    Different positions
+  </IcButton>
+</ComponentPreview>
+
+### Sizing
+
+export const snippetsSizing = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary" size="small">Add to order</ic-button>
+<ic-button variant="primary">Add to order</ic-button>
+<ic-button variant="primary" size="large">Add to order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary" size="small">Add to order</IcButton>
+<IcButton variant="primary">Add to order</IcButton>
+<IcButton variant="primary" size="large">Add to order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsSizing}>
+  <IcButton variant="primary" size="small">
+    Add to order
+  </IcButton>
+  <IcButton variant="primary">Add to order</IcButton>
+  <IcButton variant="primary" size="large">
+    Add to order
+  </IcButton>
+</ComponentPreview>
+
+### Colour variants
+
+export const snippetsColour = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button variant="primary">Add to order</ic-button>
+<ic-button variant="primary" monochrome="true">Add to order</ic-button>
+<ic-button variant="primary" theme="dark" monochrome="true">Add to order</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton variant="primary">Add to order</IcButton>
+<IcButton variant="primary" monochrome>Add to order</IcButton>
+<IcButton variant="primary" theme="dark" monochrome>Add to order</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview style={{ gap: "0.5rem" }} snippets={snippetsColour}>
+  <IcButton variant="primary">Add to order</IcButton>
+  <IcButton variant="primary" theme="light" monochrome>
+    Add to order
+  </IcButton>
+  <IcButton variant="primary" theme="dark" monochrome>
+    Add to order
+  </IcButton>
+</ComponentPreview>
+
+### File upload
+
+export const snippetsFileUpload = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button
+  variant="primary"
+  id="file-button-single"
+  file-upload="true"
+  accept=".doc, text/plain, .json, .png"
+>
+  Upload a file
+</ic-button>
+<ic-button
+  variant="primary"
+  id="file-button-multiple"
+  file-upload="true"
+  multiple="true"
+  accept=".doc, text/plain, .json, .png"
+>
+  Upload multiple files
+</ic-button>`,
+      long: `.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ic-space-xs);
+    padding: var(--ic-space-md);
+  }
+</style>
+<body>  
+  <div class="parent-container">
+    {shortCode}
+  </div>
+  <script>
+    document
+      .querySelector("#file-button-single")
+      .addEventListener("icFileSelection", (ev) => {
+        console.log("Single file upload", ev.detail);
+      });
+    document
+      .querySelector("#file-button-multiple")
+      .addEventListener("icFileSelection", (ev) => {
+        console.log("Multiple files upload", ev.detail);
+      });
+  </script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  variant="primary"
+  fileUpload
+  accept=".doc, text/plain, .json, .png"
+  onIcFileSelection={(event) =>
+    console.log("Single file upload", event.detail)
+  }
+>
+  Upload a file
+</IcButton>
+<IcButton
+  variant="primary"
+  fileUpload
+  multiple
+  accept=".doc, text/plain, .json, .png"
+  onIcFileSelection={(event) =>
+    console.log("Multiple files upload", event.detail)
+  }
+>
+  Upload multiple files
+</IcButton>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const useStyles = createUseStyles({
+  parentContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "var(--ic-space-xs)",
+    padding: "var(--ic-space-md)",
+  },
+});
+const classes = useStyles();
+return (
+  <div className={classes.parentContainer}>
+    {shortCode}
+  </div>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsFileUpload} style={{ gap: "0.5rem" }}>
+  <IcButton
+    variant="primary"
+    fileUpload
+    accept=".doc, text/plain, .json, .png"
+    onIcFileSelection={(event) =>
+      console.log("Single file upload", event.detail)
+    }
+  >
+    Upload a file
+  </IcButton>
+  <IcButton
+    variant="primary"
+    fileUpload
+    multiple
+    accept=".doc, text/plain, .json, .png"
+    onIcFileSelection={(event) =>
+      console.log("Multiple files upload", event.detail)
+    }
+  >
+    Upload multiple files
+  </IcButton>
+</ComponentPreview>
+
+### Dropdown button with popover menu
+
+export const snippetsDropdownButton = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-button
+  dropdown="true"
+  variant="primary"
+  id="dropdown-button-popover"
+  onclick="handleClick()"
+>
+  Actions
+</ic-button>
+<ic-popover-menu
+  anchor="dropdown-button-popover"
+  aria-label="popover"
+  id="dropdown-button-popover-menu"
+>
+  <ic-menu-group label="Sort">
+    <ic-menu-item label="Sort ascending">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.03 9.97H11.03V18.89L13.04 18.92V9.97H17.03L12.03 4.97Z"
+        />
+      </svg>
+    </ic-menu-item>
+    <ic-menu-item label="Sort descending">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M7.03 13.92H11.03V5L13.04 4.97V13.92H17.03L12.03 18.92Z" />
+      </svg>
+    </ic-menu-item>
+  </ic-menu-group>
+  <ic-menu-item label="Filter" variant="toggle">
+    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M2.39 1.73L1.11 3L9 10.89V15.87C8.96 16.16 9.06 16.47 9.29 16.7L13.3 20.71C13.69 21.1 14.32 21.1 14.71 20.71C14.94 20.5 15.04 20.18 15 19.88V16.89L20.84 22.73L22.11 21.46L15 14.35V14.34L13 12.35L11 10.34L4.15 3.5L2.39 1.73M6.21 3L8.2 5H16.96L13.11 9.91L15 11.8V10.75L19.79 4.62C20.13 4.19 20.05 3.56 19.62 3.22C19.43 3.08 19.22 3 19 3H6.21M11 12.89L13 14.89V17.58L11 15.58V12.89Z"
+      />
+    </svg>
+  </ic-menu-item>
+  <ic-menu-group label="Manage columns">
+    <ic-menu-item label="Hide column" variant="toggle">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M2,5.27L3.28,4L20,20.72L18.73,22L15.65,18.92C14.5,19.3 13.28,19.5 12,19.5C7,19.5 2.73,16.39 1,12C1.69,10.24 2.79,8.69 4.19,7.46L2,5.27M12,9A3,3 0 0,1 15,12C15,12.35 14.94,12.69 14.83,13L11,9.17C11.31,9.06 11.65,9 12,9M12,4.5C17,4.5 21.27,7.61 23,12C22.18,14.08 20.79,15.88 19,17.19L17.58,15.76C18.94,14.82 20.06,13.54 20.82,12C19.17,8.64 15.76,6.5 12,6.5C10.91,6.5 9.84,6.68 8.84,7L7.3,5.47C8.74,4.85 10.33,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C12.69,17.5 13.37,17.43 14,17.29L11.72,15C10.29,14.85 9.15,13.71 9,12.28L5.6,8.87C4.61,9.72 3.78,10.78 3.18,12Z"
+        />
+      </svg>
+    </ic-menu-item>
+    <ic-menu-item label="Column width">
+      <svg
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z" />
+      </svg>
+    </ic-menu-item>
+  </ic-menu-group>
+</ic-popover-menu>`,
+      long: `{shortCode}
+<script>
+  let icPopover = document.querySelector('#dropdown-button-popover-menu');
+  let icButton = document.querySelector('#dropdown-button-popover');
+  function handleClick() {
+    icPopover.open = !icPopover.open;
+  }
+  icPopover.addEventListener('icPopoverClosed', (ev) => {
+    icButton.setAttribute('dropdown-expanded', false);
+  });
+</script>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcButton
+  dropdown
+  dropdownExpanded={popoverOpen}
+  variant="primary"
+  id="dropdown-button-popover"
+  onClick={handlePopoverToggled}
+>
+  Actions
+</IcButton>
+<IcPopoverMenu
+  anchor="dropdown-button-popover"
+  aria-label="popover"
+  open={popoverOpen}
+  onIcPopoverClosed={handlePopoverClosed}
+>
+  <IcMenuGroup label="Sort">
+    <IcMenuItem label="Sort ascending">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        path={mdiArrowUpThin}
+      />
+    </IcMenuItem>
+    <IcMenuItem label="Sort descending">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        path={mdiArrowDownThin}
+      />
+    </IcMenuItem>
+  </IcMenuGroup>
+  <IcMenuItem label="Filter" variant="toggle">
+    <SlottedSVG
+      slot="icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      path={mdiFilterOffOutline}
+    />
+  </IcMenuItem>
+  <IcMenuGroup label="Manage columns">
+    <IcMenuItem label="Hide column" variant="toggle">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        path={mdiEyeOffOutline}
+      />
+    </IcMenuItem>
+    <IcMenuItem label="Column width">
+      <SlottedSVG
+        slot="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        path={mdiSwapHorizontal}
+      />
+    </IcMenuItem>
+  </IcMenuGroup>
+</IcPopoverMenu>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+        {
+          language: "Javascript",
+          snippet: `const [popoverOpen, setPopoverOpen] = useState(false);
+const handlePopoverToggled = () => setPopoverOpen(value => !value);
+const handlePopoverClosed = () => setPopoverOpen(false);
+return (
+  <>
+    {shortCode}
+  </>
+)`,
+        },
+      ],
+    },
+  },
+];
+
+export const DropdownButtonPopover = () => {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const handlePopoverToggled = () => setPopoverOpen((value) => !value);
+  const handlePopoverClosed = () => setPopoverOpen(false);
+  return (
+    <>
+      <IcButton
+        dropdown
+        dropdownExpanded={popoverOpen}
+        variant="primary"
+        id="dropdown-button-popover"
+        onClick={handlePopoverToggled}
+      >
+        Actions
+      </IcButton>
+      <IcPopoverMenu
+        anchor="dropdown-button-popover"
+        aria-label="popover"
+        open={popoverOpen}
+        onIcPopoverClosed={handlePopoverClosed}
+      >
+        <IcMenuGroup label="Sort">
+          <IcMenuItem label="Sort ascending">
+            <svg
+              slot="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.03 9.97H11.03V18.89L13.04 18.92V9.97H17.03L12.03 4.97Z" />
+            </svg>
+          </IcMenuItem>
+          <IcMenuItem label="Sort descending">
+            <svg
+              slot="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.03 13.92H11.03V5L13.04 4.97V13.92H17.03L12.03 18.92Z" />
+            </svg>
+          </IcMenuItem>
+        </IcMenuGroup>
+        <IcMenuItem label="Filter" variant="toggle">
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M2.39 1.73L1.11 3L9 10.89V15.87C8.96 16.16 9.06 16.47 9.29 16.7L13.3 20.71C13.69 21.1 14.32 21.1 14.71 20.71C14.94 20.5 15.04 20.18 15 19.88V16.89L20.84 22.73L22.11 21.46L15 14.35V14.34L13 12.35L11 10.34L4.15 3.5L2.39 1.73M6.21 3L8.2 5H16.96L13.11 9.91L15 11.8V10.75L19.79 4.62C20.13 4.19 20.05 3.56 19.62 3.22C19.43 3.08 19.22 3 19 3H6.21M11 12.89L13 14.89V17.58L11 15.58V12.89Z" />
+          </svg>
+        </IcMenuItem>
+        <IcMenuGroup label="Manage columns">
+          <IcMenuItem label="Hide column" variant="toggle">
+            <svg
+              slot="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M2,5.27L3.28,4L20,20.72L18.73,22L15.65,18.92C14.5,19.3 13.28,19.5 12,19.5C7,19.5 2.73,16.39 1,12C1.69,10.24 2.79,8.69 4.19,7.46L2,5.27M12,9A3,3 0 0,1 15,12C15,12.35 14.94,12.69 14.83,13L11,9.17C11.31,9.06 11.65,9 12,9M12,4.5C17,4.5 21.27,7.61 23,12C22.18,14.08 20.79,15.88 19,17.19L17.58,15.76C18.94,14.82 20.06,13.54 20.82,12C19.17,8.64 15.76,6.5 12,6.5C10.91,6.5 9.84,6.68 8.84,7L7.3,5.47C8.74,4.85 10.33,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C12.69,17.5 13.37,17.43 14,17.29L11.72,15C10.29,14.85 9.15,13.71 9,12.28L5.6,8.87C4.61,9.72 3.78,10.78 3.18,12Z" />
+            </svg>
+          </IcMenuItem>
+          <IcMenuItem label="Column width">
+            <svg
+              slot="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z" />
+            </svg>
+          </IcMenuItem>
+        </IcMenuGroup>
+      </IcPopoverMenu>
+    </>
+  );
+};
+
+<ComponentPreview
+  style={{
+    display: "flex",
+    justifyContent: "center",
+  }}
+  snippets={snippetsDropdownButton}
+>
+  <DropdownButtonPopover />
+</ComponentPreview>
