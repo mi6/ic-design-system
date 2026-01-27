@@ -3,7 +3,7 @@ path: "/components/inputs/time-input"
 
 navPriority: 10
 
-date: "2025-08-20"
+date: "2026-01-30"
 
 title: "Time input"
 
@@ -17,6 +17,10 @@ tabs:
   [
     { title: "Guidance", path: "/components/inputs/time-input" },
     { title: "Code", path: "/components/inputs/time-input/code" },
+    {
+      title: "Accessibility",
+      path: "/components/inputs/time-input/accessibility",
+    },
   ]
 
 tags: ["Time field", "Time entry"]
@@ -24,6 +28,28 @@ tags: ["Time field", "Time entry"]
 
 import { IcAlert, IcLink } from "@ukic/react";
 import { IcTimeInput } from "@ukic/canary-react";
+import {
+  Fig1TimeInputLight,
+  Fig1TimeInputDark,
+  Fig2TimeInputLight,
+  Fig2TimeInputDark,
+  Fig3TimeInputLight,
+  Fig3TimeInputDark,
+  Fig4TimeInputLight,
+  Fig4TimeInputDark,
+  Fig5TimeInputLight,
+  Fig5TimeInputDark,
+  Fig6TimeInputLight,
+  Fig6TimeInputDark,
+  Fig7TimeInputLight,
+  Fig7TimeInputDark,
+  Fig8TimeInputLight,
+  Fig8TimeInputDark,
+  Fig9TimeInputLight,
+  Fig9TimeInputDark,
+  Fig10TimeInputLight,
+  Fig10TimeInputDark,
+} from "./images";
 
 <IcAlert
   heading="Canary component"
@@ -60,6 +86,12 @@ For more information on Canary components, read our approach to [releases and ve
   storybooks.
 </p>
 
+## Introduction
+
+The time input component enables people to provide a specific time using either direct entry or assisted selection.
+It ensures accuracy through the common 24-hour clock format, which displays time as HH:MM:SS.SSS where HH represents hours, MM represents minutes, SS represents seconds and SSS represents milliseconds.
+By default, users are asked to input hours, minutes and seconds; but this can be expanded to include milliseconds.
+
 ## Component demo
 
 An example of the time input component.
@@ -70,3 +102,152 @@ An example of the time input component.
     helperText="Enter in format HH:MM:SS"
   />
 </ComponentPreview>
+
+## When to use
+
+Use a time input when asking people for a time they already know or can input without the use of a picker.
+Use a time input to allow users to select a specific time. For example, use a time input when asking for when an event took place or a duration as it may be quicker than navigating through a time picker. It works best for tasks that require accuracy and validation, such as scheduling meetings, setting timers, reminders and alarms, or adding time-based details like those in a travel itinerary.
+
+<DoDontCaution
+  imageSrc={[Fig1TimeInputLight, Fig1TimeInputDark]}
+  imageAlt="A time input component with a time entered using a format of hours (HH), minutes (MM), seconds (SS) and milliseconds (SSS)"
+  state="good"
+  caption="Use a time input to collect known times."
+/>
+
+## When not to use
+
+Don't use a time input if the person only needs to enter a rough time of day such as morning or afternoon, or when fixed intervals such as every 15 minutes can be shown more simply with a dropdown menu or radio buttons.
+Do not use a time input when there are a set number of slots or appointments available.
+
+## Content
+
+### Labels
+
+Use [content styling](/styles/content-style/principles) for help with building effective labels for people using time input.
+
+### Helper text
+
+Use helper text to provide additional information.
+
+Use a default value to set the initial selection of a time. For example, with default value set to 12:00, the placeholder time will be replaced with 12:00.
+
+Use sentence case for all labels, error text and helper text.
+
+Use the time input properties to edit specificity and placeholder time.
+
+Use helper text to indicate restrictions in a time input, such as operating hours.
+
+Use error text to explain why an error has occurred and how it is fixed.
+
+Do not use error or helper text to repeat the input label.
+
+Do not add helper text solely to mirror other input fields. It should provide clarity or add value to the input.
+
+Do not use periods in labels, error text and helper text unless more than one sentence is used.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig2TimeInputLight, Fig2TimeInputDark]}
+    caption="Use helper text to give context to the current required input."
+    imageAlt="A time input field with helper text displayed under the label describing the expected input format to use in the field."
+    state="good"
+  />
+  <DoDontCaution
+    imageSrc={[Fig3TimeInputLight, Fig3TimeInputDark]}
+    caption="Avoiding helper text removes context."
+    imageAlt="A time input field with no helper text, meaning there is no guidance on formatting."
+    state="bad"
+  />
+</DoubleDoDontCaution>
+
+## Time formatting
+
+Time input fields expect the time to be in the format HH:MM:SS.SSS with the last two elements of this as optional.
+They can be excluded through use of properties; helper and placeholder text must be adjusted to match the expected input.
+
+## Interaction behaviour
+
+Set a sensible default time to help users complete the field quickly but avoid defaults that don't make sense. For example, use the current time (now) when asking for a scheduled reminder.
+You can copy and paste a complete time into the time input.
+
+Do not enable past times when using a time input to gather information about times in the future, such as a meeting time. Do not enable future times when using a time input to gather information about times in the past, such as time of birth.
+Use html `autofocus` to automatically focus a time input when it is the only input on a page.
+
+Do not use html `autofocus` on a time input when it is part of a form with other inputs.
+
+A time input will autofocus between the micro-inputs when an input is taking place. Micro-inputs are split between the 'HH', 'MM', 'SS', and 'SSS' inputs.
+
+## Validation
+
+Use validation in the time input to show people when their entry is correct, needs attention, or contains an error. The time input component offers some standard validation rules and supports creating custom rules.
+Use the custom validation options to configure your own validation scenarios. For example, if it is required that the input time must be after another specific time then use an error validation message if the input time doesn't meet the condition.
+Use error messages when the user cannot continue without fixing their input.
+
+Use the 'error' validation state within a time input to signify that the selected time is invalid. For example, when the time selections are outside of the specified “allowed” range.
+
+Use the 'error' validation state within a time input when presented with an illogical time. For example, if a selected time reads “26:65”. Alternatively, round the values to the nearest maximum or minimum integer.
+
+Use the 'error' validation state within a time input to signify that there is an issue in time selection. For example, when the time selections are partially complete or left blank.
+
+Use warnings when the time can still be accepted but may not be what's expected. For example, setting a reminder for an unusual time such as 03:00 in the morning when booking an appointment.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig4TimeInputLight, Fig4TimeInputDark]}
+    caption="Use success validation when checking input against limited availability."
+    imageAlt="A time input showing a valid entry, with a success message displayed underneath."
+    state="good"
+  />
+  <DoDontCaution
+    imageSrc={[Fig5TimeInputLight, Fig5TimeInputDark]}
+    caption="Use the correct validation message with each validation state."
+    imageAlt="A time input with an unusual value, showing a warning message prompting the user to check the value entered."
+    state="good"
+  />
+</DoubleDoDontCaution>
+
+## Sizing
+
+Use the time input size properties to change the vertical size and achieve compact or spacious layouts.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig6TimeInputLight, Fig6TimeInputDark]}
+    caption="Use the time input size properties to change the vertical size and achieve compact or spacious layouts."
+    imageAlt="A medium sized time input with a filled value and correctly size-matched submit button alongside."
+    state="good"
+  />
+  <DoDontCaution
+    imageSrc={[Fig7TimeInputLight, Fig7TimeInputDark]}
+    caption="Don't mix different sizes within the same layout. Keep component heights consistent."
+    imageAlt="A medium sized time input with a filled value and mismatch sized submit button alongside."
+    state="bad"
+  />
+</DoubleDoDontCaution>
+
+## Width
+
+Ensure the width of the time input allows enough space for the full length of a person's potential input. Where appropriate try and ensure that the time input field matches the length of other input fields nearby.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig8TimeInputLight, Fig8TimeInputDark]}
+    imageAlt="A select field above a time input field. Both fields have matching widths and are aligned to the left."
+    caption="Adjust the time input width to match other components on the page."
+    state="good"
+  />
+  <DoDontCaution
+    imageSrc={[Fig9TimeInputLight, Fig9TimeInputDark]}
+    imageAlt="A select field above a time input field. The select field is longer than the time input field."
+    caption="Don't mismatch input field lengths when they could be resized to match."
+    state="bad"
+  />
+</DoubleDoDontCaution>
+
+<DoDontCaution
+  imageSrc={[Fig10TimeInputLight, Fig10TimeInputDark]}
+  imageAlt="A time input shown mis-sized with a much wider form field, highlighting that inputs should not be stretched beyond their natural width."
+  state="bad"
+  caption="Don't stretch time input fields to match considerably wider form elements. Keeping it close to its natural size makes it easier to scan and helps users recognise it as a time-specific field."
+/>
