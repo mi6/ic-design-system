@@ -1,7 +1,7 @@
 ---
 path: "/components/feedback-progress/skeleton/code"
 
-date: "2024-05-31"
+date: "2026-01-22"
 
 title: "Skeleton"
 
@@ -182,11 +182,101 @@ return (
   </IcSkeleton>
 </ComponentPreview>
 
-### Set width and height
+### Set width and height with props
+
+export const snippetsSetWidthAndHeightProps = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-typography variant="h4">
+  <h4>Height and width set</h4>
+</ic-typography>
+<ic-skeleton height="12.5rem" width="25.125rem"></ic-skeleton>
+<ic-typography variant="h4">
+  <h4>Height set</h4>
+</ic-typography>
+<ic-skeleton height="5rem"></ic-skeleton>
+<ic-typography variant="h4">
+  <h4>Width set</h4>
+</ic-typography>
+<ic-skeleton width="25.125rem"></ic-skeleton>`,
+      long: `.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ic-space-xs);
+  }
+</style>
+<body>
+  <div class="parent-container">
+    {shortCode}
+  </div>`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcTypography variant="h4">
+  <h4>Height and width set</h4>
+</IcTypography>
+<IcSkeleton
+  height="12.5rem"
+  width="12.5rem"
+/>
+<IcTypography variant="h4">
+  <h4>Height set</h4>
+</IcTypography>
+<IcSkeleton height="5rem" />
+<IcTypography variant="h4">
+  <h4>Width set</h4>
+</IcTypography>
+<IcSkeleton width="25.125rem" />`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+        {
+          language: "Javascript",
+          snippet: `<>
+  {shortCode}
+</>`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsSetWidthAndHeightProps}>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "0.5rem",
+      maxWidth: "100%",
+    }}
+  >
+    <IcTypography variant="h4">
+      <h4>Height and width set</h4>
+    </IcTypography>
+    <IcSkeleton height="12.5rem" width="12.5rem" />
+    <IcTypography variant="h4">
+      <h4>Height set</h4>
+    </IcTypography>
+    <IcSkeleton height="5rem" />
+    <IcTypography variant="h4">
+      <h4>Width set</h4>
+    </IcTypography>
+    <IcSkeleton width="25.125rem" />
+  </div>
+</ComponentPreview>
+
+### Set width and height with inline styling
 
 CSS changes directly to `Skeleton` must be applied with inline styling.
 
-export const snippetsSetWidthAndHeight = [
+export const snippetsSetWidthAndHeightCSS = [
   {
     technology: "Web component",
     snippets: {
@@ -260,7 +350,7 @@ export const snippetsSetWidthAndHeight = [
   },
 ];
 
-<ComponentPreview snippets={snippetsSetWidthAndHeight}>
+<ComponentPreview snippets={snippetsSetWidthAndHeightCSS}>
   <div
     style={{
       display: "flex",
