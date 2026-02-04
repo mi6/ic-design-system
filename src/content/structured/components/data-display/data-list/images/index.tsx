@@ -1,5 +1,5 @@
-export { default as Fig1DataListLight } from "./fig-1-assign-interactions-to-individual-rows-within-the-interaction-area,-or-the-full-data-list-table-by-using-buttons-at-the-end-of-the-table.png";
-export { default as Fig1DataListDark } from "./fig-1-assign-interactions-to-individual-rows-within-the-interaction-area,-or-the-full-data-list-table-by-using-buttons-at-the-end-of-the-table-dark.png";
+export { default as Fig1DataListLight } from "./fig-1-assign-interactions-to-individual-rows-within-the-interaction-area.png";
+export { default as Fig1DataListDark } from "./fig-1-assign-interactions-to-individual-rows-within-the-interaction-area-dark.png";
 export { default as Fig2DataListLight } from "./fig-2-make-sure-the-data-in-the-cell-displays-in-its-correct-format.png";
 export { default as Fig2DataListDark } from "./fig-2-make-sure-the-data-in-the-cell-displays-in-its-correct-format-dark.png";
 export { default as Fig3DataListLight } from "./fig-3-do-not-pass-non-text-data-in-a-text-format.png";

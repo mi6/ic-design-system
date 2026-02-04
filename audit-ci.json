@@ -1,32 +1,90 @@
 {
   "allowlist": [
-    "GHSA-pfrx-2q88-qq97",
-    "GHSA-9c47-m6qq-7p4h",
-    "GHSA-rp65-9cf3-cjxr",
-    "GHSA-w5p7-h5w8-2hfq",
-    "GHSA-3rfm-jhwj-7488",
-    "GHSA-hhq3-ff78-jv3g",
-    "GHSA-76p3-8jx3-jpfq",
-    "GHSA-p8p7-x288-28g6",
-    "GHSA-776f-qx25-q3cc",
-    "GHSA-q9mw-68c2-j6m5",
-    "GHSA-c2qf-rxjj-qqgw",
-    "GHSA-72xf-g2v4-qvf3",
-    "GHSA-wf5p-g6vw-rhxx",
-    "GHSA-54xq-cgqr-rpm3",
-    "GHSA-p6mc-m468-83gw",
-    "GHSA-wr3j-pwj9-hqq6",
-    "GHSA-35jh-r3h4-6jhm",
-    "GHSA-3h5v-q93c-6h6q",
-    "GHSA-25hc-qcg6-38wj",
-    "GHSA-jr5f-v2jv-69x6",
-    "GHSA-fjxv-7rqg-78g4",
-    "GHSA-4hjh-wcwx-xvwj",
-    "GHSA-qm9p-f9j5-w83w",
-    "GHSA-vj76-c3g6-qr5v",
-    "GHSA-mh29-5h37-fv8m",
-    "GHSA-6rw7-vpxm-498p",
-    "GHSA-8qq5-rm4j-mr97",
-    "GHSA-r6q2-hw4h-h46w"
+    {
+      "GHSA-pfrx-2q88-qq97": {
+        "active": true,
+        "notes": "requires upgrade to 'got' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+      }
+    },
+    {
+      "GHSA-p8p7-x288-28g6": {
+        "active": true,
+        "notes": "requires upgrade to 'request' which currently has no fix."
+      }
+    },
+    {
+      "GHSA-c2qf-rxjj-qqgw": {
+        "active": true,
+        "notes": "requires upgrade to 'semver' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+      }
+    },
+    {
+
+      "GHSA-wf5p-g6vw-rhxx": {
+        "active": true,
+        "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+      }
+    },
+    {
+      "GHSA-p6mc-m468-83gw": {
+        "active": true,
+        "notes": "requires upgrade to 'lodash' and 'lodash.pick'. 'lodash.pick' currently has no fix."
+      }
+    },
+    {
+      "GHSA-wr3j-pwj9-hqq6": {
+        "active": true,
+        "notes": "requires upgrade to 'webpack-dev-middleware' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+      }
+    },
+    {
+      "GHSA-25hc-qcg6-38wj": {
+        "active": true,
+        "notes": "requires upgrade to 'socket.io' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+      }
+    },
+        {
+
+      "GHSA-jr5f-v2jv-69x6": {
+        "active": true,
+        "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+      }
+    },
+    {
+      "GHSA-qm9p-f9j5-w83w": {
+        "active": true,
+        "notes": "requires upgrade to '@parcel/reporter-dev-server' which currently has no fix."
+      }
+    },
+    {
+      "GHSA-8qq5-rm4j-mr97": {
+        "active": true,
+        "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
+      }
+    },
+     {
+      "GHSA-r6q2-hw4h-h46w": {
+        "active": true,
+        "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
+      }
+    },
+        {
+      "GHSA-xxjr-mmjv-4gpg": {
+        "active": true,
+        "notes": "requires upgrade to 'lodash' and 'lodash.pick'. 'lodash.pick' currently has no fix."
+      }
+    },
+    {
+      "GHSA-p5wg-g6qr-c7cg": {
+        "active": true,
+        "notes": "requires upgrade to 'eslint' to '9.26.0' which is a breaking change."
+      }
+    },
+    {
+      "GHSA-34x7-hfp2-rc4v": {
+        "active": true,
+        "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
+      }
+    }
   ]
 }

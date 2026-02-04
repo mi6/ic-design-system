@@ -1,7 +1,7 @@
 ---
 path: "/components/feedback-progress/stepper/code"
 
-date: "2024-05-31"
+date: "2026-01-22"
 
 title: "Stepper"
 
@@ -324,6 +324,68 @@ export const customConnectorWidth = [
     <IcStep heading="Order coffee" type="completed" />
     <IcStep heading="Pay for order" type="current" />
     <IcStep heading="Collect" type="disabled" />
+  </IcStepper>
+</ComponentPreview>
+
+### Heading slot
+
+export const snippetsHeadingSlot = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-stepper>
+  <ic-step type="completed">
+    <span slot="heading">Order coffee</span>
+  </ic-step>
+  <ic-step type="current">
+    <span slot="heading">Pay for order</span>
+  </ic-step>
+  <ic-step type="disabled">
+    <span slot="heading">Collect</span>
+  </ic-step>
+</ic-stepper>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcStepper>
+  <IcStep type="completed">
+    <span slot="heading">Order coffee</span>
+  </IcStep>
+  <IcStep type="current">
+    <span slot="heading">Pay for order</span>
+  </IcStep>
+  <IcStep type="disabled">
+    <span slot="heading">Collect</span>
+  </IcStep>
+</IcStepper>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsHeadingSlot}>
+  <IcStepper>
+    <IcStep type="completed">
+      <span slot="heading">Order coffee</span>
+    </IcStep>
+    <IcStep type="current">
+      <span slot="heading">Pay for order</span>
+    </IcStep>
+    <IcStep type="disabled">
+      <span slot="heading">Collect</span>
+    </IcStep>
   </IcStepper>
 </ComponentPreview>
 

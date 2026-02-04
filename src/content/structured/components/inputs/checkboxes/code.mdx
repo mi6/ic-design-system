@@ -1,7 +1,7 @@
 ---
 path: "/components/inputs/checkbox/code"
 
-date: "2024-05-31"
+date: "2026-01-22"
 
 title: "Checkbox"
 
@@ -299,6 +299,54 @@ export const snippetsSettingEachCheckboxSize = [
   <IcCheckbox value="valueName1" label="Extra shot (50p)" size="small" />
   <IcCheckbox value="valueName2" label="Extra shot (50p)" />
   <IcCheckbox value="valueName3" label="Extra shot (50p)" size="large" />
+</ComponentPreview>
+
+### Disabled
+
+export const snippetsDisabled = [
+  {
+    technology: "Web component",
+    snippets: {
+      short: `<ic-checkbox-group label="Select your extras" disabled="true" name="disabled-checkbox-group">
+  <ic-checkbox value="extra" label="Extra shot (50p)"></ic-checkbox>
+  <ic-checkbox value="Soya milk" label="Soya milk" checked ></ic-checkbox>
+  <ic-checkbox value="keep cup" label="Takeaway cup"></ic-checkbox>
+</ic-checkbox-group>`,
+      long: `{shortCode}`,
+    },
+  },
+  {
+    technology: "React",
+    snippets: {
+      short: `<IcCheckboxGroup label="Select your extras" disabled name="disabled-checkbox-group">
+  <IcCheckbox value="extra" label="Extra shot (50p)" />
+  <IcCheckbox value="Soya milk" label="Soya milk" checked />
+  <IcCheckbox value="keep cup" label="Takeaway cup" />
+</IcCheckboxGroup>`,
+      long: [
+        {
+          language: "Typescript",
+          snippet: `{shortCode}`,
+        },
+        {
+          language: "Javascript",
+          snippet: `{shortCode}`,
+        },
+      ],
+    },
+  },
+];
+
+<ComponentPreview snippets={snippetsDisabled}>
+  <IcCheckboxGroup
+    label="Select your extras"
+    disabled
+    name="disabled-checkbox-group"
+  >
+    <IcCheckbox value="extra" label="Extra shot (50p)" />
+    <IcCheckbox value="Soya milk" label="Soya milk" checked />
+    <IcCheckbox value="keep cup" label="Takeaway cup" />
+  </IcCheckboxGroup>
 </ComponentPreview>
 
 ### Conditional

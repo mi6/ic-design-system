@@ -6,6 +6,8 @@ bash "$(dirname "$0")/email-check.sh"
 echo Removing Exif data from static files
 node $(dirname "$0")/./removeAuthorExif.js
 
+node updateLastUpdatedDate.js
+
 npm run test
 npm run prettier
 
