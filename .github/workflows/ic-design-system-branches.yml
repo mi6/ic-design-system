@@ -26,7 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
 
       - name: Lint site
         run: |
@@ -58,7 +58,7 @@ jobs:
         run: |
           BRANCH=${{ steps.extract_branch.outputs.branch }}
           export ICDS_PREFIX=/ic-design-system-githubpages/branches/$BRANCH
-          npm ci
+          npm ci --legacy-peer-deps
           echo GATSBY_MTM_DOMAIN=${{ secrets.GATSBY_MTM_DOMAIN_DEV }} >> .env.production
           echo GATSBY_MTM_SITE_ID=${{ secrets.GATSBY_MTM_SITE_ID_DEV }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
