@@ -1,12 +1,6 @@
 {
   "allowlist": [
     {
-      "GHSA-pfrx-2q88-qq97": {
-        "active": true,
-        "notes": "requires upgrade to 'got' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
-      }
-    },
-    {
       "GHSA-p8p7-x288-28g6": {
         "active": true,
         "notes": "requires upgrade to 'request' which currently has no fix."
@@ -15,14 +9,7 @@
     {
       "GHSA-c2qf-rxjj-qqgw": {
         "active": true,
-        "notes": "requires upgrade to 'semver' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
-      }
-    },
-    {
-
-      "GHSA-wf5p-g6vw-rhxx": {
-        "active": true,
-        "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+        "notes": "requires upgrade to 'semver' which is a transitive dependency of gatsby."
       }
     },
     {
@@ -32,43 +19,12 @@
       }
     },
     {
-      "GHSA-wr3j-pwj9-hqq6": {
-        "active": true,
-        "notes": "requires upgrade to 'webpack-dev-middleware' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
-      }
-    },
-    {
-      "GHSA-25hc-qcg6-38wj": {
-        "active": true,
-        "notes": "requires upgrade to 'socket.io' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
-      }
-    },
-        {
-
-      "GHSA-jr5f-v2jv-69x6": {
-        "active": true,
-        "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
-      }
-    },
-    {
       "GHSA-qm9p-f9j5-w83w": {
         "active": true,
         "notes": "requires upgrade to '@parcel/reporter-dev-server' which currently has no fix."
       }
     },
     {
-      "GHSA-8qq5-rm4j-mr97": {
-        "active": true,
-        "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
-      }
-    },
-     {
-      "GHSA-r6q2-hw4h-h46w": {
-        "active": true,
-        "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
-      }
-    },
-        {
       "GHSA-xxjr-mmjv-4gpg": {
         "active": true,
         "notes": "requires upgrade to 'lodash' and 'lodash.pick'. 'lodash.pick' currently has no fix."
@@ -78,12 +34,6 @@
       "GHSA-p5wg-g6qr-c7cg": {
         "active": true,
         "notes": "requires upgrade to 'eslint' to '9.26.0' which is a breaking change."
-      }
-    },
-    {
-      "GHSA-34x7-hfp2-rc4v": {
-        "active": true,
-        "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
       }
     }
   ]

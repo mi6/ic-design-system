@@ -18,7 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --also=dev
+          npm ci --also=dev --legacy-peer-deps
       - name: Lint site
         run: |
           npm run lint
@@ -42,7 +42,7 @@ jobs:
           node-version: 18
       - name: Build
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           echo GATSBY_MTM_DOMAIN=${{ secrets.GATSBY_MTM_DOMAIN_PROD }} >> .env.production
           echo GATSBY_MTM_SITE_ID=${{ secrets.GATSBY_MTM_SITE_ID_PROD }} >> .env.production
           echo GATSBY_GOOGLE_SEARCH_TOKEN=${{ secrets.GOOGLE_SEARCH_TOKEN }} >> .env.production
