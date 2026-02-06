@@ -137,7 +137,7 @@ async function getChangelogEntriesForVersion(url, version) {
 
   const mdxComment =
     "{/* Please check the information below. Adjust or add extra details if necessary, and then remove this comment, before merging this PR. */}";
-    
+
   const newSection = `### Components\n\n${mdxComment}\n\n${componentsList}\n\n${forFullListLine}\n\n`;
 
   // Replaces the recently shipped components section
