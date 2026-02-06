@@ -1,0 +1,88 @@
+---
+path: "/components/inputs/time-input/accessibility"
+
+date: "2026-01-30"
+
+title: "Time input"
+
+status: "CANARY"
+
+subTitle: "Time input allows users to enter a specific time in a standardised format for scheduling or time-based tasks."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/inputs/time-input" },
+    { title: "Code", path: "/components/inputs/time-input/code" },
+    {
+      title: "Accessibility",
+      path: "/components/inputs/time-input/accessibility",
+    },
+  ]
+
+tags: ["Time field", "Time entry"]
+---
+
+## Keyboard navigation
+
+The hour, minute, second and millisecond values of a time input focus from left to right with the focus moving between each time element.
+
+The hour, minute, second and millisecond values can be updated using the up and down arrow keys. For example, if focussed on the hour input, a user can use the arrow keys to increase or decrease the hour. Depending on the input focussed, the max value differs. For example, if hour is focussed, the max value is 12 or 24, respective of your 24-hour clock preference. With minute and second focus, this maximum value is 59.
+
+Pressing tab and shift tab will move the cursor from left to right between the hour, minute, second and millisecond input. A user can also copy and paste a specific time into the time input field.
+
+## Screen readers
+
+To help users navigate within a time input component, the label, helper text and time input description are initially read out. The description announced for the time input includes the time format and how to add values using the arrow keys.
+
+The hour, minute, second and millisecond values of a time input focus from left to right with focus moving between each time element.
+When navigating a time input with arrow keys, (for example, if the time is 11:45:09.136) the screen reader announces each segment individually, such as “Hours, 11” when focused on the hours, “Minutes, 45” when focused on the minutes, “Seconds, 09” when focused on the seconds and “Milliseconds, 136” when focused on the milliseconds.
+If a change is made to a time input, (for example, the time is updated from 11:45:09 to 12:45:15), once hours, minutes and seconds have been set, the screen reader will announce “Selected time: 12:45:15.”
+
+## Based on
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/WAI/WCAG22/Understanding/concurrent-input-mechanisms.html"
+      rel="noreferrer noopener nofollow"
+    >
+      Concurrent input mechanisms, Web Content Accessibility Guidelines (WCAG)
+      2.2, World Wide Web Consortium
+    </ic-link>
+    , published 05 October 2023, accessed February 2024.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/TR/WCAG22/#identify-input-purpose"
+      rel="noreferrer noopener nofollow"
+    >
+      Identify input purpose, Web Content Accessibility Guidelines (WCAG) 2.2,
+      World Wide Web Consortium
+    </ic-link>
+    , published 05 October 2023, accessed February 2024.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/TR/WCAG22/#input-modalities"
+      rel="noreferrer noopener nofollow"
+    >
+      Input modalities, Web Content Accessibility Guidelines (WCAG) 2.2, World
+      Wide Web Consortium
+    </ic-link>
+    , published 05 October 2023, accessed February 2024.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.w3.org/TR/WCAG22/#input-assistance"
+      rel="noreferrer noopener nofollow"
+    >
+      Input assistance, Web Content Accessibility Guidelines (WCAG) 2.2, World
+      Wide Web Consortium
+    </ic-link>
+    , published 05 October 2023, accessed February 2024.
+  </li>
+</ul>
