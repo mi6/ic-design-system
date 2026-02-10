@@ -19,7 +19,6 @@
       }
     },
     {
-
       "GHSA-wf5p-g6vw-rhxx": {
         "active": true,
         "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
@@ -43,8 +42,7 @@
         "notes": "requires upgrade to 'socket.io' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
       }
     },
-        {
-
+    {
       "GHSA-jr5f-v2jv-69x6": {
         "active": true,
         "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
@@ -62,13 +60,13 @@
         "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
       }
     },
-     {
+    {
       "GHSA-r6q2-hw4h-h46w": {
         "active": true,
         "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
       }
     },
-        {
+    {
       "GHSA-xxjr-mmjv-4gpg": {
         "active": true,
         "notes": "requires upgrade to 'lodash' and 'lodash.pick'. 'lodash.pick' currently has no fix."
