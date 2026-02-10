@@ -83,6 +83,12 @@
         "active": true,
         "notes": "requires upgrade to 'tar' which is transitive dependency of npm-check-updates."
       }
+    },
+    {
+      "GHSA-43fc-jf86-j433": {
+        "active": true,
+        "notes": "requires upgrade to 'axios' which is a transitive dependency of 'gatsby'. Might be removeable after gatsby upgrade."
+      }
     }
   ]
 }
