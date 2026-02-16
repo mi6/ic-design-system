@@ -12,27 +12,7 @@ subTitle: "Success messages inform the user of a successful outcome."
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/patterns/deprecated-patterns/success.mdx"
 ---
 
-import { IcAlert, IcButton, IcTextField } from "@ukic/react";
-
-export const SnackbarBasic = () => {
-  const title = "Your coffee order is being processed.";
-  const [open, setOpen] = React.useState(false);
-  const toggle = () => setOpen(!open);
-  return (
-    <div>
-      <IcButton variant="primary" onClick={toggle}>
-        Submit coffee order
-      </IcButton>{" "}
-      {open && (
-        <Snackbar
-          anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
-          message={title}
-          open={open}
-        />
-      )}
-    </div>
-  );
-};
+import { IcAlert, IcTextField } from "@ukic/react";
 
 <IcAlert
   heading="Pattern in development"
@@ -56,7 +36,7 @@ Don't use full-page success messages. If a form is submitted successfully, consi
 
 ### Toasts
 
-Use a [toast](/components/feedback-progress/toast) to deliver a passive success message. Use a snackbar when you don't need to guarantee a user will notice the message.
+Use a [toast](/components/feedback-progress/toast) to deliver a passive success message.
 
 ### Alerts
 
@@ -76,7 +56,7 @@ For example, use a success alert on a subsequent page after submitting a request
 
 Only use a summary page after submitting a form if you need the user to export the information.
 
-Don't use a full page for a success message; use a snackbar or alert on a list or homepage instead.
+Don't use a full page for a success message; use a toast or alert on a list or homepage instead.
 
 ### Text fields
 
