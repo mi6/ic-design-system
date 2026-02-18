@@ -81,21 +81,30 @@ async function getChangelogEntriesForVersion(url, version) {
   if (!match) return [];
   const body = match[1];
 
-  const sections = ["Bug Fixes", "Features"];
   let entries = [];
-  for (const section of sections) {
-    const sectionRegex = new RegExp(
-      `^###\\s+${section}\\n([\\s\\S]+?)(?=^### |\\Z)`,
-      "m"
+  const bugFixes = body.indexOf("### Bug Fixes");
+  const features = body.indexOf("### Features");
+  if (bugFixes !== -1 && features !== -1) {
+    const bugFixesSection = body.slice(
+      bugFixes + "### Bug Fixes".length,
+      features
     );
-    const sectionMatch = body.match(sectionRegex);
-    if (sectionMatch) {
-      const lines = sectionMatch[1]
-        .split("\n")
-        .map((l) => l.trim())
-        .filter((l) => l && !l.startsWith("###"));
-      entries = entries.concat(lines);
+    const bugFixesLines = bugFixesSection
+      .split("\n")
+      .map((l) => l.trim())
+      .filter((l) => l && !l.startsWith("###"));
+    entries = entries.concat(bugFixesLines);
+
+    let featuresSection = body.slice(features + "### Features".length);
+    const nextHeadingIdx = featuresSection.search(/^###|^##|^#|\Z/m);
+    if (nextHeadingIdx !== -1) {
+      featuresSection = featuresSection.slice(0, nextHeadingIdx);
     }
+    const featuresLines = featuresSection
+      .split("\n")
+      .map((l) => l.trim())
+      .filter((l) => l && !l.startsWith("###"));
+    entries = entries.concat(featuresLines);
   }
   return entries.map(formatChangelogMarkdown);
 }
@@ -137,7 +146,7 @@ async function getChangelogEntriesForVersion(url, version) {
 
   const mdxComment =
     "{/* Please check the information below. Adjust or add extra details if necessary, and then remove this comment, before merging this PR. */}";
-    
+
   const newSection = `### Components\n\n${mdxComment}\n\n${componentsList}\n\n${forFullListLine}\n\n`;
 
   // Replaces the recently shipped components section

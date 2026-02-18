@@ -79,10 +79,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path
       }
     }
-    query {
-      allMarkdown: allMdx(
-        sort: { order: DESC, fields: [frontmatter___date] }
 
+    {
+      allMarkdown: allMdx(
+        sort: {frontmatter: {date: DESC}}
         filter: { fileAbsolutePath: { regex: "//content/(${manualPageGroupsRegex})//" } }
       ) {
         edges {

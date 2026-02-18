@@ -63,7 +63,7 @@ git remote add upstream git@github.com:mi6/ic-design-system.git
 **NPM**
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 npm start
 ```
 
