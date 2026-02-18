@@ -9,7 +9,7 @@ on:
 
 jobs:
   create-pr:
-    if: github.event.pull_request.head.ref == 'check-versions' && github.event.pull_request.merged == true
+    if: github.event.pull_request.head.ref == 'update-roadmap' && github.event.pull_request.merged == true
     name: "Create PR"
     runs-on: ubuntu-latest
     permissions:
