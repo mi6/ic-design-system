@@ -1,0 +1,63 @@
+---
+path: "/components/layout/drawer/accessibility"
+
+date: "2026-02-24"
+
+title: "Drawer"
+
+status: "CANARY"
+
+subTitle: "A drawer is a panel that slides out from the edge of the page. It can allow people to complete tasks or view details without leaving the current page."
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/drawer" },
+    { title: "Code", path: "/components/layout/drawer/code" },
+    { title: "Accessibility", path: "/components/layout/drawer/accessibility" },
+  ]
+---
+
+## Easy to use for everyone
+
+When the drawer component is expanded, the focus is automatically moved to the first interactive element within the drawer.
+
+Focus is trapped within the drawer to help simplify keyboard navigation and keep the person's attention within its context.
+
+The drawer can be expanded or collapsed by pressing 'Enter' or 'Space' when focused on the arrow button. The controlled variant can be collapsed using the 'close' button. Pressing the 'Escape' key will also collapse the drawer.
+
+## For Assistive Technology
+
+The drawer component uses the `aria-expanded` attribute to indicate to screen reader users whether it is expanded or collapsed.
+
+The drawer component uses the `dialog` role.
+
+## Based on
+
+The drawer component has been based on the following resources:
+
+<ul>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role"
+      rel="noreferrer noopener nofollow"
+    >
+      ARIA: dialog role
+    </ic-link>
+    , MDN Web Docs, accessed August 2025.
+  </li>
+  <li>
+    <ic-link
+      target="_blank"
+      href="https://www.nngroup.com/articles/bottom-sheet/"
+      rel="noreferrer noopener nofollow"
+    >
+      Bottom sheets: Definition and UX Guidelines
+    </ic-link>
+    , Nielsen Norman Group, accessed August 2025.
+  </li>
+</ul>
+
+## Testing
+
+We've tested this component against WCAG 2.2 Level AA. It's been tested with NVDA and VoiceOver, and several different people with different interaction methods.

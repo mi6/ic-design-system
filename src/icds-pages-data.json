@@ -175,6 +175,12 @@
       "subTitle": "Dividers are used to separate different elements in groups of content. Visually, they look like rules or lines."
     },
     {
+      "path": "/components/layout/drawer",
+      "status": "CANARY",
+      "title": "Drawer",
+      "subTitle": "A drawer is a panel that slides out from the edge of the page. It can allow people to complete tasks or view details without leaving the current page."
+    },
+    {
       "path": "/components/layout/footer",
       "status": "BETA",
       "title": "Footer",
