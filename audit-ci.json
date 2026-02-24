@@ -47,6 +47,12 @@
         "active": true,
         "notes": "requires upgrade to 'ajv' which is a transitive dependency of 'commitlint'."
       }
+    },
+    {
+      "GHSA-3ppc-4f35-3m26": {
+        "active": true,
+        "notes": "requires upgrade to 'minimatch', which is a transitive dependency of multiple packages."
+      }
     }
   ]
 }
