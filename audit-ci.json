@@ -47,6 +47,18 @@
         "active": true,
         "notes": "requires upgrade to 'ajv' which is a transitive dependency of 'commitlint'."
       }
+    },
+    {
+      "GHSA-5c6j-r48x-rmvq": {
+        "active": true,
+        "notes": "requires upgrade to 'serialize-javascript' which is a transitive dependency of gatsby."
+      }
+    },
+    {
+      "GHSA-wf6x-7x77-mvgw": {
+        "active": true,
+        "notes": "requires upgrade to 'immutable' which is a transitive dependency of graphql."
+      }
     }
   ]
 }
