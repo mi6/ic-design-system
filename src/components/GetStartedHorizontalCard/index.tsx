@@ -1,6 +1,6 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
-import { IcCardHorizontal } from "@ukic/canary-react";
+import { IcCardHorizontal } from "@ukic/react";
 import { passImage, useViewportWidth } from "../../utils/helpers";
 import { useTheme } from "../../context/ThemeContext";
 

@@ -1,7 +1,6 @@
 {
   "canaryReactComponentNames": [
     "IcCalendar",
-    "IcCardHorizontal",
     "IcDataTable",
     "IcDataTableTitleBar",
     "IcDateInput",
@@ -15,7 +14,6 @@
   ],
   "canaryWebComponentsNames": [
     "ic-calendar",
-    "ic-card-horizontal",
     "ic-data-table",
     "ic-data-table-title-bar",
     "ic-date-input",
@@ -53,6 +51,7 @@
     "IcBreadcrumb",
     "IcBreadcrumbGroup",
     "IcButton",
+    "IcCardHorizontal",
     "IcCardVertical",
     "IcCheckbox",
     "IcCheckboxGroup",
