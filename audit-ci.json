@@ -49,27 +49,15 @@
       }
     },
     {
-      "GHSA-3ppc-4f35-3m26": {
-        "active": true,
-        "notes": "requires upgrade to 'minimatch' which is a transitive dependency of multiple packages."
-      }
-    },
-    {
-      "GHSA-7r86-cg39-jmmj": {
-        "active": true,
-        "notes": "requires upgrade to 'minimatch' which is a transitive dependency of multiple packages."
-      }
-    },
-    {
-      "GHSA-23c5-xmqv-rm74": {
-        "active": true,
-        "notes": "requires upgrade to 'minimatch' which is a transitive dependency of multiple packages."
-      }
-    },
-    {
       "GHSA-5c6j-r48x-rmvq": {
         "active": true,
         "notes": "requires upgrade to 'serialize-javascript' which is a transitive dependency of gatsby."
+      }
+    },
+    {
+      "GHSA-wf6x-7x77-mvgw": {
+        "active": true,
+        "notes": "requires upgrade to 'immutable' which is a transitive dependency of graphql."
       }
     }
   ]
