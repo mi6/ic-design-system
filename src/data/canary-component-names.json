@@ -5,6 +5,7 @@
     "IcDataTableTitleBar",
     "IcDateInput",
     "IcDatePicker",
+    "IcDrawer",
     "IcPaginationBar",
     "IcTableOfContents",
     "IcTimeInput",
@@ -18,6 +19,7 @@
     "ic-data-table-title-bar",
     "ic-date-input",
     "ic-date-picker",
+    "ic-drawer",
     "ic-pagination-bar",
     "ic-table-of-contents",
     "ic-time-input",
@@ -38,6 +40,7 @@
     "truncWrapperDetailsTypes",
     "IcDataTableRowOptions",
     "IcDataTableDataType",
+    "IcDrawerBoundary",
     "IcTimePeriods",
     "IcTreeItemOptions"
   ],
