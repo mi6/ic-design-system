@@ -59,6 +59,12 @@
         "active": true,
         "notes": "requires upgrade to 'immutable' which is a transitive dependency of graphql."
       }
+    },
+    {
+      "GHSA-5v7r-6r5c-r473": {
+        "active": true,
+        "notes": "requires upgrade to 'file-type' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
+      }
     }
   ]
 }
