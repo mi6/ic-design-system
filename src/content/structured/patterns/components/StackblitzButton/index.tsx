@@ -5,6 +5,7 @@ import {
   createReactIndexHTML,
   createWebComponentsIndexHTML,
   packageJson,
+  prettierFormat,
   tsConfig,
   viteConfig,
 } from "./stackblitz-helpers";
@@ -70,6 +71,8 @@ const StackblitzButton: FC<StackblitzProps> = ({
       null,
       2
     );
+
+    files["format.mjs"] = prettierFormat;
 
     const description =
       projectDescription === undefined || projectDescription === ""

@@ -100,9 +100,9 @@ export const packageJson = (
   const reactDevDependencies = {
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^6.0.1",
   };
-  const devDependencies = { vite: "^5.0.12" };
+  const devDependencies = { vite: "^8.0.0" };
 
   return {
     name: `icds-${kebabCase(projectTitle)}`,
@@ -112,7 +112,7 @@ export const packageJson = (
       dev: "vite",
       build: "vite build",
       preview: "vite preview",
-      prettier: "prettier --write .",
+      prettier: "node format.mjs",
     },
     dependencies,
     devDependencies: isWebComponents
@@ -141,6 +141,74 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 })
+`;
+
+export const prettierFormat = `import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import prettier from "prettier";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const include = ["src", "index.html"];
+const allowedExts = new Set([
+  ".js",
+  ".jsx",
+  ".ts",
+  ".tsx",
+  ".css",
+  ".html",
+  ".json",
+  ".md",
+]);
+
+function* walk(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      if (!/^(node_modules|dist|build|out)$/.test(entry.name)) {
+        yield* walk(p);
+      }
+    } else if (allowedExts.has(path.extname(entry.name))) {
+      yield p;
+    }
+  }
+}
+
+async function main() {
+  const files = [];
+
+  for (const item of include) {
+    const p = path.join(__dirname, item);
+    if (!fs.existsSync(p)) continue;
+
+    const stat = fs.statSync(p);
+    if (stat.isDirectory()) files.push(...walk(p));
+    else files.push(p);
+  }
+
+  for (const file of files) {
+    try {
+      const info = await prettier.getFileInfo(file);
+      if (info.ignored || !info.inferredParser) {
+        continue;
+      }
+
+      const original = fs.readFileSync(file, "utf8");
+      const formatted = await prettier.format(original, { filepath: file });
+
+      if (formatted !== original) {
+        fs.writeFileSync(file, formatted);
+      }
+    } catch (err) {
+      console.error(\`Error formatting \${file}: \${err.message}\`);
+    }
+  }
+}
+
+main();
 `;
 
 export const createWebComponentsIndexHTML = (
