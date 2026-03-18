@@ -2,11 +2,20 @@ name: Update Roadmap
 permissions: read-all
 
 on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type UPDATE to confirm"
+        required: true
   repository_dispatch:
     types: design-system-roadmap-update
 
 jobs:
   ic-design-system-install-comps:
+    if: >
+        github.event_name == 'repository_dispatch' ||
+        (github.event_name == 'workflow_dispatch' &&
+         github.event.inputs.confirm == 'UPDATE')
     name: "IC Design System Install Comps"
     runs-on: ubuntu-latest
     permissions:
