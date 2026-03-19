@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const https = require("https");
 
 const packages = [
   {
@@ -15,6 +16,27 @@ const packages = [
       "https://raw.githubusercontent.com/mi6/ic-ui-kit/main/packages/canary-web-components/CHANGELOG.md",
   },
 ];
+
+/**
+ * Node 16–safe text fetcher
+ */
+function fetchText(url) {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, (res) => {
+        if (res.statusCode !== 200) {
+          reject(
+            new Error(`Failed to fetch ${url} (status ${res.statusCode})`)
+          );
+        }
+
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => resolve(data));
+      })
+      .on("error", reject);
+  });
+}
 
 /**
  * Removes all the stuff we wouldn't want from the changelog markdown.
@@ -49,7 +71,6 @@ function formatChangelogMarkdown(entry) {
 
 /**
  * Gets the declared version of a package from the root package.json.
- * Versions are expected to be pinned (no ranges).
  */
 function getDeclaredVersion(pkgName) {
   const pkgPath = path.join(process.cwd(), "package.json");
@@ -66,18 +87,10 @@ function getDeclaredVersion(pkgName) {
  * Returns only the entry from the changelog for the specified version.
  */
 async function getChangelogEntriesForVersion(url, version) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`Failed to fetch changelog: ${url}`);
-  }
-
-  const markdown = await res.text();
+  const markdown = await fetchText(url);
 
   const regex = new RegExp(
-    `^#\\s*\\[?${version.replace(
-      /\\./g,
-      "\\."
-    )}\\][^\\n]*\\n([\\s\\S]+?)(?=^# |\\Z)`,
+    `^#\\s*\\[?${version.replace(/\\./g, "\\.")}\\][^\\n]*\\n([\\s\\S]+?)(?=^# |\\Z)`,
     "m"
   );
 
@@ -129,16 +142,18 @@ async function getChangelogEntriesForVersion(url, version) {
   let allEntries = [];
 
   for (const pkg of packages) {
-    const version = getDeclaredVersion(pkg.localPackage);
+    const rawVersion = getDeclaredVersion(pkg.localPackage);
 
-    if (!version) {
+    if (!rawVersion) {
       throw new Error(
         `No version found for ${pkg.localPackage} in package.json`
       );
     }
 
+    const version = rawVersion.replace(/^[^\d]*/, "");
+
     console.log(
-      `Processing ${pkg.name} version ${version} (from package.json)`
+      `Processing ${pkg.name} version ${version} (from package.json: ${rawVersion})`
     );
 
     const entries = await getChangelogEntriesForVersion(
