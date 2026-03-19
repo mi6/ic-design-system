@@ -48,18 +48,18 @@ function formatChangelogMarkdown(entry) {
 }
 
 /**
- * Gets the local version of web-components/canary-web-components from the package.json.
+ * Gets the declared version of a package from the root package.json.
+ * Versions are expected to be pinned (no ranges).
  */
-function getLocalVersion(pkgName) {
-  try {
-    const packagePath = require.resolve(`${pkgName}/package.json`, {
-      paths: [process.cwd()],
-    });
-    const package = JSON.parse(fs.readFileSync(packagePath, "utf8"));
-    return package.version;
-  } catch (e) {
-    return null;
-  }
+function getDeclaredVersion(pkgName) {
+  const pkgPath = path.join(process.cwd(), "package.json");
+  const rootPkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
+
+  return (
+    rootPkg.dependencies?.[pkgName] ||
+    rootPkg.devDependencies?.[pkgName] ||
+    null
+  );
 }
 
 /**
@@ -67,6 +67,10 @@ function getLocalVersion(pkgName) {
  */
 async function getChangelogEntriesForVersion(url, version) {
   const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch changelog: ${url}`);
+  }
+
   const markdown = await res.text();
 
   const regex = new RegExp(
@@ -76,22 +80,29 @@ async function getChangelogEntriesForVersion(url, version) {
     )}\\][^\\n]*\\n([\\s\\S]+?)(?=^# |\\Z)`,
     "m"
   );
-  const match = markdown.match(regex);
-  if (!match) return [];
-  const body = match[1];
 
+  const match = markdown.match(regex);
+  if (!match) {
+    throw new Error(`Version ${version} not found in changelog: ${url}`);
+  }
+
+  const body = match[1];
   let entries = [];
+
   const bugFixes = body.indexOf("### Bug Fixes");
   const features = body.indexOf("### Features");
+
   if (bugFixes !== -1 && features !== -1) {
     const bugFixesSection = body.slice(
       bugFixes + "### Bug Fixes".length,
       features
     );
+
     const bugFixesLines = bugFixesSection
       .split("\n")
       .map((l) => l.trim())
       .filter((l) => l && !l.startsWith("###"));
+
     entries = entries.concat(bugFixesLines);
 
     let featuresSection = body.slice(features + "### Features".length);
@@ -99,31 +110,56 @@ async function getChangelogEntriesForVersion(url, version) {
     if (nextHeadingIdx !== -1) {
       featuresSection = featuresSection.slice(0, nextHeadingIdx);
     }
+
     const featuresLines = featuresSection
       .split("\n")
       .map((l) => l.trim())
       .filter((l) => l && !l.startsWith("###"));
+
     entries = entries.concat(featuresLines);
   }
+
   return entries.map(formatChangelogMarkdown);
 }
 
 (async () => {
+  console.log("Starting roadmap update");
+  console.log("Version source: package.json");
+
   let allEntries = [];
-  for (const package of packages) {
-    const version = getLocalVersion(package.localPackage);
-    console.log(`Processing ${package.name} version ${version}`);
+
+  for (const pkg of packages) {
+    const version = getDeclaredVersion(pkg.localPackage);
+
     if (!version) {
-      console.warn(`Could not find local version for ${package.localPackage}`);
-      continue;
+      throw new Error(
+        `No version found for ${pkg.localPackage} in package.json`
+      );
     }
+
+    console.log(
+      `Processing ${pkg.name} version ${version} (from package.json)`
+    );
+
     const entries = await getChangelogEntriesForVersion(
-      package.changelogUrl,
+      pkg.changelogUrl,
       version
     );
+
+    if (entries.length === 0) {
+      throw new Error(
+        `No changelog entries found for ${pkg.name} version ${version}`
+      );
+    }
+
     allEntries = allEntries.concat(entries);
   }
+
   allEntries = [...new Set(allEntries)].filter(Boolean);
+
+  if (allEntries.length === 0) {
+    throw new Error("No changelog entries found across all packages");
+  }
 
   const componentsList = allEntries.map((entry) => `- ${entry}`).join("\n");
 
@@ -131,7 +167,9 @@ async function getChangelogEntriesForVersion(url, version) {
     __dirname,
     "src/content/structured/community/roadmap.mdx"
   );
+
   let content = fs.readFileSync(roadmapPath, "utf8");
+
   const componentsSectionRegex =
     /(### Components\n)([\s\S]*?)(?=^### |^## |\Z)/m;
 
@@ -148,12 +186,12 @@ async function getChangelogEntriesForVersion(url, version) {
 
   const newSection = `### Components\n\n${mdxComment}\n\n${componentsList}\n\n${forFullListLine}\n\n`;
 
-  // Replaces the recently shipped components section
-  if (componentsSectionRegex.test(content)) {
-    content = content.replace(componentsSectionRegex, newSection);
-    fs.writeFileSync(roadmapPath, content);
-    console.log("roadmap.mdx updated!");
-  } else {
-    console.warn("Could not find ### Components section to update.");
+  if (!componentsSectionRegex.test(content)) {
+    throw new Error("Could not find ### Components section to update");
   }
+
+  content = content.replace(componentsSectionRegex, newSection);
+  fs.writeFileSync(roadmapPath, content);
+
+  console.log("roadmap.mdx updated!");
 })();
