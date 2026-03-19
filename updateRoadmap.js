@@ -105,10 +105,15 @@ async function getChangelogEntriesForVersion(url, version) {
   const bugFixes = body.indexOf("### Bug Fixes");
   const features = body.indexOf("### Features");
 
-  if (bugFixes !== -1 && features !== -1) {
+  if (bugFixes !== -1) {
+    const end =
+      features !== -1 && features > bugFixes
+        ? features
+        : body.length;
+
     const bugFixesSection = body.slice(
       bugFixes + "### Bug Fixes".length,
-      features
+      end
     );
 
     const bugFixesLines = bugFixesSection
@@ -117,20 +122,25 @@ async function getChangelogEntriesForVersion(url, version) {
       .filter((l) => l && !l.startsWith("###"));
 
     entries = entries.concat(bugFixesLines);
-
-    let featuresSection = body.slice(features + "### Features".length);
-    const nextHeadingIdx = featuresSection.search(/^###|^##|^#|\Z/m);
-    if (nextHeadingIdx !== -1) {
-      featuresSection = featuresSection.slice(0, nextHeadingIdx);
-    }
-
-    const featuresLines = featuresSection
-      .split("\n")
-      .map((l) => l.trim())
-      .filter((l) => l && !l.startsWith("###"));
-
-    entries = entries.concat(featuresLines);
   }
+
+  if (features !== -1) {
+    let featuresSection = body.slice(
+      features + "### Features".length
+    );
+
+  const nextHeadingIdx = featuresSection.search(/^###|^##|^#|\Z/m);
+  if (nextHeadingIdx !== -1) {
+    featuresSection = featuresSection.slice(0, nextHeadingIdx);
+  }
+
+  const featuresLines = featuresSection
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l && !l.startsWith("###"));
+
+  entries = entries.concat(featuresLines);
+}
 
   return entries.map(formatChangelogMarkdown);
 }
