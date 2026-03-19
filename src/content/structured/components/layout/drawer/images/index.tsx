@@ -1,0 +1,12 @@
+export { default as Fig1DrawerLight } from "./fig-1-use-drawers-to-provide-additional-info.png";
+export { default as Fig1DrawerDark } from "./fig-1-use-drawers-to-provide-additional-info-dark.png";
+export { default as Fig2DrawerLight } from "./fig-2-avoid-using-drawer-next-to-primary-navigation.png";
+export { default as Fig2DrawerDark } from "./fig-2-avoid-using-drawer-next-to-primary-navigation-dark.png";
+export { default as Fig3DrawerLight } from "./fig-3-do-not-use-drawers-for-important-actions.png";
+export { default as Fig3DrawerDark } from "./fig-3-do-not-use-drawers-for-important-actions-dark.png";
+export { default as Fig4DrawerLight } from "./fig-4-use-a-smaller-drawer-for-less-content.png";
+export { default as Fig4DrawerDark } from "./fig-4-use-a-smaller-drawer-for-less-content-dark.png";
+export { default as Fig5DrawerLight } from "./fig-5-use-a-larger-drawer-for-more-content.png";
+export { default as Fig5DrawerDark } from "./fig-5-use-a-larger-drawer-for-more-content-dark.png";
+export { default as Fig6DrawerLight } from "./fig-6-do-not-use-different-drawer-positions-for-similar-content.png";
+export { default as Fig6DrawerDark } from "./fig-6-do-not-use-different-drawer-positions-for-similar-content-dark.png";

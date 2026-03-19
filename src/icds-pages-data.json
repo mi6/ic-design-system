@@ -158,7 +158,7 @@
     },
     {
       "path": "/components/layout/card-horizontal",
-      "status": "CANARY",
+      "status": "BETA",
       "title": "Card (horizontal)",
       "subTitle": "Horizontal cards are containers used to display structured information or link to new information in a horizontal layout."
     },
@@ -173,6 +173,12 @@
       "status": "BETA",
       "title": "Divider",
       "subTitle": "Dividers are used to separate different elements in groups of content. Visually, they look like rules or lines."
+    },
+    {
+      "path": "/components/layout/drawer",
+      "status": "CANARY",
+      "title": "Drawer",
+      "subTitle": "A drawer is a panel that slides out from the edge of the page. It can allow people to complete tasks or view details without leaving the current page."
     },
     {
       "path": "/components/layout/footer",
@@ -224,7 +230,7 @@
     },
     {
       "path": "/components/navigation/pagination-bar",
-      "status": "CANARY",
+      "status": "BETA",
       "title": "Pagination bar",
       "subTitle": "Use the pagination bar when large amounts of content are split across multiple pages and various pagination options are required."
     },

@@ -1,0 +1,198 @@
+---
+path: "/components/layout/drawer"
+
+navPriority: 5
+
+date: "2026-02-24"
+
+title: "Drawer"
+
+status: "CANARY"
+
+subTitle: "A drawer is a panel that slides out from the edge of the page. It can allow people to complete tasks or view details without leaving the current page."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/layout/drawer"
+
+tabs:
+  [
+    { title: "Guidance", path: "/components/layout/drawer" },
+    { title: "Code", path: "/components/layout/drawer/code" },
+    { title: "Accessibility", path: "/components/layout/drawer/accessibility" },
+  ]
+
+tags:
+  ["Flyout", "Overlay", "Panel", "Sheet", "Sidebar", "Slide-in", "Slide-out"]
+---
+
+import { mdiCoffee } from "@mdi/js";
+import { IcDrawer } from "@ukic/canary-react";
+import { IcAlert, IcButton, SlottedSVG } from "@ukic/react";
+import {
+  Fig1DrawerDark,
+  Fig1DrawerLight,
+  Fig2DrawerDark,
+  Fig2DrawerLight,
+  Fig3DrawerDark,
+  Fig3DrawerLight,
+  Fig4DrawerDark,
+  Fig4DrawerLight,
+  Fig5DrawerDark,
+  Fig5DrawerLight,
+  Fig6DrawerDark,
+  Fig6DrawerLight,
+} from "./images";
+
+<IcAlert
+  heading="Canary component"
+  variant="info"
+  message="This component is new and its guidance will be updated over time."
+/>
+
+## Introduction
+
+A drawer is a panel that slides out from either the side of the page, down from the top, or up from the bottom. It can contain a set of information or actions.
+
+A drawer allows for tasks to be completed efficiently as a person can interact with the component without leaving the current page.
+
+## Component demo
+
+<ComponentPreview style={{ height: "30rem", padding: 0 }}>
+  <div style={{ position: "relative", height: "100%", width: "100%" }}>
+    <IcDrawer
+      heading="Roasted coffee"
+      message="Contrary to popular belief, light roast coffee has more caffeine than dark roast coffee. The longer coffee is roasted, the more caffeine is lost through the cooking of the bean. Light roast coffee is a light brown colour and has no oil on the surface of the beans, and these coffees typically have a crisp acidity, a mellow body, and bright flavours."
+      boundary="parent"
+      style={{ "--ic-z-index-drawer": 0 }}
+    >
+      <SlottedSVG
+        path={mdiCoffee}
+        slot="heading-adornment"
+        viewBox="0 0 24 24"
+        height="1.5rem"
+        width="1.5rem"
+      />
+      <IcButton slot="actions">Add to order</IcButton>
+    </IcDrawer>
+  </div>
+</ComponentPreview>
+
+## Component variants
+
+The drawer component has three main types of variants.
+
+### Position
+
+The drawer can be positioned to slide out from the left, right, top, or bottom of the page.
+
+### Size
+
+The drawer has three size variants: small, medium, and large.
+
+### Trigger method
+
+For expanding the drawer, you can either use the built-in handle or provide a custom trigger element.
+
+## When to use
+
+Use a drawer to help provide more screen space for content. A drawer is for displaying additional relevant information, while the primary content should always be present on the screen.
+
+<DoDontCaution
+  imageSrc={[Fig1DrawerLight, Fig1DrawerDark]}
+  imageAlt="An expanded drawer on the left side of the screen displaying more information about roasted coffee."
+  state="good"
+  caption="Use drawers to provide additional information relating to the main page content."
+/>
+
+For complex apps, consider using a drawer for allowing advanced features to be revealed only when they are needed. This will help to prevent people from feeling overwhelmed by the amount of information.
+
+## When not to use
+
+Avoid using a drawer in the same position as primary navigation components, such as alongside a side navigation component.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig2DrawerLight, Fig2DrawerDark]}
+    imageAlt="A collapsed drawer next to a side navigation component. Both components are on the left side of the screen."
+    state="bad"
+    caption="Don't use a drawer in the same position as primary navigation."
+  />
+</DoubleDoDontCaution>
+
+Don't use a drawer for displaying essential content as it can easily be missed or ignored. Include it in the main page content instead.
+
+Where possible, avoid repeating information in a drawer that is displayed in the main page content.
+
+Don't use a drawer to interrupt the user flow for an important decision or confirmation. Use a [dialog](/components/feedback-progress/dialog) instead. Dialogs have more prominent positioning and are less likely to be overlooked.
+
+<DoDontCaution
+  imageSrc={[Fig3DrawerLight, Fig3DrawerDark]}
+  imageAlt="An expanded drawer on the left side of the screen asking the user if they are sure that they want to cancel their coffee order, with a destructive 'Cancel order' button in the bottom right corner of the drawer."
+  state="bad"
+  caption="Don't use drawers for displaying information which needs immediate attention, such as regarding destructive actions."
+/>
+
+## Interaction behaviour
+
+### Built-in handle
+
+In its default collapsed state, the drawer component is displayed as a narrow bar with an arrow, along the edge of the page. A person can click on this handle to expand the drawer.
+
+The drawer can be collapsed by clicking the arrow which is visible when the drawer is in its expanded state.
+
+### Custom trigger
+
+The controlled variant of the drawer component allows for a custom trigger element to be used, such as a button elsewhere on the page. When using this variant, the drawer will be completely hidden when collapsed.
+
+For collapsing this variant of the drawer, a 'close' button will be displayed instead of an arrow.
+
+## Sizing
+
+Try to use a drawer size which corresponds to the amount and complexity of its content.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig4DrawerLight, Fig4DrawerDark]}
+    imageAlt="A narrow drawer titled “Display preferences”. It says, “Choose which information you would like to see when browsing drinks” and contains two switches - one for displaying caffeine content, and one for the number of calories."
+    state="good"
+    caption="Use a smaller drawer for displaying lightweight content to reduce whitespace and minimise disruption."
+  />
+  <DoDontCaution
+    imageSrc={[Fig5DrawerLight, Fig5DrawerDark]}
+    imageAlt="A wide drawer titled “Help us to improve” displaying a form for submitting feedback, with multiple fields. It contains text fields for a name and email, a select for the feedback type, and a text area for the detailed feedback."
+    state="good"
+    caption="Use a larger drawer for displaying more content, or content which is more complex. This allows for a more spacious layout, making the information easier to digest."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+Use drawer positions that are consistent across your app based on the type of content they contain. For example, if you are using a left-positioned drawer to show search filters on one page, use the same drawer position for showing search filters on other pages.
+
+<DoDontCaution
+  imageSrc={[Fig6DrawerLight, Fig6DrawerDark]}
+  imageAlt="Two images of drawers, with one positioned on the left, and the other on the right. The left-positioned drawer contains information explaining what a ristretto coffee is. The right-positioned drawer contains the same kind of information, in the same format, but it is describing a cortado coffee."
+  state="bad"
+  caption="Don't use drawers in different positions to display the same kind of content. This can cause confusion and disorientate people, as well as making the drawer more difficult to find. "
+/>
+
+Use the bottom right area of the drawer to display buttons used for performing primary actions, such as submitting a form.
+
+## Content
+
+Try to use a short heading which clearly describes the purpose of the drawer. Long headings will be wrapped onto multiple lines.
+
+You can display any component inside the content area of the drawer component. This might include various form fields, for example, such as checkboxes and radio buttons.
+
+Make sure the content of the drawer matches the context of the user action which triggered it.
+
+## Motion
+
+A sliding animation is used when the drawer component is expanded and collapsed.
+
+## Accessibility considerations
+
+Make sure to adjust the drawer's heading level as needed to achieve a logical heading structure across the page.
+
+## Related components
+
+- [Dialog](/components/feedback-progress/dialog)
