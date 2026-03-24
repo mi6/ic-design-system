@@ -1,0 +1,34 @@
+name: "✍️ Suggest an improvement to our processes"
+description: Suggest an improvement to our processes, ways of working or testing function.
+type: "Process improvement"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Summary
+
+        Tell us, in a few words, what the improvement is.
+
+        ### 💬 Description
+
+        A full description of what the improvement should be and how it should work.
+  - type: dropdown
+    id: urgency-low-medium-or-high
+    attributes:
+      label: "🚨 Urgency (low, medium or high)"
+      description: |
+        How urgent is this issue?
+        - Low = Does not have significant impact and can be addressed at a convenient time without causing delays.
+        - Medium = Has moderate impact and should be addressed soon to avoid potential delays or complications.
+        - High = A critical issue which has significant impact and needs immediate attention to prevent major delays or blockers.
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Why do we need it?
+
