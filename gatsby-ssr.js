@@ -1,5 +1,4 @@
 import "@ukic/fonts/dist/fonts.css";
-import "@ukic/web-components/dist/core/core.css";
 import "@ukic/web-components/dist/core/normalize.css";
 import "./src/styles/gatsby-override.css";
 import "./src/styles/gatsby-reset.css";
@@ -7,6 +6,7 @@ import "./src/styles/gatsby-reset.css";
 import React from "react";
 import Layout from "./src/components/Layout";
 import paths from "./src/utils/paths";
+import { withPrefix } from "gatsby";
 
 const { defineCustomElements } = require("@ukic/web-components/loader");
 
@@ -19,3 +19,9 @@ export const wrapPageElement = ({ element, props }) =>
   ) : (
     <Layout {...props}>{element}</Layout>
   );
+
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <link key="tokens" rel="stylesheet" href={withPrefix("/tokens.css")} />,
+  ]);
+};
