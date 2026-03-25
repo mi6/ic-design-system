@@ -1,0 +1,35 @@
+name: "✍️ Suggest new guidance or improvements to existing guidance"
+description: Suggest a new piece of guidance or improvements to our existing guidance library.
+labels: "guidance"
+type: "Guidance"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### What component is this related to?
+
+        E.g. Button, search results page, accessibility, etc
+
+        ### Why do we need it?
+
+  - type: dropdown
+    id: urgency-low-medium-or-high
+    attributes:
+      label: "🚨 Urgency (low, medium or high)"
+      description: |
+        How urgent is this issue?
+        - Low = Does not have significant impact and can be addressed at a convenient time without causing delays.
+        - Medium = Has moderate impact and should be addressed soon to avoid potential delays or complications.
+        - High = A critical issue which has significant impact and needs immediate attention to prevent major delays or blockers.
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Related open issues
+
+        [Link to other GitHub issues]

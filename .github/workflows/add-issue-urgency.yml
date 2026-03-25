@@ -14,23 +14,16 @@ jobs:
 
       - name: Get issue urgency
         env:
-          URGENCY_STRING: ${{ fromJSON(steps.parse.outputs.data).urgency-low-medium-or-high.text }}
-        if: env.URGENCY_STRING
+          URGENCY_STRING: ${{ fromJSON(steps.parse.outputs.data).urgency-low-medium-or-high }}
         run: |
-          urgencyLevels=("high" "medium" "low")
-          matchedUrgency="None"
-          urgencyString="${{ env.URGENCY_STRING }}"
-
-          for level in "${urgencyLevels[@]}"; do
-            if [[ "${urgencyString,,}" == *"$level"* ]]; then
-              matchedUrgency="${level^}"
-              break
-            fi
-          done
-
-          if [[ "$matchedUrgency" != "None" ]]; then
-            echo "MATCHED_URGENCY=$matchedUrgency" >> $GITHUB_ENV
-          fi
+          case "$URGENCY_STRING" in
+            "Low"|"Medium"|"High")
+              echo "MATCHED_URGENCY=$URGENCY_STRING" >> $GITHUB_ENV
+              ;;
+            *)
+              echo "No valid urgency selected. Skipping."
+              ;;
+          esac
 
       - name: Generate token
         id: generate_token
