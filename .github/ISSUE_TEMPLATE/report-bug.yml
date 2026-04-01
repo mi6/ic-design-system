@@ -3,44 +3,61 @@ description: Tell us about a problem with the UI Kit or Design System website.
 labels: "type: bug 🐛"
 type: "Bug"
 body:
-  - type: markdown
+  - type: textarea
+    id: summary-of-the-bug
     attributes:
-      value: |
-        ### Summary of the bug
-
-        Tell us, in a few words, what the problem is.
-
-        ### 🪜 How to reproduce
-
-        Tell us the steps to reproduce the problem:
-
+      label: "Summary of the bug"
+      description: "Tell us, in a few words, what the problem is."
+    validations:
+      required: true
+  - type: textarea
+    id: how-to-reproduce
+    attributes:
+      label: "🪜 How to reproduce"
+      description: |
+        Tell us the steps to reproduce the problem. For example:
         1. Go to page: '...'
         2. Click on: '....'
         3. Type in: '....'
         4. See the error
-
-        ### 📸 Screenshots or code
-
-        If you can, add screenshots to show the problem. If you need to show a code example, you can include a snippet or link to a repository with an example.
-
-        ### 🖥 📱 Device
-
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots-or-code
+    attributes:
+      label: "📸 Screenshots or code"
+      description: "If you can, add screenshots to show the problem. If you need to show a code example, you can include a snippet or link to a repository with an example."
+    validations:
+      required: false
+  - type: textarea
+    id: device-info
+    attributes:
+      label: "🖥 📱 Device"
+      description: |
         - Type: [e.g. Desktop, mobile]
         - Device: [e.g. iPhone, MacBook, ThinkPad]
         - OS version: [e.g. macOS 13, iOS 16, Android 13]
         - Browser version: [e.g. Chrome 115, Safari 16]
-
-        ### 🧐 Expected behaviour
-
-        Tell us, in enough detail, what you expected to happen instead.
-
-        ### 📝 Acceptance Criteria
-
+    validations:
+      required: false
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: "🧐 Expected behaviour"
+      description: "Tell us, in enough detail, what you expected to happen instead."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "📝 Acceptance Criteria"
+      description: |
         If relevant, describe in full detail the different interactions and edge cases that the component or patterns needs to fulfil.
-
         _Given_
-        _When_  
+        _When_
         _Then_
+    validations:
+      required: false
   - type: dropdown
     id: urgency-low-medium-or-high
     attributes:
