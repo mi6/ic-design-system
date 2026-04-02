@@ -25,12 +25,6 @@
       }
     },
     {
-      "GHSA-xxjr-mmjv-4gpg": {
-        "active": true,
-        "notes": "requires upgrade to 'lodash' and 'lodash.pick'. 'lodash.pick' currently has no fix."
-      }
-    },
-    {
       "GHSA-p5wg-g6qr-c7cg": {
         "active": true,
         "notes": "requires upgrade to 'eslint' to '9.26.0' which is a breaking change."
