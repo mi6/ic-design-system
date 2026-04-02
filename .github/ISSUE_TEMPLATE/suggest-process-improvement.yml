@@ -2,16 +2,20 @@ name: "✍️ Suggest an improvement to our processes"
 description: Suggest an improvement to our processes, ways of working or testing function.
 type: "Process improvement"
 body:
-  - type: markdown
+  - type: textarea
+    id: summary
     attributes:
-      value: |
-        ### Summary
-
-        Tell us, in a few words, what the improvement is.
-
-        ### 💬 Description
-
-        A full description of what the improvement should be and how it should work.
+      label: "Summary"
+      description: "Tell us, in a few words, what the improvement is."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "💬 Description"
+      description: "A full description of what the improvement should be and how it should work."
+    validations:
+      required: true
   - type: dropdown
     id: urgency-low-medium-or-high
     attributes:
@@ -27,8 +31,11 @@ body:
         - High
     validations:
       required: false
-  - type: markdown
+  - type: textarea
+    id: why-needed
     attributes:
-      value: |
-        ### Why do we need it?
+      label: "Why do we need it?"
+      description: "Explain the need for this process improvement."
+    validations:
+      required: false
 

@@ -65,6 +65,18 @@
         "active": true,
         "notes": "requires upgrade to 'file-type' which is a transitive dependency of gatsby. Might be removeable after gatsby upgrade."
       }
+    },
+    {
+      "GHSA-37ch-88jc-xwx2": {
+        "active": true,
+        "notes": "requires upgrade to 'path-to-regexp' which is a transitive dependency of serve."
+      }
+    },
+    {
+      "GHSA-qj8w-gfj5-8c6v": {
+        "active": true,
+        "notes": "requires upgrade to 'serialize-javascript' which is a transitive dependency of gatsby."
+      }
     }
   ]
 }
