@@ -3,14 +3,20 @@ description: Suggest a new piece of guidance or improvements to our existing gui
 labels: "guidance"
 type: "Guidance"
 body:
-  - type: markdown
+  - type: textarea
+    id: related-component
     attributes:
-      value: |
-        ### What component is this related to?
-
-        E.g. Button, search results page, accessibility, etc
-
-        ### Why do we need it?
+      label: "What component is this related to?"
+      description: "E.g. Button, search results page, accessibility, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: why-needed
+    attributes:
+      label: "Why do we need it?"
+      description: "Explain the need for this guidance or improvement."
+    validations:
+      required: true
 
   - type: dropdown
     id: urgency-low-medium-or-high
@@ -27,9 +33,10 @@ body:
         - High
     validations:
       required: false
-  - type: markdown
+  - type: textarea
+    id: related-issues
     attributes:
-      value: |
-        ### Related open issues
-
-        [Link to other GitHub issues]
+      label: "Related open issues"
+      description: "Link to other GitHub issues, if relevant."
+    validations:
+      required: false
