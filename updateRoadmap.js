@@ -90,31 +90,35 @@ async function getChangelogEntriesForVersion(url, version) {
   const markdown = await fetchText(url);
 
   const regex = new RegExp(
-    `^#\\s*\\[?${version.replace(/\\./g, "\\.")}\\][^\\n]*\\n([\\s\\S]+?)(?=^# |\\Z)`,
+    `^#\\s*\\[?${version.replace(
+      /\\./g,
+      "\\."
+    )}\\][^\\n]*\\n([\\s\\S]+?)(?=^# |\\Z)`,
     "m"
   );
 
   const match = markdown.match(regex);
+
   if (!match) {
     throw new Error(`Version ${version} not found in changelog: ${url}`);
   }
 
   const body = match[1];
+
+  // Skip version-bump-only releases
+  if (/Version bump only for package/i.test(body)) {
+    return [];
+  }
+
   let entries = [];
 
   const bugFixes = body.indexOf("### Bug Fixes");
   const features = body.indexOf("### Features");
 
   if (bugFixes !== -1) {
-    const end =
-      features !== -1 && features > bugFixes
-        ? features
-        : body.length;
+    const end = features !== -1 && features > bugFixes ? features : body.length;
 
-    const bugFixesSection = body.slice(
-      bugFixes + "### Bug Fixes".length,
-      end
-    );
+    const bugFixesSection = body.slice(bugFixes + "### Bug Fixes".length, end);
 
     const bugFixesLines = bugFixesSection
       .split("\n")
@@ -125,22 +129,20 @@ async function getChangelogEntriesForVersion(url, version) {
   }
 
   if (features !== -1) {
-    let featuresSection = body.slice(
-      features + "### Features".length
-    );
+    let featuresSection = body.slice(features + "### Features".length);
 
-  const nextHeadingIdx = featuresSection.search(/^###|^##|^#|\Z/m);
-  if (nextHeadingIdx !== -1) {
-    featuresSection = featuresSection.slice(0, nextHeadingIdx);
+    const nextHeadingIdx = featuresSection.search(/^###|^##|^#|\Z/m);
+    if (nextHeadingIdx !== -1) {
+      featuresSection = featuresSection.slice(0, nextHeadingIdx);
+    }
+
+    const featuresLines = featuresSection
+      .split("\n")
+      .map((l) => l.trim())
+      .filter((l) => l && !l.startsWith("###"));
+
+    entries = entries.concat(featuresLines);
   }
-
-  const featuresLines = featuresSection
-    .split("\n")
-    .map((l) => l.trim())
-    .filter((l) => l && !l.startsWith("###"));
-
-  entries = entries.concat(featuresLines);
-}
 
   return entries.map(formatChangelogMarkdown);
 }
@@ -151,34 +153,39 @@ async function getChangelogEntriesForVersion(url, version) {
 
   let allEntries = [];
 
-  for (const pkg of packages) {
-    const rawVersion = getDeclaredVersion(pkg.localPackage);
+  const entriesArrays = await Promise.all(
+    packages.map(async (pkg) => {
+      const rawVersion = getDeclaredVersion(pkg.localPackage);
 
-    if (!rawVersion) {
-      throw new Error(
-        `No version found for ${pkg.localPackage} in package.json`
+      if (!rawVersion) {
+        throw new Error(
+          `No version found for ${pkg.localPackage} in package.json`
+        );
+      }
+
+      const version = rawVersion.replace(/^[^\d]*/, "");
+
+      console.log(
+        `Processing ${pkg.name} version ${version} (from package.json: ${rawVersion})`
       );
-    }
 
-    const version = rawVersion.replace(/^[^\d]*/, "");
-
-    console.log(
-      `Processing ${pkg.name} version ${version} (from package.json: ${rawVersion})`
-    );
-
-    const entries = await getChangelogEntriesForVersion(
-      pkg.changelogUrl,
-      version
-    );
-
-    if (entries.length === 0) {
-      throw new Error(
-        `No changelog entries found for ${pkg.name} version ${version}`
+      const entries = await getChangelogEntriesForVersion(
+        pkg.changelogUrl,
+        version
       );
-    }
 
-    allEntries = allEntries.concat(entries);
-  }
+      if (entries.length === 0) {
+        console.warn(
+          `No user-facing changelog entries found for ${pkg.name} version ${version} — skipping.`
+        );
+        return [];
+      }
+
+      return entries;
+    })
+  );
+
+  allEntries = entriesArrays.flat();
 
   allEntries = [...new Set(allEntries)].filter(Boolean);
 
