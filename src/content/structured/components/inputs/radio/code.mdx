@@ -1,7 +1,7 @@
 ---
 path: "/components/inputs/radio/code"
 
-date: "2024-05-31"
+date: "2026-04-22"
 
 title: "Radio button"
 
@@ -322,16 +322,43 @@ export const withHelperText = [
   </IcRadioGroup>
 </ComponentPreview>
 
-### Size small
+### Sizes
 
-export const smallSnippet = [
+export const snippetsSizes = [
   {
     technology: "Web component",
     snippets: {
       short: `<ic-radio-group
   label="Do you have any special requests?"
-  name="radio-group-5"
+  name="radio-group-1"
   size="small"
+>
+  <ic-radio-option
+    value="request"
+    label="Yes, I want to modify my order"
+  ></ic-radio-option>
+  <ic-radio-option
+    value="none"
+    label="No, standard please"
+  ></ic-radio-option>
+</ic-radio-group>
+<ic-radio-group
+  label="Do you have any special requests?"
+  name="radio-group-2"
+>
+  <ic-radio-option
+    value="request"
+    label="Yes, I want to modify my order"
+  ></ic-radio-option>
+  <ic-radio-option
+    value="none"
+    label="No, standard please"
+  ></ic-radio-option>
+</ic-radio-group>
+<ic-radio-group
+  label="Do you have any special requests?"
+  name="radio-group-3"
+  size="large"
 >
   <ic-radio-option
     value="request"
@@ -350,8 +377,23 @@ export const smallSnippet = [
     snippets: {
       short: `<IcRadioGroup
   label="Do you have any special requests?"
-  name="radio-group-5"
+  name="radio-group-1"
   size="small"
+>
+  <IcRadioOption value="request" label="Yes, I want to modify my order" />
+  <IcRadioOption value="none" label="No, standard please" />
+</IcRadioGroup>
+<IcRadioGroup
+  label="Do you have any special requests?"
+  name="radio-group-2"
+>
+  <IcRadioOption value="request" label="Yes, I want to modify my order" />
+  <IcRadioOption value="none" label="No, standard please" />
+</IcRadioGroup>
+<IcRadioGroup
+  label="Do you have any special requests?"
+  name="radio-group-3"
+  size="large"
 >
   <IcRadioOption value="request" label="Yes, I want to modify my order" />
   <IcRadioOption value="none" label="No, standard please" />
@@ -359,22 +401,41 @@ export const smallSnippet = [
       long: [
         {
           language: "Typescript",
-          snippet: `{shortCode}`,
+          snippet: `<>
+  {shortCode}
+</>`,
         },
         {
           language: "Javascript",
-          snippet: `{shortCode}`,
+          snippet: `<>
+  {shortCode}
+</>`,
         },
       ],
     },
   },
 ];
 
-<ComponentPreview snippets={smallSnippet}>
+<ComponentPreview
+  snippets={snippetsSizes}
+  style={{ display: "flex", gap: "1.5rem" }}
+>
   <IcRadioGroup
     label="Do you have any special requests?"
-    name="radio-group-5"
+    name="radio-group-7"
     size="small"
+  >
+    <IcRadioOption value="request" label="Yes, I want to modify my order" />
+    <IcRadioOption value="none" label="No, standard please" />
+  </IcRadioGroup>
+  <IcRadioGroup label="Do you have any special requests?" name="radio-group-8">
+    <IcRadioOption value="request" label="Yes, I want to modify my order" />
+    <IcRadioOption value="none" label="No, standard please" />
+  </IcRadioGroup>
+  <IcRadioGroup
+    label="Do you have any special requests?"
+    name="radio-group-9"
+    size="large"
   >
     <IcRadioOption value="request" label="Yes, I want to modify my order" />
     <IcRadioOption value="none" label="No, standard please" />

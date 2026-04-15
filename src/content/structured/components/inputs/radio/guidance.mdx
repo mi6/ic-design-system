@@ -3,7 +3,7 @@ path: "/components/inputs/radio"
 
 navPriority: 5
 
-date: "2023-02-03"
+date: "2026-04-15"
 
 title: "Radio button"
 
@@ -56,12 +56,17 @@ An example of the radio button component.
       value="cookie"
       label="Deluxe chocolate chip cookie (sold out)"
       disabled
-      inactive
     />
     <IcRadioOption value="fruit" label="Banana" />
     <IcRadioOption value="No item" label="No thanks, just my coffee" />
   </IcRadioGroup>
 </ComponentPreview>
+
+## Component variants
+
+### Size
+
+The radio button has three size variants: small, medium, and large.
 
 ## When to use
 
@@ -73,16 +78,16 @@ Use a radio button with a conditional field to display a related additional elem
 
 ## When not to use
 
-Don’t use radio buttons on their own, they should always appear as part of a radio button group.
+Don't use radio buttons on their own, they should always appear as part of a radio button group.
 
-Don’t use radio buttons when the user can select multiple options from the list. Use [checkboxes](/components/inputs/checkbox) instead.
+Don't use radio buttons when the user can select multiple options from the list. Use [checkboxes](/components/inputs/checkbox) instead.
 
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={[Fig1RadioLight, Fig1RadioDark]}
     imageAlt="A radio button group titled ‘What are your favourite coffees?’ with two out of six radio buttons showing as selected."
     state="bad"
-    caption="Don’t use a radio button group to allow multiple selected options from a list."
+    caption="Don't use a radio button group to allow multiple selected options from a list."
   />
   <DoDontCaution
     imageSrc={[Fig2RadioLight, Fig2RadioDark]}
@@ -92,14 +97,14 @@ Don’t use radio buttons when the user can select multiple options from the lis
   />
 </DoubleDoDontCaution>
 
-Don’t use radio buttons to turn something on or off. Use a [switch](/components/inputs/switch) instead.
+Don't use radio buttons to turn something on or off. Use a [switch](/components/inputs/switch) instead.
 
 <DoubleDoDontCaution>
   <DoDontCaution
     imageSrc={[Fig3RadioLight, Fig3RadioDark]}
     imageAlt="A two option radio button group with the label ‘Turn on the coffee machine?’ with options for ‘On’ and ‘Off’."
     state="bad"
-    caption="Don’t use radio buttons to turn something on or off."
+    caption="Don't use radio buttons to turn something on or off."
   />
   <DoDontCaution
     imageSrc={[Fig4RadioLight, Fig4RadioDark]}
@@ -115,11 +120,11 @@ In most circumstances, set a default selected option from a radio button group t
 
 Alternatively, use a radio button group without a default selected option to force people to select an option before moving on. This eliminates bias towards a single option and avoids people skipping over the question by leaving the default selection.
 
-### Sizing
+## Sizing
 
-Use small sized radio button groups to achieve compact layouts. Always use small sized components with other small sized components.
+Use the sizing options for radio button groups to match their size to other components in your app.
 
-### Layout and placement
+## Layout and placement
 
 Stack radio buttons when there are more than two options.
 
@@ -137,7 +142,7 @@ Stack radio buttons when there are more than two options.
     imageSrc={[Fig6RadioLight, Fig6RadioDark]}
     imageAlt="A radio button group asking ‘What milk would you like?’ and showing three options for ‘Dairy’, ‘Soya’  and ‘Nut’ displayed in a row."
     state="bad"
-    caption="Don’t display radio button groups with more than two options in a row."
+    caption="Don't display radio button groups with more than two options in a row."
   />
 </DoubleDoDontCaution>
 
@@ -163,11 +168,11 @@ A radio button input error is when the radio button group itself is responsible 
     imageSrc={[Fig8RadioLight, Fig8RadioDark]}
     imageAlt="A radio button group displayed with no radio button selected with an error message reading ‘Please select an option’."
     state="good"
-    caption="When there’s an issue show an error message next to the entire radio button group."
+    caption="When there's an issue show an error message next to the entire radio button group."
   />
 </DoubleDoDontCaution>
 
-For errors on a radio button’s conditional field, the error is shown only on the conditional field itself and not on the parent radio button group component.
+For errors on a radio button's conditional field, the error is shown only on the conditional field itself and not on the parent radio button group component.
 
 <DoubleDoDontCaution>
   <DoDontCaution
@@ -180,7 +185,7 @@ For errors on a radio button’s conditional field, the error is shown only on t
     imageSrc={[Fig10RadioLight, Fig10RadioDark]}
     imageAlt="A graphic showing two error labels incorrectly applied to a radio button group. One error reading ‘Answer required’ is displayed with an empty input field that is the conditional field of a radio button. The other error, also reading ‘Answer required’ is displayed with the whole radio button group."
     state="bad"
-    caption="Only display the error on the field causing it. Don’t display an error on the field as well as the radio group."
+    caption="Don't display an error on the field as well as the radio group. Only display the error on the field causing it."
   />
 </DoubleDoDontCaution>
 
@@ -193,3 +198,4 @@ Follow the [content style guidelines](/styles/content-style) for radio button gr
 ## Related components
 
 - [Checkbox](/components/inputs/checkbox)
+- [Switch](/components/inputs/switch)
