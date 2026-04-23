@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkic_design_system=self.webpackChunkic_design_system||[]).push([[9013],{39013:function(n,i,t){t.r(i),t.d(i,{ic_pagination:function(){return e.P},ic_pagination_item:function(){return e.a},ic_select:function(){return c.S},ic_text_field:function(){return e.T}});var e=t(7490),c=t(60960);t(28402),t(57647)}}]);
