@@ -95,6 +95,12 @@
         "active": true,
         "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby."
       }
+    },
+    {
+      "GHSA-w5hq-g745-h8pq": {
+        "active": true,
+        "notes": "requires upgrade to 'uuid' which is a transitive dependency of gatsby."
+      }
     }
   ]
 }
