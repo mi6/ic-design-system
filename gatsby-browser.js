@@ -1,5 +1,4 @@
 import "@ukic/fonts/dist/fonts.css";
-import "@ukic/web-components/dist/core/core.css";
 import "@ukic/web-components/dist/core/normalize.css";
 import "./src/styles/gatsby-override.css";
 import "./src/styles/gatsby-reset.css";

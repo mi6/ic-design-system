@@ -6,6 +6,15 @@ const prettier = require("prettier");
 const webpack = require("webpack");
 const pagesConfig = require("./src/config");
 
+exports.onPreBuild = () => {
+  const src = path.resolve(
+    "node_modules/@ukic/web-components/dist/core/core.css"
+  );
+  const dest = path.resolve("static/tokens.css");
+
+  fs.copyFileSync(src, dest);
+};
+
 const createPosts = ({ createPage, createRedirect, edges }) => {
   edges.forEach(({ node }) => {
     const pagePath = node.fields.slug;
