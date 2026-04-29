@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkic_design_system=self.webpackChunkic_design_system||[]).push([[2462],{82462:function(s,c,e){e.r(c),e.d(c,{ic_accordion:function(){return n.A}});var n=e(32372);e(28402),e(57647)}}]);
