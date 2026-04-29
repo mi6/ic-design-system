@@ -3,13 +3,13 @@ path: "/components/inputs/switch"
 
 navPriority: 8
 
-date: "2025-08-11"
+date: "2026-04-28"
 
 title: "Switch"
 
 status: "BETA"
 
-subTitle: "Switches are used to quickly toggle an option on or off."
+subTitle: "A switch is used to quickly toggle the selection of an option on or off."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/components/inputs/switch"
 
@@ -41,21 +41,37 @@ import {
   Fig5SwitchLight,
   Fig6SwitchDark,
   Fig6SwitchLight,
+  Fig7SwitchDark,
+  Fig7SwitchLight,
+  Fig8SwitchDark,
+  Fig8SwitchLight,
+  Fig9SwitchDark,
+  Fig9SwitchLight,
 } from "./images";
 
 ## Introduction
 
-An example of the switch component.
+A switch is an input control that shows a selection status and is commonly used to turn a setting on or off.
+
+## Component demo
 
 <ComponentPreview>
   <IcSwitch label="Coffee preferences" />
 </ComponentPreview>
+
+## Component variants
+
+### Sizes
+
+The switch has three size variants: small, medium and large.
 
 ## When to use
 
 Use switches to turn a single option 'on' or 'off' and when you want the selection to take immediate effect.
 
 Use switches when there is an obvious default value: either 'on' or 'off'.
+
+Use switches in a list if each option is independent of the others.
 
 ## When not to use
 
@@ -106,9 +122,37 @@ Avoid automatically altering a switch's state based on another trigger. A change
 
 ## Sizing
 
-Use a medium sized switch in most scenarios where other medium sized components are used.
+Use the switch size properties to change its vertical size and achieve compact or spacious layouts.
 
-Use a small sized switch with other small sized components for compact layouts.
+Don't display switches of different sizes together.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig4SwitchLight, Fig4SwitchDark]}
+    imageAlt="An example settings panel with text that says 'Settings'. Three switches of different sizes are displayed for 'notifications', 'do not disturb' and 'night mode'."
+    state="bad"
+    caption="Don't display switches of different sizes together."
+  />
+</DoubleDoDontCaution>
+
+## Layout and placement
+
+Always display multiple switches in a vertical stack.
+
+<DoubleDoDontCaution>
+  <DoDontCaution
+    imageSrc={[Fig5SwitchLight, Fig5SwitchDark]}
+    imageAlt="An example settings panel with text that says 'Settings'. Three switches are displayed in a vertical stack for 'notifications', 'do not disturb' and 'night mode'."
+    state="good"
+    caption="Always display switches as a stack."
+  />
+  <DoDontCaution
+    imageSrc={[Fig6SwitchLight, Fig6SwitchDark]}
+    imageAlt=" An example settings panel with text that says 'Settings'. Three switches are displayed in a row for 'notifications', 'do not disturb' and 'night mode'."
+    state="bad"
+    caption="Don't display switches in a row."
+  />
+</DoubleDoDontCaution>
 
 ## Content
 
@@ -118,14 +162,14 @@ For example, a switch to turn notifications 'on' or 'off', with a label that say
 
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={[Fig4SwitchLight, Fig4SwitchDark]}
-    imageAlt="An example settings panel with a single switch in the 'off' position. It's label says 'Notifications'."
+    imageSrc={[Fig7SwitchLight, Fig7SwitchDark]}
+    imageAlt="An example settings panel with a single switch in the 'off' position. Its label says 'Notifications'."
     state="good"
     caption="Give switches labels that make it clear what the switch will do in either the 'on' or 'off' position."
   />
   <DoDontCaution
-    imageSrc={[Fig5SwitchLight, Fig5SwitchDark]}
-    imageAlt="An example settings panel with a single switch in the 'off' position. It's label says 'Turn notifications off?'."
+    imageSrc={[Fig8SwitchLight, Fig8SwitchDark]}
+    imageAlt="An example settings panel with a single switch in the 'off' position. Its label says 'Turn notifications off?'."
     state="bad"
     caption="Don't give switches ambiguous labels that makes it hard to understand what the switch will do."
   />
@@ -140,17 +184,34 @@ Avoid using additional labels that say 'on' or 'off' in the switch label. The po
   loop
   src={[switchVid2Light, switchVid2Dark]}
   caption="Don't change the switch's label at the same time as the state changes."
+  title="An example settings panel with a single switch in the 'off' position. It's label says 'Turn notifications off?'."
 />
 
-Use an icon with a switch label only if it aids the recognition of the option.
+## Icons
+
+Use an icon with a switch label only if a label is present and it aids the recognition of the option.
 
 Don't group switches with icons with other switches without icons.
 
+You can use other Material Design Icons within the component. However, make sure to use icons which are immediately understandable in the given context.
+
+Further guidance on icons is available.
+
 <DoubleDoDontCaution>
   <DoDontCaution
-    imageSrc={[Fig6SwitchLight, Fig6SwitchDark]}
-    imageAlt="An example settings panel with three switches. The first switch is on with a label that says 'Notifications'. The second switch is off with a label that says 'Don't disturb'. The third switch is off with a label that includes a moon icon and says 'Night mode'."
+    imageSrc={[Fig9SwitchLight, Fig9SwitchDark]}
+    imageAlt="An example settings panel with three switches. The first switch is on with a label that says 'Notifications'. The second switch is off with a label that says 'Do not disturb'. The third switch is off with a label that includes a moon icon and says 'Night mode'."
     state="bad"
     caption="Don't mix switches with icons with switches without icons."
   />
 </DoubleDoDontCaution>
+
+## Motion
+
+A sliding animation is used when the switch component is selected and deselected.
+
+## Related components
+
+- [Checkbox](/components/inputs/checkbox)
+- [Radio button](/components/inputs/radio)
+- [Toggle button](/components/inputs/toggle-buttons)
