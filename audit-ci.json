@@ -1,12 +1,6 @@
 {
   "allowlist": [
     {
-      "GHSA-p8p7-x288-28g6": {
-        "active": true,
-        "notes": "requires upgrade to 'request' which currently has no fix."
-      }
-    },
-    {
       "GHSA-c2qf-rxjj-qqgw": {
         "active": true,
         "notes": "requires upgrade to 'semver' which is a transitive dependency of gatsby."
@@ -28,24 +22,6 @@
       "GHSA-xxjr-mmjv-4gpg": {
         "active": true,
         "notes": "requires upgrade to 'lodash' and 'lodash.pick'. 'lodash.pick' currently has no fix."
-      }
-    },
-    {
-      "GHSA-p5wg-g6qr-c7cg": {
-        "active": true,
-        "notes": "requires upgrade to 'eslint' to '9.26.0' which is a breaking change."
-      }
-    },
-    {
-      "GHSA-43fc-jf86-j433": {
-        "active": true,
-        "notes": "requires upgrade to 'axios' which is a transitive dependency of 'gatsby'. Might be removeable after gatsby upgrade."
-      }
-    },
-    {
-      "GHSA-2g4f-4pwh-qvx6": {
-        "active": true,
-        "notes": "requires upgrade to 'ajv' which is a transitive dependency of 'commitlint'."
       }
     },
     {
@@ -88,18 +64,6 @@
       "GHSA-f23m-r3pf-42rh": {
         "active": true,
         "notes": "requires upgrade to 'lodash' which is a transitive dependency of gatsby."
-      }
-    },
-    {
-      "GHSA-r4q5-vmmm-2653": {
-        "active": true,
-        "notes": "requires upgrade to 'axios' which is a transitive dependency of gatsby."
-      }
-    },
-    {
-      "GHSA-w5hq-g745-h8pq": {
-        "active": true,
-        "notes": "requires upgrade to 'uuid' which is a transitive dependency of gatsby."
       }
     }
   ]
