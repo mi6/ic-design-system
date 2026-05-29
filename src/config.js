@@ -42,7 +42,7 @@ module.exports = {
           }
         : {},
       {
-        link: "/get-started/releases-versions",
+        link: "/developer-resources/releases-versions",
         text: "Versions",
         key: "versions",
       },
@@ -137,7 +137,7 @@ module.exports = {
           variant: "primary",
         },
         {
-          href: "/get-started/development/test-components",
+          href: "/developer-resources/test-components",
           text: "Learn how we test components",
           variant: "secondary",
         },

@@ -1,0 +1,75 @@
+---
+path: "/developer-resources/releases-versioning"
+
+navPriority: 8
+
+date: "2026-06-01"
+
+title: "Releases and versions"
+
+subTitle: "Our approach to releases and versioning."
+---
+
+## How we release and version
+
+This page provides details on how the `@ukic/` packages and website are released and versioned.
+
+<p>
+  Releases are triggered once the <code class="language-text">develop</code>{" "}
+  branch pull request is merged into the <code class="language-text">main</code>{" "}
+  branch. The package versions follow the{" "}
+  <ic-link
+    target="_blank"
+    href="https://semver.org/"
+    rel="noreferrer noopener nofollow"
+  >
+    semantic versioning
+  </ic-link>{" "}
+  scheme.
+</p>
+
+```js
+major.minor.patch;
+```
+
+<br />
+
+**Major releases** contain breaking changes to the component libraries. Breaking changes are communicated to the community as early as possible to allow teams to plan when to integrate the new packages into their projects. Major releases are very infrequent, with at least a year between them.
+
+**Minor releases** contain new component features. Minor releases are backwards-compatible with no requirement for the developer to make updates to their existing implementation. However, to use the new feature, the implementation will require a small update (such as adding a new prop) in order to use the new component application programming interface (API).
+
+**Patch releases** contain bug fixes.
+
+<p>
+  Minor and/or patch releases are scheduled every two weeks. All changes to the
+  component library are recorded in the{" "}
+  <ic-link
+    target="_blank"
+    href="https://github.com/mi6/ic-ui-kit/blob/main/packages/web-components/CHANGELOG.md"
+    rel="noreferrer noopener nofollow"
+  >
+    Web Components CHANGELOG.md
+  </ic-link>
+  .
+</p>
+
+All packages are published with identical version numbers.
+
+## Supporting previous versions
+
+As the component library matures and new versions arrive, the team will actively maintain and support the previous major version for up to 6 months.
+
+This is to allow the team to provide as much resource as possible on the current version. Any support for the legacy versions will only include security updates and bug fixes for major accessibility issues. No new features will be added.
+
+## Previous versions
+
+<p>
+  -{" "}
+  <ic-link
+    target="_blank"
+    href="https://mi6.github.io/ic-design-system-githubpages/v2"
+    rel="noreferrer noopener nofollow"
+  >
+    ICDS Version 2.x
+  </ic-link>
+</p>

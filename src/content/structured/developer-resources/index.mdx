@@ -1,0 +1,79 @@
+---
+path: "/developer-resources"
+
+navPriority: 0
+
+date: "2026-06-02"
+
+title: "Developer Resources"
+
+subTitle: "A section containing resources for developers using ICDS."
+
+contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/developer-resources/index.mdx"
+---
+
+import GetStartedHorizontalCard from "../../../components/GetStartedHorizontalCard";
+import {
+  Accessibility,
+  AccessibilityDark,
+  Components,
+  ComponentsDark,
+  FigmaUIKit,
+  FigmaUIKitDark,
+  Patterns,
+  PatternsDark,
+} from "../get-started/images/card-icons";
+import "../get-started/index.css";
+
+## Introduction
+
+Please note - if you are yet to start a project please refer to the [getting started](/get-started) guidance first.
+
+This section has been created as the resources provided contain developer-specific information that could be necessary at any point in development.
+
+This covers:
+
+- [Testing Components](/developer-resources/test-components)
+- [Component Lifecycle](/developer-resources/component-lifecycle)
+- [Using Typescript](/developer-resources/using-typescript)
+- [Versions](/developer-resources/releases-versioning)
+- [Migration](/developer-resources/migrating-to-v3)
+
+## Explore the design system
+
+Explore the design system to discover our components, guidelines and more.
+
+<div className="get-started-horizontal-cards">
+  <GetStartedHorizontalCard
+    heading="Components"
+    message="Rapidly build apps that work robustly across frameworks."
+    href="/components"
+    imageSrc={[Components, ComponentsDark]}
+    imageAlt=""
+  />
+  <GetStartedHorizontalCard
+    heading="Accessibility"
+    message="Design, build, and test apps and services that work for everyone."
+    href="/accessibility"
+    imageSrc={[Accessibility, AccessibilityDark]}
+    imageAlt=""
+  />
+  <GetStartedHorizontalCard
+    heading="Figma UI kit"
+    message="Reusable and flexible components used to design and prototype."
+    href="/get-started/design/figma"
+    imageSrc={[FigmaUIKit, FigmaUIKitDark]}
+    imageAlt=""
+  />
+  <GetStartedHorizontalCard
+    heading="Patterns"
+    message="Lower learning curves by using intuitive, expandable patterns."
+    href="/patterns"
+    imageSrc={[Patterns, PatternsDark]}
+    imageAlt=""
+  />
+</div>
+
+## Contribute
+
+We are expanding the Design System and UI Kit. You can check out the [roadmap](/community/roadmap) for what's coming. If you can help you can [read more on how to contribute](/community).

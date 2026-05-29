@@ -72,6 +72,17 @@ export const textLinks = [
       partiallyActive: true,
     },
   },
+  {
+    to: "/developer-resources",
+    text: "Developer Resources",
+    key: "developer-resources",
+    component: GatsbyLink,
+    props: {
+      to: "/developer-resources",
+      activeClassName: "active",
+      partiallyActive: true,
+    },
+  },
 ];
 
 export const iconLinks = [
