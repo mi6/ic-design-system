@@ -65,6 +65,30 @@
         "active": true,
         "notes": "requires upgrade to 'lodash' which is a transitive dependency of gatsby."
       }
+    },
+    {
+      "GHSA-q8mj-m7cp-5q26": {
+        "active": true,
+        "notes": "requires upgrade to 'qs' which is a transitive dependency of gatsby."
+      }
+    },
+    {
+      "GHSA-ph9p-34f9-6g65": {
+        "active": true,
+        "notes": "requires upgrade to 'tmp' which is a transitive dependency of gatsby."
+      }
+    },
+    {
+      "GHSA-w5hq-g745-h8pq": {
+        "active": true,
+        "notes": "requires upgrade to 'uuid' which is a transitive dependency of gatsby."
+      }
+    },
+    {
+      "GHSA-58qx-3vcg-4xpx": {
+        "active": true,
+        "notes": "requires upgrade to 'ws' which is a transitive dependency of jsdom."
+      }
     }
   ]
 }
