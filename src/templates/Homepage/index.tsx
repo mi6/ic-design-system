@@ -44,7 +44,7 @@ const Homepage: React.FC = () => {
             src={theme === "light" ? Accessibility : AccessibilityDark}
             alt=""
             loading="lazy"
-            slot="image"
+            slot="image-left"
             aria-hidden="true"
           />
         );
@@ -54,7 +54,7 @@ const Homepage: React.FC = () => {
             src={theme === "light" ? Styles : StylesDark}
             alt=""
             loading="lazy"
-            slot="image"
+            slot="image-left"
             aria-hidden="true"
           />
         );
@@ -64,7 +64,7 @@ const Homepage: React.FC = () => {
             src={theme === "light" ? Components : ComponentsDark}
             alt=""
             loading="lazy"
-            slot="image"
+            slot="image-left"
             aria-hidden="true"
           />
         );
@@ -74,7 +74,7 @@ const Homepage: React.FC = () => {
             src={theme === "light" ? Patterns : PatternsDark}
             alt=""
             loading="lazy"
-            slot="image"
+            slot="image-left"
             aria-hidden="true"
           />
         );
