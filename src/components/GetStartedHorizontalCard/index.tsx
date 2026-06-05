@@ -35,7 +35,7 @@ const GetStartedHorizontalCard: React.FC<GetStartedHorizontalCardProps> = ({
           <img
             src={passImage(imageSrc, theme)}
             alt={imageAlt}
-            slot="image"
+            slot="image-left"
             loading="lazy"
           />
         )}
