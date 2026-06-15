@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkic_design_system=self.webpackChunkic_design_system||[]).push([[4734],{54734:function(s,e,c){c.r(e),c.d(e,{ic_switch:function(){return i.S}});var i=c(6802);c(28402),c(57647)}}]);
