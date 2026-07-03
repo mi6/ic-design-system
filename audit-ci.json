@@ -89,6 +89,18 @@
         "active": true,
         "notes": "requires upgrade to 'ws' which is a transitive dependency of jsdom."
       }
+    },
+    {
+      "GHSA-96hv-2xvq-fx4p": {
+        "active": true,
+        "notes": "requires upgrade to 'ws' which is a transitive dependency of jsdom."
+      }
+    },
+    {
+      "GHSA-hmw2-7cc7-3qxx": {
+        "active": true,
+        "notes": "requires upgrade to 'form-data' which is a transitive dependency of jsdom and axios."
+      }
     }
   ]
 }
