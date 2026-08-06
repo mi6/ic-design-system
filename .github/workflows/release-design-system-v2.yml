@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 #v3
       - uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 #v3
         with:
-          node-version: 18
+          node-version: 20
       - uses: browser-actions/setup-chrome@latest
       - name: Create v2 develop -> v2 main PR
         run: |

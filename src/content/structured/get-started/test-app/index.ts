@@ -998,7 +998,6 @@ const Subscription: React.FC = () => {
   const handleClick = useCallback(
     (ev: React.MouseEvent, action: string) => {
       ev.preventDefault();
-      console.log(formValues);
 
       if (action === "next") {
         handleNextStep();
@@ -1034,7 +1033,6 @@ const Subscription: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    console.log(formValues);
     const { dateToStart, terms } = formValues.checkoutForm;
     if (
       [dateToStart, terms].some((value) => value === "" || value === "decline")

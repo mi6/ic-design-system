@@ -109,6 +109,9 @@
     "icds"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -123,7 +126,7 @@
     "lint": "eslint --ext js,jsx,ts,tsx,mdx src",
     "lint:fix": "eslint --ext js,jsx,ts,tsx,mdx src --fix",
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
-    "static-analysis": "npm run lint & npm run prettier",
+    "static-analysis": "npm run lint && npm run prettier",
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve -p 8000",
