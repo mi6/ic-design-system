@@ -14,8 +14,9 @@ jobs:
 
       - name: Get issue urgency
         env:
-          URGENCY_STRING: ${{ fromJSON(steps.parse.outputs.data).urgency-low-medium-or-high }}
+          PARSED_ISSUE_DATA: ${{ steps.parse.outputs.data }}
         run: |
+          URGENCY_STRING=$(jq -r '."urgency-low-medium-or-high".text // empty' <<< "$PARSED_ISSUE_DATA")
           case "$URGENCY_STRING" in
             "Low"|"Medium"|"High")
               echo "MATCHED_URGENCY=$URGENCY_STRING" >> $GITHUB_ENV
