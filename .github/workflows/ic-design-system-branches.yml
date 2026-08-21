@@ -35,6 +35,50 @@ jobs:
       - name: Audit
         run: npm run audit
 
+  markdown-link-check:
+    if: github.event_name == 'pull_request'
+    name: "Markdown Link Check"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 #v3
+        with:
+          fetch-depth: 0
+
+      - name: Find changed Markdown files
+        id: markdown
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          mapfile -t files < <(
+            git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$HEAD_SHA" -- '*.md' '*.mdx'
+          )
+
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "has_files=true" >> "$GITHUB_OUTPUT"
+          {
+            echo "files<<EOF"
+            printf './%s\n' "${files[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check links in changed Markdown files
+        if: steps.markdown.outputs.has_files == 'true'
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 #v2
+        with:
+          args: >-
+            --root-dir .
+            --no-progress
+            --verbose
+            ${{ steps.markdown.outputs.files }}
+          fail: true
+          jobSummary: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   ic-design-system-deploy:
     needs: [ic-design-system-static-analysis-tests]
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
