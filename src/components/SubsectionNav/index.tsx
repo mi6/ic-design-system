@@ -191,6 +191,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
       <IcTreeItem
         key={item.data.id}
         label={item.data.frontmatter.title}
+        href={hasChildren ? undefined : item.data.fields.slug}
         selected={!hasChildren && isCurrentPage(item.data.fields.slug)}
         onClick={(e) => {
           e.preventDefault();
@@ -310,6 +311,7 @@ const SubsectionNav: React.FC<SubsectionNavProps> = ({
         {isRoot && (
           <IcTreeItem
             label={currentNavSection.data.frontmatter.title}
+            href={currentNavSection.data.fields.slug}
             onClick={(e) => {
               e.preventDefault();
               handleNavigation(currentNavSection.data.fields.slug);
