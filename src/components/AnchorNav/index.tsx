@@ -58,11 +58,9 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
     e: React.MouseEvent | React.KeyboardEvent,
     headingId: string
   ): void => {
-    // Move focus to heading when link is selected using Enter key
+    // Move focus to the target heading when the link is selected using Enter.
     if (e.detail === 0) {
-      document
-        .querySelector<HTMLAnchorElement>(`a[href='#${headingId}`)
-        ?.focus();
+      document.getElementById(headingId)?.focus();
     }
 
     // reset the active class on current tab
