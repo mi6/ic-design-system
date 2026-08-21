@@ -20,8 +20,16 @@ export const wrapPageElement = ({ element, props }) =>
     <Layout {...props}>{element}</Layout>
   );
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
   setHeadComponents([
     <link key="tokens" rel="stylesheet" href={withPrefix("/tokens.css")} />,
+  ]);
+  setPreBodyComponents([
+    <noscript key="no-js-notice">
+      <div className="no-js-notice" role="status">
+        <strong>JavaScript is disabled.</strong> Please enable JavaScript in your
+        browser for the best experience and to use all features of this site.
+      </div>
+    </noscript>,
   ]);
 };
