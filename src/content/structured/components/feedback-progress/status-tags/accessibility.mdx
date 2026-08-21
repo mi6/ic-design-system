@@ -30,6 +30,10 @@ Status tags use colours that have been designed for maximum legibility across a 
 
 Status tags can have `aria-labelledby` or `aria-label` tags that provide additional content to the visible label. However, the visible label must be included within the accessible label.
 
+Set the `announced` prop when a status tag needs to announce updates to assistive technology. This adds `role="status"`, making the status tag a live region. Screen readers announce subsequent changes to the status tag label, but do not announce its initial value when the component first renders.
+
+Only use `announced` for status information that should be surfaced when it changes. Static status tags do not need to be live regions.
+
 ## Based on
 
 The status tag component has been based on the following resources:
