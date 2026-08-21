@@ -11,3 +11,11 @@ ic-typography label {
 }
 
 ic-link > a:visited { color: var(--ic-color-hyperlink-visited) !important; }
+
+.no-js-notice {
+  padding: var(--ic-space-sm) var(--ic-space-lg);
+  font: var(--ic-font-body);
+  color: CanvasText;
+  background-color: Canvas;
+  border-bottom: var(--ic-border-width) solid currentColor;
+}
