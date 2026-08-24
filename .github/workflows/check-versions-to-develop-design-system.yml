@@ -23,7 +23,7 @@ jobs:
       - name: Install latest components
         run: |
           DOCS_VERSION=$(npm view @ukic/docs version)
-          FONTS_VERSION=$(npm view @ukic/fonts verion)
+          FONTS_VERSION=$(npm view @ukic/fonts version)
           REACT_VERSION=$(npm view @ukic/react version)
           WEB_COMPS_VERSION=$(npm view @ukic/web-components version)
           CANARY_DOCS_VERSION=$(npm view @ukic/canary-docs version)

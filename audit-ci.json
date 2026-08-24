@@ -89,6 +89,48 @@
         "active": true,
         "notes": "requires upgrade to 'ws' which is a transitive dependency of jsdom."
       }
+    },
+    {
+      "GHSA-96hv-2xvq-fx4p": {
+        "active": true,
+        "notes": "requires upgrade to 'ws' which is a transitive dependency of jsdom."
+      }
+    },
+    {
+      "GHSA-hmw2-7cc7-3qxx": {
+        "active": true,
+        "notes": "requires upgrade to 'form-data' which is a transitive dependency of jsdom and axios."
+      }
+    },
+    {
+      "GHSA-v56q-mh7h-f735": {
+        "active": true,
+        "notes": "requires upgrade to 'immutable' which is a transitive dependency of graphql."
+      }
+    },
+    {
+      "GHSA-xvcm-6775-5m9r": {
+        "active": true,
+        "notes": "requires upgrade to 'immutable' which is a transitive dependency of graphql."
+      }
+    },
+    {
+      "GHSA-wrjc-x8rr-h8h6": {
+        "active": true,
+        "notes": "requires upgrade to 'react-router' which is a transitive dependency of react-router-dom."
+      }
+    },
+    {
+      "GHSA-337j-9hxr-rhxg": {
+        "active": true,
+        "notes": "requires upgrade to 'react-router' which is a transitive dependency of react-router-dom."
+      }
+    },
+    {
+      "GHSA-f88m-g3jw-g9cj": {
+        "active": true,
+        "notes": "requires upgrade to 'sharp' which is a transitive dependency of gatsby."
+      }
     }
   ]
 }
