@@ -301,11 +301,10 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     // to prevent page movement while switching
     setTimeout(() => {
       if (webComponentTabPanelRef.current && reactTabPanelRef.current) {
-        setCodeHeight("auto"); // Reset height for measurement
         setCodeHeight(
           `${Math.min(
-            webComponentTabPanelRef.current?.offsetHeight,
-            reactTabPanelRef.current?.offsetHeight
+            webComponentTabPanelRef.current.scrollHeight,
+            reactTabPanelRef.current.scrollHeight
           )}px`
         );
       }
