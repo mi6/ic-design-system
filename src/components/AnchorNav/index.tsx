@@ -26,43 +26,54 @@ const AnchorNav: React.FC<AnchorNavProps> = ({
 
   useEffect(() => {
     setActiveId(headingIds[0]);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(({ isIntersecting, target }) => {
-          if (isIntersecting) {
-            setActiveId(target.id);
-          }
-        });
-      },
-      { rootMargin: `20% 0% -70% 0%` }
-    );
 
-    headingIds.forEach((eachId) => {
-      const heading = document.getElementById(eachId);
-      if (heading) {
-        observer.observe(heading);
+    const updateActiveHeading = () => {
+      const headingElements = headingIds
+        .map((headingId) => document.getElementById(headingId))
+        .filter((heading): heading is HTMLElement => heading !== null);
+
+      if (headingElements.length === 0) {
+        return;
       }
-    });
+
+      const activationLine = Math.min(window.innerHeight * 0.3, 240);
+      const atPageBottom =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 1;
+
+      const activeHeading = atPageBottom
+        ? headingElements[headingElements.length - 1]
+        : [...headingElements]
+            .reverse()
+            .find(
+              (heading) => heading.getBoundingClientRect().top <= activationLine
+            ) || headingElements[0];
+
+      setActiveId(activeHeading.id);
+    };
+
+    updateActiveHeading();
+    window.addEventListener("scroll", updateActiveHeading, { passive: true });
+    window.addEventListener("resize", updateActiveHeading);
 
     return () => {
-      headingIds.forEach((eachId) => {
-        const heading = document.getElementById(eachId);
-        if (heading) {
-          observer.unobserve(heading);
-        }
-      });
+      window.removeEventListener("scroll", updateActiveHeading);
+      window.removeEventListener("resize", updateActiveHeading);
     };
   }, [currentPage]);
 
   const handleLinkSelect = (
-    e: React.MouseEvent | React.KeyboardEvent,
+    e: React.MouseEvent<HTMLAnchorElement>,
     headingId: string
   ): void => {
-    // Move focus to heading when link is selected using Enter key
-    if (e.detail === 0) {
-      document
-        .querySelector<HTMLAnchorElement>(`a[href='#${headingId}`)
-        ?.focus();
+    const heading = document.getElementById(headingId);
+
+    if (heading) {
+      e.preventDefault();
+      window.history.pushState(null, "", `#${headingId}`);
+      heading.scrollIntoView({ block: "start" });
+      heading.focus({ preventScroll: true });
+      setActiveId(headingId);
     }
 
     // reset the active class on current tab
