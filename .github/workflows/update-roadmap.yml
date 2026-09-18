@@ -13,9 +13,9 @@ on:
 jobs:
   ic-design-system-install-comps:
     if: >
-        github.event_name == 'repository_dispatch' ||
-        (github.event_name == 'workflow_dispatch' &&
-         github.event.inputs.confirm == 'UPDATE')
+      github.event_name == 'repository_dispatch' ||
+      (github.event_name == 'workflow_dispatch' &&
+       github.event.inputs.confirm == 'UPDATE')
     name: "IC Design System Install Comps"
     runs-on: ubuntu-latest
     permissions:
@@ -27,7 +27,7 @@ jobs:
           ref: develop
       - uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 #v3
         with:
-          node-version: 16
+          node-version: 22
       - uses: browser-actions/setup-chrome@latest
       - name: Update Roadmap
         run: |
