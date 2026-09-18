@@ -131,6 +131,234 @@
         "active": true,
         "notes": "requires upgrade to 'sharp' which is a transitive dependency of gatsby."
       }
+    },
+    {
+      "GHSA-27p8-2357-5qqv": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-2883-xcg3-v3hh": {
+        "active": true,
+        "notes": "requires upgrade to 'js-yaml' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-2wm5-q62r-hmrv": {
+        "active": true,
+        "notes": "requires upgrade to 'colord' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-38r7-794h-5758": {
+        "active": true,
+        "notes": "requires upgrade to 'webpack' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-4mjr-xmp4-gh2g": {
+        "active": true,
+        "notes": "requires upgrade to 'qs' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-4vpr-x523-8j87": {
+        "active": true,
+        "notes": "requires upgrade to 'svgo' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-4w3w-2rp5-g8jm": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-4x5r-pxfx-6jf8": {
+        "active": true,
+        "notes": "requires upgrade to '@babel/core' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-52f5-9888-hmc6": {
+        "active": true,
+        "notes": "requires upgrade to 'tmp' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-535w-7cp7-47q4": {
+        "active": true,
+        "notes": "requires upgrade to 'multer' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-5jgf-p345-68v8": {
+        "active": true,
+        "notes": "requires upgrade to 'fast-uri' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-6gmq-8vp8-gcm6": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-6h8r-xr42-gp59": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-6w3j-5fw6-r9vr": {
+        "active": true,
+        "notes": "requires upgrade to 'joi' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-73wf-gq98-2v4g": {
+        "active": true,
+        "notes": "requires upgrade to 'browserslist' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-8344-3jmq-59r6": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-8fgc-7cc6-rx7x": {
+        "active": true,
+        "notes": "requires upgrade to 'webpack' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-93r5-fhx6-vmg9": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-965w-775f-mr7g": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-c7q8-3ch8-vqpv": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-c83g-rgw3-j3cx": {
+        "active": true,
+        "notes": "requires upgrade to 'browserslist' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-f65p-4m7j-42xc": {
+        "active": true,
+        "notes": "requires upgrade to 'fast-uri' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-fph4-wmhf-6fwf": {
+        "active": true,
+        "notes": "requires upgrade to 'fast-uri' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-gg4h-3hg2-grpc": {
+        "active": true,
+        "notes": "requires upgrade to 'joi' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-jqff-g426-hqxp": {
+        "active": true,
+        "notes": "requires upgrade to 'fast-uri' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-pxg6-pf52-xh8x": {
+        "active": true,
+        "notes": "requires upgrade to 'cookie' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-qfvm-cv95-jqjf": {
+        "active": true,
+        "notes": "requires upgrade to 'multer' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-qvfw-j98x-7q72": {
+        "active": true,
+        "notes": "requires upgrade to 'multer' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-rgj7-g3m4-5g8c": {
+        "active": true,
+        "notes": "requires upgrade to 'sharp' which is a direct dependency."
+      }
+    },
+    {
+      "GHSA-vcc3-ghjq-m6fr": {
+        "active": true,
+        "notes": "requires upgrade to 'decode-uri-component' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-vpq2-c234-7xj6": {
+        "active": true,
+        "notes": "requires upgrade to '@tootallnate/once' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-w27v-7q3p-w38r": {
+        "active": true,
+        "notes": "requires upgrade to 'svgo' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-w2rr-34g9-rvrj": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-wc9g-mqfw-jrwm": {
+        "active": true,
+        "notes": "requires upgrade to 'multer' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-x4fp-j954-r2f4": {
+        "active": true,
+        "notes": "requires upgrade to '@xmldom/xmldom'."
+      }
+    },
+    {
+      "GHSA-w5vr-8v7q-w6rv": {
+        "active": true,
+        "notes": "requires upgrade to 'baseline-browser-mapping' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-w7fw-mjwx-w883": {
+        "active": true,
+        "notes": "requires upgrade to 'qs' which is a transitive dependency."
+      }
+    },
+    {
+      "GHSA-w9m9-85wc-3x92": {
+        "active": true,
+        "notes": "requires upgrade to 'postcss-selector-parser' which is a transitive dependency."
+      }
     }
   ]
 }
