@@ -3,7 +3,7 @@ path: "/get-started/development/install-components/angular"
 
 navPriority: 3
 
-date: "2024-12-23"
+date: "2026-01-09"
 
 title: "Angular"
 
@@ -12,7 +12,19 @@ subTitle: "How to use the components in an Angular-based application."
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/angular.mdx"
 ---
 
-import { IcAlert } from "@ukic/react";
+import { IcAlert, IcLink } from "@ukic/react";
+
+## Native Components
+
+<IcAlert
+  variant="info"
+  heading="Experimental Component support"
+  message="Native Angular component output for ICDS is currently in an experimental phase and is not officially supported by the ICDS team. Either follow the guidance found in the ui-kit GitHub or use the pure web-component approach"
+/>
+
+GitHub Docs: <IcLink href="https://github.com/mi6/ic-ui-kit/blob/main/packages/angular-community-supported/README.md" rel="noreferrer noopener nofollow">ICDS UI Kit - Angular</IcLink>
+
+## Using Web Components
 
 <IcAlert
   variant="info"
@@ -20,7 +32,7 @@ import { IcAlert } from "@ukic/react";
   message="These instructions were used with Angular version 17.3.0."
 />
 
-## Step one
+### Step one
 
 In the root of your project:
 
@@ -33,11 +45,11 @@ rm package-lock.json
 yarn add @ukic/web-components @ukic/fonts
 ```
 
-## Step two
+### Step two
 
 Import the `CUSTOM_ELEMENTS_SCHEMA`:
 
-### For modules
+#### For modules
 
 Into the `app.module.ts` file:
 
@@ -45,7 +57,7 @@ Into the `app.module.ts` file:
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 ```
 
-### For standalone components
+#### For standalone components
 
 Into the `app.component.ts` file:
 
@@ -53,11 +65,11 @@ Into the `app.component.ts` file:
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from "@angular/core";
 ```
 
-## Step three
+### Step three
 
 Include `CUSTOM_ELEMENTS_SCHEMA` in the decorator object in the same file:
 
-### For modules
+#### For modules
 
 ```jsx
 @NgModule({
@@ -69,7 +81,7 @@ Include `CUSTOM_ELEMENTS_SCHEMA` in the decorator object in the same file:
 })
 ```
 
-### For standalone components
+#### For standalone components
 
 ```jsx
 @Component({
@@ -82,7 +94,7 @@ Include `CUSTOM_ELEMENTS_SCHEMA` in the decorator object in the same file:
 })
 ```
 
-## Step four
+### Step four
 
 Set skipLibCheck to `true` in your `tsconfig.json` file.
 
@@ -92,7 +104,7 @@ Set skipLibCheck to `true` in your `tsconfig.json` file.
 },
 ```
 
-## Step five
+### Step five
 
 Import defineCustomElements in your `main.ts` file.
 
@@ -100,7 +112,7 @@ Import defineCustomElements in your `main.ts` file.
 import { defineCustomElements } from "@ukic/web-components/loader";
 ```
 
-## Step six
+### Step six
 
 Call defineCustomElements at the bottom of `main.ts`:
 
@@ -110,7 +122,7 @@ Call defineCustomElements at the bottom of `main.ts`:
 defineCustomElements();
 ```
 
-## Step seven
+### Step seven
 
 Add the following into the top level CSS file for your project. For newly generated Angular projects this will be `src/styles.css`.
 
