@@ -17,6 +17,26 @@ This is a joint project led by [MI6](https://www.sis.gov.uk), working with [GCHQ
 
 This repo holds the website at [`design.sis.gov.uk`](https://design.sis.gov.uk), look at the [`ic-ui-kit` repo](https://github.com/mi6/ic-ui-kit) for the ICDS UI Kit components.
 
+```mermaid
+---
+title: ICDS repository and publication architecture
+---
+graph LR
+    A["mi6/ic-design-system<br/>Gatsby + MDX"]
+    B["mi6/ic-ui-kit<br/>Web Components + framework wrappers"]
+    C["design.sis.gov.uk<br/>Guidance and documentation"]
+    D["@ukic/* npm packages<br/>UI components"]
+    E["Intelligence Community<br/>consumers and partners"]
+
+    A -->|publishes| C
+    B -->|publishes| D
+    C -.documents usage of.-> D
+    C --> E
+    D --> E
+```
+
+The website and component library are maintained in separate repositories: use this repository for guidance and documentation changes, and `ic-ui-kit` for component implementation and package changes.
+
 ## Why we're doing this
 
 We build a lot of stuff that needs to be quick-to-build, usable and always accessible. We build using a lot of different tech, so creating something that can be consistently accessible and usable across different stacks is critical for us.
