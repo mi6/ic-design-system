@@ -37,10 +37,6 @@ import {
   Fig4DatePickerLight,
   Fig5DatePickerDark,
   Fig5DatePickerLight,
-  Fig6DatePickerDark,
-  Fig6DatePickerLight,
-  Fig7DatePickerDark,
-  Fig7DatePickerLight,
 } from "./images";
 
 <IcAlert
@@ -171,18 +167,6 @@ Use the month and year buttons to quickly navigate between larger spans of time 
 
 ## Validation
 
-See [date input](/components/inputs/date-input#validation) for detailed guidance on how to display errors within the date picker.
+Dates that are disabled by the date picker's restrictions cannot be selected from the calendar, so selecting a date in the picker will not trigger validation for those restrictions.
 
-<DoDontCaution
-  imageSrc={[Fig6DatePickerLight, Fig6DatePickerDark]}
-  imageAlt="A date picker with error caused by choosing a date outside of allowed range."
-  caption="Make sure to be clear and instructive when writing error messages."
-  state="good"
-/>
-
-<DoDontCaution
-  imageSrc={[Fig7DatePickerLight, Fig7DatePickerDark]}
-  imageAlt="A date picker with an ambiguous error caused by choosing a date outside of allowed range."
-  caption='Avoid ambiguity or terms like "please" when writing error messages.'
-  state="bad"
-/>
+People can still type a date directly into the date input, including a date that is outside the allowed range. See [date input validation](/components/inputs/date-input#validation) for guidance on displaying and writing validation errors for manually entered dates.
