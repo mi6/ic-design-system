@@ -511,6 +511,13 @@ const Layout: React.FC<LayoutProps> = ({
                 <CookieBanner />
               )}
             </ClientOnly>
+            <noscript>
+              <div className="no-js-notice" role="status">
+                <strong>JavaScript is disabled.</strong> Please enable
+                JavaScript in your browser for the best experience and to use
+                all features of this site.
+              </div>
+            </noscript>
             <div className="main-page-container">
               <ic-skip-link
                 label="Skip to main content"
