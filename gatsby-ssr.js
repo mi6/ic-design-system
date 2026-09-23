@@ -4,9 +4,9 @@ import "./src/styles/gatsby-override.css";
 import "./src/styles/gatsby-reset.css";
 
 import React from "react";
+import { withPrefix } from "gatsby";
 import Layout from "./src/components/Layout";
 import paths from "./src/utils/paths";
-import { withPrefix } from "gatsby";
 
 const { defineCustomElements } = require("@ukic/web-components/loader");
 
