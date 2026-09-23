@@ -16,7 +16,7 @@ const WrappedH2: React.FC<WrappedH2Props> = ({ children, preview }) =>
     <h2>{children}</h2>
   ) : (
     <ic-typography variant="h2" apply-vertical-margins data-class="h2">
-      <h3 id={slug(children)}>
+      <h3 id={slug(children)} tabIndex={-1}>
         {children}
         <Permalink title={children} sluggedTitle={slug(children)} />
       </h3>
