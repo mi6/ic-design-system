@@ -19,7 +19,7 @@ jobs:
           private_key: ${{ secrets.ADD_TO_PROJECTS_APP_PEM }}
 
       - name: Add to project
-        uses: actions/add-to-project@v0.3.0
+        uses: actions/add-to-project@v2.0.0
         with:
           project-url: https://github.com/orgs/mi6/projects/2
           github-token: ${{ steps.generate_token.outputs.token }}
