@@ -145,9 +145,27 @@
       }
     },
     {
+      "GHSA-vfj7-8cjw-p6xm": {
+        "active": true,
+        "notes": "vulnerability in 'braces', and there is no patched version"
+      }
+    },
+    {
+      "GHSA-ch52-4w7c-c8xp": {
+        "active": true,
+        "notes": "vulnerability in 'http-cache-semantics', and there is no patched version"
+      }
+    },
+    {
+      "GHSA-hp3w-g68c-fv3c": {
+        "active": true,
+        "notes": "vulnerability in 'sprintf-js', and there is no patched version"
+      }
+    },
+    {
       "GHSA-g84c-rxfj-3j2c": {
         "active": true,
-        "notes": "requires upgrade to 'webpack-dev-middleware' which is a transitive dependency of gatsby."
+        "notes": "vulnerability in 'webpack-middleware-dev', up several major versions"
       }
     }
   ]
