@@ -301,13 +301,23 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     // to prevent page movement while switching
     setTimeout(() => {
       if (webComponentTabPanelRef.current && reactTabPanelRef.current) {
-        setCodeHeight("auto"); // Reset height for measurement
-        setCodeHeight(
-          `${Math.min(
-            webComponentTabPanelRef.current?.offsetHeight,
-            reactTabPanelRef.current?.offsetHeight
-          )}px`
+        const webComponentPanel = webComponentTabPanelRef.current;
+        const reactPanel = reactTabPanelRef.current;
+        const previousWebComponentHeight = webComponentPanel.style.height;
+        const previousReactHeight = reactPanel.style.height;
+
+        // Measure the natural content height rather than the currently
+        // synchronised panel height, which may be larger after expanding.
+        webComponentPanel.style.height = "auto";
+        reactPanel.style.height = "auto";
+        const nextHeight = Math.min(
+          webComponentPanel.scrollHeight,
+          reactPanel.scrollHeight
         );
+        webComponentPanel.style.height = previousWebComponentHeight;
+        reactPanel.style.height = previousReactHeight;
+
+        setCodeHeight(`${nextHeight}px`);
       }
     }, delay);
 
