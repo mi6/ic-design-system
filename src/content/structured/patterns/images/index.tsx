@@ -22,5 +22,3 @@ export { default as Fig5AILight } from "./fig-5-ai-alert-to-make-it-clear-the-ou
 export { default as Fig5AIDark } from "./fig-5-ai-alert-to-make-it-clear-the-output-is-AI-processed-dark.png";
 export { default as Fig6AILight } from "./fig-6-actionable-information-toast.png";
 export { default as Fig6AIDark } from "./fig-6-actionable-information-toast-dark.png";
-export { default as Fig7AILight } from "./fig-7-badge-positioning.png";
-export { default as Fig7AIDark } from "./fig-7-badge-positioning-dark.png";
