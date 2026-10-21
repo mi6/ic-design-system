@@ -23,8 +23,6 @@ import {
   Fig5AILight,
   Fig6AIDark,
   Fig6AILight,
-  Fig7AIDark,
-  Fig7AILight,
 } from "./images";
 import fig3AILight from "./images/fig-3-ai-when-not-to-use.mp4";
 import fig3AIDark from "./images/fig-3-ai-when-not-to-use-dark.mp4";
@@ -107,27 +105,15 @@ Use alert to inform users when AI is present. Alerts give a more prominent indic
 
 ### Toast
 
-Toasts are quick, lightweight pop-ups that deliver updates without interrupting the user. They're ideal for brief notifications such as “AI is working” followed by “Done! Click here to undo” or “Approve change.”
+Toasts are quick, lightweight pop-ups that deliver updates without interrupting the user. They're ideal for brief notifications such as “Generating your results”.
 
-Keep them short, clear, and only on-screen for a few seconds while ensuring they are displayed long enough for their content to be read and understood.
+Keep their contents short, clearly stating what action they are performing.
 
 <DoDontCaution
   imageSrc={[Fig6AILight, Fig6AIDark]}
   imageAlt="An AI toast notification appears below a comment field displaying the message “Increase brewing time to match customer preference,” with an Approve change button beside it."
   caption="AI toast notification “Increase brewing time to match customer preference.” Displayed below a comment field with an “Approve change” button."
 />
-
-### Badge
-
-Small labels are a simple way to help users quickly identify AI features or highlight when content has been AI-processed. They work well for displaying values or signaling if something is AI processed but should be used sparingly so that their meaning remains clear and significant.
-
-<DoubleDoDontCaution>
-  <DoDontCaution
-    imageSrc={[Fig7AILight, Fig7AIDark]}
-    imageAlt="An example showing three AI badge positions: one on a button labelled “Add milk”, another beside a cup icon within a chip labelled “Espresso”, and a third displayed inline on a tab menu labelled “Coffee”, alongside tabs for “Tea” and “Hot chocolate.”"
-    caption="Different AI badge positions in use on a button, next to an icon within a chip component, and inline within a tab menu group."
-  />
-</DoubleDoDontCaution>
 
 ## Accessibility considerations
 
@@ -145,8 +131,6 @@ Ensure all AI features are accessible to everyone. They must work with screen re
 
 ## Don't
 
-Overload interfaces with AI badges. Use them sparingly and consistently so users can clearly understand when AI is involved without feeling confused or overwhelmed.
-
-Avoid vague or exaggerated language when talking about AI. Be clear and honest about what it does and how it helps, using plain, factual wording to build trust and set realistic expectations.
+Use vague or exaggerated language when talking about AI. Be clear and honest about what it does and how it helps, using plain, factual wording to build trust and set realistic expectations.
 
 Rely only on colour or icons to indicate AI features. Always pair them with clear text. The AI colour purple and icon should be supported by labels like “AI-assisted” to ensure meaning and accessibility for users.
