@@ -1,3 +1,12 @@
+# Contributing Notice
+
+Thank you for your interest in this project. We have temporarily paused external contributions. During this pause, repository interactions are restricted to existing collaborators, so other users cannot open issues, submit pull requests or comment. 
+
+We appreciate your understanding and the contributions the community has made. We will update this guidance as soon as the position changes.
+
+----
+
+
 # Contributing to the Intelligence Community Design System guidance site
 
 Welcome and thank you for contributing to the [Intelligence Community Design System guidance site](https://design.sis.gov.uk/). This guide will take you through the technical considerations for contributing.
